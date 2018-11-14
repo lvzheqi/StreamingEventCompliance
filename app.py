@@ -1,4 +1,7 @@
 from flask import Flask, request
+from services import complianceChecker, deviationPDF
+import json
+
 
 app = Flask(__name__)
 
@@ -9,12 +12,22 @@ def hello_world():
 
 
 @app.route('/compliance-checker', methods=['POST'])
-def register():
+def call_compliance_checker():
+    client_uuid = request.args.get('uuid')
     event = request.json
-    print('case_id: ', event['case_id'])
-    print('activity: ', event['activity'])
-    return 'deviation'
+    event = json.loads(event)
+    return complianceChecker.compliance_checker(client_uuid, event)
+
+
+@app.route('/show-deviation-pdf', methods=['GET'])
+def call_show_deviation_pdf():
+    client_uuid = request.args.get('uuid')
+    deviationPDF.show_deviation_pdf(client_uuid)
 
 
 if __name__ == '__main__':
     app.run()
+
+
+# TODO: 1. logging  2. exception handing  3. describe for service  4. CORS
+
