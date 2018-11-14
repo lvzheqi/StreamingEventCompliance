@@ -2,177 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="600211af-66e1-40d2-8596-85f68efaceb7" name="Default Changelist" comment="update requirements">
-      <change afterPath="$PROJECT_DIR$/pm4py/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/conformance/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/conformance/alignments/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/conformance/alignments/factory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/conformance/alignments/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/conformance/alignments/versions/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/conformance/alignments/versions/state_equation_a_star.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/conformance/tokenreplay/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/conformance/tokenreplay/factory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/conformance/tokenreplay/versions/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/conformance/tokenreplay/versions/token_replay.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/alpha/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/alpha/data_structures/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/alpha/data_structures/alpha_classic_abstraction.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/alpha/factory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/alpha/utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/alpha/utils/endpoints.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/alpha/versions/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/alpha/versions/classic.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/causal/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/causal/factory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/causal/versions/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/causal/versions/alpha.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/causal/versions/heuristic.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/dfg/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/dfg/adapters/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/dfg/adapters/pandas/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/dfg/adapters/pandas/df_statistics.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/dfg/factory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/dfg/replacement.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/dfg/utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/dfg/utils/dfg_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/dfg/versions/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/dfg/versions/native.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/dfg/versions/performance.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/inductive/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/inductive/factory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/inductive/util/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/inductive/util/petri_cleaning.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/inductive/util/petri_el_count.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/inductive/util/shared_constants.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/inductive/versions/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/inductive/versions/dfg/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/inductive/versions/dfg/data_structures/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/inductive/versions/dfg/data_structures/subtree.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/inductive/versions/dfg/dfg_only.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/inductive/versions/dfg/util/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/inductive/versions/dfg/util/check_skip_trans.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/inductive/versions/dfg/util/get_tree_repr.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/discovery/inductive/versions/dfg/util/petri_el_add.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/filtering/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/filtering/common/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/filtering/common/attributes/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/filtering/common/attributes/attributes_common.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/filtering/common/filtering_constants.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/filtering/dfg/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/filtering/dfg/dfg_filtering.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/filtering/tracelog/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/filtering/tracelog/attributes/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/filtering/tracelog/attributes/attributes_filter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/filtering/tracelog/variants/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/algo/filtering/tracelog/variants/variants_filter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/evaluation/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/evaluation/factory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/evaluation/generalization/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/evaluation/generalization/factory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/evaluation/generalization/versions/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/evaluation/generalization/versions/token_based.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/evaluation/precision/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/evaluation/precision/factory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/evaluation/precision/versions/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/evaluation/precision/versions/etconformance_token.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/evaluation/replay_fitness/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/evaluation/replay_fitness/factory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/evaluation/replay_fitness/versions/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/evaluation/replay_fitness/versions/alignment_based.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/evaluation/replay_fitness/versions/token_replay.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/evaluation/simplicity/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/evaluation/simplicity/factory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/evaluation/simplicity/versions/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/evaluation/simplicity/versions/arc_degree.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/conversion/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/conversion/tree_to_petri/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/conversion/tree_to_petri/factory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/conversion/tree_to_petri/versions/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/conversion/tree_to_petri/versions/classic.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/log/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/log/adapters/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/log/adapters/pandas/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/log/adapters/pandas/csv_import_adapter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/log/exporter/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/log/exporter/csv/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/log/exporter/csv/factory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/log/exporter/csv/versions/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/log/exporter/csv/versions/pandas_csv_exp.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/log/exporter/xes/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/log/exporter/xes/factory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/log/exporter/xes/versions/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/log/exporter/xes/versions/etree_xes_exp.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/log/importer/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/log/importer/csv/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/log/importer/csv/factory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/log/importer/csv/versions/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/log/importer/csv/versions/pandas_df_imp.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/log/importer/xes/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/log/importer/xes/factory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/log/importer/xes/versions/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/log/importer/xes/versions/iterparse_xes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/log/importer/xes/versions/python_nonstandard.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/log/log.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/log/transform.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/log/util/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/log/util/compression.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/log/util/general.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/log/util/insert_classifier.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/log/util/string_to_file.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/log/util/trace_log.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/log/util/xes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/petri/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/petri/common/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/petri/common/final_marking.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/petri/common/initial_marking.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/petri/exporter/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/petri/exporter/pnml.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/petri/importer/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/petri/importer/pnml.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/petri/incidence_matrix.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/petri/petrinet.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/petri/reachability_graph.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/petri/semantics.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/petri/synchronous_product.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/petri/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/process_tree/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/process_tree/process_tree.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/process_tree/tree_constants.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/transition_system/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/transition_system/transition_system.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/objects/transition_system/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/util/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/util/constants.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/visualization/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/visualization/common/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/visualization/common/gview.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/visualization/common/save.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/visualization/common/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/visualization/dfg/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/visualization/dfg/factory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/visualization/dfg/versions/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/visualization/dfg/versions/simple_visualize.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/visualization/petrinet/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/visualization/petrinet/common/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/visualization/petrinet/common/base64conv.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/visualization/petrinet/common/visualize.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/visualization/petrinet/factory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/visualization/petrinet/util/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/visualization/petrinet/util/performance_map.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/visualization/petrinet/util/vis_trans_shortest_paths.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/visualization/petrinet/versions/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/visualization/petrinet/versions/greedy_decoration.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/visualization/petrinet/versions/token_decoration.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/visualization/petrinet/versions/wo_decoration.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/visualization/process_tree/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/visualization/process_tree/factory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/visualization/process_tree/versions/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pm4py/visualization/process_tree/versions/wo_decoration.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/complianceChecker.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/deviationPDF.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventcompliance/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/__init__.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -181,43 +16,47 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/StreamEventCompliance$StreamEventCompliance.coverage" NAME="StreamEventCompliance Coverage Results" MODIFIED="1542205113586" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/StreamEventCompliance$StreamEventCompliance.coverage" NAME="StreamEventCompliance Coverage Results" MODIFIED="1542223371666" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-613405094">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="4" />
-          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="13" />
-          <entry key="py" value="300" />
+          <entry key="md" value="58" />
+          <entry key="py" value="1562" />
           <entry key="txt" value="100" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+          <entry key="Markdown" value="58" />
           <entry key="PLAIN_TEXT" value="100" />
-          <entry key="Python" value="313" />
+          <entry key="Python" value="1575" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="4" />
+          <entry key="md" value="1" />
+          <entry key="py" value="16" />
           <entry key="txt" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="6" />
-          <entry key="Python" value="4" />
+          <entry key="Python" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -233,38 +72,48 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="165">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
               <folding>
-                <marker date="1542205343762" expanded="true" signature="320:323" ph="..." />
+                <element signature="e#0#32#0" expanded="true" />
+                <marker date="1542221158191" expanded="true" signature="367:614" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/services/complianceChecker.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+              <folding>
+                <marker date="1542223371656" expanded="true" signature="423:428" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/requirements.txt">
+        <entry file="file://$PROJECT_DIR$/services/deviationPDF.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+            <state>
+              <caret column="35" selection-start-column="35" selection-end-column="35" />
+              <folding>
+                <marker date="1542222100774" expanded="true" signature="37:42" ph="..." />
+                <marker date="1542222100774" expanded="true" signature="137:142" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py">
+        <entry file="file://$PROJECT_DIR$/pm4py/algo/filtering/tracelog/attributes/attributes_filter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="1342" selection-start-line="1342" selection-end-line="1342" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pm4py/algo/discovery/dfg/utils/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="-428">
+              <folding>
+                <element signature="e#0#59#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -290,8 +139,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/services/__init__.py" />
+        <option value="$PROJECT_DIR$/services/eventLog.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/../StreamEventComplianceClient/eventHandler/eventLog.py" />
+        <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/services/deviationPDF.py" />
+        <option value="$PROJECT_DIR$/services/complianceChecker.py" />
       </list>
     </option>
   </component>
@@ -318,6 +173,11 @@
             <path>
               <item name="StreamEventCompliance" type="b2602c69:ProjectViewProjectNode" />
               <item name="StreamEventCompliance" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StreamEventCompliance" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StreamEventCompliance" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -395,24 +255,34 @@
     <option name="localTasksCounter" value="3" />
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1395" height="877" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22690319" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21507761" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32866243" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49889135" visible="true" weight="0.32866243" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="TODO" order="6" sideWeight="0.49963045" visible="true" weight="0.3299363" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49815226" weight="0.3299363" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3299363" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50036955" side_tool="true" visible="true" weight="0.3299363" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49963045" weight="0.3299363" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50110865" side_tool="true" visible="true" weight="0.32866243" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49889135" weight="0.3299363" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.3299363" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -436,16 +306,10 @@
     <entry file="file://$PROJECT_DIR$/utils/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/eventcompliance/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
+    <entry file="file://$PROJECT_DIR$/pm4py/algo/discovery/dfg/utils/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <marker date="1542205343762" expanded="true" signature="320:323" ph="..." />
-          </folding>
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
@@ -456,17 +320,100 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py">
+    <entry file="file://$PROJECT_DIR$/pm4py/algo/filtering/tracelog/attributes/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pm4py/algo/conformance/alignments/utils.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pm4py/algo/conformance/alignments/factory.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="1342" selection-start-line="1342" selection-end-line="1342" />
+        <state>
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pm4py/algo/discovery/dfg/utils/__init__.py">
+    <entry file="file://$PROJECT_DIR$/services/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7396">
+          <caret line="352" column="8" selection-start-line="352" selection-start-column="8" selection-end-line="352" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pm4py/algo/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="4" selection-start-column="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="375">
+            <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../StreamEventComplianceClient/eventHandler/eventLog.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pm4py/algo/filtering/tracelog/attributes/attributes_filter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-428">
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/deviationPDF.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="35" selection-start-column="35" selection-end-column="35" />
+          <folding>
+            <marker date="1542222100774" expanded="true" signature="37:42" ph="..." />
+            <marker date="1542222100774" expanded="true" signature="137:142" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+            <marker date="1542221158191" expanded="true" signature="367:614" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/complianceChecker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <marker date="1542223371656" expanded="true" signature="423:428" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

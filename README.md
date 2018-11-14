@@ -8,9 +8,12 @@ which can enhance online process mining result.
 
 `conda create -n StreamEC python=3.6 anaconda`
 
-2. activate and enter the environment
+2. activate and enter the environment 
 
-`source activate StreamEC`
+`source activate StreamEC` in Linux or Mac
+
+
+`activate StreamEC` in Windows
 
 3. execute the requirements.txt
 
@@ -18,6 +21,8 @@ which can enhance online process mining result.
 
 4. deactivate and enter the environment
 
-`source deactivate StreamEC`
+`source deactivate StreamEC` in Linux or Mac
+
+`source deactivate StreamEC` in Windows
 
 5. start the project with this enviroment
