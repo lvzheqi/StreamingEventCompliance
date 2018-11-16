@@ -1,5 +1,6 @@
 from threading import Thread
 import logging
+import time
 import requests
 
 
@@ -19,8 +20,11 @@ class EventThread(Thread):
     def run(self):
         while True:
             print("number of threads ", len(list(self.threadMemorizer.dictionary_threads.keys())))
+            # time.sleep(10)
             r = requests.post("http://127.0.0.1:5000/compliance-checker?uuid=" + self.client_uuid, json=self.event)
-            print(r.text)
+            # TODO: try catch connectionError
+            # TODO: timed out error: r != 200, raise error, print
+            print("Info", r.text)
             del self.threadMemorizer.dictionary_threads[self.index]
             break
 

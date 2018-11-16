@@ -1,14 +1,9 @@
 from flask import Flask, request
-from services import complianceChecker, deviationPDF
+from services import complianceChecker, deviationPDF, buildAutomata
 import json
 
 
 app = Flask(__name__)
-
-
-@app.route('/')
-def hello_world():
-    return 'Hello World!'
 
 
 @app.route('/compliance-checker', methods=['POST'])
@@ -25,8 +20,12 @@ def call_show_deviation_pdf():
     deviationPDF.show_deviation_pdf(client_uuid)
 
 
+buildAutomata.test_automata_status()
+
+
 if __name__ == '__main__':
     app.run()
+
 
 
 # TODO: 1. logging  2. exception handing  3. describe for service  4. CORS
