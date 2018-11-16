@@ -2,6 +2,18 @@ from config import globalVariables
 
 
 def build_automata():
+    '''
+    This function will get the value of variable 'path' which indicates a event_log file
+    from config.defaultConfig, use it to build automata and store corresponding
+    information into the database.
+    :return: boolean
+    '''
+    # Instantiate an object Automata.
+    # Connect to the database
+    # Read file
+    # Calculating
+    # TODO: raise exception when not success
+
     return True
 
 
