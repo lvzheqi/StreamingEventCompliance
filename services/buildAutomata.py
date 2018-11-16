@@ -18,9 +18,13 @@ def build_automata():
 
 
 def test_automata_status():
+
     '''
     This function will check whether the automate is built or not.
-    :return:
+    If the automata don't be built, then will call the build_automata function to build the automata.
+    And the status will be stored in config file.
+
+    :return: status of the automata, or raise the exceptions when the automata can't be built.
     '''
 
     # TODO: create file to store the automata status
@@ -28,7 +32,7 @@ def test_automata_status():
     if globalVariables.AUTOMATA_STATUS:
         return True
     else:
-        # TODO: try catch exception, when not success more than 2 times
-        while (build_automata()):
+        # TODO: raise exceptions, when not success
+        if (build_automata()):
             globalVariables.AUTOMATA_STATUS = True
             # TODO: rewrite to status into the file
