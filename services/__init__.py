@@ -1,2 +1,2 @@
-from services import complianceChecker, deviationPDF
+from services import complianceChecker, deviationPDF, buildAutomata
 
