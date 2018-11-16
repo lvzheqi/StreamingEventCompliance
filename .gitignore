@@ -3,12 +3,12 @@
 ### Example user template
 
 # IntelliJ project files
-.idea
+.idea/workspace.xml
 *.xml
 out
 gen
 /.evn/
-.idea/workspace.xml
+.idea
 
 
 
