@@ -2,14 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="600211af-66e1-40d2-8596-85f68efaceb7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/defaultConfig.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/globalVariables.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/buildAutomata.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/automata/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/automata/alertLog.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/automata/automata.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/exceptions/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulationStreamEvent/eventThread.py" beforeDir="false" afterPath="$PROJECT_DIR$/simulationStreamEvent/eventThread.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pm4py/objects/log/adapters/pandas/csv_import_adapter.py" beforeDir="false" afterPath="$PROJECT_DIR$/pm4py/objects/log/adapters/pandas/csv_import_adapter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/buildAutomata.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/buildAutomata.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,24 +37,25 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="13" />
+          <entry key="dummy" value="17" />
           <entry key="gitignore" value="1" />
           <entry key="md" value="58" />
-          <entry key="py" value="2879" />
-          <entry key="txt" value="132" />
+          <entry key="py" value="3595" />
+          <entry key="txt" value="145" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="58" />
-          <entry key="PLAIN_TEXT" value="133" />
-          <entry key="Python" value="2892" />
+          <entry key="PLAIN_TEXT" value="163" />
+          <entry key="Python" value="3608" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="1" />
           <entry key="md" value="1" />
-          <entry key="py" value="28" />
+          <entry key="py" value="49" />
           <entry key="txt" value="6" />
         </counts>
       </usages-collector>
@@ -61,7 +63,7 @@
         <counts>
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="7" />
-          <entry key="Python" value="28" />
+          <entry key="Python" value="49" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -77,63 +79,55 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+            <state relative-caret-position="301">
+              <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
-                <marker date="1542388606058" expanded="true" signature="602:605" ph="..." />
+                <marker date="1542390541398" expanded="true" signature="627:630" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/__init__.py">
+        <entry file="file://$PROJECT_DIR$/services/buildAutomata.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="67" selection-start-column="67" selection-end-column="67" />
+            <state relative-caret-position="105">
+              <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+              <folding>
+                <marker date="1542390541404" expanded="true" signature="58:63" ph="..." />
+                <marker date="1542390541404" expanded="true" signature="562:567" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/services/buildAutomata.py">
+        <entry file="file://$PROJECT_DIR$/objects/automata/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="66" selection-start-line="9" selection-start-column="66" selection-end-line="9" selection-end-column="66" />
+            <state>
+              <caret column="47" selection-start-column="47" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pm4py/objects/log/importer/xes/factory.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
               <folding>
-                <marker date="1542388606064" expanded="true" signature="58:63" ph="..." />
-                <marker date="1542388606064" expanded="true" signature="326:331" ph="..." />
+                <element signature="e#0#85#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/defaultConfig.py">
+        <entry file="file://$PROJECT_DIR$/pm4py/objects/log/importer/csv/factory.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/globalVariables.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="20" lean-forward="true" selection-start-column="20" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="-915">
               <folding>
-                <element signature="e#288#330#0" expanded="true" />
+                <element signature="e#0#65#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -178,8 +172,18 @@
         <option value="$PROJECT_DIR$/config/defaultConfig.py" />
         <option value="$PROJECT_DIR$/config/globalVariables.py" />
         <option value="$PROJECT_DIR$/services/__init__.py" />
-        <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/services/buildAutomata.py" />
+        <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/objects/sinkNode.py" />
+        <option value="$PROJECT_DIR$/objects/automata.py" />
+        <option value="$PROJECT_DIR$/objects/sourceNode.py" />
+        <option value="$PROJECT_DIR$/objects/alertLog.py" />
+        <option value="$PROJECT_DIR$/objects/__init__.py" />
+        <option value="$PROJECT_DIR$/objects/exceptions/__init__.py" />
+        <option value="$PROJECT_DIR$/objects/automata/automata.py" />
+        <option value="$PROJECT_DIR$/objects/automata/sourceNode.py" />
+        <option value="$PROJECT_DIR$/objects/automata/alertLog.py" />
+        <option value="$PROJECT_DIR$/objects/automata/__init__.py" />
       </list>
     </option>
   </component>
@@ -227,7 +231,37 @@
             <path>
               <item name="StreamEventCompliance" type="b2602c69:ProjectViewProjectNode" />
               <item name="StreamEventCompliance" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="objects" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StreamEventCompliance" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StreamEventCompliance" type="462c0819:PsiDirectoryNode" />
+              <item name="objects" type="462c0819:PsiDirectoryNode" />
+              <item name="automata" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StreamEventCompliance" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StreamEventCompliance" type="462c0819:PsiDirectoryNode" />
+              <item name="objects" type="462c0819:PsiDirectoryNode" />
+              <item name="exceptions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StreamEventCompliance" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StreamEventCompliance" type="462c0819:PsiDirectoryNode" />
+              <item name="pm4py" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StreamEventCompliance" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StreamEventCompliance" type="462c0819:PsiDirectoryNode" />
+              <item name="pm4py" type="462c0819:PsiDirectoryNode" />
+              <item name="objects" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StreamEventCompliance" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StreamEventCompliance" type="462c0819:PsiDirectoryNode" />
+              <item name="pm4py" type="462c0819:PsiDirectoryNode" />
+              <item name="objects" type="462c0819:PsiDirectoryNode" />
+              <item name="log" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -244,13 +278,15 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/objects/automata" />
+      <recent name="$PROJECT_DIR$/objects" />
       <recent name="$PROJECT_DIR$/eventHandler" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/client" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -321,7 +357,14 @@
       <option name="project" value="LOCAL" />
       <updated>1542226045098</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update buildautomata">
+      <created>1542388624690</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1542388624691</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
@@ -341,8 +384,8 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49963045" weight="0.3299363" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4878049" visible="true" weight="0.32866243" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49889135" weight="0.3299363" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4878049" weight="0.32866243" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -350,7 +393,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3299363" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5121951" side_tool="true" visible="true" weight="0.32866243" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50110865" side_tool="true" weight="0.32866243" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.58167034" weight="0.3299363" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.3299363" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -359,6 +402,29 @@
       <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="right" id="Database" order="4" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22099039" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49889135" weight="0.3299363" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4878049" weight="0.32866243" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49741316" weight="0.3299363" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3299363" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50110865" side_tool="true" visible="true" weight="0.32866243" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.58167034" weight="0.3299363" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.3299363" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -372,7 +438,8 @@
     <MESSAGE value="add framework" />
     <MESSAGE value="update framework" />
     <MESSAGE value="update client" />
-    <option name="LAST_COMMIT_MESSAGE" value="update client" />
+    <MESSAGE value="update buildautomata" />
+    <option name="LAST_COMMIT_MESSAGE" value="update buildautomata" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/utils/__init__.py">
@@ -519,13 +586,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/defaultConfig.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/services/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -540,25 +600,133 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
+    <entry file="file://$PROJECT_DIR$/pm4py/objects/conversion/tree_to_petri/versions/classic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+        <state>
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
-            <marker date="1542388606058" expanded="true" signature="602:605" ph="..." />
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/defaultConfig.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+            <marker date="1542390541398" expanded="true" signature="627:630" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pm4py/objects/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pm4py/objects/conversion/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="50" lean-forward="true" selection-start-column="50" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/objects/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pm4py/objects/log/importer/csv/factory.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-915">
+          <folding>
+            <element signature="e#0#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pm4py/objects/log/log.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1350">
+          <caret line="141" selection-start-line="141" selection-end-line="141" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/objects/automata/alertLog.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/objects/automata/sinkNode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/objects/automata/automata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <marker date="1542391066756" expanded="true" signature="15:20" ph="..." />
+            <marker date="1542391066756" expanded="true" signature="15:122" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pm4py/objects/log/adapters/pandas/csv_import_adapter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1842">
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/objects/automata/alertLog.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" selection-start-column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pm4py/objects/log/importer/xes/factory.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#85#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/objects/exceptions/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/services/buildAutomata.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="66" selection-start-line="9" selection-start-column="66" selection-end-line="9" selection-end-column="66" />
+        <state relative-caret-position="105">
+          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
           <folding>
-            <marker date="1542388606064" expanded="true" signature="58:63" ph="..." />
-            <marker date="1542388606064" expanded="true" signature="326:331" ph="..." />
+            <marker date="1542390541404" expanded="true" signature="58:63" ph="..." />
+            <marker date="1542390541404" expanded="true" signature="562:567" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/objects/automata/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="47" selection-start-column="47" selection-end-column="47" />
         </state>
       </provider>
     </entry>

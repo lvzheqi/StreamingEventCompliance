@@ -20,6 +20,7 @@ def call_show_deviation_pdf():
     deviationPDF.show_deviation_pdf(client_uuid)
 
 
+# TODO: catch exceptions
 buildAutomata.test_automata_status()
 
 
@@ -28,5 +29,5 @@ if __name__ == '__main__':
 
 
 
-# TODO: 1. logging  2. exception handing  3. describe for service  4. CORS
+# TODO: 1. logging  2. exceptions handing  3. describe for service  4. CORS
 
