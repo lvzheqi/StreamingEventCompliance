@@ -22,9 +22,13 @@ class Client(object):
         eventLog.simulate_stream_event(self.uuid, event_log)
         return 0
 
+    def run_show_deviation_pdf(self):
+        print("pdf is on", "http://127.0.0.1:5000/show-deviation-pdf?"+self.uuid)
+
 
 client1 = Client("Example.xes")
 client1.run_compliance_checker()
+client1.run_show_deviation_pdf()
 
 
 # TODO: 1.
