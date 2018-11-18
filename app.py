@@ -1,7 +1,6 @@
-from flask import Flask, request, Response, make_response
+from flask import Flask, request
 from services import complianceChecker, deviationPDF, buildAutomata
 import json
-
 
 
 app = Flask(__name__)
@@ -19,9 +18,10 @@ def call_compliance_checker():
 def call_show_deviation_pdf():
     client_uuid = request.args.get('uuid')
     deviationPDF.show_deviation_pdf(client_uuid)
-    # What happened if the pdf is missing
+
 
 # TODO: catch exceptions
+buildAutomata.test_automata_status()
 
 
 if __name__ == '__main__':
