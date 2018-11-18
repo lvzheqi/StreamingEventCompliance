@@ -36,3 +36,5 @@ def test_automata_status():
         if (build_automata()):
             globalVariables.AUTOMATA_STATUS = True
             # TODO: rewrite to status into the file
+
+
