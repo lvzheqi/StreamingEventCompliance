@@ -2,6 +2,12 @@ from services import deviationPDF
 
 
 def compliance_checker(client_uuid, event):
+    '''
+
+    :param client_uuid:
+    :param event:
+    :return:
+    '''
     print('case_id: ', event['case_id'])
     print('activity: ', event['activity'])
     # TODO: analyse and write non-compliance event to the database AlertLog with client_uuid
