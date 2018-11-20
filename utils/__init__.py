@@ -1,1 +1,1 @@
-from utils import defaultConfig, globalVariables
+from utils import config, globalVariables

@@ -33,7 +33,7 @@ def invoke_event_thread(event, T, client_uuid):
     while len(threads) > 3:
         threads[0].join()
         del threads[0]
-    print('length of threads: ', len(threads))
+    # print('length of threads: ', len(threads))
     event_thread = eventThread.EventThread(event, T, threads_index, client_uuid)
     T.dictionary_threads[threads_index] = event_thread
     event_thread.start()

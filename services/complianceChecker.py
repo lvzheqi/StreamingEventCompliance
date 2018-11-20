@@ -3,11 +3,13 @@ from services import deviationPDF
 
 def compliance_checker(client_uuid, event):
     '''
-
-    :param client_uuid:
-    :param event:
-    :return:
+    Does the compliance checking of the particular event received from client by comparing
+    the automata information in the database. Returns alerts, when some deviations occur.
+    :param client_uuid: user name
+    :param event: the event that we want to check the compliance
+    :return:the deviation information or success information.
     '''
+
     print('case_id: ', event['case_id'])
     print('activity: ', event['activity'])
     # TODO: analyse and write non-compliance event to the database AlertLog with client_uuid
