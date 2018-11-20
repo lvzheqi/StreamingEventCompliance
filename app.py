@@ -13,10 +13,12 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = defaultConfig.BASE_DIR
 app.config['SQLALCHEMY_DATABASE_URI'] = defaultConfig.DATABASE_PATH
 
-app.app_context().push()
-testdb.init_app(app)
+
 atdb.init_app(app)
 altdb.init_app(app)
+testdb.init_app(app)
+app.app_context().push()
+
 
 @app.route('/')
 def index():

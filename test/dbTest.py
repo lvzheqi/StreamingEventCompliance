@@ -1,28 +1,49 @@
-from objects.automata import automata, alertLog
+from objects.automata import alertLog, automata
 from flask_sqlalchemy import SQLAlchemy
-from utils import defaultConfig
-# from sqlalchemy import *
+
 
 db = SQLAlchemy()
 
 
 def init():
-    # engine = create_engine(defaultConfig.DATABASE_PATH)
-    # metadata = MetaData()
-    db.session.query(alertLog.AlertLog).delete()
-    db.session.query(alertLog.User).delete()
-    db.session.query(automata.SourceNode).delete()
-    db.session.commit()
-    test_source_node_create()
+
+    from objects.automata.alertLog import db as alter_log_db
+    # alter_log_db.drop_all()
+    # alter_log_db.session.commit()
+    alter_log_db.create_all()
+    alter_log_db.session.commit()
+    from objects.automata.automata import db as automata_db
+    # # alter_log_db.drop_all()
+    #
+    # db.session.query(alertLog.AlertLog).delete()
+    # db.session.query(alertLog.User).delete()
+    # db.session.query(automata.Node).delete()
+    # db.session.query(automata.Automata).delete()
+    # automata_db.session.commit()
+
+    automata_db.create_all()
+    automata_db.session.commit()
+
+    # empty table
+    # db.session.query(alertLog.AlertLog).delete()
+    # db.session.query(alertLog.User).delete()
+    # db.session.query(automata.SourceNode).delete()
+    # db.session.commit()
+    #
+    test_automata_create()
     test_user_create()
     test_alert_log_create()
 
 
-def test_source_node_create():
-    source1 = automata.SourceNode(2, 'EF')
-    source2 = automata.SourceNode(3, 'EFG')
-    db.session.add(source1)
-    db.session.add(source2)
+def test_automata_create():
+    source_node = automata.Node('EF')
+    sink_node = automata.Node('SV')
+    db.session.add(source_node)
+    db.session.add(sink_node)
+    db.session.commit()
+
+    event = automata.Automata('EF', 'SV')
+    db.session.add(event)
     db.session.commit()
 
 
