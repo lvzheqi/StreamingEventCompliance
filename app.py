@@ -1,6 +1,6 @@
 from flask import Flask, request, send_file
 from services import complianceChecker, deviationPDF, buildAutomata
-from utils import defaultConfig
+from utils import config
 from test import dbTest
 from test.dbTest import db as testdb
 from objects.automata.automata import db as atdb
@@ -10,8 +10,8 @@ import json
 
 app = Flask(__name__)
 
-app.config['UPLOAD_FOLDER'] = defaultConfig.BASE_DIR
-app.config['SQLALCHEMY_DATABASE_URI'] = defaultConfig.DATABASE_PATH
+app.config['UPLOAD_FOLDER'] = config.BASE_DIR
+app.config['SQLALCHEMY_DATABASE_URI'] = config.DATABASE_PATH
 
 
 atdb.init_app(app)
@@ -28,8 +28,8 @@ def index():
 @app.route('/compliance-checker', methods=['POST'])
 def call_compliance_checker():
     '''
-
-    :return:
+    This function provides the interface to check the compliance of the event.
+    :return: status code, application/json
     '''
     client_uuid = request.args.get('uuid')
     event = request.json
@@ -40,13 +40,14 @@ def call_compliance_checker():
 @app.route('/show-deviation-pdf', methods=['GET', 'POST'])
 def call_show_deviation_pdf():
     '''
-
-    :return:
+    This function will render the deviation pdf with particular client_id in the browser,
+    when the client has already done the “compliance checking”.
+    :return: status code, application/pdf
     '''
     client_uuid = request.args.get('uuid')
     deviationPDF.show_deviation_pdf(client_uuid)
     try:
-        automata_pdf = open(client_uuid + "-" + defaultConfig.AUTOMATA_FILE, 'rb')
+        automata_pdf = open(client_uuid + "-" + config.AUTOMATA_FILE, 'rb')
         return send_file(automata_pdf, attachment_filename='file.pdf')
     except:
         print('exception')
