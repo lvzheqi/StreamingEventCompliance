@@ -21,7 +21,7 @@ def test_automata_status():
 
     '''
     This function will check whether the automate is built or not.
-    If the automata don't be built, then will call the build_automata function to build the automata.
+    If the automata is not built, then will call the build_automata function to build the automata.
     And the status will be stored in config file.
 
     :return: status of the automata, or raise the exceptions when the automata can't be built.
