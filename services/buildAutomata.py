@@ -1,4 +1,4 @@
-from config import globalVariables
+from utils import globalVariables
 
 
 def build_automata():
