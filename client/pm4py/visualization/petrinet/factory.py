@@ -1,5 +1,5 @@
-from pm4py.visualization.common import gview
-from pm4py.visualization.common import save as gsave
+from streaming_event_compliance.pm4py.visualization.common import gview
+from streaming_event_compliance.pm4py.visualization.common import save as gsave
 from pm4py.visualization.petrinet.versions import wo_decoration, token_decoration, greedy_decoration
 
 WO_DECORATION = "wo_decoration"
