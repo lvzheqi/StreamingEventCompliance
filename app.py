@@ -19,7 +19,6 @@ altdb.init_app(app)
 testdb.init_app(app)
 app.app_context().push()
 
-
 @app.route('/')
 def index():
     return 'Welcome to Compliance Server! We will provide 2 services!'
