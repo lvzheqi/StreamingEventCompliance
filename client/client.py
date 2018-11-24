@@ -1,6 +1,6 @@
 
 
-from simulationStreamEvent import eventLog
+from simulate_stream_event import eventLog
 # import uuid
 
 

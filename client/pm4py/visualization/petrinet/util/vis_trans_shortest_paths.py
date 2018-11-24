@@ -1,7 +1,5 @@
 from statistics import mean, median, stdev
 
-from pm4py.visualization.common.utils import *
-
 
 def get_shortest_paths_from_trans(original_trans, spaths):
     """

@@ -1,6 +1,6 @@
 from pm4py.objects.log.importer.xes import factory as xes_importer
 from pm4py.objects.log import transform
-from simulationStreamEvent import eventThread
+from . import eventThread
 import json
 
 T = eventThread.ThreadMemorizer()
