@@ -1,4 +1,4 @@
-from streaming_event_compliance.objects.automata import alert_log, automata
+from streaming_event_compliance.objects.automata import alertlog, automata
 from flask_sqlalchemy import SQLAlchemy
 
 
@@ -9,7 +9,7 @@ class DatabaseTest:
 
     def init(self):
 
-        from streaming_event_compliance.objects.automata.alert_log import db as alter_log_db
+        from streaming_event_compliance.objects.automata.alertlog import db as alter_log_db
         # alter_log_db.drop_all()
         # alter_log_db.session.commit()
         alter_log_db.create_all()
@@ -50,15 +50,15 @@ class DatabaseTest:
 
 
     def test_user_create(self):
-        user1 = alert_log.User('1')
-        user2 = alert_log.User('2')
+        user1 = alertlog.User('1')
+        user2 = alertlog.User('2')
         self.db.session.add(user1)
         self.db.session.add(user2)
         self.db.session.commit()
 
 
     def test_alert_log_create(self):
-        alert1 = alert_log.AlertLog('1', 2, 'EF', 'AB')
+        alert1 = alertlog.AlertLog('1', 2, 'EF', 'AB')
         self.db.session.add(alert1)
         self.db.session.commit()
 
