@@ -42,7 +42,7 @@ class CaseThread(Thread):
         '''
 
         # thread condition
-        len(self.caseMemorizer.dictionary_cases.get(self.event[id])) > 5
+        #len(self.caseMemorizer.dictionary_cases.get(self.event[id])) > 5
 
         print(self)
         # del self.threadMemorizer.dictionary_threads[self.index] # we can not delete it even this event processing is done,
