@@ -1,4 +1,5 @@
 from flask import Flask, request, send_file
+from flask_api import status
 from streaming_event_compliance.services import compliance_checker, build_automata
 from streaming_event_compliance.services import deviation_pdf
 from streaming_event_compliance.utils import config
@@ -20,9 +21,20 @@ testdb = DatabaseTest()
 testdb.db.init_app(app)
 app.app_context().push()
 
+
 @app.route('/')
 def index():
     return 'Welcome to Compliance Server! We will provide 2 services!'
+
+
+@app.route('/login', methods=['POST'])
+def call_login():
+    '''
+    This function will create a user, if the given user name is not created
+    '''
+    client_uuid = request.args.get('uuid')
+    # TODO: create user
+    return '', status.HTTP_200_OK
 
 
 @app.route('/compliance-checker', methods=['POST'])
@@ -32,9 +44,12 @@ def call_compliance_checker():
     :return: status code, application/json
     '''
     client_uuid = request.args.get('uuid')
+    print(client_uuid)
     event = request.json
     event = json.loads(event)
-    return compliance_checker.compliance_checker(client_uuid, event)
+    print(event)
+    print(compliance_checker.compliance_checker(client_uuid, event))
+    return compliance_checker.compliance_checker(client_uuid, event), status.HTTP_200_OK
 
 
 @app.route('/show-deviation-pdf', methods=['GET', 'POST'])
@@ -47,10 +62,11 @@ def call_show_deviation_pdf():
     client_uuid = request.args.get('uuid')
     deviation_pdf.show_deviation_pdf(client_uuid)
     try:
-        automata_pdf = open(client_uuid + "-" + config.AUTOMATA_FILE, 'rb')
-        return send_file(automata_pdf, attachment_filename='file.pdf')
-    except:
+        automata_pdf = open('data/' + client_uuid + "-" + config.AUTOMATA_FILE, 'rb')
+        return send_file(automata_pdf, attachment_filename='file.pdf'), status.HTTP_200_OK
+    except Exception: # TODO: read file error
         print('exception')
+        return '', status.HTTP_404_NOT_FOUND
 
 
 build_automata.test_automata_status()
@@ -58,7 +74,7 @@ build_automata.test_automata_status()
 
 
 ###### Test ######
-testdb.init()
+# testdb.init()
 
 if __name__ == '__main__':
     app.debug = True
