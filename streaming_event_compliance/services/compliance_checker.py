@@ -6,6 +6,7 @@ C = case_thread.CaseMemorizer() # Or do we need a caseMemory?
 threads = []
 threads_index = 0
 
+
 def compliance_checker(client_uuid, event):
     '''
     Does the compliance checking of the particular event received from client by comparing
