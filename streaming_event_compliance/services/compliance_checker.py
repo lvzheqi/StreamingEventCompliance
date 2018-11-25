@@ -1,8 +1,9 @@
 from streaming_event_compliance.services import deviation_pdf
 from streaming_event_compliance.services import case_thread
+from streaming_event_compliance.services.memory import ThreadMemorizer,CaseMemorizer
 
-T = case_thread.ThreadMemorizer()
-C = case_thread.CaseMemorizer()  # Or do we need a caseMemory?
+T = ThreadMemorizer()
+C = CaseMemorizer()
 threads = []
 threads_index = 0
 
@@ -22,7 +23,8 @@ def compliance_checker(client_uuid, event):
     if event['case_id'] != 'NONE' and event['activity'] != 'END':
         for key in C.dictionary_cases:
             if key == event['case_id']:
-                '''if we have already found the case, just add this event to this case, But should we search in caseMemory or theathMemory??'''
+                # if we have already found the case, just add this event to this case, But should
+                #we search in caseMemory or theathMemory??
                 C.dictionary_cases.get(event['case_id']).append(event['activity'])
                 # Do we need restart the thread for this case?
             else:
@@ -30,8 +32,10 @@ def compliance_checker(client_uuid, event):
                 #2. Create a new thread for this case
                 #3. Start it
                 C.dictionary_cases[event['case_id']] = [event['activity']]
-                thread =case_thread.CaseThread(event, T, C, threads_index,  client_uuid) #TODO: what does caseThread do?
-                T.dictionary_threads[threads_index] = case_thread  # this is just for remember the threads information that we have ceated.
+                thread =case_thread.CaseThread(event, T, C, threads_index,  client_uuid)
+                #TODO: what does caseThread do?
+                T.dictionary_threads[threads_index] = case_thread
+                # this is just for remember the threads information that we have ceated.
                 thread.start()
                 threads.append(case_thread) # this is for limiting the number of the threads that are runing???
                 threads_index = threads_index + 1

@@ -1,50 +1,85 @@
 from threading import Thread
-
-
-class ThreadMemorizer(object):
-    '''
-    This object is for storing the threads that server creates for each case;
-    '''
-    def __init__(self):
-        self.dictionary_threads = {} # key should be the case id
-
-class CaseMemorizer(object):
-    '''
-    This object is for storing the cases that server receives;
-
-    key:'case_id'
-    value:[a,b,c,d...] events sorting by timestamp, but we don't need to sort these events, and it also doesn't contain any timestamp
-                    but the events are sent by Client in the order of time, even they are sent by multi-threads, the server will get
-                    these events in the order of time. So when server get a event, it can only check its case_id and add it into the
-                    corresponding list.
-    '''
-    def __init__(self):
-        self.dictionary_cases = {}
-
-
-
-class CaseThread(Thread):
-    def __init__(self, event, threadMemorizer, caseMemorizer, index, client_uuid):
+import time
+from streaming_event_compliance.services.build_automata import T, C ,maximum_window_size ,check_order_list
+class CaseThreadForTraining(Thread):
+    def __init__(self, event, index):
         self.event = event
-        self.threadMemorizer = threadMemorizer
-        self.caseMemorizer = caseMemorizer
         self.index = index
-        self.client_uuid = client_uuid
         Thread.__init__(self)
 
     def run(self):
-        '''run what??
-           in caseMemorier every case we will memory the last 5 events that have been processed, so for the current event processing
-           event should in the 6. position? So after we processed one event, we should delete the first one in the list. And if in the
-           6. position we don't have event, that means currently all the events from this case has been processed.
-           This thread can do noting excepting waiting.
-           But during the processing the list will change, some events will be added into it, how do we let the thread know that?
-        '''
+        """
+        in caseMemorier every case we will memory the last 5 events that have been processed,
+        so for the current event processing event should in the 6. position? So after we processed
+        one event, we should delete the first one in the list. And if in the 6. position we don't
+        have event, that means currently all the events from this case has been processed.
+        This thread can do noting excepting waiting.
+        But during the processing the list will change, some events will be added into it,
+        how do we let the thread know that?
+        """
+        #print("\n\n")
+        print(self, "Now ", time.time(), "the event ", self.event['activity'], "of case ",
+              self.event['case_id'], "is started.")
 
-        # thread condition
-        #len(self.caseMemorizer.dictionary_cases.get(self.event[id])) > 5
+        # thread lock
+        C.lock_List.get(self.event['case_id']).acquire()
+        print('case ', self.event['case_id'], 'is locked, because ', self.event['activity'],
+              'of this case is being processed.')
+        print("we are checking the status of lock for this event:",
+              C.lock_List.get(self.event['case_id']))
+        if len(C.dictionary_cases.get(self.event['case_id'])) < maximum_window_size:
+            windows_memory = C.dictionary_cases.get(self.event['case_id'])
+            print("windowsMemory of case ", self.event['case_id'], ':', windows_memory)
 
-        print(self)
-        # del self.threadMemorizer.dictionary_threads[self.index] # we can not delete it even this event processing is done,
-        # we should waiting another event from the same case?
+        else:
+            windows_memory = C.dictionary_cases.get(self.event['case_id'])[0: maximum_window_size]
+            print("windowsMemory of case ", self.event['case_id'], ':', windows_memory)
+            if C.dictionary_cases.get(self.event['case_id'])[maximum_window_size-1] == self.event['activity']:
+                print("\n*******current event is in the last of the memory*********\n")
+            else:
+                print("\n****somthing wrong!!***current event is not in the 5.positon of the memory*********\n")
 
+        calcuate_connection_for_different_prefix_automata(windows_memory, self.event)
+
+        # id = self.event['case_id']
+        # ac = self.event['activity']
+        # check_order_list.append('case_id:' + id + 'activity:'+ ac)
+        # print('\n\n\n##############################check_order_list',self.index,':  ' ,check_order_list,'#####################\n\n\n')
+
+        C.lock_List.get(self.event['case_id']).release()
+        print('case ', self.event['case_id'], 'is released', self.event['activity'],
+              'of this case have been processed.')
+
+        # TODO: Connect to the database
+        # TODO: Store information of automata in database
+        print(self, "until now ", time.time(), "the event ", self.event['activity'], "of case ",
+              self.event['case_id'], "is done.")
+        del T.dictionary_threads[self.index]
+
+
+
+
+
+
+
+def calcuate_connection_for_different_prefix_automata(windowsMemory, event):
+    """
+
+    :param windowsMemory: a list of activities from the same case_id of current event(another event),
+                         size is maximum_window_size,
+                         and the current event is in the last position of the windowsMemory
+                         (i.e. event == windowsMemory[maximum_window_size-1])
+
+    :param event:
+    :return:
+    """
+    print('calcuateConnectionForDifferentPrefixAutomata for:','case:', event['case_id'], "activity:", event['activity'], 'with windowsMemory:', windowsMemory)
+    # TODO: Calculating for one event in order to train automata
+    time.sleep(1)
+
+
+
+    if len(C.dictionary_cases.get(event['case_id'])) > maximum_window_size:
+        C.dictionary_cases.get(event['case_id']).pop(0)
+    print('case:', event['case_id'], "activity:", event['activity'], 'need to be deleted. after'
+                                                                     'that caseMomory', C.dictionary_cases.get(event['case_id']))
