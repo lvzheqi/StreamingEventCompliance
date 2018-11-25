@@ -74,7 +74,7 @@ build_automata.test_automata_status()
 
 
 ###### Test ######
-# testdb.init()
+testdb.init()
 
 if __name__ == '__main__':
     app.debug = True
