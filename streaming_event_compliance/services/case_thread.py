@@ -6,7 +6,7 @@ class ThreadMemorizer(object):
     This object is for storing the threads that server creates for each case;
     '''
     def __init__(self):
-        self.dictionary_threads = {} # key should be the case id, so we can know if the thread still exists ??
+        self.dictionary_threads = {} # key should be the case id
 
 class CaseMemorizer(object):
     '''

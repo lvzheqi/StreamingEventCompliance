@@ -1,5 +1,7 @@
 from streaming_event_compliance.utils import global_variables
 
+#from pm4py.objects.log.importer.xes import factory as xes_importer
+#from pm4py.objects.log import transform
 
 def build_automata():
     '''
@@ -9,9 +11,12 @@ def build_automata():
     :return: the status of the automata
     '''
     # Instantiate an object Automata.
-    # Connect to the database
     # Read file
+#    trace_log = xes_importer.import_log(global_variables.PATH_Trainning_Automata)
+#    event_log = transform.transform_trace_log_to_event_log(trace_log)
+#    event_log.sort()
     # Calculating
+    # Connect to the database
     # Store information of automata in database
     # TODO: raise exception when not success
 
