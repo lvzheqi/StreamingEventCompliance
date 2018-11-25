@@ -8,6 +8,7 @@ cryptography==2.4.1
 cvxopt==1.2.0
 dataclasses==0.6
 Flask==1.0.2
+Flask-API==1.0
 Flask-Cors==3.0.6
 Flask-SQLAlchemy==2.3.2
 fpdf==1.7.2
