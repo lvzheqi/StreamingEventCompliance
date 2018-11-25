@@ -2,7 +2,7 @@ from streaming_event_compliance.services import deviation_pdf
 from streaming_event_compliance.services import case_thread
 
 T = case_thread.ThreadMemorizer()
-C = case_thread.CaseMemorizer() # Or do we need a caseMemory?
+C = case_thread.CaseMemorizer()  # Or do we need a caseMemory?
 threads = []
 threads_index = 0
 
@@ -29,9 +29,9 @@ def compliance_checker(client_uuid, event):
                 #2. Create a new thread for this case
                 #3. Start it
                 C.dictionary_cases[event['case_id']] = [event['activity']]
-                case_thread = case_thread.CaseThread(event, T, threads_index, C, client_uuid) #TODO: what does caseThread do?
+                thread =case_thread.CaseThread(event, T, C, threads_index,  client_uuid) #TODO: what does caseThread do?
                 T.dictionary_threads[threads_index] = case_thread  # this is just for remember the threads information that we have ceated.
-                case_thread.start()
+                thread.start()
                 threads.append(case_thread) # this is for limiting the number of the threads that are runing???
                 threads_index = threads_index + 1
 
@@ -42,7 +42,6 @@ def compliance_checker(client_uuid, event):
         # TODO: analyse and write non-compliance event to the database AlertLog with client_uuid
     else:
         deviation_pdf.build_deviation_pdf(client_uuid)
-
     # deviation information should be returned here, or we return it form thread.start()
     return 'deviation'
 
