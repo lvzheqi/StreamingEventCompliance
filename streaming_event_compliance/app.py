@@ -16,10 +16,12 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = config.BASE_DIR
 app.config['SQLALCHEMY_DATABASE_URI'] = config.DATABASE_PATH
 
+
 app.app_context().push()
 autodb.init_app(app)
 db.init_app(app)
 alogdb.init_app(app)
+
 
 
 @app.route('/')
@@ -95,6 +97,7 @@ dbtools.insert_alert_log(alogs)
 dbtools.init_alert_log('u1', autos)
 alogss = dbtools.init_alert_log('u1', autos)
 print(alogss)
+
 
 if __name__ == '__main__':
     app.debug = True
