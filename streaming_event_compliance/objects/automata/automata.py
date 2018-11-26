@@ -1,4 +1,6 @@
 # from streaming_event_compliance.utils.dbtools import db
+from typing import Any
+
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
@@ -12,6 +14,10 @@ class Automata:
         self.connections = []
 
     def add_connection(self, connection):
+        '''
+        add connection into the automata
+        :param connection: Connection object
+        '''
         self.connections.append(connection)
 
     def update_node(self, node):
