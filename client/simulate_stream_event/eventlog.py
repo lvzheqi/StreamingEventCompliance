@@ -1,6 +1,7 @@
 from pm4py.objects.log.importer.xes import factory as xes_importer
 from pm4py.objects.log import transform
 from . import eventthread
+from .exception import ReadFileException
 import json
 import time
 
@@ -8,9 +9,12 @@ threads = []
 
 
 def read_log(path):
-    trace_log = xes_importer.import_log(path)
-    event_log = transform.transform_trace_log_to_event_log(trace_log)
-    event_log.sort()
+    try:
+        trace_log = xes_importer.import_log(path)
+        event_log = transform.transform_trace_log_to_event_log(trace_log)
+        event_log.sort()
+    except Exception:
+        raise ReadFileException
     return event_log
 
 

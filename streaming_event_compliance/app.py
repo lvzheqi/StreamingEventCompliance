@@ -7,6 +7,7 @@ from streaming_event_compliance.utils.dbtools import db
 from streaming_event_compliance.objects.automata.alertlog import db as alogdb
 from streaming_event_compliance.objects.automata.automata import db as autodb
 from test import objects_test
+import os
 import json
 
 
@@ -15,12 +16,10 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = config.BASE_DIR
 app.config['SQLALCHEMY_DATABASE_URI'] = config.DATABASE_PATH
 
-
 app.app_context().push()
 autodb.init_app(app)
 db.init_app(app)
 alogdb.init_app(app)
-
 
 
 @app.route('/')
@@ -63,14 +62,16 @@ def call_show_deviation_pdf():
     client_uuid = request.args.get('uuid')
     deviation_pdf.show_deviation_pdf(client_uuid)
     try:
-        automata_pdf = open('data/' + client_uuid + "-" + config.AUTOMATA_FILE, 'rb')
+        automata_pdf = open(config.BASE_DIR + '/data' + os.sep + client_uuid + "-" + config.AUTOMATA_FILE, 'rb')
         return send_file(automata_pdf, attachment_filename='file.pdf'), status.HTTP_200_OK
     except Exception: # TODO: read file error
         print('exception')
         return '', status.HTTP_404_NOT_FOUND
 
 
-build_automata.test_automata_status()
+autos = build_automata.get_automata()
+
+
 # TODO: catch exceptions
 
 # --------------------------- init database --------------------------
@@ -94,7 +95,6 @@ dbtools.insert_alert_log(alogs)
 dbtools.init_alert_log('u1', autos)
 alogss = dbtools.init_alert_log('u1', autos)
 print(alogss)
-
 
 if __name__ == '__main__':
     app.debug = True

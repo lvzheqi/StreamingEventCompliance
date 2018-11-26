@@ -68,7 +68,13 @@ def update_user_status(uuid, status):
 
 
 def init_automata():
+    '''
+    fetch the automata from database. If there is no data in database, then return None
+    :return: automata with different window size, otherwise return None
+    '''
     conns = automata.Connection.query.all()
+    if len(conns) == 0:
+        return None
     autos = {}
     for ws in WINDOW_SIZE:
         auto = automata.Automata(ws)
@@ -78,6 +84,7 @@ def init_automata():
         auto = autos[ws]
         auto.add_connection(conn)
         auto.update_node(conn.source_node)
+    return autos
 
 
 def init_alert_log(uuid, autos):
@@ -90,6 +97,7 @@ def init_alert_log(uuid, autos):
         ws = len(alog.source_node)
         alog = alogs[ws]
         alog.add_alert_record(record)
+    return alogs
 
 
 def delete_alert(uuid):

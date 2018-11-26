@@ -4,6 +4,10 @@ from pm4py.objects.log.importer.xes import factory as xes_importer
 from pm4py.objects.log import transform
 from streaming_event_compliance.services import case_thread
 import threading
+from streaming_event_compliance.utils.config import WINDOW_SIZE
+from streaming_event_compliance.objects.automata import automata
+from streaming_event_compliance.utils import dbtools
+
 
 T = ThreadMemorizer()
 C = CaseMemorizer()
@@ -11,6 +15,8 @@ threads = []
 threads_index = 0
 maximum_window_size = int(config.MAXIMUN_WINDOW_SIZE)
 check_order_list = []
+autos = {}
+
 
 def build_automata():
     """
@@ -103,6 +109,7 @@ def test_automata_status():
 
     return True
 
+
 def read_automata():
     """
 
@@ -114,4 +121,13 @@ def read_automata():
     return Automata
 
 
+def get_automata():
+    autos = dbtools.init_automata()
+    if autos is None:
+        autos = {}
+        for ws in WINDOW_SIZE:
+            auto = automata.Automata(ws)
+            autos[ws] = auto
+        build_automata(autos)
+    return autos
 
