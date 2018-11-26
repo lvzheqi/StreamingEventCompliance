@@ -1,6 +1,5 @@
 from streaming_event_compliance.objects.automata import automata, alertlog
 
-
 def test_automata():
     auto1 = automata.Automata(1)
     auto2 = automata.Automata(2)
