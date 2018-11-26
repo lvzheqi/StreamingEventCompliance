@@ -1,10 +1,15 @@
 from threading import Thread
 import time
-from streaming_event_compliance.services.build_automata import T, C ,maximum_window_size ,check_order_list
+from streaming_event_compliance.services.build_automata import maximum_window_size ,check_order_list
+
+
 class CaseThreadForTraining(Thread):
-    def __init__(self, event, index):
+    def __init__(self, event, index, autos,  T, C):
         self.event = event
         self.index = index
+        self.autos = autos
+        self.T = T
+        self.C = C
         Thread.__init__(self)
 
     def run(self):
@@ -22,31 +27,31 @@ class CaseThreadForTraining(Thread):
               self.event['case_id'], "is started.")
 
         # thread lock
-        C.lock_List.get(self.event['case_id']).acquire()
+        self.C.lock_List.get(self.event['case_id']).acquire()
         print('case ', self.event['case_id'], 'is locked, because ', self.event['activity'],
               'of this case is being processed.')
         print("we are checking the status of lock for this event:",
-              C.lock_List.get(self.event['case_id']))
-        if len(C.dictionary_cases.get(self.event['case_id'])) < maximum_window_size:
-            windows_memory = C.dictionary_cases.get(self.event['case_id'])
+              self.C.lock_List.get(self.event['case_id']))
+        if len(self.C.dictionary_cases.get(self.event['case_id'])) < maximum_window_size:
+            windows_memory = self.C.dictionary_cases.get(self.event['case_id'])
             print("windowsMemory of case ", self.event['case_id'], ':', windows_memory)
 
         else:
-            windows_memory = C.dictionary_cases.get(self.event['case_id'])[0: maximum_window_size]
+            windows_memory = self.C.dictionary_cases.get(self.event['case_id'])[0: maximum_window_size]
             print("windowsMemory of case ", self.event['case_id'], ':', windows_memory)
-            if C.dictionary_cases.get(self.event['case_id'])[maximum_window_size-1] == self.event['activity']:
+            if self.C.dictionary_cases.get(self.event['case_id'])[maximum_window_size-1] == self.event['activity']:
                 print("\n*******current event is in the last of the memory*********\n")
             else:
                 print("\n****somthing wrong!!***current event is not in the 5.positon of the memory*********\n")
 
-        calcuate_connection_for_different_prefix_automata(windows_memory, self.event)
+        calcuate_connection_for_different_prefix_automata(windows_memory, self.event, self.autos, self.T, self.C)
 
         # id = self.event['case_id']
         # ac = self.event['activity']
         # check_order_list.append('case_id:' + id + 'activity:'+ ac)
         # print('\n\n\n##############################check_order_list',self.index,':  ' ,check_order_list,'#####################\n\n\n')
 
-        C.lock_List.get(self.event['case_id']).release()
+        self.C.lock_List.get(self.event['case_id']).release()
         print('case ', self.event['case_id'], 'is released', self.event['activity'],
               'of this case have been processed.')
 
@@ -54,7 +59,7 @@ class CaseThreadForTraining(Thread):
         # TODO: Store information of automata in database
         print(self, "until now ", time.time(), "the event ", self.event['activity'], "of case ",
               self.event['case_id'], "is done.")
-        del T.dictionary_threads[self.index]
+        del self.T.dictionary_threads[self.index]
 
 
 
@@ -62,9 +67,9 @@ class CaseThreadForTraining(Thread):
 
 
 
-def calcuate_connection_for_different_prefix_automata(windowsMemory, event):
+def calcuate_connection_for_different_prefix_automata(windowsMemory, event, autos, T, C):
     """
-
+    "autos" is a list of automata (global variable)
     :param windowsMemory: a list of activities from the same case_id of current event(another event),
                          size is maximum_window_size,
                          and the current event is in the last position of the windowsMemory
@@ -76,8 +81,6 @@ def calcuate_connection_for_different_prefix_automata(windowsMemory, event):
     print('calcuateConnectionForDifferentPrefixAutomata for:','case:', event['case_id'], "activity:", event['activity'], 'with windowsMemory:', windowsMemory)
     # TODO: Calculating for one event in order to train automata
     time.sleep(1)
-
-
 
     if len(C.dictionary_cases.get(event['case_id'])) > maximum_window_size:
         C.dictionary_cases.get(event['case_id']).pop(0)

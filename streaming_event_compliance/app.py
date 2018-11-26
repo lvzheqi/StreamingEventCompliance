@@ -69,8 +69,8 @@ def call_show_deviation_pdf():
         print('exception')
         return '', status.HTTP_404_NOT_FOUND
 
+autos = build_automata.get_automata()
 
-build_automata.test_automata_status()
 # TODO: catch exceptions
 
 # --------------------------- init database --------------------------
