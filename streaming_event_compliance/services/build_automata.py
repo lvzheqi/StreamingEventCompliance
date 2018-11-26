@@ -60,7 +60,7 @@ def build_automata():
                 thread.start()
             except KeyboardInterrupt:
                 print('Thread is interrupt!')
-            threads.append(case_thread)
+            threads.append(case_thread) # Question: append(thread? or case_thread)
             # TODO: huojingjing create thread for this event
         else:
             # print('have not found the case', event['case_id'], 'in caseMemory.')
