@@ -2,10 +2,11 @@ from flask import Flask, request, send_file
 from flask_api import status
 from streaming_event_compliance.services import compliance_checker, build_automata
 from streaming_event_compliance.services import deviation_pdf
-from streaming_event_compliance.utils import config
-from test.db_test import DatabaseTest
-from streaming_event_compliance.objects.automata.automata import db as atdb
-from streaming_event_compliance.objects.automata.automata import db as altdb
+from streaming_event_compliance.utils import config, dbtools
+from streaming_event_compliance.utils.dbtools import db
+from streaming_event_compliance.objects.automata.alertlog import db as alogdb
+from streaming_event_compliance.objects.automata.automata import db as autodb
+from test import objects_test
 import json
 
 
@@ -15,11 +16,11 @@ app.config['UPLOAD_FOLDER'] = config.BASE_DIR
 app.config['SQLALCHEMY_DATABASE_URI'] = config.DATABASE_PATH
 
 
-atdb.init_app(app)
-altdb.init_app(app)
-testdb = DatabaseTest()
-testdb.db.init_app(app)
 app.app_context().push()
+autodb.init_app(app)
+db.init_app(app)
+alogdb.init_app(app)
+
 
 
 @app.route('/')
@@ -72,9 +73,28 @@ def call_show_deviation_pdf():
 build_automata.test_automata_status()
 # TODO: catch exceptions
 
+# --------------------------- init database --------------------------
+dbtools.init_database()
 
-###### Test ######
-testdb.init()
+# ----------------------------- test --------------------------------
+# print(automataclass_test.test_automata())
+# automataclass_test.test_alertlog()
+dbtools.empty_tables()
+autos = objects_test.test_automata()
+print(autos)
+dbtools.insert_node_and_connection(autos)
+autoss = dbtools.init_automata()
+print(autoss)
+dbtools.create_user('u1')
+# dbtools.create_user('u1')
+# dbtools.update_user('u1',True)
+alogs = objects_test.test_alertlog('u1', autos)
+print(alogs)
+dbtools.insert_alert_log(alogs)
+dbtools.init_alert_log('u1', autos)
+alogss = dbtools.init_alert_log('u1', autos)
+print(alogss)
+
 
 if __name__ == '__main__':
     app.debug = True
