@@ -5,6 +5,7 @@
 # IntelliJ project files
 .idea/workspace.xml
 *.xml
+*.py[cod]
 out
 gen
 /.evn/
