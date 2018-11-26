@@ -8,4 +8,4 @@ WINDOW_SIZE = [1, 2, 3, 4]
 
 
 TRAINING_EVENT_LOG_PATH = 'data' + os.sep + '/Example_EventLogForTraining.xes'
-MAXIMUN_WINDOW_SIZE = '3'
+MAXIMUN_WINDOW_SIZE = 4
