@@ -44,5 +44,11 @@ class BuildingAutomataTestCase(unittest.TestCase):
         # do something after every test method
         print(self)
 
+    def test(self):
+        WINDOW_SIZE = [1, 2, 3, 4]
+        windowsMemory = ['a', 'b', 'c', 'd', 'e']
+        MAXIMUN_WINDOW_SIZE = 4
+
+
 suite = unittest.TestLoader().loadTestsFromTestCase(BuildingAutomataTestCase)
 unittest.TextTestRunner(verbosity=2).run(suite)
