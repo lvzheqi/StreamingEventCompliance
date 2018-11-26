@@ -39,4 +39,3 @@ def test_alertlog(uuid, autos):
     alog4.add_alert_record(alertlog.AlertRecord(uuid, 'ADDS', 'SDWB', 1))
     alogs = {1: alog1, 2: alog2, 3: alog3, 4: alog4}
     return alogs
-

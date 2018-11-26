@@ -1,4 +1,5 @@
-from simulate_stream_event import eventlog, exception
+from simulate_stream_event import eventlog
+from simulate_stream_event.exception import ReadFileException
 from multiprocessing import Process
 import sys
 import requests
@@ -12,7 +13,10 @@ class Client(object):
         self.uuid = user_name
 
     def run_compliance_checker(self):
-        event_log = eventlog.read_log(self.path)
+        try:
+            event_log = eventlog.read_log(self.path)
+        except Exception:
+            raise ReadFileException
         eventlog.simulate_stream_event(self.uuid, event_log)
 
     def run_show_deviation_pdf(self):
@@ -25,7 +29,8 @@ class Client(object):
                     print('The compliance checking is already done! You can get the pdf on the following link:')
                     print('http://127.0.0.1:5000/show-deviation-pdf?uuid=' + self.uuid)
                 else:
-                    print('You have not do the compliance checking, please do the compliance checking at first')
+                    print('Warning: You have not do the compliance checking, '
+                          'please do the compliance checking at first!')
         except Exception:
             print('Error: The server is not available, please try it later!')
             return
@@ -33,18 +38,18 @@ class Client(object):
 
 def main(argv):
     if len(argv) < 2 or len(argv) > 3:
-        print('please give two args, e.g. python client.py user_name file_path')
+        print('Please give two args, e.g. python client.py user_name file_path')
         return
     try:
         r = requests.post('http://127.0.0.1:5000/login?uuid=' + argv[0])
         if r.status_code != 200:
-            print('Error: the user can not be created')
+            print('Error: The user can not be created!')
             return
     except Exception:
-        print('Error: The server is not available, please try it later')
+        print('Error: The server is not available, please try it later!')
         return
     if not os.path.exists(argv[1]):
-        print('The given path is not available')
+        print('Error: The given path is not available!')
         return
 
     # client1 = Client('client1', 'Example.xes')
@@ -52,9 +57,9 @@ def main(argv):
 
     while(True):
         print('There are two services:')
-        print('Press 1, if you want to do the compliance checking')
-        print('Press 2, if you want to show the deviation pdf')
-        print('Press 3, if you want to exit')
+        print('\tPress 1, if you want to do the compliance checking')
+        print('\tPress 2, if you want to show the deviation pdf')
+        print('\tPress 3, if you want to exit')
         print('Note: you can interrupt with CTR_C, once you start to do the compliance checking')
         try:
             services = input()
@@ -68,6 +73,9 @@ def main(argv):
                 p_main.start()
                 p_main.join()
                 print('------------------the compliance checking is finishing------------------------')
+            except ReadFileException:
+                print('Error: The input file is not readable!')
+                print('------------------the compliance checking is interrupt------------------------')
             except KeyboardInterrupt:
                 print('------------------the compliance checking is interrupt------------------------')
         elif services == '2':
@@ -78,7 +86,7 @@ def main(argv):
             print('Bye!')
             return
         else:
-            print('your input is invalid, please try again')
+            print('Your input is invalid, please try again!')
             print('------------------------------------------------------------------------------')
 
 
