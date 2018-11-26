@@ -1,2 +1,2 @@
-from test import dbTest
+from test import db_test
 
