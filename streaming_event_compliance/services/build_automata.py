@@ -3,13 +3,10 @@ from streaming_event_compliance.services.memory import ThreadMemorizer, CaseMemo
 from pm4py.objects.log.importer.xes import factory as xes_importer
 from pm4py.objects.log import transform
 from streaming_event_compliance.services import case_thread
-from streaming_event_compliance.app import autos
 import threading
-import sys
 from streaming_event_compliance.utils.config import WINDOW_SIZE
 from streaming_event_compliance.objects.automata import automata
 from streaming_event_compliance.utils import dbtools
-from streaming_event_compliance.app import autos
 
 
 
@@ -120,6 +117,8 @@ def get_automata():
             autos[ws] = auto
         build_automata(autos)
     return autos
+
+
 # def test_automata_status():
 #     """
 #     This function will check whether the automata is built. If the automata isn’t yet built,
