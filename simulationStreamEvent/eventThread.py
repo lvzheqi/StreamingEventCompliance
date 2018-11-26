@@ -19,7 +19,7 @@ class EventThread(Thread):
 
     def run(self):
         while True:
-            print("number of threads ", len(list(self.threadMemorizer.dictionary_threads.keys())))
+            # print("number of threads ", len(list(self.threadMemorizer.dictionary_threads.keys())))
             # time.sleep(10)
             r = requests.post("http://127.0.0.1:5000/compliance-checker?uuid=" + self.client_uuid, json=self.event)
             # TODO: try catch connectionError
