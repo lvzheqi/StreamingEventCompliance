@@ -26,3 +26,9 @@ which can enhance online process mining result.
 `source deactivate StreamEC` in Windows
 
 5. start the project with this enviroment
+
+
+### Database
+username: compliancechecker
+password: compliancechecker
+mysql-db: compliancechecker
