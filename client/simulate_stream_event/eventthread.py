@@ -3,7 +3,6 @@ import requests
 
 
 class EventThread(Thread):
-
     def __init__(self, event, client_uuid):
         self.event = event
         self.client_uuid = client_uuid
@@ -18,6 +17,3 @@ class EventThread(Thread):
                 print("Info:", r.text)
         except Exception:
             print('The server is disconnect, please try again later')
-
-
-
