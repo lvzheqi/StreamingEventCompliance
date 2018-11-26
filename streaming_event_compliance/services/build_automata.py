@@ -37,34 +37,34 @@ def build_automata():
                 event['case_id'] = one_event.get(item)
         # primal_list.append('case_id:' + event.get('case_id') + 'activity:' + event.get('activity'))
 
-        #print("event:", event['activity'], "of case ", event['case_id'], "is ready.")
+        # print("event:", event['activity'], "of case ", event['case_id'], "is ready.")
         if C.dictionary_cases.get(event['case_id']):
-            #print('have already found the case in caseMemory', C.dictionary_cases.get(event['case_id']))
+            # print('have already found the case in caseMemory', C.dictionary_cases.get(event['case_id']))
             '''if we have already found the case in caseMemory, just add this event to this case.'''
             C.dictionary_cases.get(event['case_id']).append(event['activity'])
-            #print("This event is added in one case which already exists in caseMemory")
+            # print("This event is added in one case which already exists in caseMemory")
             thread = case_thread.CaseThreadForTraining(event, threads_index)
             T.dictionary_threads[threads_index] = case_thread
-            #print("Now the number of T.dictionary_threads is:", len(T.dictionary_threads))
+            # print("Now the number of T.dictionary_threads is:", len(T.dictionary_threads))
             thread.start()
             threads.append(case_thread)
             # TODO: huojingjing create thread for this event
         else:
-            #print('have not found the case', event['case_id'], 'in caseMemory.')
+            # print('have not found the case', event['case_id'], 'in caseMemory.')
             # 1. Add it to the caseMemory
             # 2. Create a new thread for this case
             C.dictionary_cases[event['case_id']] = ['*' for i in range(0, maximum_window_size - 1)]
             C.dictionary_cases[event['case_id']].append(event['activity'])
-            #print("in caseMemory we add a new case with it's first activity:", event['case_id'], event['activity'])
+            # print("in caseMemory we add a new case with it's first activity:", event['case_id'], event['activity'])
             lock = threading.Lock()
-            #print("we creat a lock for this new case;")
+            # print("we creat a lock for this new case;")
             C.lock_List[event['case_id']] = lock
-            #print("Now the locklist:", C.lock_List)
+            # print("Now the locklist:", C.lock_List)
             thread = case_thread.CaseThreadForTraining(event, threads_index)
             # 3. Add it into threadMemory
             T.dictionary_threads[threads_index] = case_thread
             # this is just for remember the threads information that we have created.
-            #print("Now the number of T.dictionary_threads is:", len(T.dictionary_threads))
+            # print("Now the number of T.dictionary_threads is:", len(T.dictionary_threads))
             # 4. Start it
             thread.start()
             threads.append(case_thread)
@@ -94,7 +94,7 @@ def test_automata_status():
     print(global_variables.AUTOMATA_STATUS)
     if not global_variables.AUTOMATA_STATUS:
         # TODO: raise exceptions, when not success
-        #print("global_variables.AUTOMATA_STATUS")
+        # print("global_variables.AUTOMATA_STATUS")
         build_automata()
         global_variables.AUTOMATA_STATUS = True
         # TODO: rewrite to AUTOMATA_STATUS into the file
@@ -110,7 +110,8 @@ def read_automata():
     """
     Automata = None
 
-    # TODO: I think we need define a entity for Automata, not like the Class Automata(db.Model)in the automata.automata.py
+    # TODO: I think we need define a entity for Automata, not like the Class Automata(db.Model)in the
+    #  automata.automata.py
     return Automata
 
 
