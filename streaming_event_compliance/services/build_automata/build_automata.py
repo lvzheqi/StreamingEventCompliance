@@ -58,7 +58,7 @@ def build_automata():
                 thread.start()
             except KeyboardInterrupt:
                 print('Thread is interrupt!')
-            threads.append(case_thread) # Question: append(thread? or case_thread)
+            threads.append(thread) # Question: append(thread? or case_thread)
             # TODO: huojingjing create thread for this event
         else:
             # print('have not found the case', event['case_id'], 'in caseMemory.')
@@ -74,6 +74,7 @@ def build_automata():
             thread = case_thread.CaseThreadForTraining(event, threads_index, T, C)
             # 3. Add it into threadMemory
             T.dictionary_threads[threads_index] = case_thread
+            threads.append(thread)
             # this is just for remember the threads information that we have created.
             # print("Now the number of T.dictionary_threads is:", len(T.dictionary_threads))
             # 4. Start it
@@ -85,13 +86,13 @@ def build_automata():
             # this is for limiting the number of the threads that are runing???
             # TODO: what does caseThread do? give another init with 4 parameters
         threads_index = threads_index + 1
-        # while len(threads) > 10:
-        #     threads[0].join()  # TODO: Jingjing: why we need to join these threads?
-        #     del threads[0]  # why we delete?
+
     # TODO: raise exception when not success
     print("All events have threads running.")
-    if not T.dictionary_threads:
-        print("All threads are done.")
+
+    # for t in threads:
+    #     t.join() # join not successful
+    #     print("All threads have been done")
     # print('\n\n\n############################## primal list', primal_list, '#####################\n\n\n')
 
     # except KeyboardInterrupt:
