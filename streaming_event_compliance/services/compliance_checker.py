@@ -1,6 +1,6 @@
 from streaming_event_compliance.services import deviation_pdf
-from streaming_event_compliance.services import case_thread
-from streaming_event_compliance.services.memory import ThreadMemorizer,CaseMemorizer
+from streaming_event_compliance.services.build_automata import case_thread
+from streaming_event_compliance.services.build_automata.memory import ThreadMemorizer,CaseMemorizer
 
 T = ThreadMemorizer()
 C = CaseMemorizer()
@@ -32,7 +32,7 @@ def compliance_checker(client_uuid, event):
                 #2. Create a new thread for this case
                 #3. Start it
                 C.dictionary_cases[event['case_id']] = [event['activity']]
-                thread =case_thread.CaseThread(event, T, C, threads_index,  client_uuid)
+                thread = case_thread.CaseThread(event, T, C, threads_index, client_uuid)
                 #TODO: what does caseThread do?
                 T.dictionary_threads[threads_index] = case_thread
                 # this is just for remember the threads information that we have ceated.

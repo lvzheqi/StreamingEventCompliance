@@ -1,9 +1,6 @@
 import unittest
 
-from streaming_event_compliance.services.build_automata import build_automata
-from streaming_event_compliance.services import case_thread
-from streaming_event_compliance.services.case_thread import calcuate_connection_for_different_prefix_automata
-from streaming_event_compliance.services.build_automata import check_order_list
+from streaming_event_compliance.services.build_automata.build_automata import build_automata
 
 
 class BuildingAutomataTestCase(unittest.TestCase):

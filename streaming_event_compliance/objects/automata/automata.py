@@ -1,9 +1,4 @@
-# from streaming_event_compliance.utils.dbtools import db
-from typing import Any
-
-from flask_sqlalchemy import SQLAlchemy
-
-db = SQLAlchemy()
+from streaming_event_compliance import db
 # TODO: needs to consider, whether the attribute is private
 
 
