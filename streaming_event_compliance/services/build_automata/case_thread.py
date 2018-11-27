@@ -1,6 +1,5 @@
 from threading import Thread
 import time
-from streaming_event_compliance.services.build_automata import maximum_window_size ,check_order_list
 from streaming_event_compliance.utils.config import WINDOW_SIZE, MAXIMUN_WINDOW_SIZE
 from streaming_event_compliance.objects.automata import automata
 
@@ -34,14 +33,14 @@ class CaseThreadForTraining(Thread):
               'of this case is being processed.')
         print("we are checking the status of lock for this event:",
               self.C.lock_List.get(self.event['case_id']))
-        if len(self.C.dictionary_cases.get(self.event['case_id'])) < maximum_window_size:
+        if len(self.C.dictionary_cases.get(self.event['case_id'])) < MAXIMUN_WINDOW_SIZE:
             windows_memory = self.C.dictionary_cases.get(self.event['case_id'])
             print("windowsMemory of case ", self.event['case_id'], ':', windows_memory)
 
         else:
-            windows_memory = self.C.dictionary_cases.get(self.event['case_id'])[0: maximum_window_size]
+            windows_memory = self.C.dictionary_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE]
             print("windowsMemory of case ", self.event['case_id'], ':', windows_memory)
-            if self.C.dictionary_cases.get(self.event['case_id'])[maximum_window_size-1] == self.event['activity']:
+            if self.C.dictionary_cases.get(self.event['case_id'])[MAXIMUN_WINDOW_SIZE-1] == self.event['activity']:
                 print("\n*******current event is in the last of the memory*********\n")
             else:
                 print("\n****somthing wrong!!***current event is not in the 5.positon of the memory*********\n")
@@ -83,7 +82,7 @@ def calcuate_connection_for_different_prefix_automata(windowsMemory, event, auto
         sink_node = ''.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws + 1: MAXIMUN_WINDOW_SIZE + 1])
         autos[ws].update_automata(automata.Connection(source_node, sink_node, 1))
 
-    if len(C.dictionary_cases.get(event['case_id'])) > maximum_window_size:
+    if len(C.dictionary_cases.get(event['case_id'])) > MAXIMUN_WINDOW_SIZE:
         C.dictionary_cases.get(event['case_id']).pop(0)
     print('case:', event['case_id'], "activity:", event['activity'], 'need to be deleted. after'
                                                                      'that caseMomory', C.dictionary_cases.get(event['case_id']))

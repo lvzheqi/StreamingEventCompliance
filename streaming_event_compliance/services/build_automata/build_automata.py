@@ -1,13 +1,12 @@
-from streaming_event_compliance.utils import config, global_variables
-from streaming_event_compliance.services.memory import ThreadMemorizer, CaseMemorizer
+from streaming_event_compliance.utils import config
+from streaming_event_compliance.services.build_automata.memory import ThreadMemorizer, CaseMemorizer
 from pm4py.objects.log.importer.xes import factory as xes_importer
 from pm4py.objects.log import transform
-from streaming_event_compliance.services import case_thread
+from streaming_event_compliance.services.build_automata import case_thread
 import threading
 from streaming_event_compliance.utils.config import WINDOW_SIZE
 from streaming_event_compliance.objects.automata import automata
 from streaming_event_compliance.utils import dbtools
-
 
 
 T = ThreadMemorizer()
@@ -17,7 +16,8 @@ threads_index = 0
 maximum_window_size = int(config.MAXIMUN_WINDOW_SIZE)
 check_order_list = []
 
-def build_automata():
+
+def build_automata(autos):
     """
     Reads the training event log from utils.config.TRAINING_EVENT_LOG_PATH and build automata.
     It generates the probability between SourceNode and SinkNode with different prefix size
@@ -104,12 +104,8 @@ def build_automata():
     return True
 
 
-    # TODO: I think we need define a entity for Automata, not like the Class Automata(db.Model)in the automata.automata.py
-    return Automata
-
-
-def get_automata():
-    autos = dbtools.init_automata()
+def init_automata():
+    autos = dbtools.init_automata_from_database()
     if autos is None:
         autos = {}
         for ws in WINDOW_SIZE:
