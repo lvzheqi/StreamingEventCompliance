@@ -1,1 +1,1 @@
-from streaming_event_compliance.utils import config, dbtools, global_variables
+from streaming_event_compliance.utils import config, dbtools
