@@ -1,13 +1,14 @@
 from threading import Thread
 import time
-from streaming_event_compliance.services.build_automata import maximum_window_size ,check_order_list
+from streaming_event_compliance.utils import config
+from streaming_event_compliance.services import set_automatos, globalvar
 
+maximum_window_size = int(config.MAXIMUN_WINDOW_SIZE)
 
 class CaseThreadForTraining(Thread):
-    def __init__(self, event, index, autos,  T, C):
+    def __init__(self, event, index,  T, C):
         self.event = event
         self.index = index
-        self.autos = autos
         self.T = T
         self.C = C
         Thread.__init__(self)
@@ -44,7 +45,7 @@ class CaseThreadForTraining(Thread):
             else:
                 print("\n****somthing wrong!!***current event is not in the 5.positon of the memory*********\n")
 
-        calcuate_connection_for_different_prefix_automata(windows_memory, self.event, self.autos, self.T, self.C)
+        calcuate_connection_for_different_prefix_automata(windows_memory, self.event, self.T, self.C)
 
         # id = self.event['case_id']
         # ac = self.event['activity']
@@ -67,7 +68,7 @@ class CaseThreadForTraining(Thread):
 
 
 
-def calcuate_connection_for_different_prefix_automata(windowsMemory, event, autos, T, C):
+def calcuate_connection_for_different_prefix_automata(windowsMemory, event, T, C):
     """
     "autos" is a list of automata (global variable)
     :param windowsMemory: a list of activities from the same case_id of current event(another event),
@@ -81,7 +82,10 @@ def calcuate_connection_for_different_prefix_automata(windowsMemory, event, auto
     print('calcuateConnectionForDifferentPrefixAutomata for:','case:', event['case_id'], "activity:", event['activity'], 'with windowsMemory:', windowsMemory)
     # TODO: Calculating for one event in order to train automata
     time.sleep(1)
-
+    print(globalvar.autos,"------传参后的--------globalvar.autos-")
+    autos = set_automatos.get_autos()
+    autos[event['case_id'] + event['activity']] = windowsMemory
+    print(set_automatos.get_autos(), "------传参后修改后的--------globalvar.autos-")
     if len(C.dictionary_cases.get(event['case_id'])) > maximum_window_size:
         C.dictionary_cases.get(event['case_id']).pop(0)
     print('case:', event['case_id'], "activity:", event['activity'], 'need to be deleted. after'

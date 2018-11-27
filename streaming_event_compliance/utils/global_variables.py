@@ -1,3 +1,0 @@
-AUTOMATA_STATUS = False
-
-

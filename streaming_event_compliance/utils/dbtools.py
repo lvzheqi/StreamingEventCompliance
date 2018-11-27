@@ -68,6 +68,7 @@ def update_user_status(uuid, status):
 
 
 def init_automata():
+    # TODO： 有错，注释掉了
     '''
     fetch the automata from database. If there is no data in database, then return None
     :return: automata with different window size, otherwise return None

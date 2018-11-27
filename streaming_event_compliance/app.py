@@ -1,6 +1,6 @@
 from flask import Flask, request, send_file
 from flask_api import status
-from streaming_event_compliance.services import compliance_checker, build_automata
+from streaming_event_compliance.services import compliance_checker, globalvar
 from streaming_event_compliance.services import deviation_pdf
 from streaming_event_compliance.utils import config, dbtools
 from streaming_event_compliance.utils.dbtools import db
@@ -9,6 +9,14 @@ from streaming_event_compliance.objects.automata.automata import db as autodb
 from test import objects_test
 import os
 import json
+from streaming_event_compliance.services import set_automatos
+
+
+print(globalvar.autos, 'init之前')
+print(set_automatos.get_autos(), 'init之前get')
+globalvar.init()
+print(globalvar.autos, 'init之后')
+print(set_automatos.get_autos(), 'init之后get')
 
 
 app = Flask(__name__)
@@ -16,8 +24,12 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = config.BASE_DIR
 app.config['SQLALCHEMY_DATABASE_URI'] = config.DATABASE_PATH
 
+# app.config['AUTOS_DEFAULT'] = config.AUTOS_DEFAULT
+# print("1. app.config.get('AUTOS_DEFAULT')", app.config.get('AUTOS_DEFAULT'))
+
 
 app.app_context().push()
+
 autodb.init_app(app)
 db.init_app(app)
 alogdb.init_app(app)
@@ -71,9 +83,6 @@ def call_show_deviation_pdf():
         return '', status.HTTP_404_NOT_FOUND
 
 
-autos = build_automata.get_automata()
-
-
 # TODO: catch exceptions
 
 # --------------------------- init database --------------------------
@@ -82,6 +91,7 @@ dbtools.init_database()
 # ----------------------------- test --------------------------------
 # print(automataclass_test.test_automata())
 # automataclass_test.test_alertlog()
+
 dbtools.empty_tables()
 autos = objects_test.test_automata()
 print(autos)
@@ -99,9 +109,14 @@ alogss = dbtools.init_alert_log('u1', autos)
 print(alogss)
 
 
+
+set_automatos.call_build()
+
 if __name__ == '__main__':
     app.debug = True
     app.run()
+
+
 
 
 
