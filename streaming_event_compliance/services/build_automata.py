@@ -1,14 +1,10 @@
-from streaming_event_compliance.utils import config, global_variables
+from streaming_event_compliance.utils import config
 from streaming_event_compliance.services.memory import ThreadMemorizer, CaseMemorizer
 from pm4py.objects.log.importer.xes import factory as xes_importer
 from pm4py.objects.log import transform
 from streaming_event_compliance.services import case_thread
 import threading
-from streaming_event_compliance.utils.config import WINDOW_SIZE
-from streaming_event_compliance.objects.automata import automata
-from streaming_event_compliance.utils import dbtools
-
-
+from streaming_event_compliance.services import set_automatos, globalvar
 
 T = ThreadMemorizer()
 C = CaseMemorizer()
@@ -16,6 +12,7 @@ threads = []
 threads_index = 0
 maximum_window_size = int(config.MAXIMUN_WINDOW_SIZE)
 check_order_list = []
+
 
 def build_automata():
     """
@@ -27,6 +24,12 @@ def build_automata():
     # TODO: Instantiate an object Automata.
     # Read file
     event_log = None
+    print('-------build_automata--------')
+    print("进入build——automata之后globalvar.autos", globalvar.autos)
+    print("进入build——automata之后set_automatos.get_autos()", set_automatos.get_autos())
+    globalvar.autos = {}
+    globalvar.autos['asd']  = 'asdfas'
+
     try:
         trace_log = xes_importer.import_log(config.TRAINING_EVENT_LOG_PATH)
         event_log = transform.transform_trace_log_to_event_log(trace_log)
@@ -53,7 +56,7 @@ def build_automata():
             '''if we have already found the case in caseMemory, just add this event to this case.'''
             C.dictionary_cases.get(event['case_id']).append(event['activity'])
             # print("This event is added in one case which already exists in caseMemory")
-            thread = case_thread.CaseThreadForTraining(event, threads_index, autos, T, C)
+            thread = case_thread.CaseThreadForTraining(event, threads_index, T, C)
             T.dictionary_threads[threads_index] = case_thread
             # print("Now the number of T.dictionary_threads is:", len(T.dictionary_threads))
             try:
@@ -73,7 +76,7 @@ def build_automata():
             # print("we creat a lock for this new case;")
             C.lock_List[event['case_id']] = lock
             # print("Now the locklist:", C.lock_List)
-            thread = case_thread.CaseThreadForTraining(event, threads_index, autos, T, C)
+            thread = case_thread.CaseThreadForTraining(event, threads_index, T, C)
             # 3. Add it into threadMemory
             T.dictionary_threads[threads_index] = case_thread
             # this is just for remember the threads information that we have created.
@@ -103,41 +106,4 @@ def build_automata():
     #     raise
     return True
 
-
-    # TODO: I think we need define a entity for Automata, not like the Class Automata(db.Model)in the automata.automata.py
-    return Automata
-
-
-def get_automata():
-    autos = dbtools.init_automata()
-    if autos is None:
-        autos = {}
-        for ws in WINDOW_SIZE:
-            auto = automata.Automata(ws)
-            autos[ws] = auto
-        build_automata(autos)
-    return autos
-
-
-# def test_automata_status():
-#     """
-#     This function will check whether the automata is built. If the automata isn’t yet built,
-#     then will call the build_automata function to build the automata.
-#     And the status will be stored in “Compliance.config”.
-#     It raises the exceptions when the automata can not  be built.
-#     :return: status of the automata
-#     """
-#     # TODO: create file to store the automata status
-#     # TODO: read file and assign to the globalVariables.AUTOMATA_STATUS
-#     print(global_variables.AUTOMATA_STATUS)
-#     if not global_variables.AUTOMATA_STATUS:
-#         # TODO: raise exceptions, when not success
-#         # print("global_variables.AUTOMATA_STATUS")
-#         build_automata()
-#         global_variables.AUTOMATA_STATUS = True
-#         # TODO: rewrite to AUTOMATA_STATUS into the file
-#     else:
-#         print(global_variables.AUTOMATA_STATUS)
-#
-#     return True
 
