@@ -1,3 +1,14 @@
+from streaming_event_compliance.utils import dbtools
+
+
+autos = {}
+
+
+def init():
+    global autos
+    autos = dbtools.init_automata_from_database()
+
+
 class ThreadMemorizer(object):
     '''
     This object is for storing the threads that server creates for each case;
@@ -21,3 +32,4 @@ class CaseMemorizer(object):
     def __init__(self):
         self.dictionary_cases = {}
         self.lock_List = {}
+

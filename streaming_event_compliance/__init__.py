@@ -15,7 +15,24 @@ except Exception:
     print('Error: Database connection!')
     exit(1)
 
-from streaming_event_compliance.services.build_automata.build_automata import init_automata
-autos = init_automata()
 
 from streaming_event_compliance import routes
+
+
+from streaming_event_compliance.services import globalvar, set_globalvar, build_automata
+from streaming_event_compliance.utils import dbtools
+
+
+
+print(globalvar.autos, 'init之前')
+print(set_globalvar.get_autos(), 'init之前get')
+globalvar.init()
+print(globalvar.autos, 'init之后')
+print(set_globalvar.get_autos(), 'init之后get')
+if set_globalvar.get_autos() is None:
+    # TODO: 'NoneType' object is not subscriptable, autos should be {}
+    globalvar.autos = {}
+    set_globalvar.call_buildautos()
+else:
+    print("Automata have beed created in database and readed out! You can use it do compliance checking!")
+

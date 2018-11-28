@@ -1,14 +1,17 @@
 from threading import Thread
 import time
+from streaming_event_compliance.utils import config
 from streaming_event_compliance.utils.config import WINDOW_SIZE, MAXIMUN_WINDOW_SIZE
+from streaming_event_compliance.services import set_globalvar
 from streaming_event_compliance.objects.automata import automata
+
+maximum_window_size = int(config.MAXIMUN_WINDOW_SIZE)
 
 
 class CaseThreadForTraining(Thread):
-    def __init__(self, event, index, autos,  T, C):
+    def __init__(self, event, index,  T, C):
         self.event = event
         self.index = index
-        self.autos = autos
         self.T = T
         self.C = C
         Thread.__init__(self)
@@ -23,7 +26,6 @@ class CaseThreadForTraining(Thread):
         But during the processing the list will change, some events will be added into it,
         how do we let the thread know that?
         """
-        #print("\n\n")
         print(self, "Now ", time.time(), "the event ", self.event['activity'], "of case ",
               self.event['case_id'], "is started.")
 
@@ -45,12 +47,7 @@ class CaseThreadForTraining(Thread):
             else:
                 print("\n****somthing wrong!!***current event is not in the 5.positon of the memory*********\n")
 
-        calcuate_connection_for_different_prefix_automata(windows_memory, self.event, self.autos, self.T, self.C)
-
-        # id = self.event['case_id']
-        # ac = self.event['activity']
-        # check_order_list.append('case_id:' + id + 'activity:'+ ac)
-        # print('\n\n\n##############################check_order_list',self.index,':  ' ,check_order_list,'#####################\n\n\n')
+        calcuate_connection_for_different_prefix_automata(windows_memory, self.event, self.T, self.C)
 
         self.C.lock_List.get(self.event['case_id']).release()
         print('case ', self.event['case_id'], 'is released', self.event['activity'],
@@ -63,7 +60,12 @@ class CaseThreadForTraining(Thread):
         del self.T.dictionary_threads[self.index]
 
 
-def calcuate_connection_for_different_prefix_automata(windowsMemory, event, autos, T, C):
+
+
+
+
+
+def calcuate_connection_for_different_prefix_automata(windowsMemory, event, T, C):
     """
     "autos" is a list of automata (global variable)
     :param windowsMemory: a list of activities from the same case_id of current event(another event),
@@ -77,11 +79,19 @@ def calcuate_connection_for_different_prefix_automata(windowsMemory, event, auto
     print('calcuateConnectionForDifferentPrefixAutomata for:','case:', event['case_id'], "activity:", event['activity'], 'with windowsMemory:', windowsMemory)
     # TODO: Calculating for one event in order to train automata
     time.sleep(1)
+    autos = set_globalvar.get_autos()
     for ws in WINDOW_SIZE: # [1, 2, 3, 4]
-        source_node = ''.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws: MAXIMUN_WINDOW_SIZE])
-        sink_node = ''.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws + 1: MAXIMUN_WINDOW_SIZE + 1])
-        autos[ws].update_automata(automata.Connection(source_node, sink_node, 1))
+        source_node = ''.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws - 1: MAXIMUN_WINDOW_SIZE-1])
+        sink_node = ''.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws : MAXIMUN_WINDOW_SIZE])
+        print("windowsize:",ws, "source_node:", source_node, "sink_node:", sink_node)
+        print('test: ',automata.Connection(source_node, sink_node, 1))
 
+        if not autos.get(ws):
+            auto = automata.Automata(ws)
+            auto.update_automata(automata.Connection(source_node, sink_node, 1))
+            autos[ws] = auto
+        else:
+            autos.get(ws).update_automata(automata.Connection(source_node, sink_node, 1))
     if len(C.dictionary_cases.get(event['case_id'])) > MAXIMUN_WINDOW_SIZE:
         C.dictionary_cases.get(event['case_id']).pop(0)
     print('case:', event['case_id'], "activity:", event['activity'], 'need to be deleted. after'

@@ -1,6 +1,6 @@
 from streaming_event_compliance.services import deviation_pdf
 from streaming_event_compliance.services.build_automata import case_thread
-from streaming_event_compliance.services.build_automata.memory import ThreadMemorizer,CaseMemorizer
+from streaming_event_compliance.services.globalvar import ThreadMemorizer,CaseMemorizer
 
 T = ThreadMemorizer()
 C = CaseMemorizer()
