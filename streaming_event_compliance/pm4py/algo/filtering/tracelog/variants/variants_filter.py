@@ -6,17 +6,17 @@ from pm4py.util.constants import PARAMETER_CONSTANT_ACTIVITY_KEY
 
 def apply(trace_log, admitted_variants, parameters=None):
     """
-    Filter log keeping/removing only provided variants
+    Filter logger keeping/removing only provided variants
 
     Parameters
     -----------
     trace_log
-        Trace log object
+        Trace logger object
     admitted_variants
         Admitted variants
     parameters
         Parameters of the algorithm, including:
-            activity_key -> Attribute identifying the activity in the log
+            activity_key -> Attribute identifying the activity in the logger
             positive -> Indicate if events should be kept/removed
     """
 
@@ -40,10 +40,10 @@ def get_variants(trace_log, parameters=None):
     Parameters
     ----------
     trace_log
-        Trace log
+        Trace logger
     parameters
         Parameters of the algorithm, including:
-            activity_key -> Attribute identifying the activity in the log
+            activity_key -> Attribute identifying the activity in the logger
 
     Returns
     ----------
@@ -64,10 +64,10 @@ def get_variants_from_log_trace_idx(trace_log, parameters=None):
     Parameters
     ----------
     trace_log
-        Trace log
+        Trace logger
     parameters
         Parameters of the algorithm, including:
-            activity_key -> Attribute identifying the activity in the log
+            activity_key -> Attribute identifying the activity in the logger
 
     Returns
     ----------
@@ -97,7 +97,7 @@ def convert_variants_trace_idx_to_trace_obj(log, variants_trace_idx):
     Parameters
     -----------
     log
-        Trace log object
+        Trace logger object
     variants_trace_idx
         Variants associated to a list of belonging indexes
 
@@ -140,12 +140,12 @@ def get_variants_sorted_by_count(variants):
 
 def filter_log_by_variants_percentage(trace_log, variants, variants_percentage=0.0):
     """
-    Filter the log by variants percentage
+    Filter the logger by variants percentage
 
     Parameters
     ----------
     trace_log
-        Trace log
+        Trace logger
     variants
         Dictionary with variant as the key and the list of traces as the value
     variants_percentage
@@ -154,7 +154,7 @@ def filter_log_by_variants_percentage(trace_log, variants, variants_percentage=0
     Returns
     ----------
     filtered_log
-        Filtered trace log
+        Filtered trace logger
     """
     filtered_log = TraceLog()
     no_of_traces = len(trace_log)
@@ -181,7 +181,7 @@ def find_auto_threshold(trace_log, variants, decreasing_factor):
     Parameters
     ----------
     trace_log
-        Trace log
+        Trace logger
     variants
         Dictionary with variant as the key and the list of traces as the value
     decreasing_factor
@@ -191,7 +191,7 @@ def find_auto_threshold(trace_log, variants, decreasing_factor):
     Returns
     ----------
     variantsPercentage
-        Percentage of variants to keep in the log
+        Percentage of variants to keep in the logger
     """
     no_of_traces = len(trace_log)
     variant_count = get_variants_sorted_by_count(variants)
@@ -216,9 +216,9 @@ def apply_auto_filter(trace_log, variants=None, parameters=None):
     Parameters
     ----------
     trace_log
-        Trace log
+        Trace logger
     variants
-        Variants contained in the log
+        Variants contained in the logger
     parameters
         Parameters of the algorithm, including:
             activity_key -> Key that identifies the activity
@@ -228,7 +228,7 @@ def apply_auto_filter(trace_log, variants=None, parameters=None):
     Returns
     ----------
     filteredLog
-        Filtered log
+        Filtered logger
     """
     if parameters is None:
         parameters = {}

@@ -1,18 +1,18 @@
 def search_act_class_attr(log, force_activity_transition_insertion=False):
     """
-    Search among classifiers expressed in the log one that is good for the process model extraction
+    Search among classifiers expressed in the logger one that is good for the process model extraction
 
     Parameters
     -----------
     log
-        Trace log
+        Trace logger
     force_activity_transition_insertion
         Optionally force the activitiy+transition classifier insertion
 
     Returns
     -----------
-    log
-        Trace log (plus eventually one additional event attribute as the classifier)
+    logger
+        Trace logger (plus eventually one additional event attribute as the classifier)
     """
     classifier = None
     if log.classifiers and "Activity classifier" in log.classifiers and log.classifiers["Activity classifier"]:
@@ -25,12 +25,12 @@ def search_act_class_attr(log, force_activity_transition_insertion=False):
 
 def insert_activity_classifier_attribute(log, classifier, force_activity_transition_insertion=False):
     """
-    Insert the specified classifier as additional event attribute in the log
+    Insert the specified classifier as additional event attribute in the logger
 
     Parameters
     -----------
     log
-        Trace log
+        Trace logger
     classifier
         Event classifier
     force_activity_transition_insertion
@@ -38,8 +38,8 @@ def insert_activity_classifier_attribute(log, classifier, force_activity_transit
 
     Returns
     --------
-    log
-        Trace log (plus eventually one additional event attribute as the classifier)
+    logger
+        Trace logger (plus eventually one additional event attribute as the classifier)
     classifier_attr_key
         Attribute name of the attribute that contains the classifier value
     """
@@ -62,19 +62,19 @@ def insert_activity_classifier_attribute(log, classifier, force_activity_transit
 
 def insert_trace_classifier_attribute(log, classifier):
     """
-    Insert the specified classifier as additional trace attribute in the log
+    Insert the specified classifier as additional trace attribute in the logger
 
     Parameter
     -----------
-    log
-        Trace log
+    logger
+        Trace logger
     classifier
         Event classifier
 
     Returns
     -----------
-    log
-        Trace log (plus eventually one additional event attribute as the classifier)
+    logger
+        Trace logger (plus eventually one additional event attribute as the classifier)
     classifier_attr_key
         Attribute name of the attribute that contains the classifier value
     """
