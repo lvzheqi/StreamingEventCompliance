@@ -4,6 +4,7 @@ from pm4py.objects.log.importer.xes import factory as xes_importer
 from pm4py.objects.log import transform
 from streaming_event_compliance.services import case_thread
 import threading
+import os
 
 T = ThreadMemorizer()
 C = CaseMemorizer()
