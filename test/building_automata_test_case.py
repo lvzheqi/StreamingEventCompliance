@@ -1,9 +1,6 @@
 import unittest
 
-from streaming_event_compliance.services.build_automata import build_automata
-from streaming_event_compliance.services import case_thread
-from streaming_event_compliance.services.case_thread import calcuate_connection_for_different_prefix_automata
-from streaming_event_compliance.services.build_automata import check_order_list
+from streaming_event_compliance.services.build_automata.build_automata import build_automata
 
 
 class BuildingAutomataTestCase(unittest.TestCase):
@@ -43,6 +40,12 @@ class BuildingAutomataTestCase(unittest.TestCase):
     def tearUp(self):
         # do something after every test method
         print(self)
+
+    def test(self):
+        WINDOW_SIZE = [1, 2, 3, 4]
+        windowsMemory = ['a', 'b', 'c', 'd', 'e']
+        MAXIMUN_WINDOW_SIZE = 4
+
 
 suite = unittest.TestLoader().loadTestsFromTestCase(BuildingAutomataTestCase)
 unittest.TextTestRunner(verbosity=2).run(suite)
