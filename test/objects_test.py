@@ -40,3 +40,26 @@ def test_alertlog(uuid, autos):
     alogs = {1: alog1, 2: alog2, 3: alog3, 4: alog4}
     return alogs
 
+# from streaming_event_compliance.utils import dbtools
+
+# from test import objects_test
+
+
+# ----------------------------- test --------------------------------
+# print(automataclass_test.test_automata())
+# # automataclass_test.test_alertlog()
+# dbtools.empty_tables()
+# autos = objects_test.test_automata()
+# dbtools.insert_node_and_connection(autos)
+# autos = dbtools.init_automata()
+# print(autos)
+# dbtools.create_user('u1')
+# dbtools.create_user('u1')
+# dbtools.update_user_status('u1', True)
+# print(dbtools.check_user_status('u1'))
+# alogs = objects_test.test_alertlog('u1', autos)
+# dbtools.insert_alert_log(alogs)
+# dbtools.init_alert_log('u1', autos)
+# alogs = dbtools.init_alert_log('u1', autos)
+# print(alogs)
+# dbtools.delete_alert('u1')

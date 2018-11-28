@@ -1,20 +1,9 @@
-from flask_sqlalchemy import SQLAlchemy
 from streaming_event_compliance.objects.automata import automata
 from streaming_event_compliance.objects.automata import alertlog
 from streaming_event_compliance.utils.config import WINDOW_SIZE
 from streaming_event_compliance.objects.exceptions.exception import NoUserError
 
-db = SQLAlchemy()
-
-
-def init_database():
-    # db.create_all()
-    from streaming_event_compliance.objects.automata.alertlog import db as alter_log_db
-    alter_log_db.create_all()
-    alter_log_db.session.commit()
-    from streaming_event_compliance.objects.automata.automata import db as automata_db
-    automata_db.create_all()
-    automata_db.session.commit()
+from streaming_event_compliance import db
 
 
 def empty_tables():
@@ -67,8 +56,14 @@ def update_user_status(uuid, status):
         raise NoUserError
 
 
-def init_automata():
+def init_automata_from_database():
+    '''
+    fetch the automata from database. If there is no data in database, then return None
+    :return: automata with different window size, otherwise return None
+    '''
     conns = automata.Connection.query.all()
+    if len(conns) == 0:
+        return None
     autos = {}
     for ws in WINDOW_SIZE:
         auto = automata.Automata(ws)
@@ -78,18 +73,20 @@ def init_automata():
         auto = autos[ws]
         auto.add_connection(conn)
         auto.update_node(conn.source_node)
+    return autos
 
 
-def init_alert_log(uuid, autos):
+def init_alert_log_from_database(uuid, autos):
     records = alertlog.AlertRecord.query.filter_by(user_id=uuid).all()
     alogs = {}
     for ws in WINDOW_SIZE:
         alog = alertlog.AlertLog(uuid, ws, autos[ws])
         alogs[ws] = alog
     for record in records:
-        ws = len(alog.source_node)
+        ws = len(record.source_node)
         alog = alogs[ws]
         alog.add_alert_record(record)
+    return alogs
 
 
 def delete_alert(uuid):

@@ -1,9 +1,5 @@
-# from streaming_event_compliance.utils.dbtools import db
-from flask_sqlalchemy import SQLAlchemy
-
-db = SQLAlchemy()
+from streaming_event_compliance import db
 # TODO: needs to consider, whether the attribute is private
-
 
 class Automata:
     def __init__(self, window_size):
@@ -12,6 +8,10 @@ class Automata:
         self.connections = []
 
     def add_connection(self, connection):
+        '''
+        add connection into the automata
+        :param connection: Connection object
+        '''
         self.connections.append(connection)
 
     def update_node(self, node):

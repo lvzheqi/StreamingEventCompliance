@@ -1,6 +1,4 @@
-# from streaming_event_compliance.utils.dbtools import db
-from flask_sqlalchemy import SQLAlchemy
-db = SQLAlchemy()
+from streaming_event_compliance import db
 
 
 class AlertLog:
