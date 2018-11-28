@@ -16,7 +16,7 @@ check_order_list = []
 
 def build_automata():
     """
-    Reads the training event log from utils.config.TRAINING_EVENT_LOG_PATH and build automata.
+    Reads the training event logger from utils.config.TRAINING_EVENT_LOG_PATH and build automata.
     It generates the probability between SourceNode and SinkNode with different prefix size
     and stores corresponding information into the database.
     :return: the status of the automata

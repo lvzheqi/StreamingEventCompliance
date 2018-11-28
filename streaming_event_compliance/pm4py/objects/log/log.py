@@ -83,7 +83,7 @@ class EventLog(Sequence):
 
     def sort(self, timestamp_key="time:timestamp", reverse_sort=False):
         """
-        Sort an event log based on timestamp key
+        Sort an event logger based on timestamp key
 
         Parameters
         -----------
@@ -96,7 +96,7 @@ class EventLog(Sequence):
 
     def sample(self, no_events=100):
         """
-        Randomly sample a fixed number of events from the original log
+        Randomly sample a fixed number of events from the original logger
 
         Parameters
         -----------
@@ -106,7 +106,7 @@ class EventLog(Sequence):
         Returns
         -----------
         newLog
-            Filtered log
+            Filtered logger
         """
         new_log = EventLog(attributes=self.attributes, extensions=self.extensions, globals=self._omni,
                            classifiers=self.classifiers)
@@ -203,7 +203,7 @@ class TraceLog(EventLog):
 
     def sort(self, timestamp_key="time:timestamp", reverse_sort=False):
         """
-        Sort a trace log based on timestamp key
+        Sort a trace logger based on timestamp key
 
         Parameters
         -----------
@@ -219,7 +219,7 @@ class TraceLog(EventLog):
 
     def sample(self, no_traces=100):
         """
-        Randomly sample a fixed number of traces from the original log
+        Randomly sample a fixed number of traces from the original logger
 
         Parameters
         -----------
@@ -229,7 +229,7 @@ class TraceLog(EventLog):
         Returns
         -----------
         newLog
-            Filtered log
+            Filtered logger
         """
         new_log = TraceLog(attributes=self.attributes, extensions=self.extensions, globals=self._omni,
                            classifiers=self.classifiers)
