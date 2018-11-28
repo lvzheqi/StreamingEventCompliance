@@ -1,13 +1,13 @@
 from simulate_stream_event import eventlog
 from simulate_stream_event.exception import ReadFileException
 from multiprocessing import Process
-from client.logger import client_logging
+from simulate_stream_event import client_logging
 import sys
 import requests
 import os
 
 
-class Client_cls(object):
+class Client(object):
     def __init__(self, user_name, path):
         self.dictionary_threads = {}
         self.path = path
@@ -66,7 +66,7 @@ class Client_cls(object):
 def main(argv):
     func_name = sys._getframe().f_code.co_name
     if len(argv) < 2 or len(argv) > 3:
-        print('Please give two args, e.g. python client.py user_name file_path')
+        print('Please give two args, e.g. python application.py user_name file_path')
         client_logging.client_logging(message_type="ERROR", level="DEBUG", func_name=func_name,
                                       message="Username or Event logger path arguments "
                                               "were not provided during the run time")
@@ -92,8 +92,7 @@ def main(argv):
         print('Error: The given path is not available!')
         return
 
-    # client1 = Client('client1', 'Example.xes')
-    client1 = Client_cls(argv[0], argv[1])
+    client1 = Client(argv[0], argv[1])
 
     while(True):
         client_logging.client_logging(message_type="INFO", level="DEBUG", func_name=func_name, username=argv[0],

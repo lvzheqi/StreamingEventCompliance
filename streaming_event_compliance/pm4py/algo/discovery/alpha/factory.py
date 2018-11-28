@@ -11,12 +11,12 @@ DEFAULT_PARAMETERS = {pmutil.constants.PARAMETER_CONSTANT_ACTIVITY_KEY: xes_util
 
 def apply(log, parameters=None, version=ALPHA_VERSION_CLASSIC):
     '''
-    Apply the Alpha Miner on top of a trace log
+    Apply the Alpha Miner on top of a trace logger
 
     Parameters
     -----------
     log
-        Trace log
+        Trace logger
     version
         Variant of the algorithm to use (classic)
     parameters
