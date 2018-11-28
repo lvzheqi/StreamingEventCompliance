@@ -3,7 +3,6 @@ from statistics import mean, median, stdev
 
 from pm4py.objects.petri import semantics
 from pm4py.objects.petri.petrinet import PetriNet
-from streaming_event_compliance.pm4py.visualization.common import *
 
 MAX_NO_THREADS = 1000
 

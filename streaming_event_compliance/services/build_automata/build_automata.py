@@ -1,7 +1,7 @@
 from streaming_event_compliance.utils import config
 from streaming_event_compliance.services.build_automata.memory import ThreadMemorizer, CaseMemorizer
-from pm4py.objects.log.importer.xes import factory as xes_importer
 from pm4py.objects.log import transform
+from pm4py.objects.log.importer.xes import factory as xes_importer
 from streaming_event_compliance.services.build_automata import case_thread
 import threading
 from streaming_event_compliance.utils.config import WINDOW_SIZE
