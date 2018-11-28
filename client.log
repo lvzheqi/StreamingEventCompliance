@@ -1,0 +1,77 @@
+2018-11-28 03:12:25,055 'Post request to server:http://127.0.0.1:5000/login?uuid='
+2018-11-28 03:12:25,071 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 03:12:25,071 http://127.0.0.1:5000 "POST /login?uuid=sabya HTTP/1.1" 200 0
+2018-11-28 03:12:25,071 'The given path is not available!'
+2018-11-28 03:18:44,263 'The server is not available, please try it later!'
+2018-11-28 03:18:44,263 'Post request to server:http://127.0.0.1:5000/login?uuid='
+2018-11-28 03:18:44,263 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 03:18:44,263 http://127.0.0.1:5000 "POST /login?uuid=sabya HTTP/1.1" 200 0
+2018-11-28 03:18:44,263 'The given path is not available!'
+2018-11-28 03:22:29,279 'Post request to server:http://127.0.0.1:5000/login?uuid='
+2018-11-28 03:22:29,279 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 03:22:29,295 http://127.0.0.1:5000 "POST /login?uuid=sabya HTTP/1.1" 200 0
+2018-11-28 03:22:29,295 'The given path is not available!'
+2018-11-28 03:23:14,425 'Post request to server:http://127.0.0.1:5000/login?uuid='
+2018-11-28 03:23:14,425 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 03:23:14,441 http://127.0.0.1:5000 "POST /login?uuid=sabya HTTP/1.1" 200 0
+2018-11-28 03:23:14,441 'The options are displayed'
+2018-11-28 03:23:25,055 'The user selected option 1'
+2018-11-28 03:23:25,055 'Calling run_compliance_checker()'
+2018-11-28 03:23:25,612 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 03:23:25,615 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-11-28 03:23:26,162 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 03:23:26,162 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-11-28 03:23:26,708 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 03:23:26,708 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-11-28 03:23:27,255 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 03:23:27,255 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-11-28 03:23:27,802 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 03:23:27,802 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-11-28 03:23:28,350 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 03:23:28,350 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-11-28 03:23:28,897 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 03:23:28,897 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-11-28 03:23:29,438 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 03:23:29,438 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-11-28 03:23:29,985 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 03:23:29,985 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-11-28 03:23:30,531 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 03:23:30,531 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-11-28 03:23:31,078 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 03:23:31,078 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-11-28 03:23:31,641 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 03:23:31,641 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-11-28 03:23:32,188 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 03:23:32,188 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-11-28 03:23:32,766 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 03:23:32,766 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-11-28 03:23:33,313 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 03:23:33,313 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-11-28 03:23:33,859 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 03:23:33,859 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-11-28 03:23:34,408 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 03:23:34,408 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-11-28 03:23:34,954 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 03:23:34,954 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-11-28 03:23:35,517 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 03:23:35,517 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-11-28 03:23:36,064 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 03:23:36,064 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-11-28 03:23:36,611 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 03:23:36,611 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-11-28 03:23:37,157 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 03:23:37,157 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-11-28 03:23:37,704 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 03:23:37,704 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 03:23:37,704 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-11-28 03:23:37,704 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-11-28 03:23:38,833 'compliance checking is completed'
+2018-11-28 03:23:38,833 'The options are displayed'
+2018-11-28 03:24:11,804 'The user selected option 3'
+2018-11-28 03:24:11,804 'Exiting...'
+2018-11-28 03:24:17,647 'Post request to server:http://127.0.0.1:5000/login?uuid='
+2018-11-28 03:24:17,647 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 03:24:17,647 http://127.0.0.1:5000 "POST /login?uuid=sabya HTTP/1.1" 200 0
+2018-11-28 03:24:17,647 'The options are displayed'
+2018-11-28 03:25:14,363 'The user selected option 3'
+2018-11-28 03:25:14,363 'Exiting...'
