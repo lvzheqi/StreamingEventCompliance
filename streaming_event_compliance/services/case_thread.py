@@ -1,6 +1,7 @@
 from threading import Thread
 import time
 from streaming_event_compliance.services.build_automata import T, C ,maximum_window_size ,check_order_list
+
 class CaseThreadForTraining(Thread):
     def __init__(self, event, index):
         self.event = event
@@ -76,8 +77,6 @@ def calcuate_connection_for_different_prefix_automata(windowsMemory, event):
     print('calcuateConnectionForDifferentPrefixAutomata for:','case:', event['case_id'], "activity:", event['activity'], 'with windowsMemory:', windowsMemory)
     # TODO: Calculating for one event in order to train automata
     time.sleep(1)
-
-
 
     if len(C.dictionary_cases.get(event['case_id'])) > maximum_window_size:
         C.dictionary_cases.get(event['case_id']).pop(0)

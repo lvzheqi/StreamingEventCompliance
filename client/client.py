@@ -33,7 +33,7 @@ class Client(object):
 
 def main(argv):
     if len(argv) < 2 or len(argv) > 3:
-        print('please give two args, e.g. python client.py user_name file_path')
+        print('please give two args, e.g. python client/client.py <Username> <Eventlog_path>')
         return
     try:
         r = requests.post('http://127.0.0.1:5000/login?uuid=' + argv[0])
@@ -44,7 +44,7 @@ def main(argv):
         print('Error: The server is not available, please try it later')
         return
     if not os.path.exists(argv[1]):
-        print('The given path is not available')
+        print('Event log file is not available or the the path is incorrect')
         return
 
     # client1 = Client('client1', 'Example.xes')
@@ -62,14 +62,14 @@ def main(argv):
             pass
 
         if services == '1':
-            print('---------------start to do compliance checking, please wait-------------------')
+            print('---------------Compliance checking started-------------------')
             try:
                 p_main = Process(target=client1.run_compliance_checker())
                 p_main.start()
                 p_main.join()
-                print('------------------the compliance checking is finishing------------------------')
+                print('------------------Compliance checking completed------------------------')
             except KeyboardInterrupt:
-                print('------------------the compliance checking is interrupt------------------------')
+                print('------------------Compliance checking interrupted------------------------')
         elif services == '2':
             print('-----------------start to render deviation pdf, please wait-------------------')
             client1.run_show_deviation_pdf()
