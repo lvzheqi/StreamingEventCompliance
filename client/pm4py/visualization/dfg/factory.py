@@ -1,4 +1,5 @@
-from pm4py.visualization.common import gview, save as gsave
+from pm4py.visualization.common import gview
+from pm4py.visualization.common import save as gsave
 from pm4py.visualization.dfg.versions import simple_visualize
 
 FREQUENCY = "frequency"

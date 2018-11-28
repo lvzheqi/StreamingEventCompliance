@@ -1,7 +1,6 @@
 from streaming_event_compliance import db
 # TODO: needs to consider, whether the attribute is private
 
-
 class Automata:
     def __init__(self, window_size):
         self.window_size = window_size
