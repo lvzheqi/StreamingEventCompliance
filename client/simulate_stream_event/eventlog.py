@@ -13,7 +13,8 @@ def read_log(path):
         trace_log = xes_importer.import_log(path)
         event_log = transform.transform_trace_log_to_event_log(trace_log)
         event_log.sort()
-    except Exception:
+    except Exception as e:
+        print(e)
         raise ReadFileException
     return event_log
 

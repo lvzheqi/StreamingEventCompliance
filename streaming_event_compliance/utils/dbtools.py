@@ -62,17 +62,16 @@ def init_automata_from_database():
     :return: automata with different window size, otherwise return None
     '''
     conns = automata.Connection.query.all()
-    if len(conns) == 0:
-        return None
     autos = {}
     for ws in WINDOW_SIZE:
         auto = automata.Automata(ws)
         autos[ws] = auto
-    for conn in conns:
-        ws = len(conn.source_node)
-        auto = autos[ws]
-        auto.add_connection(conn)
-        auto.update_node(conn.source_node)
+    if len(conns) != 0:
+        for conn in conns:
+            ws = len(conn.source_node)
+            auto = autos[ws]
+            auto.add_connection(conn)
+            auto.update_node(conn.source_node)
     return autos
 
 
