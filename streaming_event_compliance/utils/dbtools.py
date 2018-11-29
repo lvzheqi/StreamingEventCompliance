@@ -3,7 +3,7 @@ from streaming_event_compliance.objects.automata import alertlog
 from streaming_event_compliance.utils.config import WINDOW_SIZE
 from streaming_event_compliance.objects.exceptions.exception import NoUserError
 
-from streaming_event_compliance import db
+from streaming_event_compliance.utils import db
 
 
 def empty_tables():
@@ -72,7 +72,8 @@ def init_automata_from_database():
             auto = autos[ws]
             auto.add_connection(conn)
             auto.update_node(conn.source_node)
-    return autos
+        return autos, 1
+    return autos, 0
 
 
 def init_alert_log_from_database(uuid, autos):

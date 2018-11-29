@@ -1,12 +1,11 @@
 from streaming_event_compliance.utils import dbtools
 
-
 autos = {}
-
+status = 0
 
 def init():
-    global autos
-    autos = dbtools.init_automata_from_database()
+    global autos, status
+    autos, status = dbtools.init_automata_from_database()
 
 
 class ThreadMemorizer(object):
