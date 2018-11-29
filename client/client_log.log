@@ -1,0 +1,272 @@
+2018-11-28 10:38:47,203 INFO client1 main 'Post request to server:http://127.0.0.1:5000/login?uuid=client1'
+2018-11-28 10:38:47,222 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 10:38:47,226 http://127.0.0.1:5000 "POST /login?uuid=client1 HTTP/1.1" 200 0
+2018-11-28 10:38:47,227 INFO client1 main 'The options are displayed'
+2018-11-28 10:38:50,435 INFO client1 main 'The user selected option 1'
+2018-11-28 10:38:50,435 INFO client1 main 'Calling run_compliance_checker()'
+2018-11-28 10:38:50,435 INFO client1 run_compliance_checker 'Calling read_log()'
+2018-11-28 10:38:50,435 ERROR client1 run_compliance_checker 'Exception raised while reading file'
+2018-11-28 10:38:50,436 ERROR client1 main 'Input file is not readable!'
+2018-11-28 10:38:50,436 INFO client1 main 'The options are displayed'
+2018-11-28 10:38:56,370 INFO client1 main 'The user selected option 1'
+2018-11-28 10:38:56,371 INFO client1 main 'Calling run_compliance_checker()'
+2018-11-28 10:38:56,371 INFO client1 run_compliance_checker 'Calling read_log()'
+2018-11-28 10:38:56,371 ERROR client1 run_compliance_checker 'Exception raised while reading file'
+2018-11-28 10:38:56,371 ERROR client1 main 'Input file is not readable!'
+2018-11-28 10:38:56,371 INFO client1 main 'The options are displayed'
+2018-11-28 10:38:58,881 INFO client1 main 'The user selected option 2'
+2018-11-28 10:38:58,882 INFO client1 main 'Calling  run_show_deviation_pdf() '
+2018-11-28 10:38:58,882 INFO client1 run_show_deviation_pdf 'Post request to http://127.0.0.1:5000/show-deviation-pdf?uuid=client1'
+2018-11-28 10:38:58,884 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 10:38:58,888 http://127.0.0.1:5000 "POST /show-deviation-pdf?uuid=client1 HTTP/1.1" 200 None
+2018-11-28 10:38:58,892 SHIFT_JIS Japanese prober hit error at byte 574
+2018-11-28 10:38:58,894 EUC-JP Japanese prober hit error at byte 563
+2018-11-28 10:38:58,896 GB2312 Chinese prober hit error at byte 570
+2018-11-28 10:38:58,897 EUC-KR Korean prober hit error at byte 563
+2018-11-28 10:38:58,898 CP949 Korean prober hit error at byte 567
+2018-11-28 10:38:58,899 Big5 Chinese prober hit error at byte 563
+2018-11-28 10:38:58,899 EUC-TW Taiwan prober hit error at byte 11
+2018-11-28 10:38:58,964 windows-1251 confidence = 0.03893408174701765, below negative shortcut threshhold 0.05
+2018-11-28 10:38:59,025 KOI8-R confidence = 0.044866670362237356, below negative shortcut threshhold 0.05
+2018-11-28 10:38:59,083 ISO-8859-5 confidence = 0.04280517162583919, below negative shortcut threshhold 0.05
+2018-11-28 10:38:59,141 MacCyrillic confidence = 0.039690970242488126, below negative shortcut threshhold 0.05
+2018-11-28 10:38:59,198 IBM866 confidence = 0.03902623978218619, below negative shortcut threshhold 0.05
+2018-11-28 10:38:59,260 IBM855 confidence = 0.04130816641426232, below negative shortcut threshhold 0.05
+2018-11-28 10:38:59,434 ISO-8859-5 confidence = 0.04216799301709802, below negative shortcut threshhold 0.05
+2018-11-28 10:38:59,493 windows-1251 confidence = 0.03954853671208908, below negative shortcut threshhold 0.05
+2018-11-28 10:38:59,552 TIS-620 confidence = 0.044157101936250005, below negative shortcut threshhold 0.05
+2018-11-28 10:38:59,690 windows-1255 confidence = 0.03865636508910267, below negative shortcut threshhold 0.05
+2018-11-28 10:38:59,749 windows-1255 confidence = 0.03926469129222159, below negative shortcut threshhold 0.05
+2018-11-28 10:38:59,812 windows-1251 not active
+2018-11-28 10:38:59,813 KOI8-R not active
+2018-11-28 10:38:59,813 ISO-8859-5 not active
+2018-11-28 10:38:59,813 MacCyrillic not active
+2018-11-28 10:38:59,813 IBM866 not active
+2018-11-28 10:38:59,813 IBM855 not active
+2018-11-28 10:38:59,813 ISO-8859-7 Greek confidence = 0.07273360162044132
+2018-11-28 10:38:59,813 windows-1253 Greek confidence = 0.07369075176585092
+2018-11-28 10:38:59,813 ISO-8859-5 not active
+2018-11-28 10:38:59,813 windows-1251 not active
+2018-11-28 10:38:59,813 TIS-620 not active
+2018-11-28 10:38:59,813 ISO-8859-9 Turkish confidence = 0.06528629028218035
+2018-11-28 10:38:59,813 windows-1255 Hebrew confidence = 0.0
+2018-11-28 10:38:59,813 windows-1255 not active
+2018-11-28 10:38:59,813 windows-1255 not active
+2018-11-28 10:38:59,813 no probers hit minimum threshold
+2018-11-28 10:38:59,813 utf-8  confidence = 0.010000000000000009
+2018-11-28 10:38:59,813 SHIFT_JIS Japanese confidence = 0.01
+2018-11-28 10:38:59,813 EUC-JP Japanese confidence = 0.01
+2018-11-28 10:38:59,813 GB2312 Chinese confidence = 0.01
+2018-11-28 10:38:59,814 EUC-KR Korean confidence = 0.01
+2018-11-28 10:38:59,814 CP949 Korean confidence = 0.01
+2018-11-28 10:38:59,814 Big5 Chinese confidence = 0.01
+2018-11-28 10:38:59,814 EUC-TW Taiwan confidence = 0.01
+2018-11-28 10:38:59,814 windows-1251 Russian confidence = 0.03893408174701765
+2018-11-28 10:38:59,814 KOI8-R Russian confidence = 0.044866670362237356
+2018-11-28 10:38:59,814 ISO-8859-5 Russian confidence = 0.04280517162583919
+2018-11-28 10:38:59,814 MacCyrillic Russian confidence = 0.039690970242488126
+2018-11-28 10:38:59,814 IBM866 Russian confidence = 0.03902623978218619
+2018-11-28 10:38:59,814 IBM855 Russian confidence = 0.04130816641426232
+2018-11-28 10:38:59,814 ISO-8859-7 Greek confidence = 0.07273360162044132
+2018-11-28 10:38:59,814 windows-1253 Greek confidence = 0.07369075176585092
+2018-11-28 10:38:59,814 ISO-8859-5 Bulgairan confidence = 0.04216799301709802
+2018-11-28 10:38:59,814 windows-1251 Bulgarian confidence = 0.03954853671208908
+2018-11-28 10:38:59,814 TIS-620 Thai confidence = 0.044157101936250005
+2018-11-28 10:38:59,814 ISO-8859-9 Turkish confidence = 0.06528629028218035
+2018-11-28 10:38:59,814 windows-1255 Hebrew confidence = 0.0
+2018-11-28 10:38:59,814 windows-1255 Hebrew confidence = 0.03865636508910267
+2018-11-28 10:38:59,814 windows-1255 Hebrew confidence = 0.03926469129222159
+2018-11-28 10:38:59,814 windows-1255 Hebrew confidence = 0.03926469129222159
+2018-11-28 10:38:59,816 INFO client1 run_show_deviation_pdf 'Compliance checking is done. Deviations PDF is available athttp://127.0.0.1:5000/show-deviation-pdf?uuid=client1'
+2018-11-28 10:38:59,816 INFO client1 main 'The options are displayed'
+2018-11-28 10:41:01,760 INFO client1 main 'The user selected option 3'
+2018-11-28 10:41:01,760 INFO client1 main 'Exiting...'
+2018-11-28 10:41:08,551 INFO client1 main 'Post request to server:http://127.0.0.1:5000/login?uuid=client1'
+2018-11-28 10:41:08,571 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 10:41:08,572 ERROR client1 main 'The server is not available, please try it later!'
+2018-11-28 10:41:19,920 INFO client1 main 'Post request to server:http://127.0.0.1:5000/login?uuid=client1'
+2018-11-28 10:41:19,939 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 10:41:19,943 http://127.0.0.1:5000 "POST /login?uuid=client1 HTTP/1.1" 200 0
+2018-11-28 10:41:19,944 INFO client1 main 'The options are displayed'
+2018-11-28 10:41:21,072 INFO client1 main 'The user selected option 1'
+2018-11-28 10:41:21,073 INFO client1 main 'Calling run_compliance_checker()'
+2018-11-28 10:41:21,073 INFO client1 run_compliance_checker 'Calling read_log()'
+2018-11-28 10:41:21,073 ERROR client1 run_compliance_checker 'Exception raised while reading file'
+2018-11-28 10:41:21,073 ERROR client1 main 'Input file is not readable!'
+2018-11-28 10:41:21,073 INFO client1 main 'The options are displayed'
+2018-11-28 10:42:04,906 INFO client1 main 'The user selected option 3'
+2018-11-28 10:42:04,906 INFO client1 main 'Exiting...'
+2018-11-28 10:42:08,431 INFO client1 main 'Post request to server:http://127.0.0.1:5000/login?uuid=client1'
+2018-11-28 10:42:08,451 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 10:42:08,455 http://127.0.0.1:5000 "POST /login?uuid=client1 HTTP/1.1" 200 0
+2018-11-28 10:42:08,456 INFO client1 main 'The options are displayed'
+2018-11-28 10:42:09,475 INFO client1 main 'The user selected option 1'
+2018-11-28 10:42:09,476 INFO client1 main 'Calling run_compliance_checker()'
+2018-11-28 10:42:09,476 INFO client1 run_compliance_checker 'Calling read_log()'
+2018-11-28 10:42:09,476 ERROR client1 run_compliance_checker 'Exception raised while reading file'
+2018-11-28 10:42:09,476 ERROR client1 main 'Input file is not readable!'
+2018-11-28 10:42:09,477 INFO client1 main 'The options are displayed'
+2018-11-28 10:42:27,023 INFO client1 main 'The user selected option 3'
+2018-11-28 10:42:27,023 INFO client1 main 'Exiting...'
+2018-11-28 10:45:13,107 INFO client1 main 'Post request to server:http://127.0.0.1:5000/login?uuid=client1'
+2018-11-28 10:45:13,126 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 10:45:13,130 http://127.0.0.1:5000 "POST /login?uuid=client1 HTTP/1.1" 200 0
+2018-11-28 10:45:13,131 INFO client1 main 'The options are displayed'
+2018-11-28 10:45:14,000 INFO client1 main 'The user selected option 1'
+2018-11-28 10:45:14,001 INFO client1 main 'Calling run_compliance_checker()'
+2018-11-28 10:45:14,001 INFO client1 run_compliance_checker 'Calling read_log()'
+2018-11-28 10:45:14,001 ERROR client1 run_compliance_checker 'Exception raised while reading file'
+2018-11-28 10:45:14,001 ERROR client1 main 'Input file is not readable!'
+2018-11-28 10:45:14,001 INFO client1 main 'The options are displayed'
+2018-11-28 10:45:50,809 INFO client1 main 'The user selected option 3'
+2018-11-28 10:45:50,810 INFO client1 main 'Exiting...'
+2018-11-28 10:46:00,574 INFO client1 main 'Post request to server:http://127.0.0.1:5000/login?uuid=client1'
+2018-11-28 10:46:00,596 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 10:46:00,599 http://127.0.0.1:5000 "POST /login?uuid=client1 HTTP/1.1" 200 0
+2018-11-28 10:46:00,600 INFO client1 main 'The options are displayed'
+2018-11-28 10:46:02,181 INFO client1 main 'The user selected option 1'
+2018-11-28 10:46:02,182 INFO client1 main 'Calling run_compliance_checker()'
+2018-11-28 10:46:02,182 INFO client1 run_compliance_checker 'Calling read_log()'
+2018-11-28 10:46:02,182 ERROR client1 run_compliance_checker 'Exception raised while reading file'
+2018-11-28 10:46:02,182 ERROR client1 main 'Input file is not readable!'
+2018-11-28 10:46:02,182 INFO client1 main 'The options are displayed'
+2018-11-28 10:47:16,214 INFO client1 main 'The user selected option 3'
+2018-11-28 10:47:16,215 INFO client1 main 'Exiting...'
+2018-11-28 10:47:20,187 INFO client1 main 'Post request to server:http://127.0.0.1:5000/login?uuid=client1'
+2018-11-28 10:47:20,206 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 10:47:20,210 http://127.0.0.1:5000 "POST /login?uuid=client1 HTTP/1.1" 200 0
+2018-11-28 10:47:20,211 INFO client1 main 'The options are displayed'
+2018-11-28 10:47:21,513 INFO client1 main 'The user selected option 1'
+2018-11-28 10:47:21,514 INFO client1 main 'Calling run_compliance_checker()'
+2018-11-28 10:47:21,514 INFO client1 run_compliance_checker 'Calling read_log()'
+2018-11-28 10:47:21,514 ERROR client1 run_compliance_checker 'Exception raised while reading file'
+2018-11-28 10:47:21,514 ERROR client1 main 'Input file is not readable!'
+2018-11-28 10:47:21,514 INFO client1 main 'The options are displayed'
+2018-11-28 10:48:29,037 INFO client1 main 'The user selected option 3'
+2018-11-28 10:48:29,037 INFO client1 main 'Exiting...'
+2018-11-28 10:48:32,449 INFO client1 main 'Post request to server:http://127.0.0.1:5000/login?uuid=client1'
+2018-11-28 10:48:32,470 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 10:48:32,473 http://127.0.0.1:5000 "POST /login?uuid=client1 HTTP/1.1" 200 0
+2018-11-28 10:48:32,474 INFO client1 main 'The options are displayed'
+2018-11-28 10:48:33,294 INFO client1 main 'The user selected option 1'
+2018-11-28 10:48:33,294 INFO client1 main 'Calling run_compliance_checker()'
+2018-11-28 10:48:33,294 INFO client1 run_compliance_checker 'Calling read_log()'
+2018-11-28 10:49:34,927 INFO client1 main 'Post request to server:http://127.0.0.1:5000/login?uuid=client1'
+2018-11-28 10:49:34,945 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 10:49:34,949 http://127.0.0.1:5000 "POST /login?uuid=client1 HTTP/1.1" 200 0
+2018-11-28 10:49:34,950 INFO client1 main 'The options are displayed'
+2018-11-28 10:49:36,397 INFO client1 main 'The user selected option 1'
+2018-11-28 10:49:36,397 INFO client1 main 'Calling run_compliance_checker()'
+2018-11-28 10:49:36,398 INFO client1 run_compliance_checker 'Calling read_log()'
+2018-11-28 10:49:36,437 INFO client1 run_compliance_checker 'Calling simulate_stream_event()'
+2018-11-28 10:49:36,955 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 10:49:36,958 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-28 10:49:37,468 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 10:49:37,471 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-28 10:49:37,985 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 10:49:37,989 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-28 10:49:38,505 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 10:49:38,510 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-28 10:49:39,028 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 10:49:39,031 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-28 10:49:39,536 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 10:49:39,539 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-28 10:49:40,057 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 10:49:40,063 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-28 10:49:40,572 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 10:49:40,575 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-28 10:49:40,659 ERROR client1 main 'Compliance checking is interrupted by user'
+2018-11-28 10:49:40,660 INFO client1 main 'The options are displayed'
+2018-11-28 10:49:42,489 INFO client1 main 'The user selected option 3'
+2018-11-28 10:49:42,489 INFO client1 main 'Exiting...'
+2018-11-28 10:49:47,608 INFO client1 main 'Post request to server:http://127.0.0.1:5000/login?uuid=client1'
+2018-11-28 10:49:47,627 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 10:49:47,630 http://127.0.0.1:5000 "POST /login?uuid=client1 HTTP/1.1" 200 0
+2018-11-28 10:49:47,631 INFO client1 main 'The options are displayed'
+2018-11-28 10:49:48,598 INFO client1 main 'The user selected option 1'
+2018-11-28 10:49:48,598 INFO client1 main 'Calling run_compliance_checker()'
+2018-11-28 10:49:48,598 INFO client1 run_compliance_checker 'Calling read_log()'
+2018-11-28 10:49:48,602 INFO client1 run_compliance_checker 'Calling simulate_stream_event()'
+2018-11-28 10:49:49,129 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 10:49:49,133 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-28 10:49:49,642 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 10:49:49,645 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-28 10:49:50,148 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 10:49:50,152 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-28 10:49:50,665 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 10:49:50,668 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-28 10:49:50,801 ERROR client1 main 'Compliance checking is interrupted by user'
+2018-11-28 10:49:50,802 INFO client1 main 'The options are displayed'
+2018-11-28 10:49:53,380 INFO client1 main 'The user selected option 3'
+2018-11-28 10:49:53,380 INFO client1 main 'Exiting...'
+2018-11-28 17:41:56,634 INFO client1 main 'Post request to server:http://127.0.0.1:5000/login?uuid=client1'
+2018-11-28 17:41:56,651 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 17:41:56,654 http://127.0.0.1:5000 "POST /login?uuid=client1 HTTP/1.1" 200 0
+2018-11-28 17:41:56,654 INFO client1 main 'The options are displayed'
+2018-11-28 17:41:59,693 INFO client1 main 'The user selected option 1'
+2018-11-28 17:41:59,693 INFO client1 main 'Calling run_compliance_checker()'
+2018-11-28 17:41:59,693 INFO client1 run_compliance_checker 'Calling read_log()'
+2018-11-28 17:41:59,705 INFO client1 run_compliance_checker 'Calling simulate_stream_event()'
+2018-11-28 17:42:00,217 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 17:42:00,220 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-28 17:42:00,730 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 17:42:00,733 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-28 17:42:01,243 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 17:42:01,246 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-28 17:42:01,761 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 17:42:01,763 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-28 17:42:02,273 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 17:42:02,275 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-28 17:42:02,787 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 17:42:02,789 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-28 17:42:03,299 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 17:42:03,301 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-28 17:42:03,818 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 17:42:03,822 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-28 17:42:04,336 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 17:42:04,338 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-28 17:42:04,854 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 17:42:04,857 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-28 17:42:05,370 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 17:42:05,373 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-28 17:42:05,889 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 17:42:05,892 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-28 17:42:06,406 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 17:42:06,408 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-28 17:42:06,926 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 17:42:06,929 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-28 17:42:07,438 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 17:42:07,441 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-28 17:42:07,955 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 17:42:07,958 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-28 17:42:08,469 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 17:42:08,474 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-28 17:42:08,496 ERROR client1 main 'Compliance checking is interrupted by user'
+2018-11-28 17:42:08,497 INFO client1 main 'The options are displayed'
+2018-11-28 17:42:16,427 INFO client1 main 'The user selected option 1'
+2018-11-28 17:42:16,427 INFO client1 main 'Calling run_compliance_checker()'
+2018-11-28 17:42:16,427 INFO client1 run_compliance_checker 'Calling read_log()'
+2018-11-28 17:42:16,430 INFO client1 run_compliance_checker 'Calling simulate_stream_event()'
+2018-11-28 17:42:16,946 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 17:42:16,948 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-28 17:42:17,456 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 17:42:17,458 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-28 17:42:17,974 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 17:42:17,979 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-28 17:42:18,490 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 17:42:18,492 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-28 17:42:18,547 ERROR client1 main 'Compliance checking is interrupted by user'
+2018-11-28 17:42:18,547 INFO client1 main 'The options are displayed'
+2018-11-28 17:54:06,313 INFO client1 main 'The user selected option 3'
+2018-11-28 17:54:06,314 INFO client1 main 'Exiting...'
+2018-11-28 17:54:09,295 INFO client1 main 'Post request to server:http://127.0.0.1:5000/login?uuid=client1'
+2018-11-28 17:54:09,305 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-28 17:54:09,307 http://127.0.0.1:5000 "POST /login?uuid=client1 HTTP/1.1" 200 0
+2018-11-28 17:54:09,308 INFO client1 main 'The options are displayed'
+2018-11-28 17:54:10,744 INFO client1 main 'The user selected option 1'
+2018-11-28 17:54:10,744 INFO client1 main 'Calling run_compliance_checker()'
+2018-11-28 17:54:10,744 ERROR client1 run_compliance_checker 'Exception raised while reading file'
+2018-11-28 17:54:10,744 ERROR client1 main 'Input file is not readable!'
+2018-11-28 17:54:10,744 INFO client1 main 'The options are displayed'
+2018-11-28 17:59:38,499 INFO client1 main 'The user selected option 1'
+2018-11-28 17:59:38,499 INFO client1 main 'Calling run_compliance_checker()'
