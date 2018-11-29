@@ -4,6 +4,7 @@ from streaming_event_compliance.utils import config
 from streaming_event_compliance.utils.config import WINDOW_SIZE, MAXIMUN_WINDOW_SIZE
 from streaming_event_compliance.services import set_globalvar
 from streaming_event_compliance.objects.automata import automata
+from streaming_event_compliance.utils import dbtools
 
 maximum_window_size = int(config.MAXIMUN_WINDOW_SIZE)
 
@@ -85,13 +86,9 @@ def calcuate_connection_for_different_prefix_automata(windowsMemory, event, T, C
         sink_node = ''.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws : MAXIMUN_WINDOW_SIZE])
         print("windowsize:",ws, "source_node:", source_node, "sink_node:", sink_node)
         print('test: ',automata.Connection(source_node, sink_node, 1))
+        autos.get(ws).update_automata(automata.Connection(source_node, sink_node, 1))
+    dbtools.insert_node_and_connection(autos)
 
-        if not autos.get(ws):
-            auto = automata.Automata(ws)
-            auto.update_automata(automata.Connection(source_node, sink_node, 1))
-            autos[ws] = auto
-        else:
-            autos.get(ws).update_automata(automata.Connection(source_node, sink_node, 1))
     if len(C.dictionary_cases.get(event['case_id'])) > MAXIMUN_WINDOW_SIZE:
         C.dictionary_cases.get(event['case_id']).pop(0)
     print('case:', event['case_id'], "activity:", event['activity'], 'need to be deleted. after'
