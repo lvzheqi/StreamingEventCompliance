@@ -11,3 +11,4 @@ WINDOW_SIZE = [1, 2, 3, 4]
 TRAINING_EVENT_LOG_PATH = BASE_DIR + 'data' + os.sep + '/Example_EventLogForTraining.xes'
 AUTOS_DEFAULT = False
 MAXIMUN_WINDOW_SIZE = 4
+

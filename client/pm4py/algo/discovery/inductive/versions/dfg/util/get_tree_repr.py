@@ -58,7 +58,7 @@ def get_repr(spec_tree_struct, rec_depth, counts, must_add_skip=False, contains_
     must_add_skip
         Boolean value that indicate if we are forced to add the skip
     contains_empty_traces
-        Boolean value that is True if the event log from which the DFG has been extracted contains empty traces
+        Boolean value that is True if the event logger from which the DFG has been extracted contains empty traces
 
     Returns
     -----------

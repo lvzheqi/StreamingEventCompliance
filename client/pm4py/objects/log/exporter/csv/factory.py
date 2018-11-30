@@ -7,12 +7,12 @@ VERSIONS = {PANDAS: pandas_csv_exp.export_log}
 
 def export_log_as_string(log, variant="pandas", parameters=None):
     """
-    Factory method to export a CSV from an event log as a string
+    Factory method to export a CSV from an event logger as a string
 
     Parameters
     -----------
     log
-        Event log
+        Event logger
     variant
         Selected variant of the algorithm
     parameters
@@ -28,12 +28,12 @@ def export_log_as_string(log, variant="pandas", parameters=None):
 
 def export_log(log, output_file_path, variant="pandas", parameters=None):
     """
-    Factory method to export a CSV from an event log
+    Factory method to export a CSV from an event logger
 
     Parameters
     -----------
     log
-        Event log
+        Event logger
     output_file_path
         Output file path
     variant
@@ -46,12 +46,12 @@ def export_log(log, output_file_path, variant="pandas", parameters=None):
 
 def apply(log, output_file_path, variant="pandas", parameters=None):
     """
-    Factory method to export a CSV from an event log
+    Factory method to export a CSV from an event logger
 
     Parameters
     -----------
     log
-        Event log
+        Event logger
     output_file_path
         Output file path
     variant
