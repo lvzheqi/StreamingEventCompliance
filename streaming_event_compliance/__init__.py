@@ -8,11 +8,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = config.DATABASE_PATH
 
 
 db = SQLAlchemy(app)
-try:
-    db.create_all()
-except Exception:
-    print('Error: Database connection!')
-    exit(1)
+
 
 
 from streaming_event_compliance import routes
