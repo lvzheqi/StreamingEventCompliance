@@ -1,13 +1,12 @@
-from streaming_event_compliance.utils import config
 from streaming_event_compliance.services.globalvar import ThreadMemorizer, CaseMemorizer
 from pm4py.objects.log.importer.xes import factory as xes_importer
 from pm4py.objects.log import transform
 from streaming_event_compliance.services.build_automata import case_thread
 import threading
-from streaming_event_compliance.utils.config import WINDOW_SIZE
-from streaming_event_compliance.objects.automata import automata
-from streaming_event_compliance.utils import dbtools
-
+from streaming_event_compliance.utils.config import MAXIMUN_WINDOW_SIZE, WINDOW_SIZE
+from streaming_event_compliance.utils import dbtools, config
+from multiprocessing import Process
+from streaming_event_compliance.services import set_globalvar
 
 T = ThreadMemorizer()
 C = CaseMemorizer()
@@ -16,8 +15,17 @@ threads_index = 0
 maximum_window_size = int(config.MAXIMUN_WINDOW_SIZE)
 check_order_list = []
 
+def build_automata():
+    process_ = Process(target=build_automata_pro())
+    process_.start()
+    process_.join()
+    autos, status = set_globalvar.get_autos()
+    for ws in WINDOW_SIZE:
+        autos[ws].set_probability()
+    dbtools.insert_node_and_connection(autos)
+    print("done,$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
 
-def build_automata(autos):
+def build_automata_pro():
     """
     Reads the training event logger from utils.config.TRAINING_EVENT_LOG_PATH and build automata.
     It generates the probability between SourceNode and SinkNode with different prefix size
@@ -53,27 +61,27 @@ def build_automata(autos):
             '''if we have already found the case in caseMemory, just add this event to this case.'''
             C.dictionary_cases.get(event['case_id']).append(event['activity'])
             # print("This event is added in one case which already exists in caseMemory")
-            thread = case_thread.CaseThreadForTraining(event, threads_index, autos, T, C)
+            thread = case_thread.CaseThreadForTraining(event, threads_index, T, C)
             T.dictionary_threads[threads_index] = case_thread
             # print("Now the number of T.dictionary_threads is:", len(T.dictionary_threads))
             try:
                 thread.start()
             except KeyboardInterrupt:
                 print('Thread is interrupt!')
-            threads.append(case_thread) # Question: append(thread? or case_thread)
+            threads.append(thread) # Question: append(thread? or case_thread)
             # TODO: huojingjing create thread for this event
         else:
             # print('have not found the case', event['case_id'], 'in caseMemory.')
             # 1. Add it to the caseMemory
             # 2. Create a new thread for this case
-            C.dictionary_cases[event['case_id']] = ['*' for i in range(0, maximum_window_size - 1)]
+            C.dictionary_cases[event['case_id']] = ['*' for i in range(0, MAXIMUN_WINDOW_SIZE)]
             C.dictionary_cases[event['case_id']].append(event['activity'])
             # print("in caseMemory we add a new case with it's first activity:", event['case_id'], event['activity'])
             lock = threading.Lock()
             # print("we creat a lock for this new case;")
             C.lock_List[event['case_id']] = lock
             # print("Now the locklist:", C.lock_List)
-            thread = case_thread.CaseThreadForTraining(event, threads_index, autos, T, C)
+            thread = case_thread.CaseThreadForTraining(event, threads_index, T, C)
             # 3. Add it into threadMemory
             T.dictionary_threads[threads_index] = case_thread
             # this is just for remember the threads information that we have created.
@@ -83,7 +91,7 @@ def build_automata(autos):
                 thread.start()
             except KeyboardInterrupt:
                 print('Thread is interrupt!')
-            threads.append(case_thread)
+            threads.append(thread)
             # this is for limiting the number of the threads that are runing???
             # TODO: what does caseThread do? give another init with 4 parameters
         threads_index = threads_index + 1
@@ -91,49 +99,7 @@ def build_automata(autos):
         #     threads[0].join()  # TODO: Jingjing: why we need to join these threads?
         #     del threads[0]  # why we delete?
     # TODO: raise exception when not success
-    print("All events have threads running.")
-    if not T.dictionary_threads:
-        print("All threads are done.")
-    # print('\n\n\n############################## primal list', primal_list, '#####################\n\n\n')
-
-    # except KeyboardInterrupt:
-    #     raise KeyboardInterrupt
-    # except:
-    #     print("Unexpected error:", sys.exc_info()[0])
-    #     raise
-    return True
-
-
-def init_automata():
-    autos = dbtools.init_automata_from_database()
-    if autos is None:
-        autos = {}
-        for ws in WINDOW_SIZE:
-            auto = automata.Automata(ws)
-            autos[ws] = auto
-        build_automata(autos)
-    return autos
-
-
-# def test_automata_status():
-#     """
-#     This function will check whether the automata is built. If the automata isn’t yet built,
-#     then will call the build_automata function to build the automata.
-#     And the status will be stored in “Compliance.config”.
-#     It raises the exceptions when the automata can not  be built.
-#     :return: status of the automata
-#     """
-#     # TODO: create file to store the automata status
-#     # TODO: read file and assign to the globalVariables.AUTOMATA_STATUS
-#     print(global_variables.AUTOMATA_STATUS)
-#     if not global_variables.AUTOMATA_STATUS:
-#         # TODO: raise exceptions, when not success
-#         # print("global_variables.AUTOMATA_STATUS")
-#         build_automata()
-#         global_variables.AUTOMATA_STATUS = True
-#         # TODO: rewrite to AUTOMATA_STATUS into the file
-#     else:
-#         print(global_variables.AUTOMATA_STATUS)
-#
-#     return True
+    for th in threads:
+        th.join()
+        print(th, "is done")
 

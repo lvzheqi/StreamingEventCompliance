@@ -1,4 +1,4 @@
-from streaming_event_compliance import db
+from streaming_event_compliance.utils import db
 # TODO: needs to consider, whether the attribute is private
 
 class Automata:
