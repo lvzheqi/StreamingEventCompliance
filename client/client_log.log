@@ -270,3 +270,60 @@
 2018-11-28 17:54:10,744 INFO client1 main 'The options are displayed'
 2018-11-28 17:59:38,499 INFO client1 main 'The user selected option 1'
 2018-11-28 17:59:38,499 INFO client1 main 'Calling run_compliance_checker()'
+2018-11-29 15:34:02,517 INFO client1 main 'Post request to server:http://127.0.0.1:5000/login?uuid=client1'
+2018-11-29 15:34:02,535 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-29 15:34:02,547 http://127.0.0.1:5000 "POST /login?uuid=client1 HTTP/1.1" 404 233
+2018-11-29 15:34:02,547 ERROR client1 main 'The user can not be created!'
+2018-11-29 15:35:16,575 INFO client1 main 'Post request to server:http://127.0.0.1:5000/login?uuid=client1'
+2018-11-29 15:35:16,586 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-29 15:35:16,588 http://127.0.0.1:5000 "POST /login?uuid=client1 HTTP/1.1" 404 233
+2018-11-29 15:35:16,588 ERROR client1 main 'The user can not be created!'
+2018-11-29 15:35:43,219 INFO client1 main 'Post request to server:http://127.0.0.1:5000/login?uuid=client1'
+2018-11-29 15:35:43,229 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-29 15:35:43,230 ERROR client1 main 'The server is not available, please try it later!'
+2018-11-29 15:35:48,499 INFO client1 main 'Post request to server:http://127.0.0.1:5000/login?uuid=client1'
+2018-11-29 15:35:48,518 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-29 15:35:48,521 http://127.0.0.1:5000 "POST /login?uuid=client1 HTTP/1.1" 200 0
+2018-11-29 15:35:48,522 INFO client1 main 'The options are displayed'
+2018-11-29 15:35:51,111 INFO client1 main 'The user selected option 1'
+2018-11-29 15:35:51,115 INFO client1 main 'Calling run_compliance_checker()'
+2018-11-29 15:35:51,115 INFO client1 run_compliance_checker 'Calling read_log()'
+2018-11-29 15:35:51,156 INFO client1 run_compliance_checker 'Calling simulate_stream_event()'
+2018-11-29 15:35:51,669 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-29 15:35:51,671 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-29 15:35:52,181 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-29 15:35:52,184 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-29 15:35:52,699 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-29 15:35:52,701 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-29 15:35:53,214 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-29 15:35:53,217 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-29 15:35:53,729 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-29 15:35:53,731 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-29 15:35:54,245 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-29 15:35:54,247 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-29 15:35:54,757 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-29 15:35:54,760 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-29 15:35:55,272 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-29 15:35:55,274 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-29 15:35:55,782 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-29 15:35:55,785 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-29 15:35:56,297 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-29 15:35:56,300 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-29 15:35:56,818 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-29 15:35:56,821 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-29 15:35:57,331 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-29 15:35:57,332 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-29 15:35:57,843 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-29 15:35:58,367 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-29 15:35:58,888 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-29 15:35:59,406 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-29 15:35:59,925 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-29 15:36:00,439 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-29 15:36:00,952 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-29 15:36:01,463 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-29 15:36:01,984 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-29 15:36:02,499 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-29 15:36:03,010 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-29 15:36:03,012 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-29 15:36:03,037 INFO client1 main 'compliance checking is completed'
+2018-11-29 15:36:03,038 INFO client1 main 'The options are displayed'

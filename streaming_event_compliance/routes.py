@@ -1,5 +1,4 @@
-from streaming_event_compliance import app
-from streaming_event_compliance.utils import config
+from streaming_event_compliance import app, config
 from flask import request, send_file
 from flask_api import status
 from streaming_event_compliance.services import compliance_checker
