@@ -1,5 +1,6 @@
 from simulate_stream_event import eventlog, client_logging
 from simulate_stream_event.exception import ReadFileException
+from pm4py.objects.log.importer.xes import factory as xes_importer
 from multiprocessing import Process
 import sys
 import requests
@@ -17,7 +18,7 @@ class Client_cls(object):
         try:
             client_logging.client_logging(message_type="INFO", level="DEBUG", func_name=func_name, username=self.uuid,
                                           message="Calling read_log()")
-            event_log = eventlog.read_log(self.path)
+            event_log = eventlog.read_log(self.uuid, self.path)
         except Exception:
             client_logging.client_logging(message_type="ERROR", level="DEBUG", func_name=func_name, username=self.uuid,
                                           message="Exception raised while reading file")

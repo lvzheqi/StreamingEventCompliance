@@ -1,11 +1,16 @@
 
-from streaming_event_compliance import app
+from streaming_event_compliance import app, db
 
 
 if __name__ == '__main__':
     from streaming_event_compliance.services import globalvar, set_globalvar, build_automata
     from streaming_event_compliance.utils import dbtools
 
+    try:
+        db.create_all()
+    except Exception:
+        print('Error: Database connection!')
+        exit(1)
     dbtools.empty_tables()
     print(globalvar.autos, 'init之前')
     print(set_globalvar.get_autos(), 'init之前get')
