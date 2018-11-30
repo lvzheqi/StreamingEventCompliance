@@ -1,1 +1,1 @@
-from client.simulate_stream_event import eventlog, eventthread, exception
+from simulate_stream_event import eventlog, eventthread, exception

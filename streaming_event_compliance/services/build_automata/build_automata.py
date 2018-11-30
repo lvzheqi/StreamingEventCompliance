@@ -1,18 +1,18 @@
-from streaming_event_compliance.services.globalvar import ThreadMemorizer, CaseMemorizer
+from streaming_event_compliance.services.build_automata.globalvar import ThreadMemorizer, CaseMemorizer
 from pm4py.objects.log.importer.xes import factory as xes_importer
 from pm4py.objects.log import transform
-from streaming_event_compliance.services.build_automata import case_thread
+from streaming_event_compliance.services.build_automata import case_thread, set_globalvar
 import threading
-from streaming_event_compliance.config import MAXIMUN_WINDOW_SIZE, WINDOW_SIZE
-from streaming_event_compliance.utils import dbtools
-from streaming_event_compliance import config
+from streaming_event_compliance.utils.config import MAXIMUN_WINDOW_SIZE, WINDOW_SIZE
+from streaming_event_compliance.database import dbtools
+from streaming_event_compliance.utils import config
 from multiprocessing import Process
-from streaming_event_compliance.services import set_globalvar
 
 T = ThreadMemorizer()
 C = CaseMemorizer()
 threads = []
 threads_index = 0
+
 
 def build_automata():
     print("---------------------Start: Traininging automata starts!--------------------------------------")
@@ -25,9 +25,10 @@ def build_automata():
     dbtools.insert_node_and_connection(autos)
     print("---------------------End: Everything for training automata is Done!---------------------------")
 
+
 def build_automata_pro():
     """
-    Reads the training event logger from utils.config.TRAINING_EVENT_LOG_PATH and build automata.
+    Reads the training event logger from database.config.TRAINING_EVENT_LOG_PATH and build automata.
     It generates the probability between SourceNode and SinkNode with different prefix size
     and stores corresponding information into the database.
     :return:
@@ -39,7 +40,7 @@ def build_automata_pro():
         event_log = transform.transform_trace_log_to_event_log(trace_log)
         event_log.sort()
     except Exception:
-        print("The file is in wrong Form.")
+        print('Error: The file is in wrong Form.')
         return
 
     global threads_index
@@ -59,7 +60,7 @@ def build_automata_pro():
             try:
                 thread.start()
             except KeyboardInterrupt:
-                print('Thread is interrupt!')
+                print('Error: Thread is interrupt!')
         else:
             C.dictionary_cases[event['case_id']] = ['*' for i in range(0, MAXIMUN_WINDOW_SIZE)]
             C.dictionary_cases[event['case_id']].append(event['activity'])
@@ -71,12 +72,12 @@ def build_automata_pro():
             try:
                 thread.start()
             except KeyboardInterrupt:
-                print('Thread is interrupt!')
+                print('Error: Thread is interrupt!')
 
         threads.append(thread)
         threads_index = threads_index + 1
     # TODO: raise exception when not success
-    for th in threads:
-        th.join()
-        print(th, "is done")
+    # for th in threads:
+    #     th.join()
+    #     print(th, "is done")
 
