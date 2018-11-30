@@ -270,3 +270,8 @@
 2018-11-28 17:54:10,744 INFO client1 main 'The options are displayed'
 2018-11-28 17:59:38,499 INFO client1 main 'The user selected option 1'
 2018-11-28 17:59:38,499 INFO client1 main 'Calling run_compliance_checker()'
+2018-11-30 12:30:29,521 ERROR Username:Unknown main 'Username or Event logger path arguments were not provided during the run time'
+2018-11-30 12:30:52,911 INFO 1234 main 'Post request to server:http://127.0.0.1:5000/login?uuid=1234'
+2018-11-30 12:30:52,920 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-30 12:30:52,921 http://127.0.0.1:5000 "POST /login?uuid=1234 HTTP/1.1" 200 0
+2018-11-30 12:30:52,922 INFO 1234 main 'The options are displayed'
