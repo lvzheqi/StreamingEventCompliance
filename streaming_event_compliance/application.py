@@ -1,18 +1,21 @@
 
-from streaming_event_compliance import app
+from streaming_event_compliance import app,db
 
 
 if __name__ == '__main__':
 
+    try:
+        db.create_all()
+    except Exception:
+        print('Error: Database connection!')
+        exit(1)
+
     from streaming_event_compliance.services import globalvar, set_globalvar
     from streaming_event_compliance.utils import dbtools
     dbtools.empty_tables()
+
     print(dbtools.empty_tables())
-    # print(globalvar.autos, 'init之前')
-    print(set_globalvar.get_autos(), 'init之前get')
     globalvar.init()
-    # print(globalvar.autos, 'init之后')
-    print(set_globalvar.get_autos(), 'init之后get')
     autos, status = set_globalvar.get_autos()
     if status == 0:
         set_globalvar.call_buildautos()
