@@ -1,11 +1,11 @@
 def derive_end_activities_from_tracelog(trace_log, activity_key):
     """
-    Derive end activities from trace logger
+    Derive end activities from trace log
 
     Parameters
     -----------
     trace_log
-        Trace logger object
+        Trace log object
     activity_key
         Activity key
 
@@ -24,12 +24,12 @@ def derive_end_activities_from_tracelog(trace_log, activity_key):
 
 def derive_start_activities_from_tracelog(trace_log, activity_key):
     """
-    Derive start activities from trace logger
+    Derive start activities from trace log
 
     Parameters
     -----------
     trace_log
-        Trace logger object
+        Trace log object
     activity_key
         Activity key
 

@@ -17,15 +17,15 @@ sys.setrecursionlimit(100000)
 
 def apply(trace_log, parameters):
     """
-    Apply the IMDF algorithm to a logger obtaining a Petri net along with an initial and final marking
+    Apply the IMDF algorithm to a log obtaining a Petri net along with an initial and final marking
 
     Parameters
     -----------
     trace_log
-        Trace logger
+        Trace log
     parameters
         Parameters of the algorithm, including:
-            pmutil.constants.PARAMETER_CONSTANT_ACTIVITY_KEY -> attribute of the logger to use as activity name
+            pmutil.constants.PARAMETER_CONSTANT_ACTIVITY_KEY -> attribute of the log to use as activity name
             (default concept:name)
 
     Returns
@@ -50,10 +50,10 @@ def apply(trace_log, parameters):
     dfg = [(k, v) for k, v in dfg_inst.apply(trace_log, parameters={
         pmutil.constants.PARAMETER_CONSTANT_ACTIVITY_KEY: activity_key}).items() if v > 0]
 
-    # get the activities in the logger
+    # get the activities in the log
     activities = attributes_filter.get_attribute_values(trace_log, activity_key)
 
-    # check if the logger contains empty traces
+    # check if the log contains empty traces
     contains_empty_traces = False
     traces_length = [len(trace) for trace in trace_log]
     if traces_length:
@@ -74,15 +74,15 @@ def apply(trace_log, parameters):
 
 def apply_tree(trace_log, parameters):
     """
-    Apply the IMDF algorithm to a logger obtaining a process tree
+    Apply the IMDF algorithm to a log obtaining a process tree
 
     Parameters
     ----------
     trace_log
-        Trace logger
+        Trace log
     parameters
         Parameters of the algorithm, including:
-            pmutil.constants.PARAMETER_CONSTANT_ACTIVITY_KEY -> attribute of the logger to use as activity name
+            pmutil.constants.PARAMETER_CONSTANT_ACTIVITY_KEY -> attribute of the log to use as activity name
             (default concept:name)
 
     Returns
@@ -100,10 +100,10 @@ def apply_tree(trace_log, parameters):
     dfg = [(k, v) for k, v in dfg_inst.apply(trace_log, parameters={
         pmutil.constants.PARAMETER_CONSTANT_ACTIVITY_KEY: activity_key}).items() if v > 0]
 
-    # get the activities in the logger
+    # get the activities in the log
     activities = attributes_filter.get_attribute_values(trace_log, activity_key)
 
-    # check if the logger contains empty traces
+    # check if the log contains empty traces
     contains_empty_traces = False
     traces_length = [len(trace) for trace in trace_log]
     if traces_length:
@@ -122,12 +122,12 @@ def apply_dfg(dfg, parameters, activities=None, contains_empty_traces=False):
         Directly-Follows graph
     parameters
         Parameters of the algorithm, including:
-            pmutil.constants.PARAMETER_CONSTANT_ACTIVITY_KEY -> attribute of the logger to use as activity name
+            pmutil.constants.PARAMETER_CONSTANT_ACTIVITY_KEY -> attribute of the log to use as activity name
             (default concept:name)
     activities
         Activities of the process (default None)
     contains_empty_traces
-        Boolean value that is True if the event logger from which the DFG has been extracted contains empty traces
+        Boolean value that is True if the event log from which the DFG has been extracted contains empty traces
 
     Returns
     -----------
@@ -154,12 +154,12 @@ def apply_tree_dfg(dfg, parameters, activities=None, contains_empty_traces=False
         Directly-follows graph
     parameters
         Parameters of the algorithm, including:
-            pmutil.constants.PARAMETER_CONSTANT_ACTIVITY_KEY -> attribute of the logger to use as activity name
+            pmutil.constants.PARAMETER_CONSTANT_ACTIVITY_KEY -> attribute of the log to use as activity name
             (default concept:name)
     activities
         Activities of the process (default None)
     contains_empty_traces
-        Boolean value that is True if the event logger from which the DFG has been extracted contains empty traces
+        Boolean value that is True if the event log from which the DFG has been extracted contains empty traces
 
     Returns
     ----------

@@ -23,7 +23,7 @@ def apply_token_replay(log, net, initial_marking, final_marking, parameters=None
     Parameters
     -----------
     log
-        Trace logger
+        Trace log
     net
         Petri net
     initial_marking

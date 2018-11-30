@@ -1,6 +1,6 @@
 """
 This module implements the \"classic\" alpha miner [1]_.
-It converts the input event logger, which should be a trace logger, to the (well-known) directly follows abstraction.
+It converts the input event log, which should be a trace log, to the (well-known) directly follows abstraction.
 For example, when we have a trace of the form (control-flow perspective) <...a,b,...>, we observe the relation a>b, i.e.
 activity a precedes activity b.
 From the directly follows relations, the alpha relations parallelism (||), conflict (x) and causality (->) are deduced.
@@ -33,8 +33,8 @@ def apply(trace_log, parameters=None):
 
     Parameters
     ----------
-    trace_log: :class:`pm4py.logger.logger.TraceLog`
-        Event logger to use in the alpha miner, note that it should be a TraceLog!
+    trace_log: :class:`pm4py.log.log.TraceLog`
+        Event log to use in the alpha miner, note that it should be a TraceLog!
     parameters:
         Parameters of the algorithm, including:
             activity_key : :class:`str`, optional
@@ -44,7 +44,7 @@ def apply(trace_log, parameters=None):
     Returns
     -------
     net: :class:`pm4py.entities.petri.petrinet.PetriNet`
-        A Petri net describing the event logger that is provided as an input
+        A Petri net describing the event log that is provided as an input
     initial marking: :class:`pm4py.models.net.Marking`
         marking object representing the initial marking
     final marking: :class:`pm4py.models.net.Marking`
@@ -71,7 +71,7 @@ def apply(trace_log, parameters=None):
 def apply_dfg(dfg, parameters=None):
     """
     Applying Alpha Miner starting from the knowledge of the Directly Follows graph,
-    and of the start activities and end activities in the logger inferred from the DFG
+    and of the start activities and end activities in the log inferred from the DFG
 
     Parameters
     ------------
@@ -84,7 +84,7 @@ def apply_dfg(dfg, parameters=None):
     Returns
     -------
     net : :class:`pm4py.entities.petri.petrinet.PetriNet`
-        A Petri net describing the event logger that is provided as an input
+        A Petri net describing the event log that is provided as an input
     initial marking : :class:`pm4py.models.net.Marking`
         marking object representing the initial marking
     final marking : :class:`pm4py.models.net.Marking`
@@ -97,7 +97,7 @@ def apply_dfg(dfg, parameters=None):
 def apply_dfg_sa_ea(dfg, start_activities, end_activities, parameters=None):
     """
     Applying Alpha Miner starting from the knowledge of the Directly Follows graph,
-    and of the start activities and end activities in the logger (possibly inferred from the DFG)
+    and of the start activities and end activities in the log (possibly inferred from the DFG)
 
     Parameters
     ------------
@@ -114,7 +114,7 @@ def apply_dfg_sa_ea(dfg, start_activities, end_activities, parameters=None):
     Returns
     -------
     net : :class:`pm4py.entities.petri.petrinet.PetriNet`
-        A Petri net describing the event logger that is provided as an input
+        A Petri net describing the event log that is provided as an input
     initial marking : :class:`pm4py.models.net.Marking`
         marking object representing the initial marking
     final marking : :class:`pm4py.models.net.Marking`
