@@ -12,12 +12,12 @@ versions = {DFG_NATIVE: native.apply, DFG_FREQUENCY: native.apply, DFG_PERFORMAN
 
 def apply(trace_log, parameters=None, variant=DFG_NATIVE):
     """
-    Calculates DFG graph (frequency or performance) starting from a trace logger
+    Calculates DFG graph (frequency or performance) starting from a trace log
 
     Parameters
     ----------
     trace_log
-        Trace logger
+        Trace log
     parameters
         Possible parameters passed to the algorithms:
             aggregationMeasure -> performance aggregation measure (min, max, mean, median)

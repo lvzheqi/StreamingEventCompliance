@@ -14,7 +14,7 @@ def apply(trace_log, parameters=None):
     Parameters
     ----------
     trace_log
-        Trace logger
+        Trace log
     parameters
         Possible parameters passed to the algorithms:
             aggregationMeasure -> performance aggregation measure (min, max, mean, median)

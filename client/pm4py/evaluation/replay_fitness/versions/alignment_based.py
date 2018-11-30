@@ -17,7 +17,7 @@ def evaluate(aligned_traces, parameters=None):
     Parameters
     ----------
     aligned_traces
-        Alignments calculated for the traces in the logger
+        Alignments calculated for the traces in the log
     parameters
         Possible parameters of the evaluation
 

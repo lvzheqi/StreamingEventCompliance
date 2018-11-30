@@ -11,7 +11,7 @@ def apply(log, net, marking, final_marking, parameters=None, variant="etconforma
     Parameters
     -----------
     log
-        Trace logger
+        Trace log
     net
         Petri net
     marking

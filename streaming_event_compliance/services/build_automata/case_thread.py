@@ -74,6 +74,7 @@ def calcuate_connection_for_different_prefix_automata(windowsMemory, event, T, C
     for ws in WINDOW_SIZE: # [1, 2, 3, 4]
         source_node = ''.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws: MAXIMUN_WINDOW_SIZE])
         sink_node = ''.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws +1: MAXIMUN_WINDOW_SIZE+1])
+        # if source_node.find('*') == -1:
         autos.get(ws).update_automata(automata.Connection(source_node, sink_node, 1))
 
     if len(C.dictionary_cases.get(event['case_id'])) > MAXIMUN_WINDOW_SIZE:
