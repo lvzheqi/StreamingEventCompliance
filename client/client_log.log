@@ -455,3 +455,9 @@
 2018-11-30 14:14:21,812 Starting new HTTP connection (1): 127.0.0.1:5000
 2018-11-30 14:14:21,814 http://127.0.0.1:5000 "POST /compliance-checker?uuid=1234 HTTP/1.1" 200 9
 2018-11-30 14:14:21,815 INFO 1234 run Thread:1 Case_id:Case1.2 Activity:d 'The server response is: deviation'
+2018-11-30 16:07:51,928 INFO test_client_uuid read_log 'Creating a trace logger file: '
+2018-11-30 16:07:51,932 INFO test_client_uuid read_log 'Creating a trace logger file: '
+2018-11-30 16:08:15,073 INFO test_client_uuid read_log 'Creating a trace logger file: '
+2018-11-30 16:08:15,075 INFO test_client_uuid read_log 'Creating a trace logger file: '
+2018-11-30 16:09:26,325 INFO test_client_uuid read_log 'Creating a trace logger file: '
+2018-11-30 16:09:26,327 INFO test_client_uuid read_log 'Creating a trace logger file: '
