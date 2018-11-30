@@ -13,7 +13,7 @@ EVENT_START = 'start'
 
 def import_log(filename, parameters=None):
     """
-    Imports an XES file into a logger object
+    Imports an XES file into a log object
 
     Parameters
     ----------
@@ -21,17 +21,17 @@ def import_log(filename, parameters=None):
         Absolute filename
     parameters
         Parameters of the algorithm, including
-            timestamp_sort -> Specify if we should sort logger by timestamp
-            timestamp_key -> If sort is enabled, then sort the logger by using this key
-            reverse_sort -> Specify in which direction the logger should be sorted
+            timestamp_sort -> Specify if we should sort log by timestamp
+            timestamp_key -> If sort is enabled, then sort the log by using this key
+            reverse_sort -> Specify in which direction the log should be sorted
             index_trace_indexes -> Specify if trace indexes should be added as event attribute for each event
-            max_no_traces_to_import -> Specify the maximum number of traces to import from the logger
+            max_no_traces_to_import -> Specify the maximum number of traces to import from the log
             (read in order in the XML file)
 
     Returns
     -------
-    logger : :class:`pm4py.logger.logger.TraceLog`
-        A trace logger
+    log : :class:`pm4py.log.log.TraceLog`
+        A trace log
     """
 
     if parameters is None:
@@ -142,7 +142,7 @@ def import_log(filename, parameters=None):
 
             elif elem.tag.endswith(log_lib.util.xes.TAG_EXTENSION):
                 if log is None:
-                    raise SyntaxError('extension found outside of <logger> tag')
+                    raise SyntaxError('extension found outside of <log> tag')
                 if elem.get(log_lib.util.xes.KEY_NAME) is not None and elem.get(
                         log_lib.util.xes.KEY_PREFIX) is not None and elem.get(log_lib.util.xes.KEY_URI) is not None:
                     log.extensions[elem.get(log_lib.util.xes.KEY_NAME)] = {
@@ -152,7 +152,7 @@ def import_log(filename, parameters=None):
 
             elif elem.tag.endswith(log_lib.util.xes.TAG_GLOBAL):
                 if log is None:
-                    raise SyntaxError('global found outside of <logger> tag')
+                    raise SyntaxError('global found outside of <log> tag')
                 if elem.get(log_lib.util.xes.KEY_SCOPE) is not None:
                     log.omni_present[elem.get(log_lib.util.xes.KEY_SCOPE)] = {}
                     tree[elem] = log.omni_present[elem.get(log_lib.util.xes.KEY_SCOPE)]
@@ -160,7 +160,7 @@ def import_log(filename, parameters=None):
 
             elif elem.tag.endswith(log_lib.util.xes.TAG_CLASSIFIER):
                 if log is None:
-                    raise SyntaxError('classifier found outside of <logger> tag')
+                    raise SyntaxError('classifier found outside of <log> tag')
                 if elem.get(log_lib.util.xes.KEY_KEYS) is not None:
                     classifier_value = elem.get(log_lib.util.xes.KEY_KEYS)
                     if "'" in classifier_value:
@@ -172,7 +172,7 @@ def import_log(filename, parameters=None):
 
             elif elem.tag.endswith(log_lib.util.xes.TAG_LOG):
                 if log is not None:
-                    raise SyntaxError('file contains > 1 <logger> tags')
+                    raise SyntaxError('file contains > 1 <log> tags')
                 log = log_lib.log.TraceLog()
                 tree[elem] = log.attributes
                 continue

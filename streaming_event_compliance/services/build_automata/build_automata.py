@@ -2,7 +2,7 @@ from streaming_event_compliance.services.globalvar import ThreadMemorizer, CaseM
 from pm4py.objects.log.importer.xes import factory as xes_importer
 from pm4py.objects.log import transform
 from streaming_event_compliance.services.build_automata import case_thread
-import threading
+import threading, os
 from streaming_event_compliance.config import MAXIMUN_WINDOW_SIZE, WINDOW_SIZE
 from streaming_event_compliance.utils import dbtools
 from streaming_event_compliance import config
@@ -19,6 +19,7 @@ check_order_list = []
 def build_automata():
     process_ = Process(target=build_automata_pro())
     process_.start()
+    print(os.getpid(), ' ', os.getppid(), ' build')
     process_.join()
     autos, status = set_globalvar.get_autos()
     for ws in WINDOW_SIZE:

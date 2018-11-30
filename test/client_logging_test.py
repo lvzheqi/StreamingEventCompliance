@@ -1,6 +1,7 @@
 import unittest
 from client.simulate_stream_event import client_logging
 
+
 class TestClientLogging(unittest.TestCase):
 
     def test_client_logging(self):

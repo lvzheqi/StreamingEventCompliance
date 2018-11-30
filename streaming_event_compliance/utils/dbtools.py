@@ -71,7 +71,7 @@ def init_automata_from_database():
             ws = len(conn.source_node)
             auto = autos[ws]
             auto.add_connection(conn)
-            auto.update_node(conn.source_node)
+            auto.update_node(conn.source_node, conn.count)
         return autos, 1
     return autos, 0
 

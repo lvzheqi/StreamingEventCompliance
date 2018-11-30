@@ -6,12 +6,12 @@ from pm4py.objects.log.util import xes as xes_util
 
 def apply(trace_log, parameters=None):
     """
-    Counts the number of directly follows occurrences, i.e. of the form <...a,b...>, in an event logger.
+    Counts the number of directly follows occurrences, i.e. of the form <...a,b...>, in an event log.
 
     Parameters
     ----------
     trace_log
-        Trace logger
+        Trace log
     parameters
         Possible parameters passed to the algorithms:
             activity_key -> Attribute to use as activity
