@@ -1,9 +1,9 @@
 from streaming_event_compliance import app
+from streaming_event_compliance.utils import config
 from flask import request, send_file
 from flask_api import status
 from streaming_event_compliance.services import compliance_checker
 from streaming_event_compliance.services import deviation_pdf
-from streaming_event_compliance.utils import config, dbtools
 import json
 import os
 
