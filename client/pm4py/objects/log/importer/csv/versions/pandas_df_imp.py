@@ -4,7 +4,7 @@ from pm4py.objects.log.adapters.pandas.csv_import_adapter import import_datafram
 
 def convert_dataframe_to_event_log(df):
     """
-    Converts a dataframe to an event logger
+    Converts a dataframe to an event log
 
     Parameters
     ----------
@@ -13,8 +13,8 @@ def convert_dataframe_to_event_log(df):
 
      Returns
     -------
-    logger : :class:`pm4py.logger.logger.EventLog`
-        An event logger
+    log : :class:`pm4py.log.log.EventLog`
+        An event log
     """
     return log.log.EventLog(df.to_dict('records'), attributes={'origin': 'csv'})
 
@@ -37,8 +37,8 @@ def import_log(path, parameters=None):
 
      Returns
     -------
-    logger : :class:`pm4py.logger.logger.EventLog`
-        An event logger
+    log : :class:`pm4py.log.log.EventLog`
+        An event log
     """
 
     sep = ","

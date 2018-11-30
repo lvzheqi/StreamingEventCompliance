@@ -8,12 +8,12 @@ VERSIONS = {ETREE: etree_xes_exp.export_log}
 
 def export_log_as_string(log, variant="etree", parameters=None):
     """
-    Factory method to export a XES from an trace logger as a string
+    Factory method to export a XES from an trace log as a string
 
     Parameters
     -----------
     log
-        Trace logger
+        Trace log
     variant
         Selected variant of the algorithm
     parameters
@@ -29,12 +29,12 @@ def export_log_as_string(log, variant="etree", parameters=None):
 
 def export_log(log, output_file_path, variant="etree", parameters=None):
     """
-    Factory method to export a XES from an trace logger
+    Factory method to export a XES from an trace log
 
     Parameters
     -----------
     log
-        Trace logger
+        Trace log
     output_file_path
         Output file path
     variant
@@ -52,12 +52,12 @@ def export_log(log, output_file_path, variant="etree", parameters=None):
 
 def apply(log, output_file_path, variant="etree", parameters=None):
     """
-    Factory method to export a XES from an trace logger
+    Factory method to export a XES from an trace log
 
     Parameters
     -----------
     log
-        Trace logger
+        Trace log
     output_file_path
         Output file path
     variant
