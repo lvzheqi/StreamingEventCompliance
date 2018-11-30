@@ -1,5 +1,5 @@
 
-from streaming_event_compliance import app,db
+from streaming_event_compliance import app, db
 
 
 if __name__ == '__main__':
@@ -10,11 +10,9 @@ if __name__ == '__main__':
         print('Error: Database connection!')
         exit(1)
 
-    from streaming_event_compliance.services import globalvar, set_globalvar
-    from streaming_event_compliance.utils import dbtools
+    from streaming_event_compliance.services.build_automata import globalvar, set_globalvar
+    from streaming_event_compliance.database import dbtools
     dbtools.empty_tables()
-
-    print(dbtools.empty_tables())
     globalvar.init()
     autos, status = set_globalvar.get_autos()
     if status == 0:

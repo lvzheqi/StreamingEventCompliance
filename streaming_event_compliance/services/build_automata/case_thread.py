@@ -1,10 +1,11 @@
 from threading import Thread
 import time
-from streaming_event_compliance.config import WINDOW_SIZE, MAXIMUN_WINDOW_SIZE
-from streaming_event_compliance.services import set_globalvar
+from streaming_event_compliance.utils.config import WINDOW_SIZE, MAXIMUN_WINDOW_SIZE
+from streaming_event_compliance.services.build_automata import set_globalvar
 from streaming_event_compliance.objects.automata import automata
 
 check_executing_order = {}
+
 
 class CaseThreadForTraining(Thread):
     def __init__(self, event, index,  T, C):

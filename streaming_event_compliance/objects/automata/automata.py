@@ -1,11 +1,18 @@
-from streaming_event_compliance.utils import db
+from streaming_event_compliance.database import db
 # TODO: needs to consider, whether the attribute is private
+
 
 class Automata:
     def __init__(self, window_size):
         self.window_size = window_size
         self.nodes = {}
         self.connections = []
+
+    def update_node(self, node, count):
+        if node in self.nodes:
+            self.nodes[node] += count
+        else:
+            self.nodes[node] = count
 
     def add_connection(self, connection):
         '''
@@ -14,12 +21,6 @@ class Automata:
         '''
         self.connections.append(connection)
 
-    def update_node(self, node):
-        if node in self.nodes:
-            self.nodes[node] += 1
-        else:
-            self.nodes[node] = 1
-
     def update_automata(self, connection):
         if connection in self.connections:
             index = self.connections.index(connection)
@@ -27,7 +28,7 @@ class Automata:
             conn.count += 1
         else:
             self.connections.append(connection)
-        self.update_node(connection.source_node)
+        self.update_node(connection.source_node, 1)
 
     def set_probability(self):
         for conn in self.connections:

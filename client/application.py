@@ -18,13 +18,17 @@ class Client_cls(object):
             client_logging.client_logging(message_type="INFO", level="DEBUG", func_name=func_name, username=self.uuid,
                                           message="Calling read_log()")
             event_log = eventlog.read_log(self.uuid, self.path)
-        except Exception:
+        except ReadFileException:
             client_logging.client_logging(message_type="ERROR", level="DEBUG", func_name=func_name, username=self.uuid,
                                           message="Exception raised while reading file")
-            raise ReadFileException
+            raise ReadFileException(self.path)
         client_logging.client_logging(message_type="INFO", level="DEBUG", func_name=func_name, username=self.uuid,
                                       message="Calling simulate_stream_event()")
+
+
         eventlog.simulate_stream_event(self.uuid, event_log)
+
+
 
     def run_show_deviation_pdf(self):
         func_name = sys._getframe().f_code.co_name
@@ -85,6 +89,7 @@ def main(argv):
                                       message="The server is not available, please try it later!")
         print('Error: The server is not available, please try it later!')
         return
+
     if not os.path.exists(argv[1]):
         client_logging.client_logging(message_type="ERROR", level="DEBUG", func_name=func_name, username=argv[0],
                                       message="The given path is not available!")
@@ -127,12 +132,13 @@ def main(argv):
                 client_logging.client_logging(message_type="ERROR", level="DEBUG", func_name=func_name,
                                               username=argv[0],
                                               message="Input file is not readable!")
-                print('Error: The input file is not readable!')
+                print(ReadFileException.message)
                 print('------------------the compliance checking is interrupt------------------------')
             except KeyboardInterrupt:
                 client_logging.client_logging(message_type="ERROR", level="DEBUG", func_name=func_name,
                                               username=argv[0],
                                               message="Compliance checking is interrupted by user")
+                print("KeyboardInterrupt++++++")
                 print('------------------the compliance checking is interrupt------------------------')
         elif services == '2':
             client_logging.client_logging(message_type="INFO", level="DEBUG", func_name=func_name, username=argv[0],

@@ -1,5 +1,5 @@
 import logging
-from client.simulate_stream_event import config
+from simulate_stream_event import config
 
 
 def client_logging(**kwargs):

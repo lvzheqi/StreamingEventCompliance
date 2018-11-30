@@ -1,11 +1,11 @@
 import unittest
-from streaming_event_compliance import config
-from streaming_event_compliance.services.build_automata import build_automata
+from streaming_event_compliance.utils import config
+from streaming_event_compliance.services.build_automata import build_automata, globalvar
 from streaming_event_compliance.services.build_automata.case_thread import check_executing_order
-from streaming_event_compliance.services import globalvar
-from streaming_event_compliance.utils import dbtools
+from streaming_event_compliance.database import dbtools
 from pm4py.objects.log.importer.xes import factory as xes_importer
 from pm4py.objects.log import transform
+
 
 class BuildingAutomataTestCase(unittest.TestCase):
     """
@@ -19,7 +19,6 @@ class BuildingAutomataTestCase(unittest.TestCase):
         dbtools.empty_tables()
         # init automata
         globalvar.init()
-
 
     def test_multi_threading_for_building_automata(self):
         '''
@@ -45,6 +44,7 @@ class BuildingAutomataTestCase(unittest.TestCase):
                 expected_log[event['case_id']] = []
                 expected_log[event['case_id']].append(event['activity'])
         build_automata.build_automata()
+        print("expected_log", expected_log, '\n')
         self.assertEqual(expected_log, check_executing_order)
 
 
@@ -55,12 +55,10 @@ class BuildingAutomataTestCase(unittest.TestCase):
     #     Connection = calcuate_connection_for_different_prefix_automata()
     #     self.assertEqual(Connection, 'b')
 
-
-
     def tearUp(self):
         # do something after every test method
         print(self)
 
 
-suite = unittest.TestLoader().loadTestsFromTestCase(BuildingAutomataTestCase)
-unittest.TextTestRunner(verbosity=2).run(suite)
+if __name__ == '__main__':
+    unittest.main()
