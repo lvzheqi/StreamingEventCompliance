@@ -1,9 +1,9 @@
 from streaming_event_compliance.objects.automata import automata
 from streaming_event_compliance.objects.automata import alertlog
-from streaming_event_compliance.config import WINDOW_SIZE
+from streaming_event_compliance.utils.config import WINDOW_SIZE
 from streaming_event_compliance.objects.exceptions.exception import NoUserError
 
-from streaming_event_compliance.utils import db
+from streaming_event_compliance.database import db
 
 
 def empty_tables():
@@ -71,7 +71,7 @@ def init_automata_from_database():
             ws = len(conn.source_node)
             auto = autos[ws]
             auto.add_connection(conn)
-            auto.update_node(conn.source_node)
+            auto.update_node(conn.source_node, conn.count)
         return autos, 1
     return autos, 0
 

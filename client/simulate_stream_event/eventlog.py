@@ -20,9 +20,8 @@ def read_log(client_uuid, path):
         client_logging.client_logging(message_type="INFO", level="DEBUG", func_name=func_name, username=client_uuid,
                                       message="Sorting event logger")
         event_log.sort()
-    except Exception as e:
-        print(e)
-        raise ReadFileException
+    except Exception:
+        raise ReadFileException(path)
     return event_log
 
 

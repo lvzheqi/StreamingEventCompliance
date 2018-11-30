@@ -1,5 +1,5 @@
-from streaming_event_compliance.services.build_automata import build_automata
-from streaming_event_compliance.services import globalvar
+from streaming_event_compliance.services.build_automata import build_automata, globalvar
+
 
 def change_autos(key,value):
     globalvar.autos[key] = value
