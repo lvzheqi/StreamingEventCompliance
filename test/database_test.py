@@ -43,11 +43,10 @@ class DBToolsTest(unittest.TestCase):
     def test_alert_log(self):
         uuid = '1'
         dbtools.create_user('1')
-        autos = self.create_automata()
-        alog1 = alertlog.AlertLog(uuid, 1, autos[1])
-        alog2 = alertlog.AlertLog(uuid, 2, autos[2])
-        alog3 = alertlog.AlertLog(uuid, 3, autos[3])
-        alog4 = alertlog.AlertLog(uuid, 4, autos[4])
+        alog1 = alertlog.AlertLog(uuid, 1)
+        alog2 = alertlog.AlertLog(uuid, 2)
+        alog3 = alertlog.AlertLog(uuid, 3)
+        alog4 = alertlog.AlertLog(uuid, 4)
         alog1.add_alert_record(alertlog.AlertRecord(uuid, 'A', 'B', 1))
         alog1.add_alert_record(alertlog.AlertRecord(uuid, 'B', 'B', 1))
         alog2.add_alert_record(alertlog.AlertRecord(uuid, 'AC', 'BD', 1))
@@ -57,7 +56,7 @@ class DBToolsTest(unittest.TestCase):
         alog4.add_alert_record(alertlog.AlertRecord(uuid, 'ALKK', 'BSSD', 1))
         alogs = {1: alog1, 2: alog2, 3: alog3, 4: alog4}
         dbtools.insert_alert_log(alogs)
-        alogs2 = dbtools.init_alert_log_from_database(uuid, autos)
+        alogs2 = dbtools.init_alert_log_from_database(uuid)
         self.assertEqual(repr(alogs), repr(alogs2))
 
 
