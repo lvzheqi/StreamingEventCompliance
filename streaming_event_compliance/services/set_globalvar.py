@@ -6,7 +6,7 @@ def change_autos(key,value):
 
 
 def get_autos():
-    return globalvar.autos
+    return globalvar.autos, globalvar.status
 
 
 def call_buildautos():
