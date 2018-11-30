@@ -14,13 +14,13 @@ def read_log(client_uuid, path):
     func_name = sys._getframe().f_code.co_name
     try:
         client_logging.client_logging(message_type="INFO", level="DEBUG", func_name=func_name, username=client_uuid,
-                                      message="Creating a trace logger file: ")
-        trace_log = xes_importer.import_log(BASE_DIR + os.sep + 'client' + os.sep + '/Example.xes')
+                                       message="Creating a trace logger file: ")
+        trace_log = xes_importer.import_log(path)
         client_logging.client_logging(message_type="INFO", level="DEBUG", func_name=func_name, username=client_uuid,
-                                      message="Transforming trace logger to event logger")
+                                       message="Transforming trace logger to event logger")
         event_log = transform.transform_trace_log_to_event_log(trace_log)
         client_logging.client_logging(message_type="INFO", level="DEBUG", func_name=func_name, username=client_uuid,
-                                      message="Sorting event logger")
+                                       message="Sorting event logger")
         event_log.sort()
     except Exception as e:
         print(e)
