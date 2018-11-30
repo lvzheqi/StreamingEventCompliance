@@ -3,7 +3,7 @@ Shared constants useful for Inductive Miner application
 """
 # boolean that enables hidden transitions reduction by applying token-based replay on the Petri net
 APPLY_REDUCTION_ON_SMALL_LOG = True
-# maximum size of the log for which the reduction is applied (apply it only on small logs)
+# maximum size of the logger for which the reduction is applied (apply it only on small logs)
 MAX_LOG_SIZE_FOR_REDUCTION = 30
 
 # LOOP_CONST_1: degree constant that the activity with the most higher degree shall have

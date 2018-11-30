@@ -14,7 +14,7 @@ on Business Process Management. Springer, Berlin, Heidelberg, 2010.
 
 for measuring precision.
 
-For each prefix in the log, the reflected tasks are calculated (outgoing attributes from the prefix)
+For each prefix in the logger, the reflected tasks are calculated (outgoing attributes from the prefix)
 Then, a token replay is done on the prefix in order to get activated transitions
 Escaping edges is the set difference between activated transitions and reflected tasks
 
@@ -31,12 +31,12 @@ PARAMETERS = [PARAM_ACTIVITY_KEY]
 
 def get_log_prefixes(log, activity_key=xes_util.DEFAULT_NAME_KEY):
     """
-    Get trace log prefixes
+    Get trace logger prefixes
 
     Parameters
     ----------
     log
-        Trace log
+        Trace logger
     activity_key
         Activity key (must be provided if different from concept:name)
     """
@@ -56,12 +56,12 @@ def get_log_prefixes(log, activity_key=xes_util.DEFAULT_NAME_KEY):
 
 def form_fake_log(prefixes_keys, activity_key=xes_util.DEFAULT_NAME_KEY):
     """
-    Form fake log for replay (putting each prefix as separate trace to align)
+    Form fake logger for replay (putting each prefix as separate trace to align)
 
     Parameters
     ----------
     prefixes_keys
-        Keys of the prefixes (to form a log with a given order)
+        Keys of the prefixes (to form a logger with a given order)
     activity_key
         Activity key (must be provided if different from concept:name)
     """
@@ -84,7 +84,7 @@ def apply(log, net, marking, final_marking, parameters=None):
     Parameters
     ----------
     log
-        Trace log
+        Trace logger
     net
         Petri net
     marking

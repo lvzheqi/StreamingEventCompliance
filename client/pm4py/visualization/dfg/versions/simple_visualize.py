@@ -68,7 +68,7 @@ def get_activities_color(activities_count):
     Parameters
     -----------
     activities_count
-        Count of attributes in the log
+        Count of attributes in the logger
 
     Returns
     -----------
@@ -102,7 +102,7 @@ def apply_frequency(dfg, log=None, activities_count=None, parameters=None):
     dfg
         DFG graph
     log
-        Event log
+        Event logger
     activities_count
         (If provided) Dictionary that associates to each activity its count
     parameters
@@ -122,7 +122,7 @@ def apply_performance(dfg, log=None, activities_count=None, parameters=None):
     dfg
         DFG graph
     log
-        Event log
+        Event logger
     activities_count
         (If provided) Dictionary that associates to each activity its count
     parameters
@@ -141,7 +141,7 @@ def graphviz_visualization(activities_count, dfg, image_format="png", measure="f
     Parameters
     -----------
     activities_count
-        Count of attributes in the log (may include attributes that are not in the DFG graph)
+        Count of attributes in the logger (may include attributes that are not in the DFG graph)
     dfg
         DFG graph
     image_format
