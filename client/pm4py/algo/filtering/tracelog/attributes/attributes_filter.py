@@ -8,23 +8,23 @@ from pm4py.util.constants import PARAMETER_CONSTANT_ATTRIBUTE_KEY, PARAMETER_CON
 
 def apply_events(trace_log, values, parameters=None):
     """
-    Filter logger by keeping only events with an attribute value that belongs to the provided values list
+    Filter log by keeping only events with an attribute value that belongs to the provided values list
 
     Parameters
     -----------
     trace_log
-        Trace logger
+        Trace log
     values
         Allowed attributes
     parameters
         Parameters of the algorithm, including:
-            activity_key -> Attribute identifying the activity in the logger
+            activity_key -> Attribute identifying the activity in the log
             positive -> Indicate if events should be kept/removed
 
     Returns
     -----------
     filtered_log
-        Filtered logger
+        Filtered log
     """
     if parameters is None:
         parameters = {}
@@ -49,24 +49,24 @@ def apply_events(trace_log, values, parameters=None):
 
 def apply(trace_log, values, parameters=None):
     """
-    Filter logger by keeping only traces that has/has not events with an attribute value that belongs to the provided
+    Filter log by keeping only traces that has/has not events with an attribute value that belongs to the provided
     values list
 
     Parameters
     -----------
     trace_log
-        Trace logger
+        Trace log
     values
         Allowed attributes
     parameters
         Parameters of the algorithm, including:
-            activity_key -> Attribute identifying the activity in the logger
+            activity_key -> Attribute identifying the activity in the log
             positive -> Indicate if events should be kept/removed
 
     Returns
     -----------
     filtered_log
-        Filtered logger
+        Filtered log
     """
     if parameters is None:
         parameters = {}
@@ -96,12 +96,12 @@ def apply(trace_log, values, parameters=None):
 
 def get_attribute_values(trace_log, attribute_key, parameters=None):
     """
-    Get the attribute values of the logger for the specified attribute along with their count
+    Get the attribute values of the log for the specified attribute along with their count
 
     Parameters
     ----------
     trace_log
-        Trace logger
+        Trace log
     attribute_key
         Attribute for which we would like to know the values along with their count
     parameters
@@ -136,7 +136,7 @@ def filter_log_by_attributes_threshold(trace_log, attributes, variants, vc, thre
     Parameters
     ----------
     trace_log
-        Trace logger
+        Trace log
     attributes
         Dictionary of attributes associated with their count
     variants
@@ -146,12 +146,12 @@ def filter_log_by_attributes_threshold(trace_log, attributes, variants, vc, thre
     threshold
         Cutting threshold (remove attributes which number of occurrences is below the threshold)
     attribute_key
-        (If specified) Specify the activity key in the logger (default concept:name)
+        (If specified) Specify the activity key in the log (default concept:name)
 
     Returns
     ----------
     filtered_log
-        Filtered logger
+        Filtered log
     """
     filtered_log = TraceLog()
     fva = [x[attribute_key] for x in variants[vc[0][0]][0] if attribute_key in x]
@@ -175,7 +175,7 @@ def apply_auto_filter(trace_log, variants=None, parameters=None):
     Parameters
     ----------
     trace_log
-        Trace logger
+        Trace log
     variants
         (If specified) Dictionary with variant as the key and the list of traces as the value
     parameters
@@ -187,7 +187,7 @@ def apply_auto_filter(trace_log, variants=None, parameters=None):
     Returns
     ---------
     filtered_log
-        Filtered logger
+        Filtered log
     """
     if parameters is None:
         parameters = {}

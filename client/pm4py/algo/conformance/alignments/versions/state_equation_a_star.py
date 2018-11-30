@@ -2,7 +2,7 @@
 This module contains code that allows us to compute alignments on the basis of a regular A* search on the state-space
 of the synchronous product net of a trace and a Petri net.
 The main algorithm follows [1]_.
-When running the logger-based variant, the code is running in parallel on a trace based level.
+When running the log-based variant, the code is running in parallel on a trace based level.
 Furthermore, by default, the code applies heuristic estimation, and prefers those states that have the smallest h-value
 in case the f-value of two states is equal.
 

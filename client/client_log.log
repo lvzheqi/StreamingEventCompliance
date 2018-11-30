@@ -275,3 +275,183 @@
 2018-11-30 12:30:52,920 Starting new HTTP connection (1): 127.0.0.1:5000
 2018-11-30 12:30:52,921 http://127.0.0.1:5000 "POST /login?uuid=1234 HTTP/1.1" 200 0
 2018-11-30 12:30:52,922 INFO 1234 main 'The options are displayed'
+2018-11-30 14:12:17,762 INFO 1234 main 'Post request to server:http://127.0.0.1:5000/login?uuid=1234'
+2018-11-30 14:12:17,772 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-30 14:12:17,774 http://127.0.0.1:5000 "POST /login?uuid=1234 HTTP/1.1" 200 0
+2018-11-30 14:12:17,774 INFO 1234 main 'The options are displayed'
+2018-11-30 14:12:19,078 INFO 1234 main 'The user selected option 1'
+2018-11-30 14:12:19,078 INFO 1234 main 'Calling run_compliance_checker()'
+2018-11-30 14:12:19,078 INFO 1234 run_compliance_checker 'Calling read_log()'
+2018-11-30 14:12:19,078 ERROR 1234 run_compliance_checker 'Exception raised while reading file'
+2018-11-30 14:12:19,078 ERROR 1234 main 'Input file is not readable!'
+2018-11-30 14:12:19,078 INFO 1234 main 'The options are displayed'
+2018-11-30 14:13:20,233 ERROR 1234 main 'The users input is invalid'
+2018-11-30 14:13:20,233 INFO 1234 main 'The options are displayed'
+2018-11-30 14:13:23,950 INFO 1234 main 'Post request to server:http://127.0.0.1:5000/login?uuid=1234'
+2018-11-30 14:13:23,958 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-30 14:13:23,960 http://127.0.0.1:5000 "POST /login?uuid=1234 HTTP/1.1" 200 0
+2018-11-30 14:13:23,960 INFO 1234 main 'The options are displayed'
+2018-11-30 14:13:25,036 INFO 1234 main 'The user selected option 1'
+2018-11-30 14:13:25,036 INFO 1234 main 'Calling run_compliance_checker()'
+2018-11-30 14:13:25,036 INFO 1234 run_compliance_checker 'Calling read_log()'
+2018-11-30 14:13:25,036 ERROR 1234 run_compliance_checker 'Exception raised while reading file'
+2018-11-30 14:13:25,036 ERROR 1234 main 'Input file is not readable!'
+2018-11-30 14:13:25,036 INFO 1234 main 'The options are displayed'
+2018-11-30 14:14:09,650 INFO 1234 main 'Post request to server:http://127.0.0.1:5000/login?uuid=1234'
+2018-11-30 14:14:09,659 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-30 14:14:09,661 http://127.0.0.1:5000 "POST /login?uuid=1234 HTTP/1.1" 200 0
+2018-11-30 14:14:09,661 INFO 1234 main 'The options are displayed'
+2018-11-30 14:14:10,939 INFO 1234 main 'The user selected option 1'
+2018-11-30 14:14:10,939 INFO 1234 main 'Calling run_compliance_checker()'
+2018-11-30 14:14:10,940 INFO 1234 run_compliance_checker 'Calling read_log()'
+2018-11-30 14:14:10,940 INFO 1234 read_log 'Creating a trace logger file: '
+2018-11-30 14:14:10,942 INFO 1234 read_log 'Transforming trace logger to event logger'
+2018-11-30 14:14:10,943 INFO 1234 read_log 'Sorting event logger'
+2018-11-30 14:14:10,943 INFO 1234 run_compliance_checker 'Calling simulate_stream_event()'
+2018-11-30 14:14:11,459 INFO 1234 simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2018-11-30 14:14:11,460 INFO 1234 invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2018-11-30 14:14:11,460 INFO 1234 invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2018-11-30 14:14:11,460 INFO 1234 run Thread:1 Case_id:Case1.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-11-30 14:14:11,461 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-30 14:14:11,463 http://127.0.0.1:5000 "POST /compliance-checker?uuid=1234 HTTP/1.1" 200 9
+2018-11-30 14:14:11,463 INFO 1234 run Thread:1 Case_id:Case1.0 Activity:a 'The server response is: deviation'
+2018-11-30 14:14:11,978 INFO 1234 simulate_stream_event Case_id:Case3.0 Activity:a 'Calling invoke_event_thread()'
+2018-11-30 14:14:11,978 INFO 1234 invoke_event_thread Case_id:Case3.0 Activity:a 'Initialising thread'
+2018-11-30 14:14:11,978 INFO 1234 invoke_event_thread Case_id:Case3.0 Activity:a 'Starting thread for event '
+2018-11-30 14:14:11,979 INFO 1234 run Thread:1 Case_id:Case3.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-11-30 14:14:11,981 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-30 14:14:11,983 http://127.0.0.1:5000 "POST /compliance-checker?uuid=1234 HTTP/1.1" 200 9
+2018-11-30 14:14:11,983 INFO 1234 run Thread:1 Case_id:Case3.0 Activity:a 'The server response is: deviation'
+2018-11-30 14:14:12,495 INFO 1234 simulate_stream_event Case_id:Case2.0 Activity:a 'Calling invoke_event_thread()'
+2018-11-30 14:14:12,495 INFO 1234 invoke_event_thread Case_id:Case2.0 Activity:a 'Initialising thread'
+2018-11-30 14:14:12,495 INFO 1234 invoke_event_thread Case_id:Case2.0 Activity:a 'Starting thread for event '
+2018-11-30 14:14:12,495 INFO 1234 run Thread:1 Case_id:Case2.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-11-30 14:14:12,497 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-30 14:14:12,498 http://127.0.0.1:5000 "POST /compliance-checker?uuid=1234 HTTP/1.1" 200 9
+2018-11-30 14:14:12,499 INFO 1234 run Thread:1 Case_id:Case2.0 Activity:a 'The server response is: deviation'
+2018-11-30 14:14:13,013 INFO 1234 simulate_stream_event Case_id:Case1.2 Activity:a 'Calling invoke_event_thread()'
+2018-11-30 14:14:13,013 INFO 1234 invoke_event_thread Case_id:Case1.2 Activity:a 'Initialising thread'
+2018-11-30 14:14:13,013 INFO 1234 invoke_event_thread Case_id:Case1.2 Activity:a 'Starting thread for event '
+2018-11-30 14:14:13,014 INFO 1234 run Thread:1 Case_id:Case1.2 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-11-30 14:14:13,015 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-30 14:14:13,017 http://127.0.0.1:5000 "POST /compliance-checker?uuid=1234 HTTP/1.1" 200 9
+2018-11-30 14:14:13,018 INFO 1234 run Thread:1 Case_id:Case1.2 Activity:a 'The server response is: deviation'
+2018-11-30 14:14:13,534 INFO 1234 simulate_stream_event Case_id:Case1.1 Activity:a 'Calling invoke_event_thread()'
+2018-11-30 14:14:13,535 INFO 1234 invoke_event_thread Case_id:Case1.1 Activity:a 'Initialising thread'
+2018-11-30 14:14:13,535 INFO 1234 invoke_event_thread Case_id:Case1.1 Activity:a 'Starting thread for event '
+2018-11-30 14:14:13,536 INFO 1234 run Thread:1 Case_id:Case1.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-11-30 14:14:13,538 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-30 14:14:13,539 http://127.0.0.1:5000 "POST /compliance-checker?uuid=1234 HTTP/1.1" 200 9
+2018-11-30 14:14:13,540 INFO 1234 run Thread:1 Case_id:Case1.1 Activity:a 'The server response is: deviation'
+2018-11-30 14:14:14,054 INFO 1234 simulate_stream_event Case_id:Case2.1 Activity:a 'Calling invoke_event_thread()'
+2018-11-30 14:14:14,054 INFO 1234 invoke_event_thread Case_id:Case2.1 Activity:a 'Initialising thread'
+2018-11-30 14:14:14,054 INFO 1234 invoke_event_thread Case_id:Case2.1 Activity:a 'Starting thread for event '
+2018-11-30 14:14:14,054 INFO 1234 run Thread:1 Case_id:Case2.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-11-30 14:14:14,056 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-30 14:14:14,058 http://127.0.0.1:5000 "POST /compliance-checker?uuid=1234 HTTP/1.1" 200 9
+2018-11-30 14:14:14,058 INFO 1234 run Thread:1 Case_id:Case2.1 Activity:a 'The server response is: deviation'
+2018-11-30 14:14:14,571 INFO 1234 simulate_stream_event Case_id:Case1.0 Activity:b 'Calling invoke_event_thread()'
+2018-11-30 14:14:14,571 INFO 1234 invoke_event_thread Case_id:Case1.0 Activity:b 'Initialising thread'
+2018-11-30 14:14:14,571 INFO 1234 invoke_event_thread Case_id:Case1.0 Activity:b 'Starting thread for event '
+2018-11-30 14:14:14,572 INFO 1234 run Thread:1 Case_id:Case1.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-11-30 14:14:14,573 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-30 14:14:14,575 http://127.0.0.1:5000 "POST /compliance-checker?uuid=1234 HTTP/1.1" 200 9
+2018-11-30 14:14:14,575 INFO 1234 run Thread:1 Case_id:Case1.0 Activity:b 'The server response is: deviation'
+2018-11-30 14:14:15,086 INFO 1234 simulate_stream_event Case_id:Case3.0 Activity:e 'Calling invoke_event_thread()'
+2018-11-30 14:14:15,086 INFO 1234 invoke_event_thread Case_id:Case3.0 Activity:e 'Initialising thread'
+2018-11-30 14:14:15,086 INFO 1234 invoke_event_thread Case_id:Case3.0 Activity:e 'Starting thread for event '
+2018-11-30 14:14:15,087 INFO 1234 run Thread:1 Case_id:Case3.0 Activity:e 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-11-30 14:14:15,088 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-30 14:14:15,090 http://127.0.0.1:5000 "POST /compliance-checker?uuid=1234 HTTP/1.1" 200 9
+2018-11-30 14:14:15,091 INFO 1234 run Thread:1 Case_id:Case3.0 Activity:e 'The server response is: deviation'
+2018-11-30 14:14:15,604 INFO 1234 simulate_stream_event Case_id:Case2.0 Activity:c 'Calling invoke_event_thread()'
+2018-11-30 14:14:15,604 INFO 1234 invoke_event_thread Case_id:Case2.0 Activity:c 'Initialising thread'
+2018-11-30 14:14:15,604 INFO 1234 invoke_event_thread Case_id:Case2.0 Activity:c 'Starting thread for event '
+2018-11-30 14:14:15,604 INFO 1234 run Thread:1 Case_id:Case2.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-11-30 14:14:15,606 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-30 14:14:15,607 http://127.0.0.1:5000 "POST /compliance-checker?uuid=1234 HTTP/1.1" 200 9
+2018-11-30 14:14:15,608 INFO 1234 run Thread:1 Case_id:Case2.0 Activity:c 'The server response is: deviation'
+2018-11-30 14:14:16,122 INFO 1234 simulate_stream_event Case_id:Case1.2 Activity:b 'Calling invoke_event_thread()'
+2018-11-30 14:14:16,122 INFO 1234 invoke_event_thread Case_id:Case1.2 Activity:b 'Initialising thread'
+2018-11-30 14:14:16,122 INFO 1234 invoke_event_thread Case_id:Case1.2 Activity:b 'Starting thread for event '
+2018-11-30 14:14:16,122 INFO 1234 run Thread:1 Case_id:Case1.2 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-11-30 14:14:16,125 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-30 14:14:16,127 http://127.0.0.1:5000 "POST /compliance-checker?uuid=1234 HTTP/1.1" 200 9
+2018-11-30 14:14:16,127 INFO 1234 run Thread:1 Case_id:Case1.2 Activity:b 'The server response is: deviation'
+2018-11-30 14:14:16,639 INFO 1234 simulate_stream_event Case_id:Case1.1 Activity:b 'Calling invoke_event_thread()'
+2018-11-30 14:14:16,639 INFO 1234 invoke_event_thread Case_id:Case1.1 Activity:b 'Initialising thread'
+2018-11-30 14:14:16,639 INFO 1234 invoke_event_thread Case_id:Case1.1 Activity:b 'Starting thread for event '
+2018-11-30 14:14:16,639 INFO 1234 run Thread:1 Case_id:Case1.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-11-30 14:14:16,641 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-30 14:14:16,642 http://127.0.0.1:5000 "POST /compliance-checker?uuid=1234 HTTP/1.1" 200 9
+2018-11-30 14:14:16,643 INFO 1234 run Thread:1 Case_id:Case1.1 Activity:b 'The server response is: deviation'
+2018-11-30 14:14:17,156 INFO 1234 simulate_stream_event Case_id:Case2.1 Activity:c 'Calling invoke_event_thread()'
+2018-11-30 14:14:17,156 INFO 1234 invoke_event_thread Case_id:Case2.1 Activity:c 'Initialising thread'
+2018-11-30 14:14:17,156 INFO 1234 invoke_event_thread Case_id:Case2.1 Activity:c 'Starting thread for event '
+2018-11-30 14:14:17,156 INFO 1234 run Thread:1 Case_id:Case2.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-11-30 14:14:17,158 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-30 14:14:17,160 http://127.0.0.1:5000 "POST /compliance-checker?uuid=1234 HTTP/1.1" 200 9
+2018-11-30 14:14:17,160 INFO 1234 run Thread:1 Case_id:Case2.1 Activity:c 'The server response is: deviation'
+2018-11-30 14:14:17,671 INFO 1234 simulate_stream_event Case_id:Case1.0 Activity:c 'Calling invoke_event_thread()'
+2018-11-30 14:14:17,671 INFO 1234 invoke_event_thread Case_id:Case1.0 Activity:c 'Initialising thread'
+2018-11-30 14:14:17,671 INFO 1234 invoke_event_thread Case_id:Case1.0 Activity:c 'Starting thread for event '
+2018-11-30 14:14:17,671 INFO 1234 run Thread:1 Case_id:Case1.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-11-30 14:14:17,672 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-30 14:14:17,674 http://127.0.0.1:5000 "POST /compliance-checker?uuid=1234 HTTP/1.1" 200 9
+2018-11-30 14:14:17,675 INFO 1234 run Thread:1 Case_id:Case1.0 Activity:c 'The server response is: deviation'
+2018-11-30 14:14:18,187 INFO 1234 simulate_stream_event Case_id:Case3.0 Activity:d 'Calling invoke_event_thread()'
+2018-11-30 14:14:18,187 INFO 1234 invoke_event_thread Case_id:Case3.0 Activity:d 'Initialising thread'
+2018-11-30 14:14:18,187 INFO 1234 invoke_event_thread Case_id:Case3.0 Activity:d 'Starting thread for event '
+2018-11-30 14:14:18,187 INFO 1234 run Thread:1 Case_id:Case3.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-11-30 14:14:18,189 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-30 14:14:18,191 http://127.0.0.1:5000 "POST /compliance-checker?uuid=1234 HTTP/1.1" 200 9
+2018-11-30 14:14:18,192 INFO 1234 run Thread:1 Case_id:Case3.0 Activity:d 'The server response is: deviation'
+2018-11-30 14:14:18,708 INFO 1234 simulate_stream_event Case_id:Case2.0 Activity:b 'Calling invoke_event_thread()'
+2018-11-30 14:14:18,708 INFO 1234 invoke_event_thread Case_id:Case2.0 Activity:b 'Initialising thread'
+2018-11-30 14:14:18,708 INFO 1234 invoke_event_thread Case_id:Case2.0 Activity:b 'Starting thread for event '
+2018-11-30 14:14:18,709 INFO 1234 run Thread:1 Case_id:Case2.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-11-30 14:14:18,711 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-30 14:14:18,713 http://127.0.0.1:5000 "POST /compliance-checker?uuid=1234 HTTP/1.1" 200 9
+2018-11-30 14:14:18,713 INFO 1234 run Thread:1 Case_id:Case2.0 Activity:b 'The server response is: deviation'
+2018-11-30 14:14:19,225 INFO 1234 simulate_stream_event Case_id:Case1.2 Activity:c 'Calling invoke_event_thread()'
+2018-11-30 14:14:19,226 INFO 1234 invoke_event_thread Case_id:Case1.2 Activity:c 'Initialising thread'
+2018-11-30 14:14:19,226 INFO 1234 invoke_event_thread Case_id:Case1.2 Activity:c 'Starting thread for event '
+2018-11-30 14:14:19,226 INFO 1234 run Thread:1 Case_id:Case1.2 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-11-30 14:14:19,227 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-30 14:14:19,230 http://127.0.0.1:5000 "POST /compliance-checker?uuid=1234 HTTP/1.1" 200 9
+2018-11-30 14:14:19,230 INFO 1234 run Thread:1 Case_id:Case1.2 Activity:c 'The server response is: deviation'
+2018-11-30 14:14:19,742 INFO 1234 simulate_stream_event Case_id:Case1.1 Activity:c 'Calling invoke_event_thread()'
+2018-11-30 14:14:19,743 INFO 1234 invoke_event_thread Case_id:Case1.1 Activity:c 'Initialising thread'
+2018-11-30 14:14:19,743 INFO 1234 invoke_event_thread Case_id:Case1.1 Activity:c 'Starting thread for event '
+2018-11-30 14:14:19,743 INFO 1234 run Thread:1 Case_id:Case1.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-11-30 14:14:19,745 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-30 14:14:19,747 http://127.0.0.1:5000 "POST /compliance-checker?uuid=1234 HTTP/1.1" 200 9
+2018-11-30 14:14:19,748 INFO 1234 run Thread:1 Case_id:Case1.1 Activity:c 'The server response is: deviation'
+2018-11-30 14:14:20,256 INFO 1234 simulate_stream_event Case_id:Case2.1 Activity:b 'Calling invoke_event_thread()'
+2018-11-30 14:14:20,256 INFO 1234 invoke_event_thread Case_id:Case2.1 Activity:b 'Initialising thread'
+2018-11-30 14:14:20,256 INFO 1234 invoke_event_thread Case_id:Case2.1 Activity:b 'Starting thread for event '
+2018-11-30 14:14:20,256 INFO 1234 run Thread:1 Case_id:Case2.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-11-30 14:14:20,258 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-30 14:14:20,260 http://127.0.0.1:5000 "POST /compliance-checker?uuid=1234 HTTP/1.1" 200 9
+2018-11-30 14:14:20,260 INFO 1234 run Thread:1 Case_id:Case2.1 Activity:b 'The server response is: deviation'
+2018-11-30 14:14:20,774 INFO 1234 simulate_stream_event Case_id:Case1.0 Activity:d 'Calling invoke_event_thread()'
+2018-11-30 14:14:20,774 INFO 1234 invoke_event_thread Case_id:Case1.0 Activity:d 'Initialising thread'
+2018-11-30 14:14:20,774 INFO 1234 invoke_event_thread Case_id:Case1.0 Activity:d 'Starting thread for event '
+2018-11-30 14:14:20,775 INFO 1234 run Thread:1 Case_id:Case1.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-11-30 14:14:20,776 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-30 14:14:20,780 http://127.0.0.1:5000 "POST /compliance-checker?uuid=1234 HTTP/1.1" 200 9
+2018-11-30 14:14:20,780 INFO 1234 run Thread:1 Case_id:Case1.0 Activity:d 'The server response is: deviation'
+2018-11-30 14:14:21,291 INFO 1234 simulate_stream_event Case_id:Case2.0 Activity:d 'Calling invoke_event_thread()'
+2018-11-30 14:14:21,292 INFO 1234 invoke_event_thread Case_id:Case2.0 Activity:d 'Initialising thread'
+2018-11-30 14:14:21,292 INFO 1234 invoke_event_thread Case_id:Case2.0 Activity:d 'Starting thread for event '
+2018-11-30 14:14:21,292 INFO 1234 run Thread:1 Case_id:Case2.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-11-30 14:14:21,294 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-30 14:14:21,296 http://127.0.0.1:5000 "POST /compliance-checker?uuid=1234 HTTP/1.1" 200 9
+2018-11-30 14:14:21,297 INFO 1234 run Thread:1 Case_id:Case2.0 Activity:d 'The server response is: deviation'
+2018-11-30 14:14:21,810 INFO 1234 simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-11-30 14:14:21,810 INFO 1234 invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-11-30 14:14:21,811 INFO 1234 invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-11-30 14:14:21,811 INFO 1234 run Thread:1 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-11-30 14:14:21,812 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-30 14:14:21,814 http://127.0.0.1:5000 "POST /compliance-checker?uuid=1234 HTTP/1.1" 200 9
+2018-11-30 14:14:21,815 INFO 1234 run Thread:1 Case_id:Case1.2 Activity:d 'The server response is: deviation'
