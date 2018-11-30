@@ -18,7 +18,7 @@ def get_decorations(log, net, initial_marking, final_marking, parameters=None, m
     Parameters
     -----------
     log
-        Trace logger
+        Trace log
     net
         Petri net
     initial_marking
@@ -83,7 +83,7 @@ def apply_frequency(net, initial_marking, final_marking, log=None, aggregated_st
     final_marking
         Final marking
     log
-        (Optional) trace logger
+        (Optional) trace log
     aggregated_statistics
         Dictionary containing the frequency statistics
     parameters
@@ -116,7 +116,7 @@ def apply_performance(net, initial_marking, final_marking, log=None, aggregated_
     final_marking
         Final marking
     log
-        (Optional) trace logger
+        (Optional) trace log
     aggregated_statistics
         Dictionary containing the frequency statistics
     parameters
