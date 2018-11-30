@@ -7,7 +7,8 @@ import os
 
 
 class Client_cls(object):
-    def __init__(self, user_name, path):
+
+    def __init__(self, user_name, path=None):
         self.dictionary_threads = {}
         self.path = path
         self.uuid = user_name
@@ -64,8 +65,9 @@ class Client_cls(object):
 
 def main(argv):
     func_name = sys._getframe().f_code.co_name
-    if len(argv) < 2 or len(argv) > 3:
-        print('Please give two args, e.g. python client.py user_name file_path')
+
+    if len(argv) > 3 or len(argv) < 1:
+        print('Please give one or two args, e.g. python client.py user_name (file_path)')
         client_logging.client_logging(message_type="ERROR", level="DEBUG", func_name=func_name,
                                       message="Username or Event logger path arguments "
                                               "were not provided during the run time")
@@ -80,28 +82,35 @@ def main(argv):
             client_logging.client_logging(message_type="ERROR", level="DEBUG", func_name=func_name, username=argv[0],
                                           message="The user can not be created!")
             return
+
     except Exception:
         client_logging.client_logging(message_type="ERROR", level="DEBUG", func_name=func_name, username=argv[0],
                                       message="The server is not available, please try it later!")
         print('Error: The server is not available, please try it later!')
         return
-    if not os.path.exists(argv[1]):
+
+    if len(argv) > 1 and not os.path.exists(argv[1]):
         client_logging.client_logging(message_type="ERROR", level="DEBUG", func_name=func_name, username=argv[0],
                                       message="The given path is not available!")
         print('Error: The given path is not available!')
         return
 
     # client1 = Client('client1', 'Example.xes')
-    client1 = Client_cls(argv[0], argv[1])
+    if len(argv) == 1:
+        client1 = Client_cls(argv[0])
+    else:
+        client1 = Client_cls(argv[0], argv[1])
 
     while(True):
         client_logging.client_logging(message_type="INFO", level="DEBUG", func_name=func_name, username=argv[0],
                                       message="The options are displayed")
         print('There are two services:')
-        print('\tPress 1, if you want to do the compliance checking')
+        if len(argv) == 2:
+            print('\tPress 1, if you want to do the compliance checking')
         print('\tPress 2, if you want to show the deviation pdf')
         print('\tPress 3, if you want to exit')
-        print('Note: you can interrupt with CTR_C, once you start to do the compliance checking')
+        if len(argv) == 2:
+            print('Note: you can interrupt with CTR_C, once you start to do the compliance checking')
         try:
             services = input()
         except Exception: #UnicodeDecodeError #TODO:maybe give some extra Exception
