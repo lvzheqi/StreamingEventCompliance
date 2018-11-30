@@ -3,8 +3,9 @@ from pm4py.objects.log.importer.xes import factory as xes_importer
 from pm4py.objects.log import transform
 from streaming_event_compliance.services.build_automata import case_thread
 import threading
-from streaming_event_compliance.utils.config import MAXIMUN_WINDOW_SIZE, WINDOW_SIZE
-from streaming_event_compliance.utils import dbtools, config
+from streaming_event_compliance.config import MAXIMUN_WINDOW_SIZE, WINDOW_SIZE
+from streaming_event_compliance.utils import dbtools
+from streaming_event_compliance import config
 from multiprocessing import Process
 from streaming_event_compliance.services import set_globalvar
 
