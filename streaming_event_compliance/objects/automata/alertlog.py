@@ -20,7 +20,7 @@ class AlertLog:
     def __repr__(self):
         return 'User name: %s' % self.uuid + '\n' + \
                'Window size: %s' % self.window_size + '\n' + \
-               'alert log:\n %s' % self.alert_log + '\n'
+               'alert logger:\n %s' % self.alert_log + '\n'
 
 
 class User(db.Model):
