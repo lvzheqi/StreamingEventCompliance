@@ -127,8 +127,8 @@ def apply_log(log, petri_net, initial_marking, final_marking, parameters=None, v
 
     # assign fitness to traces
     for index, align in enumerate(alignments):
-        # align_cost = align['cost'] // ali.utils.STD_MODEL_LOG_MOVE_COST
-        # align['fitness'] = 1 - ((align['cost']  // ali.utils.STD_MODEL_LOG_MOVE_COST) / best_worst_cost)
+        # align_cost = align['cost'] // ali.database.STD_MODEL_LOG_MOVE_COST
+        # align['fitness'] = 1 - ((align['cost']  // ali.database.STD_MODEL_LOG_MOVE_COST) / best_worst_cost)
         align['fitness'] = 1 - (
                 (align['cost'] // ali.utils.STD_MODEL_LOG_MOVE_COST) / (len(log[index]) + best_worst_cost))
 

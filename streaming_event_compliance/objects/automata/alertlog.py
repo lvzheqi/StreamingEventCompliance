@@ -1,4 +1,4 @@
-from streaming_event_compliance.utils import db
+from streaming_event_compliance.database import db
 
 
 class AlertLog:

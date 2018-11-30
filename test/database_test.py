@@ -1,5 +1,5 @@
 import unittest
-from streaming_event_compliance.utils import dbtools
+from streaming_event_compliance.database import dbtools
 from streaming_event_compliance.objects.automata import automata, alertlog
 
 
