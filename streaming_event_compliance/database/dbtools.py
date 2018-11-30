@@ -1,9 +1,9 @@
 from streaming_event_compliance.objects.automata import automata
 from streaming_event_compliance.objects.automata import alertlog
-from streaming_event_compliance.config import WINDOW_SIZE
+from streaming_event_compliance.utils.config import WINDOW_SIZE
 from streaming_event_compliance.objects.exceptions.exception import NoUserError
 
-from streaming_event_compliance.utils import db
+from streaming_event_compliance.database import db
 
 
 def empty_tables():

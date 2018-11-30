@@ -1,8 +1,10 @@
 from threading import Thread
 import time
-from streaming_event_compliance.config import WINDOW_SIZE, MAXIMUN_WINDOW_SIZE
-from streaming_event_compliance.services import set_globalvar
+from streaming_event_compliance.utils.config import WINDOW_SIZE, MAXIMUN_WINDOW_SIZE
+from streaming_event_compliance.services.build_automata import set_globalvar
 from streaming_event_compliance.objects.automata import automata
+
+check_executing_order = {}
 
 
 class CaseThreadForTraining(Thread):
@@ -26,56 +28,53 @@ class CaseThreadForTraining(Thread):
         print(self, "Now ", time.time(), "the event ", self.event['activity'], "of case ",
               self.event['case_id'], "is started.")
 
-        # thread lock
+        print("we are checking the status of lock for this event:",
+              self.C.lock_List.get(self.event['case_id']))
+        # Acquire the thread lock for current event
         self.C.lock_List.get(self.event['case_id']).acquire()
         print('case ', self.event['case_id'], 'is locked, because ', self.event['activity'],
               'of this case is being processed.')
-        print("we are checking the status of lock for this event:",
-              self.C.lock_List.get(self.event['case_id']))
 
-
-        # TODO: Connect to the database
-        # TODO: Store information of automata in database
+        # Calculate windows_memory for each event
         if len(self.C.dictionary_cases.get(self.event['case_id'])) < MAXIMUN_WINDOW_SIZE+1:
             windows_memory = self.C.dictionary_cases.get(self.event['case_id'])
-            print("windowsMemory of case ", self.event['case_id'], ':', windows_memory)
-
         else:
             windows_memory = self.C.dictionary_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE+1]
-            print("windowsMemory of case ", self.event['case_id'], ':', windows_memory)
-            if self.C.dictionary_cases.get(self.event['case_id'])[MAXIMUN_WINDOW_SIZE] == self.event['activity']:
-                print("\n*******current event is in the last of the memory*********\n")
-            else:
-                print("\n****somthing wrong!!***current event is not in the 5.positon of the memory*********\n")
-
         calcuate_connection_for_different_prefix_automata(windows_memory, self.event, self.T, self.C)
 
-        self.C.lock_List.get(self.event['case_id']).release()
+        '''--------For Testing: Before releasing lock, which thread used it will be stored-------'''
+        if check_executing_order.get(self.event['case_id']):
+            check_executing_order.get(self.event['case_id']).append(self.event['activity'])
+        else:
+            check_executing_order[self.event['case_id']] = []
+            check_executing_order[self.event['case_id']].append(self.event['activity'])
+        '''--------For Testing: Before releasing lock, which thread used it will be stored-------'''
 
+        # Release the thread lock for current event
+        self.C.lock_List.get(self.event['case_id']).release()
         print('case ', self.event['case_id'], 'is released', self.event['activity'],
               'of this case have been processed.')
-        print("we are checking the status of lock for this case:",
-              self.C.lock_List.get(self.event['case_id']))
 
 
 def calcuate_connection_for_different_prefix_automata(windowsMemory, event, T, C):
     """
     "autos" is a list of automata (global variable)
+    Connect to the database
+    Store information of automata in database
     :param windowsMemory: a list of activities from the same case_id of current event(another event),
                          size is maximum_window_size,
                          and the current event is in the last position of the windowsMemory
-                         (i.e. event == windowsMemory[maximum_window_size-1])
+                         (i.e. event == windowsMemory[maximum_window_size])
 
     :param event:
     :return:
     """
-    # Calculating for one event in order to train automata
     autos, status = set_globalvar.get_autos()
     for ws in WINDOW_SIZE: # [1, 2, 3, 4]
         source_node = ''.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws: MAXIMUN_WINDOW_SIZE])
         sink_node = ''.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws +1: MAXIMUN_WINDOW_SIZE+1])
-        # if source_node.find('*') == -1:
-        autos.get(ws).update_automata(automata.Connection(source_node, sink_node, 1))
+        if source_node.find('*') == -1:
+            autos.get(ws).update_automata(automata.Connection(source_node, sink_node, 1))
 
     if len(C.dictionary_cases.get(event['case_id'])) > MAXIMUN_WINDOW_SIZE:
         C.dictionary_cases.get(event['case_id']).pop(0)
