@@ -32,3 +32,7 @@ which can enhance online process mining result.
 username: compliancechecker
 password: compliancechecker
 mysql-db: compliancechecker
+
+
+Running Client Application:
+python client/application.py sabyashaikh client/Example.xes

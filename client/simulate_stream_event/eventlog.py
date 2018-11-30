@@ -2,6 +2,8 @@ from pm4py.objects.log.importer.xes import factory as xes_importer
 from pm4py.objects.log import transform
 from . import eventthread, client_logging
 from .exception import ReadFileException
+from .config import BASE_DIR
+import os
 import time
 import sys
 
@@ -13,7 +15,7 @@ def read_log(client_uuid, path):
     try:
         client_logging.client_logging(message_type="INFO", level="DEBUG", func_name=func_name, username=client_uuid,
                                       message="Creating a trace logger file: ")
-        trace_log = xes_importer.import_log(path)
+        trace_log = xes_importer.import_log(BASE_DIR + os.sep + 'client' + os.sep + '/Example.xes')
         client_logging.client_logging(message_type="INFO", level="DEBUG", func_name=func_name, username=client_uuid,
                                       message="Transforming trace logger to event logger")
         event_log = transform.transform_trace_log_to_event_log(trace_log)
