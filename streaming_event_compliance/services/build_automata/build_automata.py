@@ -3,8 +3,9 @@ from pm4py.objects.log.importer.xes import factory as xes_importer
 from pm4py.objects.log import transform
 from streaming_event_compliance.services.build_automata import case_thread
 import threading
-from streaming_event_compliance.utils.config import MAXIMUN_WINDOW_SIZE, WINDOW_SIZE
-from streaming_event_compliance.utils import dbtools, config
+from streaming_event_compliance.config import MAXIMUN_WINDOW_SIZE, WINDOW_SIZE
+from streaming_event_compliance.utils import dbtools
+from streaming_event_compliance import config
 from multiprocessing import Process
 from streaming_event_compliance.services import set_globalvar
 
@@ -68,7 +69,7 @@ def build_automata_pro():
                 thread.start()
             except KeyboardInterrupt:
                 print('Thread is interrupt!')
-            threads.append(thread) # Question: append(thread? or case_thread)
+            # threads.append(thread) # Question: append(thread? or case_thread)
             # TODO: huojingjing create thread for this event
         else:
             # print('have not found the case', event['case_id'], 'in caseMemory.')
@@ -91,7 +92,7 @@ def build_automata_pro():
                 thread.start()
             except KeyboardInterrupt:
                 print('Thread is interrupt!')
-            threads.append(thread)
+            # threads.append(thread)
             # this is for limiting the number of the threads that are runing???
             # TODO: what does caseThread do? give another init with 4 parameters
         threads_index = threads_index + 1
@@ -99,7 +100,7 @@ def build_automata_pro():
         #     threads[0].join()  # TODO: Jingjing: why we need to join these threads?
         #     del threads[0]  # why we delete?
     # TODO: raise exception when not success
-    for th in threads:
-        th.join()
-        print(th, "is done")
+    # for th in threads:
+    #     th.join()
+    #     print(th, "is done")
 

@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from streaming_event_compliance.utils import config
+from streaming_event_compliance import config
 
 app = Flask(__name__)
 
@@ -15,6 +15,6 @@ except Exception:
     print('Error: Database connection!')
     exit(1)
 
+print('__init__test')
 
 from streaming_event_compliance import routes
-
