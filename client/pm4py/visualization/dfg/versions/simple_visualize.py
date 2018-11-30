@@ -6,7 +6,6 @@ from graphviz import Digraph
 from pm4py.algo.filtering.tracelog.attributes import attributes_filter
 from pm4py.objects.log.util import xes
 from pm4py.util.constants import PARAMETER_CONSTANT_ACTIVITY_KEY
-from streaming_event_compliance.pm4py.visualization.common import *
 
 
 def get_min_max_value(dfg):
