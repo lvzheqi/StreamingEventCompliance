@@ -534,3 +534,118 @@
 2018-11-30 14:13:12,606 INFO client1 main 'The options are displayed'
 2018-11-30 14:13:16,429 INFO client1 main 'The user selected option 3'
 2018-11-30 14:13:16,429 INFO client1 main 'Exiting...'
+2018-11-30 16:09:49,089 INFO client1 main 'Post request to server:http://127.0.0.1:5000/login?uuid=client1'
+2018-11-30 16:09:49,122 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-30 16:09:49,125 http://127.0.0.1:5000 "POST /login?uuid=client1 HTTP/1.1" 200 0
+2018-11-30 16:09:49,126 INFO client1 main 'The options are displayed'
+2018-11-30 16:09:51,005 INFO client1 main 'The user selected option 1'
+2018-11-30 16:09:51,005 INFO client1 main 'Calling run_compliance_checker()'
+2018-11-30 16:09:51,006 INFO client1 run_compliance_checker 'Calling read_log()'
+2018-11-30 16:09:51,006 INFO client1 read_log 'Creating a trace logger file: '
+2018-11-30 16:09:51,015 INFO client1 read_log 'Transforming trace logger to event logger'
+2018-11-30 16:09:51,015 INFO client1 read_log 'Sorting event logger'
+2018-11-30 16:09:51,015 INFO client1 run_compliance_checker 'Calling simulate_stream_event()'
+2018-11-30 16:09:51,533 INFO client1 simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2018-11-30 16:09:51,533 INFO client1 invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2018-11-30 16:09:51,533 INFO client1 invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2018-11-30 16:09:51,534 INFO client1 run Thread:1 Case_id:Case1.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-11-30 16:09:51,535 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-30 16:09:51,540 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-30 16:09:51,543 INFO client1 run Thread:1 Case_id:Case1.0 Activity:a 'The server response is: deviation'
+2018-11-30 16:09:52,055 INFO client1 simulate_stream_event Case_id:Case3.0 Activity:a 'Calling invoke_event_thread()'
+2018-11-30 16:09:52,056 INFO client1 invoke_event_thread Case_id:Case3.0 Activity:a 'Initialising thread'
+2018-11-30 16:09:52,056 INFO client1 invoke_event_thread Case_id:Case3.0 Activity:a 'Starting thread for event '
+2018-11-30 16:09:52,056 INFO client1 run Thread:1 Case_id:Case3.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-11-30 16:09:52,058 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-30 16:09:52,061 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-30 16:09:52,062 INFO client1 run Thread:1 Case_id:Case3.0 Activity:a 'The server response is: deviation'
+2018-11-30 16:09:52,567 INFO client1 simulate_stream_event Case_id:Case2.0 Activity:a 'Calling invoke_event_thread()'
+2018-11-30 16:09:52,568 INFO client1 invoke_event_thread Case_id:Case2.0 Activity:a 'Initialising thread'
+2018-11-30 16:09:52,568 INFO client1 invoke_event_thread Case_id:Case2.0 Activity:a 'Starting thread for event '
+2018-11-30 16:09:52,568 INFO client1 run Thread:1 Case_id:Case2.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-11-30 16:09:52,570 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-30 16:09:52,572 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-30 16:09:52,573 INFO client1 run Thread:1 Case_id:Case2.0 Activity:a 'The server response is: deviation'
+2018-11-30 16:09:53,082 INFO client1 simulate_stream_event Case_id:Case1.2 Activity:a 'Calling invoke_event_thread()'
+2018-11-30 16:09:53,086 INFO client1 invoke_event_thread Case_id:Case1.2 Activity:a 'Initialising thread'
+2018-11-30 16:09:53,086 INFO client1 invoke_event_thread Case_id:Case1.2 Activity:a 'Starting thread for event '
+2018-11-30 16:09:53,087 INFO client1 run Thread:1 Case_id:Case1.2 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-11-30 16:09:53,088 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-30 16:09:53,091 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-30 16:09:53,091 INFO client1 run Thread:1 Case_id:Case1.2 Activity:a 'The server response is: deviation'
+2018-11-30 16:09:53,604 INFO client1 simulate_stream_event Case_id:Case1.1 Activity:a 'Calling invoke_event_thread()'
+2018-11-30 16:09:53,605 INFO client1 invoke_event_thread Case_id:Case1.1 Activity:a 'Initialising thread'
+2018-11-30 16:09:53,605 INFO client1 invoke_event_thread Case_id:Case1.1 Activity:a 'Starting thread for event '
+2018-11-30 16:09:53,605 INFO client1 run Thread:1 Case_id:Case1.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-11-30 16:09:53,607 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-30 16:09:53,610 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 9
+2018-11-30 16:09:53,611 INFO client1 run Thread:1 Case_id:Case1.1 Activity:a 'The server response is: deviation'
+2018-11-30 16:09:53,968 ERROR client1 main 'Compliance checking is interrupted by user'
+2018-11-30 16:09:53,968 INFO client1 main 'The options are displayed'
+2018-11-30 16:09:55,217 INFO client1 main 'The user selected option 2'
+2018-11-30 16:09:55,217 INFO client1 main 'Calling  run_show_deviation_pdf() '
+2018-11-30 16:09:55,217 INFO client1 run_show_deviation_pdf 'Post request to http://127.0.0.1:5000/show-deviation-pdf?uuid=client1'
+2018-11-30 16:09:55,219 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-11-30 16:09:55,223 http://127.0.0.1:5000 "POST /show-deviation-pdf?uuid=client1 HTTP/1.1" 200 None
+2018-11-30 16:09:55,234 SHIFT_JIS Japanese prober hit error at byte 574
+2018-11-30 16:09:55,235 EUC-JP Japanese prober hit error at byte 563
+2018-11-30 16:09:55,236 GB2312 Chinese prober hit error at byte 570
+2018-11-30 16:09:55,237 EUC-KR Korean prober hit error at byte 563
+2018-11-30 16:09:55,240 CP949 Korean prober hit error at byte 567
+2018-11-30 16:09:55,242 Big5 Chinese prober hit error at byte 563
+2018-11-30 16:09:55,242 EUC-TW Taiwan prober hit error at byte 11
+2018-11-30 16:09:55,310 windows-1251 confidence = 0.03893408174701765, below negative shortcut threshhold 0.05
+2018-11-30 16:09:55,375 KOI8-R confidence = 0.044866670362237356, below negative shortcut threshhold 0.05
+2018-11-30 16:09:55,436 ISO-8859-5 confidence = 0.04280517162583919, below negative shortcut threshhold 0.05
+2018-11-30 16:09:55,496 MacCyrillic confidence = 0.039690970242488126, below negative shortcut threshhold 0.05
+2018-11-30 16:09:55,557 IBM866 confidence = 0.03902623978218619, below negative shortcut threshhold 0.05
+2018-11-30 16:09:55,617 IBM855 confidence = 0.04130816641426232, below negative shortcut threshhold 0.05
+2018-11-30 16:09:55,802 ISO-8859-5 confidence = 0.04216799301709802, below negative shortcut threshhold 0.05
+2018-11-30 16:09:55,862 windows-1251 confidence = 0.03954853671208908, below negative shortcut threshhold 0.05
+2018-11-30 16:09:55,923 TIS-620 confidence = 0.044157101936250005, below negative shortcut threshhold 0.05
+2018-11-30 16:09:56,065 windows-1255 confidence = 0.03865636508910267, below negative shortcut threshhold 0.05
+2018-11-30 16:09:56,127 windows-1255 confidence = 0.03926469129222159, below negative shortcut threshhold 0.05
+2018-11-30 16:09:56,189 windows-1251 not active
+2018-11-30 16:09:56,190 KOI8-R not active
+2018-11-30 16:09:56,190 ISO-8859-5 not active
+2018-11-30 16:09:56,190 MacCyrillic not active
+2018-11-30 16:09:56,190 IBM866 not active
+2018-11-30 16:09:56,190 IBM855 not active
+2018-11-30 16:09:56,190 ISO-8859-7 Greek confidence = 0.07273360162044132
+2018-11-30 16:09:56,190 windows-1253 Greek confidence = 0.07369075176585092
+2018-11-30 16:09:56,190 ISO-8859-5 not active
+2018-11-30 16:09:56,190 windows-1251 not active
+2018-11-30 16:09:56,190 TIS-620 not active
+2018-11-30 16:09:56,190 ISO-8859-9 Turkish confidence = 0.06528629028218035
+2018-11-30 16:09:56,190 windows-1255 Hebrew confidence = 0.0
+2018-11-30 16:09:56,190 windows-1255 not active
+2018-11-30 16:09:56,190 windows-1255 not active
+2018-11-30 16:09:56,190 no probers hit minimum threshold
+2018-11-30 16:09:56,190 utf-8  confidence = 0.010000000000000009
+2018-11-30 16:09:56,191 SHIFT_JIS Japanese confidence = 0.01
+2018-11-30 16:09:56,191 EUC-JP Japanese confidence = 0.01
+2018-11-30 16:09:56,191 GB2312 Chinese confidence = 0.01
+2018-11-30 16:09:56,191 EUC-KR Korean confidence = 0.01
+2018-11-30 16:09:56,191 CP949 Korean confidence = 0.01
+2018-11-30 16:09:56,191 Big5 Chinese confidence = 0.01
+2018-11-30 16:09:56,191 EUC-TW Taiwan confidence = 0.01
+2018-11-30 16:09:56,191 windows-1251 Russian confidence = 0.03893408174701765
+2018-11-30 16:09:56,191 KOI8-R Russian confidence = 0.044866670362237356
+2018-11-30 16:09:56,191 ISO-8859-5 Russian confidence = 0.04280517162583919
+2018-11-30 16:09:56,191 MacCyrillic Russian confidence = 0.039690970242488126
+2018-11-30 16:09:56,191 IBM866 Russian confidence = 0.03902623978218619
+2018-11-30 16:09:56,191 IBM855 Russian confidence = 0.04130816641426232
+2018-11-30 16:09:56,191 ISO-8859-7 Greek confidence = 0.07273360162044132
+2018-11-30 16:09:56,191 windows-1253 Greek confidence = 0.07369075176585092
+2018-11-30 16:09:56,191 ISO-8859-5 Bulgairan confidence = 0.04216799301709802
+2018-11-30 16:09:56,191 windows-1251 Bulgarian confidence = 0.03954853671208908
+2018-11-30 16:09:56,191 TIS-620 Thai confidence = 0.044157101936250005
+2018-11-30 16:09:56,191 ISO-8859-9 Turkish confidence = 0.06528629028218035
+2018-11-30 16:09:56,191 windows-1255 Hebrew confidence = 0.0
+2018-11-30 16:09:56,191 windows-1255 Hebrew confidence = 0.03865636508910267
+2018-11-30 16:09:56,191 windows-1255 Hebrew confidence = 0.03926469129222159
+2018-11-30 16:09:56,192 windows-1255 Hebrew confidence = 0.03926469129222159
+2018-11-30 16:09:56,194 INFO client1 run_show_deviation_pdf 'Compliance checking is done. Deviations PDF is available athttp://127.0.0.1:5000/show-deviation-pdf?uuid=client1'
+2018-11-30 16:09:56,194 INFO client1 main 'The options are displayed'
+2018-11-30 16:09:58,592 INFO client1 main 'The user selected option 3'
+2018-11-30 16:09:58,592 INFO client1 main 'Exiting...'
