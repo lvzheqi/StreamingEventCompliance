@@ -47,7 +47,7 @@ def infer_start_activities(dfg):
     Returns
     ----------
     start_activities
-        Start activities in the log
+        Start activities in the logger
     """
     ingoing = get_ingoing_edges(dfg)
     outgoing = get_outgoing_edges(dfg)
@@ -73,7 +73,7 @@ def infer_end_activities(dfg):
     Returns
     ----------
     end_activities
-        End activities in the log
+        End activities in the logger
     """
     ingoing = get_ingoing_edges(dfg)
     outgoing = get_outgoing_edges(dfg)

@@ -6,7 +6,7 @@ from pm4py.util.constants import PARAMETER_CONSTANT_ACTIVITY_KEY
 def evaluate(aligned_traces, parameters=None):
     """
     Gets a dictionary expressing fitness in a synthetic way from the list of boolean values
-    saying if a trace in the log is fit, and the float values of fitness associated to each trace
+    saying if a trace in the logger is fit, and the float values of fitness associated to each trace
 
     Parameters
     ------------
@@ -41,7 +41,7 @@ def apply(log, petri_net, initial_marking, final_marking, parameters=None):
     Parameters
     -----------
     log
-        Trace log
+        Trace logger
     petri_net
         Petri net
     initial_marking
