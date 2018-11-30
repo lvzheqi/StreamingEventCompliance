@@ -427,7 +427,7 @@ def apply_trace(trace, net, initial_marking, final_marking, trans_map, enable_pl
     Parameters
     ----------
     trace
-        Trace in the event log
+        Trace in the event logger
     net
         Petri net
     initial_marking
@@ -743,12 +743,12 @@ def apply_log(log, net, initial_marking, final_marking, enable_place_fitness=Fal
               walk_through_hidden_trans=True, places_shortest_path_by_hidden=None,
               variants=None):
     """
-    Apply token-based replay to a log
+    Apply token-based replay to a logger
 
     Parameters
     ----------
     log
-        Trace log
+        Trace logger
     net
         Petri net
     initial_marking
@@ -770,7 +770,7 @@ def apply_log(log, net, initial_marking, final_marking, enable_place_fitness=Fal
     places_shortest_path_by_hidden
         Shortest paths between places by hidden transitions
     variants
-        List of variants contained in the event log
+        List of variants contained in the event logger
     """
     post_fix_cache = PostFixCaching()
     marking_to_activity_cache = MarkingToActivityCaching()

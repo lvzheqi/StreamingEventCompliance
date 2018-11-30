@@ -7,7 +7,7 @@ VERSIONS = {PANDAS: pandas_df_imp.import_log}
 
 def import_log_from_string(log_string, parameters=None, variant="pandas"):
     """
-    Import a CSV log from a string
+    Import a CSV logger from a string
 
     Parameters
     -----------
@@ -26,8 +26,8 @@ def import_log_from_string(log_string, parameters=None, variant="pandas"):
 
     Returns
     -----------
-    log
-        Event log object
+    logger
+        Event logger object
     """
     temp_file = string_to_file.import_string_to_temp_file(log_string, "csv")
     return import_log(temp_file, parameters=parameters, variant=variant)
@@ -35,7 +35,7 @@ def import_log_from_string(log_string, parameters=None, variant="pandas"):
 
 def import_log(path, parameters=None, variant="pandas"):
     """
-    Import a CSV log into an EventLog object
+    Import a CSV logger into an EventLog object
 
     Parameters
     -----------
@@ -54,15 +54,15 @@ def import_log(path, parameters=None, variant="pandas"):
 
     Returns
     -----------
-    log
-        Event log object
+    logger
+        Event logger object
     """
     return VERSIONS[variant](path, parameters=parameters)
 
 
 def apply(path, parameters=None, variant="pandas"):
     """
-    Import a CSV log into an EventLog object
+    Import a CSV logger into an EventLog object
 
     Parameters
     -----------
@@ -81,7 +81,7 @@ def apply(path, parameters=None, variant="pandas"):
 
     Returns
     -----------
-    log
-        Event log object
+    logger
+        Event logger object
     """
     return import_log(path, parameters=parameters, variant=variant)
