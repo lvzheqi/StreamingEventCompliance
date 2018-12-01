@@ -21,6 +21,11 @@ class BuildingAutomataTestCase(unittest.TestCase):
         globalvar.init()
 
     def test_multi_threading_for_building_automata(self):
+        '''
+        This test should pass, but because the bulid_automata() execuated twice
+        the expected_log and check_executing_order are not same
+        :return:
+        '''
         # read file
         trace_log = xes_importer.import_log(config.TRAINING_EVENT_LOG_PATH)
         event_log = transform.transform_trace_log_to_event_log(trace_log)
@@ -39,6 +44,7 @@ class BuildingAutomataTestCase(unittest.TestCase):
                 expected_log[event['case_id']] = []
                 expected_log[event['case_id']].append(event['activity'])
         build_automata.build_automata()
+        print("expected_log", expected_log, '\n')
         self.assertEqual(expected_log, check_executing_order)
 
 
@@ -56,6 +62,3 @@ class BuildingAutomataTestCase(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-#
-# suite = unittest.TestLoader().loadTestsFromTestCase(BuildingAutomataTestCase)
-# unittest.TextTestRunner(verbosity=2).run(suite)
