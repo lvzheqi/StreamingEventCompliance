@@ -6,7 +6,6 @@ from streaming_event_compliance.objects.automata import automata
 
 check_executing_order = {}
 
-
 class CaseThreadForTraining(Thread):
     def __init__(self, event, index,  T, C):
         self.event = event

@@ -15,9 +15,9 @@ class Client_cls(object):
     def run_compliance_checker(self):
         func_name = sys._getframe().f_code.co_name
         try:
-             client_logging.client_logging(message_type="INFO", level="DEBUG", func_name=func_name, username=self.uuid,
-                                               message="Calling read_log()")
-             event_log = eventlog.read_log(self.uuid, self.path)
+            client_logging.client_logging(message_type="INFO", level="DEBUG", func_name=func_name, username=self.uuid,
+                                          message="Calling read_log()")
+            event_log = eventlog.read_log(self.uuid, self.path)
         except Exception:
             client_logging.client_logging(message_type="ERROR", level="DEBUG", func_name=func_name, username=self.uuid,
                                           message="Exception raised while reading file")
