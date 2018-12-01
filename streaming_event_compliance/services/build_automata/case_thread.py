@@ -40,7 +40,10 @@ class CaseThreadForTraining(Thread):
             windows_memory = self.C.dictionary_cases.get(self.event['case_id'])
         else:
             windows_memory = self.C.dictionary_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE+1]
-        calcuate_connection_for_different_prefix_automata(windows_memory, self.event, self.T, self.C)
+
+        calcuate_connection_for_different_prefix_automata(windows_memory)
+        if len(self.C.dictionary_cases.get(self.event['case_id'])) > MAXIMUN_WINDOW_SIZE:
+            self.C.dictionary_cases.get(self.event['case_id']).pop(0)
 
         '''--------For Testing: Before releasing lock, which thread used it will be stored-------'''
         if check_executing_order.get(self.event['case_id']):
@@ -50,13 +53,14 @@ class CaseThreadForTraining(Thread):
             check_executing_order[self.event['case_id']].append(self.event['activity'])
         '''--------For Testing: Before releasing lock, which thread used it will be stored-------'''
 
-        # Release the thread lock for current event
         self.C.lock_List.get(self.event['case_id']).release()
+
+        # Release the thread lock for current event
         print('case ', self.event['case_id'], 'is released', self.event['activity'],
               'of this case have been processed.')
 
 
-def calcuate_connection_for_different_prefix_automata(windowsMemory, event, T, C):
+def calcuate_connection_for_different_prefix_automata(windowsMemory):
     """
     "autos" is a list of automata (global variable)
     Connect to the database
@@ -76,5 +80,4 @@ def calcuate_connection_for_different_prefix_automata(windowsMemory, event, T, C
         if source_node.find('*') == -1:
             autos.get(ws).update_automata(automata.Connection(source_node, sink_node, 1))
 
-    if len(C.dictionary_cases.get(event['case_id'])) > MAXIMUN_WINDOW_SIZE:
-        C.dictionary_cases.get(event['case_id']).pop(0)
+

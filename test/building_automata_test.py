@@ -44,7 +44,12 @@ class BuildingAutomataTestCase(unittest.TestCase):
                 expected_log[event['case_id']] = []
                 expected_log[event['case_id']].append(event['activity'])
         build_automata.build_automata()
-        print("expected_log", expected_log, '\n')
+        print("expected_order:")
+        for item in expected_log:
+            print(item, ":", expected_log.get(item))
+        print("check_executing_order:")
+        for item in check_executing_order:
+            print(item, ":", check_executing_order.get(item))
         self.assertEqual(expected_log, check_executing_order)
 
 

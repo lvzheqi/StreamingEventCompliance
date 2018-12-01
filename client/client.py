@@ -1,5 +1,5 @@
 from simulate_stream_event import eventlog, client_logging
-from simulate_stream_event.exception import ReadFileException
+from simulate_stream_event.exception import ReadFileException, ConnectionException
 from multiprocessing import Process
 import sys
 import requests
@@ -25,6 +25,7 @@ class Client_cls(object):
             raise ReadFileException(self.path)
         client_logging.client_logging(message_type="INFO", level="DEBUG", func_name=func_name, username=self.uuid,
                                       message="Calling simulate_stream_event()")
+
         eventlog.simulate_stream_event(self.uuid, event_log)
 
     def run_show_deviation_pdf(self):
@@ -59,7 +60,7 @@ class Client_cls(object):
             client_logging.client_logging(message_type="ERROR", level="DEBUG", func_name=func_name,
                                           username=self.uuid,
                                           message="Error: The server is not available, please try it later!")
-            print('Error: The server is not available, please try it later!')
+            print(ConnectionException.message)
             return
 
 
@@ -83,16 +84,17 @@ def main(argv):
                                           message="The user can not be created!")
             return
 
-    except Exception:
+    except requests.exceptions.RequestException:
         client_logging.client_logging(message_type="ERROR", level="DEBUG", func_name=func_name, username=argv[0],
                                       message="The server is not available, please try it later!")
-        print('Error: The server is not available, please try it later!')
+        print(ConnectionException.message)
         return
 
     if len(argv) > 1 and not os.path.exists(argv[1]):
         client_logging.client_logging(message_type="ERROR", level="DEBUG", func_name=func_name, username=argv[0],
                                       message="The given path is not available!")
-        print('Error: The given path is not available!')
+
+        print(ReadFileException.message)
         return
 
     # client1 = Client('client1', 'Example.xes')
@@ -138,7 +140,7 @@ def main(argv):
                                               message="Input file is not readable!")
                 print(ReadFileException.message)
                 print('------------------the compliance checking is interrupt------------------------')
-            except KeyboardInterrupt:
+            except KeyboardInterrupt: #TODO: jingjinghuo: this exception will never happen, using control+z it will directly exit.
                 client_logging.client_logging(message_type="ERROR", level="DEBUG", func_name=func_name,
                                               username=argv[0],
                                               message="Compliance checking is interrupted by user")
