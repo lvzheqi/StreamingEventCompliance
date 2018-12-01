@@ -6,21 +6,25 @@ import time
 import sys
 
 threads = []
+T = eventthread.ThreadMemorizer()
+index = 0
 
 
 def read_log(client_uuid, path):
     func_name = sys._getframe().f_code.co_name
     try:
-        client_logging.client_logging(message_type="INFO", level="DEBUG", func_name=func_name, username=client_uuid,
+        client_logging.log_info(func_name=func_name, username=client_uuid,
                                       message="Creating a trace logger file: ")
         trace_log = xes_importer.import_log(path)
-        client_logging.client_logging(message_type="INFO", level="DEBUG", func_name=func_name, username=client_uuid,
+        client_logging.log_info(func_name=func_name, username=client_uuid,
                                       message="Transforming trace logger to event logger")
         event_log = transform.transform_trace_log_to_event_log(trace_log)
-        client_logging.client_logging(message_type="INFO", level="DEBUG", func_name=func_name, username=client_uuid,
+        client_logging.log_info(func_name=func_name, username=client_uuid,
                                       message="Sorting event logger")
         event_log.sort()
     except Exception:
+        client_logging.log_error(func_name=func_name, username=client_uuid,
+                                message="Sorting event logger")
         raise ReadFileException
     return event_log
 
@@ -35,13 +39,13 @@ def simulate_stream_event(client_uuid, event_log):
                 dic['activity'] = event.get(item)
             elif item == 'case:concept:name':
                 dic['case_id'] = event.get(item)
-        client_logging.client_logging(message_type="INFO", level="DEBUG", func_name=func_name, username=client_uuid,
+        client_logging.log_info(func_name=func_name, username=client_uuid,
                                       case_id=dic['case_id'],
                                       activity=dic['activity'],
                                       message="Calling invoke_event_thread()")
         invoke_event_thread(dic, client_uuid)
     end_message = {'case_id': 'NONE', 'activity': 'END'}
-    client_logging.client_logging(message_type="INFO", level="DEBUG", func_name=func_name, username=client_uuid,
+    client_logging.log_info(func_name=func_name, username=client_uuid,
                                   case_id=end_message['case_id'],
                                   activity=end_message['activity'],
                                   message="Calling invoke_event_thread()")
@@ -49,18 +53,20 @@ def simulate_stream_event(client_uuid, event_log):
 
 
 def invoke_event_thread(event, client_uuid):
+    global index
     func_name = sys._getframe().f_code.co_name
-    client_logging.client_logging(message_type="INFO", level="DEBUG", func_name=func_name, username=client_uuid,
+    client_logging.log_info(func_name=func_name, username=client_uuid,
                                   case_id=event['case_id'],
                                   activity=event['activity'],
                                   message="Initialising thread")
-    event_thread = eventthread.EventThread(event, client_uuid)
-    client_logging.client_logging(message_type="INFO", level="DEBUG", func_name=func_name, username=client_uuid,
+    event_thread = eventthread.EventThread(event, T, index, client_uuid)
+    client_logging.log_info(func_name=func_name, username=client_uuid,
                                   case_id=event['case_id'],
                                   activity=event['activity'],
                                   message="Starting thread for event ")
     event_thread.start()
     threads.append(event_thread)
+    index = index + 1
 
 
 
