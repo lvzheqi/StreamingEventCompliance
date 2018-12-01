@@ -14,7 +14,7 @@ class ThreadMemorizer(object):
     '''
 
     def __init__(self):
-        self.dictionary_threads = {}  # key should be the case id
+        self.dictionary_threads = {}
 
 
 class CaseMemorizer(object):
