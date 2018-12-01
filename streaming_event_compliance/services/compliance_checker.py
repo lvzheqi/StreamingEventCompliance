@@ -33,7 +33,6 @@ def compliance_checker(client_uuid, event):
                 #3. Start it
                 C.dictionary_cases[event['case_id']] = [event['activity']]
                 thread = case_thread.CaseThread(event, T, C, threads_index, client_uuid)
-                #TODO: what does caseThread do?
                 T.dictionary_threads[threads_index] = case_thread
                 # this is just for remember the threads information that we have ceated.
                 thread.start()

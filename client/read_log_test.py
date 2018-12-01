@@ -15,4 +15,4 @@ class TestClient(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
 
-#TODO: This file path need to be changed. But if I move it to another filefolder, some modules can not been found.
+#TODO: jingjinghuo: This file path need to be changed. But if I move it to another filefolder, some modules can not been found.

@@ -1,9 +1,10 @@
 from pm4py.objects.log.importer.xes import factory as xes_importer
 from pm4py.objects.log import transform
 from . import eventthread, client_logging
-from .exception import ReadFileException
+from .exception import ReadFileException, ConnectionException
 import time
 import sys
+import requests
 
 threads = []
 
@@ -20,9 +21,7 @@ def read_log(client_uuid, path):
         client_logging.client_logging(message_type="INFO", level="DEBUG", func_name=func_name, username=client_uuid,
                                       message="Sorting event logger")
         event_log.sort()
-    except Exception as exception:
-        # assert type(exception).__name__ == 'FileNotFoundError'
-        # assert exception.__class__.__name__ == 'NameError'
+    except Exception:
         raise ReadFileException(path)
     return event_log
 
@@ -42,6 +41,7 @@ def simulate_stream_event(client_uuid, event_log):
                                       activity=dic['activity'],
                                       message="Calling invoke_event_thread()")
         invoke_event_thread(dic, client_uuid)
+
     end_message = {'case_id': 'NONE', 'activity': 'END'}
     client_logging.client_logging(message_type="INFO", level="DEBUG", func_name=func_name, username=client_uuid,
                                   case_id=end_message['case_id'],
@@ -57,6 +57,7 @@ def invoke_event_thread(event, client_uuid):
                                   activity=event['activity'],
                                   message="Initialising thread")
     event_thread = eventthread.EventThread(event, client_uuid)
+
     client_logging.client_logging(message_type="INFO", level="DEBUG", func_name=func_name, username=client_uuid,
                                   case_id=event['case_id'],
                                   activity=event['activity'],

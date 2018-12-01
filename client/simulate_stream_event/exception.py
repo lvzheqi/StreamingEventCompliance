@@ -1,9 +1,13 @@
+import requests
+
 class ConnectionException (Exception):
-    pass
+    message = 'ConnectionError: The server is not available, please try it later!'
+    def __init__(self):
+        super().__init__(self)
+
 
 
 class ReadFileException (Exception):
-    message = "ReadFileException: The input file does not exist!"
-    # TODO: Here can be improved, don't need to exit,just give a correct file path
+    message = "ReadFileError: The input file doesn't exist or is empty!"
     def __init__(self, path):
         self.path = path
