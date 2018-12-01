@@ -1,12 +1,11 @@
-from streaming_event_compliance.utils import db
+from streaming_event_compliance.database import db
 
 
 class AlertLog:
 
-    def __init__(self, uuid, window_size, auto):
+    def __init__(self, uuid, window_size):
         self.window_size = window_size
         self.uuid = uuid
-        self.auto = auto
         self.alert_log = []
 
     def add_alert_record(self, alert_record):
