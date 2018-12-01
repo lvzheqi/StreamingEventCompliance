@@ -20,7 +20,9 @@ def read_log(client_uuid, path):
         client_logging.client_logging(message_type="INFO", level="DEBUG", func_name=func_name, username=client_uuid,
                                       message="Sorting event logger")
         event_log.sort()
-    except Exception:
+    except Exception as exception:
+        # assert type(exception).__name__ == 'FileNotFoundError'
+        # assert exception.__class__.__name__ == 'NameError'
         raise ReadFileException(path)
     return event_log
 
