@@ -76,11 +76,11 @@ def init_automata_from_database():
     return autos, 0
 
 
-def init_alert_log_from_database(uuid, autos):
+def init_alert_log_from_database(uuid):
     records = alertlog.AlertRecord.query.filter_by(user_id=uuid).all()
     alogs = {}
     for ws in WINDOW_SIZE:
-        alog = alertlog.AlertLog(uuid, ws, autos[ws])
+        alog = alertlog.AlertLog(uuid, ws)
         alogs[ws] = alog
     for record in records:
         ws = len(record.source_node)
