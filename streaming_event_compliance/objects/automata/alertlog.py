@@ -40,8 +40,8 @@ class AlertRecord(db.Model):
 
     user_id = db.Column('user_id', db.String(20), db.ForeignKey('User.user_name'),
                         primary_key=True)
-    source_node = db.Column('source_node', db.String(10), primary_key=True)
-    sink_node = db.Column('sink_node', db.String(10), primary_key=True)
+    source_node = db.Column('source_node', db.String(20), primary_key=True)
+    sink_node = db.Column('sink_node', db.String(20), primary_key=True)
     alert_cause = db.Column('alert_cause', db.String(1))
     alert_count = db.Column('alert_count', db.Float)
 
