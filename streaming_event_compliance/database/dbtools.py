@@ -83,7 +83,7 @@ def init_alert_log_from_database(uuid):
         alog = alertlog.AlertLog(uuid, ws)
         alogs[ws] = alog
     for record in records:
-        ws = len(record.source_node.replace(',',''))
+        
         alog = alogs[ws]
         alog.add_alert_record(record)
     return alogs
