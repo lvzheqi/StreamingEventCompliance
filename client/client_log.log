@@ -10488,3 +10488,833 @@
 2018-12-01 20:06:52,086 Starting new HTTP connection (1): 127.0.0.1:5000
 2018-12-01 20:06:52,088 http://127.0.0.1:5000 "POST /login?uuid=clientname HTTP/1.1" 200 0
 2018-12-01 20:06:52,088 ERROR clientname main 'The given path is not available!'
+2018-12-02 05:52:12,470  ERROR  Username:Unknown main 'Username or Event logger path arguments were not provided during the run time'
+2018-12-02 05:57:26,025  INFO sabya main 'Post request to server:http://127.0.0.1:5000/login?uuid=sabya'
+2018-12-02 05:57:26,115 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 05:57:26,145 http://127.0.0.1:5000 "POST /login?uuid=sabya HTTP/1.1" 200 0
+2018-12-02 05:57:26,147  INFO sabya main 'The options are displayed'
+2018-12-02 05:57:28,227  INFO sabya main 'The user selected option 1'
+2018-12-02 05:57:28,227  INFO sabya main 'Calling run_compliance_checker()'
+2018-12-02 05:57:28,227  INFO sabya run_compliance_checker 'Calling read_log()'
+2018-12-02 05:57:28,227  INFO sabya read_log 'Creating a trace logger file: '
+2018-12-02 05:57:28,239  INFO sabya read_log 'Transforming trace logger to event logger'
+2018-12-02 05:57:28,239  INFO sabya read_log 'Sorting event logger'
+2018-12-02 05:57:28,239  INFO sabya run_compliance_checker 'Calling simulate_stream_event()'
+2018-12-02 05:57:28,763  INFO sabya simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-02 05:57:28,763  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2018-12-02 05:57:28,763  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2018-12-02 05:57:29,266  INFO sabya simulate_stream_event Case_id:Case3.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-02 05:57:29,266  INFO sabya invoke_event_thread Case_id:Case3.0 Activity:a 'Initialising thread'
+2018-12-02 05:57:29,266  INFO sabya invoke_event_thread Case_id:Case3.0 Activity:a 'Starting thread for event '
+2018-12-02 05:57:29,769  INFO sabya simulate_stream_event Case_id:Case2.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-02 05:57:29,769  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:a 'Initialising thread'
+2018-12-02 05:57:29,769  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:a 'Starting thread for event '
+2018-12-02 05:57:30,273  INFO sabya simulate_stream_event Case_id:Case1.2 Activity:a 'Calling invoke_event_thread()'
+2018-12-02 05:57:30,273  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:a 'Initialising thread'
+2018-12-02 05:57:30,273  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:a 'Starting thread for event '
+2018-12-02 05:57:30,775  INFO sabya simulate_stream_event Case_id:Case1.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-02 05:57:30,775  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:a 'Initialising thread'
+2018-12-02 05:57:30,775  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:a 'Starting thread for event '
+2018-12-02 05:57:31,279  INFO sabya simulate_stream_event Case_id:Case2.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-02 05:57:31,279  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:a 'Initialising thread'
+2018-12-02 05:57:31,279  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:a 'Starting thread for event '
+2018-12-02 05:57:31,782  INFO sabya simulate_stream_event Case_id:Case1.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-02 05:57:31,782  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:b 'Initialising thread'
+2018-12-02 05:57:31,782  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:b 'Starting thread for event '
+2018-12-02 05:57:32,285  INFO sabya simulate_stream_event Case_id:Case3.0 Activity:e 'Calling invoke_event_thread()'
+2018-12-02 05:57:32,285  INFO sabya invoke_event_thread Case_id:Case3.0 Activity:e 'Initialising thread'
+2018-12-02 05:57:32,285  INFO sabya invoke_event_thread Case_id:Case3.0 Activity:e 'Starting thread for event '
+2018-12-02 05:57:32,789  INFO sabya simulate_stream_event Case_id:Case2.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-02 05:57:32,789  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:c 'Initialising thread'
+2018-12-02 05:57:32,789  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:c 'Starting thread for event '
+2018-12-02 05:57:33,293  INFO sabya simulate_stream_event Case_id:Case1.2 Activity:b 'Calling invoke_event_thread()'
+2018-12-02 05:57:33,293  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:b 'Initialising thread'
+2018-12-02 05:57:33,293  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:b 'Starting thread for event '
+2018-12-02 05:57:33,796  INFO sabya simulate_stream_event Case_id:Case1.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-02 05:57:33,796  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:b 'Initialising thread'
+2018-12-02 05:57:33,796  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:b 'Starting thread for event '
+2018-12-02 05:57:34,299  INFO sabya simulate_stream_event Case_id:Case2.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-02 05:57:34,299  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:c 'Initialising thread'
+2018-12-02 05:57:34,299  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:c 'Starting thread for event '
+2018-12-02 05:57:34,803  INFO sabya simulate_stream_event Case_id:Case1.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-02 05:57:34,803  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:c 'Initialising thread'
+2018-12-02 05:57:34,803  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:c 'Starting thread for event '
+2018-12-02 05:57:35,306  INFO sabya simulate_stream_event Case_id:Case3.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-02 05:57:35,306  INFO sabya invoke_event_thread Case_id:Case3.0 Activity:d 'Initialising thread'
+2018-12-02 05:57:35,306  INFO sabya invoke_event_thread Case_id:Case3.0 Activity:d 'Starting thread for event '
+2018-12-02 05:57:35,810  INFO sabya simulate_stream_event Case_id:Case2.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-02 05:57:35,810  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:b 'Initialising thread'
+2018-12-02 05:57:35,810  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:b 'Starting thread for event '
+2018-12-02 05:57:36,314  INFO sabya simulate_stream_event Case_id:Case1.2 Activity:c 'Calling invoke_event_thread()'
+2018-12-02 05:57:36,314  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:c 'Initialising thread'
+2018-12-02 05:57:36,314  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:c 'Starting thread for event '
+2018-12-02 05:57:36,818  INFO sabya simulate_stream_event Case_id:Case1.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-02 05:57:36,818  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:c 'Initialising thread'
+2018-12-02 05:57:36,818  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:c 'Starting thread for event '
+2018-12-02 05:57:37,323  INFO sabya simulate_stream_event Case_id:Case2.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-02 05:57:37,323  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:b 'Initialising thread'
+2018-12-02 05:57:37,323  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:b 'Starting thread for event '
+2018-12-02 05:57:37,825  INFO sabya simulate_stream_event Case_id:Case1.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-02 05:57:37,825  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:d 'Initialising thread'
+2018-12-02 05:57:37,825  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:d 'Starting thread for event '
+2018-12-02 05:57:38,329  INFO sabya simulate_stream_event Case_id:Case2.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-02 05:57:38,329  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:d 'Initialising thread'
+2018-12-02 05:57:38,329  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:d 'Starting thread for event '
+2018-12-02 05:57:38,830  INFO sabya simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-02 05:57:38,830  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-02 05:57:38,830  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-02 05:57:39,334  INFO sabya simulate_stream_event Case_id:Case1.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-02 05:57:39,334  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:d 'Initialising thread'
+2018-12-02 05:57:39,334  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:d 'Starting thread for event '
+2018-12-02 05:57:39,837  INFO sabya simulate_stream_event Case_id:Case2.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-02 05:57:39,837  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:d 'Initialising thread'
+2018-12-02 05:57:39,837  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:d 'Starting thread for event '
+2018-12-02 05:57:39,838  INFO sabya simulate_stream_event Case_id:NONE Activity:END 'Calling invoke_event_thread()'
+2018-12-02 05:57:39,838  INFO sabya invoke_event_thread Case_id:NONE Activity:END 'Initialising thread'
+2018-12-02 05:57:39,838  INFO sabya invoke_event_thread Case_id:NONE Activity:END 'Starting thread for event '
+2018-12-02 05:57:40,964  INFO sabya main 'compliance checking is completed'
+2018-12-02 05:57:40,964  INFO sabya main 'The options are displayed'
+2018-12-02 06:07:46,477  INFO sabya main 'The user selected option 3'
+2018-12-02 06:07:46,478  INFO sabya main 'Exiting...'
+2018-12-02 06:07:57,277  INFO sabya main 'Post request to server:http://127.0.0.1:5000/login?uuid=sabya'
+2018-12-02 06:07:57,388 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:07:57,393 http://127.0.0.1:5000 "POST /login?uuid=sabya HTTP/1.1" 200 0
+2018-12-02 06:07:57,393  INFO sabya main 'The options are displayed'
+2018-12-02 06:07:59,220  INFO sabya main 'The user selected option 1'
+2018-12-02 06:07:59,221  INFO sabya main 'Calling run_compliance_checker()'
+2018-12-02 06:07:59,221  INFO sabya run_compliance_checker 'Calling read_log()'
+2018-12-02 06:07:59,221  INFO sabya read_log 'Creating a trace logger file: '
+2018-12-02 06:07:59,370  INFO sabya read_log 'Transforming trace logger to event logger'
+2018-12-02 06:07:59,371  INFO sabya read_log 'Sorting event logger'
+2018-12-02 06:07:59,371  INFO sabya run_compliance_checker 'Calling simulate_stream_event()'
+2018-12-02 06:07:59,874  INFO sabya simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-02 06:07:59,874  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2018-12-02 06:07:59,874  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2018-12-02 06:07:59,875  INFO sabya run Thread:1 Case_id:Case1.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:07:59,877 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:07:59,883 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:07:59,883  INFO sabya run Thread:1 Case_id:Case1.0 Activity:a 'The server response is: deviation'
+2018-12-02 06:08:00,378  INFO sabya simulate_stream_event Case_id:Case3.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-02 06:08:00,378  INFO sabya invoke_event_thread Case_id:Case3.0 Activity:a 'Initialising thread'
+2018-12-02 06:08:00,378  INFO sabya invoke_event_thread Case_id:Case3.0 Activity:a 'Starting thread for event '
+2018-12-02 06:08:00,379  INFO sabya run Thread:1 Case_id:Case3.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:08:00,381 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:08:00,383 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:08:00,384  INFO sabya run Thread:1 Case_id:Case3.0 Activity:a 'The server response is: deviation'
+2018-12-02 06:08:00,881  INFO sabya simulate_stream_event Case_id:Case2.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-02 06:08:01,244  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:a 'Initialising thread'
+2018-12-02 06:08:01,244  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:a 'Starting thread for event '
+2018-12-02 06:08:01,244  INFO sabya run Thread:1 Case_id:Case2.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:08:01,247 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:08:01,250 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:08:01,250  INFO sabya run Thread:1 Case_id:Case2.0 Activity:a 'The server response is: deviation'
+2018-12-02 06:08:01,747  INFO sabya simulate_stream_event Case_id:Case1.2 Activity:a 'Calling invoke_event_thread()'
+2018-12-02 06:08:01,747  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:a 'Initialising thread'
+2018-12-02 06:08:01,747  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:a 'Starting thread for event '
+2018-12-02 06:08:01,748  INFO sabya run Thread:1 Case_id:Case1.2 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:08:01,750 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:08:01,752 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:08:01,753  INFO sabya run Thread:1 Case_id:Case1.2 Activity:a 'The server response is: deviation'
+2018-12-02 06:08:02,252  INFO sabya simulate_stream_event Case_id:Case1.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-02 06:08:02,252  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:a 'Initialising thread'
+2018-12-02 06:08:02,252  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:a 'Starting thread for event '
+2018-12-02 06:08:02,252  INFO sabya run Thread:1 Case_id:Case1.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:08:02,255 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:08:02,257 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:08:02,258  INFO sabya run Thread:1 Case_id:Case1.1 Activity:a 'The server response is: deviation'
+2018-12-02 06:08:02,756  INFO sabya simulate_stream_event Case_id:Case2.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-02 06:08:02,756  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:a 'Initialising thread'
+2018-12-02 06:08:02,756  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:a 'Starting thread for event '
+2018-12-02 06:08:02,756  INFO sabya run Thread:1 Case_id:Case2.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:08:02,758 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:08:02,761 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:08:02,762  INFO sabya run Thread:1 Case_id:Case2.1 Activity:a 'The server response is: deviation'
+2018-12-02 06:08:03,259  INFO sabya simulate_stream_event Case_id:Case1.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-02 06:08:03,259  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:b 'Initialising thread'
+2018-12-02 06:08:03,259  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:b 'Starting thread for event '
+2018-12-02 06:08:03,260  INFO sabya run Thread:1 Case_id:Case1.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:08:03,262 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:08:03,265 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:08:03,265  INFO sabya run Thread:1 Case_id:Case1.0 Activity:b 'The server response is: deviation'
+2018-12-02 06:08:03,764  INFO sabya simulate_stream_event Case_id:Case3.0 Activity:e 'Calling invoke_event_thread()'
+2018-12-02 06:08:03,764  INFO sabya invoke_event_thread Case_id:Case3.0 Activity:e 'Initialising thread'
+2018-12-02 06:08:03,764  INFO sabya invoke_event_thread Case_id:Case3.0 Activity:e 'Starting thread for event '
+2018-12-02 06:08:03,765  INFO sabya run Thread:1 Case_id:Case3.0 Activity:e 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:08:03,767 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:08:03,770 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:08:03,770  INFO sabya run Thread:1 Case_id:Case3.0 Activity:e 'The server response is: deviation'
+2018-12-02 06:08:04,269  INFO sabya simulate_stream_event Case_id:Case2.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-02 06:08:04,269  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:c 'Initialising thread'
+2018-12-02 06:08:04,269  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:c 'Starting thread for event '
+2018-12-02 06:08:04,269  INFO sabya run Thread:1 Case_id:Case2.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:08:04,271 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:08:04,274 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:08:04,275  INFO sabya run Thread:1 Case_id:Case2.0 Activity:c 'The server response is: deviation'
+2018-12-02 06:08:04,772  INFO sabya simulate_stream_event Case_id:Case1.2 Activity:b 'Calling invoke_event_thread()'
+2018-12-02 06:08:05,218  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:b 'Initialising thread'
+2018-12-02 06:08:05,219  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:b 'Starting thread for event '
+2018-12-02 06:08:05,219  INFO sabya run Thread:1 Case_id:Case1.2 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:08:05,221 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:08:05,225 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:08:05,226  INFO sabya run Thread:1 Case_id:Case1.2 Activity:b 'The server response is: deviation'
+2018-12-02 06:08:05,721  INFO sabya simulate_stream_event Case_id:Case1.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-02 06:08:05,721  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:b 'Initialising thread'
+2018-12-02 06:08:05,721  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:b 'Starting thread for event '
+2018-12-02 06:08:05,722  INFO sabya run Thread:1 Case_id:Case1.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:08:05,724 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:08:05,727 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:08:05,727  INFO sabya run Thread:1 Case_id:Case1.1 Activity:b 'The server response is: deviation'
+2018-12-02 06:08:06,224  INFO sabya simulate_stream_event Case_id:Case2.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-02 06:08:06,224  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:c 'Initialising thread'
+2018-12-02 06:08:06,224  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:c 'Starting thread for event '
+2018-12-02 06:08:06,225  INFO sabya run Thread:1 Case_id:Case2.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:08:06,227 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:08:06,230 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:08:06,230  INFO sabya run Thread:1 Case_id:Case2.1 Activity:c 'The server response is: deviation'
+2018-12-02 06:08:06,728  INFO sabya simulate_stream_event Case_id:Case1.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-02 06:08:06,728  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:c 'Initialising thread'
+2018-12-02 06:08:06,728  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:c 'Starting thread for event '
+2018-12-02 06:08:06,728  INFO sabya run Thread:1 Case_id:Case1.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:08:06,730 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:08:06,733 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:08:06,734  INFO sabya run Thread:1 Case_id:Case1.0 Activity:c 'The server response is: deviation'
+2018-12-02 06:08:07,232  INFO sabya simulate_stream_event Case_id:Case3.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-02 06:08:07,232  INFO sabya invoke_event_thread Case_id:Case3.0 Activity:d 'Initialising thread'
+2018-12-02 06:08:07,232  INFO sabya invoke_event_thread Case_id:Case3.0 Activity:d 'Starting thread for event '
+2018-12-02 06:08:07,233  INFO sabya run Thread:1 Case_id:Case3.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:08:07,235 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:08:07,238 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:08:07,239  INFO sabya run Thread:1 Case_id:Case3.0 Activity:d 'The server response is: deviation'
+2018-12-02 06:08:07,736  INFO sabya simulate_stream_event Case_id:Case2.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-02 06:08:07,736  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:b 'Initialising thread'
+2018-12-02 06:08:07,736  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:b 'Starting thread for event '
+2018-12-02 06:08:07,737  INFO sabya run Thread:1 Case_id:Case2.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:08:07,739 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:08:07,741 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:08:07,742  INFO sabya run Thread:1 Case_id:Case2.0 Activity:b 'The server response is: deviation'
+2018-12-02 06:08:08,240  INFO sabya simulate_stream_event Case_id:Case1.2 Activity:c 'Calling invoke_event_thread()'
+2018-12-02 06:08:08,240  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:c 'Initialising thread'
+2018-12-02 06:08:08,240  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:c 'Starting thread for event '
+2018-12-02 06:08:08,240  INFO sabya run Thread:1 Case_id:Case1.2 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:08:08,242 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:08:08,245 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:08:08,246  INFO sabya run Thread:1 Case_id:Case1.2 Activity:c 'The server response is: deviation'
+2018-12-02 06:08:08,743  INFO sabya simulate_stream_event Case_id:Case1.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-02 06:08:08,743  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:c 'Initialising thread'
+2018-12-02 06:08:08,744  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:c 'Starting thread for event '
+2018-12-02 06:08:08,744  INFO sabya run Thread:1 Case_id:Case1.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:08:08,746 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:08:08,749 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:08:08,749  INFO sabya run Thread:1 Case_id:Case1.1 Activity:c 'The server response is: deviation'
+2018-12-02 06:08:09,246  INFO sabya simulate_stream_event Case_id:Case2.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-02 06:08:09,246  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:b 'Initialising thread'
+2018-12-02 06:08:09,246  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:b 'Starting thread for event '
+2018-12-02 06:08:09,247  INFO sabya run Thread:1 Case_id:Case2.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:08:09,249 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:08:09,251 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:08:09,252  INFO sabya run Thread:1 Case_id:Case2.1 Activity:b 'The server response is: deviation'
+2018-12-02 06:08:09,749  INFO sabya simulate_stream_event Case_id:Case1.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-02 06:08:09,749  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:d 'Initialising thread'
+2018-12-02 06:08:09,749  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:d 'Starting thread for event '
+2018-12-02 06:08:09,750  INFO sabya run Thread:1 Case_id:Case1.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:08:09,751 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:08:09,753 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:08:09,754  INFO sabya run Thread:1 Case_id:Case1.0 Activity:d 'The server response is: deviation'
+2018-12-02 06:08:10,253  INFO sabya simulate_stream_event Case_id:Case2.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-02 06:08:10,253  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:d 'Initialising thread'
+2018-12-02 06:08:10,253  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:d 'Starting thread for event '
+2018-12-02 06:08:10,254  INFO sabya run Thread:1 Case_id:Case2.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:08:10,256 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:08:10,258 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:08:10,259  INFO sabya run Thread:1 Case_id:Case2.0 Activity:d 'The server response is: deviation'
+2018-12-02 06:08:10,756  INFO sabya simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-02 06:08:10,756  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-02 06:08:10,756  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-02 06:08:10,756  INFO sabya run Thread:1 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:08:10,759 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:08:10,761 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:08:10,762  INFO sabya run Thread:1 Case_id:Case1.2 Activity:d 'The server response is: deviation'
+2018-12-02 06:08:11,259  INFO sabya simulate_stream_event Case_id:Case1.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-02 06:08:11,259  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:d 'Initialising thread'
+2018-12-02 06:08:11,259  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:d 'Starting thread for event '
+2018-12-02 06:08:11,260  INFO sabya run Thread:1 Case_id:Case1.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:08:11,262 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:08:11,265 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:08:11,265  INFO sabya run Thread:1 Case_id:Case1.1 Activity:d 'The server response is: deviation'
+2018-12-02 06:08:11,761  INFO sabya simulate_stream_event Case_id:Case2.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-02 06:08:11,761  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:d 'Initialising thread'
+2018-12-02 06:08:11,761  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:d 'Starting thread for event '
+2018-12-02 06:08:11,761  INFO sabya run Thread:1 Case_id:Case2.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:08:11,761  INFO sabya simulate_stream_event Case_id:NONE Activity:END 'Calling invoke_event_thread()'
+2018-12-02 06:08:11,761  INFO sabya invoke_event_thread Case_id:NONE Activity:END 'Initialising thread'
+2018-12-02 06:08:11,762  INFO sabya invoke_event_thread Case_id:NONE Activity:END 'Starting thread for event '
+2018-12-02 06:08:11,762  INFO sabya run Thread:1 Case_id:NONE Activity:END 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:08:11,764 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:08:11,767 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:08:11,768 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:08:11,768  INFO sabya run Thread:1 Case_id:Case2.1 Activity:d 'The server response is: deviation'
+2018-12-02 06:08:11,771 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:08:11,772  INFO sabya run Thread:1 Case_id:NONE Activity:END 'The server response is: deviation'
+2018-12-02 06:08:12,893  INFO sabya main 'compliance checking is completed'
+2018-12-02 06:08:12,893  INFO sabya main 'The options are displayed'
+2018-12-02 06:11:43,480  INFO sabya main 'The user selected option 3'
+2018-12-02 06:11:43,481  INFO sabya main 'Exiting...'
+2018-12-02 06:12:49,054  INFO sabya main 'Post request to server:http://127.0.0.1:5000/login?uuid=sabya'
+2018-12-02 06:12:49,054 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:12:49,069 http://127.0.0.1:5000 "POST /login?uuid=sabya HTTP/1.1" 200 0
+2018-12-02 06:12:49,069  INFO sabya main 'The options are displayed'
+2018-12-02 06:12:50,481  INFO sabya main 'The user selected option 1'
+2018-12-02 06:12:50,481  INFO sabya main 'Calling run_compliance_checker()'
+2018-12-02 06:12:50,481  INFO sabya run_compliance_checker 'Calling read_log()'
+2018-12-02 06:12:50,481  INFO sabya read_log 'Creating a trace logger file: '
+2018-12-02 06:12:50,481  INFO sabya read_log 'Transforming trace logger to event logger'
+2018-12-02 06:12:50,481  INFO sabya read_log 'Sorting event logger'
+2018-12-02 06:12:50,481  INFO sabya run_compliance_checker 'Calling simulate_stream_event()'
+2018-12-02 06:12:51,028  INFO sabya simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-02 06:12:51,028  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2018-12-02 06:12:51,028  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2018-12-02 06:12:51,028  INFO sabya run Thread:1 Case_id:Case1.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:12:51,028 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:12:51,028 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:12:51,028  INFO sabya run Thread:1 Case_id:Case1.0 Activity:a 'The server response is: deviation'
+2018-12-02 06:12:51,567  INFO sabya simulate_stream_event Case_id:Case3.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-02 06:12:51,567  INFO sabya invoke_event_thread Case_id:Case3.0 Activity:a 'Initialising thread'
+2018-12-02 06:12:51,567  INFO sabya invoke_event_thread Case_id:Case3.0 Activity:a 'Starting thread for event '
+2018-12-02 06:12:51,567  INFO sabya run Thread:1 Case_id:Case3.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:12:51,567 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:12:51,567 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:12:51,567  INFO sabya run Thread:1 Case_id:Case3.0 Activity:a 'The server response is: deviation'
+2018-12-02 06:12:52,114  INFO sabya simulate_stream_event Case_id:Case2.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-02 06:12:52,114  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:a 'Initialising thread'
+2018-12-02 06:12:52,114  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:a 'Starting thread for event '
+2018-12-02 06:12:52,114  INFO sabya run Thread:1 Case_id:Case2.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:12:52,114 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:12:52,114 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:12:52,114  INFO sabya run Thread:1 Case_id:Case2.0 Activity:a 'The server response is: deviation'
+2018-12-02 06:12:52,662  INFO sabya simulate_stream_event Case_id:Case1.2 Activity:a 'Calling invoke_event_thread()'
+2018-12-02 06:12:52,662  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:a 'Initialising thread'
+2018-12-02 06:12:52,662  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:a 'Starting thread for event '
+2018-12-02 06:12:52,662  INFO sabya run Thread:1 Case_id:Case1.2 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:12:52,662 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:12:52,662 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:12:52,662  INFO sabya run Thread:1 Case_id:Case1.2 Activity:a 'The server response is: deviation'
+2018-12-02 06:12:53,209  INFO sabya simulate_stream_event Case_id:Case1.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-02 06:12:53,209  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:a 'Initialising thread'
+2018-12-02 06:12:53,209  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:a 'Starting thread for event '
+2018-12-02 06:12:53,209  INFO sabya run Thread:1 Case_id:Case1.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:12:53,209 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:12:53,209 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:12:53,209  INFO sabya run Thread:1 Case_id:Case1.1 Activity:a 'The server response is: deviation'
+2018-12-02 06:12:53,756  INFO sabya simulate_stream_event Case_id:Case2.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-02 06:12:53,756  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:a 'Initialising thread'
+2018-12-02 06:12:53,756  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:a 'Starting thread for event '
+2018-12-02 06:12:53,756  INFO sabya run Thread:1 Case_id:Case2.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:12:53,756 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:12:53,756 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:12:53,756  INFO sabya run Thread:1 Case_id:Case2.1 Activity:a 'The server response is: deviation'
+2018-12-02 06:12:54,318  INFO sabya simulate_stream_event Case_id:Case1.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-02 06:12:54,318  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:b 'Initialising thread'
+2018-12-02 06:12:54,318  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:b 'Starting thread for event '
+2018-12-02 06:12:54,318  INFO sabya run Thread:1 Case_id:Case1.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:12:54,318 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:12:54,318 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:12:54,318  INFO sabya run Thread:1 Case_id:Case1.0 Activity:b 'The server response is: deviation'
+2018-12-02 06:12:54,866  INFO sabya simulate_stream_event Case_id:Case3.0 Activity:e 'Calling invoke_event_thread()'
+2018-12-02 06:12:54,866  INFO sabya invoke_event_thread Case_id:Case3.0 Activity:e 'Initialising thread'
+2018-12-02 06:12:54,866  INFO sabya invoke_event_thread Case_id:Case3.0 Activity:e 'Starting thread for event '
+2018-12-02 06:12:54,866  INFO sabya run Thread:1 Case_id:Case3.0 Activity:e 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:12:54,866 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:12:54,866 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:12:54,866  INFO sabya run Thread:1 Case_id:Case3.0 Activity:e 'The server response is: deviation'
+2018-12-02 06:12:55,412  INFO sabya simulate_stream_event Case_id:Case2.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-02 06:12:55,412  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:c 'Initialising thread'
+2018-12-02 06:12:55,412  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:c 'Starting thread for event '
+2018-12-02 06:12:55,412  INFO sabya run Thread:1 Case_id:Case2.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:12:55,412 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:12:55,412 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:12:55,412  INFO sabya run Thread:1 Case_id:Case2.0 Activity:c 'The server response is: deviation'
+2018-12-02 06:12:55,975  INFO sabya simulate_stream_event Case_id:Case1.2 Activity:b 'Calling invoke_event_thread()'
+2018-12-02 06:12:55,975  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:b 'Initialising thread'
+2018-12-02 06:12:55,975  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:b 'Starting thread for event '
+2018-12-02 06:12:55,975  INFO sabya run Thread:1 Case_id:Case1.2 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:12:55,975 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:12:55,975 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:12:55,975  INFO sabya run Thread:1 Case_id:Case1.2 Activity:b 'The server response is: deviation'
+2018-12-02 06:12:56,522  INFO sabya simulate_stream_event Case_id:Case1.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-02 06:12:56,522  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:b 'Initialising thread'
+2018-12-02 06:12:56,522  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:b 'Starting thread for event '
+2018-12-02 06:12:56,522  INFO sabya run Thread:1 Case_id:Case1.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:12:56,522 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:12:56,522 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:12:56,522  INFO sabya run Thread:1 Case_id:Case1.1 Activity:b 'The server response is: deviation'
+2018-12-02 06:12:57,069  INFO sabya simulate_stream_event Case_id:Case2.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-02 06:12:57,069  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:c 'Initialising thread'
+2018-12-02 06:12:57,069  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:c 'Starting thread for event '
+2018-12-02 06:12:57,069  INFO sabya run Thread:1 Case_id:Case2.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:12:57,069 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:12:57,069 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:12:57,069  INFO sabya run Thread:1 Case_id:Case2.1 Activity:c 'The server response is: deviation'
+2018-12-02 06:12:57,616  INFO sabya simulate_stream_event Case_id:Case1.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-02 06:12:57,616  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:c 'Initialising thread'
+2018-12-02 06:12:57,616  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:c 'Starting thread for event '
+2018-12-02 06:12:57,616  INFO sabya run Thread:1 Case_id:Case1.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:12:57,616 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:12:57,616 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:12:57,616  INFO sabya run Thread:1 Case_id:Case1.0 Activity:c 'The server response is: deviation'
+2018-12-02 06:12:58,163  INFO sabya simulate_stream_event Case_id:Case3.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-02 06:12:58,163  INFO sabya invoke_event_thread Case_id:Case3.0 Activity:d 'Initialising thread'
+2018-12-02 06:12:58,163  INFO sabya invoke_event_thread Case_id:Case3.0 Activity:d 'Starting thread for event '
+2018-12-02 06:12:58,163  INFO sabya run Thread:1 Case_id:Case3.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:12:58,163 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:12:58,163 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:12:58,163  INFO sabya run Thread:1 Case_id:Case3.0 Activity:d 'The server response is: deviation'
+2018-12-02 06:12:58,711  INFO sabya simulate_stream_event Case_id:Case2.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-02 06:12:58,711  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:b 'Initialising thread'
+2018-12-02 06:12:58,711  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:b 'Starting thread for event '
+2018-12-02 06:12:58,711  INFO sabya run Thread:1 Case_id:Case2.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:12:58,711 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:12:58,711 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:12:58,711  INFO sabya run Thread:1 Case_id:Case2.0 Activity:b 'The server response is: deviation'
+2018-12-02 06:12:59,257  INFO sabya simulate_stream_event Case_id:Case1.2 Activity:c 'Calling invoke_event_thread()'
+2018-12-02 06:12:59,257  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:c 'Initialising thread'
+2018-12-02 06:12:59,257  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:c 'Starting thread for event '
+2018-12-02 06:12:59,257  INFO sabya run Thread:1 Case_id:Case1.2 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:12:59,257 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:12:59,257 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:12:59,257  INFO sabya run Thread:1 Case_id:Case1.2 Activity:c 'The server response is: deviation'
+2018-12-02 06:12:59,804  INFO sabya simulate_stream_event Case_id:Case1.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-02 06:12:59,804  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:c 'Initialising thread'
+2018-12-02 06:12:59,804  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:c 'Starting thread for event '
+2018-12-02 06:12:59,804  INFO sabya run Thread:1 Case_id:Case1.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:12:59,804 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:12:59,804 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:12:59,804  INFO sabya run Thread:1 Case_id:Case1.1 Activity:c 'The server response is: deviation'
+2018-12-02 06:13:00,366  INFO sabya simulate_stream_event Case_id:Case2.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-02 06:13:00,366  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:b 'Initialising thread'
+2018-12-02 06:13:00,366  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:b 'Starting thread for event '
+2018-12-02 06:13:00,366  INFO sabya run Thread:1 Case_id:Case2.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:13:00,366 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:13:00,366 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:13:00,366  INFO sabya run Thread:1 Case_id:Case2.1 Activity:b 'The server response is: deviation'
+2018-12-02 06:13:00,920  INFO sabya simulate_stream_event Case_id:Case1.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-02 06:13:00,920  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:d 'Initialising thread'
+2018-12-02 06:13:00,920  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:d 'Starting thread for event '
+2018-12-02 06:13:00,920  INFO sabya run Thread:1 Case_id:Case1.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:13:00,920 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:13:00,920 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:13:00,920  INFO sabya run Thread:1 Case_id:Case1.0 Activity:d 'The server response is: deviation'
+2018-12-02 06:13:01,473  INFO sabya simulate_stream_event Case_id:Case2.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-02 06:13:01,583  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:d 'Initialising thread'
+2018-12-02 06:13:01,583  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:d 'Starting thread for event '
+2018-12-02 06:13:01,598  INFO sabya run Thread:1 Case_id:Case2.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:13:01,598 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:13:01,598 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:13:01,598  INFO sabya run Thread:1 Case_id:Case2.0 Activity:d 'The server response is: deviation'
+2018-12-02 06:13:02,150  INFO sabya simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-02 06:13:02,150  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-02 06:13:02,150  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-02 06:13:02,150  INFO sabya run Thread:1 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:13:02,150 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:13:02,150 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:13:02,150  INFO sabya run Thread:1 Case_id:Case1.2 Activity:d 'The server response is: deviation'
+2018-12-02 06:13:02,697  INFO sabya simulate_stream_event Case_id:Case1.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-02 06:13:02,697  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:d 'Initialising thread'
+2018-12-02 06:13:02,697  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:d 'Starting thread for event '
+2018-12-02 06:13:02,697  INFO sabya run Thread:1 Case_id:Case1.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:13:02,697 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:13:02,697 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:13:02,697  INFO sabya run Thread:1 Case_id:Case1.1 Activity:d 'The server response is: deviation'
+2018-12-02 06:13:03,244  INFO sabya simulate_stream_event Case_id:Case2.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-02 06:13:03,244  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:d 'Initialising thread'
+2018-12-02 06:13:03,244  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:d 'Starting thread for event '
+2018-12-02 06:13:03,244  INFO sabya simulate_stream_event Case_id:NONE Activity:END 'Calling invoke_event_thread()'
+2018-12-02 06:13:03,244  INFO sabya invoke_event_thread Case_id:NONE Activity:END 'Initialising thread'
+2018-12-02 06:13:03,244  INFO sabya invoke_event_thread Case_id:NONE Activity:END 'Starting thread for event '
+2018-12-02 06:13:03,244  INFO sabya run Thread:1 Case_id:Case2.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:13:03,244  INFO sabya run Thread:1 Case_id:NONE Activity:END 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:13:03,244 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:13:03,244 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:13:03,244 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:13:03,244  INFO sabya run Thread:1 Case_id:Case2.1 Activity:d 'The server response is: deviation'
+2018-12-02 06:13:03,244 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:13:03,244  INFO sabya run Thread:1 Case_id:NONE Activity:END 'The server response is: deviation'
+2018-12-02 06:13:04,246  INFO sabya main 'compliance checking is completed'
+2018-12-02 06:13:04,246  INFO sabya main 'The options are displayed'
+2018-12-02 06:15:01,289  ERROR sabya main 'The users input is invalid'
+2018-12-02 06:15:01,289  INFO sabya main 'The options are displayed'
+2018-12-02 06:15:02,249  INFO sabya main 'The user selected option 3'
+2018-12-02 06:15:02,249  INFO sabya main 'Exiting...'
+2018-12-02 06:15:05,053  INFO sabya main 'Post request to server:http://127.0.0.1:5000/login?uuid=sabya'
+2018-12-02 06:15:05,053 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:15:05,053 http://127.0.0.1:5000 "POST /login?uuid=sabya HTTP/1.1" 200 0
+2018-12-02 06:15:05,053  INFO sabya main 'The options are displayed'
+2018-12-02 06:15:07,532  INFO sabya main 'The user selected option 1'
+2018-12-02 06:15:07,532  INFO sabya main 'Calling run_compliance_checker()'
+2018-12-02 06:15:07,532  INFO sabya run_compliance_checker 'Calling read_log()'
+2018-12-02 06:15:07,532  INFO sabya read_log 'Creating a trace logger file: '
+2018-12-02 06:15:07,532  INFO sabya read_log 'Transforming trace logger to event logger'
+2018-12-02 06:15:07,532  INFO sabya read_log 'Sorting event logger'
+2018-12-02 06:15:07,532  INFO sabya run_compliance_checker 'Calling simulate_stream_event()'
+2018-12-02 06:15:08,073  INFO sabya simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-02 06:15:08,073  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2018-12-02 06:15:08,073  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2018-12-02 06:15:08,073  INFO sabya run Thread:0 Case_id:Case1.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:15:08,073 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:15:08,073 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:15:08,073  INFO sabya run Thread:0 Case_id:Case1.0 Activity:a 'The server response is: deviation'
+2018-12-02 06:15:08,652  INFO sabya simulate_stream_event Case_id:Case3.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-02 06:15:08,652  INFO sabya invoke_event_thread Case_id:Case3.0 Activity:a 'Initialising thread'
+2018-12-02 06:15:08,652  INFO sabya invoke_event_thread Case_id:Case3.0 Activity:a 'Starting thread for event '
+2018-12-02 06:15:08,652  INFO sabya run Thread:1 Case_id:Case3.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:15:08,652 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:15:08,652 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:15:08,652  INFO sabya run Thread:1 Case_id:Case3.0 Activity:a 'The server response is: deviation'
+2018-12-02 06:15:09,199  INFO sabya simulate_stream_event Case_id:Case2.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-02 06:15:09,199  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:a 'Initialising thread'
+2018-12-02 06:15:09,199  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:a 'Starting thread for event '
+2018-12-02 06:15:09,199  INFO sabya run Thread:2 Case_id:Case2.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:15:09,199 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:15:09,199 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:15:09,199  INFO sabya run Thread:2 Case_id:Case2.0 Activity:a 'The server response is: deviation'
+2018-12-02 06:15:09,746  INFO sabya simulate_stream_event Case_id:Case1.2 Activity:a 'Calling invoke_event_thread()'
+2018-12-02 06:15:09,746  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:a 'Initialising thread'
+2018-12-02 06:15:09,746  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:a 'Starting thread for event '
+2018-12-02 06:15:09,746  INFO sabya run Thread:3 Case_id:Case1.2 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:15:09,746 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:15:09,746 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:15:09,746  INFO sabya run Thread:3 Case_id:Case1.2 Activity:a 'The server response is: deviation'
+2018-12-02 06:15:10,293  INFO sabya simulate_stream_event Case_id:Case1.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-02 06:15:10,293  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:a 'Initialising thread'
+2018-12-02 06:15:10,293  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:a 'Starting thread for event '
+2018-12-02 06:15:10,293  INFO sabya run Thread:4 Case_id:Case1.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:15:10,293 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:15:10,293 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:15:10,293  INFO sabya run Thread:4 Case_id:Case1.1 Activity:a 'The server response is: deviation'
+2018-12-02 06:15:10,839  INFO sabya simulate_stream_event Case_id:Case2.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-02 06:15:10,839  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:a 'Initialising thread'
+2018-12-02 06:15:10,839  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:a 'Starting thread for event '
+2018-12-02 06:15:10,839  INFO sabya run Thread:5 Case_id:Case2.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:15:10,839 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:15:10,839 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:15:10,839  INFO sabya run Thread:5 Case_id:Case2.1 Activity:a 'The server response is: deviation'
+2018-12-02 06:15:11,387  INFO sabya simulate_stream_event Case_id:Case1.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-02 06:15:11,387  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:b 'Initialising thread'
+2018-12-02 06:15:11,387  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:b 'Starting thread for event '
+2018-12-02 06:15:11,387  INFO sabya run Thread:6 Case_id:Case1.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:15:11,387 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:15:11,387 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:15:11,387  INFO sabya run Thread:6 Case_id:Case1.0 Activity:b 'The server response is: deviation'
+2018-12-02 06:15:11,934  INFO sabya simulate_stream_event Case_id:Case3.0 Activity:e 'Calling invoke_event_thread()'
+2018-12-02 06:15:11,934  INFO sabya invoke_event_thread Case_id:Case3.0 Activity:e 'Initialising thread'
+2018-12-02 06:15:11,934  INFO sabya invoke_event_thread Case_id:Case3.0 Activity:e 'Starting thread for event '
+2018-12-02 06:15:11,934  INFO sabya run Thread:7 Case_id:Case3.0 Activity:e 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:15:11,934 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:15:11,934 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:15:11,934  INFO sabya run Thread:7 Case_id:Case3.0 Activity:e 'The server response is: deviation'
+2018-12-02 06:15:12,497  INFO sabya simulate_stream_event Case_id:Case2.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-02 06:15:12,497  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:c 'Initialising thread'
+2018-12-02 06:15:12,497  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:c 'Starting thread for event '
+2018-12-02 06:15:12,497  INFO sabya run Thread:8 Case_id:Case2.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:15:12,497 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:15:12,497 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:15:12,497  INFO sabya run Thread:8 Case_id:Case2.0 Activity:c 'The server response is: deviation'
+2018-12-02 06:15:13,044  INFO sabya simulate_stream_event Case_id:Case1.2 Activity:b 'Calling invoke_event_thread()'
+2018-12-02 06:15:13,044  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:b 'Initialising thread'
+2018-12-02 06:15:13,044  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:b 'Starting thread for event '
+2018-12-02 06:15:13,106  INFO sabya run Thread:9 Case_id:Case1.2 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:15:13,106 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:15:13,122 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:15:13,122  INFO sabya run Thread:9 Case_id:Case1.2 Activity:b 'The server response is: deviation'
+2018-12-02 06:15:13,663  INFO sabya simulate_stream_event Case_id:Case1.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-02 06:15:13,663  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:b 'Initialising thread'
+2018-12-02 06:15:13,663  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:b 'Starting thread for event '
+2018-12-02 06:15:13,663  INFO sabya run Thread:10 Case_id:Case1.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:15:13,663 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:15:13,663 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:15:13,663  INFO sabya run Thread:10 Case_id:Case1.1 Activity:b 'The server response is: deviation'
+2018-12-02 06:15:14,217  INFO sabya simulate_stream_event Case_id:Case2.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-02 06:15:14,217  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:c 'Initialising thread'
+2018-12-02 06:15:14,217  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:c 'Starting thread for event '
+2018-12-02 06:15:14,217  INFO sabya run Thread:11 Case_id:Case2.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:15:14,217 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:15:14,217 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:15:14,217  INFO sabya run Thread:11 Case_id:Case2.1 Activity:c 'The server response is: deviation'
+2018-12-02 06:15:14,764  INFO sabya simulate_stream_event Case_id:Case1.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-02 06:15:14,764  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:c 'Initialising thread'
+2018-12-02 06:15:14,764  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:c 'Starting thread for event '
+2018-12-02 06:15:14,764  INFO sabya run Thread:12 Case_id:Case1.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:15:14,764 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:15:14,764 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:15:14,764  INFO sabya run Thread:12 Case_id:Case1.0 Activity:c 'The server response is: deviation'
+2018-12-02 06:15:15,327  INFO sabya simulate_stream_event Case_id:Case3.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-02 06:15:15,327  INFO sabya invoke_event_thread Case_id:Case3.0 Activity:d 'Initialising thread'
+2018-12-02 06:15:15,327  INFO sabya invoke_event_thread Case_id:Case3.0 Activity:d 'Starting thread for event '
+2018-12-02 06:15:15,327  INFO sabya run Thread:13 Case_id:Case3.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:15:15,327 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:15:15,327 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:15:15,327  INFO sabya run Thread:13 Case_id:Case3.0 Activity:d 'The server response is: deviation'
+2018-12-02 06:15:15,895  INFO sabya simulate_stream_event Case_id:Case2.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-02 06:15:15,895  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:b 'Initialising thread'
+2018-12-02 06:15:15,895  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:b 'Starting thread for event '
+2018-12-02 06:15:15,895  INFO sabya run Thread:14 Case_id:Case2.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:15:15,895 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:15:15,895 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:15:15,895  INFO sabya run Thread:14 Case_id:Case2.0 Activity:b 'The server response is: deviation'
+2018-12-02 06:15:16,450  INFO sabya simulate_stream_event Case_id:Case1.2 Activity:c 'Calling invoke_event_thread()'
+2018-12-02 06:15:16,450  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:c 'Initialising thread'
+2018-12-02 06:15:16,450  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:c 'Starting thread for event '
+2018-12-02 06:15:16,450  INFO sabya run Thread:15 Case_id:Case1.2 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:15:16,450 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:15:16,450 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:15:16,450  INFO sabya run Thread:15 Case_id:Case1.2 Activity:c 'The server response is: deviation'
+2018-12-02 06:15:16,996  INFO sabya simulate_stream_event Case_id:Case1.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-02 06:15:16,996  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:c 'Initialising thread'
+2018-12-02 06:15:16,996  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:c 'Starting thread for event '
+2018-12-02 06:15:16,996  INFO sabya run Thread:16 Case_id:Case1.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:15:16,996 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:15:16,996 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:15:16,996  INFO sabya run Thread:16 Case_id:Case1.1 Activity:c 'The server response is: deviation'
+2018-12-02 06:15:17,548  INFO sabya simulate_stream_event Case_id:Case2.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-02 06:15:17,548  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:b 'Initialising thread'
+2018-12-02 06:15:17,548  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:b 'Starting thread for event '
+2018-12-02 06:15:17,548  INFO sabya run Thread:17 Case_id:Case2.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:15:17,548 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:15:17,548 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:15:17,548  INFO sabya run Thread:17 Case_id:Case2.1 Activity:b 'The server response is: deviation'
+2018-12-02 06:15:18,094  INFO sabya simulate_stream_event Case_id:Case1.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-02 06:15:18,094  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:d 'Initialising thread'
+2018-12-02 06:15:18,094  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:d 'Starting thread for event '
+2018-12-02 06:15:18,094  INFO sabya run Thread:18 Case_id:Case1.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:15:18,094 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:15:18,094 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:15:18,094  INFO sabya run Thread:18 Case_id:Case1.0 Activity:d 'The server response is: deviation'
+2018-12-02 06:15:18,641  INFO sabya simulate_stream_event Case_id:Case2.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-02 06:15:18,641  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:d 'Initialising thread'
+2018-12-02 06:15:18,641  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:d 'Starting thread for event '
+2018-12-02 06:15:18,641  INFO sabya run Thread:19 Case_id:Case2.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:15:18,641 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:15:18,641 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:15:18,641  INFO sabya run Thread:19 Case_id:Case2.0 Activity:d 'The server response is: deviation'
+2018-12-02 06:15:19,188  INFO sabya simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-02 06:15:19,188  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-02 06:15:19,188  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-02 06:15:19,188  INFO sabya run Thread:20 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:15:19,188 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:15:19,188 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:15:19,188  INFO sabya run Thread:20 Case_id:Case1.2 Activity:d 'The server response is: deviation'
+2018-12-02 06:15:19,735  INFO sabya simulate_stream_event Case_id:Case1.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-02 06:15:19,735  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:d 'Initialising thread'
+2018-12-02 06:15:19,735  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:d 'Starting thread for event '
+2018-12-02 06:15:19,735  INFO sabya run Thread:21 Case_id:Case1.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:15:19,735 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:15:19,735 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:15:19,735  INFO sabya run Thread:21 Case_id:Case1.1 Activity:d 'The server response is: deviation'
+2018-12-02 06:15:20,298  INFO sabya simulate_stream_event Case_id:Case2.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-02 06:15:20,298  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:d 'Initialising thread'
+2018-12-02 06:15:20,298  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:d 'Starting thread for event '
+2018-12-02 06:15:20,298  INFO sabya simulate_stream_event Case_id:NONE Activity:END 'Calling invoke_event_thread()'
+2018-12-02 06:15:20,298  INFO sabya run Thread:22 Case_id:Case2.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:15:20,298  INFO sabya invoke_event_thread Case_id:NONE Activity:END 'Initialising thread'
+2018-12-02 06:15:20,298  INFO sabya invoke_event_thread Case_id:NONE Activity:END 'Starting thread for event '
+2018-12-02 06:15:20,298 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:15:20,298  INFO sabya run Thread:23 Case_id:NONE Activity:END 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:15:20,298 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:15:20,298 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:15:20,298  INFO sabya run Thread:22 Case_id:Case2.1 Activity:d 'The server response is: deviation'
+2018-12-02 06:15:20,314 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:15:20,314  INFO sabya run Thread:23 Case_id:NONE Activity:END 'The server response is: deviation'
+2018-12-02 06:15:21,345  INFO sabya main 'compliance checking is completed'3
+
+2018-12-02 06:15:21,345  INFO sabya main 'The options are displayed'
+2018-12-02 06:45:14,586  INFO sabya main 'The user selected option 3'
+2018-12-02 06:45:14,586  INFO sabya main 'Exiting...'
+2018-12-02 06:45:16,680  INFO sabya main 'Post request to server:http://127.0.0.1:5000/login?uuid=sabya'
+2018-12-02 06:45:16,680 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:45:16,680 http://127.0.0.1:5000 "POST /login?uuid=sabya HTTP/1.1" 200 0
+2018-12-02 06:45:16,696  INFO sabya main 'The options are displayed'
+2018-12-02 06:45:19,322  INFO sabya main 'The user selected option 1'
+2018-12-02 06:45:19,322  INFO sabya main 'Calling run_compliance_checker()'
+2018-12-02 06:45:19,322  INFO sabya run_compliance_checker 'Calling read_log()'
+2018-12-02 06:45:19,322  INFO sabya read_log 'Creating a trace logger file: '
+2018-12-02 06:45:19,322  INFO sabya read_log 'Transforming trace logger to event logger'
+2018-12-02 06:45:19,322  INFO sabya read_log 'Sorting event logger'
+2018-12-02 06:45:19,322  INFO sabya run_compliance_checker 'Calling simulate_stream_event()'
+2018-12-02 06:45:19,868  INFO sabya simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-02 06:45:19,868  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2018-12-02 06:45:19,868  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2018-12-02 06:45:19,868  INFO sabya run Thread:0 Case_id:Case1.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:45:19,868 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:45:19,868 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:45:19,868  INFO sabya run Thread:0 Case_id:Case1.0 Activity:a 'The server response is: deviation'
+2018-12-02 06:45:20,432  INFO sabya simulate_stream_event Case_id:Case3.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-02 06:45:20,432  INFO sabya invoke_event_thread Case_id:Case3.0 Activity:a 'Initialising thread'
+2018-12-02 06:45:20,432  INFO sabya invoke_event_thread Case_id:Case3.0 Activity:a 'Starting thread for event '
+2018-12-02 06:45:20,432  INFO sabya run Thread:1 Case_id:Case3.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:45:20,432 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:45:20,432 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:45:20,432  INFO sabya run Thread:1 Case_id:Case3.0 Activity:a 'The server response is: deviation'
+2018-12-02 06:45:20,978  INFO sabya simulate_stream_event Case_id:Case2.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-02 06:45:20,978  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:a 'Initialising thread'
+2018-12-02 06:45:20,978  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:a 'Starting thread for event '
+2018-12-02 06:45:20,978  INFO sabya run Thread:2 Case_id:Case2.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:45:20,978 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:45:20,978 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:45:20,978  INFO sabya run Thread:2 Case_id:Case2.0 Activity:a 'The server response is: deviation'
+2018-12-02 06:45:21,531  INFO sabya simulate_stream_event Case_id:Case1.2 Activity:a 'Calling invoke_event_thread()'
+2018-12-02 06:45:21,531  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:a 'Initialising thread'
+2018-12-02 06:45:21,531  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:a 'Starting thread for event '
+2018-12-02 06:45:21,531  INFO sabya run Thread:3 Case_id:Case1.2 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:45:21,531 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:45:21,531 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:45:21,531  INFO sabya run Thread:3 Case_id:Case1.2 Activity:a 'The server response is: deviation'
+2018-12-02 06:45:22,078  INFO sabya simulate_stream_event Case_id:Case1.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-02 06:45:22,078  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:a 'Initialising thread'
+2018-12-02 06:45:22,078  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:a 'Starting thread for event '
+2018-12-02 06:45:22,078  INFO sabya run Thread:4 Case_id:Case1.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:45:22,078 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:45:22,078 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:45:22,078  INFO sabya run Thread:4 Case_id:Case1.1 Activity:a 'The server response is: deviation'
+2018-12-02 06:45:22,640  INFO sabya simulate_stream_event Case_id:Case2.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-02 06:45:22,640  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:a 'Initialising thread'
+2018-12-02 06:45:22,640  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:a 'Starting thread for event '
+2018-12-02 06:45:22,640  INFO sabya run Thread:5 Case_id:Case2.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:45:22,640 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:45:22,640 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:45:22,640  INFO sabya run Thread:5 Case_id:Case2.1 Activity:a 'The server response is: deviation'
+2018-12-02 06:45:23,178  INFO sabya simulate_stream_event Case_id:Case1.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-02 06:45:23,178  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:b 'Initialising thread'
+2018-12-02 06:45:23,178  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:b 'Starting thread for event '
+2018-12-02 06:45:23,178  INFO sabya run Thread:6 Case_id:Case1.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:45:23,178 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:45:23,178 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:45:23,178  INFO sabya run Thread:6 Case_id:Case1.0 Activity:b 'The server response is: deviation'
+2018-12-02 06:45:23,740  INFO sabya simulate_stream_event Case_id:Case3.0 Activity:e 'Calling invoke_event_thread()'
+2018-12-02 06:45:23,740  INFO sabya invoke_event_thread Case_id:Case3.0 Activity:e 'Initialising thread'
+2018-12-02 06:45:23,740  INFO sabya invoke_event_thread Case_id:Case3.0 Activity:e 'Starting thread for event '
+2018-12-02 06:45:23,740  INFO sabya run Thread:7 Case_id:Case3.0 Activity:e 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:45:23,740 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:45:23,740 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:45:23,740  INFO sabya run Thread:7 Case_id:Case3.0 Activity:e 'The server response is: deviation'
+2018-12-02 06:45:24,288  INFO sabya simulate_stream_event Case_id:Case2.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-02 06:45:24,288  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:c 'Initialising thread'
+2018-12-02 06:45:24,288  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:c 'Starting thread for event '
+2018-12-02 06:45:24,288  INFO sabya run Thread:8 Case_id:Case2.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:45:24,288 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:45:24,288 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:45:24,288  INFO sabya run Thread:8 Case_id:Case2.0 Activity:c 'The server response is: deviation'
+2018-12-02 06:45:24,834  INFO sabya simulate_stream_event Case_id:Case1.2 Activity:b 'Calling invoke_event_thread()'
+2018-12-02 06:45:24,834  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:b 'Initialising thread'
+2018-12-02 06:45:24,834  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:b 'Starting thread for event '
+2018-12-02 06:45:24,834  INFO sabya run Thread:9 Case_id:Case1.2 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:45:24,834 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:45:24,834 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:45:24,834  INFO sabya run Thread:9 Case_id:Case1.2 Activity:b 'The server response is: deviation'
+2018-12-02 06:45:25,381  INFO sabya simulate_stream_event Case_id:Case1.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-02 06:45:25,381  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:b 'Initialising thread'
+2018-12-02 06:45:25,381  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:b 'Starting thread for event '
+2018-12-02 06:45:25,381  INFO sabya run Thread:10 Case_id:Case1.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:45:25,381 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:45:25,381 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:45:25,381  INFO sabya run Thread:10 Case_id:Case1.1 Activity:b 'The server response is: deviation'
+2018-12-02 06:45:25,919  INFO sabya simulate_stream_event Case_id:Case2.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-02 06:45:25,919  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:c 'Initialising thread'
+2018-12-02 06:45:25,919  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:c 'Starting thread for event '
+2018-12-02 06:45:25,919  INFO sabya run Thread:11 Case_id:Case2.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:45:25,919 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:45:25,919 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:45:25,919  INFO sabya run Thread:11 Case_id:Case2.1 Activity:c 'The server response is: deviation'
+2018-12-02 06:45:26,465  INFO sabya simulate_stream_event Case_id:Case1.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-02 06:45:26,481  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:c 'Initialising thread'
+2018-12-02 06:45:26,481  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:c 'Starting thread for event '
+2018-12-02 06:45:26,496  INFO sabya run Thread:12 Case_id:Case1.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:45:26,496 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:45:26,496 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:45:26,496  INFO sabya run Thread:12 Case_id:Case1.0 Activity:c 'The server response is: deviation'
+2018-12-02 06:45:27,043  INFO sabya simulate_stream_event Case_id:Case3.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-02 06:45:27,043  INFO sabya invoke_event_thread Case_id:Case3.0 Activity:d 'Initialising thread'
+2018-12-02 06:45:27,043  INFO sabya invoke_event_thread Case_id:Case3.0 Activity:d 'Starting thread for event '
+2018-12-02 06:45:27,043  INFO sabya run Thread:13 Case_id:Case3.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:45:27,043 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:45:27,043 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:45:27,043  INFO sabya run Thread:13 Case_id:Case3.0 Activity:d 'The server response is: deviation'
+2018-12-02 06:45:27,591  INFO sabya simulate_stream_event Case_id:Case2.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-02 06:45:27,591  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:b 'Initialising thread'
+2018-12-02 06:45:27,591  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:b 'Starting thread for event '
+2018-12-02 06:45:27,591  INFO sabya run Thread:14 Case_id:Case2.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:45:27,591 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:45:27,591 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:45:27,591  INFO sabya run Thread:14 Case_id:Case2.0 Activity:b 'The server response is: deviation'
+2018-12-02 06:45:28,137  INFO sabya simulate_stream_event Case_id:Case1.2 Activity:c 'Calling invoke_event_thread()'
+2018-12-02 06:45:28,137  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:c 'Initialising thread'
+2018-12-02 06:45:28,137  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:c 'Starting thread for event '
+2018-12-02 06:45:28,137  INFO sabya run Thread:15 Case_id:Case1.2 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:45:28,137 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:45:28,137 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:45:28,137  INFO sabya run Thread:15 Case_id:Case1.2 Activity:c 'The server response is: deviation'
+2018-12-02 06:45:28,684  INFO sabya simulate_stream_event Case_id:Case1.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-02 06:45:28,684  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:c 'Initialising thread'
+2018-12-02 06:45:28,684  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:c 'Starting thread for event '
+2018-12-02 06:45:28,684  INFO sabya run Thread:16 Case_id:Case1.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:45:28,684 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:45:28,684 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:45:28,684  INFO sabya run Thread:16 Case_id:Case1.1 Activity:c 'The server response is: deviation'
+2018-12-02 06:45:29,241  INFO sabya simulate_stream_event Case_id:Case2.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-02 06:45:29,241  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:b 'Initialising thread'
+2018-12-02 06:45:29,241  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:b 'Starting thread for event '
+2018-12-02 06:45:29,241  INFO sabya run Thread:17 Case_id:Case2.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:45:29,241 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:45:29,241 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:45:29,241  INFO sabya run Thread:17 Case_id:Case2.1 Activity:b 'The server response is: deviation'
+2018-12-02 06:45:29,791  INFO sabya simulate_stream_event Case_id:Case1.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-02 06:45:29,791  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:d 'Initialising thread'
+2018-12-02 06:45:29,791  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:d 'Starting thread for event '
+2018-12-02 06:45:29,791  INFO sabya run Thread:18 Case_id:Case1.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:45:29,791 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:45:29,791 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:45:29,791  INFO sabya run Thread:18 Case_id:Case1.0 Activity:d 'The server response is: deviation'
+2018-12-02 06:45:30,338  INFO sabya simulate_stream_event Case_id:Case2.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-02 06:45:30,338  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:d 'Initialising thread'
+2018-12-02 06:45:30,338  INFO sabya invoke_event_thread Case_id:Case2.0 Activity:d 'Starting thread for event '
+2018-12-02 06:45:30,338  INFO sabya run Thread:19 Case_id:Case2.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:45:30,338 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:45:30,338 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:45:30,338  INFO sabya run Thread:19 Case_id:Case2.0 Activity:d 'The server response is: deviation'
+2018-12-02 06:45:30,901  INFO sabya simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-02 06:45:30,901  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-02 06:45:30,901  INFO sabya invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-02 06:45:30,901  INFO sabya run Thread:20 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:45:30,901 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:45:30,901 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:45:30,901  INFO sabya run Thread:20 Case_id:Case1.2 Activity:d 'The server response is: deviation'
+2018-12-02 06:45:31,433  INFO sabya simulate_stream_event Case_id:Case1.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-02 06:45:31,433  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:d 'Initialising thread'
+2018-12-02 06:45:31,433  INFO sabya invoke_event_thread Case_id:Case1.1 Activity:d 'Starting thread for event '
+2018-12-02 06:45:31,433  INFO sabya run Thread:21 Case_id:Case1.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:45:31,433 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:45:31,433 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:45:31,433  INFO sabya run Thread:21 Case_id:Case1.1 Activity:d 'The server response is: deviation'
+2018-12-02 06:45:31,996  INFO sabya simulate_stream_event Case_id:Case2.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-02 06:45:31,996  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:d 'Initialising thread'
+2018-12-02 06:45:31,996  INFO sabya invoke_event_thread Case_id:Case2.1 Activity:d 'Starting thread for event '
+2018-12-02 06:45:31,996  INFO sabya run Thread:22 Case_id:Case2.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:45:31,996  INFO sabya simulate_stream_event Case_id:NONE Activity:END 'Calling invoke_event_thread()'
+2018-12-02 06:45:31,996  INFO sabya invoke_event_thread Case_id:NONE Activity:END 'Initialising thread'
+2018-12-02 06:45:31,996  INFO sabya invoke_event_thread Case_id:NONE Activity:END 'Starting thread for event '
+2018-12-02 06:45:31,996  INFO sabya run Thread:23 Case_id:NONE Activity:END 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-02 06:45:31,996 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:45:31,996 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:45:31,996 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:45:31,996  INFO sabya run Thread:22 Case_id:Case2.1 Activity:d 'The server response is: deviation'
+2018-12-02 06:45:31,996 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabya HTTP/1.1" 200 9
+2018-12-02 06:45:31,996  INFO sabya run Thread:23 Case_id:NONE Activity:END 'The server response is: deviation'
+2018-12-02 06:45:32,996  INFO sabya main 'compliance checking is completed'
+2018-12-02 06:45:32,996  INFO sabya main 'The options are displayed'
+2018-12-02 06:45:34,179  INFO sabya main 'The user selected option 2'
+2018-12-02 06:45:34,179  INFO sabya main 'Calling  run_show_deviation_pdf() '
+2018-12-02 06:45:34,179  INFO sabya run_show_deviation_pdf 'Post request to http://127.0.0.1:5000/show-deviation-pdf?uuid=sabya'
+2018-12-02 06:45:34,179 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-02 06:45:34,179 http://127.0.0.1:5000 "POST /show-deviation-pdf?uuid=sabya HTTP/1.1" 404 0
+2018-12-02 06:45:34,179  ERROR sabya run_show_deviation_pdf 'pdf can not be created'
+2018-12-02 06:45:34,179  INFO sabya main 'The options are displayed'
+2018-12-02 06:46:04,518  INFO sabya main 'The user selected option 3'
+2018-12-02 06:46:04,518  INFO sabya main 'Exiting...'
