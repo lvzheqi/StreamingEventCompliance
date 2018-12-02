@@ -1,87 +1,201 @@
 import logging
 from simulate_stream_event import config
+from pythonlangutil.overload import Overload, signature
 
 
-def log_info(**kwargs):
+class Client_logging:
     '''
-    This function does the  formatting for 'info' messages before sending it to the logging system.
+        This class does the  formatting  of client side log  before sending it to the logging system.
 
-    This function takes all the arguments provided by the user and formats
-    the 'message' variable accordingly. This message is further sent to basic
-    configuration function in the 'format' variable
+        This class takes different arguments provided by the user and formats
+        the 'message' variable accordingly. This message is further sent to basic
+        configuration function in the 'format' variable
 
-    The logs are broadly classified into two types.
-    1.  For each activity the below details will be logged
-    timestamp, message type(error,info),username, function name, message
-    2. For some activities that involve thread and events,we shall also log
-    case_id, thread_id and its activity
+        The logs are broadly classified into two types.
+        1.  For each activity the below details will be logged
+        timestamp, message type(error,info),username, function name, message
+        2. For some activities that involve thread and events,we shall also log
+        case_id, thread_id and its activity
 
-    Format of the log file is
-    'timestamp message_type username func_name message'
-    message is again formatted as
-    'thread_id:  case_id: activity: message'
+        Format of the log file is
+        'timestamp message_type username func_name message'
+        message is again formatted as below if  thread_id, case_id and activity_id is sent
+        'thread_id:  case_id: activity: message'
 
-
-    :param kwargs:
-    username:       It is the username of the user that has initiated the client
-                    Default value: Username:Unknown
-    func_name:      This is the name of the function from where this logging event was called.
-                    Default value: Func:Unknown
-    filename:       Specifies the file name where the content will be logged
+        All the below functions do the same tasks but with different number of variables
+    '''
+    def __init__(self):
+        '''
+        Initialises the below parameters
+        filename:   Specifies the file name where the content will be logged
                     Default value: client/client_log.log
-    filemode:       Specifies the mode to open the file
+        filemode:   Specifies the mode to open the file
                     Default value: a
-    level:          Set the root logger level to the specified level. It can be
+        level:      Set the root logger level to the specified level. It can be
                     DEBUG, INFO, WARNING, ERROR, CRITICAL.
                     Default value: DEBUG
-    message:        User defined custom messages
-                    Default value: ''
-    message_type:   It implies if the message is an error or information.
-                    It can be either 'INFO' or 'ERROR'
-                    Default value: INFO
-    case_id:        This is the case id of  the event being processed.
-                    Default value: ''
-    activity:
+        log_format: It is the format in which the time and message will be stored.
+        '''
+        self.filename = config.CLIENT_LOG_PATH
+        self.level = config.LOG_LEVEL
+        self.log_format = config.LOG_FORMAT
+        self.filemode = 'a'
 
+    @Overload
+    @signature("str", "str")
+    def log_info(self, func_name, message):
+        '''
+        This function is used to log info messages
+        Format of logged data:
+        <timestamp> INFO Username:Unknown <func_name>  <message>
 
+        :param
+            func_name:      This is the name of the function from where this logging event was called.
+            message:        User defined custom messages
+        '''
+        message = "'" + message + "'"
+        message = ' INFO ' + ' Username:Unknown ' + func_name + ' ' + message
+        logging.basicConfig(filename=self.filename, filemode=self.filemode, level=self.level, format=self.log_format)
+        logging.info(message)
 
-    '''
-    func_name = kwargs.pop("func_name", "Func:Unknown")
-    filename = kwargs.pop("filename", config.CLIENT_LOG_PATH)
-    message = kwargs.pop("message", "")
-    thread_id = kwargs.pop("thread_id", None)
-    case_id = kwargs.pop("case_id", '')
-    activity = kwargs.pop("activity", None)
-    message_type = kwargs.pop("message_type", "INFO")
-    username = kwargs.pop("username", "Username:Unknown")
-    message = "'" + message + "'"
-    if case_id != '' and thread_id is None:
+    @log_info.overload
+    @signature("str", "str", "str")
+    def log_info(self, func_name, username, message):
+        '''
+        This function is used to log info messages
+        Format of logged data:
+        <timestamp> INFO <username> <func_name>  <message>
+
+        :param
+            func_name:      This is the name of the function from where this logging event was called.
+            username:       It is the username of the user that has initiated the client
+            message:        User defined custom messages
+        '''
+        message = "'" + message + "'"
+        message = ' INFO ' + username + ' ' + func_name + ' ' + message
+        logging.basicConfig(filename=self.filename, filemode=self.filemode, level=self.level, format=self.log_format)
+        logging.info(message)
+
+    @log_info.overload
+    @signature("str", "str", "str", "str", "str")
+    def log_info(self, func_name, username, case_id, activity, message):
+        '''
+        This function is used to log info messages
+        Format of logged data:
+        <timestamp> INFO <username> <func_name> <case_id> <activity> <<message>
+
+        :param
+            func_name:      This is the name of the function from where this logging event was called.
+            username:       It is the username of the user that has initiated the client
+            case_id:        This is the case id of  the event being processed.
+            activity:       This is the activity of the event being processed.
+            message:        User defined custom messages
+        '''
+        message = "'" + message + "'"
         message = "Case_id:" + case_id + ' ' + "Activity:" + activity + ' ' + message
-    elif thread_id is not None:
+        message = ' INFO ' + username + ' ' + func_name + ' ' + message
+        logging.basicConfig(filename=self.filename, filemode=self.filemode, level=self.level, format=self.log_format)
+        logging.info(message)
+
+    @log_info.overload
+    @signature("str", "str", "int",  "str", "str", "str")
+    def log_info(self, func_name, username, thread_id, case_id, activity, message):
+        '''
+        This function is used to log info messages
+        Format of logged data:
+        <timestamp> INFO <username> <func_name> <case_id> <activity> <<message>
+
+        :param
+            func_name:      This is the name of the function from where this logging event was called.
+            username:       It is the username of the user that has initiated the client
+            thread_id:      Id of the thread handling the event
+            case_id:        This is the case id of  the event being processed.
+            activity:       This is the activity of the event being processed.
+            message:        User defined custom messages
+         '''
+        message = "'" + message + "'"
         message = "Thread:" + str(thread_id) + ' ' + "Case_id:" + case_id + ' ' + "Activity:" + activity + ' ' + message
-    message = message_type + ' ' + username + ' ' + func_name + ' ' + message
-    level = kwargs.pop("level", config.LOG_LEVEL)
-    filemode = kwargs.pop("filemode", "a")
-    logging.basicConfig(filename=filename, filemode=filemode, level=level, format=config.LOG_FORMAT)
-    logging.info(message)
+        message = ' INFO ' + username + ' ' + func_name + ' ' + message
+        logging.basicConfig(filename=self.filename, filemode=self.filemode, level=self.level, format=self.log_format)
+        logging.info(message)
 
+    @Overload
+    @signature("str", "str")
+    def log_error(self, func_name, message):
+        '''
+        This function is used to log info messages
+        Format of logged data:
+        <timestamp> ERROR Username:Unknown <func_name>  <message>
 
-def log_error(**kwargs):
-    func_name = kwargs.pop("func_name", "Func:Unknown")
-    filename = kwargs.pop("filename", config.CLIENT_LOG_PATH)
-    message = kwargs.pop("message", "")
-    thread_id = kwargs.pop("thread_id", None)
-    case_id = kwargs.pop("case_id", '')
-    activity = kwargs.pop("activity", None)
-    message_type = kwargs.pop("message_type", "INFO")
-    username = kwargs.pop("username", "Username:Unknown")
-    message = "'" + message + "'"
-    if case_id != '' and thread_id is None:
+        :param
+            func_name:      This is the name of the function from where this logging event was called.
+            message:        User defined custom messages
+        '''
+        message = "'" + message + "'"
+        message = ' ERROR ' + ' Username:Unknown ' + func_name + ' ' + message
+        logging.basicConfig(filename=self.filename, filemode=self.filemode, level=self.level, format=self.log_format)
+        logging.error(message)
+
+    @log_error.overload
+    @signature("str", "str", "str")
+    def log_error(self, func_name, username, message):
+        '''
+        This function is used to log info messages
+        Format of logged data:
+        <timestamp> ERROR <username> <func_name>  <message>
+
+        :param
+            func_name:      This is the name of the function from where this logging event was called.
+            username:       It is the username of the user that has initiated the client
+            message:        User defined custom messages
+        '''
+        message = "'" + message + "'"
+        message = ' ERROR ' + username + ' ' + func_name + ' ' + message
+        logging.basicConfig(filename=self.filename, filemode=self.filemode, level=self.level, format=self.log_format)
+        logging.error(message)
+
+    @log_error.overload
+    @signature("str", "str", "str", "str", "str")
+    def log_error(self, func_name, username, case_id, activity, message):
+        '''
+        This function is used to log info messages
+        Format of logged data:
+        <timestamp> ERROR <username> <func_name> <case_id> <activity> <<message>
+
+        :param
+            func_name:      This is the name of the function from where this logging event was called.
+            username:       It is the username of the user that has initiated the client
+            case_id:        This is the case id of  the event being processed.
+            activity:       This is the activity of the event being processed.
+            message:        User defined custom messages
+        '''
+        message = "'" + message + "'"
         message = "Case_id:" + case_id + ' ' + "Activity:" + activity + ' ' + message
-    elif thread_id is not None:
+        message = ' ERROR ' + username + ' ' + func_name + ' ' + message
+        logging.basicConfig(filename=self.filename, filemode=self.filemode, level=self.level, format=self.log_format)
+        logging.error(message)
+
+    @log_error.overload
+    @signature("str", "str", "int", "str", "str", "str")
+    def log_error(self, func_name, username, thread_id, case_id, activity, message,):
+        '''
+        This function is used to log info messages
+        Format of logged data:
+        <timestamp> ERROR <username> <func_name> <case_id> <activity> <<message>
+
+        :param
+            func_name:      This is the name of the function from where this logging event was called.
+            username:       It is the username of the user that has initiated the client
+            thread_id:      Id of the thread handling the event
+            case_id:        This is the case id of  the event being processed.
+            activity:       This is the activity of the event being processed.
+            message:        User defined custom messages
+         '''
+        message = "'" + message + "'"
         message = "Thread:" + str(thread_id) + ' ' + "Case_id:" + case_id + ' ' + "Activity:" + activity + ' ' + message
-    message = message_type + ' ' + username + ' ' + func_name + ' ' + message
-    level = kwargs.pop("level", config.LOG_LEVEL)
-    filemode = kwargs.pop("filemode", "a")
-    logging.basicConfig(filename=filename, filemode=filemode, level=level, format=config.LOG_FORMAT)
-    logging.error(message)
+        message = ' ERROR ' + username + ' ' + func_name + ' ' + message
+        logging.basicConfig(filename=self.filename, filemode=self.filemode, level=self.level, format=self.log_format)
+        logging.error(message)
+
+
+
