@@ -54,7 +54,7 @@ class Client_logging:
             message:        User defined custom messages
         '''
         message = "'" + message + "'"
-        message = ' INFO ' + ' Username:Unknown ' + func_name + ' ' + message
+        message = ' INFO ' + 'Username:Unknown ' + func_name + ' ' + message
         logging.basicConfig(filename=self.filename, filemode=self.filemode, level=self.level, format=self.log_format)
         logging.info(message)
 
@@ -132,7 +132,7 @@ class Client_logging:
             message:        User defined custom messages
         '''
         message = "'" + message + "'"
-        message = ' ERROR ' + ' Username:Unknown ' + func_name + ' ' + message
+        message = ' ERROR ' + 'Username:Unknown ' + func_name + ' ' + message
         logging.basicConfig(filename=self.filename, filemode=self.filemode, level=self.level, format=self.log_format)
         logging.error(message)
 
