@@ -11318,3 +11318,253 @@
 2018-12-02 06:45:34,179  INFO sabya main 'The options are displayed'
 2018-12-02 06:46:04,518  INFO sabya main 'The user selected option 3'
 2018-12-02 06:46:04,518  INFO sabya main 'Exiting...'
+2018-12-03 17:52:38,366  INFO  Username:Unknown test_log_info_2 'Testing logging info with two arguments'
+2018-12-03 17:54:02,442  INFO  Username:Unknown test_log_info_2 'Testing logging info with two arguments'
+2018-12-03 17:54:14,934  INFO  Username:Unknown test_log_info_2 'Testing logging info with two arguments'
+2018-12-03 17:57:29,027  INFO  Username:Unknown test_log_info_2 'Testing logging info with two arguments'
+2018-12-03 17:57:47,625  INFO  Username:Unknown test_log_info_2 'Testing logging info with two arguments'
+2018-12-03 17:58:01,633  INFO  Username:Unknown test_log_info_2 'Testing logging info with two arguments'
+2018-12-03 17:59:30,106  INFO  Username:Unknown test_log_info_2 'Testing logging info with two arguments'
+2018-12-03 17:59:51,405  INFO  Username:Unknown test_log_info_2 'Testing logging info with two arguments'
+2018-12-03 18:00:02,824  INFO  Username:Unknown test_log_info_2 'Testing logging info with two arguments'
+2018-12-03 18:02:09,436  INFO  Username:Unknown test_log_info_2 'Testing logging info with two arguments'
+2018-12-03 18:02:09,451  INFO test_user test_log_info_3 'Testing logging info with three arguments'
+2018-12-03 18:02:35,029  INFO  Username:Unknown test_log_info_2 'Testing logging info with two arguments'
+2018-12-03 18:02:35,049  INFO test_user test_log_info_3 'Testing logging info with three arguments'
+2018-12-03 18:02:45,018  INFO  Username:Unknown test_log_info_2 'Testing logging info with two arguments'
+2018-12-03 18:02:45,034  INFO test_user test_log_info_3 'Testing logging info with three arguments'
+2018-12-03 18:03:41,230  INFO Username:Unknown test_log_info_2 'Testing logging info with two arguments'
+2018-12-03 18:03:41,261  INFO test_user test_log_info_3 'Testing logging info with 3 arguments'
+2018-12-03 18:03:57,528  INFO Username:Unknown test_log_info_2 'Testing logging info with 2 arguments'
+2018-12-03 18:03:57,544  INFO test_user test_log_info_3 'Testing logging info with 3 arguments'
+2018-12-03 18:06:39,307  INFO Username:Unknown test_log_info_2 'Testing logging info with 2 arguments'
+2018-12-03 18:06:39,322  INFO test_user test_log_info_3 'Testing logging info with 3 arguments'
+2018-12-03 18:06:39,338  INFO test_user test_log_info_5 Case_id:test1 Activity:testing_log_info_5 'Testing logging info with 5 arguments'
+2018-12-03 18:07:13,119  INFO Username:Unknown test_log_info_2 'Testing logging info with 2 arguments'
+2018-12-03 18:07:13,136  INFO test_user test_log_info_3 'Testing logging info with 3 arguments'
+2018-12-03 18:07:13,151  INFO test_user test_log_info_5 Case_id:test1 Activity:testing_log_info_5 'Testing logging info with 5 arguments'
+2018-12-03 18:08:54,371  INFO Username:Unknown test_log_info_2 'Testing logging info with 2 arguments'
+2018-12-03 18:08:54,386  INFO test_user test_log_info_3 'Testing logging info with 3 arguments'
+2018-12-03 18:08:54,402  INFO test_user test_log_info_5 Case_id:test1 Activity:testing_log_info_5 'Testing logging info with 5 arguments'
+2018-12-03 18:08:54,418  INFO test_user test_log_info_6 Case_id:test1 Activity:testing_log_info_5 'Testing logging info with 6 arguments'
+2018-12-03 18:09:40,476  INFO Username:Unknown test_log_info_2 'Testing logging info with 2 arguments'
+2018-12-03 18:09:40,491  INFO test_user test_log_info_3 'Testing logging info with 3 arguments'
+2018-12-03 18:09:40,522  INFO test_user test_log_info_5 Case_id:test1 Activity:testing_log_info_5 'Testing logging info with 5 arguments'
+2018-12-03 18:09:40,538  INFO test_user test_log_info_6 Thread:1 Case_id:test1 Activity:testing_log_info_5 'Testing logging info with 6 arguments'
+2018-12-03 18:10:00,952  INFO Username:Unknown test_log_info_2 'Testing logging info with 2 arguments'
+2018-12-03 18:10:00,967  INFO test_user test_log_info_3 'Testing logging info with 3 arguments'
+2018-12-03 18:10:00,983  INFO test_user test_log_info_5 Case_id:test1 Activity:testing_log_info_5 'Testing logging info with 5 arguments'
+2018-12-03 18:10:00,998  INFO test_user test_log_info_6 Thread:1 Case_id:test1 Activity:testing_log_info_5 'Testing logging info with 6 arguments'
+2018-12-03 18:10:14,447  INFO Username:Unknown test_log_info_2 'Testing logging info with 2 arguments'
+2018-12-03 18:10:14,463  INFO test_user test_log_info_3 'Testing logging info with 3 arguments'
+2018-12-03 18:10:14,478  INFO test_user test_log_info_5 Case_id:test1 Activity:testing_log_info_5 'Testing logging info with 5 arguments'
+2018-12-03 18:10:14,494  INFO test_user test_log_info_6 Thread:1 Case_id:test1 Activity:testing_log_info_6 'Testing logging info with 6 arguments'
+2018-12-03 18:12:55,011  ERROR  Username:Unknown test_log_error_2 'Testing logging error with 2 arguments'
+2018-12-03 18:12:55,026  ERROR test_user test_log_error_3 'Testing logging error with 3 arguments'
+2018-12-03 18:12:55,042  ERROR test_user test_log_error_5 Case_id:test1 Activity:testing_log_info_5 'Testing logging error with 5 arguments'
+2018-12-03 18:12:55,070  ERROR test_user test_log_error_6 Thread:1 Case_id:test1 Activity:testing_log_info_6 'Testing logging error with 6 arguments'
+2018-12-03 18:12:55,090  INFO Username:Unknown test_log_info_2 'Testing logging info with 2 arguments'
+2018-12-03 18:12:55,108  INFO test_user test_log_info_3 'Testing logging info with 3 arguments'
+2018-12-03 18:12:55,123  INFO test_user test_log_info_5 Case_id:test1 Activity:testing_log_info_5 'Testing logging info with 5 arguments'
+2018-12-03 18:12:55,139  INFO test_user test_log_info_6 Thread:1 Case_id:test1 Activity:testing_log_info_6 'Testing logging info with 6 arguments'
+2018-12-03 18:13:35,020  ERROR  Username:Unknown test_log_error_2 'Testing logging error with 2 arguments'
+2018-12-03 18:13:35,035  ERROR test_user test_log_error_3 'Testing logging error with 3 arguments'
+2018-12-03 18:13:35,051  ERROR test_user test_log_error_5 Case_id:test1 Activity:testing_log_info_5 'Testing logging error with 5 arguments'
+2018-12-03 18:13:35,080  ERROR test_user test_log_error_6 Thread:1 Case_id:test1 Activity:testing_log_info_6 'Testing logging error with 6 arguments'
+2018-12-03 18:13:35,093  INFO Username:Unknown test_log_info_2 'Testing logging info with 2 arguments'
+2018-12-03 18:13:35,108  INFO test_user test_log_info_3 'Testing logging info with 3 arguments'
+2018-12-03 18:13:35,124  INFO test_user test_log_info_5 Case_id:test1 Activity:testing_log_info_5 'Testing logging info with 5 arguments'
+2018-12-03 18:13:35,155  INFO test_user test_log_info_6 Thread:1 Case_id:test1 Activity:testing_log_info_6 'Testing logging info with 6 arguments'
+2018-12-03 18:13:55,391  ERROR Username:Unknown test_log_error_2 'Testing logging error with 2 arguments'
+2018-12-03 18:13:55,406  ERROR test_user test_log_error_3 'Testing logging error with 3 arguments'
+2018-12-03 18:13:55,438  ERROR test_user test_log_error_5 Case_id:test1 Activity:testing_log_info_5 'Testing logging error with 5 arguments'
+2018-12-03 18:13:55,453  ERROR test_user test_log_error_6 Thread:1 Case_id:test1 Activity:testing_log_info_6 'Testing logging error with 6 arguments'
+2018-12-03 18:13:55,469  INFO Username:Unknown test_log_info_2 'Testing logging info with 2 arguments'
+2018-12-03 18:13:55,500  INFO test_user test_log_info_3 'Testing logging info with 3 arguments'
+2018-12-03 18:13:55,516  INFO test_user test_log_info_5 Case_id:test1 Activity:testing_log_info_5 'Testing logging info with 5 arguments'
+2018-12-03 18:13:55,531  INFO test_user test_log_info_6 Thread:1 Case_id:test1 Activity:testing_log_info_6 'Testing logging info with 6 arguments'
+2018-12-03 18:15:12,899  INFO sabyashaikh main 'Post request to server:http://127.0.0.1:5000/login?uuid=sabyashaikh'
+2018-12-03 18:15:13,072 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 18:15:13,072 http://127.0.0.1:5000 "POST /login?uuid=sabyashaikh HTTP/1.1" 200 0
+2018-12-03 18:15:13,072  ERROR sabyashaikh main 'The given path is not available!'
+2018-12-03 18:16:11,572  INFO sabyashaikh main 'Post request to server:http://127.0.0.1:5000/login?uuid=sabyashaikh'
+2018-12-03 18:16:11,588 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 18:16:11,588 http://127.0.0.1:5000 "POST /login?uuid=sabyashaikh HTTP/1.1" 200 0
+2018-12-03 18:16:11,588  INFO sabyashaikh main 'The options are displayed'
+2018-12-03 18:16:13,372  INFO sabyashaikh main 'The user selected option 1'
+2018-12-03 18:16:13,372  INFO sabyashaikh main 'Calling run_compliance_checker()'
+2018-12-03 18:16:13,372  INFO sabyashaikh run_compliance_checker 'Calling read_log()'
+2018-12-03 18:16:13,372  INFO sabyashaikh read_log 'Creating a trace logger file: '
+2018-12-03 18:16:13,497  INFO sabyashaikh read_log 'Transforming trace logger to event logger'
+2018-12-03 18:16:13,497  INFO sabyashaikh read_log 'Sorting event logger'
+2018-12-03 18:16:13,497  INFO sabyashaikh run_compliance_checker 'Calling simulate_stream_event()'
+2018-12-03 18:16:14,043  INFO sabyashaikh simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-03 18:16:14,043  INFO sabyashaikh invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2018-12-03 18:16:14,043  INFO sabyashaikh invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2018-12-03 18:16:14,043  INFO sabyashaikh run Thread:0 Case_id:Case1.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 18:16:14,043 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 18:16:14,043 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabyashaikh HTTP/1.1" 200 9
+2018-12-03 18:16:14,043  INFO sabyashaikh run Thread:0 Case_id:Case1.0 Activity:a 'The server response is: deviation'
+2018-12-03 18:16:14,591  INFO sabyashaikh simulate_stream_event Case_id:Case3.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-03 18:16:14,591  INFO sabyashaikh invoke_event_thread Case_id:Case3.0 Activity:a 'Initialising thread'
+2018-12-03 18:16:14,591  INFO sabyashaikh invoke_event_thread Case_id:Case3.0 Activity:a 'Starting thread for event '
+2018-12-03 18:16:14,591  INFO sabyashaikh run Thread:1 Case_id:Case3.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 18:16:14,591 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 18:16:14,591 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabyashaikh HTTP/1.1" 200 9
+2018-12-03 18:16:14,591  INFO sabyashaikh run Thread:1 Case_id:Case3.0 Activity:a 'The server response is: deviation'
+2018-12-03 18:16:15,135  INFO sabyashaikh simulate_stream_event Case_id:Case2.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-03 18:16:15,135  INFO sabyashaikh invoke_event_thread Case_id:Case2.0 Activity:a 'Initialising thread'
+2018-12-03 18:16:15,135  INFO sabyashaikh invoke_event_thread Case_id:Case2.0 Activity:a 'Starting thread for event '
+2018-12-03 18:16:15,135  INFO sabyashaikh run Thread:2 Case_id:Case2.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 18:16:15,135 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 18:16:15,135 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabyashaikh HTTP/1.1" 200 9
+2018-12-03 18:16:15,135  INFO sabyashaikh run Thread:2 Case_id:Case2.0 Activity:a 'The server response is: deviation'
+2018-12-03 18:16:15,703  INFO sabyashaikh simulate_stream_event Case_id:Case1.2 Activity:a 'Calling invoke_event_thread()'
+2018-12-03 18:16:15,703  INFO sabyashaikh invoke_event_thread Case_id:Case1.2 Activity:a 'Initialising thread'
+2018-12-03 18:16:15,703  INFO sabyashaikh invoke_event_thread Case_id:Case1.2 Activity:a 'Starting thread for event '
+2018-12-03 18:16:15,703  INFO sabyashaikh run Thread:3 Case_id:Case1.2 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 18:16:15,703 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 18:16:15,703 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabyashaikh HTTP/1.1" 200 9
+2018-12-03 18:16:15,703  INFO sabyashaikh run Thread:3 Case_id:Case1.2 Activity:a 'The server response is: deviation'
+2018-12-03 18:16:16,253  INFO sabyashaikh simulate_stream_event Case_id:Case1.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-03 18:16:16,253  INFO sabyashaikh invoke_event_thread Case_id:Case1.1 Activity:a 'Initialising thread'
+2018-12-03 18:16:16,253  INFO sabyashaikh invoke_event_thread Case_id:Case1.1 Activity:a 'Starting thread for event '
+2018-12-03 18:16:16,253  INFO sabyashaikh run Thread:4 Case_id:Case1.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 18:16:16,253 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 18:16:16,253 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabyashaikh HTTP/1.1" 200 9
+2018-12-03 18:16:16,253  INFO sabyashaikh run Thread:4 Case_id:Case1.1 Activity:a 'The server response is: deviation'
+2018-12-03 18:16:16,800  INFO sabyashaikh simulate_stream_event Case_id:Case2.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-03 18:16:16,800  INFO sabyashaikh invoke_event_thread Case_id:Case2.1 Activity:a 'Initialising thread'
+2018-12-03 18:16:16,800  INFO sabyashaikh invoke_event_thread Case_id:Case2.1 Activity:a 'Starting thread for event '
+2018-12-03 18:16:16,800  INFO sabyashaikh run Thread:5 Case_id:Case2.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 18:16:16,800 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 18:16:16,800 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabyashaikh HTTP/1.1" 200 9
+2018-12-03 18:16:16,800  INFO sabyashaikh run Thread:5 Case_id:Case2.1 Activity:a 'The server response is: deviation'
+2018-12-03 18:16:17,341  INFO sabyashaikh simulate_stream_event Case_id:Case1.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-03 18:16:17,341  INFO sabyashaikh invoke_event_thread Case_id:Case1.0 Activity:b 'Initialising thread'
+2018-12-03 18:16:17,341  INFO sabyashaikh invoke_event_thread Case_id:Case1.0 Activity:b 'Starting thread for event '
+2018-12-03 18:16:17,341  INFO sabyashaikh run Thread:6 Case_id:Case1.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 18:16:17,341 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 18:16:17,341 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabyashaikh HTTP/1.1" 200 9
+2018-12-03 18:16:17,341  INFO sabyashaikh run Thread:6 Case_id:Case1.0 Activity:b 'The server response is: deviation'
+2018-12-03 18:16:17,903  INFO sabyashaikh simulate_stream_event Case_id:Case3.0 Activity:e 'Calling invoke_event_thread()'
+2018-12-03 18:16:17,903  INFO sabyashaikh invoke_event_thread Case_id:Case3.0 Activity:e 'Initialising thread'
+2018-12-03 18:16:17,903  INFO sabyashaikh invoke_event_thread Case_id:Case3.0 Activity:e 'Starting thread for event '
+2018-12-03 18:16:17,903  INFO sabyashaikh run Thread:7 Case_id:Case3.0 Activity:e 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 18:16:17,903 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 18:16:17,903 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabyashaikh HTTP/1.1" 200 9
+2018-12-03 18:16:17,903  INFO sabyashaikh run Thread:7 Case_id:Case3.0 Activity:e 'The server response is: deviation'
+2018-12-03 18:16:18,465  INFO sabyashaikh simulate_stream_event Case_id:Case2.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-03 18:16:18,465  INFO sabyashaikh invoke_event_thread Case_id:Case2.0 Activity:c 'Initialising thread'
+2018-12-03 18:16:18,465  INFO sabyashaikh invoke_event_thread Case_id:Case2.0 Activity:c 'Starting thread for event '
+2018-12-03 18:16:18,465  INFO sabyashaikh run Thread:8 Case_id:Case2.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 18:16:18,465 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 18:16:18,465 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabyashaikh HTTP/1.1" 200 9
+2018-12-03 18:16:18,465  INFO sabyashaikh run Thread:8 Case_id:Case2.0 Activity:c 'The server response is: deviation'
+2018-12-03 18:16:19,012  INFO sabyashaikh simulate_stream_event Case_id:Case1.2 Activity:b 'Calling invoke_event_thread()'
+2018-12-03 18:16:19,012  INFO sabyashaikh invoke_event_thread Case_id:Case1.2 Activity:b 'Initialising thread'
+2018-12-03 18:16:19,012  INFO sabyashaikh invoke_event_thread Case_id:Case1.2 Activity:b 'Starting thread for event '
+2018-12-03 18:16:19,012  INFO sabyashaikh run Thread:9 Case_id:Case1.2 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 18:16:19,012 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 18:16:19,012 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabyashaikh HTTP/1.1" 200 9
+2018-12-03 18:16:19,012  INFO sabyashaikh run Thread:9 Case_id:Case1.2 Activity:b 'The server response is: deviation'
+2018-12-03 18:16:19,554  INFO sabyashaikh simulate_stream_event Case_id:Case1.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-03 18:16:19,554  INFO sabyashaikh invoke_event_thread Case_id:Case1.1 Activity:b 'Initialising thread'
+2018-12-03 18:16:19,554  INFO sabyashaikh invoke_event_thread Case_id:Case1.1 Activity:b 'Starting thread for event '
+2018-12-03 18:16:19,554  INFO sabyashaikh run Thread:10 Case_id:Case1.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 18:16:19,554 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 18:16:19,554 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabyashaikh HTTP/1.1" 200 9
+2018-12-03 18:16:19,554  INFO sabyashaikh run Thread:10 Case_id:Case1.1 Activity:b 'The server response is: deviation'
+2018-12-03 18:16:20,092  INFO sabyashaikh simulate_stream_event Case_id:Case2.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-03 18:16:20,092  INFO sabyashaikh invoke_event_thread Case_id:Case2.1 Activity:c 'Initialising thread'
+2018-12-03 18:16:20,092  INFO sabyashaikh invoke_event_thread Case_id:Case2.1 Activity:c 'Starting thread for event '
+2018-12-03 18:16:20,092  INFO sabyashaikh run Thread:11 Case_id:Case2.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 18:16:20,092 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 18:16:20,092 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabyashaikh HTTP/1.1" 200 9
+2018-12-03 18:16:20,092  INFO sabyashaikh run Thread:11 Case_id:Case2.1 Activity:c 'The server response is: deviation'
+2018-12-03 18:16:20,654  INFO sabyashaikh simulate_stream_event Case_id:Case1.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-03 18:16:20,654  INFO sabyashaikh invoke_event_thread Case_id:Case1.0 Activity:c 'Initialising thread'
+2018-12-03 18:16:20,654  INFO sabyashaikh invoke_event_thread Case_id:Case1.0 Activity:c 'Starting thread for event '
+2018-12-03 18:16:20,654  INFO sabyashaikh run Thread:12 Case_id:Case1.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 18:16:20,654 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 18:16:20,654 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabyashaikh HTTP/1.1" 200 9
+2018-12-03 18:16:20,654  INFO sabyashaikh run Thread:12 Case_id:Case1.0 Activity:c 'The server response is: deviation'
+2018-12-03 18:16:21,206  INFO sabyashaikh simulate_stream_event Case_id:Case3.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-03 18:16:21,206  INFO sabyashaikh invoke_event_thread Case_id:Case3.0 Activity:d 'Initialising thread'
+2018-12-03 18:16:21,206  INFO sabyashaikh invoke_event_thread Case_id:Case3.0 Activity:d 'Starting thread for event '
+2018-12-03 18:16:21,206  INFO sabyashaikh run Thread:13 Case_id:Case3.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 18:16:21,206 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 18:16:21,206 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabyashaikh HTTP/1.1" 200 9
+2018-12-03 18:16:21,206  INFO sabyashaikh run Thread:13 Case_id:Case3.0 Activity:d 'The server response is: deviation'
+2018-12-03 18:16:21,751  INFO sabyashaikh simulate_stream_event Case_id:Case2.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-03 18:16:21,751  INFO sabyashaikh invoke_event_thread Case_id:Case2.0 Activity:b 'Initialising thread'
+2018-12-03 18:16:21,751  INFO sabyashaikh invoke_event_thread Case_id:Case2.0 Activity:b 'Starting thread for event '
+2018-12-03 18:16:21,751  INFO sabyashaikh run Thread:14 Case_id:Case2.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 18:16:21,751 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 18:16:21,751 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabyashaikh HTTP/1.1" 200 9
+2018-12-03 18:16:21,751  INFO sabyashaikh run Thread:14 Case_id:Case2.0 Activity:b 'The server response is: deviation'
+2018-12-03 18:16:22,307  INFO sabyashaikh simulate_stream_event Case_id:Case1.2 Activity:c 'Calling invoke_event_thread()'
+2018-12-03 18:16:22,308  INFO sabyashaikh invoke_event_thread Case_id:Case1.2 Activity:c 'Initialising thread'
+2018-12-03 18:16:22,308  INFO sabyashaikh invoke_event_thread Case_id:Case1.2 Activity:c 'Starting thread for event '
+2018-12-03 18:16:22,308  INFO sabyashaikh run Thread:15 Case_id:Case1.2 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 18:16:22,308 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 18:16:22,312 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabyashaikh HTTP/1.1" 200 9
+2018-12-03 18:16:22,312  INFO sabyashaikh run Thread:15 Case_id:Case1.2 Activity:c 'The server response is: deviation'
+2018-12-03 18:16:22,858  INFO sabyashaikh simulate_stream_event Case_id:Case1.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-03 18:16:22,858  INFO sabyashaikh invoke_event_thread Case_id:Case1.1 Activity:c 'Initialising thread'
+2018-12-03 18:16:22,858  INFO sabyashaikh invoke_event_thread Case_id:Case1.1 Activity:c 'Starting thread for event '
+2018-12-03 18:16:22,858  INFO sabyashaikh run Thread:16 Case_id:Case1.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 18:16:22,858 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 18:16:22,874 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabyashaikh HTTP/1.1" 200 9
+2018-12-03 18:16:22,874  INFO sabyashaikh run Thread:16 Case_id:Case1.1 Activity:c 'The server response is: deviation'
+2018-12-03 18:16:23,402  INFO sabyashaikh simulate_stream_event Case_id:Case2.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-03 18:16:23,402  INFO sabyashaikh invoke_event_thread Case_id:Case2.1 Activity:b 'Initialising thread'
+2018-12-03 18:16:23,402  INFO sabyashaikh invoke_event_thread Case_id:Case2.1 Activity:b 'Starting thread for event '
+2018-12-03 18:16:23,402  INFO sabyashaikh run Thread:17 Case_id:Case2.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 18:16:23,402 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 18:16:23,402 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabyashaikh HTTP/1.1" 200 9
+2018-12-03 18:16:23,402  INFO sabyashaikh run Thread:17 Case_id:Case2.1 Activity:b 'The server response is: deviation'
+2018-12-03 18:16:23,949  INFO sabyashaikh simulate_stream_event Case_id:Case1.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-03 18:16:23,949  INFO sabyashaikh invoke_event_thread Case_id:Case1.0 Activity:d 'Initialising thread'
+2018-12-03 18:16:23,949  INFO sabyashaikh invoke_event_thread Case_id:Case1.0 Activity:d 'Starting thread for event '
+2018-12-03 18:16:23,949  INFO sabyashaikh run Thread:18 Case_id:Case1.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 18:16:23,949 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 18:16:23,949 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabyashaikh HTTP/1.1" 200 9
+2018-12-03 18:16:23,949  INFO sabyashaikh run Thread:18 Case_id:Case1.0 Activity:d 'The server response is: deviation'
+2018-12-03 18:16:24,494  INFO sabyashaikh simulate_stream_event Case_id:Case2.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-03 18:16:24,494  INFO sabyashaikh invoke_event_thread Case_id:Case2.0 Activity:d 'Initialising thread'
+2018-12-03 18:16:24,494  INFO sabyashaikh invoke_event_thread Case_id:Case2.0 Activity:d 'Starting thread for event '
+2018-12-03 18:16:24,494  INFO sabyashaikh run Thread:19 Case_id:Case2.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 18:16:24,494 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 18:16:24,494 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabyashaikh HTTP/1.1" 200 9
+2018-12-03 18:16:24,494  INFO sabyashaikh run Thread:19 Case_id:Case2.0 Activity:d 'The server response is: deviation'
+2018-12-03 18:16:25,034  INFO sabyashaikh simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-03 18:16:25,034  INFO sabyashaikh invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-03 18:16:25,034  INFO sabyashaikh invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-03 18:16:25,034  INFO sabyashaikh run Thread:20 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 18:16:25,034 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 18:16:25,038 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabyashaikh HTTP/1.1" 200 9
+2018-12-03 18:16:25,038  INFO sabyashaikh run Thread:20 Case_id:Case1.2 Activity:d 'The server response is: deviation'
+2018-12-03 18:16:25,577  INFO sabyashaikh simulate_stream_event Case_id:Case1.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-03 18:16:25,577  INFO sabyashaikh invoke_event_thread Case_id:Case1.1 Activity:d 'Initialising thread'
+2018-12-03 18:16:25,577  INFO sabyashaikh invoke_event_thread Case_id:Case1.1 Activity:d 'Starting thread for event '
+2018-12-03 18:16:25,577  INFO sabyashaikh run Thread:21 Case_id:Case1.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 18:16:25,577 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 18:16:25,577 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabyashaikh HTTP/1.1" 200 9
+2018-12-03 18:16:25,577  INFO sabyashaikh run Thread:21 Case_id:Case1.1 Activity:d 'The server response is: deviation'
+2018-12-03 18:16:26,138  INFO sabyashaikh simulate_stream_event Case_id:Case2.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-03 18:16:26,139  INFO sabyashaikh invoke_event_thread Case_id:Case2.1 Activity:d 'Initialising thread'
+2018-12-03 18:16:26,139  INFO sabyashaikh invoke_event_thread Case_id:Case2.1 Activity:d 'Starting thread for event '
+2018-12-03 18:16:26,139  INFO sabyashaikh run Thread:22 Case_id:Case2.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 18:16:26,139  INFO sabyashaikh simulate_stream_event Case_id:NONE Activity:END 'Calling invoke_event_thread()'
+2018-12-03 18:16:26,139  INFO sabyashaikh invoke_event_thread Case_id:NONE Activity:END 'Initialising thread'
+2018-12-03 18:16:26,139  INFO sabyashaikh invoke_event_thread Case_id:NONE Activity:END 'Starting thread for event '
+2018-12-03 18:16:26,139  INFO sabyashaikh run Thread:23 Case_id:NONE Activity:END 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 18:16:26,143 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 18:16:26,143 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 18:16:26,143 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabyashaikh HTTP/1.1" 200 9
+2018-12-03 18:16:26,143  INFO sabyashaikh run Thread:22 Case_id:Case2.1 Activity:d 'The server response is: deviation'
+2018-12-03 18:16:26,143 http://127.0.0.1:5000 "POST /compliance-checker?uuid=sabyashaikh HTTP/1.1" 200 9
+2018-12-03 18:16:26,143  INFO sabyashaikh run Thread:23 Case_id:NONE Activity:END 'The server response is: deviation'
+2018-12-03 18:16:27,168  INFO sabyashaikh main 'compliance checking is completed'
+2018-12-03 18:16:27,168  INFO sabyashaikh main 'The options are displayed'
