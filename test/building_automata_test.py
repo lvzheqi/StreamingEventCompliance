@@ -1,7 +1,7 @@
 import unittest
 from streaming_event_compliance.utils import config
-from streaming_event_compliance.services.build_automata import build_automata, globalvar
-from streaming_event_compliance.services.build_automata.case_thread import check_executing_order
+from streaming_event_compliance.services.build_automata import build_automata, globalvar, set_globalvar
+from streaming_event_compliance.services.build_automata import case_thread
 from streaming_event_compliance.database import dbtools
 from pm4py.objects.log.importer.xes import factory as xes_importer
 from pm4py.objects.log import transform
@@ -48,17 +48,16 @@ class BuildingAutomataTestCase(unittest.TestCase):
         for item in expected_log:
             print(item, ":", expected_log.get(item))
         print("check_executing_order:")
-        for item in check_executing_order:
-            print(item, ":", check_executing_order.get(item))
-        self.assertEqual(expected_log, check_executing_order)
+        for item in case_thread.check_executing_order:
+            print(item, ":", case_thread.check_executing_order.get(item))
+        self.assertEqual(expected_log, case_thread.check_executing_order)
 
-
-    # def test_calcuate_connection_for_different_prefix_automata(self):
-    #     """
-    #     """
-    #     # Instantiate an object Connection
-    #     Connection = calcuate_connection_for_different_prefix_automata()
-    #     self.assertEqual(Connection, 'b')
+    def test_calcuate_connection_for_different_prefix_automata(self):
+        # windowsMemory = ['a', 'b', 'c', 'd', 'e']
+        #case_thread.calcuate_connection_for_different_prefix_automata(windowsMemory)
+        #autos, status = set_globalvar.get_autos()
+        #print(autos)
+        self.assertEqual(1, 1)
 
     def tearUp(self):
         # do something after every test method

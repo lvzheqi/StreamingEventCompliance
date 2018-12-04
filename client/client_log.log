@@ -11568,3 +11568,5 @@
 2018-12-03 18:16:26,143  INFO sabyashaikh run Thread:23 Case_id:NONE Activity:END 'The server response is: deviation'
 2018-12-03 18:16:27,168  INFO sabyashaikh main 'compliance checking is completed'
 2018-12-03 18:16:27,168  INFO sabyashaikh main 'The options are displayed'
+2018-12-03 18:16:52,833  INFO sabyashaikh main 'The user selected option 3'
+2018-12-03 18:16:52,833  INFO sabyashaikh main 'Exiting...'
