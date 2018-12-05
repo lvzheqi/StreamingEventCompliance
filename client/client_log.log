@@ -11734,3 +11734,4 @@
 2018-12-03 20:54:12,339 http://127.0.0.1:5000 "POST /show-deviation-pdf?uuid=clien HTTP/1.1" 404 0
 2018-12-03 20:54:12,339  ERROR clien run_show_deviation_pdf 'pdf can not be created'
 2018-12-03 20:54:12,339  INFO clien main 'The options are displayed'
+2018-12-03 20:56:15,778  INFO clien main 'The user selected option 2'
