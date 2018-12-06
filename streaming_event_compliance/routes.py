@@ -31,11 +31,8 @@ def call_compliance_checker():
     :return: status code, application/json
     '''
     client_uuid = request.args.get('uuid')
-    print(client_uuid)
     event = request.json
     event = json.loads(event)
-    print(event)
-    print(compliance_checker.compliance_checker(client_uuid, event))
     return compliance_checker.compliance_checker(client_uuid, event), status.HTTP_200_OK
 
 
