@@ -120,6 +120,7 @@ def main(argv):
             print('-----------------start to render deviation pdf, please wait-------------------')
             Client_logging().log_info(func_name, argv[0], "Calling  run_show_deviation_pdf() ")
             client1.run_show_deviation_pdf()
+            print('-----------------default deviation pdf link only for client1------------------')
             print('------------------------------------------------------------------------------')
         elif services == '3':
             Client_logging().log_info(func_name, argv[0], "The user selected option 3")
