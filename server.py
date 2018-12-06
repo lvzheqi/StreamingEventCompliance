@@ -10,7 +10,7 @@ if __name__ == '__main__':
         print('Error: Database connection!')
         exit(1)
 
-    from streaming_event_compliance.services.build_automata import globalvar, set_globalvar
+    from streaming_event_compliance.services import set_globalvar, globalvar
     from streaming_event_compliance.database import dbtools
     dbtools.empty_tables()
     globalvar.init()
