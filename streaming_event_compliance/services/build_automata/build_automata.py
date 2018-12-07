@@ -1,11 +1,12 @@
-from streaming_event_compliance.services.build_automata.globalvar import ThreadMemorizer, CaseMemorizer
+from streaming_event_compliance.services.globalvar import ThreadMemorizer, CaseMemorizer
 from pm4py.objects.log.importer.xes import factory as xes_importer
 from pm4py.objects.log import transform
-from streaming_event_compliance.services.build_automata import case_thread, set_globalvar
+from streaming_event_compliance.services.build_automata import case_thread
 import threading
 from streaming_event_compliance.utils.config import MAXIMUN_WINDOW_SIZE, WINDOW_SIZE
 from streaming_event_compliance.database import dbtools
 from streaming_event_compliance.utils import config
+from streaming_event_compliance.services import set_globalvar
 from multiprocessing import Process
 
 T = ThreadMemorizer()
@@ -76,7 +77,7 @@ def build_automata_pro():
 
         threads.append(thread)
         threads_index = threads_index + 1
-    # TODO: raise exception when not success
+    # TODO: Jinjing raise exception when not success
     # for th in threads:
     #     th.join()
     #     print(th, "is done")
