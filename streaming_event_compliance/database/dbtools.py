@@ -68,7 +68,7 @@ def init_automata_from_database():
         autos[ws] = auto
     if len(conns) != 0:
         for conn in conns:
-            ws = len(conn.source_node)
+            ws = conn.source_node.count(",")+1
             auto = autos[ws]
             auto.add_connection(conn)
             auto.update_node(conn.source_node, conn.count)
@@ -83,7 +83,7 @@ def init_alert_log_from_database(uuid):
         alog = alertlog.AlertLog(uuid, ws)
         alogs[ws] = alog
     for record in records:
-        ws = len(record.source_node.replace(',', ''))
+        ws = record.source_node.count(',')+1
         alog = alogs[ws]
         alog.add_alert_record(record)
     return alogs
@@ -94,4 +94,5 @@ def delete_alert(uuid):
     for record in records:
         db.session.delete(record)
     db.session.commit()
+
 
