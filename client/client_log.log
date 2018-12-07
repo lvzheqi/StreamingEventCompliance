@@ -11568,3 +11568,347 @@
 2018-12-03 18:16:26,143  INFO sabyashaikh run Thread:23 Case_id:NONE Activity:END 'The server response is: deviation'
 2018-12-03 18:16:27,168  INFO sabyashaikh main 'compliance checking is completed'
 2018-12-03 18:16:27,168  INFO sabyashaikh main 'The options are displayed'
+2018-12-03 20:51:40,135  INFO 123 main 'Post request to server:http://127.0.0.1:5000/login?uuid=123'
+2018-12-03 20:51:40,150 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:51:40,154 http://127.0.0.1:5000 "POST /login?uuid=123 HTTP/1.1" 200 0
+2018-12-03 20:51:40,155  INFO 123 main 'The options are displayed'
+2018-12-03 20:51:41,374  INFO 123 main 'The user selected option 1'
+2018-12-03 20:51:41,374  INFO 123 main 'Calling run_compliance_checker()'
+2018-12-03 20:51:41,374  INFO 123 run_compliance_checker 'Calling read_log()'
+2018-12-03 20:51:41,374  INFO 123 read_log 'Creating a trace logger file: '
+2018-12-03 20:51:41,376  INFO 123 read_log 'Transforming trace logger to event logger'
+2018-12-03 20:51:41,377  INFO 123 read_log 'Sorting event logger'
+2018-12-03 20:51:41,377  INFO 123 run_compliance_checker 'Calling simulate_stream_event()'
+2018-12-03 20:51:41,893  INFO 123 simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-03 20:51:41,893  INFO 123 invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2018-12-03 20:51:41,893  INFO 123 invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2018-12-03 20:51:41,893  INFO 123 run Thread:0 Case_id:Case1.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:51:41,895 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:51:41,897 http://127.0.0.1:5000 "POST /compliance-checker?uuid=123 HTTP/1.1" 200 9
+2018-12-03 20:51:41,898  INFO 123 run Thread:0 Case_id:Case1.0 Activity:a 'The server response is: deviation'
+2018-12-03 20:51:42,400  INFO 123 simulate_stream_event Case_id:Case3.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-03 20:51:42,400  INFO 123 invoke_event_thread Case_id:Case3.0 Activity:a 'Initialising thread'
+2018-12-03 20:51:42,400  INFO 123 invoke_event_thread Case_id:Case3.0 Activity:a 'Starting thread for event '
+2018-12-03 20:51:42,400  INFO 123 run Thread:1 Case_id:Case3.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:51:42,402 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:51:42,404 http://127.0.0.1:5000 "POST /compliance-checker?uuid=123 HTTP/1.1" 200 9
+2018-12-03 20:51:42,404  INFO 123 run Thread:1 Case_id:Case3.0 Activity:a 'The server response is: deviation'
+2018-12-03 20:51:42,922  INFO 123 simulate_stream_event Case_id:Case2.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-03 20:51:42,922  INFO 123 invoke_event_thread Case_id:Case2.0 Activity:a 'Initialising thread'
+2018-12-03 20:51:42,922  INFO 123 invoke_event_thread Case_id:Case2.0 Activity:a 'Starting thread for event '
+2018-12-03 20:51:42,922  INFO 123 run Thread:2 Case_id:Case2.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:51:42,924 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:51:42,926 http://127.0.0.1:5000 "POST /compliance-checker?uuid=123 HTTP/1.1" 200 9
+2018-12-03 20:51:42,927  INFO 123 run Thread:2 Case_id:Case2.0 Activity:a 'The server response is: deviation'
+2018-12-03 20:51:43,438  INFO 123 simulate_stream_event Case_id:Case1.2 Activity:a 'Calling invoke_event_thread()'
+2018-12-03 20:51:43,438  INFO 123 invoke_event_thread Case_id:Case1.2 Activity:a 'Initialising thread'
+2018-12-03 20:51:43,438  INFO 123 invoke_event_thread Case_id:Case1.2 Activity:a 'Starting thread for event '
+2018-12-03 20:51:43,438  INFO 123 run Thread:3 Case_id:Case1.2 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:51:43,440 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:51:43,442 http://127.0.0.1:5000 "POST /compliance-checker?uuid=123 HTTP/1.1" 200 9
+2018-12-03 20:51:43,442  INFO 123 run Thread:3 Case_id:Case1.2 Activity:a 'The server response is: deviation'
+2018-12-03 20:51:43,961  INFO 123 simulate_stream_event Case_id:Case1.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-03 20:51:43,961  INFO 123 invoke_event_thread Case_id:Case1.1 Activity:a 'Initialising thread'
+2018-12-03 20:51:43,961  INFO 123 invoke_event_thread Case_id:Case1.1 Activity:a 'Starting thread for event '
+2018-12-03 20:51:43,961  INFO 123 run Thread:4 Case_id:Case1.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:51:43,963 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:51:43,966 http://127.0.0.1:5000 "POST /compliance-checker?uuid=123 HTTP/1.1" 200 9
+2018-12-03 20:51:43,966  INFO 123 run Thread:4 Case_id:Case1.1 Activity:a 'The server response is: deviation'
+2018-12-03 20:51:44,480  INFO 123 simulate_stream_event Case_id:Case2.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-03 20:51:44,480  INFO 123 invoke_event_thread Case_id:Case2.1 Activity:a 'Initialising thread'
+2018-12-03 20:51:44,480  INFO 123 invoke_event_thread Case_id:Case2.1 Activity:a 'Starting thread for event '
+2018-12-03 20:51:44,480  INFO 123 run Thread:5 Case_id:Case2.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:51:44,481 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:51:44,483 http://127.0.0.1:5000 "POST /compliance-checker?uuid=123 HTTP/1.1" 200 9
+2018-12-03 20:51:44,483  INFO 123 run Thread:5 Case_id:Case2.1 Activity:a 'The server response is: deviation'
+2018-12-03 20:51:44,999  INFO 123 simulate_stream_event Case_id:Case1.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-03 20:51:44,999  INFO 123 invoke_event_thread Case_id:Case1.0 Activity:b 'Initialising thread'
+2018-12-03 20:51:44,999  INFO 123 invoke_event_thread Case_id:Case1.0 Activity:b 'Starting thread for event '
+2018-12-03 20:51:44,999  INFO 123 run Thread:6 Case_id:Case1.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:51:45,000 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:51:45,002 http://127.0.0.1:5000 "POST /compliance-checker?uuid=123 HTTP/1.1" 200 9
+2018-12-03 20:51:45,002  INFO 123 run Thread:6 Case_id:Case1.0 Activity:b 'The server response is: deviation'
+2018-12-03 20:51:45,518  INFO 123 simulate_stream_event Case_id:Case3.0 Activity:e 'Calling invoke_event_thread()'
+2018-12-03 20:51:45,518  INFO 123 invoke_event_thread Case_id:Case3.0 Activity:e 'Initialising thread'
+2018-12-03 20:51:45,518  INFO 123 invoke_event_thread Case_id:Case3.0 Activity:e 'Starting thread for event '
+2018-12-03 20:51:45,519  INFO 123 run Thread:7 Case_id:Case3.0 Activity:e 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:51:45,520 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:51:45,522 http://127.0.0.1:5000 "POST /compliance-checker?uuid=123 HTTP/1.1" 200 9
+2018-12-03 20:51:45,522  INFO 123 run Thread:7 Case_id:Case3.0 Activity:e 'The server response is: deviation'
+2018-12-03 20:51:46,038  INFO 123 simulate_stream_event Case_id:Case2.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-03 20:51:46,038  INFO 123 invoke_event_thread Case_id:Case2.0 Activity:c 'Initialising thread'
+2018-12-03 20:51:46,038  INFO 123 invoke_event_thread Case_id:Case2.0 Activity:c 'Starting thread for event '
+2018-12-03 20:51:46,039  INFO 123 run Thread:8 Case_id:Case2.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:51:46,042 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:51:46,044 http://127.0.0.1:5000 "POST /compliance-checker?uuid=123 HTTP/1.1" 200 9
+2018-12-03 20:51:46,045  INFO 123 run Thread:8 Case_id:Case2.0 Activity:c 'The server response is: deviation'
+2018-12-03 20:51:46,554  INFO 123 simulate_stream_event Case_id:Case1.2 Activity:b 'Calling invoke_event_thread()'
+2018-12-03 20:51:46,554  INFO 123 invoke_event_thread Case_id:Case1.2 Activity:b 'Initialising thread'
+2018-12-03 20:51:46,554  INFO 123 invoke_event_thread Case_id:Case1.2 Activity:b 'Starting thread for event '
+2018-12-03 20:51:46,554  INFO 123 run Thread:9 Case_id:Case1.2 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:51:46,556 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:51:46,558 http://127.0.0.1:5000 "POST /compliance-checker?uuid=123 HTTP/1.1" 200 9
+2018-12-03 20:51:46,558  INFO 123 run Thread:9 Case_id:Case1.2 Activity:b 'The server response is: deviation'
+2018-12-03 20:51:47,064  INFO 123 simulate_stream_event Case_id:Case1.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-03 20:51:47,064  INFO 123 invoke_event_thread Case_id:Case1.1 Activity:b 'Initialising thread'
+2018-12-03 20:51:47,064  INFO 123 invoke_event_thread Case_id:Case1.1 Activity:b 'Starting thread for event '
+2018-12-03 20:51:47,064  INFO 123 run Thread:10 Case_id:Case1.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:51:47,066 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:51:47,069 http://127.0.0.1:5000 "POST /compliance-checker?uuid=123 HTTP/1.1" 200 9
+2018-12-03 20:51:47,069  INFO 123 run Thread:10 Case_id:Case1.1 Activity:b 'The server response is: deviation'
+2018-12-03 20:51:47,580  INFO 123 simulate_stream_event Case_id:Case2.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-03 20:51:47,580  INFO 123 invoke_event_thread Case_id:Case2.1 Activity:c 'Initialising thread'
+2018-12-03 20:51:47,580  INFO 123 invoke_event_thread Case_id:Case2.1 Activity:c 'Starting thread for event '
+2018-12-03 20:51:47,580  INFO 123 run Thread:11 Case_id:Case2.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:51:47,581 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:51:47,583 http://127.0.0.1:5000 "POST /compliance-checker?uuid=123 HTTP/1.1" 200 9
+2018-12-03 20:51:47,584  INFO 123 run Thread:11 Case_id:Case2.1 Activity:c 'The server response is: deviation'
+2018-12-03 20:51:48,093  INFO 123 simulate_stream_event Case_id:Case1.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-03 20:51:48,093  INFO 123 invoke_event_thread Case_id:Case1.0 Activity:c 'Initialising thread'
+2018-12-03 20:51:48,093  INFO 123 invoke_event_thread Case_id:Case1.0 Activity:c 'Starting thread for event '
+2018-12-03 20:51:48,094  INFO 123 run Thread:12 Case_id:Case1.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:51:48,095 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:51:48,097 http://127.0.0.1:5000 "POST /compliance-checker?uuid=123 HTTP/1.1" 200 9
+2018-12-03 20:51:48,097  INFO 123 run Thread:12 Case_id:Case1.0 Activity:c 'The server response is: deviation'
+2018-12-03 20:51:48,605  INFO 123 simulate_stream_event Case_id:Case3.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-03 20:51:48,605  INFO 123 invoke_event_thread Case_id:Case3.0 Activity:d 'Initialising thread'
+2018-12-03 20:51:48,605  INFO 123 invoke_event_thread Case_id:Case3.0 Activity:d 'Starting thread for event '
+2018-12-03 20:51:48,605  INFO 123 run Thread:13 Case_id:Case3.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:51:48,607 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:51:48,608 http://127.0.0.1:5000 "POST /compliance-checker?uuid=123 HTTP/1.1" 200 9
+2018-12-03 20:51:48,609  INFO 123 run Thread:13 Case_id:Case3.0 Activity:d 'The server response is: deviation'
+2018-12-03 20:51:49,121  INFO 123 simulate_stream_event Case_id:Case2.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-03 20:51:49,121  INFO 123 invoke_event_thread Case_id:Case2.0 Activity:b 'Initialising thread'
+2018-12-03 20:51:49,121  INFO 123 invoke_event_thread Case_id:Case2.0 Activity:b 'Starting thread for event '
+2018-12-03 20:51:49,122  INFO 123 run Thread:14 Case_id:Case2.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:51:49,123 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:51:49,125 http://127.0.0.1:5000 "POST /compliance-checker?uuid=123 HTTP/1.1" 200 9
+2018-12-03 20:51:49,125  INFO 123 run Thread:14 Case_id:Case2.0 Activity:b 'The server response is: deviation'
+2018-12-03 20:51:49,643  INFO 123 simulate_stream_event Case_id:Case1.2 Activity:c 'Calling invoke_event_thread()'
+2018-12-03 20:51:49,643  INFO 123 invoke_event_thread Case_id:Case1.2 Activity:c 'Initialising thread'
+2018-12-03 20:51:49,643  INFO 123 invoke_event_thread Case_id:Case1.2 Activity:c 'Starting thread for event '
+2018-12-03 20:51:49,643  INFO 123 run Thread:15 Case_id:Case1.2 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:51:49,644 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:51:49,646 http://127.0.0.1:5000 "POST /compliance-checker?uuid=123 HTTP/1.1" 200 9
+2018-12-03 20:51:49,646  INFO 123 run Thread:15 Case_id:Case1.2 Activity:c 'The server response is: deviation'
+2018-12-03 20:51:50,154  INFO 123 simulate_stream_event Case_id:Case1.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-03 20:51:50,154  INFO 123 invoke_event_thread Case_id:Case1.1 Activity:c 'Initialising thread'
+2018-12-03 20:51:50,154  INFO 123 invoke_event_thread Case_id:Case1.1 Activity:c 'Starting thread for event '
+2018-12-03 20:51:50,155  INFO 123 run Thread:16 Case_id:Case1.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:51:50,156 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:51:50,159 http://127.0.0.1:5000 "POST /compliance-checker?uuid=123 HTTP/1.1" 200 9
+2018-12-03 20:51:50,159  INFO 123 run Thread:16 Case_id:Case1.1 Activity:c 'The server response is: deviation'
+2018-12-03 20:51:50,673  INFO 123 simulate_stream_event Case_id:Case2.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-03 20:51:50,673  INFO 123 invoke_event_thread Case_id:Case2.1 Activity:b 'Initialising thread'
+2018-12-03 20:51:50,673  INFO 123 invoke_event_thread Case_id:Case2.1 Activity:b 'Starting thread for event '
+2018-12-03 20:51:50,674  INFO 123 run Thread:17 Case_id:Case2.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:51:50,675 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:51:50,676 http://127.0.0.1:5000 "POST /compliance-checker?uuid=123 HTTP/1.1" 200 9
+2018-12-03 20:51:50,677  INFO 123 run Thread:17 Case_id:Case2.1 Activity:b 'The server response is: deviation'
+2018-12-03 20:51:51,191  INFO 123 simulate_stream_event Case_id:Case1.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-03 20:51:51,192  INFO 123 invoke_event_thread Case_id:Case1.0 Activity:d 'Initialising thread'
+2018-12-03 20:51:51,192  INFO 123 invoke_event_thread Case_id:Case1.0 Activity:d 'Starting thread for event '
+2018-12-03 20:51:51,192  INFO 123 run Thread:18 Case_id:Case1.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:51:51,194 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:51:51,196 http://127.0.0.1:5000 "POST /compliance-checker?uuid=123 HTTP/1.1" 200 9
+2018-12-03 20:51:51,196  INFO 123 run Thread:18 Case_id:Case1.0 Activity:d 'The server response is: deviation'
+2018-12-03 20:51:51,707  INFO 123 simulate_stream_event Case_id:Case2.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-03 20:51:51,707  INFO 123 invoke_event_thread Case_id:Case2.0 Activity:d 'Initialising thread'
+2018-12-03 20:51:51,707  INFO 123 invoke_event_thread Case_id:Case2.0 Activity:d 'Starting thread for event '
+2018-12-03 20:51:51,708  INFO 123 run Thread:19 Case_id:Case2.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:51:51,709 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:51:51,711 http://127.0.0.1:5000 "POST /compliance-checker?uuid=123 HTTP/1.1" 200 9
+2018-12-03 20:51:51,711  INFO 123 run Thread:19 Case_id:Case2.0 Activity:d 'The server response is: deviation'
+2018-12-03 20:51:52,224  INFO 123 simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-03 20:51:52,224  INFO 123 invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-03 20:51:52,224  INFO 123 invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-03 20:51:52,224  INFO 123 run Thread:20 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:51:52,225 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:51:52,227 http://127.0.0.1:5000 "POST /compliance-checker?uuid=123 HTTP/1.1" 200 9
+2018-12-03 20:51:52,228  INFO 123 run Thread:20 Case_id:Case1.2 Activity:d 'The server response is: deviation'
+2018-12-03 20:51:52,749  INFO 123 simulate_stream_event Case_id:Case1.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-03 20:51:52,749  INFO 123 invoke_event_thread Case_id:Case1.1 Activity:d 'Initialising thread'
+2018-12-03 20:51:52,749  INFO 123 invoke_event_thread Case_id:Case1.1 Activity:d 'Starting thread for event '
+2018-12-03 20:51:52,749  INFO 123 run Thread:21 Case_id:Case1.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:51:52,751 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:51:52,752 http://127.0.0.1:5000 "POST /compliance-checker?uuid=123 HTTP/1.1" 200 9
+2018-12-03 20:51:52,753  INFO 123 run Thread:21 Case_id:Case1.1 Activity:d 'The server response is: deviation'
+2018-12-03 20:51:53,263  INFO 123 simulate_stream_event Case_id:Case2.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-03 20:51:53,263  INFO 123 invoke_event_thread Case_id:Case2.1 Activity:d 'Initialising thread'
+2018-12-03 20:51:53,264  INFO 123 invoke_event_thread Case_id:Case2.1 Activity:d 'Starting thread for event '
+2018-12-03 20:51:53,264  INFO 123 run Thread:22 Case_id:Case2.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:51:53,264  INFO 123 simulate_stream_event Case_id:NONE Activity:END 'Calling invoke_event_thread()'
+2018-12-03 20:51:53,264  INFO 123 invoke_event_thread Case_id:NONE Activity:END 'Initialising thread'
+2018-12-03 20:51:53,264  INFO 123 invoke_event_thread Case_id:NONE Activity:END 'Starting thread for event '
+2018-12-03 20:51:53,265  INFO 123 run Thread:23 Case_id:NONE Activity:END 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:51:53,266 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:51:53,267 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:51:53,271 http://127.0.0.1:5000 "POST /compliance-checker?uuid=123 HTTP/1.1" 200 9
+2018-12-03 20:51:53,271 http://127.0.0.1:5000 "POST /compliance-checker?uuid=123 HTTP/1.1" 200 9
+2018-12-03 20:51:53,274  INFO 123 main 'compliance checking is completed'
+2018-12-03 20:51:53,275  INFO 123 run Thread:23 Case_id:NONE Activity:END 'The server response is: deviation'
+2018-12-03 20:51:53,275  INFO 123 run Thread:22 Case_id:Case2.1 Activity:d 'The server response is: deviation'
+2018-12-03 20:51:53,275  INFO 123 main 'The options are displayed'
+2018-12-03 20:52:38,098  INFO 123 main 'Post request to server:http://127.0.0.1:5000/login?uuid=123'
+2018-12-03 20:52:38,107 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:52:38,109 http://127.0.0.1:5000 "POST /login?uuid=123 HTTP/1.1" 200 0
+2018-12-03 20:52:38,109  INFO 123 main 'The options are displayed'
+2018-12-03 20:52:38,928  INFO 123 main 'The user selected option 1'
+2018-12-03 20:52:38,928  INFO 123 main 'Calling run_compliance_checker()'
+2018-12-03 20:52:38,928  INFO 123 run_compliance_checker 'Calling read_log()'
+2018-12-03 20:52:38,928  INFO 123 read_log 'Creating a trace logger file: '
+2018-12-03 20:52:38,931  INFO 123 read_log 'Transforming trace logger to event logger'
+2018-12-03 20:52:38,931  INFO 123 read_log 'Sorting event logger'
+2018-12-03 20:52:38,931  INFO 123 run_compliance_checker 'Calling simulate_stream_event()'
+2018-12-03 20:52:39,444  INFO 123 simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-03 20:52:39,444  INFO 123 invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2018-12-03 20:52:39,444  INFO 123 invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2018-12-03 20:52:39,444  INFO 123 run Thread:0 Case_id:Case1.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:52:39,446 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:52:39,447 http://127.0.0.1:5000 "POST /compliance-checker?uuid=123 HTTP/1.1" 200 9
+2018-12-03 20:52:39,447  INFO 123 run Thread:0 Case_id:Case1.0 Activity:a 'The server response is: deviation'
+2018-12-03 20:52:39,952  INFO 123 simulate_stream_event Case_id:Case3.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-03 20:52:39,952  INFO 123 invoke_event_thread Case_id:Case3.0 Activity:a 'Initialising thread'
+2018-12-03 20:52:39,952  INFO 123 invoke_event_thread Case_id:Case3.0 Activity:a 'Starting thread for event '
+2018-12-03 20:52:39,952  INFO 123 run Thread:1 Case_id:Case3.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:52:39,953 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:52:39,955 http://127.0.0.1:5000 "POST /compliance-checker?uuid=123 HTTP/1.1" 200 9
+2018-12-03 20:52:39,955  INFO 123 run Thread:1 Case_id:Case3.0 Activity:a 'The server response is: deviation'
+2018-12-03 20:52:40,469  INFO 123 simulate_stream_event Case_id:Case2.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-03 20:52:40,471  INFO 123 invoke_event_thread Case_id:Case2.0 Activity:a 'Initialising thread'
+2018-12-03 20:52:40,471  INFO 123 invoke_event_thread Case_id:Case2.0 Activity:a 'Starting thread for event '
+2018-12-03 20:52:40,471  INFO 123 run Thread:2 Case_id:Case2.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:52:40,473 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:52:40,474 http://127.0.0.1:5000 "POST /compliance-checker?uuid=123 HTTP/1.1" 200 9
+2018-12-03 20:52:40,475  INFO 123 run Thread:2 Case_id:Case2.0 Activity:a 'The server response is: deviation'
+2018-12-03 20:52:40,990  INFO 123 simulate_stream_event Case_id:Case1.2 Activity:a 'Calling invoke_event_thread()'
+2018-12-03 20:52:40,990  INFO 123 invoke_event_thread Case_id:Case1.2 Activity:a 'Initialising thread'
+2018-12-03 20:52:40,990  INFO 123 invoke_event_thread Case_id:Case1.2 Activity:a 'Starting thread for event '
+2018-12-03 20:52:40,990  INFO 123 run Thread:3 Case_id:Case1.2 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:52:40,992 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:52:40,993 http://127.0.0.1:5000 "POST /compliance-checker?uuid=123 HTTP/1.1" 200 9
+2018-12-03 20:52:40,993  INFO 123 run Thread:3 Case_id:Case1.2 Activity:a 'The server response is: deviation'
+2018-12-03 20:52:41,509  INFO 123 simulate_stream_event Case_id:Case1.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-03 20:52:41,509  INFO 123 invoke_event_thread Case_id:Case1.1 Activity:a 'Initialising thread'
+2018-12-03 20:52:41,509  INFO 123 invoke_event_thread Case_id:Case1.1 Activity:a 'Starting thread for event '
+2018-12-03 20:52:41,509  INFO 123 run Thread:4 Case_id:Case1.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:52:41,510 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:52:41,511  ERROR 123 run Thread:4 Case_id:Case1.1 Activity:a 'The server got disconnected, please try again later '
+2018-12-03 20:52:42,024  INFO 123 simulate_stream_event Case_id:Case2.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-03 20:52:42,024  INFO 123 invoke_event_thread Case_id:Case2.1 Activity:a 'Initialising thread'
+2018-12-03 20:52:42,024  INFO 123 invoke_event_thread Case_id:Case2.1 Activity:a 'Starting thread for event '
+2018-12-03 20:52:42,024  INFO 123 run Thread:5 Case_id:Case2.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:52:42,025 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:52:42,026  ERROR 123 run Thread:5 Case_id:Case2.1 Activity:a 'The server got disconnected, please try again later '
+2018-12-03 20:52:42,549  INFO 123 simulate_stream_event Case_id:Case1.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-03 20:52:42,549  INFO 123 invoke_event_thread Case_id:Case1.0 Activity:b 'Initialising thread'
+2018-12-03 20:52:42,549  INFO 123 invoke_event_thread Case_id:Case1.0 Activity:b 'Starting thread for event '
+2018-12-03 20:52:42,550  INFO 123 run Thread:6 Case_id:Case1.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:52:42,554 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:52:42,556  ERROR 123 run Thread:6 Case_id:Case1.0 Activity:b 'The server got disconnected, please try again later '
+2018-12-03 20:52:43,064  INFO 123 simulate_stream_event Case_id:Case3.0 Activity:e 'Calling invoke_event_thread()'
+2018-12-03 20:52:43,064  INFO 123 invoke_event_thread Case_id:Case3.0 Activity:e 'Initialising thread'
+2018-12-03 20:52:43,065  INFO 123 invoke_event_thread Case_id:Case3.0 Activity:e 'Starting thread for event '
+2018-12-03 20:52:43,065  INFO 123 run Thread:7 Case_id:Case3.0 Activity:e 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:52:43,066 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:52:43,067  ERROR 123 run Thread:7 Case_id:Case3.0 Activity:e 'The server got disconnected, please try again later '
+2018-12-03 20:52:43,583  INFO 123 simulate_stream_event Case_id:Case2.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-03 20:52:43,583  INFO 123 invoke_event_thread Case_id:Case2.0 Activity:c 'Initialising thread'
+2018-12-03 20:52:43,583  INFO 123 invoke_event_thread Case_id:Case2.0 Activity:c 'Starting thread for event '
+2018-12-03 20:52:43,584  INFO 123 run Thread:8 Case_id:Case2.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:52:43,586 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:52:43,586  ERROR 123 run Thread:8 Case_id:Case2.0 Activity:c 'The server got disconnected, please try again later '
+2018-12-03 20:52:44,099  INFO 123 simulate_stream_event Case_id:Case1.2 Activity:b 'Calling invoke_event_thread()'
+2018-12-03 20:52:44,099  INFO 123 invoke_event_thread Case_id:Case1.2 Activity:b 'Initialising thread'
+2018-12-03 20:52:44,099  INFO 123 invoke_event_thread Case_id:Case1.2 Activity:b 'Starting thread for event '
+2018-12-03 20:52:44,099  INFO 123 run Thread:9 Case_id:Case1.2 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:52:44,100 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:52:44,101  ERROR 123 run Thread:9 Case_id:Case1.2 Activity:b 'The server got disconnected, please try again later '
+2018-12-03 20:52:44,613  INFO 123 simulate_stream_event Case_id:Case1.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-03 20:52:44,613  INFO 123 invoke_event_thread Case_id:Case1.1 Activity:b 'Initialising thread'
+2018-12-03 20:52:44,613  INFO 123 invoke_event_thread Case_id:Case1.1 Activity:b 'Starting thread for event '
+2018-12-03 20:52:44,613  INFO 123 run Thread:10 Case_id:Case1.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:52:44,614 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:52:44,615  ERROR 123 run Thread:10 Case_id:Case1.1 Activity:b 'The server got disconnected, please try again later '
+2018-12-03 20:52:45,125  INFO 123 simulate_stream_event Case_id:Case2.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-03 20:52:45,125  INFO 123 invoke_event_thread Case_id:Case2.1 Activity:c 'Initialising thread'
+2018-12-03 20:52:45,125  INFO 123 invoke_event_thread Case_id:Case2.1 Activity:c 'Starting thread for event '
+2018-12-03 20:52:45,125  INFO 123 run Thread:11 Case_id:Case2.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:52:45,127 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:52:45,127  ERROR 123 run Thread:11 Case_id:Case2.1 Activity:c 'The server got disconnected, please try again later '
+2018-12-03 20:52:45,642  INFO 123 simulate_stream_event Case_id:Case1.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-03 20:52:45,643  INFO 123 invoke_event_thread Case_id:Case1.0 Activity:c 'Initialising thread'
+2018-12-03 20:52:45,643  INFO 123 invoke_event_thread Case_id:Case1.0 Activity:c 'Starting thread for event '
+2018-12-03 20:52:45,643  INFO 123 run Thread:12 Case_id:Case1.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:52:45,644 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:52:45,645  ERROR 123 run Thread:12 Case_id:Case1.0 Activity:c 'The server got disconnected, please try again later '
+2018-12-03 20:52:46,162  INFO 123 simulate_stream_event Case_id:Case3.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-03 20:52:46,163  INFO 123 invoke_event_thread Case_id:Case3.0 Activity:d 'Initialising thread'
+2018-12-03 20:52:46,163  INFO 123 invoke_event_thread Case_id:Case3.0 Activity:d 'Starting thread for event '
+2018-12-03 20:52:46,163  INFO 123 run Thread:13 Case_id:Case3.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:52:46,164 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:52:46,165  ERROR 123 run Thread:13 Case_id:Case3.0 Activity:d 'The server got disconnected, please try again later '
+2018-12-03 20:52:46,682  INFO 123 simulate_stream_event Case_id:Case2.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-03 20:52:46,682  INFO 123 invoke_event_thread Case_id:Case2.0 Activity:b 'Initialising thread'
+2018-12-03 20:52:46,682  INFO 123 invoke_event_thread Case_id:Case2.0 Activity:b 'Starting thread for event '
+2018-12-03 20:52:46,683  INFO 123 run Thread:14 Case_id:Case2.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:52:46,684 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:52:46,685  ERROR 123 run Thread:14 Case_id:Case2.0 Activity:b 'The server got disconnected, please try again later '
+2018-12-03 20:52:47,197  INFO 123 simulate_stream_event Case_id:Case1.2 Activity:c 'Calling invoke_event_thread()'
+2018-12-03 20:52:47,197  INFO 123 invoke_event_thread Case_id:Case1.2 Activity:c 'Initialising thread'
+2018-12-03 20:52:47,197  INFO 123 invoke_event_thread Case_id:Case1.2 Activity:c 'Starting thread for event '
+2018-12-03 20:52:47,197  INFO 123 run Thread:15 Case_id:Case1.2 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:52:47,199 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:52:47,199  ERROR 123 run Thread:15 Case_id:Case1.2 Activity:c 'The server got disconnected, please try again later '
+2018-12-03 20:52:47,709  INFO 123 simulate_stream_event Case_id:Case1.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-03 20:52:47,709  INFO 123 invoke_event_thread Case_id:Case1.1 Activity:c 'Initialising thread'
+2018-12-03 20:52:47,709  INFO 123 invoke_event_thread Case_id:Case1.1 Activity:c 'Starting thread for event '
+2018-12-03 20:52:47,710  INFO 123 run Thread:16 Case_id:Case1.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:52:47,711 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:52:47,711  ERROR 123 run Thread:16 Case_id:Case1.1 Activity:c 'The server got disconnected, please try again later '
+2018-12-03 20:52:48,220  INFO 123 simulate_stream_event Case_id:Case2.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-03 20:52:48,220  INFO 123 invoke_event_thread Case_id:Case2.1 Activity:b 'Initialising thread'
+2018-12-03 20:52:48,220  INFO 123 invoke_event_thread Case_id:Case2.1 Activity:b 'Starting thread for event '
+2018-12-03 20:52:48,220  INFO 123 run Thread:17 Case_id:Case2.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:52:48,221 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:52:48,222  ERROR 123 run Thread:17 Case_id:Case2.1 Activity:b 'The server got disconnected, please try again later '
+2018-12-03 20:52:48,733  INFO 123 simulate_stream_event Case_id:Case1.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-03 20:52:48,733  INFO 123 invoke_event_thread Case_id:Case1.0 Activity:d 'Initialising thread'
+2018-12-03 20:52:48,734  INFO 123 invoke_event_thread Case_id:Case1.0 Activity:d 'Starting thread for event '
+2018-12-03 20:52:48,734  INFO 123 run Thread:18 Case_id:Case1.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:52:48,735 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:52:48,735  ERROR 123 run Thread:18 Case_id:Case1.0 Activity:d 'The server got disconnected, please try again later '
+2018-12-03 20:52:49,240  INFO 123 simulate_stream_event Case_id:Case2.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-03 20:52:49,241  INFO 123 invoke_event_thread Case_id:Case2.0 Activity:d 'Initialising thread'
+2018-12-03 20:52:49,241  INFO 123 invoke_event_thread Case_id:Case2.0 Activity:d 'Starting thread for event '
+2018-12-03 20:52:49,241  INFO 123 run Thread:19 Case_id:Case2.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:52:49,242 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:52:49,243  ERROR 123 run Thread:19 Case_id:Case2.0 Activity:d 'The server got disconnected, please try again later '
+2018-12-03 20:52:49,756  INFO 123 simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-03 20:52:49,757  INFO 123 invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-03 20:52:49,757  INFO 123 invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-03 20:52:49,757  INFO 123 run Thread:20 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:52:49,758 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:52:49,759  ERROR 123 run Thread:20 Case_id:Case1.2 Activity:d 'The server got disconnected, please try again later '
+2018-12-03 20:52:50,269  INFO 123 simulate_stream_event Case_id:Case1.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-03 20:52:50,270  INFO 123 invoke_event_thread Case_id:Case1.1 Activity:d 'Initialising thread'
+2018-12-03 20:52:50,270  INFO 123 invoke_event_thread Case_id:Case1.1 Activity:d 'Starting thread for event '
+2018-12-03 20:52:50,270  INFO 123 run Thread:21 Case_id:Case1.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:52:50,272 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:52:50,272  ERROR 123 run Thread:21 Case_id:Case1.1 Activity:d 'The server got disconnected, please try again later '
+2018-12-03 20:52:50,787  INFO 123 simulate_stream_event Case_id:Case2.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-03 20:52:50,787  INFO 123 invoke_event_thread Case_id:Case2.1 Activity:d 'Initialising thread'
+2018-12-03 20:52:50,787  INFO 123 invoke_event_thread Case_id:Case2.1 Activity:d 'Starting thread for event '
+2018-12-03 20:52:50,787  INFO 123 run Thread:22 Case_id:Case2.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:52:50,788  INFO 123 simulate_stream_event Case_id:NONE Activity:END 'Calling invoke_event_thread()'
+2018-12-03 20:52:50,788  INFO 123 invoke_event_thread Case_id:NONE Activity:END 'Initialising thread'
+2018-12-03 20:52:50,789  INFO 123 invoke_event_thread Case_id:NONE Activity:END 'Starting thread for event '
+2018-12-03 20:52:50,789 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:52:50,789  INFO 123 run Thread:23 Case_id:NONE Activity:END 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-03 20:52:50,791 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-03 20:52:50,791  ERROR 123 run Thread:22 Case_id:Case2.1 Activity:d 'The server got disconnected, please try again later '
+2018-12-03 20:52:50,792  ERROR 123 run Thread:23 Case_id:NONE Activity:END 'The server got disconnected, please try again later '
+2018-12-03 20:52:50,802  INFO 123 main 'compliance checking is completed'
+2018-12-03 20:52:50,803  INFO 123 main 'The options are displayed'
+2018-12-03 21:40:55,486  INFO 123 main 'The user selected option 1'
+2018-12-03 21:40:55,486  INFO 123 main 'Calling run_compliance_checker()'
