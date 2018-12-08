@@ -1,5 +1,6 @@
 from streaming_event_compliance.database import db
 # TODO: needs to consider, whether the attribute is private
+# TODO: change map methods
 
 
 class Automata:
@@ -14,26 +15,54 @@ class Automata:
         else:
             self.nodes[node] = count
 
-    def add_connection(self, connection):
+    def add_connection_from_database(self, connection):
         '''
-        add connection into the automata
+        add connection directly from database into the automata
         :param connection: Connection object
         '''
         self.connections.append(connection)
 
     def update_automata(self, connection):
-        if connection in self.connections:
+        '''
+        add the connection to the automata, try to accumulate the connection,
+        if there are some same connections in the memory
+        :param connection:
+        :return:
+        '''
+        if self.contains_connection(connection):
             index = self.connections.index(connection)
             conn = self.connections[index]
-            conn.count += 1
+            conn.count += connection.count
         else:
             self.connections.append(connection)
-        self.update_node(connection.source_node, 1)
+        self.update_node(connection.source_node, connection.count)
 
     def set_probability(self):
         for conn in self.connections:
             degree = self.nodes[conn.source_node]
-            conn.probability = conn.count / degree
+            try:
+                conn.probability = conn.count / degree
+            except ZeroDivisionError:
+                conn.probability = 0
+
+    def contains_source_node(self, source_node):
+        return source_node in self.nodes
+
+    def contains_connection(self, connection):
+        return connection in self.connections
+
+    def get_connection_probability(self, connection):
+        '''
+        return the probability of the given connection; if the connection is not found, return -1
+        :param connection: Connection
+        :return: probability or -1
+        '''
+        if self.contains_connection(connection):
+            index = self.connections.index(connection)
+            conn = self.connections[index]
+            return conn.probability
+        else:
+            return -1
 
     def __repr__(self):
         return "Window size :%s" % self.window_size + \
@@ -66,7 +95,7 @@ class Connection(db.Model):
     #     ['source_node', 'sink_node'],
     #     ['Node.node', 'Node.node'], ondelete='CASCADE', onupdate='CASCADE')
 
-    def __init__(self, source_node, sink_node, count):
+    def __init__(self, source_node, sink_node, count=1):
         self.source_node = source_node
         self.sink_node = sink_node
         self.count = count
@@ -76,7 +105,8 @@ class Connection(db.Model):
                                   self.sink_node == other.sink_node
 
     def __repr__(self):
-        return "<Source node :%s, sink node:%s, probability: %s>" % (self.source_node, self.sink_node, self.probability)
+        return "<Source node :%s, sink node:%s, probability: %s>" % \
+               (self.source_node, self.sink_node, self.probability)
 
 
 
