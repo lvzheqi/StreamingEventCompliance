@@ -48,6 +48,7 @@ class DBToolsTest(unittest.TestCase):
         alog3 = alertlog.AlertLog(uuid, 3)
         alog4 = alertlog.AlertLog(uuid, 4)
         alog1.update_alert_record(alertlog.AlertRecord(uuid, 'A', 'B', 1))
+        alog1.update_alert_record(alertlog.AlertRecord(uuid, 'A', 'B', 1))
         alog1.update_alert_record(alertlog.AlertRecord(uuid, 'B', 'B', 1))
         alog2.update_alert_record(alertlog.AlertRecord(uuid, 'A,C', 'B,D', 1))
         alog2.update_alert_record(alertlog.AlertRecord(uuid, 'A,C', 'B,R', 1))
