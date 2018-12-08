@@ -23,7 +23,10 @@ class Client_cls(object):
             Client_logging().log_error(func_name, self.uuid, "Exception raised while reading file")
             raise ReadFileException(self.path)
         Client_logging().log_info(func_name, self.uuid, "Calling simulate_stream_event()")
-        eventlog.simulate_stream_event(self.uuid, event_log)
+        try:
+            eventlog.simulate_stream_event(self.uuid, event_log)
+        except ConnectionException:
+            print(ConnectionException.message)
 
     def run_show_deviation_pdf(self):
         func_name = sys._getframe().f_code.co_name

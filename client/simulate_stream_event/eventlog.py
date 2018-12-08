@@ -29,27 +29,32 @@ def read_log(client_uuid, path):
 
 def simulate_stream_event(client_uuid, event_log):
     func_name = sys._getframe().f_code.co_name
-    for event in event_log:
-        dic = {}
-        for item in event.keys():
-            time.sleep(.1)
-            if item == 'concept:name':
-                dic['activity'] = event.get(item)
-            elif item == 'case:concept:name':
-                dic['case_id'] = event.get(item)
-        Client_logging().log_info(func_name, client_uuid, dic['case_id'], dic['activity'], "Calling invoke_event_thread()")
-        invoke_event_thread(dic, client_uuid)
-    end_message = {'case_id': 'NONE', 'activity': 'END'}
-    Client_logging().log_info(func_name, client_uuid, end_message['case_id'], end_message['activity'], "Calling invoke_"
-                                                                                                     "event_thread()")
-    invoke_event_thread(end_message, client_uuid)
-
+    try:
+        for event in event_log:
+            dic = {}
+            for item in event.keys():
+                time.sleep(.1)
+                if item == 'concept:name':
+                    dic['activity'] = event.get(item)
+                elif item == 'case:concept:name':
+                    dic['case_id'] = event.get(item)
+            Client_logging().log_info(func_name, client_uuid, dic['case_id'], dic['activity'], "Calling invoke_event_thread()")
+            invoke_event_thread(dic, client_uuid)
+        end_message = {'case_id': 'NONE', 'activity': 'END'}
+        Client_logging().log_info(func_name, client_uuid, end_message['case_id'], end_message['activity'], "Calling invoke_"
+                                                                                                         "event_thread()")
+        invoke_event_thread(end_message, client_uuid)
+    except ConnectionException:
+        raise ConnectionException
 
 def invoke_event_thread(event, client_uuid):
     global index
     func_name = sys._getframe().f_code.co_name
     Client_logging().log_info(func_name, client_uuid, event['case_id'], event['activity'], "Initialising thread")
-    event_thread = eventthread.EventThread(event, index, T,  client_uuid)
+    try:
+        event_thread = eventthread.EventThread(event, index, T,  client_uuid)
+    except ConnectionException:
+        raise ConnectionException
     Client_logging().log_info(func_name, client_uuid, event['case_id'], event['activity'], "Starting thread for event ")
     event_thread.start()
     threads.append(event_thread)
