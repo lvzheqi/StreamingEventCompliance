@@ -2,10 +2,9 @@ from pm4py.objects.log.importer.xes import factory as xes_importer
 from pm4py.objects.log import transform
 from . import eventthread
 from .client_logging import Client_logging
-from .exception import ReadFileException, ConnectionException
+from .exception import ReadFileException
 import time
 import sys
-import requests
 
 threads = []
 T = eventthread.ThreadMemorizer()
