@@ -24,14 +24,14 @@ def check_automata_only_sourcenode(windowsize, sink_node, client_uuid):
             if connection.probability >= THRESHOLD:
                 return 1
             else:
-                alert_record = alertlog.AlertRecord(client_uuid, None, sink_node, 1, "T")  # source_node=None in case its an initial node
+                alert_record = alertlog.AlertRecord(client_uuid, None, sink_node, 1, 'T')  # source_node=None in case its an initial node
                 alert_log.add_alert_record(alert_record)
-                print("alert due to probability lesser than threshold")
+                print('alert due to probability lesser than threshold')
                 print(alert_log)
                 return 0
-    alert_record = alertlog.AlertRecord(client_uuid, None, sink_node, 1, "M")  # source_node=None in case its an initial node
+    alert_record = alertlog.AlertRecord(client_uuid, None, sink_node, 1, 'M')  # source_node=None in case its an initial node
     alert_log.add_alert_record(alert_record)
-    print("alert due to missing node")
+    print('alert due to missing node')
     print(alert_log)
     return 0
 
@@ -57,14 +57,14 @@ def check_automata_with_source_sink(windowsize, source_node, sink_node, client_u
             if connection.probability >= THRESHOLD:
                 return 1
             else:
-                alert_record = alertlog.AlertRecord(client_uuid, source_node, sink_node, 1, "T")  # source_node=None in case its an initial node
+                alert_record = alertlog.AlertRecord(client_uuid, source_node, sink_node, 1, 'T')  # source_node=None in case its an initial node
                 alert_log.add_alert_record(alert_record)
                 print(alert_log)
-                print("alert due to probability lesser than threshold")
+                print('alert due to probability lesser than threshold')
                 return 0
-    alert_record = alertlog.AlertRecord(client_uuid, source_node, sink_node, 1, "M")  # source_node=None in case its an initial node
+    alert_record = alertlog.AlertRecord(client_uuid, source_node, sink_node, 1, 'M')  # source_node=None in case its an initial node
     alert_log.add_alert_record(alert_record)
-    print("alert due to missing node")
+    print('alert due to missing node')
     print(alert_log)
     return 0
 

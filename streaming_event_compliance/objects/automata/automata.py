@@ -72,7 +72,7 @@ class Automata:
 
 class Node(db.Model):
     __tablename__ = 'Node'
-    node = db.Column('node', db.String(20), primary_key=True)
+    node = db.Column('node', db.String(100), primary_key=True)
     degree = db.Column('degree', db.Integer)
 
     def __init__(self, node, degree):
@@ -87,8 +87,8 @@ class Connection(db.Model):
     __tablename__ = 'Connection'
     # source_node = db.Column('source_node', db.String(10), db.ForeignKey('Node.node'), primary_key=True)
     # sink_node = db.Column('sink_node', db.String(10), db.ForeignKey('Node.node'), primary_key=True)
-    source_node = db.Column('source_node', db.String(20), primary_key=True)
-    sink_node = db.Column('sink_node', db.String(20), primary_key=True)
+    source_node = db.Column('source_node', db.String(100), primary_key=True)
+    sink_node = db.Column('sink_node', db.String(100), primary_key=True)
     count = db.Column('count', db.Integer)
     probability = db.Column('probability', db.Float)
     # db.ForeignKeyConstraint(
