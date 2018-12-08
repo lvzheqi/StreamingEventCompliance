@@ -58,7 +58,7 @@ class CaseThreadForTraining(Thread):
         # Release the thread lock for current event
         print('case ', self.event['case_id'], 'is released', self.event['activity'],
               'of this case have been processed.')
-
+        return "test return value"
 
 def calcuate_connection_for_different_prefix_automata(windowsMemory):
     """
