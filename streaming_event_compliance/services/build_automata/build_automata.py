@@ -78,7 +78,7 @@ def build_automata_pro():
         threads.append(thread)
         threads_index = threads_index + 1
     # TODO: Jinjing raise exception when not success
-    # for th in threads:
-    #     th.join()
-    #     print(th, "is done")
+    for th in threads:
+        th.join()
+        print(th.join())
 
