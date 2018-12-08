@@ -3,6 +3,9 @@ from streaming_event_compliance.utils.config import THRESHOLD
 from streaming_event_compliance.objects.automata import alertlog
 
 
+# Sayba: I have provided some methods in Automata Object, such as contains_source_node(),
+# get_connection_probability(), and I have write some usages in test.automata_test.   Zheqi
+
 def check_automata_startswith(windowsize, sink_node, client_uuid):
     '''
         This function takes sink_node and checks if the automata of 'windowsize'  has any
@@ -25,12 +28,12 @@ def check_automata_startswith(windowsize, sink_node, client_uuid):
                 return 1
             else:
                 alert_record = alertlog.AlertRecord(client_uuid, None, sink_node, 1)# source_node=None in case its an initial node
-                alert_log.add_alert_record(alert_record)
+                alert_log.update_alert_record(alert_record)
                 print("alert due to probability lesser than threshold")
                 print(alert_log)
                 return 0
     alert_record = alertlog.AlertRecord(client_uuid, None, sink_node, 1)  # source_node=None in case its an initial node
-    alert_log.add_alert_record(alert_record)
+    alert_log.update_alert_record(alert_record)
     print("alert due to missing node")
     print(alert_log)
     return 0
@@ -50,6 +53,7 @@ def check_automata_with_source_sink(windowsize, source_node, sink_node, client_u
         :param client_uuid: user name
         :return: alert message
     '''
+
     autos, status = set_globalvar.get_autos()
     alert_log = alertlog.AlertLog(client_uuid, windowsize)
     for connection in autos[windowsize].connections:
@@ -58,12 +62,12 @@ def check_automata_with_source_sink(windowsize, source_node, sink_node, client_u
                 return 1
             else:
                 alert_record = alertlog.AlertRecord(client_uuid, None, sink_node, 1)  # source_node=None in case its an initial node
-                alert_log.add_alert_record(alert_record)
+                alert_log.update_alert_record(alert_record)
                 print(alert_log)
                 print("alert due to probability lesser than threshold")
                 return 0
     alert_record = alertlog.AlertRecord(client_uuid, None, sink_node, 1)  # source_node=None in case its an initial node
-    alert_log.add_alert_record(alert_record)
+    alert_log.update_alert_record(alert_record)
     print("alert due to missing node")
     print(alert_log)
     return 0
