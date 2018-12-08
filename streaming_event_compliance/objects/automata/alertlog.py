@@ -45,11 +45,12 @@ class AlertRecord(db.Model):
     alert_cause = db.Column('alert_cause', db.String(1))
     alert_count = db.Column('alert_count', db.Float)
 
-    def __init__(self, user_id, source_node, sink_node, alert_count):
+    def __init__(self, user_id, source_node, sink_node, alert_count, alert_cause):
         self.user_id = user_id
         self.source_node = source_node
         self.sink_node = sink_node
         self.alert_count = alert_count
+        self.alert_cause = alert_cause
 
     def __eq__(self, other):
         return self.user_id == other.user_id and \

@@ -79,20 +79,15 @@ def create_source_sink_node(windowsMemory, client_uuid):
             if matches == 0:
                 print("alert")
                 return "alert"
-        else:
-            sink_node = sink_node.replace("*,", "")
+        elif source_node.find('*') != -1 and sink_node.find('*') == -1:
             #print('WS: ' + str(ws) + ' Source: ' + source_node + ' Sink: ' + sink_node)
-            matches = compare_automata.check_automata_startswith(ws, sink_node, client_uuid)
+            matches = compare_automata.check_automata_only_sourcenode(ws, sink_node, client_uuid)
             if matches == 0:
                 print("alert")
                 return "alert"
 
-    #TODO: Implement returning to main function ALERT, Threading comments to be removed ,
-    #TODO: When and where to save alert into db
-    #TODO: if an event detected as alert what to do? remove it if removed and it is valid but previous event was missing
-    # what to do
-    #TODO: Save automata in dictionary or direct query db
-    #TODO: if we check startwith option then for automata of prefix 4 ..how to check when there is no automata prefix
-    # 4 created ? currently we are ignoring that while storing into db
+    # TODO: Implement returning to main function ALERT, Threading comments to be removed ,
+    # TODO: When and where to save alert into db
+    # TODO: if an event detected as alert what to do given option at start to keep or remove it from windows memory
 
 

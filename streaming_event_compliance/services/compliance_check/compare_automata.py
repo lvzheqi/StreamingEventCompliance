@@ -3,12 +3,12 @@ from streaming_event_compliance.utils.config import THRESHOLD
 from streaming_event_compliance.objects.automata import alertlog
 
 
-def check_automata_startswith(windowsize, sink_node, client_uuid):
+def check_automata_only_sourcenode(windowsize, sink_node, client_uuid):
     '''
-        This function takes sink_node and checks if the automata of 'windowsize'  has any
-        source_node that starts with this sink_node. If yes then checks for its probability,
-        if probability below than threshold or no match found for source_node starting with
-        sink_node then insert data to Alertlog object and return alert message
+        This function takes sink_node given and checks if the automata of 'windowsize'  has the
+        source_node matching the sink_node. If yes then checks for its probability, if
+        probability is below the threshold or no match found for sink_node then insert data to
+        Alertlog object and return alert message.
         The automata is retrieved directly from 'autos' variable rather than db. This autos
         variable was initialized when automata was built using training set
         :param windowsize: The length of the automata node.
@@ -20,16 +20,16 @@ def check_automata_startswith(windowsize, sink_node, client_uuid):
     autos, status = set_globalvar.get_autos()
     alert_log = alertlog.AlertLog(client_uuid, windowsize)
     for connection in autos[windowsize].connections:
-        if connection.source_node.startswith(sink_node):
+        if connection.source_node == sink_node:
             if connection.probability >= THRESHOLD:
                 return 1
             else:
-                alert_record = alertlog.AlertRecord(client_uuid, None, sink_node, 1)# source_node=None in case its an initial node
+                alert_record = alertlog.AlertRecord(client_uuid, None, sink_node, 1, "T")  # source_node=None in case its an initial node
                 alert_log.add_alert_record(alert_record)
                 print("alert due to probability lesser than threshold")
                 print(alert_log)
                 return 0
-    alert_record = alertlog.AlertRecord(client_uuid, None, sink_node, 1)  # source_node=None in case its an initial node
+    alert_record = alertlog.AlertRecord(client_uuid, None, sink_node, 1, "M")  # source_node=None in case its an initial node
     alert_log.add_alert_record(alert_record)
     print("alert due to missing node")
     print(alert_log)
@@ -57,12 +57,12 @@ def check_automata_with_source_sink(windowsize, source_node, sink_node, client_u
             if connection.probability >= THRESHOLD:
                 return 1
             else:
-                alert_record = alertlog.AlertRecord(client_uuid, None, sink_node, 1)  # source_node=None in case its an initial node
+                alert_record = alertlog.AlertRecord(client_uuid, source_node, sink_node, 1, "T")  # source_node=None in case its an initial node
                 alert_log.add_alert_record(alert_record)
                 print(alert_log)
                 print("alert due to probability lesser than threshold")
                 return 0
-    alert_record = alertlog.AlertRecord(client_uuid, None, sink_node, 1)  # source_node=None in case its an initial node
+    alert_record = alertlog.AlertRecord(client_uuid, source_node, sink_node, 1, "M")  # source_node=None in case its an initial node
     alert_log.add_alert_record(alert_record)
     print("alert due to missing node")
     print(alert_log)
