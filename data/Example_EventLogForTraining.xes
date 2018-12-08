@@ -29,25 +29,25 @@
 		<event>
 			<string key="org:resource" value="UNDEFINED"/>
 			<date key="time:timestamp" value="2010-10-27T22:31:19.495+02:00"/>
-			<string key="concept:name" value="a"/>
+			<string key="concept:name" value="avb"/>
 			<string key="lifecycle:transition" value="complete"/>
 		</event>
 		<event>
 			<string key="org:resource" value="UNDEFINED"/>
 			<date key="time:timestamp" value="2010-10-27T22:32:19.495+02:00"/>
-			<string key="concept:name" value="e"/>
+			<string key="concept:name" value="edse"/>
 			<string key="lifecycle:transition" value="complete"/>
 		</event>
 		<event>
 			<string key="org:resource" value="UNDEFINED"/>
 			<date key="time:timestamp" value="2010-10-27T22:33:19.495+02:00"/>
-			<string key="concept:name" value="d"/>
+			<string key="concept:name" value="djkh"/>
 			<string key="lifecycle:transition" value="complete"/>
 		</event>
 		<event>
 			<string key="org:resource" value="UNDEFINED"/>
 			<date key="time:timestamp" value="2010-10-27T22:34:19.495+02:00"/>
-			<string key="concept:name" value="f"/>
+			<string key="concept:name" value="assf"/>
 			<string key="lifecycle:transition" value="complete"/>
 		</event>
 		<event>
