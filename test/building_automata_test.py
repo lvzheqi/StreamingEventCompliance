@@ -45,12 +45,12 @@ class BuildingAutomataTestCase(unittest.TestCase):
                 expected_log[event['case_id']] = []
                 expected_log[event['case_id']].append(event['activity'])
         build_automata.build_automata()
-        # print("expected_order:")
-        # for item in expected_log:
-        #     print(item, ":", expected_log.get(item))
-        # print("check_executing_order:")
-        # for item in case_thread.check_executing_order:
-        #     print(item, ":", case_thread.check_executing_order.get(item))
+        print("expected_order:")
+        for item in expected_log:
+            print(item, ":", expected_log.get(item))
+        print("check_executing_order:")
+        for item in case_thread.check_executing_order:
+            print(item, ":", case_thread.check_executing_order.get(item))
         self.assertEqual(expected_log, case_thread.check_executing_order)
 
     def test_calcuate_connection_for_different_prefix_automata(self):

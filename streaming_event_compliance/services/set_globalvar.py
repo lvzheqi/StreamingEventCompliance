@@ -17,4 +17,11 @@ def call_buildautos():
     autos, status = get_autos()
 
 
+def clear_globelvar():
+    globalvar.T.dictionary_threads = {}
+    globalvar.C.dictionary_cases = {}
+    globalvar.C.lock_List = {}
+
+
+
 
