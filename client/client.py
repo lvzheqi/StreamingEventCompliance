@@ -57,7 +57,7 @@ class Client_cls(object):
 def main(argv):
     func_name = sys._getframe().f_code.co_name
 
-    if len(argv) > 3 or len(argv) < 1:
+    if len(argv) >= 3 or len(argv) < 1:
         print('Please give one or two args, e.g. python client.py user_name (file_path)')
         Client_logging().log_error(func_name, "Username or Event logger path arguments were not provided during the run time")
         return
