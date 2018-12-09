@@ -22,61 +22,31 @@ class CaseThreadForCC(Thread):
         This function acquires lock on caseMemorizer and releases lock when processing of the
         event is done
         """
-        print(self, "Now ", time.time(), "the event ", self.event['activity'], "of case ",
-              self.event['case_id'], "is started.")
-        print("we are checking the status of lock for this event:",
-              self.C.lock_List.get(self.event['case_id']))
-
         # Acquire the thread lock for current event
-        self.C.lock_List.get(self.event['case_id']).acquire()
-        print('case ', self.event['case_id'], 'is locked, because ', self.event['activity'],
-              'of this case is being processed.')
-
-        # Calculate windows_memory for each event
-        if len(self.C.dictionary_cases.get(self.event['case_id'])) < MAXIMUN_WINDOW_SIZE+1:
-            windows_memory = self.C.dictionary_cases.get(self.event['case_id'])
-        else:
-            windows_memory = self.C.dictionary_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE+1]
-
-        create_source_sink_node(windows_memory, self.client_uuid)
-
-        if len(self.C.dictionary_cases.get(self.event['case_id'])) > MAXIMUN_WINDOW_SIZE:
-            self.C.dictionary_cases.get(self.event['case_id']).pop(0)
-
-        self.C.lock_List.get(self.event['case_id']).release()
-
-        # Release the thread lock for current event
-        print('case ', self.event['case_id'], 'is released', self.event['activity'],
-              'of this case have been processed.')
+        if self.C.lock_List.get(self.event['case_id']).acquire():
+            # Calculate windows_memory for each event
+            if len(self.C.dictionary_cases.get(self.event['case_id'])) < MAXIMUN_WINDOW_SIZE+1:
+                windows_memory = self.C.dictionary_cases.get(self.event['case_id'])
+            else:
+                windows_memory = self.C.dictionary_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE+1]
+            create_source_sink_node(windows_memory, self.client_uuid)
+            if len(self.C.dictionary_cases.get(self.event['case_id'])) > MAXIMUN_WINDOW_SIZE:
+                self.C.dictionary_cases.get(self.event['case_id']).pop(0)
+            self.C.lock_List.get(self.event['case_id']).release()
 
     def thread_run(self, thread_queue):
-        print("Now ", time.time(), "the event ", self.event['activity'], "of case ",
-              self.event['case_id'], "is started.")
-        print("we are checking the status of lock for this event:",
-              self.C.lock_List.get(self.event['case_id']))
-
         # Acquire the thread lock for current event
-        self.C.lock_List.get(self.event['case_id']).acquire()
-        print('case ', self.event['case_id'], 'is locked, because ', self.event['activity'],
-              'of this case is being processed.')
-
-        # Calculate windows_memory for each event
-        if len(self.C.dictionary_cases.get(self.event['case_id'])) < MAXIMUN_WINDOW_SIZE + 1:
-            windows_memory = self.C.dictionary_cases.get(self.event['case_id'])
-        else:
-            windows_memory = self.C.dictionary_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
-
-        message = create_source_sink_node(windows_memory, self.client_uuid)
-
-        if len(self.C.dictionary_cases.get(self.event['case_id'])) > MAXIMUN_WINDOW_SIZE:
-            self.C.dictionary_cases.get(self.event['case_id']).pop(0)
-
-        self.C.lock_List.get(self.event['case_id']).release()
-
-        # Release the thread lock for current event
-        print('case ', self.event['case_id'], 'is released', self.event['activity'],
-              'of this case have been processed.')
-        thread_queue.put(message)
+        if self.C.lock_List.get(self.event['case_id']).acquire():
+            # Calculate windows_memory for each event
+            if len(self.C.dictionary_cases.get(self.event['case_id'])) < MAXIMUN_WINDOW_SIZE + 1:
+                windows_memory = self.C.dictionary_cases.get(self.event['case_id'])
+            else:
+                windows_memory = self.C.dictionary_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
+            message = create_source_sink_node(windows_memory, self.client_uuid)
+            if len(self.C.dictionary_cases.get(self.event['case_id'])) > MAXIMUN_WINDOW_SIZE:
+                self.C.dictionary_cases.get(self.event['case_id']).pop(0)
+            self.C.lock_List.get(self.event['case_id']).release()
+            thread_queue.put(message)
 
 
 def create_source_sink_node(windowsMemory, client_uuid):
@@ -114,3 +84,7 @@ def create_source_sink_node(windowsMemory, client_uuid):
     # TODO: if an event detected as alert what to do given option at start to keep or remove it from windows memory
 
 
+
+
+    # TODO: JingjingHuo: run() and thread_run() keep one is enough;
+    # TODO: JingjingHuo: thread_queue should be the attribute of this threadclass?
