@@ -1,6 +1,7 @@
 #TODO: This file needs to be moved out of build automata and inclued in some other folder as global -
 #TODO: common to both train and test
 from streaming_event_compliance.database import dbtools
+from streaming_event_compliance.services.build_automata import build_automata
 
 autos = {}
 status = 0
@@ -35,6 +36,49 @@ class CaseMemorizer(object):
         self.dictionary_cases = {}
         self.lock_List = {}
 
+class ConnectionsLocker(object):
+    '''
+    This object is for storing the threads that server creates for each case;
+    '''
+
+    def __init__(self):
+        self.lock_List = {}
+
 
 T = ThreadMemorizer()
 C = CaseMemorizer()
+CL = ConnectionsLocker()
+
+
+
+def change_autos(key, value):
+    autos[key] = value
+
+
+def get_autos():
+    return autos, status
+
+
+def call_buildautos():
+    build_automata.build_automata()
+    # running the below two lines to get automata to memory for compliance checking
+    init()
+    autos, status = get_autos()
+
+
+
+def clear_globelvar():
+    T.dictionary_threads = {}
+    C.dictionary_cases = {}
+    C.lock_List = {}
+
+def get_connection_locks():
+    return CL
+
+
+def get_case_memory():
+    return C
+
+
+def get_thread_memory():
+    return T

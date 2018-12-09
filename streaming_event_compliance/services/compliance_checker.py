@@ -1,13 +1,11 @@
 from streaming_event_compliance.services import deviation_pdf
 from streaming_event_compliance.services.compliance_check import case_thread_cc
-from streaming_event_compliance.services.globalvar import ThreadMemorizer, CaseMemorizer
+from streaming_event_compliance.services import globalvar
 from streaming_event_compliance.utils.config import MAXIMUN_WINDOW_SIZE
 from streaming_event_compliance.services.compliance_check.compare_automata import  alert_logs
 import threading
 import queue
 
-T = ThreadMemorizer()
-C = CaseMemorizer()
 threads = []
 threads_index = 0
 
@@ -21,6 +19,9 @@ def compliance_checker(client_uuid, event):
     :param event: the event that we want to check the compliance
     :return:the deviation information or success information.
     '''
+
+    C = globalvar.get_case_memory()
+    T = globalvar.get_thread_memory()
     print(event['case_id'] + " " + event['activity'])
     global threads_index
     if event['case_id'] != 'NONE' and event['activity'] != 'END':
