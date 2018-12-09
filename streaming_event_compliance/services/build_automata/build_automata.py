@@ -1,4 +1,4 @@
-from streaming_event_compliance.services.globalvar import ThreadMemorizer, CaseMemorizer
+from streaming_event_compliance.services.globalvar import T, C
 from pm4py.objects.log.importer.xes import factory as xes_importer
 from pm4py.objects.log import transform
 from streaming_event_compliance.services.build_automata import case_thread
@@ -9,8 +9,6 @@ from streaming_event_compliance.utils import config
 from streaming_event_compliance.services import set_globalvar
 from multiprocessing import Process
 
-T = ThreadMemorizer()
-C = CaseMemorizer()
 threads = []
 threads_index = 0
 
@@ -25,7 +23,8 @@ def build_automata():
         autos[ws].set_probability()
     dbtools.insert_node_and_connection(autos)
     print("---------------------End: Everything for training automata is Done!---------------------------")
-
+    # clear the globalvarabales
+    set_globalvar.clear_globelvar()
 
 def build_automata_pro():
     """

@@ -35,3 +35,6 @@ class CaseMemorizer(object):
         self.dictionary_cases = {}
         self.lock_List = {}
 
+
+T = ThreadMemorizer()
+C = CaseMemorizer()
