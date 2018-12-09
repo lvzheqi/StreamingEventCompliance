@@ -23,7 +23,8 @@ def build_automata():
     dbtools.insert_node_and_connection(autos)
     print("---------------------End: Everything for training automata is Done!---------------------------")
     # clear the globalvarabales
-    globalvar.clear_globelvar()
+    globalvar.set_auto_status()
+    globalvar.clear_memorizer()
 
 def build_automata_pro():
     """
@@ -85,8 +86,4 @@ def build_automata_pro():
         thread = case_thread.CaseThreadForTraining(end_message, threads_index, T, C)
         T.dictionary_threads[threads_index] = thread
         thread.start()
-
-
-    # TODO: Jinjing raise exception when not success
-
 
