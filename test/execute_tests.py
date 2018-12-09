@@ -5,10 +5,12 @@ if __name__ == '__main__':
     from test.automata_test import AutomataTest
     from test.alertlog_test import AlertlogTest
     from test.building_automata_test import BuildingAutomataTestCase
+    from test.create_probability_automata_test import CreateProbabilityAutomataTest
 
     test_object1 = DBToolsTest()
     test_object2 = AutomataTest()
     test_object3 = AlertlogTest()
     test_object4 = BuildingAutomataTestCase()
+    test_object5 = CreateProbabilityAutomataTest()
 
     unittest.main()
