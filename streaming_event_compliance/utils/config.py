@@ -12,3 +12,10 @@ AUTOS_DEFAULT = False
 MAXIMUN_WINDOW_SIZE = 4
 THRESHOLD = 0.00
 
+
+SERVER_LOG_PATH = BASE_DIR + os.sep + 'data' + os.sep + '/server.log'
+
+LOG_LEVEL = 'DEBUG'
+
+LOG_FORMAT = '%(asctime)-15s %(message)s'
+
