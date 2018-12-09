@@ -18,7 +18,7 @@ if __name__ == '__main__':
     if status == 0:
         set_globalvar.call_buildautos()
     else:
-        print("Automata have beed created in database and readed out! You can use it do compliance checking!")
+        print("Automata have been created in database and readed out! You can use it do compliance checking!")
 
     app.debug = False
     app.run()
