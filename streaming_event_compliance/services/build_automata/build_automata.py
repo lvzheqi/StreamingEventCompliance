@@ -3,7 +3,7 @@ from pm4py.objects.log.importer.xes import factory as xes_importer
 from pm4py.objects.log import transform
 from streaming_event_compliance.services.build_automata import case_thread
 import threading
-from streaming_event_compliance.utils.config import MAXIMUN_WINDOW_SIZE, WINDOW_SIZE
+from streaming_event_compliance.utils.config import MAXIMUN_WINDOW_SIZE, WINDOWS
 from streaming_event_compliance.database import dbtools
 from streaming_event_compliance.utils import config
 from streaming_event_compliance.services import set_globalvar
@@ -21,7 +21,7 @@ def build_automata():
     process_.start()
     process_.join()
     autos, status = set_globalvar.get_autos()
-    for ws in WINDOW_SIZE:
+    for ws in WINDOWS:
         autos[ws].set_probability()
     dbtools.insert_node_and_connection(autos)
     print("---------------------End: Everything for training automata is Done!---------------------------")
