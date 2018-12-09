@@ -21,10 +21,6 @@ def check_automata_only_sourcenode(windowsize, sink_node, client_uuid):
     '''
     global alert_logs
     autos, status = set_globalvar.get_autos()
-
-    # Create an alert_log object for windowsize(given) if it is not created previously
-    if windowsize not in alert_logs:
-        alert_logs[windowsize] = alertlog.AlertLog(client_uuid, windowsize)
     for connection in autos[windowsize].connections:
         if connection.source_node == sink_node:
             if connection.probability >= THRESHOLD:
@@ -32,11 +28,19 @@ def check_automata_only_sourcenode(windowsize, sink_node, client_uuid):
             else:
                 # Insert source_node as None if the sink_node is an initial node
                 alert_record = alertlog.AlertRecord(client_uuid, None, sink_node, 1, "T")
+
+                # Create an alert_log object for windowsize(given) if it is not created previously
+                if windowsize not in alert_logs:
+                    alert_logs[windowsize] = alertlog.AlertLog(client_uuid, windowsize)
                 alert_logs[windowsize].update_alert_record(alert_record)
                 print("alert due to probability lesser than threshold")
                 return 0
     # Insert source_node as None if the sink_node is an initial node
     alert_record = alertlog.AlertRecord(client_uuid, None, sink_node, 1, "M")
+
+    # Create an alert_log object for windowsize(given) if it is not created previously
+    if windowsize not in alert_logs:
+        alert_logs[windowsize] = alertlog.AlertLog(client_uuid, windowsize)
     alert_logs[windowsize].update_alert_record(alert_record)
     print("alert due to missing node")
     return 0
@@ -58,24 +62,29 @@ def check_automata_with_source_sink(windowsize, source_node, sink_node, client_u
     '''
     global alert_logs
     autos, status = set_globalvar.get_autos()
-
-    # Create an alert_log object for windowsize(given) if it is not created previously
-    if windowsize not in alert_logs:
-        alert_logs[windowsize] = alertlog.AlertLog(client_uuid, windowsize)
     for connection in autos[windowsize].connections:
         if connection.source_node == source_node and connection.sink_node == sink_node:
             if connection.probability >= THRESHOLD:
                 return 1
             else:
                 alert_record = alertlog.AlertRecord(client_uuid, source_node, sink_node, 1, "T")
+                # Create an alert_log object for windowsize(given) if it is not created previously
+                if windowsize not in alert_logs:
+                    alert_logs[windowsize] = alertlog.AlertLog(client_uuid, windowsize)
                 alert_logs[windowsize].update_alert_record(alert_record)
                 print("alert due to probability lesser than threshold")
                 return 0
     alert_record = alertlog.AlertRecord(client_uuid, source_node, sink_node, 1, "M")
+    # Create an alert_log object for windowsize(given) if it is not created previously
+    if windowsize not in alert_logs:
+        alert_logs[windowsize] = alertlog.AlertLog(client_uuid, windowsize)
     alert_logs[windowsize].update_alert_record(alert_record)
     print("alert due to missing node")
     return 0
 
     # TODO:  alertlog needs to be inserted into table after finishing all threads
-    # TODO:  Insert username in to table when threads are all joined
-    # TODO: Once server busy message is received at client side then processing must be stopped and next events must not be thrown to server. If this is not handled the server takes the incomplete data and fires alert
+    # TODO:  Insert username into table when threads are all joined
+    # TODO: Once server busy message is received at client side then processing must be stopped and next events must
+    # not be thrown to server. If this is not handled the server takes the incomplete data and fires alert
+    # TODO : Implement the deletion of all logs and other stuffs once processing done for one time for all events
+    # from file

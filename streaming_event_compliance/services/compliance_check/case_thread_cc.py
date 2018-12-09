@@ -49,6 +49,35 @@ class CaseThreadForCC(Thread):
         print('case ', self.event['case_id'], 'is released', self.event['activity'],
               'of this case have been processed.')
 
+    def thread_run(self, thread_queue):
+        print("Now ", time.time(), "the event ", self.event['activity'], "of case ",
+              self.event['case_id'], "is started.")
+        print("we are checking the status of lock for this event:",
+              self.C.lock_List.get(self.event['case_id']))
+
+        # Acquire the thread lock for current event
+        self.C.lock_List.get(self.event['case_id']).acquire()
+        print('case ', self.event['case_id'], 'is locked, because ', self.event['activity'],
+              'of this case is being processed.')
+
+        # Calculate windows_memory for each event
+        if len(self.C.dictionary_cases.get(self.event['case_id'])) < MAXIMUN_WINDOW_SIZE + 1:
+            windows_memory = self.C.dictionary_cases.get(self.event['case_id'])
+        else:
+            windows_memory = self.C.dictionary_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
+
+        message = create_source_sink_node(windows_memory, self.client_uuid)
+
+        if len(self.C.dictionary_cases.get(self.event['case_id'])) > MAXIMUN_WINDOW_SIZE:
+            self.C.dictionary_cases.get(self.event['case_id']).pop(0)
+
+        self.C.lock_List.get(self.event['case_id']).release()
+
+        # Release the thread lock for current event
+        print('case ', self.event['case_id'], 'is released', self.event['activity'],
+              'of this case have been processed.')
+        thread_queue.put(message)
+
 
 def create_source_sink_node(windowsMemory, client_uuid):
     """
@@ -67,14 +96,18 @@ def create_source_sink_node(windowsMemory, client_uuid):
             # print('WS: ' + str(ws) + ' Source: ' + source_node + ' Sink: ' + sink_node)
             matches = compare_automata.check_automata_with_source_sink(ws, source_node, sink_node, client_uuid)
             if matches == 0:
-                print("alert")
-                return "alert"
+                print("Alert !!!  No connection from " + source_node + " to " + sink_node)
+                return "Alert !!!  No connection from " + source_node + " to " + sink_node
+            else:
+                return "OK"
         elif source_node.find('*') != -1 and sink_node.find('*') == -1:
             # print('WS: ' + str(ws) + ' Source: ' + source_node + ' Sink: ' + sink_node)
             matches = compare_automata.check_automata_only_sourcenode(ws, sink_node, client_uuid)
             if matches == 0:
-                print("alert")
-                return "alert"
+                print("Alert !!!  No connection from " + source_node + " to " + sink_node)
+                return "Alert !!!  No connection from " + source_node + " to " + sink_node
+            else:
+                return "OK"
 
     # TODO: Implement returning to main function ALERT, Threading comments to be removed ,
     # TODO: When and where to save alert into db

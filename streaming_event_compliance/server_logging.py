@@ -1,11 +1,11 @@
 import logging
-from simulate_stream_event import config
+from streaming_event_compliance.utils import config
 from pythonlangutil.overload import Overload, signature
 
 
-class ClientLogging:
+class ServerLogging:
     '''
-        This class does the  formatting  of client side log  before sending it to the logging system.
+        This class does the  formatting  of server side log  before sending it to the logging system.
 
         This class takes different arguments provided by the user and formats
         the 'message' variable accordingly. This message is further sent to basic
@@ -28,7 +28,7 @@ class ClientLogging:
         '''
         Initialises the below parameters
         filename:   Specifies the file name where the content will be logged
-                    Default value: client/client_log.log
+                    Default value: data/server.log
         filemode:   Specifies the mode to open the file
                     Default value: a
         level:      Set the root logger level to the specified level. It can be
@@ -36,7 +36,7 @@ class ClientLogging:
                     Default value: DEBUG
         log_format: It is the format in which the time and message will be stored.
         '''
-        self.filename = config.CLIENT_LOG_PATH
+        self.filename = config.SERVER_LOG_PATH
         self.level = config.LOG_LEVEL
         self.log_format = config.LOG_FORMAT
         self.filemode = 'a'
