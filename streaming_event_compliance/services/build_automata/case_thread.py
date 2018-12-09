@@ -1,6 +1,6 @@
 from threading import Thread
 import time
-from streaming_event_compliance.utils.config import WINDOW_SIZE, MAXIMUN_WINDOW_SIZE
+from streaming_event_compliance.utils.config import WINDOWS, MAXIMUN_WINDOW_SIZE
 from streaming_event_compliance.services import set_globalvar
 from streaming_event_compliance.objects.automata import automata
 
@@ -74,7 +74,7 @@ def calcuate_connection_for_different_prefix_automata(windowsMemory):
     :return:
     """
     autos, status = set_globalvar.get_autos()
-    for ws in WINDOW_SIZE:# [1, 2, 3, 4]
+    for ws in WINDOWS:# [1, 2, 3, 4]
         source_node = ','.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws: MAXIMUN_WINDOW_SIZE])
         sink_node = ','.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws + 1: MAXIMUN_WINDOW_SIZE+1])
         if source_node.find('*') == -1:
