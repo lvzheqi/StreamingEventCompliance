@@ -17,7 +17,7 @@ def build_automata():
     process_ = Process(target=build_automata_pro())
     process_.start()
     process_.join()
-    autos, status = globalvar.get_autos()
+    autos = globalvar.get_autos()
     for ws in WINDOW_SIZE:
         autos[ws].set_probability()
     dbtools.insert_node_and_connection(autos)
