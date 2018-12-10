@@ -1,4 +1,4 @@
-from streaming_event_compliance.services import set_globalvar
+from streaming_event_compliance.services import globalvar
 from streaming_event_compliance.utils.config import THRESHOLD
 from streaming_event_compliance.objects.automata import alertlog
 
@@ -20,7 +20,7 @@ def check_automata_only_sourcenode(windowsize, sink_node, client_uuid):
         :return: alert message
     '''
     global alert_logs
-    autos, status = set_globalvar.get_autos()
+    autos, status = globalvar.get_autos()
     for connection in autos[windowsize].connections:
         if connection.source_node == sink_node:
             if connection.probability >= THRESHOLD:
@@ -61,7 +61,7 @@ def check_automata_with_source_sink(windowsize, source_node, sink_node, client_u
         :return: alert message
     '''
     global alert_logs
-    autos, status = set_globalvar.get_autos()
+    autos, status = globalvar.get_autos()
     for connection in autos[windowsize].connections:
         if connection.source_node == source_node and connection.sink_node == sink_node:
             if connection.probability >= THRESHOLD:

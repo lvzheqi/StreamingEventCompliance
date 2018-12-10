@@ -1,16 +1,13 @@
-from streaming_event_compliance.services.globalvar import ThreadMemorizer, CaseMemorizer
 from pm4py.objects.log.importer.xes import factory as xes_importer
 from pm4py.objects.log import transform
 from streaming_event_compliance.services.build_automata import case_thread
 import threading
-from streaming_event_compliance.utils.config import MAXIMUN_WINDOW_SIZE, WINDOWS
+from streaming_event_compliance.utils.config import MAXIMUN_WINDOW_SIZE, WINDOW_SIZE
 from streaming_event_compliance.database import dbtools
 from streaming_event_compliance.utils import config
-from streaming_event_compliance.services import set_globalvar
+from streaming_event_compliance.services import globalvar
 from multiprocessing import Process
 
-T = ThreadMemorizer()
-C = CaseMemorizer()
 threads = []
 threads_index = 0
 
@@ -20,12 +17,14 @@ def build_automata():
     process_ = Process(target=build_automata_pro())
     process_.start()
     process_.join()
-    autos, status = set_globalvar.get_autos()
-    for ws in WINDOWS:
+    autos, status = globalvar.get_autos()
+    for ws in WINDOW_SIZE:
         autos[ws].set_probability()
     dbtools.insert_node_and_connection(autos)
     print("---------------------End: Everything for training automata is Done!---------------------------")
-
+    # clear the globalvarabales
+    globalvar.set_auto_status()
+    globalvar.clear_memorizer()
 
 def build_automata_pro():
     """
@@ -34,7 +33,8 @@ def build_automata_pro():
     and stores corresponding information into the database.
     :return:
     """
-
+    C = globalvar.get_case_memory()
+    T = globalvar.get_thread_memory()
     # Read file
     try:
         trace_log = xes_importer.import_log(config.TRAINING_EVENT_LOG_PATH)
@@ -57,7 +57,7 @@ def build_automata_pro():
         if C.dictionary_cases.get(event['case_id']):
             C.dictionary_cases.get(event['case_id']).append(event['activity'])
             thread = case_thread.CaseThreadForTraining(event, threads_index, T, C)
-            T.dictionary_threads[threads_index] = case_thread
+            T.dictionary_threads[threads_index] = thread
             try:
                 thread.start()
             except KeyboardInterrupt:
@@ -69,7 +69,7 @@ def build_automata_pro():
             # Create a lock for the new case
             C.lock_List[event['case_id']] = lock
             thread = case_thread.CaseThreadForTraining(event, threads_index, T, C)
-            T.dictionary_threads[threads_index] = case_thread
+            T.dictionary_threads[threads_index] = thread
             try:
                 thread.start()
             except KeyboardInterrupt:
@@ -77,8 +77,13 @@ def build_automata_pro():
 
         threads.append(thread)
         threads_index = threads_index + 1
-    # TODO: Jinjing raise exception when not success
-    # for th in threads:
-    #     th.join()
-    #     print(th, "is done")
+
+    end_message = {}
+    for item in C.dictionary_cases:
+        end_message['case_id'] = item
+        end_message['activity'] = 'ES'
+        C.dictionary_cases.get(item).append(end_message['activity'])
+        thread = case_thread.CaseThreadForTraining(end_message, threads_index, T, C)
+        T.dictionary_threads[threads_index] = thread
+        thread.start()
 
