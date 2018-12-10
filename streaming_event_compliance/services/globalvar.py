@@ -92,3 +92,7 @@ def get_thread_memory():
     return T
 
 
+alert_logs = {}
+
+def get_alert_logs():
+    return alert_logs
