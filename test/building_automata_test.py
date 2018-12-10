@@ -71,9 +71,8 @@ class BuildingAutomataTestCase(unittest.TestCase):
         autos_manual4.nodes = {'a,b,c,d': 1}
         autos_manual4.connections.append({'Source node': ' a,b,c,d', 'sink node': 'b,c,d,e', 'probability': None})
         autos_manuals[4] = autos_manual4
-        event = {'case_id': 'Case1', 'activity': 'e'}
-        case_thread.calcuate_connection_for_different_prefix_automata(windowsMemory, event)
-        autos, status = globalvar.get_autos()
+        case_thread.calcuate_connection_for_different_prefix_automata(windowsMemory)
+        autos = globalvar.get_autos()
         for ws in config.WINDOW_SIZE:
             autos_manual = str(autos_manuals[ws]).replace("'", "")
             autos_manual = autos_manual.replace(" ", "")
