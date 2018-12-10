@@ -1,0 +1,8 @@
+2018-12-09 18:06:34,563  ERROR Username:Unknown test_log_error_2 'Testing logging error with 2 arguments'
+2018-12-09 18:06:34,563  ERROR test_user test_log_error_3 'Testing logging error with 3 arguments'
+2018-12-09 18:06:34,579  ERROR test_user test_log_error_5 Case_id:test1 Activity:testing_log_info_5 'Testing logging error with 5 arguments'
+2018-12-09 18:06:34,579  ERROR test_user test_log_error_6 Thread:1 Case_id:test1 Activity:testing_log_info_6 'Testing logging error with 6 arguments'
+2018-12-09 18:06:34,595  INFO Username:Unknown test_log_info_2 'Testing logging info with 2 arguments'
+2018-12-09 18:06:34,595  INFO test_user test_log_info_3 'Testing logging info with 3 arguments'
+2018-12-09 18:06:34,610  INFO test_user test_log_info_5 Case_id:test1 Activity:testing_log_info_5 'Testing logging info with 5 arguments'
+2018-12-09 18:06:34,657  INFO test_user test_log_info_6 Thread:1 Case_id:test1 Activity:testing_log_info_6 'Testing logging info with 6 arguments'
