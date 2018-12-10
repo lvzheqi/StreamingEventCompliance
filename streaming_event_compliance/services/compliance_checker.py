@@ -83,7 +83,8 @@ def compliance_checker(client_uuid, event):
             deviation_pdf.build_deviation_pdf(client_uuid)
         # deviation information should be returned here, or we return it form thread.start()
             return "OK"
-        #return event['case_id'] + "->" + event['activity']
+    # return event['case_id'] + "->" + event['activity']
+    return "automata is not build"
 
 
 def error_handle():
