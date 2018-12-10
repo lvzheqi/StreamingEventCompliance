@@ -28,7 +28,7 @@ class AlertLog:
 class User(db.Model):
     __tablename__ = 'User'
 
-    user_name = db.Column('user_name', db.String(20), primary_key=True, unique=True)
+    user_name = db.Column('user_name', db.String(100), primary_key=True, unique=True)
     status = db.Column('status', db.Boolean)
 
     def __init__(self, user_name):
@@ -41,10 +41,10 @@ class User(db.Model):
 class AlertRecord(db.Model):
     __tablename__ = 'AlertRecord'
 
-    user_id = db.Column('user_id', db.String(20), db.ForeignKey('User.user_name'),
+    user_id = db.Column('user_id', db.String(100), db.ForeignKey('User.user_name'),
                         primary_key=True)
-    source_node = db.Column('source_node', db.String(20), primary_key=True)
-    sink_node = db.Column('sink_node', db.String(20), primary_key=True)
+    source_node = db.Column('source_node', db.String(100), primary_key=True)
+    sink_node = db.Column('sink_node', db.String(100), primary_key=True)
     alert_cause = db.Column('alert_cause', db.String(1))
     alert_count = db.Column('alert_count', db.Float)
 

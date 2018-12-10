@@ -19,3 +19,5 @@ def show_deviation_pdf(client_uuid):
 
     return "pdf"
 
+
+
