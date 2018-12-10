@@ -5,6 +5,7 @@ from streaming_event_compliance.services.build_automata import build_automata
 # Below are operations of autos and auto's status
 autos = {}
 status = 0
+alert_logs = {}
 
 
 def init():
@@ -92,3 +93,7 @@ def get_thread_memory():
     return T
 
 
+alert_logs = {}
+
+def get_alert_logs():
+    return alert_logs
