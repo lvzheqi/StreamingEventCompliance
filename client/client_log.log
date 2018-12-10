@@ -1528,3 +1528,1757 @@
 2018-12-10 15:30:16,835  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
 2018-12-10 15:30:16,835  INFO sabya run Thread:0 Case_id:Case1.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
 2018-12-10 15:30:16,835 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:38:08,664  INFO sabya main 'Post request to server:http://127.0.0.1:5000/login?uuid=sabya'
+2018-12-10 15:38:08,664 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:38:08,664 http://127.0.0.1:5000 "POST /login?uuid=sabya HTTP/1.1" 200 0
+2018-12-10 15:38:08,680  INFO sabya main 'The options are displayed'
+2018-12-10 15:38:09,602  INFO sabya main 'The user selected option 1'
+2018-12-10 15:38:09,602  INFO sabya main 'Calling run_compliance_checker()'
+2018-12-10 15:38:09,602  INFO sabya run_compliance_checker 'Calling read_log()'
+2018-12-10 15:38:09,602  INFO sabya read_log 'Creating a trace logger file: '
+2018-12-10 15:38:09,602  INFO sabya read_log 'Transforming trace logger to event logger'
+2018-12-10 15:38:09,602  INFO sabya read_log 'Sorting event logger'
+2018-12-10 15:38:09,602  INFO sabya run_compliance_checker 'Calling simulate_stream_event()'
+2018-12-10 15:38:10,149  INFO sabya simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:38:10,149  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2018-12-10 15:38:10,149  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2018-12-10 15:38:10,149  INFO sabya run Thread:0 Case_id:Case1.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:38:10,149 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:40:18,701  INFO sab main 'Post request to server:http://127.0.0.1:5000/login?uuid=sab'
+2018-12-10 15:40:18,701 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:40:18,717 http://127.0.0.1:5000 "POST /login?uuid=sab HTTP/1.1" 200 0
+2018-12-10 15:40:18,717  INFO sab main 'The options are displayed'
+2018-12-10 15:40:28,158  INFO sab main 'The user selected option 1'
+2018-12-10 15:40:28,158  INFO sab main 'Calling run_compliance_checker()'
+2018-12-10 15:40:28,158  INFO sab run_compliance_checker 'Calling read_log()'
+2018-12-10 15:40:28,158  INFO sab read_log 'Creating a trace logger file: '
+2018-12-10 15:40:28,158  INFO sab read_log 'Transforming trace logger to event logger'
+2018-12-10 15:40:28,158  INFO sab read_log 'Sorting event logger'
+2018-12-10 15:40:28,158  INFO sab run_compliance_checker 'Calling simulate_stream_event()'
+2018-12-10 15:40:28,704  INFO sab simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:40:28,704  INFO sab invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2018-12-10 15:40:28,704  INFO sab invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2018-12-10 15:40:28,704  INFO sab run Thread:0 Case_id:Case1.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:40:28,704 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:54:30,568  INFO saby main 'Post request to server:http://127.0.0.1:5000/login?uuid=saby'
+2018-12-10 15:54:30,680 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:54:31,683  ERROR saby main 'The server is not available, please try it later!'
+2018-12-10 15:56:32,229  INFO saby main 'Post request to server:http://127.0.0.1:5000/login?uuid=saby'
+2018-12-10 15:56:32,235 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:32,238 http://127.0.0.1:5000 "POST /login?uuid=saby HTTP/1.1" 200 0
+2018-12-10 15:56:32,239  INFO saby main 'The options are displayed'
+2018-12-10 15:56:35,189  INFO saby main 'The user selected option 1'
+2018-12-10 15:56:35,189  INFO saby main 'Calling run_compliance_checker()'
+2018-12-10 15:56:35,190  INFO saby run_compliance_checker 'Calling read_log()'
+2018-12-10 15:56:35,190  INFO saby read_log 'Creating a trace logger file: '
+2018-12-10 15:56:35,212  INFO saby read_log 'Transforming trace logger to event logger'
+2018-12-10 15:56:35,212  INFO saby read_log 'Sorting event logger'
+2018-12-10 15:56:35,212  INFO saby run_compliance_checker 'Calling simulate_stream_event()'
+2018-12-10 15:56:35,715  INFO saby simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:56:35,715  INFO saby invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2018-12-10 15:56:35,715  INFO saby invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2018-12-10 15:56:35,715  INFO saby run Thread:0 Case_id:Case1.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:35,717 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:35,723 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 15:56:35,724  INFO saby run Thread:0 Case_id:Case1.0 Activity:a 'The server response is: OK'
+2018-12-10 15:56:36,227  INFO saby simulate_stream_event Case_id:Case3.0 Activity:uiy 'Calling invoke_event_thread()'
+2018-12-10 15:56:36,227  INFO saby invoke_event_thread Case_id:Case3.0 Activity:uiy 'Initialising thread'
+2018-12-10 15:56:36,227  INFO saby invoke_event_thread Case_id:Case3.0 Activity:uiy 'Starting thread for event '
+2018-12-10 15:56:36,228  INFO saby run Thread:1 Case_id:Case3.0 Activity:uiy 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:36,230 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:36,248 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 38
+2018-12-10 15:56:36,248  INFO saby run Thread:1 Case_id:Case3.0 Activity:uiy 'The server response is: Alert !!!  No connection from * to uiy'
+2018-12-10 15:56:36,751  INFO saby simulate_stream_event Case_id:Case2.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:56:36,751  INFO saby invoke_event_thread Case_id:Case2.0 Activity:a 'Initialising thread'
+2018-12-10 15:56:36,751  INFO saby invoke_event_thread Case_id:Case2.0 Activity:a 'Starting thread for event '
+2018-12-10 15:56:36,751  INFO saby run Thread:2 Case_id:Case2.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:36,754 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:36,758 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 15:56:36,758  INFO saby run Thread:2 Case_id:Case2.0 Activity:a 'The server response is: OK'
+2018-12-10 15:56:37,261  INFO saby simulate_stream_event Case_id:Case1.2 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:56:37,261  INFO saby invoke_event_thread Case_id:Case1.2 Activity:a 'Initialising thread'
+2018-12-10 15:56:37,261  INFO saby invoke_event_thread Case_id:Case1.2 Activity:a 'Starting thread for event '
+2018-12-10 15:56:37,262  INFO saby run Thread:3 Case_id:Case1.2 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:37,264 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:37,267 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 15:56:37,268  INFO saby run Thread:3 Case_id:Case1.2 Activity:a 'The server response is: OK'
+2018-12-10 15:56:37,771  INFO saby simulate_stream_event Case_id:Case1.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:56:37,771  INFO saby invoke_event_thread Case_id:Case1.1 Activity:a 'Initialising thread'
+2018-12-10 15:56:37,771  INFO saby invoke_event_thread Case_id:Case1.1 Activity:a 'Starting thread for event '
+2018-12-10 15:56:37,772  INFO saby run Thread:4 Case_id:Case1.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:37,774 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:37,777 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 15:56:37,778  INFO saby run Thread:4 Case_id:Case1.1 Activity:a 'The server response is: OK'
+2018-12-10 15:56:38,280  INFO saby simulate_stream_event Case_id:Case2.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:56:38,280  INFO saby invoke_event_thread Case_id:Case2.1 Activity:a 'Initialising thread'
+2018-12-10 15:56:38,280  INFO saby invoke_event_thread Case_id:Case2.1 Activity:a 'Starting thread for event '
+2018-12-10 15:56:38,280  INFO saby run Thread:5 Case_id:Case2.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:38,282 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:38,285 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 15:56:38,286  INFO saby run Thread:5 Case_id:Case2.1 Activity:a 'The server response is: OK'
+2018-12-10 15:56:38,789  INFO saby simulate_stream_event Case_id:Case1.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 15:56:38,789  INFO saby invoke_event_thread Case_id:Case1.0 Activity:b 'Initialising thread'
+2018-12-10 15:56:38,789  INFO saby invoke_event_thread Case_id:Case1.0 Activity:b 'Starting thread for event '
+2018-12-10 15:56:38,790  INFO saby run Thread:6 Case_id:Case1.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:38,791 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:38,794 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 15:56:38,796  INFO saby run Thread:6 Case_id:Case1.0 Activity:b 'The server response is: OK'
+2018-12-10 15:56:39,298  INFO saby simulate_stream_event Case_id:Case3.0 Activity:edse 'Calling invoke_event_thread()'
+2018-12-10 15:56:39,298  INFO saby invoke_event_thread Case_id:Case3.0 Activity:edse 'Initialising thread'
+2018-12-10 15:56:39,298  INFO saby invoke_event_thread Case_id:Case3.0 Activity:edse 'Starting thread for event '
+2018-12-10 15:56:39,299  INFO saby run Thread:7 Case_id:Case3.0 Activity:edse 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:39,301 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:39,304 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 41
+2018-12-10 15:56:39,305  INFO saby run Thread:7 Case_id:Case3.0 Activity:edse 'The server response is: Alert !!!  No connection from uiy to edse'
+2018-12-10 15:56:39,807  INFO saby simulate_stream_event Case_id:Case2.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 15:56:39,807  INFO saby invoke_event_thread Case_id:Case2.0 Activity:c 'Initialising thread'
+2018-12-10 15:56:39,807  INFO saby invoke_event_thread Case_id:Case2.0 Activity:c 'Starting thread for event '
+2018-12-10 15:56:39,808  INFO saby run Thread:8 Case_id:Case2.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:39,812 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:39,816 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 15:56:39,817  INFO saby run Thread:8 Case_id:Case2.0 Activity:c 'The server response is: OK'
+2018-12-10 15:56:40,320  INFO saby simulate_stream_event Case_id:Case1.2 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 15:56:40,320  INFO saby invoke_event_thread Case_id:Case1.2 Activity:b 'Initialising thread'
+2018-12-10 15:56:40,320  INFO saby invoke_event_thread Case_id:Case1.2 Activity:b 'Starting thread for event '
+2018-12-10 15:56:40,320  INFO saby run Thread:9 Case_id:Case1.2 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:40,322 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:40,326 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 15:56:40,327  INFO saby run Thread:9 Case_id:Case1.2 Activity:b 'The server response is: OK'
+2018-12-10 15:56:40,830  INFO saby simulate_stream_event Case_id:Case1.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 15:56:40,830  INFO saby invoke_event_thread Case_id:Case1.1 Activity:b 'Initialising thread'
+2018-12-10 15:56:40,830  INFO saby invoke_event_thread Case_id:Case1.1 Activity:b 'Starting thread for event '
+2018-12-10 15:56:40,830  INFO saby run Thread:10 Case_id:Case1.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:40,833 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:40,836 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 15:56:40,837  INFO saby run Thread:10 Case_id:Case1.1 Activity:b 'The server response is: OK'
+2018-12-10 15:56:41,341  INFO saby simulate_stream_event Case_id:Case2.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 15:56:41,341  INFO saby invoke_event_thread Case_id:Case2.1 Activity:c 'Initialising thread'
+2018-12-10 15:56:41,341  INFO saby invoke_event_thread Case_id:Case2.1 Activity:c 'Starting thread for event '
+2018-12-10 15:56:41,342  INFO saby run Thread:11 Case_id:Case2.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:41,344 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:41,347 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 15:56:41,348  INFO saby run Thread:11 Case_id:Case2.1 Activity:c 'The server response is: OK'
+2018-12-10 15:56:41,850  INFO saby simulate_stream_event Case_id:Case1.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 15:56:41,850  INFO saby invoke_event_thread Case_id:Case1.0 Activity:c 'Initialising thread'
+2018-12-10 15:56:41,850  INFO saby invoke_event_thread Case_id:Case1.0 Activity:c 'Starting thread for event '
+2018-12-10 15:56:41,851  INFO saby run Thread:12 Case_id:Case1.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:41,853 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:41,856 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 15:56:41,857  INFO saby run Thread:12 Case_id:Case1.0 Activity:c 'The server response is: OK'
+2018-12-10 15:56:42,359  INFO saby simulate_stream_event Case_id:Case3.0 Activity:djkh 'Calling invoke_event_thread()'
+2018-12-10 15:56:42,359  INFO saby invoke_event_thread Case_id:Case3.0 Activity:djkh 'Initialising thread'
+2018-12-10 15:56:42,359  INFO saby invoke_event_thread Case_id:Case3.0 Activity:djkh 'Starting thread for event '
+2018-12-10 15:56:42,360  INFO saby run Thread:13 Case_id:Case3.0 Activity:djkh 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:42,362 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:42,365 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 42
+2018-12-10 15:56:42,366  INFO saby run Thread:13 Case_id:Case3.0 Activity:djkh 'The server response is: Alert !!!  No connection from edse to djkh'
+2018-12-10 15:56:42,868  INFO saby simulate_stream_event Case_id:Case2.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 15:56:42,868  INFO saby invoke_event_thread Case_id:Case2.0 Activity:b 'Initialising thread'
+2018-12-10 15:56:42,868  INFO saby invoke_event_thread Case_id:Case2.0 Activity:b 'Starting thread for event '
+2018-12-10 15:56:42,869  INFO saby run Thread:14 Case_id:Case2.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:42,871 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:42,874 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 15:56:42,875  INFO saby run Thread:14 Case_id:Case2.0 Activity:b 'The server response is: OK'
+2018-12-10 15:56:43,377  INFO saby simulate_stream_event Case_id:Case1.2 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 15:56:43,377  INFO saby invoke_event_thread Case_id:Case1.2 Activity:c 'Initialising thread'
+2018-12-10 15:56:43,377  INFO saby invoke_event_thread Case_id:Case1.2 Activity:c 'Starting thread for event '
+2018-12-10 15:56:43,378  INFO saby run Thread:15 Case_id:Case1.2 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:43,381 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:43,385 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 15:56:43,385  INFO saby run Thread:15 Case_id:Case1.2 Activity:c 'The server response is: OK'
+2018-12-10 15:56:43,889  INFO saby simulate_stream_event Case_id:Case1.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 15:56:43,889  INFO saby invoke_event_thread Case_id:Case1.1 Activity:c 'Initialising thread'
+2018-12-10 15:56:43,889  INFO saby invoke_event_thread Case_id:Case1.1 Activity:c 'Starting thread for event '
+2018-12-10 15:56:43,889  INFO saby run Thread:16 Case_id:Case1.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:43,891 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:43,894 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 15:56:43,895  INFO saby run Thread:16 Case_id:Case1.1 Activity:c 'The server response is: OK'
+2018-12-10 15:56:44,398  INFO saby simulate_stream_event Case_id:Case2.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 15:56:44,398  INFO saby invoke_event_thread Case_id:Case2.1 Activity:b 'Initialising thread'
+2018-12-10 15:56:44,398  INFO saby invoke_event_thread Case_id:Case2.1 Activity:b 'Starting thread for event '
+2018-12-10 15:56:44,399  INFO saby run Thread:17 Case_id:Case2.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:44,401 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:44,404 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 15:56:44,405  INFO saby run Thread:17 Case_id:Case2.1 Activity:b 'The server response is: OK'
+2018-12-10 15:56:44,909  INFO saby simulate_stream_event Case_id:Case1.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 15:56:44,909  INFO saby invoke_event_thread Case_id:Case1.0 Activity:d 'Initialising thread'
+2018-12-10 15:56:44,909  INFO saby invoke_event_thread Case_id:Case1.0 Activity:d 'Starting thread for event '
+2018-12-10 15:56:44,910  INFO saby run Thread:18 Case_id:Case1.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:44,912 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:44,915 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 15:56:44,916  INFO saby run Thread:18 Case_id:Case1.0 Activity:d 'The server response is: OK'
+2018-12-10 15:56:45,418  INFO saby simulate_stream_event Case_id:Case3.0 Activity:assf 'Calling invoke_event_thread()'
+2018-12-10 15:56:45,418  INFO saby invoke_event_thread Case_id:Case3.0 Activity:assf 'Initialising thread'
+2018-12-10 15:56:45,418  INFO saby invoke_event_thread Case_id:Case3.0 Activity:assf 'Starting thread for event '
+2018-12-10 15:56:45,418  INFO saby run Thread:19 Case_id:Case3.0 Activity:assf 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:45,420 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:45,424 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 42
+2018-12-10 15:56:45,424  INFO saby run Thread:19 Case_id:Case3.0 Activity:assf 'The server response is: Alert !!!  No connection from djkh to assf'
+2018-12-10 15:56:45,928  INFO saby simulate_stream_event Case_id:Case2.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 15:56:45,928  INFO saby invoke_event_thread Case_id:Case2.0 Activity:d 'Initialising thread'
+2018-12-10 15:56:45,928  INFO saby invoke_event_thread Case_id:Case2.0 Activity:d 'Starting thread for event '
+2018-12-10 15:56:45,928  INFO saby run Thread:20 Case_id:Case2.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:45,931 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:45,934 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 15:56:45,935  INFO saby run Thread:20 Case_id:Case2.0 Activity:d 'The server response is: OK'
+2018-12-10 15:56:46,438  INFO saby simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 15:56:46,438  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-10 15:56:46,438  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-10 15:56:46,439  INFO saby run Thread:21 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:46,441 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:46,444 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 15:56:46,445  INFO saby run Thread:21 Case_id:Case1.2 Activity:d 'The server response is: OK'
+2018-12-10 15:56:46,949  INFO saby simulate_stream_event Case_id:Case1.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 15:56:46,949  INFO saby invoke_event_thread Case_id:Case1.1 Activity:d 'Initialising thread'
+2018-12-10 15:56:46,949  INFO saby invoke_event_thread Case_id:Case1.1 Activity:d 'Starting thread for event '
+2018-12-10 15:56:46,949  INFO saby run Thread:22 Case_id:Case1.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:46,951 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:46,954 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 15:56:46,955  INFO saby run Thread:22 Case_id:Case1.1 Activity:d 'The server response is: OK'
+2018-12-10 15:56:47,458  INFO saby simulate_stream_event Case_id:Case2.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 15:56:47,458  INFO saby invoke_event_thread Case_id:Case2.1 Activity:d 'Initialising thread'
+2018-12-10 15:56:47,458  INFO saby invoke_event_thread Case_id:Case2.1 Activity:d 'Starting thread for event '
+2018-12-10 15:56:47,459  INFO saby run Thread:23 Case_id:Case2.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:47,461 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:47,464 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 15:56:47,465  INFO saby run Thread:23 Case_id:Case2.1 Activity:d 'The server response is: OK'
+2018-12-10 15:56:47,967  INFO saby simulate_stream_event Case_id:Case2.0 Activity:e 'Calling invoke_event_thread()'
+2018-12-10 15:56:47,967  INFO saby invoke_event_thread Case_id:Case2.0 Activity:e 'Initialising thread'
+2018-12-10 15:56:47,967  INFO saby invoke_event_thread Case_id:Case2.0 Activity:e 'Starting thread for event '
+2018-12-10 15:56:47,968  INFO saby run Thread:24 Case_id:Case2.0 Activity:e 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:47,970 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:47,973 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 15:56:47,974  INFO saby run Thread:24 Case_id:Case2.0 Activity:e 'The server response is: Alert !!!  No connection from d to e'
+2018-12-10 15:56:48,477  INFO saby simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 15:56:48,477  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-10 15:56:48,477  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-10 15:56:48,477  INFO saby run Thread:25 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:48,479 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:48,482 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 15:56:48,483  INFO saby run Thread:25 Case_id:Case1.2 Activity:d 'The server response is: OK'
+2018-12-10 15:56:48,986  INFO saby simulate_stream_event Case_id:Case3.0 Activity:g 'Calling invoke_event_thread()'
+2018-12-10 15:56:48,986  INFO saby invoke_event_thread Case_id:Case3.0 Activity:g 'Initialising thread'
+2018-12-10 15:56:48,986  INFO saby invoke_event_thread Case_id:Case3.0 Activity:g 'Starting thread for event '
+2018-12-10 15:56:48,986  INFO saby run Thread:26 Case_id:Case3.0 Activity:g 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:48,988 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:48,991 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 39
+2018-12-10 15:56:48,992  INFO saby run Thread:26 Case_id:Case3.0 Activity:g 'The server response is: Alert !!!  No connection from assf to g'
+2018-12-10 15:56:49,495  INFO saby simulate_stream_event Case_id:Case2.0 Activity:x 'Calling invoke_event_thread()'
+2018-12-10 15:56:49,495  INFO saby invoke_event_thread Case_id:Case2.0 Activity:x 'Initialising thread'
+2018-12-10 15:56:49,495  INFO saby invoke_event_thread Case_id:Case2.0 Activity:x 'Starting thread for event '
+2018-12-10 15:56:49,496  INFO saby run Thread:27 Case_id:Case2.0 Activity:x 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:49,498 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:49,501 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 15:56:49,502  INFO saby run Thread:27 Case_id:Case2.0 Activity:x 'The server response is: Alert !!!  No connection from e to x'
+2018-12-10 15:56:50,004  INFO saby simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 15:56:50,004  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-10 15:56:50,004  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-10 15:56:50,005  INFO saby run Thread:28 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:50,007 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:50,010 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 15:56:50,012  INFO saby run Thread:28 Case_id:Case1.2 Activity:d 'The server response is: OK'
+2018-12-10 15:56:50,514  INFO saby simulate_stream_event Case_id:Case3.0 Activity:h 'Calling invoke_event_thread()'
+2018-12-10 15:56:50,514  INFO saby invoke_event_thread Case_id:Case3.0 Activity:h 'Initialising thread'
+2018-12-10 15:56:50,514  INFO saby invoke_event_thread Case_id:Case3.0 Activity:h 'Starting thread for event '
+2018-12-10 15:56:50,515  INFO saby run Thread:29 Case_id:Case3.0 Activity:h 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:50,517 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:50,520 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 15:56:50,521  INFO saby run Thread:29 Case_id:Case3.0 Activity:h 'The server response is: Alert !!!  No connection from g to h'
+2018-12-10 15:56:51,024  INFO saby simulate_stream_event Case_id:Case2.0 Activity:z 'Calling invoke_event_thread()'
+2018-12-10 15:56:51,024  INFO saby invoke_event_thread Case_id:Case2.0 Activity:z 'Initialising thread'
+2018-12-10 15:56:51,024  INFO saby invoke_event_thread Case_id:Case2.0 Activity:z 'Starting thread for event '
+2018-12-10 15:56:51,025  INFO saby run Thread:30 Case_id:Case2.0 Activity:z 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:51,027 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:51,031 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 15:56:51,031  INFO saby run Thread:30 Case_id:Case2.0 Activity:z 'The server response is: Alert !!!  No connection from x to z'
+2018-12-10 15:56:51,536  INFO saby simulate_stream_event Case_id:Case1.2 Activity:z 'Calling invoke_event_thread()'
+2018-12-10 15:56:51,536  INFO saby invoke_event_thread Case_id:Case1.2 Activity:z 'Initialising thread'
+2018-12-10 15:56:51,536  INFO saby invoke_event_thread Case_id:Case1.2 Activity:z 'Starting thread for event '
+2018-12-10 15:56:51,537  INFO saby run Thread:31 Case_id:Case1.2 Activity:z 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:51,539 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:51,541 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 15:56:51,542  INFO saby run Thread:31 Case_id:Case1.2 Activity:z 'The server response is: Alert !!!  No connection from d to z'
+2018-12-10 15:56:52,045  INFO saby simulate_stream_event Case_id:Case3.0 Activity:i 'Calling invoke_event_thread()'
+2018-12-10 15:56:52,046  INFO saby invoke_event_thread Case_id:Case3.0 Activity:i 'Initialising thread'
+2018-12-10 15:56:52,046  INFO saby invoke_event_thread Case_id:Case3.0 Activity:i 'Starting thread for event '
+2018-12-10 15:56:52,047  INFO saby run Thread:32 Case_id:Case3.0 Activity:i 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:52,050 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:52,053 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 15:56:52,054  INFO saby run Thread:32 Case_id:Case3.0 Activity:i 'The server response is: Alert !!!  No connection from h to i'
+2018-12-10 15:56:52,556  INFO saby simulate_stream_event Case_id:Case2.0 Activity:i 'Calling invoke_event_thread()'
+2018-12-10 15:56:52,556  INFO saby invoke_event_thread Case_id:Case2.0 Activity:i 'Initialising thread'
+2018-12-10 15:56:52,556  INFO saby invoke_event_thread Case_id:Case2.0 Activity:i 'Starting thread for event '
+2018-12-10 15:56:52,557  INFO saby run Thread:33 Case_id:Case2.0 Activity:i 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:52,559 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:52,562 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 15:56:52,563  INFO saby run Thread:33 Case_id:Case2.0 Activity:i 'The server response is: Alert !!!  No connection from z to i'
+2018-12-10 15:56:53,066  INFO saby simulate_stream_event Case_id:Case1.2 Activity:h 'Calling invoke_event_thread()'
+2018-12-10 15:56:53,066  INFO saby invoke_event_thread Case_id:Case1.2 Activity:h 'Initialising thread'
+2018-12-10 15:56:53,066  INFO saby invoke_event_thread Case_id:Case1.2 Activity:h 'Starting thread for event '
+2018-12-10 15:56:53,067  INFO saby run Thread:34 Case_id:Case1.2 Activity:h 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:53,069 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:53,072 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 15:56:53,073  INFO saby run Thread:34 Case_id:Case1.2 Activity:h 'The server response is: Alert !!!  No connection from z to h'
+2018-12-10 15:56:53,574  INFO saby simulate_stream_event Case_id:Case3.0 Activity:j 'Calling invoke_event_thread()'
+2018-12-10 15:56:53,574  INFO saby invoke_event_thread Case_id:Case3.0 Activity:j 'Initialising thread'
+2018-12-10 15:56:53,574  INFO saby invoke_event_thread Case_id:Case3.0 Activity:j 'Starting thread for event '
+2018-12-10 15:56:53,575  INFO saby run Thread:35 Case_id:Case3.0 Activity:j 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:53,577 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:53,581 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 15:56:53,582  INFO saby run Thread:35 Case_id:Case3.0 Activity:j 'The server response is: Alert !!!  No connection from i to j'
+2018-12-10 15:56:54,084  INFO saby simulate_stream_event Case_id:Case2.0 Activity:k 'Calling invoke_event_thread()'
+2018-12-10 15:56:54,084  INFO saby invoke_event_thread Case_id:Case2.0 Activity:k 'Initialising thread'
+2018-12-10 15:56:54,084  INFO saby invoke_event_thread Case_id:Case2.0 Activity:k 'Starting thread for event '
+2018-12-10 15:56:54,085  INFO saby run Thread:36 Case_id:Case2.0 Activity:k 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:54,087 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:54,090 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 15:56:54,091  INFO saby run Thread:36 Case_id:Case2.0 Activity:k 'The server response is: Alert !!!  No connection from i to k'
+2018-12-10 15:56:54,594  INFO saby simulate_stream_event Case_id:Case1.2 Activity:l 'Calling invoke_event_thread()'
+2018-12-10 15:56:54,594  INFO saby invoke_event_thread Case_id:Case1.2 Activity:l 'Initialising thread'
+2018-12-10 15:56:54,594  INFO saby invoke_event_thread Case_id:Case1.2 Activity:l 'Starting thread for event '
+2018-12-10 15:56:54,594  INFO saby run Thread:37 Case_id:Case1.2 Activity:l 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:54,597 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:54,600 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 15:56:54,601  INFO saby run Thread:37 Case_id:Case1.2 Activity:l 'The server response is: Alert !!!  No connection from h to l'
+2018-12-10 15:56:55,104  INFO saby simulate_stream_event Case_id:Case1.2 Activity:m 'Calling invoke_event_thread()'
+2018-12-10 15:56:55,104  INFO saby invoke_event_thread Case_id:Case1.2 Activity:m 'Initialising thread'
+2018-12-10 15:56:55,104  INFO saby invoke_event_thread Case_id:Case1.2 Activity:m 'Starting thread for event '
+2018-12-10 15:56:55,104  INFO saby run Thread:38 Case_id:Case1.2 Activity:m 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:55,106 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:55,110 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 15:56:55,111  INFO saby run Thread:38 Case_id:Case1.2 Activity:m 'The server response is: Alert !!!  No connection from l to m'
+2018-12-10 15:56:55,614  INFO saby simulate_stream_event Case_id:Case1.1 Activity:m 'Calling invoke_event_thread()'
+2018-12-10 15:56:55,614  INFO saby invoke_event_thread Case_id:Case1.1 Activity:m 'Initialising thread'
+2018-12-10 15:56:55,614  INFO saby invoke_event_thread Case_id:Case1.1 Activity:m 'Starting thread for event '
+2018-12-10 15:56:55,614  INFO saby run Thread:39 Case_id:Case1.1 Activity:m 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:55,617 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:55,619 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 15:56:55,620  INFO saby run Thread:39 Case_id:Case1.1 Activity:m 'The server response is: Alert !!!  No connection from d to m'
+2018-12-10 15:56:56,122  INFO saby simulate_stream_event Case_id:Case1.0 Activity:m 'Calling invoke_event_thread()'
+2018-12-10 15:56:56,122  INFO saby invoke_event_thread Case_id:Case1.0 Activity:m 'Initialising thread'
+2018-12-10 15:56:56,122  INFO saby invoke_event_thread Case_id:Case1.0 Activity:m 'Starting thread for event '
+2018-12-10 15:56:56,122  INFO saby run Thread:40 Case_id:Case1.0 Activity:m 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:56,125 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:56,128 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 15:56:56,128  INFO saby run Thread:40 Case_id:Case1.0 Activity:m 'The server response is: Alert !!!  No connection from d to m'
+2018-12-10 15:56:56,632  INFO saby simulate_stream_event Case_id:Case2.1 Activity:x 'Calling invoke_event_thread()'
+2018-12-10 15:56:56,632  INFO saby invoke_event_thread Case_id:Case2.1 Activity:x 'Initialising thread'
+2018-12-10 15:56:56,632  INFO saby invoke_event_thread Case_id:Case2.1 Activity:x 'Starting thread for event '
+2018-12-10 15:56:56,632  INFO saby run Thread:41 Case_id:Case2.1 Activity:x 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:56,636 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:56,639 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 15:56:56,639  INFO saby run Thread:41 Case_id:Case2.1 Activity:x 'The server response is: Alert !!!  No connection from d to x'
+2018-12-10 15:56:57,142  INFO saby simulate_stream_event Case_id:Case1.2 Activity:n 'Calling invoke_event_thread()'
+2018-12-10 15:56:57,142  INFO saby invoke_event_thread Case_id:Case1.2 Activity:n 'Initialising thread'
+2018-12-10 15:56:57,142  INFO saby invoke_event_thread Case_id:Case1.2 Activity:n 'Starting thread for event '
+2018-12-10 15:56:57,142  INFO saby run Thread:42 Case_id:Case1.2 Activity:n 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:57,145 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:57,147 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 15:56:57,148  INFO saby run Thread:42 Case_id:Case1.2 Activity:n 'The server response is: Alert !!!  No connection from m to n'
+2018-12-10 15:56:57,650  INFO saby simulate_stream_event Case_id:Case1.1 Activity:n 'Calling invoke_event_thread()'
+2018-12-10 15:56:57,650  INFO saby invoke_event_thread Case_id:Case1.1 Activity:n 'Initialising thread'
+2018-12-10 15:56:57,650  INFO saby invoke_event_thread Case_id:Case1.1 Activity:n 'Starting thread for event '
+2018-12-10 15:56:57,651  INFO saby run Thread:43 Case_id:Case1.1 Activity:n 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:57,653 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:57,656 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 15:56:57,657  INFO saby run Thread:43 Case_id:Case1.1 Activity:n 'The server response is: Alert !!!  No connection from m to n'
+2018-12-10 15:56:58,160  INFO saby simulate_stream_event Case_id:Case1.0 Activity:n 'Calling invoke_event_thread()'
+2018-12-10 15:56:58,160  INFO saby invoke_event_thread Case_id:Case1.0 Activity:n 'Initialising thread'
+2018-12-10 15:56:58,160  INFO saby invoke_event_thread Case_id:Case1.0 Activity:n 'Starting thread for event '
+2018-12-10 15:56:58,161  INFO saby run Thread:44 Case_id:Case1.0 Activity:n 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:58,163 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:58,167 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 15:56:58,168  INFO saby run Thread:44 Case_id:Case1.0 Activity:n 'The server response is: Alert !!!  No connection from m to n'
+2018-12-10 15:56:58,670  INFO saby simulate_stream_event Case_id:Case2.1 Activity:v 'Calling invoke_event_thread()'
+2018-12-10 15:56:58,670  INFO saby invoke_event_thread Case_id:Case2.1 Activity:v 'Initialising thread'
+2018-12-10 15:56:58,670  INFO saby invoke_event_thread Case_id:Case2.1 Activity:v 'Starting thread for event '
+2018-12-10 15:56:58,671  INFO saby run Thread:45 Case_id:Case2.1 Activity:v 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:58,673 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:58,676 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 15:56:58,677  INFO saby run Thread:45 Case_id:Case2.1 Activity:v 'The server response is: Alert !!!  No connection from x to v'
+2018-12-10 15:56:59,179  INFO saby simulate_stream_event Case_id:Case1.2 Activity:o 'Calling invoke_event_thread()'
+2018-12-10 15:56:59,179  INFO saby invoke_event_thread Case_id:Case1.2 Activity:o 'Initialising thread'
+2018-12-10 15:56:59,179  INFO saby invoke_event_thread Case_id:Case1.2 Activity:o 'Starting thread for event '
+2018-12-10 15:56:59,180  INFO saby run Thread:46 Case_id:Case1.2 Activity:o 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:59,182 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:59,185 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 15:56:59,186  INFO saby run Thread:46 Case_id:Case1.2 Activity:o 'The server response is: Alert !!!  No connection from n to o'
+2018-12-10 15:56:59,689  INFO saby simulate_stream_event Case_id:Case1.1 Activity:o 'Calling invoke_event_thread()'
+2018-12-10 15:56:59,689  INFO saby invoke_event_thread Case_id:Case1.1 Activity:o 'Initialising thread'
+2018-12-10 15:56:59,689  INFO saby invoke_event_thread Case_id:Case1.1 Activity:o 'Starting thread for event '
+2018-12-10 15:56:59,690  INFO saby run Thread:47 Case_id:Case1.1 Activity:o 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:56:59,692 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:56:59,695 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 15:56:59,695  INFO saby run Thread:47 Case_id:Case1.1 Activity:o 'The server response is: Alert !!!  No connection from n to o'
+2018-12-10 15:57:00,198  INFO saby simulate_stream_event Case_id:Case1.0 Activity:j 'Calling invoke_event_thread()'
+2018-12-10 15:57:00,198  INFO saby invoke_event_thread Case_id:Case1.0 Activity:j 'Initialising thread'
+2018-12-10 15:57:00,198  INFO saby invoke_event_thread Case_id:Case1.0 Activity:j 'Starting thread for event '
+2018-12-10 15:57:00,199  INFO saby run Thread:48 Case_id:Case1.0 Activity:j 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:57:00,202 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:57:00,206 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 15:57:00,207  INFO saby run Thread:48 Case_id:Case1.0 Activity:j 'The server response is: Alert !!!  No connection from n to j'
+2018-12-10 15:57:00,711  INFO saby simulate_stream_event Case_id:Case2.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 15:57:00,711  INFO saby invoke_event_thread Case_id:Case2.1 Activity:d 'Initialising thread'
+2018-12-10 15:57:00,711  INFO saby invoke_event_thread Case_id:Case2.1 Activity:d 'Starting thread for event '
+2018-12-10 15:57:00,712  INFO saby run Thread:49 Case_id:Case2.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:57:00,714 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:57:00,718 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 15:57:00,719  INFO saby run Thread:49 Case_id:Case2.1 Activity:d 'The server response is: Alert !!!  No connection from v to d'
+2018-12-10 15:57:01,221  INFO saby simulate_stream_event Case_id:Case1.2 Activity:p 'Calling invoke_event_thread()'
+2018-12-10 15:57:01,221  INFO saby invoke_event_thread Case_id:Case1.2 Activity:p 'Initialising thread'
+2018-12-10 15:57:01,221  INFO saby invoke_event_thread Case_id:Case1.2 Activity:p 'Starting thread for event '
+2018-12-10 15:57:01,222  INFO saby run Thread:50 Case_id:Case1.2 Activity:p 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:57:01,224 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:57:01,227 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 15:57:01,227  INFO saby run Thread:50 Case_id:Case1.2 Activity:p 'The server response is: Alert !!!  No connection from o to p'
+2018-12-10 15:57:01,730  INFO saby simulate_stream_event Case_id:Case1.1 Activity:p 'Calling invoke_event_thread()'
+2018-12-10 15:57:01,730  INFO saby invoke_event_thread Case_id:Case1.1 Activity:p 'Initialising thread'
+2018-12-10 15:57:01,730  INFO saby invoke_event_thread Case_id:Case1.1 Activity:p 'Starting thread for event '
+2018-12-10 15:57:01,731  INFO saby run Thread:51 Case_id:Case1.1 Activity:p 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:57:01,733 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:57:01,737 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 15:57:01,738  INFO saby run Thread:51 Case_id:Case1.1 Activity:p 'The server response is: Alert !!!  No connection from o to p'
+2018-12-10 15:57:02,240  INFO saby simulate_stream_event Case_id:Case1.0 Activity:p 'Calling invoke_event_thread()'
+2018-12-10 15:57:02,240  INFO saby invoke_event_thread Case_id:Case1.0 Activity:p 'Initialising thread'
+2018-12-10 15:57:02,240  INFO saby invoke_event_thread Case_id:Case1.0 Activity:p 'Starting thread for event '
+2018-12-10 15:57:02,241  INFO saby run Thread:52 Case_id:Case1.0 Activity:p 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:57:02,243 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:57:02,246 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 15:57:02,247  INFO saby run Thread:52 Case_id:Case1.0 Activity:p 'The server response is: Alert !!!  No connection from j to p'
+2018-12-10 15:57:02,749  INFO saby simulate_stream_event Case_id:Case2.1 Activity:ghki 'Calling invoke_event_thread()'
+2018-12-10 15:57:02,749  INFO saby invoke_event_thread Case_id:Case2.1 Activity:ghki 'Initialising thread'
+2018-12-10 15:57:02,749  INFO saby invoke_event_thread Case_id:Case2.1 Activity:ghki 'Starting thread for event '
+2018-12-10 15:57:02,749  INFO saby run Thread:53 Case_id:Case2.1 Activity:ghki 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:57:02,753 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:57:02,757 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 39
+2018-12-10 15:57:02,758  INFO saby run Thread:53 Case_id:Case2.1 Activity:ghki 'The server response is: Alert !!!  No connection from d to ghki'
+2018-12-10 15:57:03,260  INFO saby simulate_stream_event Case_id:Case1.2 Activity:q 'Calling invoke_event_thread()'
+2018-12-10 15:57:03,260  INFO saby invoke_event_thread Case_id:Case1.2 Activity:q 'Initialising thread'
+2018-12-10 15:57:03,260  INFO saby invoke_event_thread Case_id:Case1.2 Activity:q 'Starting thread for event '
+2018-12-10 15:57:03,260  INFO saby run Thread:54 Case_id:Case1.2 Activity:q 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:57:03,262 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:57:03,266 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 15:57:03,266  INFO saby run Thread:54 Case_id:Case1.2 Activity:q 'The server response is: Alert !!!  No connection from p to q'
+2018-12-10 15:57:03,770  INFO saby simulate_stream_event Case_id:Case1.1 Activity:q 'Calling invoke_event_thread()'
+2018-12-10 15:57:03,770  INFO saby invoke_event_thread Case_id:Case1.1 Activity:q 'Initialising thread'
+2018-12-10 15:57:03,770  INFO saby invoke_event_thread Case_id:Case1.1 Activity:q 'Starting thread for event '
+2018-12-10 15:57:03,771  INFO saby run Thread:55 Case_id:Case1.1 Activity:q 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:57:03,773 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:57:03,776 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 15:57:03,777  INFO saby run Thread:55 Case_id:Case1.1 Activity:q 'The server response is: Alert !!!  No connection from p to q'
+2018-12-10 15:57:04,278  INFO saby simulate_stream_event Case_id:Case1.0 Activity:q 'Calling invoke_event_thread()'
+2018-12-10 15:57:04,278  INFO saby invoke_event_thread Case_id:Case1.0 Activity:q 'Initialising thread'
+2018-12-10 15:57:04,278  INFO saby invoke_event_thread Case_id:Case1.0 Activity:q 'Starting thread for event '
+2018-12-10 15:57:04,279  INFO saby run Thread:56 Case_id:Case1.0 Activity:q 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:57:04,281 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:57:04,287 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 15:57:04,288  INFO saby run Thread:56 Case_id:Case1.0 Activity:q 'The server response is: Alert !!!  No connection from p to q'
+2018-12-10 15:57:04,790  INFO saby simulate_stream_event Case_id:Case2.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 15:57:04,790  INFO saby invoke_event_thread Case_id:Case2.1 Activity:b 'Initialising thread'
+2018-12-10 15:57:04,790  INFO saby invoke_event_thread Case_id:Case2.1 Activity:b 'Starting thread for event '
+2018-12-10 15:57:04,791  INFO saby run Thread:57 Case_id:Case2.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:57:04,793 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:57:04,796 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 39
+2018-12-10 15:57:04,797  INFO saby run Thread:57 Case_id:Case2.1 Activity:b 'The server response is: Alert !!!  No connection from ghki to b'
+2018-12-10 15:57:04,797  INFO saby simulate_stream_event Case_id:NONE Activity:END 'Calling invoke_event_thread()'
+2018-12-10 15:57:04,797  INFO saby invoke_event_thread Case_id:NONE Activity:END 'Initialising thread'
+2018-12-10 15:57:04,797  INFO saby invoke_event_thread Case_id:NONE Activity:END 'Starting thread for event '
+2018-12-10 15:57:04,798  INFO saby run Thread:58 Case_id:NONE Activity:END 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:57:04,800 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:57:04,804 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 15:57:04,805  INFO saby run Thread:58 Case_id:NONE Activity:END 'The server response is: OK'
+2018-12-10 15:57:06,052  INFO saby main 'compliance checking is completed'
+2018-12-10 15:57:06,052  INFO saby main 'The options are displayed'
+2018-12-10 15:59:50,602  INFO saby main 'The user selected option 3'
+2018-12-10 15:59:50,603  INFO saby main 'Exiting...'
+2018-12-10 16:46:58,739  INFO saby main 'Post request to server:http://127.0.0.1:5000/login?uuid=saby'
+2018-12-10 16:46:58,739 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:46:58,739 http://127.0.0.1:5000 "POST /login?uuid=saby HTTP/1.1" 200 0
+2018-12-10 16:46:58,739  INFO saby main 'The options are displayed'
+2018-12-10 16:47:01,245  INFO saby main 'The user selected option 1'
+2018-12-10 16:47:01,245  INFO saby main 'Calling run_compliance_checker()'
+2018-12-10 16:47:01,245  INFO saby run_compliance_checker 'Calling read_log()'
+2018-12-10 16:47:01,245  INFO saby read_log 'Creating a trace logger file: '
+2018-12-10 16:47:01,354  INFO saby read_log 'Transforming trace logger to event logger'
+2018-12-10 16:47:01,354  INFO saby read_log 'Sorting event logger'
+2018-12-10 16:47:01,354  INFO saby run_compliance_checker 'Calling simulate_stream_event()'
+2018-12-10 16:47:01,901  INFO saby simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 16:47:01,901  INFO saby invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2018-12-10 16:47:01,901  INFO saby invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2018-12-10 16:47:01,901  INFO saby run Thread:0 Case_id:Case1.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:01,901 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:01,901 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:47:01,901  INFO saby run Thread:0 Case_id:Case1.0 Activity:a 'The server response is: OK'
+2018-12-10 16:47:02,432  INFO saby simulate_stream_event Case_id:Case3.0 Activity:uiy 'Calling invoke_event_thread()'
+2018-12-10 16:47:02,432  INFO saby invoke_event_thread Case_id:Case3.0 Activity:uiy 'Initialising thread'
+2018-12-10 16:47:02,432  INFO saby invoke_event_thread Case_id:Case3.0 Activity:uiy 'Starting thread for event '
+2018-12-10 16:47:02,432  INFO saby run Thread:1 Case_id:Case3.0 Activity:uiy 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:02,432 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:02,463 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 38
+2018-12-10 16:47:02,463  INFO saby run Thread:1 Case_id:Case3.0 Activity:uiy 'The server response is: Alert !!!  No connection from * to uiy'
+2018-12-10 16:47:03,011  INFO saby simulate_stream_event Case_id:Case2.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 16:47:03,011  INFO saby invoke_event_thread Case_id:Case2.0 Activity:a 'Initialising thread'
+2018-12-10 16:47:03,011  INFO saby invoke_event_thread Case_id:Case2.0 Activity:a 'Starting thread for event '
+2018-12-10 16:47:03,011  INFO saby run Thread:2 Case_id:Case2.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:03,011 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:03,011 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:47:03,011  INFO saby run Thread:2 Case_id:Case2.0 Activity:a 'The server response is: OK'
+2018-12-10 16:47:03,558  INFO saby simulate_stream_event Case_id:Case1.2 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 16:47:03,558  INFO saby invoke_event_thread Case_id:Case1.2 Activity:a 'Initialising thread'
+2018-12-10 16:47:03,558  INFO saby invoke_event_thread Case_id:Case1.2 Activity:a 'Starting thread for event '
+2018-12-10 16:47:03,558  INFO saby run Thread:3 Case_id:Case1.2 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:03,558 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:03,558 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:47:03,558  INFO saby run Thread:3 Case_id:Case1.2 Activity:a 'The server response is: OK'
+2018-12-10 16:47:04,104  INFO saby simulate_stream_event Case_id:Case1.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 16:47:04,104  INFO saby invoke_event_thread Case_id:Case1.1 Activity:a 'Initialising thread'
+2018-12-10 16:47:04,104  INFO saby invoke_event_thread Case_id:Case1.1 Activity:a 'Starting thread for event '
+2018-12-10 16:47:04,104  INFO saby run Thread:4 Case_id:Case1.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:04,104 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:04,104 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:47:04,104  INFO saby run Thread:4 Case_id:Case1.1 Activity:a 'The server response is: OK'
+2018-12-10 16:47:04,652  INFO saby simulate_stream_event Case_id:Case2.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 16:47:04,652  INFO saby invoke_event_thread Case_id:Case2.1 Activity:a 'Initialising thread'
+2018-12-10 16:47:04,652  INFO saby invoke_event_thread Case_id:Case2.1 Activity:a 'Starting thread for event '
+2018-12-10 16:47:04,652  INFO saby run Thread:5 Case_id:Case2.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:04,652 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:04,652 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:47:04,652  INFO saby run Thread:5 Case_id:Case2.1 Activity:a 'The server response is: OK'
+2018-12-10 16:47:05,193  INFO saby simulate_stream_event Case_id:Case1.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 16:47:05,193  INFO saby invoke_event_thread Case_id:Case1.0 Activity:b 'Initialising thread'
+2018-12-10 16:47:05,193  INFO saby invoke_event_thread Case_id:Case1.0 Activity:b 'Starting thread for event '
+2018-12-10 16:47:05,193  INFO saby run Thread:6 Case_id:Case1.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:05,193 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:05,193 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:47:05,193  INFO saby run Thread:6 Case_id:Case1.0 Activity:b 'The server response is: OK'
+2018-12-10 16:47:05,740  INFO saby simulate_stream_event Case_id:Case3.0 Activity:edse 'Calling invoke_event_thread()'
+2018-12-10 16:47:05,740  INFO saby invoke_event_thread Case_id:Case3.0 Activity:edse 'Initialising thread'
+2018-12-10 16:47:05,740  INFO saby invoke_event_thread Case_id:Case3.0 Activity:edse 'Starting thread for event '
+2018-12-10 16:47:05,740  INFO saby run Thread:7 Case_id:Case3.0 Activity:edse 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:05,740 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:05,740 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 41
+2018-12-10 16:47:05,740  INFO saby run Thread:7 Case_id:Case3.0 Activity:edse 'The server response is: Alert !!!  No connection from uiy to edse'
+2018-12-10 16:47:06,276  INFO saby simulate_stream_event Case_id:Case2.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 16:47:06,276  INFO saby invoke_event_thread Case_id:Case2.0 Activity:c 'Initialising thread'
+2018-12-10 16:47:06,276  INFO saby invoke_event_thread Case_id:Case2.0 Activity:c 'Starting thread for event '
+2018-12-10 16:47:06,276  INFO saby run Thread:8 Case_id:Case2.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:06,276 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:06,276 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:47:06,276  INFO saby run Thread:8 Case_id:Case2.0 Activity:c 'The server response is: OK'
+2018-12-10 16:47:06,838  INFO saby simulate_stream_event Case_id:Case1.2 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 16:47:06,838  INFO saby invoke_event_thread Case_id:Case1.2 Activity:b 'Initialising thread'
+2018-12-10 16:47:06,838  INFO saby invoke_event_thread Case_id:Case1.2 Activity:b 'Starting thread for event '
+2018-12-10 16:47:06,838  INFO saby run Thread:9 Case_id:Case1.2 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:06,838 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:06,838 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:47:06,838  INFO saby run Thread:9 Case_id:Case1.2 Activity:b 'The server response is: OK'
+2018-12-10 16:47:07,382  INFO saby simulate_stream_event Case_id:Case1.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 16:47:07,382  INFO saby invoke_event_thread Case_id:Case1.1 Activity:b 'Initialising thread'
+2018-12-10 16:47:07,382  INFO saby invoke_event_thread Case_id:Case1.1 Activity:b 'Starting thread for event '
+2018-12-10 16:47:07,382  INFO saby run Thread:10 Case_id:Case1.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:07,382 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:07,382 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:47:07,382  INFO saby run Thread:10 Case_id:Case1.1 Activity:b 'The server response is: OK'
+2018-12-10 16:47:07,929  INFO saby simulate_stream_event Case_id:Case2.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 16:47:07,929  INFO saby invoke_event_thread Case_id:Case2.1 Activity:c 'Initialising thread'
+2018-12-10 16:47:07,929  INFO saby invoke_event_thread Case_id:Case2.1 Activity:c 'Starting thread for event '
+2018-12-10 16:47:07,929  INFO saby run Thread:11 Case_id:Case2.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:07,929 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:07,929 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:47:07,929  INFO saby run Thread:11 Case_id:Case2.1 Activity:c 'The server response is: OK'
+2018-12-10 16:47:08,495  INFO saby simulate_stream_event Case_id:Case1.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 16:47:08,495  INFO saby invoke_event_thread Case_id:Case1.0 Activity:c 'Initialising thread'
+2018-12-10 16:47:08,495  INFO saby invoke_event_thread Case_id:Case1.0 Activity:c 'Starting thread for event '
+2018-12-10 16:47:08,495  INFO saby run Thread:12 Case_id:Case1.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:08,495 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:08,495 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:47:08,495  INFO saby run Thread:12 Case_id:Case1.0 Activity:c 'The server response is: OK'
+2018-12-10 16:47:09,042  INFO saby simulate_stream_event Case_id:Case3.0 Activity:djkh 'Calling invoke_event_thread()'
+2018-12-10 16:47:09,042  INFO saby invoke_event_thread Case_id:Case3.0 Activity:djkh 'Initialising thread'
+2018-12-10 16:47:09,042  INFO saby invoke_event_thread Case_id:Case3.0 Activity:djkh 'Starting thread for event '
+2018-12-10 16:47:09,042  INFO saby run Thread:13 Case_id:Case3.0 Activity:djkh 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:09,042 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:09,042 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 42
+2018-12-10 16:47:09,042  INFO saby run Thread:13 Case_id:Case3.0 Activity:djkh 'The server response is: Alert !!!  No connection from edse to djkh'
+2018-12-10 16:47:09,604  INFO saby simulate_stream_event Case_id:Case2.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 16:47:09,604  INFO saby invoke_event_thread Case_id:Case2.0 Activity:b 'Initialising thread'
+2018-12-10 16:47:09,604  INFO saby invoke_event_thread Case_id:Case2.0 Activity:b 'Starting thread for event '
+2018-12-10 16:47:09,604  INFO saby run Thread:14 Case_id:Case2.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:09,604 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:09,604 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:47:09,604  INFO saby run Thread:14 Case_id:Case2.0 Activity:b 'The server response is: OK'
+2018-12-10 16:47:10,152  INFO saby simulate_stream_event Case_id:Case1.2 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 16:47:10,152  INFO saby invoke_event_thread Case_id:Case1.2 Activity:c 'Initialising thread'
+2018-12-10 16:47:10,152  INFO saby invoke_event_thread Case_id:Case1.2 Activity:c 'Starting thread for event '
+2018-12-10 16:47:10,152  INFO saby run Thread:15 Case_id:Case1.2 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:10,152 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:10,152 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:47:10,152  INFO saby run Thread:15 Case_id:Case1.2 Activity:c 'The server response is: OK'
+2018-12-10 16:47:10,699  INFO saby simulate_stream_event Case_id:Case1.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 16:47:10,699  INFO saby invoke_event_thread Case_id:Case1.1 Activity:c 'Initialising thread'
+2018-12-10 16:47:10,699  INFO saby invoke_event_thread Case_id:Case1.1 Activity:c 'Starting thread for event '
+2018-12-10 16:47:10,699  INFO saby run Thread:16 Case_id:Case1.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:10,699 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:10,699 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:47:10,699  INFO saby run Thread:16 Case_id:Case1.1 Activity:c 'The server response is: OK'
+2018-12-10 16:47:11,245  INFO saby simulate_stream_event Case_id:Case2.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 16:47:11,245  INFO saby invoke_event_thread Case_id:Case2.1 Activity:b 'Initialising thread'
+2018-12-10 16:47:11,245  INFO saby invoke_event_thread Case_id:Case2.1 Activity:b 'Starting thread for event '
+2018-12-10 16:47:11,245  INFO saby run Thread:17 Case_id:Case2.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:11,245 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:11,245 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:47:11,245  INFO saby run Thread:17 Case_id:Case2.1 Activity:b 'The server response is: OK'
+2018-12-10 16:47:11,786  INFO saby simulate_stream_event Case_id:Case1.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 16:47:11,786  INFO saby invoke_event_thread Case_id:Case1.0 Activity:d 'Initialising thread'
+2018-12-10 16:47:11,786  INFO saby invoke_event_thread Case_id:Case1.0 Activity:d 'Starting thread for event '
+2018-12-10 16:47:11,786  INFO saby run Thread:18 Case_id:Case1.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:11,786 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:11,786 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:47:11,786  INFO saby run Thread:18 Case_id:Case1.0 Activity:d 'The server response is: OK'
+2018-12-10 16:47:12,338  INFO saby simulate_stream_event Case_id:Case3.0 Activity:assf 'Calling invoke_event_thread()'
+2018-12-10 16:47:12,338  INFO saby invoke_event_thread Case_id:Case3.0 Activity:assf 'Initialising thread'
+2018-12-10 16:47:12,338  INFO saby invoke_event_thread Case_id:Case3.0 Activity:assf 'Starting thread for event '
+2018-12-10 16:47:12,338  INFO saby run Thread:19 Case_id:Case3.0 Activity:assf 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:12,338 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:12,338 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 42
+2018-12-10 16:47:12,338  INFO saby run Thread:19 Case_id:Case3.0 Activity:assf 'The server response is: Alert !!!  No connection from djkh to assf'
+2018-12-10 16:47:12,885  INFO saby simulate_stream_event Case_id:Case2.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 16:47:12,885  INFO saby invoke_event_thread Case_id:Case2.0 Activity:d 'Initialising thread'
+2018-12-10 16:47:12,885  INFO saby invoke_event_thread Case_id:Case2.0 Activity:d 'Starting thread for event '
+2018-12-10 16:47:12,885  INFO saby run Thread:20 Case_id:Case2.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:12,885 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:12,885 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:47:12,885  INFO saby run Thread:20 Case_id:Case2.0 Activity:d 'The server response is: OK'
+2018-12-10 16:47:13,432  INFO saby simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 16:47:13,432  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-10 16:47:13,432  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-10 16:47:13,432  INFO saby run Thread:21 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:13,432 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:13,432 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:47:13,432  INFO saby run Thread:21 Case_id:Case1.2 Activity:d 'The server response is: OK'
+2018-12-10 16:47:13,983  INFO saby simulate_stream_event Case_id:Case1.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 16:47:13,983  INFO saby invoke_event_thread Case_id:Case1.1 Activity:d 'Initialising thread'
+2018-12-10 16:47:13,983  INFO saby invoke_event_thread Case_id:Case1.1 Activity:d 'Starting thread for event '
+2018-12-10 16:47:13,983  INFO saby run Thread:22 Case_id:Case1.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:13,983 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:13,983 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:47:13,983  INFO saby run Thread:22 Case_id:Case1.1 Activity:d 'The server response is: OK'
+2018-12-10 16:47:14,526  INFO saby simulate_stream_event Case_id:Case2.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 16:47:14,526  INFO saby invoke_event_thread Case_id:Case2.1 Activity:d 'Initialising thread'
+2018-12-10 16:47:14,526  INFO saby invoke_event_thread Case_id:Case2.1 Activity:d 'Starting thread for event '
+2018-12-10 16:47:14,526  INFO saby run Thread:23 Case_id:Case2.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:14,526 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:14,526 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:47:14,526  INFO saby run Thread:23 Case_id:Case2.1 Activity:d 'The server response is: OK'
+2018-12-10 16:47:15,064  INFO saby simulate_stream_event Case_id:Case2.0 Activity:e 'Calling invoke_event_thread()'
+2018-12-10 16:47:15,064  INFO saby invoke_event_thread Case_id:Case2.0 Activity:e 'Initialising thread'
+2018-12-10 16:47:15,064  INFO saby invoke_event_thread Case_id:Case2.0 Activity:e 'Starting thread for event '
+2018-12-10 16:47:15,065  INFO saby run Thread:24 Case_id:Case2.0 Activity:e 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:15,067 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:15,069 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:47:15,070  INFO saby run Thread:24 Case_id:Case2.0 Activity:e 'The server response is: Alert !!!  No connection from d to e'
+2018-12-10 16:47:15,620  INFO saby simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 16:47:15,620  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-10 16:47:15,620  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-10 16:47:15,620  INFO saby run Thread:25 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:15,620 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:15,620 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:47:15,620  INFO saby run Thread:25 Case_id:Case1.2 Activity:d 'The server response is: OK'
+2018-12-10 16:47:16,167  INFO saby simulate_stream_event Case_id:Case3.0 Activity:g 'Calling invoke_event_thread()'
+2018-12-10 16:47:16,167  INFO saby invoke_event_thread Case_id:Case3.0 Activity:g 'Initialising thread'
+2018-12-10 16:47:16,167  INFO saby invoke_event_thread Case_id:Case3.0 Activity:g 'Starting thread for event '
+2018-12-10 16:47:16,167  INFO saby run Thread:26 Case_id:Case3.0 Activity:g 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:16,167 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:16,167 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 39
+2018-12-10 16:47:16,167  INFO saby run Thread:26 Case_id:Case3.0 Activity:g 'The server response is: Alert !!!  No connection from assf to g'
+2018-12-10 16:47:16,715  INFO saby simulate_stream_event Case_id:Case2.0 Activity:x 'Calling invoke_event_thread()'
+2018-12-10 16:47:16,715  INFO saby invoke_event_thread Case_id:Case2.0 Activity:x 'Initialising thread'
+2018-12-10 16:47:16,715  INFO saby invoke_event_thread Case_id:Case2.0 Activity:x 'Starting thread for event '
+2018-12-10 16:47:16,715  INFO saby run Thread:27 Case_id:Case2.0 Activity:x 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:16,715 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:16,715 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:47:16,715  INFO saby run Thread:27 Case_id:Case2.0 Activity:x 'The server response is: Alert !!!  No connection from e to x'
+2018-12-10 16:47:17,244  INFO saby simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 16:47:17,244  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-10 16:47:17,244  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-10 16:47:17,244  INFO saby run Thread:28 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:17,244 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:17,244 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:47:17,244  INFO saby run Thread:28 Case_id:Case1.2 Activity:d 'The server response is: OK'
+2018-12-10 16:47:17,791  INFO saby simulate_stream_event Case_id:Case3.0 Activity:h 'Calling invoke_event_thread()'
+2018-12-10 16:47:17,791  INFO saby invoke_event_thread Case_id:Case3.0 Activity:h 'Initialising thread'
+2018-12-10 16:47:17,791  INFO saby invoke_event_thread Case_id:Case3.0 Activity:h 'Starting thread for event '
+2018-12-10 16:47:17,791  INFO saby run Thread:29 Case_id:Case3.0 Activity:h 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:17,791 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:17,791 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:47:17,791  INFO saby run Thread:29 Case_id:Case3.0 Activity:h 'The server response is: Alert !!!  No connection from g to h'
+2018-12-10 16:47:18,354  INFO saby simulate_stream_event Case_id:Case2.0 Activity:z 'Calling invoke_event_thread()'
+2018-12-10 16:47:18,354  INFO saby invoke_event_thread Case_id:Case2.0 Activity:z 'Initialising thread'
+2018-12-10 16:47:18,354  INFO saby invoke_event_thread Case_id:Case2.0 Activity:z 'Starting thread for event '
+2018-12-10 16:47:18,354  INFO saby run Thread:30 Case_id:Case2.0 Activity:z 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:18,354 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:18,354 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:47:18,354  INFO saby run Thread:30 Case_id:Case2.0 Activity:z 'The server response is: Alert !!!  No connection from x to z'
+2018-12-10 16:47:18,917  INFO saby simulate_stream_event Case_id:Case1.2 Activity:z 'Calling invoke_event_thread()'
+2018-12-10 16:47:18,917  INFO saby invoke_event_thread Case_id:Case1.2 Activity:z 'Initialising thread'
+2018-12-10 16:47:18,917  INFO saby invoke_event_thread Case_id:Case1.2 Activity:z 'Starting thread for event '
+2018-12-10 16:47:18,917  INFO saby run Thread:31 Case_id:Case1.2 Activity:z 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:18,917 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:18,917 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:47:18,917  INFO saby run Thread:31 Case_id:Case1.2 Activity:z 'The server response is: Alert !!!  No connection from d to z'
+2018-12-10 16:47:19,478  INFO saby simulate_stream_event Case_id:Case3.0 Activity:i 'Calling invoke_event_thread()'
+2018-12-10 16:47:19,478  INFO saby invoke_event_thread Case_id:Case3.0 Activity:i 'Initialising thread'
+2018-12-10 16:47:19,478  INFO saby invoke_event_thread Case_id:Case3.0 Activity:i 'Starting thread for event '
+2018-12-10 16:47:19,478  INFO saby run Thread:32 Case_id:Case3.0 Activity:i 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:19,478 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:19,478 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:47:19,478  INFO saby run Thread:32 Case_id:Case3.0 Activity:i 'The server response is: Alert !!!  No connection from h to i'
+2018-12-10 16:47:20,018  INFO saby simulate_stream_event Case_id:Case2.0 Activity:i 'Calling invoke_event_thread()'
+2018-12-10 16:47:20,018  INFO saby invoke_event_thread Case_id:Case2.0 Activity:i 'Initialising thread'
+2018-12-10 16:47:20,018  INFO saby invoke_event_thread Case_id:Case2.0 Activity:i 'Starting thread for event '
+2018-12-10 16:47:20,018  INFO saby run Thread:33 Case_id:Case2.0 Activity:i 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:20,020 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:20,023 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:47:20,024  INFO saby run Thread:33 Case_id:Case2.0 Activity:i 'The server response is: Alert !!!  No connection from z to i'
+2018-12-10 16:47:20,557  INFO saby simulate_stream_event Case_id:Case1.2 Activity:h 'Calling invoke_event_thread()'
+2018-12-10 16:47:20,635  INFO saby invoke_event_thread Case_id:Case1.2 Activity:h 'Initialising thread'
+2018-12-10 16:47:20,635  INFO saby invoke_event_thread Case_id:Case1.2 Activity:h 'Starting thread for event '
+2018-12-10 16:47:20,635  INFO saby run Thread:34 Case_id:Case1.2 Activity:h 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:20,635 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:20,635 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:47:20,635  INFO saby run Thread:34 Case_id:Case1.2 Activity:h 'The server response is: Alert !!!  No connection from z to h'
+2018-12-10 16:47:21,168  INFO saby simulate_stream_event Case_id:Case3.0 Activity:j 'Calling invoke_event_thread()'
+2018-12-10 16:47:21,168  INFO saby invoke_event_thread Case_id:Case3.0 Activity:j 'Initialising thread'
+2018-12-10 16:47:21,168  INFO saby invoke_event_thread Case_id:Case3.0 Activity:j 'Starting thread for event '
+2018-12-10 16:47:21,168  INFO saby run Thread:35 Case_id:Case3.0 Activity:j 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:21,168 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:21,168 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:47:21,168  INFO saby run Thread:35 Case_id:Case3.0 Activity:j 'The server response is: Alert !!!  No connection from i to j'
+2018-12-10 16:47:21,715  INFO saby simulate_stream_event Case_id:Case2.0 Activity:k 'Calling invoke_event_thread()'
+2018-12-10 16:47:21,715  INFO saby invoke_event_thread Case_id:Case2.0 Activity:k 'Initialising thread'
+2018-12-10 16:47:21,715  INFO saby invoke_event_thread Case_id:Case2.0 Activity:k 'Starting thread for event '
+2018-12-10 16:47:21,715  INFO saby run Thread:36 Case_id:Case2.0 Activity:k 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:21,715 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:21,715 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:47:21,715  INFO saby run Thread:36 Case_id:Case2.0 Activity:k 'The server response is: Alert !!!  No connection from i to k'
+2018-12-10 16:47:22,261  INFO saby simulate_stream_event Case_id:Case1.2 Activity:l 'Calling invoke_event_thread()'
+2018-12-10 16:47:22,261  INFO saby invoke_event_thread Case_id:Case1.2 Activity:l 'Initialising thread'
+2018-12-10 16:47:22,261  INFO saby invoke_event_thread Case_id:Case1.2 Activity:l 'Starting thread for event '
+2018-12-10 16:47:22,261  INFO saby run Thread:37 Case_id:Case1.2 Activity:l 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:22,261 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:22,261 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:47:22,261  INFO saby run Thread:37 Case_id:Case1.2 Activity:l 'The server response is: Alert !!!  No connection from h to l'
+2018-12-10 16:47:22,809  INFO saby simulate_stream_event Case_id:Case1.2 Activity:m 'Calling invoke_event_thread()'
+2018-12-10 16:47:22,809  INFO saby invoke_event_thread Case_id:Case1.2 Activity:m 'Initialising thread'
+2018-12-10 16:47:22,809  INFO saby invoke_event_thread Case_id:Case1.2 Activity:m 'Starting thread for event '
+2018-12-10 16:47:22,809  INFO saby run Thread:38 Case_id:Case1.2 Activity:m 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:22,809 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:22,809 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:47:22,809  INFO saby run Thread:38 Case_id:Case1.2 Activity:m 'The server response is: Alert !!!  No connection from l to m'
+2018-12-10 16:47:23,354  INFO saby simulate_stream_event Case_id:Case1.1 Activity:m 'Calling invoke_event_thread()'
+2018-12-10 16:47:23,354  INFO saby invoke_event_thread Case_id:Case1.1 Activity:m 'Initialising thread'
+2018-12-10 16:47:23,354  INFO saby invoke_event_thread Case_id:Case1.1 Activity:m 'Starting thread for event '
+2018-12-10 16:47:23,354  INFO saby run Thread:39 Case_id:Case1.1 Activity:m 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:23,354 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:23,354 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:47:23,354  INFO saby run Thread:39 Case_id:Case1.1 Activity:m 'The server response is: Alert !!!  No connection from d to m'
+2018-12-10 16:47:23,900  INFO saby simulate_stream_event Case_id:Case1.0 Activity:m 'Calling invoke_event_thread()'
+2018-12-10 16:47:23,900  INFO saby invoke_event_thread Case_id:Case1.0 Activity:m 'Initialising thread'
+2018-12-10 16:47:23,900  INFO saby invoke_event_thread Case_id:Case1.0 Activity:m 'Starting thread for event '
+2018-12-10 16:47:23,900  INFO saby run Thread:40 Case_id:Case1.0 Activity:m 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:23,900 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:23,900 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:47:23,900  INFO saby run Thread:40 Case_id:Case1.0 Activity:m 'The server response is: Alert !!!  No connection from d to m'
+2018-12-10 16:47:24,433  INFO saby simulate_stream_event Case_id:Case2.1 Activity:x 'Calling invoke_event_thread()'
+2018-12-10 16:47:24,589  INFO saby invoke_event_thread Case_id:Case2.1 Activity:x 'Initialising thread'
+2018-12-10 16:47:24,589  INFO saby invoke_event_thread Case_id:Case2.1 Activity:x 'Starting thread for event '
+2018-12-10 16:47:24,589  INFO saby run Thread:41 Case_id:Case2.1 Activity:x 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:24,589 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:24,589 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:47:24,589  INFO saby run Thread:41 Case_id:Case2.1 Activity:x 'The server response is: Alert !!!  No connection from d to x'
+2018-12-10 16:47:25,135  INFO saby simulate_stream_event Case_id:Case1.2 Activity:n 'Calling invoke_event_thread()'
+2018-12-10 16:47:25,135  INFO saby invoke_event_thread Case_id:Case1.2 Activity:n 'Initialising thread'
+2018-12-10 16:47:25,135  INFO saby invoke_event_thread Case_id:Case1.2 Activity:n 'Starting thread for event '
+2018-12-10 16:47:25,135  INFO saby run Thread:42 Case_id:Case1.2 Activity:n 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:25,135 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:25,135 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:47:25,135  INFO saby run Thread:42 Case_id:Case1.2 Activity:n 'The server response is: Alert !!!  No connection from m to n'
+2018-12-10 16:47:25,682  INFO saby simulate_stream_event Case_id:Case1.1 Activity:n 'Calling invoke_event_thread()'
+2018-12-10 16:47:25,682  INFO saby invoke_event_thread Case_id:Case1.1 Activity:n 'Initialising thread'
+2018-12-10 16:47:25,682  INFO saby invoke_event_thread Case_id:Case1.1 Activity:n 'Starting thread for event '
+2018-12-10 16:47:25,682  INFO saby run Thread:43 Case_id:Case1.1 Activity:n 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:25,682 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:25,682 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:47:25,682  INFO saby run Thread:43 Case_id:Case1.1 Activity:n 'The server response is: Alert !!!  No connection from m to n'
+2018-12-10 16:47:26,230  INFO saby simulate_stream_event Case_id:Case1.0 Activity:n 'Calling invoke_event_thread()'
+2018-12-10 16:47:26,230  INFO saby invoke_event_thread Case_id:Case1.0 Activity:n 'Initialising thread'
+2018-12-10 16:47:26,230  INFO saby invoke_event_thread Case_id:Case1.0 Activity:n 'Starting thread for event '
+2018-12-10 16:47:26,230  INFO saby run Thread:44 Case_id:Case1.0 Activity:n 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:26,230 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:26,230 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:47:26,230  INFO saby run Thread:44 Case_id:Case1.0 Activity:n 'The server response is: Alert !!!  No connection from m to n'
+2018-12-10 16:47:26,778  INFO saby simulate_stream_event Case_id:Case2.1 Activity:v 'Calling invoke_event_thread()'
+2018-12-10 16:47:26,778  INFO saby invoke_event_thread Case_id:Case2.1 Activity:v 'Initialising thread'
+2018-12-10 16:47:26,778  INFO saby invoke_event_thread Case_id:Case2.1 Activity:v 'Starting thread for event '
+2018-12-10 16:47:26,778  INFO saby run Thread:45 Case_id:Case2.1 Activity:v 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:26,778 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:26,778 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:47:26,778  INFO saby run Thread:45 Case_id:Case2.1 Activity:v 'The server response is: Alert !!!  No connection from x to v'
+2018-12-10 16:47:27,323  INFO saby simulate_stream_event Case_id:Case1.2 Activity:o 'Calling invoke_event_thread()'
+2018-12-10 16:47:27,323  INFO saby invoke_event_thread Case_id:Case1.2 Activity:o 'Initialising thread'
+2018-12-10 16:47:27,323  INFO saby invoke_event_thread Case_id:Case1.2 Activity:o 'Starting thread for event '
+2018-12-10 16:47:27,323  INFO saby run Thread:46 Case_id:Case1.2 Activity:o 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:27,323 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:27,323 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:47:27,323  INFO saby run Thread:46 Case_id:Case1.2 Activity:o 'The server response is: Alert !!!  No connection from n to o'
+2018-12-10 16:47:27,870  INFO saby simulate_stream_event Case_id:Case1.1 Activity:o 'Calling invoke_event_thread()'
+2018-12-10 16:47:27,870  INFO saby invoke_event_thread Case_id:Case1.1 Activity:o 'Initialising thread'
+2018-12-10 16:47:27,870  INFO saby invoke_event_thread Case_id:Case1.1 Activity:o 'Starting thread for event '
+2018-12-10 16:47:27,870  INFO saby run Thread:47 Case_id:Case1.1 Activity:o 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:27,870 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:27,870 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:47:27,870  INFO saby run Thread:47 Case_id:Case1.1 Activity:o 'The server response is: Alert !!!  No connection from n to o'
+2018-12-10 16:47:28,416  INFO saby simulate_stream_event Case_id:Case1.0 Activity:j 'Calling invoke_event_thread()'
+2018-12-10 16:47:28,416  INFO saby invoke_event_thread Case_id:Case1.0 Activity:j 'Initialising thread'
+2018-12-10 16:47:28,416  INFO saby invoke_event_thread Case_id:Case1.0 Activity:j 'Starting thread for event '
+2018-12-10 16:47:28,416  INFO saby run Thread:48 Case_id:Case1.0 Activity:j 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:28,416 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:28,416 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:47:28,416  INFO saby run Thread:48 Case_id:Case1.0 Activity:j 'The server response is: Alert !!!  No connection from n to j'
+2018-12-10 16:47:28,964  INFO saby simulate_stream_event Case_id:Case2.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 16:47:28,964  INFO saby invoke_event_thread Case_id:Case2.1 Activity:d 'Initialising thread'
+2018-12-10 16:47:28,964  INFO saby invoke_event_thread Case_id:Case2.1 Activity:d 'Starting thread for event '
+2018-12-10 16:47:28,964  INFO saby run Thread:49 Case_id:Case2.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:28,964 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:28,964 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:47:28,964  INFO saby run Thread:49 Case_id:Case2.1 Activity:d 'The server response is: Alert !!!  No connection from v to d'
+2018-12-10 16:47:29,510  INFO saby simulate_stream_event Case_id:Case1.2 Activity:p 'Calling invoke_event_thread()'
+2018-12-10 16:47:29,510  INFO saby invoke_event_thread Case_id:Case1.2 Activity:p 'Initialising thread'
+2018-12-10 16:47:29,510  INFO saby invoke_event_thread Case_id:Case1.2 Activity:p 'Starting thread for event '
+2018-12-10 16:47:29,510  INFO saby run Thread:50 Case_id:Case1.2 Activity:p 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:29,510 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:29,510 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:47:29,510  INFO saby run Thread:50 Case_id:Case1.2 Activity:p 'The server response is: Alert !!!  No connection from o to p'
+2018-12-10 16:47:30,038  INFO saby simulate_stream_event Case_id:Case1.1 Activity:p 'Calling invoke_event_thread()'
+2018-12-10 16:47:30,038  INFO saby invoke_event_thread Case_id:Case1.1 Activity:p 'Initialising thread'
+2018-12-10 16:47:30,038  INFO saby invoke_event_thread Case_id:Case1.1 Activity:p 'Starting thread for event '
+2018-12-10 16:47:30,039  INFO saby run Thread:51 Case_id:Case1.1 Activity:p 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:30,041 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:30,044 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:47:30,044  INFO saby run Thread:51 Case_id:Case1.1 Activity:p 'The server response is: Alert !!!  No connection from o to p'
+2018-12-10 16:47:30,574  INFO saby simulate_stream_event Case_id:Case1.0 Activity:p 'Calling invoke_event_thread()'
+2018-12-10 16:47:30,574  INFO saby invoke_event_thread Case_id:Case1.0 Activity:p 'Initialising thread'
+2018-12-10 16:47:30,574  INFO saby invoke_event_thread Case_id:Case1.0 Activity:p 'Starting thread for event '
+2018-12-10 16:47:30,574  INFO saby run Thread:52 Case_id:Case1.0 Activity:p 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:30,574 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:30,574 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:47:30,574  INFO saby run Thread:52 Case_id:Case1.0 Activity:p 'The server response is: Alert !!!  No connection from j to p'
+2018-12-10 16:47:31,119  INFO saby simulate_stream_event Case_id:Case2.1 Activity:ghki 'Calling invoke_event_thread()'
+2018-12-10 16:47:31,119  INFO saby invoke_event_thread Case_id:Case2.1 Activity:ghki 'Initialising thread'
+2018-12-10 16:47:31,119  INFO saby invoke_event_thread Case_id:Case2.1 Activity:ghki 'Starting thread for event '
+2018-12-10 16:47:31,119  INFO saby run Thread:53 Case_id:Case2.1 Activity:ghki 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:31,119 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:31,119 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 39
+2018-12-10 16:47:31,119  INFO saby run Thread:53 Case_id:Case2.1 Activity:ghki 'The server response is: Alert !!!  No connection from d to ghki'
+2018-12-10 16:47:31,666  INFO saby simulate_stream_event Case_id:Case1.2 Activity:q 'Calling invoke_event_thread()'
+2018-12-10 16:47:31,666  INFO saby invoke_event_thread Case_id:Case1.2 Activity:q 'Initialising thread'
+2018-12-10 16:47:31,666  INFO saby invoke_event_thread Case_id:Case1.2 Activity:q 'Starting thread for event '
+2018-12-10 16:47:31,666  INFO saby run Thread:54 Case_id:Case1.2 Activity:q 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:31,666 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:31,666 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:47:31,666  INFO saby run Thread:54 Case_id:Case1.2 Activity:q 'The server response is: Alert !!!  No connection from p to q'
+2018-12-10 16:47:32,229  INFO saby simulate_stream_event Case_id:Case1.1 Activity:q 'Calling invoke_event_thread()'
+2018-12-10 16:47:32,229  INFO saby invoke_event_thread Case_id:Case1.1 Activity:q 'Initialising thread'
+2018-12-10 16:47:32,229  INFO saby invoke_event_thread Case_id:Case1.1 Activity:q 'Starting thread for event '
+2018-12-10 16:47:32,229  INFO saby run Thread:55 Case_id:Case1.1 Activity:q 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:32,229 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:32,229 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:47:32,229  INFO saby run Thread:55 Case_id:Case1.1 Activity:q 'The server response is: Alert !!!  No connection from p to q'
+2018-12-10 16:47:32,776  INFO saby simulate_stream_event Case_id:Case1.0 Activity:q 'Calling invoke_event_thread()'
+2018-12-10 16:47:32,776  INFO saby invoke_event_thread Case_id:Case1.0 Activity:q 'Initialising thread'
+2018-12-10 16:47:32,776  INFO saby invoke_event_thread Case_id:Case1.0 Activity:q 'Starting thread for event '
+2018-12-10 16:47:32,776  INFO saby run Thread:56 Case_id:Case1.0 Activity:q 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:32,776 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:32,776 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:47:32,776  INFO saby run Thread:56 Case_id:Case1.0 Activity:q 'The server response is: Alert !!!  No connection from p to q'
+2018-12-10 16:47:33,324  INFO saby simulate_stream_event Case_id:Case2.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 16:47:33,324  INFO saby invoke_event_thread Case_id:Case2.1 Activity:b 'Initialising thread'
+2018-12-10 16:47:33,324  INFO saby invoke_event_thread Case_id:Case2.1 Activity:b 'Starting thread for event '
+2018-12-10 16:47:33,324  INFO saby run Thread:57 Case_id:Case2.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:33,324 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:33,324 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 39
+2018-12-10 16:47:33,324  INFO saby run Thread:57 Case_id:Case2.1 Activity:b 'The server response is: Alert !!!  No connection from ghki to b'
+2018-12-10 16:47:33,324  INFO saby simulate_stream_event Case_id:NONE Activity:END 'Calling invoke_event_thread()'
+2018-12-10 16:47:33,324  INFO saby invoke_event_thread Case_id:NONE Activity:END 'Initialising thread'
+2018-12-10 16:47:33,324  INFO saby invoke_event_thread Case_id:NONE Activity:END 'Starting thread for event '
+2018-12-10 16:47:33,324  INFO saby run Thread:58 Case_id:NONE Activity:END 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:47:33,324 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:47:33,324 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:47:33,324  INFO saby run Thread:58 Case_id:NONE Activity:END 'The server response is: OK'
+2018-12-10 16:47:35,323  INFO saby main 'compliance checking is completed'
+2018-12-10 16:47:35,323  INFO saby main 'The options are displayed'
+2018-12-10 16:48:35,542  INFO saby main 'The user selected option 1'
+2018-12-10 16:48:35,542  INFO saby main 'Calling run_compliance_checker()'
+2018-12-10 16:48:35,542  INFO saby run_compliance_checker 'Calling read_log()'
+2018-12-10 16:48:35,542  INFO saby read_log 'Creating a trace logger file: '
+2018-12-10 16:48:35,557  INFO saby read_log 'Transforming trace logger to event logger'
+2018-12-10 16:48:35,557  INFO saby read_log 'Sorting event logger'
+2018-12-10 16:48:35,557  INFO saby run_compliance_checker 'Calling simulate_stream_event()'
+2018-12-10 16:48:36,104  INFO saby simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 16:48:36,104  INFO saby invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2018-12-10 16:48:36,104  INFO saby invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2018-12-10 16:48:36,104  INFO saby run Thread:59 Case_id:Case1.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:48:36,104 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:48:37,135  ERROR saby run Thread:59 Case_id:Case1.0 Activity:a 'The server got disconnected, please try again later '
+2018-12-10 16:48:37,135  INFO saby simulate_stream_event Case_id:NONE Activity:END 'Calling invoke_event_thread()'
+2018-12-10 16:48:37,135  INFO saby invoke_event_thread Case_id:NONE Activity:END 'Initialising thread'
+2018-12-10 16:48:37,135  INFO saby invoke_event_thread Case_id:NONE Activity:END 'Starting thread for event '
+2018-12-10 16:48:37,135  INFO saby run Thread:60 Case_id:NONE Activity:END 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:48:37,135 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:48:38,166  ERROR saby run Thread:60 Case_id:NONE Activity:END 'The server got disconnected, please try again later '
+2018-12-10 16:48:38,166  INFO saby main 'compliance checking is completed'
+2018-12-10 16:48:38,166  INFO saby main 'The options are displayed'
+2018-12-10 16:48:50,089  INFO saby main 'The user selected option 1'
+2018-12-10 16:48:50,089  INFO saby main 'Calling run_compliance_checker()'
+2018-12-10 16:48:50,089  INFO saby run_compliance_checker 'Calling read_log()'
+2018-12-10 16:48:50,089  INFO saby read_log 'Creating a trace logger file: '
+2018-12-10 16:48:50,089  INFO saby read_log 'Transforming trace logger to event logger'
+2018-12-10 16:48:50,089  INFO saby read_log 'Sorting event logger'
+2018-12-10 16:48:50,089  INFO saby run_compliance_checker 'Calling simulate_stream_event()'
+2018-12-10 16:48:50,618  INFO saby simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 16:48:50,618  INFO saby invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2018-12-10 16:48:50,618  INFO saby invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2018-12-10 16:48:50,618  INFO saby run Thread:61 Case_id:Case1.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:48:50,618 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:48:50,618 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:48:50,618  INFO saby run Thread:61 Case_id:Case1.0 Activity:a 'The server response is: OK'
+2018-12-10 16:48:51,167  INFO saby simulate_stream_event Case_id:Case3.0 Activity:uiy 'Calling invoke_event_thread()'
+2018-12-10 16:48:51,167  INFO saby invoke_event_thread Case_id:Case3.0 Activity:uiy 'Initialising thread'
+2018-12-10 16:48:51,167  INFO saby invoke_event_thread Case_id:Case3.0 Activity:uiy 'Starting thread for event '
+2018-12-10 16:48:51,167  INFO saby run Thread:62 Case_id:Case3.0 Activity:uiy 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:48:51,167 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:48:51,198 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 38
+2018-12-10 16:48:51,198  INFO saby run Thread:62 Case_id:Case3.0 Activity:uiy 'The server response is: Alert !!!  No connection from * to uiy'
+2018-12-10 16:48:51,745  INFO saby simulate_stream_event Case_id:Case2.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 16:48:51,745  INFO saby invoke_event_thread Case_id:Case2.0 Activity:a 'Initialising thread'
+2018-12-10 16:48:51,745  INFO saby invoke_event_thread Case_id:Case2.0 Activity:a 'Starting thread for event '
+2018-12-10 16:48:51,745  INFO saby run Thread:63 Case_id:Case2.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:48:51,745 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:48:51,745 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:48:51,745  INFO saby run Thread:63 Case_id:Case2.0 Activity:a 'The server response is: OK'
+2018-12-10 16:48:52,277  INFO saby simulate_stream_event Case_id:Case1.2 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 16:48:52,277  INFO saby invoke_event_thread Case_id:Case1.2 Activity:a 'Initialising thread'
+2018-12-10 16:48:52,277  INFO saby invoke_event_thread Case_id:Case1.2 Activity:a 'Starting thread for event '
+2018-12-10 16:48:52,277  INFO saby run Thread:64 Case_id:Case1.2 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:48:52,277 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:48:52,277 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:48:52,277  INFO saby run Thread:64 Case_id:Case1.2 Activity:a 'The server response is: OK'
+2018-12-10 16:48:52,807  INFO saby simulate_stream_event Case_id:Case1.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 16:48:52,807  INFO saby invoke_event_thread Case_id:Case1.1 Activity:a 'Initialising thread'
+2018-12-10 16:48:52,807  INFO saby invoke_event_thread Case_id:Case1.1 Activity:a 'Starting thread for event '
+2018-12-10 16:48:52,807  INFO saby run Thread:65 Case_id:Case1.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:48:52,807 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:48:52,807 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:48:52,807  INFO saby run Thread:65 Case_id:Case1.1 Activity:a 'The server response is: OK'
+2018-12-10 16:48:53,354  INFO saby simulate_stream_event Case_id:Case2.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 16:48:53,354  INFO saby invoke_event_thread Case_id:Case2.1 Activity:a 'Initialising thread'
+2018-12-10 16:48:53,354  INFO saby invoke_event_thread Case_id:Case2.1 Activity:a 'Starting thread for event '
+2018-12-10 16:48:53,354  INFO saby run Thread:66 Case_id:Case2.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:48:53,354 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:48:53,354 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:48:53,354  INFO saby run Thread:66 Case_id:Case2.1 Activity:a 'The server response is: OK'
+2018-12-10 16:48:53,901  INFO saby simulate_stream_event Case_id:Case1.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 16:48:53,901  INFO saby invoke_event_thread Case_id:Case1.0 Activity:b 'Initialising thread'
+2018-12-10 16:48:53,901  INFO saby invoke_event_thread Case_id:Case1.0 Activity:b 'Starting thread for event '
+2018-12-10 16:48:53,901  INFO saby run Thread:67 Case_id:Case1.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:48:53,901 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:48:53,901 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:48:53,901  INFO saby run Thread:67 Case_id:Case1.0 Activity:b 'The server response is: OK'
+2018-12-10 16:48:54,447  INFO saby simulate_stream_event Case_id:Case3.0 Activity:edse 'Calling invoke_event_thread()'
+2018-12-10 16:48:54,447  INFO saby invoke_event_thread Case_id:Case3.0 Activity:edse 'Initialising thread'
+2018-12-10 16:48:54,447  INFO saby invoke_event_thread Case_id:Case3.0 Activity:edse 'Starting thread for event '
+2018-12-10 16:48:54,447  INFO saby run Thread:68 Case_id:Case3.0 Activity:edse 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:48:54,447 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:48:54,447 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 41
+2018-12-10 16:48:54,447  INFO saby run Thread:68 Case_id:Case3.0 Activity:edse 'The server response is: Alert !!!  No connection from uiy to edse'
+2018-12-10 16:48:54,994  INFO saby simulate_stream_event Case_id:Case2.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 16:48:54,994  INFO saby invoke_event_thread Case_id:Case2.0 Activity:c 'Initialising thread'
+2018-12-10 16:48:54,994  INFO saby invoke_event_thread Case_id:Case2.0 Activity:c 'Starting thread for event '
+2018-12-10 16:48:54,994  INFO saby run Thread:69 Case_id:Case2.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:48:54,994 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:48:54,994 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:48:54,994  INFO saby run Thread:69 Case_id:Case2.0 Activity:c 'The server response is: OK'
+2018-12-10 16:48:55,543  INFO saby simulate_stream_event Case_id:Case1.2 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 16:48:55,543  INFO saby invoke_event_thread Case_id:Case1.2 Activity:b 'Initialising thread'
+2018-12-10 16:48:55,543  INFO saby invoke_event_thread Case_id:Case1.2 Activity:b 'Starting thread for event '
+2018-12-10 16:48:55,543  INFO saby run Thread:70 Case_id:Case1.2 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:48:55,543 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:48:55,543 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:48:55,543  INFO saby run Thread:70 Case_id:Case1.2 Activity:b 'The server response is: OK'
+2018-12-10 16:48:56,104  INFO saby simulate_stream_event Case_id:Case1.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 16:48:56,104  INFO saby invoke_event_thread Case_id:Case1.1 Activity:b 'Initialising thread'
+2018-12-10 16:48:56,104  INFO saby invoke_event_thread Case_id:Case1.1 Activity:b 'Starting thread for event '
+2018-12-10 16:48:56,104  INFO saby run Thread:71 Case_id:Case1.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:48:56,104 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:48:56,104 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:48:56,104  INFO saby run Thread:71 Case_id:Case1.1 Activity:b 'The server response is: OK'
+2018-12-10 16:48:56,651  INFO saby simulate_stream_event Case_id:Case2.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 16:48:56,651  INFO saby invoke_event_thread Case_id:Case2.1 Activity:c 'Initialising thread'
+2018-12-10 16:48:56,651  INFO saby invoke_event_thread Case_id:Case2.1 Activity:c 'Starting thread for event '
+2018-12-10 16:48:56,651  INFO saby run Thread:72 Case_id:Case2.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:48:56,651 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:48:56,651 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:48:56,651  INFO saby run Thread:72 Case_id:Case2.1 Activity:c 'The server response is: OK'
+2018-12-10 16:48:57,199  INFO saby simulate_stream_event Case_id:Case1.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 16:48:57,199  INFO saby invoke_event_thread Case_id:Case1.0 Activity:c 'Initialising thread'
+2018-12-10 16:48:57,199  INFO saby invoke_event_thread Case_id:Case1.0 Activity:c 'Starting thread for event '
+2018-12-10 16:48:57,199  INFO saby run Thread:73 Case_id:Case1.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:48:57,199 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:48:57,199 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:48:57,199  INFO saby run Thread:73 Case_id:Case1.0 Activity:c 'The server response is: OK'
+2018-12-10 16:48:57,752  INFO saby simulate_stream_event Case_id:Case3.0 Activity:djkh 'Calling invoke_event_thread()'
+2018-12-10 16:48:57,752  INFO saby invoke_event_thread Case_id:Case3.0 Activity:djkh 'Initialising thread'
+2018-12-10 16:48:57,752  INFO saby invoke_event_thread Case_id:Case3.0 Activity:djkh 'Starting thread for event '
+2018-12-10 16:48:57,752  INFO saby run Thread:74 Case_id:Case3.0 Activity:djkh 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:48:57,752 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:48:57,752 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 42
+2018-12-10 16:48:57,752  INFO saby run Thread:74 Case_id:Case3.0 Activity:djkh 'The server response is: Alert !!!  No connection from edse to djkh'
+2018-12-10 16:48:58,276  INFO saby simulate_stream_event Case_id:Case2.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 16:48:58,276  INFO saby invoke_event_thread Case_id:Case2.0 Activity:b 'Initialising thread'
+2018-12-10 16:48:58,276  INFO saby invoke_event_thread Case_id:Case2.0 Activity:b 'Starting thread for event '
+2018-12-10 16:48:58,276  INFO saby run Thread:75 Case_id:Case2.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:48:58,276 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:48:58,276 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:48:58,276  INFO saby run Thread:75 Case_id:Case2.0 Activity:b 'The server response is: OK'
+2018-12-10 16:48:58,822  INFO saby simulate_stream_event Case_id:Case1.2 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 16:48:58,822  INFO saby invoke_event_thread Case_id:Case1.2 Activity:c 'Initialising thread'
+2018-12-10 16:48:58,822  INFO saby invoke_event_thread Case_id:Case1.2 Activity:c 'Starting thread for event '
+2018-12-10 16:48:58,822  INFO saby run Thread:76 Case_id:Case1.2 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:48:58,822 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:48:58,822 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:48:58,822  INFO saby run Thread:76 Case_id:Case1.2 Activity:c 'The server response is: OK'
+2018-12-10 16:48:59,369  INFO saby simulate_stream_event Case_id:Case1.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 16:48:59,369  INFO saby invoke_event_thread Case_id:Case1.1 Activity:c 'Initialising thread'
+2018-12-10 16:48:59,369  INFO saby invoke_event_thread Case_id:Case1.1 Activity:c 'Starting thread for event '
+2018-12-10 16:48:59,369  INFO saby run Thread:77 Case_id:Case1.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:48:59,369 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:48:59,369 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:48:59,369  INFO saby run Thread:77 Case_id:Case1.1 Activity:c 'The server response is: OK'
+2018-12-10 16:48:59,921  INFO saby simulate_stream_event Case_id:Case2.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 16:48:59,921  INFO saby invoke_event_thread Case_id:Case2.1 Activity:b 'Initialising thread'
+2018-12-10 16:48:59,921  INFO saby invoke_event_thread Case_id:Case2.1 Activity:b 'Starting thread for event '
+2018-12-10 16:48:59,921  INFO saby run Thread:78 Case_id:Case2.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:48:59,921 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:48:59,921 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:48:59,921  INFO saby run Thread:78 Case_id:Case2.1 Activity:b 'The server response is: OK'
+2018-12-10 16:49:00,468  INFO saby simulate_stream_event Case_id:Case1.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 16:49:00,468  INFO saby invoke_event_thread Case_id:Case1.0 Activity:d 'Initialising thread'
+2018-12-10 16:49:00,468  INFO saby invoke_event_thread Case_id:Case1.0 Activity:d 'Starting thread for event '
+2018-12-10 16:49:00,468  INFO saby run Thread:79 Case_id:Case1.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:00,468 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:00,468 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:49:00,468  INFO saby run Thread:79 Case_id:Case1.0 Activity:d 'The server response is: OK'
+2018-12-10 16:49:01,015  INFO saby simulate_stream_event Case_id:Case3.0 Activity:assf 'Calling invoke_event_thread()'
+2018-12-10 16:49:01,015  INFO saby invoke_event_thread Case_id:Case3.0 Activity:assf 'Initialising thread'
+2018-12-10 16:49:01,015  INFO saby invoke_event_thread Case_id:Case3.0 Activity:assf 'Starting thread for event '
+2018-12-10 16:49:01,015  INFO saby run Thread:80 Case_id:Case3.0 Activity:assf 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:01,015 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:01,015 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 42
+2018-12-10 16:49:01,015  INFO saby run Thread:80 Case_id:Case3.0 Activity:assf 'The server response is: Alert !!!  No connection from djkh to assf'
+2018-12-10 16:49:01,557  INFO saby simulate_stream_event Case_id:Case2.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 16:49:01,557  INFO saby invoke_event_thread Case_id:Case2.0 Activity:d 'Initialising thread'
+2018-12-10 16:49:01,557  INFO saby invoke_event_thread Case_id:Case2.0 Activity:d 'Starting thread for event '
+2018-12-10 16:49:01,557  INFO saby run Thread:81 Case_id:Case2.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:01,557 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:01,557 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:49:01,557  INFO saby run Thread:81 Case_id:Case2.0 Activity:d 'The server response is: OK'
+2018-12-10 16:49:02,104  INFO saby simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 16:49:02,104  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-10 16:49:02,104  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-10 16:49:02,104  INFO saby run Thread:82 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:02,104 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:02,104 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:49:02,104  INFO saby run Thread:82 Case_id:Case1.2 Activity:d 'The server response is: OK'
+2018-12-10 16:49:02,651  INFO saby simulate_stream_event Case_id:Case1.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 16:49:02,994  INFO saby invoke_event_thread Case_id:Case1.1 Activity:d 'Initialising thread'
+2018-12-10 16:49:02,994  INFO saby invoke_event_thread Case_id:Case1.1 Activity:d 'Starting thread for event '
+2018-12-10 16:49:02,994  INFO saby run Thread:83 Case_id:Case1.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:02,994 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:03,009 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:49:03,009  INFO saby run Thread:83 Case_id:Case1.1 Activity:d 'The server response is: OK'
+2018-12-10 16:49:03,558  INFO saby simulate_stream_event Case_id:Case2.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 16:49:03,558  INFO saby invoke_event_thread Case_id:Case2.1 Activity:d 'Initialising thread'
+2018-12-10 16:49:03,558  INFO saby invoke_event_thread Case_id:Case2.1 Activity:d 'Starting thread for event '
+2018-12-10 16:49:03,558  INFO saby run Thread:84 Case_id:Case2.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:03,558 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:03,558 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:49:03,558  INFO saby run Thread:84 Case_id:Case2.1 Activity:d 'The server response is: OK'
+2018-12-10 16:49:04,105  INFO saby simulate_stream_event Case_id:Case2.0 Activity:e 'Calling invoke_event_thread()'
+2018-12-10 16:49:04,105  INFO saby invoke_event_thread Case_id:Case2.0 Activity:e 'Initialising thread'
+2018-12-10 16:49:04,105  INFO saby invoke_event_thread Case_id:Case2.0 Activity:e 'Starting thread for event '
+2018-12-10 16:49:04,105  INFO saby run Thread:85 Case_id:Case2.0 Activity:e 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:04,105 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:04,105 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:49:04,105  INFO saby run Thread:85 Case_id:Case2.0 Activity:e 'The server response is: Alert !!!  No connection from d to e'
+2018-12-10 16:49:04,649  INFO saby simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 16:49:04,649  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-10 16:49:04,649  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-10 16:49:04,649  INFO saby run Thread:86 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:04,649 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:04,649 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:49:04,649  INFO saby run Thread:86 Case_id:Case1.2 Activity:d 'The server response is: OK'
+2018-12-10 16:49:05,198  INFO saby simulate_stream_event Case_id:Case3.0 Activity:g 'Calling invoke_event_thread()'
+2018-12-10 16:49:05,199  INFO saby invoke_event_thread Case_id:Case3.0 Activity:g 'Initialising thread'
+2018-12-10 16:49:05,199  INFO saby invoke_event_thread Case_id:Case3.0 Activity:g 'Starting thread for event '
+2018-12-10 16:49:05,199  INFO saby run Thread:87 Case_id:Case3.0 Activity:g 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:05,202 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:05,207 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 39
+2018-12-10 16:49:05,208  INFO saby run Thread:87 Case_id:Case3.0 Activity:g 'The server response is: Alert !!!  No connection from assf to g'
+2018-12-10 16:49:05,763  INFO saby simulate_stream_event Case_id:Case2.0 Activity:x 'Calling invoke_event_thread()'
+2018-12-10 16:49:05,763  INFO saby invoke_event_thread Case_id:Case2.0 Activity:x 'Initialising thread'
+2018-12-10 16:49:05,763  INFO saby invoke_event_thread Case_id:Case2.0 Activity:x 'Starting thread for event '
+2018-12-10 16:49:05,763  INFO saby run Thread:88 Case_id:Case2.0 Activity:x 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:05,763 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:05,763 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:49:05,763  INFO saby run Thread:88 Case_id:Case2.0 Activity:x 'The server response is: Alert !!!  No connection from e to x'
+2018-12-10 16:49:06,324  INFO saby simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 16:49:06,324  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-10 16:49:06,324  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-10 16:49:06,324  INFO saby run Thread:89 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:06,324 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:06,324 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:49:06,324  INFO saby run Thread:89 Case_id:Case1.2 Activity:d 'The server response is: OK'
+2018-12-10 16:49:06,886  INFO saby simulate_stream_event Case_id:Case3.0 Activity:h 'Calling invoke_event_thread()'
+2018-12-10 16:49:06,886  INFO saby invoke_event_thread Case_id:Case3.0 Activity:h 'Initialising thread'
+2018-12-10 16:49:06,886  INFO saby invoke_event_thread Case_id:Case3.0 Activity:h 'Starting thread for event '
+2018-12-10 16:49:06,886  INFO saby run Thread:90 Case_id:Case3.0 Activity:h 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:06,886 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:06,886 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:49:06,886  INFO saby run Thread:90 Case_id:Case3.0 Activity:h 'The server response is: Alert !!!  No connection from g to h'
+2018-12-10 16:49:07,433  INFO saby simulate_stream_event Case_id:Case2.0 Activity:z 'Calling invoke_event_thread()'
+2018-12-10 16:49:07,433  INFO saby invoke_event_thread Case_id:Case2.0 Activity:z 'Initialising thread'
+2018-12-10 16:49:07,433  INFO saby invoke_event_thread Case_id:Case2.0 Activity:z 'Starting thread for event '
+2018-12-10 16:49:07,433  INFO saby run Thread:91 Case_id:Case2.0 Activity:z 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:07,433 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:07,433 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:49:07,433  INFO saby run Thread:91 Case_id:Case2.0 Activity:z 'The server response is: Alert !!!  No connection from x to z'
+2018-12-10 16:49:07,971  INFO saby simulate_stream_event Case_id:Case1.2 Activity:z 'Calling invoke_event_thread()'
+2018-12-10 16:49:07,971  INFO saby invoke_event_thread Case_id:Case1.2 Activity:z 'Initialising thread'
+2018-12-10 16:49:07,971  INFO saby invoke_event_thread Case_id:Case1.2 Activity:z 'Starting thread for event '
+2018-12-10 16:49:07,971  INFO saby run Thread:92 Case_id:Case1.2 Activity:z 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:07,971 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:07,971 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:49:07,971  INFO saby run Thread:92 Case_id:Case1.2 Activity:z 'The server response is: Alert !!!  No connection from d to z'
+2018-12-10 16:49:08,510  INFO saby simulate_stream_event Case_id:Case3.0 Activity:i 'Calling invoke_event_thread()'
+2018-12-10 16:49:08,510  INFO saby invoke_event_thread Case_id:Case3.0 Activity:i 'Initialising thread'
+2018-12-10 16:49:08,510  INFO saby invoke_event_thread Case_id:Case3.0 Activity:i 'Starting thread for event '
+2018-12-10 16:49:08,510  INFO saby run Thread:93 Case_id:Case3.0 Activity:i 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:08,510 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:08,510 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:49:08,510  INFO saby run Thread:93 Case_id:Case3.0 Activity:i 'The server response is: Alert !!!  No connection from h to i'
+2018-12-10 16:49:09,057  INFO saby simulate_stream_event Case_id:Case2.0 Activity:i 'Calling invoke_event_thread()'
+2018-12-10 16:49:09,057  INFO saby invoke_event_thread Case_id:Case2.0 Activity:i 'Initialising thread'
+2018-12-10 16:49:09,059  INFO saby invoke_event_thread Case_id:Case2.0 Activity:i 'Starting thread for event '
+2018-12-10 16:49:09,059  INFO saby run Thread:94 Case_id:Case2.0 Activity:i 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:09,061 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:09,065 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:49:09,065  INFO saby run Thread:94 Case_id:Case2.0 Activity:i 'The server response is: Alert !!!  No connection from z to i'
+2018-12-10 16:49:09,604  INFO saby simulate_stream_event Case_id:Case1.2 Activity:h 'Calling invoke_event_thread()'
+2018-12-10 16:49:09,604  INFO saby invoke_event_thread Case_id:Case1.2 Activity:h 'Initialising thread'
+2018-12-10 16:49:09,604  INFO saby invoke_event_thread Case_id:Case1.2 Activity:h 'Starting thread for event '
+2018-12-10 16:49:09,604  INFO saby run Thread:95 Case_id:Case1.2 Activity:h 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:09,604 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:09,604 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:49:09,604  INFO saby run Thread:95 Case_id:Case1.2 Activity:h 'The server response is: Alert !!!  No connection from z to h'
+2018-12-10 16:49:10,144  INFO saby simulate_stream_event Case_id:Case3.0 Activity:j 'Calling invoke_event_thread()'
+2018-12-10 16:49:10,144  INFO saby invoke_event_thread Case_id:Case3.0 Activity:j 'Initialising thread'
+2018-12-10 16:49:10,144  INFO saby invoke_event_thread Case_id:Case3.0 Activity:j 'Starting thread for event '
+2018-12-10 16:49:10,144  INFO saby run Thread:96 Case_id:Case3.0 Activity:j 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:10,144 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:10,144 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:49:10,144  INFO saby run Thread:96 Case_id:Case3.0 Activity:j 'The server response is: Alert !!!  No connection from i to j'
+2018-12-10 16:49:10,722  INFO saby simulate_stream_event Case_id:Case2.0 Activity:k 'Calling invoke_event_thread()'
+2018-12-10 16:49:10,722  INFO saby invoke_event_thread Case_id:Case2.0 Activity:k 'Initialising thread'
+2018-12-10 16:49:10,722  INFO saby invoke_event_thread Case_id:Case2.0 Activity:k 'Starting thread for event '
+2018-12-10 16:49:10,722  INFO saby run Thread:97 Case_id:Case2.0 Activity:k 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:10,722 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:10,722 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:49:10,722  INFO saby run Thread:97 Case_id:Case2.0 Activity:k 'The server response is: Alert !!!  No connection from i to k'
+2018-12-10 16:49:11,262  INFO saby simulate_stream_event Case_id:Case1.2 Activity:l 'Calling invoke_event_thread()'
+2018-12-10 16:49:11,262  INFO saby invoke_event_thread Case_id:Case1.2 Activity:l 'Initialising thread'
+2018-12-10 16:49:11,262  INFO saby invoke_event_thread Case_id:Case1.2 Activity:l 'Starting thread for event '
+2018-12-10 16:49:11,262  INFO saby run Thread:98 Case_id:Case1.2 Activity:l 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:11,262 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:11,262 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:49:11,262  INFO saby run Thread:98 Case_id:Case1.2 Activity:l 'The server response is: Alert !!!  No connection from h to l'
+2018-12-10 16:49:11,809  INFO saby simulate_stream_event Case_id:Case1.2 Activity:m 'Calling invoke_event_thread()'
+2018-12-10 16:49:11,809  INFO saby invoke_event_thread Case_id:Case1.2 Activity:m 'Initialising thread'
+2018-12-10 16:49:11,809  INFO saby invoke_event_thread Case_id:Case1.2 Activity:m 'Starting thread for event '
+2018-12-10 16:49:11,809  INFO saby run Thread:99 Case_id:Case1.2 Activity:m 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:11,809 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:11,809 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:49:11,809  INFO saby run Thread:99 Case_id:Case1.2 Activity:m 'The server response is: Alert !!!  No connection from l to m'
+2018-12-10 16:49:12,354  INFO saby simulate_stream_event Case_id:Case1.1 Activity:m 'Calling invoke_event_thread()'
+2018-12-10 16:49:12,354  INFO saby invoke_event_thread Case_id:Case1.1 Activity:m 'Initialising thread'
+2018-12-10 16:49:12,354  INFO saby invoke_event_thread Case_id:Case1.1 Activity:m 'Starting thread for event '
+2018-12-10 16:49:12,354  INFO saby run Thread:100 Case_id:Case1.1 Activity:m 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:12,354 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:12,354 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:49:12,354  INFO saby run Thread:100 Case_id:Case1.1 Activity:m 'The server response is: Alert !!!  No connection from d to m'
+2018-12-10 16:49:12,901  INFO saby simulate_stream_event Case_id:Case1.0 Activity:m 'Calling invoke_event_thread()'
+2018-12-10 16:49:12,901  INFO saby invoke_event_thread Case_id:Case1.0 Activity:m 'Initialising thread'
+2018-12-10 16:49:12,901  INFO saby invoke_event_thread Case_id:Case1.0 Activity:m 'Starting thread for event '
+2018-12-10 16:49:12,901  INFO saby run Thread:101 Case_id:Case1.0 Activity:m 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:12,901 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:12,901 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:49:12,901  INFO saby run Thread:101 Case_id:Case1.0 Activity:m 'The server response is: Alert !!!  No connection from d to m'
+2018-12-10 16:49:13,464  INFO saby simulate_stream_event Case_id:Case2.1 Activity:x 'Calling invoke_event_thread()'
+2018-12-10 16:49:13,464  INFO saby invoke_event_thread Case_id:Case2.1 Activity:x 'Initialising thread'
+2018-12-10 16:49:13,464  INFO saby invoke_event_thread Case_id:Case2.1 Activity:x 'Starting thread for event '
+2018-12-10 16:49:13,464  INFO saby run Thread:102 Case_id:Case2.1 Activity:x 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:13,464 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:13,464 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:49:13,464  INFO saby run Thread:102 Case_id:Case2.1 Activity:x 'The server response is: Alert !!!  No connection from d to x'
+2018-12-10 16:49:14,010  INFO saby simulate_stream_event Case_id:Case1.2 Activity:n 'Calling invoke_event_thread()'
+2018-12-10 16:49:14,010  INFO saby invoke_event_thread Case_id:Case1.2 Activity:n 'Initialising thread'
+2018-12-10 16:49:14,010  INFO saby invoke_event_thread Case_id:Case1.2 Activity:n 'Starting thread for event '
+2018-12-10 16:49:14,010  INFO saby run Thread:103 Case_id:Case1.2 Activity:n 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:14,010 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:14,010 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:49:14,010  INFO saby run Thread:103 Case_id:Case1.2 Activity:n 'The server response is: Alert !!!  No connection from m to n'
+2018-12-10 16:49:14,573  INFO saby simulate_stream_event Case_id:Case1.1 Activity:n 'Calling invoke_event_thread()'
+2018-12-10 16:49:14,573  INFO saby invoke_event_thread Case_id:Case1.1 Activity:n 'Initialising thread'
+2018-12-10 16:49:14,573  INFO saby invoke_event_thread Case_id:Case1.1 Activity:n 'Starting thread for event '
+2018-12-10 16:49:14,573  INFO saby run Thread:104 Case_id:Case1.1 Activity:n 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:14,573 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:14,573 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:49:14,573  INFO saby run Thread:104 Case_id:Case1.1 Activity:n 'The server response is: Alert !!!  No connection from m to n'
+2018-12-10 16:49:15,111  INFO saby simulate_stream_event Case_id:Case1.0 Activity:n 'Calling invoke_event_thread()'
+2018-12-10 16:49:15,111  INFO saby invoke_event_thread Case_id:Case1.0 Activity:n 'Initialising thread'
+2018-12-10 16:49:15,111  INFO saby invoke_event_thread Case_id:Case1.0 Activity:n 'Starting thread for event '
+2018-12-10 16:49:15,112  INFO saby run Thread:105 Case_id:Case1.0 Activity:n 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:15,114 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:15,114 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:49:15,114  INFO saby run Thread:105 Case_id:Case1.0 Activity:n 'The server response is: Alert !!!  No connection from m to n'
+2018-12-10 16:49:15,655  INFO saby simulate_stream_event Case_id:Case2.1 Activity:v 'Calling invoke_event_thread()'
+2018-12-10 16:49:15,655  INFO saby invoke_event_thread Case_id:Case2.1 Activity:v 'Initialising thread'
+2018-12-10 16:49:15,655  INFO saby invoke_event_thread Case_id:Case2.1 Activity:v 'Starting thread for event '
+2018-12-10 16:49:15,655  INFO saby run Thread:106 Case_id:Case2.1 Activity:v 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:15,655 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:15,655 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:49:15,655  INFO saby run Thread:106 Case_id:Case2.1 Activity:v 'The server response is: Alert !!!  No connection from x to v'
+2018-12-10 16:49:16,216  INFO saby simulate_stream_event Case_id:Case1.2 Activity:o 'Calling invoke_event_thread()'
+2018-12-10 16:49:16,216  INFO saby invoke_event_thread Case_id:Case1.2 Activity:o 'Initialising thread'
+2018-12-10 16:49:16,216  INFO saby invoke_event_thread Case_id:Case1.2 Activity:o 'Starting thread for event '
+2018-12-10 16:49:16,216  INFO saby run Thread:107 Case_id:Case1.2 Activity:o 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:16,216 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:16,216 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:49:16,216  INFO saby run Thread:107 Case_id:Case1.2 Activity:o 'The server response is: Alert !!!  No connection from n to o'
+2018-12-10 16:49:16,762  INFO saby simulate_stream_event Case_id:Case1.1 Activity:o 'Calling invoke_event_thread()'
+2018-12-10 16:49:16,762  INFO saby invoke_event_thread Case_id:Case1.1 Activity:o 'Initialising thread'
+2018-12-10 16:49:16,762  INFO saby invoke_event_thread Case_id:Case1.1 Activity:o 'Starting thread for event '
+2018-12-10 16:49:16,762  INFO saby run Thread:108 Case_id:Case1.1 Activity:o 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:16,762 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:16,762 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:49:16,762  INFO saby run Thread:108 Case_id:Case1.1 Activity:o 'The server response is: Alert !!!  No connection from n to o'
+2018-12-10 16:49:17,308  INFO saby simulate_stream_event Case_id:Case1.0 Activity:j 'Calling invoke_event_thread()'
+2018-12-10 16:49:17,308  INFO saby invoke_event_thread Case_id:Case1.0 Activity:j 'Initialising thread'
+2018-12-10 16:49:17,308  INFO saby invoke_event_thread Case_id:Case1.0 Activity:j 'Starting thread for event '
+2018-12-10 16:49:17,308  INFO saby run Thread:109 Case_id:Case1.0 Activity:j 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:17,308 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:17,308 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:49:17,308  INFO saby run Thread:109 Case_id:Case1.0 Activity:j 'The server response is: Alert !!!  No connection from n to j'
+2018-12-10 16:49:17,855  INFO saby simulate_stream_event Case_id:Case2.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 16:49:17,855  INFO saby invoke_event_thread Case_id:Case2.1 Activity:d 'Initialising thread'
+2018-12-10 16:49:17,855  INFO saby invoke_event_thread Case_id:Case2.1 Activity:d 'Starting thread for event '
+2018-12-10 16:49:17,855  INFO saby run Thread:110 Case_id:Case2.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:17,855 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:17,855 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:49:17,855  INFO saby run Thread:110 Case_id:Case2.1 Activity:d 'The server response is: Alert !!!  No connection from v to d'
+2018-12-10 16:49:18,387  INFO saby simulate_stream_event Case_id:Case1.2 Activity:p 'Calling invoke_event_thread()'
+2018-12-10 16:49:18,387  INFO saby invoke_event_thread Case_id:Case1.2 Activity:p 'Initialising thread'
+2018-12-10 16:49:18,387  INFO saby invoke_event_thread Case_id:Case1.2 Activity:p 'Starting thread for event '
+2018-12-10 16:49:18,387  INFO saby run Thread:111 Case_id:Case1.2 Activity:p 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:18,387 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:18,387 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:49:18,387  INFO saby run Thread:111 Case_id:Case1.2 Activity:p 'The server response is: Alert !!!  No connection from o to p'
+2018-12-10 16:49:18,933  INFO saby simulate_stream_event Case_id:Case1.1 Activity:p 'Calling invoke_event_thread()'
+2018-12-10 16:49:18,933  INFO saby invoke_event_thread Case_id:Case1.1 Activity:p 'Initialising thread'
+2018-12-10 16:49:18,933  INFO saby invoke_event_thread Case_id:Case1.1 Activity:p 'Starting thread for event '
+2018-12-10 16:49:18,933  INFO saby run Thread:112 Case_id:Case1.1 Activity:p 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:18,933 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:18,933 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:49:18,933  INFO saby run Thread:112 Case_id:Case1.1 Activity:p 'The server response is: Alert !!!  No connection from o to p'
+2018-12-10 16:49:19,496  INFO saby simulate_stream_event Case_id:Case1.0 Activity:p 'Calling invoke_event_thread()'
+2018-12-10 16:49:19,496  INFO saby invoke_event_thread Case_id:Case1.0 Activity:p 'Initialising thread'
+2018-12-10 16:49:19,496  INFO saby invoke_event_thread Case_id:Case1.0 Activity:p 'Starting thread for event '
+2018-12-10 16:49:19,496  INFO saby run Thread:113 Case_id:Case1.0 Activity:p 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:19,496 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:19,496 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:49:19,496  INFO saby run Thread:113 Case_id:Case1.0 Activity:p 'The server response is: Alert !!!  No connection from j to p'
+2018-12-10 16:49:20,044  INFO saby simulate_stream_event Case_id:Case2.1 Activity:ghki 'Calling invoke_event_thread()'
+2018-12-10 16:49:20,044  INFO saby invoke_event_thread Case_id:Case2.1 Activity:ghki 'Initialising thread'
+2018-12-10 16:49:20,044  INFO saby invoke_event_thread Case_id:Case2.1 Activity:ghki 'Starting thread for event '
+2018-12-10 16:49:20,044  INFO saby run Thread:114 Case_id:Case2.1 Activity:ghki 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:20,044 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:20,044 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 39
+2018-12-10 16:49:20,044  INFO saby run Thread:114 Case_id:Case2.1 Activity:ghki 'The server response is: Alert !!!  No connection from d to ghki'
+2018-12-10 16:49:20,592  INFO saby simulate_stream_event Case_id:Case1.2 Activity:q 'Calling invoke_event_thread()'
+2018-12-10 16:49:20,592  INFO saby invoke_event_thread Case_id:Case1.2 Activity:q 'Initialising thread'
+2018-12-10 16:49:20,592  INFO saby invoke_event_thread Case_id:Case1.2 Activity:q 'Starting thread for event '
+2018-12-10 16:49:20,592  INFO saby run Thread:115 Case_id:Case1.2 Activity:q 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:20,592 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:20,592 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:49:20,592  INFO saby run Thread:115 Case_id:Case1.2 Activity:q 'The server response is: Alert !!!  No connection from p to q'
+2018-12-10 16:49:21,136  INFO saby simulate_stream_event Case_id:Case1.1 Activity:q 'Calling invoke_event_thread()'
+2018-12-10 16:49:21,136  INFO saby invoke_event_thread Case_id:Case1.1 Activity:q 'Initialising thread'
+2018-12-10 16:49:21,136  INFO saby invoke_event_thread Case_id:Case1.1 Activity:q 'Starting thread for event '
+2018-12-10 16:49:21,136  INFO saby run Thread:116 Case_id:Case1.1 Activity:q 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:21,136 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:21,136 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:49:21,136  INFO saby run Thread:116 Case_id:Case1.1 Activity:q 'The server response is: Alert !!!  No connection from p to q'
+2018-12-10 16:49:21,683  INFO saby simulate_stream_event Case_id:Case1.0 Activity:q 'Calling invoke_event_thread()'
+2018-12-10 16:49:21,683  INFO saby invoke_event_thread Case_id:Case1.0 Activity:q 'Initialising thread'
+2018-12-10 16:49:21,683  INFO saby invoke_event_thread Case_id:Case1.0 Activity:q 'Starting thread for event '
+2018-12-10 16:49:21,683  INFO saby run Thread:117 Case_id:Case1.0 Activity:q 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:21,683 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:21,683 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:49:21,683  INFO saby run Thread:117 Case_id:Case1.0 Activity:q 'The server response is: Alert !!!  No connection from p to q'
+2018-12-10 16:49:22,214  INFO saby simulate_stream_event Case_id:Case2.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 16:49:22,214  INFO saby invoke_event_thread Case_id:Case2.1 Activity:b 'Initialising thread'
+2018-12-10 16:49:22,214  INFO saby invoke_event_thread Case_id:Case2.1 Activity:b 'Starting thread for event '
+2018-12-10 16:49:22,214  INFO saby run Thread:118 Case_id:Case2.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:22,214 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:22,214 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 39
+2018-12-10 16:49:22,214  INFO saby run Thread:118 Case_id:Case2.1 Activity:b 'The server response is: Alert !!!  No connection from ghki to b'
+2018-12-10 16:49:22,214  INFO saby simulate_stream_event Case_id:NONE Activity:END 'Calling invoke_event_thread()'
+2018-12-10 16:49:22,214  INFO saby invoke_event_thread Case_id:NONE Activity:END 'Initialising thread'
+2018-12-10 16:49:22,214  INFO saby invoke_event_thread Case_id:NONE Activity:END 'Starting thread for event '
+2018-12-10 16:49:22,214  INFO saby run Thread:119 Case_id:NONE Activity:END 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:49:22,214 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:49:22,214 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:49:22,214  INFO saby run Thread:119 Case_id:NONE Activity:END 'The server response is: OK'
+2018-12-10 16:49:23,291  INFO saby main 'compliance checking is completed'
+2018-12-10 16:49:23,291  INFO saby main 'The options are displayed'
+2018-12-10 16:50:22,025  INFO saby main 'The user selected option 1'
+2018-12-10 16:50:22,025  INFO saby main 'Calling run_compliance_checker()'
+2018-12-10 16:50:22,025  INFO saby run_compliance_checker 'Calling read_log()'
+2018-12-10 16:50:22,025  INFO saby read_log 'Creating a trace logger file: '
+2018-12-10 16:50:22,025  INFO saby read_log 'Transforming trace logger to event logger'
+2018-12-10 16:50:22,025  INFO saby read_log 'Sorting event logger'
+2018-12-10 16:50:22,025  INFO saby run_compliance_checker 'Calling simulate_stream_event()'
+2018-12-10 16:50:22,577  INFO saby simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 16:50:22,577  INFO saby invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2018-12-10 16:50:22,577  INFO saby invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2018-12-10 16:50:22,577  INFO saby run Thread:120 Case_id:Case1.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:22,577 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:22,577 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:50:22,577  INFO saby run Thread:120 Case_id:Case1.0 Activity:a 'The server response is: OK'
+2018-12-10 16:50:23,132  INFO saby simulate_stream_event Case_id:Case3.0 Activity:uiy 'Calling invoke_event_thread()'
+2018-12-10 16:50:23,132  INFO saby invoke_event_thread Case_id:Case3.0 Activity:uiy 'Initialising thread'
+2018-12-10 16:50:23,132  INFO saby invoke_event_thread Case_id:Case3.0 Activity:uiy 'Starting thread for event '
+2018-12-10 16:50:23,132  INFO saby run Thread:121 Case_id:Case3.0 Activity:uiy 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:23,132 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:23,163 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 38
+2018-12-10 16:50:23,163  INFO saby run Thread:121 Case_id:Case3.0 Activity:uiy 'The server response is: Alert !!!  No connection from * to uiy'
+2018-12-10 16:50:23,710  INFO saby simulate_stream_event Case_id:Case2.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 16:50:23,710  INFO saby invoke_event_thread Case_id:Case2.0 Activity:a 'Initialising thread'
+2018-12-10 16:50:23,710  INFO saby invoke_event_thread Case_id:Case2.0 Activity:a 'Starting thread for event '
+2018-12-10 16:50:23,710  INFO saby run Thread:122 Case_id:Case2.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:23,710 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:23,710 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:50:23,710  INFO saby run Thread:122 Case_id:Case2.0 Activity:a 'The server response is: OK'
+2018-12-10 16:50:24,260  INFO saby simulate_stream_event Case_id:Case1.2 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 16:50:24,260  INFO saby invoke_event_thread Case_id:Case1.2 Activity:a 'Initialising thread'
+2018-12-10 16:50:24,260  INFO saby invoke_event_thread Case_id:Case1.2 Activity:a 'Starting thread for event '
+2018-12-10 16:50:24,260  INFO saby run Thread:123 Case_id:Case1.2 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:24,260 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:24,260 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:50:24,260  INFO saby run Thread:123 Case_id:Case1.2 Activity:a 'The server response is: OK'
+2018-12-10 16:50:24,790  INFO saby simulate_stream_event Case_id:Case1.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 16:50:24,790  INFO saby invoke_event_thread Case_id:Case1.1 Activity:a 'Initialising thread'
+2018-12-10 16:50:24,790  INFO saby invoke_event_thread Case_id:Case1.1 Activity:a 'Starting thread for event '
+2018-12-10 16:50:24,790  INFO saby run Thread:124 Case_id:Case1.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:24,790 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:24,790 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:50:24,790  INFO saby run Thread:124 Case_id:Case1.1 Activity:a 'The server response is: OK'
+2018-12-10 16:50:25,338  INFO saby simulate_stream_event Case_id:Case2.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 16:50:25,338  INFO saby invoke_event_thread Case_id:Case2.1 Activity:a 'Initialising thread'
+2018-12-10 16:50:25,338  INFO saby invoke_event_thread Case_id:Case2.1 Activity:a 'Starting thread for event '
+2018-12-10 16:50:25,338  INFO saby run Thread:125 Case_id:Case2.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:25,338 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:25,338 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:50:25,338  INFO saby run Thread:125 Case_id:Case2.1 Activity:a 'The server response is: OK'
+2018-12-10 16:50:25,886  INFO saby simulate_stream_event Case_id:Case1.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 16:50:25,886  INFO saby invoke_event_thread Case_id:Case1.0 Activity:b 'Initialising thread'
+2018-12-10 16:50:25,886  INFO saby invoke_event_thread Case_id:Case1.0 Activity:b 'Starting thread for event '
+2018-12-10 16:50:25,886  INFO saby run Thread:126 Case_id:Case1.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:25,886 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:25,886 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:50:25,886  INFO saby run Thread:126 Case_id:Case1.0 Activity:b 'The server response is: OK'
+2018-12-10 16:50:26,433  INFO saby simulate_stream_event Case_id:Case3.0 Activity:edse 'Calling invoke_event_thread()'
+2018-12-10 16:50:26,433  INFO saby invoke_event_thread Case_id:Case3.0 Activity:edse 'Initialising thread'
+2018-12-10 16:50:26,433  INFO saby invoke_event_thread Case_id:Case3.0 Activity:edse 'Starting thread for event '
+2018-12-10 16:50:26,464  INFO saby run Thread:127 Case_id:Case3.0 Activity:edse 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:26,464 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:26,589 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 41
+2018-12-10 16:50:26,589  INFO saby run Thread:127 Case_id:Case3.0 Activity:edse 'The server response is: Alert !!!  No connection from uiy to edse'
+2018-12-10 16:50:27,167  INFO saby simulate_stream_event Case_id:Case2.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 16:50:27,167  INFO saby invoke_event_thread Case_id:Case2.0 Activity:c 'Initialising thread'
+2018-12-10 16:50:27,167  INFO saby invoke_event_thread Case_id:Case2.0 Activity:c 'Starting thread for event '
+2018-12-10 16:50:27,167  INFO saby run Thread:128 Case_id:Case2.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:27,167 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:27,167 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:50:27,167  INFO saby run Thread:128 Case_id:Case2.0 Activity:c 'The server response is: OK'
+2018-12-10 16:50:27,705  INFO saby simulate_stream_event Case_id:Case1.2 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 16:50:27,705  INFO saby invoke_event_thread Case_id:Case1.2 Activity:b 'Initialising thread'
+2018-12-10 16:50:27,705  INFO saby invoke_event_thread Case_id:Case1.2 Activity:b 'Starting thread for event '
+2018-12-10 16:50:27,705  INFO saby run Thread:129 Case_id:Case1.2 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:27,705 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:27,705 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:50:27,705  INFO saby run Thread:129 Case_id:Case1.2 Activity:b 'The server response is: OK'
+2018-12-10 16:50:28,236  INFO saby simulate_stream_event Case_id:Case1.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 16:50:28,236  INFO saby invoke_event_thread Case_id:Case1.1 Activity:b 'Initialising thread'
+2018-12-10 16:50:28,236  INFO saby invoke_event_thread Case_id:Case1.1 Activity:b 'Starting thread for event '
+2018-12-10 16:50:28,236  INFO saby run Thread:130 Case_id:Case1.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:28,236 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:28,236 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:50:28,236  INFO saby run Thread:130 Case_id:Case1.1 Activity:b 'The server response is: OK'
+2018-12-10 16:50:28,784  INFO saby simulate_stream_event Case_id:Case2.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 16:50:28,784  INFO saby invoke_event_thread Case_id:Case2.1 Activity:c 'Initialising thread'
+2018-12-10 16:50:28,784  INFO saby invoke_event_thread Case_id:Case2.1 Activity:c 'Starting thread for event '
+2018-12-10 16:50:28,784  INFO saby run Thread:131 Case_id:Case2.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:28,784 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:28,784 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:50:28,784  INFO saby run Thread:131 Case_id:Case2.1 Activity:c 'The server response is: OK'
+2018-12-10 16:50:29,338  INFO saby simulate_stream_event Case_id:Case1.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 16:50:29,338  INFO saby invoke_event_thread Case_id:Case1.0 Activity:c 'Initialising thread'
+2018-12-10 16:50:29,338  INFO saby invoke_event_thread Case_id:Case1.0 Activity:c 'Starting thread for event '
+2018-12-10 16:50:29,338  INFO saby run Thread:132 Case_id:Case1.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:29,338 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:29,338 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:50:29,338  INFO saby run Thread:132 Case_id:Case1.0 Activity:c 'The server response is: OK'
+2018-12-10 16:50:29,908  INFO saby simulate_stream_event Case_id:Case3.0 Activity:djkh 'Calling invoke_event_thread()'
+2018-12-10 16:50:29,908  INFO saby invoke_event_thread Case_id:Case3.0 Activity:djkh 'Initialising thread'
+2018-12-10 16:50:29,908  INFO saby invoke_event_thread Case_id:Case3.0 Activity:djkh 'Starting thread for event '
+2018-12-10 16:50:29,908  INFO saby run Thread:133 Case_id:Case3.0 Activity:djkh 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:29,908 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:29,908 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 42
+2018-12-10 16:50:29,908  INFO saby run Thread:133 Case_id:Case3.0 Activity:djkh 'The server response is: Alert !!!  No connection from edse to djkh'
+2018-12-10 16:50:30,489  INFO saby simulate_stream_event Case_id:Case2.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 16:50:30,489  INFO saby invoke_event_thread Case_id:Case2.0 Activity:b 'Initialising thread'
+2018-12-10 16:50:30,489  INFO saby invoke_event_thread Case_id:Case2.0 Activity:b 'Starting thread for event '
+2018-12-10 16:50:30,489  INFO saby run Thread:134 Case_id:Case2.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:30,489 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:30,489 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:50:30,489  INFO saby run Thread:134 Case_id:Case2.0 Activity:b 'The server response is: OK'
+2018-12-10 16:50:31,025  INFO saby simulate_stream_event Case_id:Case1.2 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 16:50:31,025  INFO saby invoke_event_thread Case_id:Case1.2 Activity:c 'Initialising thread'
+2018-12-10 16:50:31,025  INFO saby invoke_event_thread Case_id:Case1.2 Activity:c 'Starting thread for event '
+2018-12-10 16:50:31,025  INFO saby run Thread:135 Case_id:Case1.2 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:31,025 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:31,025 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:50:31,025  INFO saby run Thread:135 Case_id:Case1.2 Activity:c 'The server response is: OK'
+2018-12-10 16:50:31,573  INFO saby simulate_stream_event Case_id:Case1.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 16:50:31,573  INFO saby invoke_event_thread Case_id:Case1.1 Activity:c 'Initialising thread'
+2018-12-10 16:50:31,573  INFO saby invoke_event_thread Case_id:Case1.1 Activity:c 'Starting thread for event '
+2018-12-10 16:50:31,573  INFO saby run Thread:136 Case_id:Case1.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:31,573 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:31,573 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:50:31,573  INFO saby run Thread:136 Case_id:Case1.1 Activity:c 'The server response is: OK'
+2018-12-10 16:50:32,135  INFO saby simulate_stream_event Case_id:Case2.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 16:50:32,135  INFO saby invoke_event_thread Case_id:Case2.1 Activity:b 'Initialising thread'
+2018-12-10 16:50:32,135  INFO saby invoke_event_thread Case_id:Case2.1 Activity:b 'Starting thread for event '
+2018-12-10 16:50:32,135  INFO saby run Thread:137 Case_id:Case2.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:32,135 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:32,135 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:50:32,135  INFO saby run Thread:137 Case_id:Case2.1 Activity:b 'The server response is: OK'
+2018-12-10 16:50:32,698  INFO saby simulate_stream_event Case_id:Case1.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 16:50:32,698  INFO saby invoke_event_thread Case_id:Case1.0 Activity:d 'Initialising thread'
+2018-12-10 16:50:32,698  INFO saby invoke_event_thread Case_id:Case1.0 Activity:d 'Starting thread for event '
+2018-12-10 16:50:32,698  INFO saby run Thread:138 Case_id:Case1.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:32,698 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:32,698 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:50:32,698  INFO saby run Thread:138 Case_id:Case1.0 Activity:d 'The server response is: OK'
+2018-12-10 16:50:33,245  INFO saby simulate_stream_event Case_id:Case3.0 Activity:assf 'Calling invoke_event_thread()'
+2018-12-10 16:50:33,245  INFO saby invoke_event_thread Case_id:Case3.0 Activity:assf 'Initialising thread'
+2018-12-10 16:50:33,245  INFO saby invoke_event_thread Case_id:Case3.0 Activity:assf 'Starting thread for event '
+2018-12-10 16:50:33,245  INFO saby run Thread:139 Case_id:Case3.0 Activity:assf 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:33,245 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:33,245 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 42
+2018-12-10 16:50:33,245  INFO saby run Thread:139 Case_id:Case3.0 Activity:assf 'The server response is: Alert !!!  No connection from djkh to assf'
+2018-12-10 16:50:33,823  INFO saby simulate_stream_event Case_id:Case2.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 16:50:33,823  INFO saby invoke_event_thread Case_id:Case2.0 Activity:d 'Initialising thread'
+2018-12-10 16:50:33,823  INFO saby invoke_event_thread Case_id:Case2.0 Activity:d 'Starting thread for event '
+2018-12-10 16:50:33,823  INFO saby run Thread:140 Case_id:Case2.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:33,823 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:33,823 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:50:33,823  INFO saby run Thread:140 Case_id:Case2.0 Activity:d 'The server response is: OK'
+2018-12-10 16:50:34,369  INFO saby simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 16:50:34,369  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-10 16:50:34,369  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-10 16:50:34,369  INFO saby run Thread:141 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:34,369 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:34,369 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:50:34,369  INFO saby run Thread:141 Case_id:Case1.2 Activity:d 'The server response is: OK'
+2018-12-10 16:50:34,916  INFO saby simulate_stream_event Case_id:Case1.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 16:50:34,916  INFO saby invoke_event_thread Case_id:Case1.1 Activity:d 'Initialising thread'
+2018-12-10 16:50:34,916  INFO saby invoke_event_thread Case_id:Case1.1 Activity:d 'Starting thread for event '
+2018-12-10 16:50:34,916  INFO saby run Thread:142 Case_id:Case1.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:34,916 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:34,916 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:50:34,916  INFO saby run Thread:142 Case_id:Case1.1 Activity:d 'The server response is: OK'
+2018-12-10 16:50:35,463  INFO saby simulate_stream_event Case_id:Case2.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 16:50:35,463  INFO saby invoke_event_thread Case_id:Case2.1 Activity:d 'Initialising thread'
+2018-12-10 16:50:35,463  INFO saby invoke_event_thread Case_id:Case2.1 Activity:d 'Starting thread for event '
+2018-12-10 16:50:35,463  INFO saby run Thread:143 Case_id:Case2.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:35,463 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:35,463 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:50:35,463  INFO saby run Thread:143 Case_id:Case2.1 Activity:d 'The server response is: OK'
+2018-12-10 16:50:36,010  INFO saby simulate_stream_event Case_id:Case2.0 Activity:e 'Calling invoke_event_thread()'
+2018-12-10 16:50:36,010  INFO saby invoke_event_thread Case_id:Case2.0 Activity:e 'Initialising thread'
+2018-12-10 16:50:36,010  INFO saby invoke_event_thread Case_id:Case2.0 Activity:e 'Starting thread for event '
+2018-12-10 16:50:36,010  INFO saby run Thread:144 Case_id:Case2.0 Activity:e 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:36,010 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:36,010 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:50:36,010  INFO saby run Thread:144 Case_id:Case2.0 Activity:e 'The server response is: Alert !!!  No connection from d to e'
+2018-12-10 16:50:36,564  INFO saby simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 16:50:36,564  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-10 16:50:36,564  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-10 16:50:36,564  INFO saby run Thread:145 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:36,564 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:36,564 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:50:36,564  INFO saby run Thread:145 Case_id:Case1.2 Activity:d 'The server response is: OK'
+2018-12-10 16:50:37,104  INFO saby simulate_stream_event Case_id:Case3.0 Activity:g 'Calling invoke_event_thread()'
+2018-12-10 16:50:37,104  INFO saby invoke_event_thread Case_id:Case3.0 Activity:g 'Initialising thread'
+2018-12-10 16:50:37,104  INFO saby invoke_event_thread Case_id:Case3.0 Activity:g 'Starting thread for event '
+2018-12-10 16:50:37,104  INFO saby run Thread:146 Case_id:Case3.0 Activity:g 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:37,104 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:37,104 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 39
+2018-12-10 16:50:37,104  INFO saby run Thread:146 Case_id:Case3.0 Activity:g 'The server response is: Alert !!!  No connection from assf to g'
+2018-12-10 16:50:37,651  INFO saby simulate_stream_event Case_id:Case2.0 Activity:x 'Calling invoke_event_thread()'
+2018-12-10 16:50:37,651  INFO saby invoke_event_thread Case_id:Case2.0 Activity:x 'Initialising thread'
+2018-12-10 16:50:37,651  INFO saby invoke_event_thread Case_id:Case2.0 Activity:x 'Starting thread for event '
+2018-12-10 16:50:37,651  INFO saby run Thread:147 Case_id:Case2.0 Activity:x 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:37,651 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:37,651 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:50:37,651  INFO saby run Thread:147 Case_id:Case2.0 Activity:x 'The server response is: Alert !!!  No connection from e to x'
+2018-12-10 16:50:38,197  INFO saby simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 16:50:38,197  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-10 16:50:38,197  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-10 16:50:38,197  INFO saby run Thread:148 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:38,197 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:38,197 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:50:38,197  INFO saby run Thread:148 Case_id:Case1.2 Activity:d 'The server response is: OK'
+2018-12-10 16:50:38,744  INFO saby simulate_stream_event Case_id:Case3.0 Activity:h 'Calling invoke_event_thread()'
+2018-12-10 16:50:38,744  INFO saby invoke_event_thread Case_id:Case3.0 Activity:h 'Initialising thread'
+2018-12-10 16:50:38,744  INFO saby invoke_event_thread Case_id:Case3.0 Activity:h 'Starting thread for event '
+2018-12-10 16:50:38,744  INFO saby run Thread:149 Case_id:Case3.0 Activity:h 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:38,744 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:38,744 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:50:38,744  INFO saby run Thread:149 Case_id:Case3.0 Activity:h 'The server response is: Alert !!!  No connection from g to h'
+2018-12-10 16:50:39,276  INFO saby simulate_stream_event Case_id:Case2.0 Activity:z 'Calling invoke_event_thread()'
+2018-12-10 16:50:39,276  INFO saby invoke_event_thread Case_id:Case2.0 Activity:z 'Initialising thread'
+2018-12-10 16:50:39,276  INFO saby invoke_event_thread Case_id:Case2.0 Activity:z 'Starting thread for event '
+2018-12-10 16:50:39,276  INFO saby run Thread:150 Case_id:Case2.0 Activity:z 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:39,276 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:39,276 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:50:39,276  INFO saby run Thread:150 Case_id:Case2.0 Activity:z 'The server response is: Alert !!!  No connection from x to z'
+2018-12-10 16:50:39,814  INFO saby simulate_stream_event Case_id:Case1.2 Activity:z 'Calling invoke_event_thread()'
+2018-12-10 16:50:39,814  INFO saby invoke_event_thread Case_id:Case1.2 Activity:z 'Initialising thread'
+2018-12-10 16:50:39,814  INFO saby invoke_event_thread Case_id:Case1.2 Activity:z 'Starting thread for event '
+2018-12-10 16:50:39,814  INFO saby run Thread:151 Case_id:Case1.2 Activity:z 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:39,814 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:39,814 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:50:39,814  INFO saby run Thread:151 Case_id:Case1.2 Activity:z 'The server response is: Alert !!!  No connection from d to z'
+2018-12-10 16:50:40,363  INFO saby simulate_stream_event Case_id:Case3.0 Activity:i 'Calling invoke_event_thread()'
+2018-12-10 16:50:40,363  INFO saby invoke_event_thread Case_id:Case3.0 Activity:i 'Initialising thread'
+2018-12-10 16:50:40,363  INFO saby invoke_event_thread Case_id:Case3.0 Activity:i 'Starting thread for event '
+2018-12-10 16:50:40,363  INFO saby run Thread:152 Case_id:Case3.0 Activity:i 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:40,363 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:40,363 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:50:40,363  INFO saby run Thread:152 Case_id:Case3.0 Activity:i 'The server response is: Alert !!!  No connection from h to i'
+2018-12-10 16:50:40,929  INFO saby simulate_stream_event Case_id:Case2.0 Activity:i 'Calling invoke_event_thread()'
+2018-12-10 16:50:40,929  INFO saby invoke_event_thread Case_id:Case2.0 Activity:i 'Initialising thread'
+2018-12-10 16:50:40,929  INFO saby invoke_event_thread Case_id:Case2.0 Activity:i 'Starting thread for event '
+2018-12-10 16:50:40,929  INFO saby run Thread:153 Case_id:Case2.0 Activity:i 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:40,929 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:40,929 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:50:40,929  INFO saby run Thread:153 Case_id:Case2.0 Activity:i 'The server response is: Alert !!!  No connection from z to i'
+2018-12-10 16:50:41,494  INFO saby simulate_stream_event Case_id:Case1.2 Activity:h 'Calling invoke_event_thread()'
+2018-12-10 16:50:41,494  INFO saby invoke_event_thread Case_id:Case1.2 Activity:h 'Initialising thread'
+2018-12-10 16:50:41,494  INFO saby invoke_event_thread Case_id:Case1.2 Activity:h 'Starting thread for event '
+2018-12-10 16:50:41,494  INFO saby run Thread:154 Case_id:Case1.2 Activity:h 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:41,494 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:41,494 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:50:41,494  INFO saby run Thread:154 Case_id:Case1.2 Activity:h 'The server response is: Alert !!!  No connection from z to h'
+2018-12-10 16:50:42,041  INFO saby simulate_stream_event Case_id:Case3.0 Activity:j 'Calling invoke_event_thread()'
+2018-12-10 16:50:42,041  INFO saby invoke_event_thread Case_id:Case3.0 Activity:j 'Initialising thread'
+2018-12-10 16:50:42,041  INFO saby invoke_event_thread Case_id:Case3.0 Activity:j 'Starting thread for event '
+2018-12-10 16:50:42,041  INFO saby run Thread:155 Case_id:Case3.0 Activity:j 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:42,041 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:42,041 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:50:42,041  INFO saby run Thread:155 Case_id:Case3.0 Activity:j 'The server response is: Alert !!!  No connection from i to j'
+2018-12-10 16:50:42,589  INFO saby simulate_stream_event Case_id:Case2.0 Activity:k 'Calling invoke_event_thread()'
+2018-12-10 16:50:42,589  INFO saby invoke_event_thread Case_id:Case2.0 Activity:k 'Initialising thread'
+2018-12-10 16:50:42,589  INFO saby invoke_event_thread Case_id:Case2.0 Activity:k 'Starting thread for event '
+2018-12-10 16:50:42,589  INFO saby run Thread:156 Case_id:Case2.0 Activity:k 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:42,589 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:42,589 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:50:42,589  INFO saby run Thread:156 Case_id:Case2.0 Activity:k 'The server response is: Alert !!!  No connection from i to k'
+2018-12-10 16:50:43,151  INFO saby simulate_stream_event Case_id:Case1.2 Activity:l 'Calling invoke_event_thread()'
+2018-12-10 16:50:43,151  INFO saby invoke_event_thread Case_id:Case1.2 Activity:l 'Initialising thread'
+2018-12-10 16:50:43,151  INFO saby invoke_event_thread Case_id:Case1.2 Activity:l 'Starting thread for event '
+2018-12-10 16:50:43,151  INFO saby run Thread:157 Case_id:Case1.2 Activity:l 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:43,151 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:43,151 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:50:43,151  INFO saby run Thread:157 Case_id:Case1.2 Activity:l 'The server response is: Alert !!!  No connection from h to l'
+2018-12-10 16:50:43,698  INFO saby simulate_stream_event Case_id:Case1.2 Activity:m 'Calling invoke_event_thread()'
+2018-12-10 16:50:43,698  INFO saby invoke_event_thread Case_id:Case1.2 Activity:m 'Initialising thread'
+2018-12-10 16:50:43,698  INFO saby invoke_event_thread Case_id:Case1.2 Activity:m 'Starting thread for event '
+2018-12-10 16:50:43,698  INFO saby run Thread:158 Case_id:Case1.2 Activity:m 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:43,698 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:43,698 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:50:43,698  INFO saby run Thread:158 Case_id:Case1.2 Activity:m 'The server response is: Alert !!!  No connection from l to m'
+2018-12-10 16:50:44,245  INFO saby simulate_stream_event Case_id:Case1.1 Activity:m 'Calling invoke_event_thread()'
+2018-12-10 16:50:44,245  INFO saby invoke_event_thread Case_id:Case1.1 Activity:m 'Initialising thread'
+2018-12-10 16:50:44,245  INFO saby invoke_event_thread Case_id:Case1.1 Activity:m 'Starting thread for event '
+2018-12-10 16:50:44,245  INFO saby run Thread:159 Case_id:Case1.1 Activity:m 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:44,245 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:44,245 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:50:44,245  INFO saby run Thread:159 Case_id:Case1.1 Activity:m 'The server response is: Alert !!!  No connection from d to m'
+2018-12-10 16:50:44,792  INFO saby simulate_stream_event Case_id:Case1.0 Activity:m 'Calling invoke_event_thread()'
+2018-12-10 16:50:44,792  INFO saby invoke_event_thread Case_id:Case1.0 Activity:m 'Initialising thread'
+2018-12-10 16:50:44,792  INFO saby invoke_event_thread Case_id:Case1.0 Activity:m 'Starting thread for event '
+2018-12-10 16:50:44,792  INFO saby run Thread:160 Case_id:Case1.0 Activity:m 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:44,792 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:44,792 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:50:44,792  INFO saby run Thread:160 Case_id:Case1.0 Activity:m 'The server response is: Alert !!!  No connection from d to m'
+2018-12-10 16:50:45,338  INFO saby simulate_stream_event Case_id:Case2.1 Activity:x 'Calling invoke_event_thread()'
+2018-12-10 16:50:45,338  INFO saby invoke_event_thread Case_id:Case2.1 Activity:x 'Initialising thread'
+2018-12-10 16:50:45,338  INFO saby invoke_event_thread Case_id:Case2.1 Activity:x 'Starting thread for event '
+2018-12-10 16:50:45,338  INFO saby run Thread:161 Case_id:Case2.1 Activity:x 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:45,338 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:45,338 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:50:45,338  INFO saby run Thread:161 Case_id:Case2.1 Activity:x 'The server response is: Alert !!!  No connection from d to x'
+2018-12-10 16:50:45,876  INFO saby simulate_stream_event Case_id:Case1.2 Activity:n 'Calling invoke_event_thread()'
+2018-12-10 16:50:45,876  INFO saby invoke_event_thread Case_id:Case1.2 Activity:n 'Initialising thread'
+2018-12-10 16:50:45,876  INFO saby invoke_event_thread Case_id:Case1.2 Activity:n 'Starting thread for event '
+2018-12-10 16:50:45,877  INFO saby run Thread:162 Case_id:Case1.2 Activity:n 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:45,879 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:45,882 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:50:45,883  INFO saby run Thread:162 Case_id:Case1.2 Activity:n 'The server response is: Alert !!!  No connection from m to n'
+2018-12-10 16:50:46,417  INFO saby simulate_stream_event Case_id:Case1.1 Activity:n 'Calling invoke_event_thread()'
+2018-12-10 16:50:46,417  INFO saby invoke_event_thread Case_id:Case1.1 Activity:n 'Initialising thread'
+2018-12-10 16:50:46,417  INFO saby invoke_event_thread Case_id:Case1.1 Activity:n 'Starting thread for event '
+2018-12-10 16:50:46,417  INFO saby run Thread:163 Case_id:Case1.1 Activity:n 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:46,417 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:46,417 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:50:46,417  INFO saby run Thread:163 Case_id:Case1.1 Activity:n 'The server response is: Alert !!!  No connection from m to n'
+2018-12-10 16:50:46,964  INFO saby simulate_stream_event Case_id:Case1.0 Activity:n 'Calling invoke_event_thread()'
+2018-12-10 16:50:46,964  INFO saby invoke_event_thread Case_id:Case1.0 Activity:n 'Initialising thread'
+2018-12-10 16:50:46,964  INFO saby invoke_event_thread Case_id:Case1.0 Activity:n 'Starting thread for event '
+2018-12-10 16:50:46,964  INFO saby run Thread:164 Case_id:Case1.0 Activity:n 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:46,964 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:46,964 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:50:46,964  INFO saby run Thread:164 Case_id:Case1.0 Activity:n 'The server response is: Alert !!!  No connection from m to n'
+2018-12-10 16:50:47,495  INFO saby simulate_stream_event Case_id:Case2.1 Activity:v 'Calling invoke_event_thread()'
+2018-12-10 16:50:47,495  INFO saby invoke_event_thread Case_id:Case2.1 Activity:v 'Initialising thread'
+2018-12-10 16:50:47,495  INFO saby invoke_event_thread Case_id:Case2.1 Activity:v 'Starting thread for event '
+2018-12-10 16:50:47,495  INFO saby run Thread:165 Case_id:Case2.1 Activity:v 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:47,495 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:47,495 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:50:47,495  INFO saby run Thread:165 Case_id:Case2.1 Activity:v 'The server response is: Alert !!!  No connection from x to v'
+2018-12-10 16:50:48,041  INFO saby simulate_stream_event Case_id:Case1.2 Activity:o 'Calling invoke_event_thread()'
+2018-12-10 16:50:48,041  INFO saby invoke_event_thread Case_id:Case1.2 Activity:o 'Initialising thread'
+2018-12-10 16:50:48,041  INFO saby invoke_event_thread Case_id:Case1.2 Activity:o 'Starting thread for event '
+2018-12-10 16:50:48,041  INFO saby run Thread:166 Case_id:Case1.2 Activity:o 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:48,041 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:48,041 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:50:48,041  INFO saby run Thread:166 Case_id:Case1.2 Activity:o 'The server response is: Alert !!!  No connection from n to o'
+2018-12-10 16:50:48,588  INFO saby simulate_stream_event Case_id:Case1.1 Activity:o 'Calling invoke_event_thread()'
+2018-12-10 16:50:48,588  INFO saby invoke_event_thread Case_id:Case1.1 Activity:o 'Initialising thread'
+2018-12-10 16:50:48,588  INFO saby invoke_event_thread Case_id:Case1.1 Activity:o 'Starting thread for event '
+2018-12-10 16:50:48,588  INFO saby run Thread:167 Case_id:Case1.1 Activity:o 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:48,588 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:48,588 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:50:48,588  INFO saby run Thread:167 Case_id:Case1.1 Activity:o 'The server response is: Alert !!!  No connection from n to o'
+2018-12-10 16:50:49,151  INFO saby simulate_stream_event Case_id:Case1.0 Activity:j 'Calling invoke_event_thread()'
+2018-12-10 16:50:49,151  INFO saby invoke_event_thread Case_id:Case1.0 Activity:j 'Initialising thread'
+2018-12-10 16:50:49,151  INFO saby invoke_event_thread Case_id:Case1.0 Activity:j 'Starting thread for event '
+2018-12-10 16:50:49,151  INFO saby run Thread:168 Case_id:Case1.0 Activity:j 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:49,151 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:49,151 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:50:49,151  INFO saby run Thread:168 Case_id:Case1.0 Activity:j 'The server response is: Alert !!!  No connection from n to j'
+2018-12-10 16:50:49,699  INFO saby simulate_stream_event Case_id:Case2.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 16:50:49,699  INFO saby invoke_event_thread Case_id:Case2.1 Activity:d 'Initialising thread'
+2018-12-10 16:50:49,699  INFO saby invoke_event_thread Case_id:Case2.1 Activity:d 'Starting thread for event '
+2018-12-10 16:50:49,699  INFO saby run Thread:169 Case_id:Case2.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:49,699 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:49,699 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:50:49,699  INFO saby run Thread:169 Case_id:Case2.1 Activity:d 'The server response is: Alert !!!  No connection from v to d'
+2018-12-10 16:50:50,246  INFO saby simulate_stream_event Case_id:Case1.2 Activity:p 'Calling invoke_event_thread()'
+2018-12-10 16:50:50,246  INFO saby invoke_event_thread Case_id:Case1.2 Activity:p 'Initialising thread'
+2018-12-10 16:50:50,246  INFO saby invoke_event_thread Case_id:Case1.2 Activity:p 'Starting thread for event '
+2018-12-10 16:50:50,246  INFO saby run Thread:170 Case_id:Case1.2 Activity:p 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:50,246 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:50,246 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:50:50,246  INFO saby run Thread:170 Case_id:Case1.2 Activity:p 'The server response is: Alert !!!  No connection from o to p'
+2018-12-10 16:50:50,793  INFO saby simulate_stream_event Case_id:Case1.1 Activity:p 'Calling invoke_event_thread()'
+2018-12-10 16:50:50,793  INFO saby invoke_event_thread Case_id:Case1.1 Activity:p 'Initialising thread'
+2018-12-10 16:50:50,793  INFO saby invoke_event_thread Case_id:Case1.1 Activity:p 'Starting thread for event '
+2018-12-10 16:50:50,793  INFO saby run Thread:171 Case_id:Case1.1 Activity:p 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:50,793 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:50,793 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:50:50,793  INFO saby run Thread:171 Case_id:Case1.1 Activity:p 'The server response is: Alert !!!  No connection from o to p'
+2018-12-10 16:50:51,325  INFO saby simulate_stream_event Case_id:Case1.0 Activity:p 'Calling invoke_event_thread()'
+2018-12-10 16:50:51,325  INFO saby invoke_event_thread Case_id:Case1.0 Activity:p 'Initialising thread'
+2018-12-10 16:50:51,325  INFO saby invoke_event_thread Case_id:Case1.0 Activity:p 'Starting thread for event '
+2018-12-10 16:50:51,325  INFO saby run Thread:172 Case_id:Case1.0 Activity:p 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:51,325 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:51,325 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:50:51,325  INFO saby run Thread:172 Case_id:Case1.0 Activity:p 'The server response is: Alert !!!  No connection from j to p'
+2018-12-10 16:50:51,871  INFO saby simulate_stream_event Case_id:Case2.1 Activity:ghki 'Calling invoke_event_thread()'
+2018-12-10 16:50:51,871  INFO saby invoke_event_thread Case_id:Case2.1 Activity:ghki 'Initialising thread'
+2018-12-10 16:50:51,871  INFO saby invoke_event_thread Case_id:Case2.1 Activity:ghki 'Starting thread for event '
+2018-12-10 16:50:51,871  INFO saby run Thread:173 Case_id:Case2.1 Activity:ghki 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:51,871 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:51,871 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 39
+2018-12-10 16:50:51,871  INFO saby run Thread:173 Case_id:Case2.1 Activity:ghki 'The server response is: Alert !!!  No connection from d to ghki'
+2018-12-10 16:50:52,414  INFO saby simulate_stream_event Case_id:Case1.2 Activity:q 'Calling invoke_event_thread()'
+2018-12-10 16:50:52,414  INFO saby invoke_event_thread Case_id:Case1.2 Activity:q 'Initialising thread'
+2018-12-10 16:50:52,414  INFO saby invoke_event_thread Case_id:Case1.2 Activity:q 'Starting thread for event '
+2018-12-10 16:50:52,414  INFO saby run Thread:174 Case_id:Case1.2 Activity:q 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:52,414 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:52,414 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:50:52,414  INFO saby run Thread:174 Case_id:Case1.2 Activity:q 'The server response is: Alert !!!  No connection from p to q'
+2018-12-10 16:50:52,961  INFO saby simulate_stream_event Case_id:Case1.1 Activity:q 'Calling invoke_event_thread()'
+2018-12-10 16:50:52,961  INFO saby invoke_event_thread Case_id:Case1.1 Activity:q 'Initialising thread'
+2018-12-10 16:50:52,961  INFO saby invoke_event_thread Case_id:Case1.1 Activity:q 'Starting thread for event '
+2018-12-10 16:50:52,961  INFO saby run Thread:175 Case_id:Case1.1 Activity:q 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:52,961 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:52,961 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:50:52,961  INFO saby run Thread:175 Case_id:Case1.1 Activity:q 'The server response is: Alert !!!  No connection from p to q'
+2018-12-10 16:50:53,495  INFO saby simulate_stream_event Case_id:Case1.0 Activity:q 'Calling invoke_event_thread()'
+2018-12-10 16:50:53,495  INFO saby invoke_event_thread Case_id:Case1.0 Activity:q 'Initialising thread'
+2018-12-10 16:50:53,495  INFO saby invoke_event_thread Case_id:Case1.0 Activity:q 'Starting thread for event '
+2018-12-10 16:50:53,495  INFO saby run Thread:176 Case_id:Case1.0 Activity:q 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:53,495 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:53,495 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 36
+2018-12-10 16:50:53,495  INFO saby run Thread:176 Case_id:Case1.0 Activity:q 'The server response is: Alert !!!  No connection from p to q'
+2018-12-10 16:50:54,037  INFO saby simulate_stream_event Case_id:Case2.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 16:50:54,037  INFO saby invoke_event_thread Case_id:Case2.1 Activity:b 'Initialising thread'
+2018-12-10 16:50:54,037  INFO saby invoke_event_thread Case_id:Case2.1 Activity:b 'Starting thread for event '
+2018-12-10 16:50:54,037  INFO saby run Thread:177 Case_id:Case2.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:54,037 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:54,037 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 39
+2018-12-10 16:50:54,037  INFO saby run Thread:177 Case_id:Case2.1 Activity:b 'The server response is: Alert !!!  No connection from ghki to b'
+2018-12-10 16:50:54,037  INFO saby simulate_stream_event Case_id:NONE Activity:END 'Calling invoke_event_thread()'
+2018-12-10 16:50:54,037  INFO saby invoke_event_thread Case_id:NONE Activity:END 'Initialising thread'
+2018-12-10 16:50:54,037  INFO saby invoke_event_thread Case_id:NONE Activity:END 'Starting thread for event '
+2018-12-10 16:50:54,037  INFO saby run Thread:178 Case_id:NONE Activity:END 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 16:50:54,037 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 16:50:54,037 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 2
+2018-12-10 16:50:54,037  INFO saby run Thread:178 Case_id:NONE Activity:END 'The server response is: OK'
+2018-12-10 16:50:55,072  INFO saby main 'compliance checking is completed'
+2018-12-10 16:50:55,072  INFO saby main 'The options are displayed'
