@@ -73,7 +73,7 @@ class BuildingAutomataTestCase(unittest.TestCase):
         autos_manuals[4] = autos_manual4
         event = {'case_id': 'Case1', 'activity': 'e'}
         case_thread.calcuate_connection_for_different_prefix_automata(windowsMemory, event)
-        autos, status = globalvar.get_autos()
+        autos = globalvar.get_autos()
         for ws in config.WINDOW_SIZE:
             autos_manual = str(autos_manuals[ws]).replace("'", "")
             autos_manual = autos_manual.replace(" ", "")

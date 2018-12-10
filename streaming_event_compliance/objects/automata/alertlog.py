@@ -19,6 +19,13 @@ class AlertLog:
     def add_alert_record_from_database(self, alert_record):
         self.alert_log.append(alert_record)
 
+    def get_max_count(self):
+        count = 0
+        for record in self.alert_log:
+            if record.alert_count > count:
+                count = record.alert_count
+        return count
+
     def __repr__(self):
         return 'User name: %s' % self.uuid + '\n' + \
                'Window size: %s' % self.window_size + '\n' + \

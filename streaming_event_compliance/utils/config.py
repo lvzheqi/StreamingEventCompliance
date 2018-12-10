@@ -12,7 +12,7 @@ TRAINING_EVENT_LOG_PATH = BASE_DIR + 'data' + os.sep + 'Example_EventLogForTrain
 SERVER_LOG_PATH = BASE_DIR + os.sep + 'data' + os.sep + 'server.log'
 
 AUTOS_DEFAULT = False
-THRESHOLD = 0.00
+THRESHOLD = 0.2
 
 LOG_LEVEL = 'DEBUG'
 LOG_FORMAT = '%(asctime)-15s %(message)s'
