@@ -73,9 +73,10 @@ def calcuate_connection_for_different_prefix_automata(windowsMemory):
         sink_node = ','.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws + 1: MAXIMUN_WINDOW_SIZE + 1])
         if CL.lock_List.get((source_node, sink_node)):
             if CL.lock_List.get((source_node, sink_node)).acquire():
+                print(windowsMemory)
                 if windowsMemory[MAXIMUN_WINDOW_SIZE] == '!@#$%^' and source_node.find('*') == -1:
                     # only add source_node into database, don't add connection
-                    autos.get(ws).update_automata(automata.Connection(source_node, 'None', 0))
+                    autos.get(ws).update_automata(automata.Connection(source_node, '!@#$%^', 0))
                 elif source_node.find('*') == -1:
                     autos.get(ws).update_automata(automata.Connection(source_node, sink_node, 1))
                 CL.lock_List.get((source_node, sink_node)).release()
@@ -86,7 +87,7 @@ def calcuate_connection_for_different_prefix_automata(windowsMemory):
             if CL.lock_List.get((source_node, sink_node)).acquire():
                 if windowsMemory[MAXIMUN_WINDOW_SIZE] == '!@#$%^' and source_node.find('*') == -1:
                     # only add source_node into database, don't add connection
-                    autos.get(ws).update_automata(automata.Connection(source_node, 'None', 0))
+                    autos.get(ws).update_automata(automata.Connection(source_node, '!@#$%^', 0))
                 elif source_node.find('*') == -1:
                     autos.get(ws).update_automata(automata.Connection(source_node, sink_node, 1))
                 CL.lock_List.get((source_node, sink_node)).release()
