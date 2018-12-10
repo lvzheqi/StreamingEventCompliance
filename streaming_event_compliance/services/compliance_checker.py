@@ -19,8 +19,6 @@ def compliance_checker(client_uuid, event):
     :param event: the event that we want to check the compliance
     :return:the deviation information or success information.
     '''
-    print("Start")
-    print("Hi" + str(globalvar.get_autos_status()))
     if globalvar.get_autos_status():
         C = globalvar.get_case_memory()
         T = globalvar.get_thread_memory()
@@ -42,7 +40,7 @@ def compliance_checker(client_uuid, event):
                         threads_index = threads_index + 1
                         response = thread_queue.get()
                         print(response)
-                        return "Deviation" #response
+                        return response
                     except KeyboardInterrupt:
                         print('Error: Thread is interrupt!')
                         return "Server Error!"
@@ -66,7 +64,7 @@ def compliance_checker(client_uuid, event):
                         threads_index = threads_index + 1
                         response = thread_queue.get()
                         print(response)
-                        return "Deviation" #response
+                        return response
                     except KeyboardInterrupt:
                         print('Error: Thread is interrupt!')
                         return "Server Error!"
@@ -85,9 +83,9 @@ def compliance_checker(client_uuid, event):
             deviation_pdf.build_deviation_pdf(client_uuid)
         # deviation information should be returned here, or we return it form thread.start()
             return "OK"
-        #return event['case_id'] + "->" + event['activity']
-    else:
-        return "Automata not available"
+    # return event['case_id'] + "->" + event['activity']
+    return "automata is not build"
+
 
 def error_handle():
     return "error"
