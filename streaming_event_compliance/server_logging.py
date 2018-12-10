@@ -112,7 +112,7 @@ class ServerLogging:
             case_id:        This is the case id of  the event being processed.
             activity:       This is the activity of the event being processed.
             message:        User defined custom messages
-         '''
+        '''
         message = "'" + message + "'"
         message = "Thread:" + str(thread_id) + ' ' + "Case_id:" + case_id + ' ' + "Activity:" + activity + ' ' + message
         message = ' INFO ' + username + ' ' + func_name + ' ' + message
