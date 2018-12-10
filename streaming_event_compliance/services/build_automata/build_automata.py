@@ -26,6 +26,7 @@ def build_automata():
     globalvar.set_auto_status()
     globalvar.clear_memorizer()
 
+
 def build_automata_pro():
     """
     Reads the training event logger from database.config.TRAINING_EVENT_LOG_PATH and build automata.
@@ -81,7 +82,7 @@ def build_automata_pro():
     end_message = {}
     for item in C.dictionary_cases:
         end_message['case_id'] = item
-        end_message['activity'] = 'ES'
+        end_message['activity'] = '!@#$%^'
         C.dictionary_cases.get(item).append(end_message['activity'])
         thread = case_thread.CaseThreadForTraining(end_message, threads_index, T, C)
         T.dictionary_threads[threads_index] = thread

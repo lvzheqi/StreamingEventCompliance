@@ -35,14 +35,14 @@ class CaseThreadForTraining(Thread):
             else:
                 windows_memory = self.C.dictionary_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
 
-            calcuate_connection_for_different_prefix_automata(windows_memory, self.event)
+            calcuate_connection_for_different_prefix_automata(windows_memory)
 
             if len(self.C.dictionary_cases.get(self.event['case_id'])) > MAXIMUN_WINDOW_SIZE:
                 self.C.dictionary_cases.get(self.event['case_id']).pop(0)
 
             '''--------For Testing: Before releasing lock, which thread used it will be stored-------'''
             if check_executing_order.get(self.event['case_id']):
-                if self.event['activity'] != 'ES':
+                if self.event['activity'] != '!@#$%^':
                     check_executing_order.get(self.event['case_id']).append(self.event['activity'])
             else:
                 check_executing_order[self.event['case_id']] = []
@@ -53,7 +53,7 @@ class CaseThreadForTraining(Thread):
             self.C.lock_List.get(self.event['case_id']).release()
 
 
-def calcuate_connection_for_different_prefix_automata(windowsMemory, event):
+def calcuate_connection_for_different_prefix_automata(windowsMemory):
     """
     "autos" is a list of automata (global variable)
     Connect to the database
@@ -73,7 +73,7 @@ def calcuate_connection_for_different_prefix_automata(windowsMemory, event):
         sink_node = ','.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws + 1: MAXIMUN_WINDOW_SIZE + 1])
         if CL.lock_List.get((source_node, sink_node)):
             if CL.lock_List.get((source_node, sink_node)).acquire():
-                if event['activity'] == 'ES' and source_node.find('*') == -1:
+                if windowsMemory[MAXIMUN_WINDOW_SIZE] == '!@#$%^' and source_node.find('*') == -1:
                     # only add source_node into database, don't add connection
                     autos.get(ws).update_automata(automata.Connection(source_node, 'None', 0))
                 elif source_node.find('*') == -1:
@@ -84,12 +84,10 @@ def calcuate_connection_for_different_prefix_automata(windowsMemory, event):
             # Create a lock for the new (source_node, sink_node)
             CL.lock_List[source_node, sink_node] = lock
             if CL.lock_List.get((source_node, sink_node)).acquire():
-                if event['activity'] == 'ES' and source_node.find('*') == -1:
+                if windowsMemory[MAXIMUN_WINDOW_SIZE] == '!@#$%^' and source_node.find('*') == -1:
                     # only add source_node into database, don't add connection
                     autos.get(ws).update_automata(automata.Connection(source_node, 'None', 0))
                 elif source_node.find('*') == -1:
                     autos.get(ws).update_automata(automata.Connection(source_node, sink_node, 1))
                 CL.lock_List.get((source_node, sink_node)).release()
-
-# TODO: the endmessage is 'ES', if longer it will get some error....
 
