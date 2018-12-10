@@ -17,7 +17,7 @@ def change_autos(key, value):
 
 
 def get_autos():
-    return autos, status
+    return autos
 
 
 def get_autos_status():
@@ -27,8 +27,8 @@ def get_autos_status():
 def call_buildautos():
     build_automata.build_automata()
     # running the below two lines to get automata to memory for compliance checking
-    init()
-    autos, status = get_autos()
+    # init()
+    # autos = get_autos()
 
 
 def set_auto_status():
@@ -90,3 +90,5 @@ def get_case_memory():
 
 def get_thread_memory():
     return T
+
+

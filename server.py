@@ -14,7 +14,7 @@ if __name__ == '__main__':
     from streaming_event_compliance.database import dbtools
     dbtools.empty_tables()  # TODO: After building the correct automata, uncommend this line;
     globalvar.init()
-    autos, status = globalvar.get_autos()
+    status = globalvar.get_autos()
     if status == 0:
         globalvar.call_buildautos()
     else:
