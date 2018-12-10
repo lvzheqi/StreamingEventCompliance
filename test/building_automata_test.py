@@ -3,7 +3,7 @@ from streaming_event_compliance.utils import config
 from streaming_event_compliance.services.build_automata import build_automata
 from streaming_event_compliance.services.build_automata import case_thread
 from streaming_event_compliance.database import dbtools
-from streaming_event_compliance.services import globalvar, set_globalvar
+from streaming_event_compliance.services import globalvar
 from pm4py.objects.log.importer.xes import factory as xes_importer
 from pm4py.objects.log import transform
 from streaming_event_compliance.objects.automata import automata
@@ -46,12 +46,6 @@ class BuildingAutomataTestCase(unittest.TestCase):
                 expected_log[event['case_id']] = []
                 expected_log[event['case_id']].append(event['activity'])
         build_automata.build_automata()
-        print("expected_order:")
-        for item in expected_log:
-            print(item, ":", expected_log.get(item))
-        print("check_executing_order:")
-        for item in case_thread.check_executing_order:
-            print(item, ":", case_thread.check_executing_order.get(item))
         self.assertEqual(expected_log, case_thread.check_executing_order)
 
     def test_calcuate_connection_for_different_prefix_automata(self):
@@ -77,8 +71,9 @@ class BuildingAutomataTestCase(unittest.TestCase):
         autos_manual4.nodes = {'a,b,c,d': 1}
         autos_manual4.connections.append({'Source node': ' a,b,c,d', 'sink node': 'b,c,d,e', 'probability': None})
         autos_manuals[4] = autos_manual4
-        case_thread.calcuate_connection_for_different_prefix_automata(windowsMemory)
-        autos, status = set_globalvar.get_autos()
+        event = {'case_id': 'Case1', 'activity': 'e'}
+        case_thread.calcuate_connection_for_different_prefix_automata(windowsMemory, event)
+        autos, status = globalvar.get_autos()
         for ws in config.WINDOW_SIZE:
             autos_manual = str(autos_manuals[ws]).replace("'", "")
             autos_manual = autos_manual.replace(" ", "")
@@ -86,8 +81,6 @@ class BuildingAutomataTestCase(unittest.TestCase):
             autos_computed = autos_computed.replace('>', '}')
             autos_computed = autos_computed.replace("'", "")
             autos_computed = autos_computed.replace(" ", "")
-            print(autos_computed)
-            print(autos_manual)
             self.assertEqual(autos_computed, autos_manual)
 
     def tearUp(self):

@@ -1,6 +1,6 @@
 from threading import Thread
 import time
-from streaming_event_compliance.utils.config import WINDOWS, MAXIMUN_WINDOW_SIZE
+from streaming_event_compliance.utils.config import WINDOW_SIZE, MAXIMUN_WINDOW_SIZE
 from . import compare_automata
 
 
@@ -58,7 +58,7 @@ def create_source_sink_node(windowsMemory, client_uuid):
                          (i.e. event == windowsMemory[maximum_window_size])
     :return:
     """
-    for ws in WINDOWS:# [1, 2, 3, 4]
+    for ws in WINDOW_SIZE:# [1, 2, 3, 4]
         # print(windowsMemory)
         source_node = ','.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws: MAXIMUN_WINDOW_SIZE])
         sink_node = ','.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws + 1: MAXIMUN_WINDOW_SIZE+1])

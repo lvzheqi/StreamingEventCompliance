@@ -4,11 +4,11 @@ DATABASE_PATH = 'mysql+pymysql://compliancechecker:compliancechecker@localhost/c
 
 AUTOMATA_FILE = 'automata.pdf'
 
-WINDOWS = [1, 2, 3, 4]
+WINDOW_SIZE = [1, 2, 3, 4]
 MAXIMUN_WINDOW_SIZE = 4
 
 BASE_DIR = os.path.dirname(__file__) + os.sep + '..' + os.sep + '..' + os.sep
-TRAINING_EVENT_LOG_PATH = BASE_DIR + 'data' + os.sep + 'Example_EventLogForTraining.xes'
+TRAINING_EVENT_LOG_PATH = BASE_DIR + 'data' + os.sep + 'Example_EventLogForTraining_Backup.xes'
 SERVER_LOG_PATH = BASE_DIR + os.sep + 'data' + os.sep + 'server.log'
 
 AUTOS_DEFAULT = False
