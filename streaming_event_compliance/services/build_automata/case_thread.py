@@ -42,7 +42,8 @@ class CaseThreadForTraining(Thread):
 
             '''--------For Testing: Before releasing lock, which thread used it will be stored-------'''
             if check_executing_order.get(self.event['case_id']):
-                check_executing_order.get(self.event['case_id']).append(self.event['activity'])
+                if self.event['activity'] != 'ES':
+                    check_executing_order.get(self.event['case_id']).append(self.event['activity'])
             else:
                 check_executing_order[self.event['case_id']] = []
                 check_executing_order[self.event['case_id']].append(self.event['activity'])
@@ -65,7 +66,7 @@ def calcuate_connection_for_different_prefix_automata(windowsMemory, event):
     :param event:
     :return:
     """
-    autos, status = globalvar.get_autos()
+    autos = globalvar.get_autos()
     CL = globalvar.get_connection_locks()
     for ws in WINDOW_SIZE:  # [1, 2, 3, 4]
         source_node = ','.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws: MAXIMUN_WINDOW_SIZE])
