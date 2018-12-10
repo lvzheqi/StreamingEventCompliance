@@ -42,7 +42,8 @@ class CaseThreadForTraining(Thread):
 
             '''--------For Testing: Before releasing lock, which thread used it will be stored-------'''
             if check_executing_order.get(self.event['case_id']):
-                check_executing_order.get(self.event['case_id']).append(self.event['activity'])
+                if self.event['activity'] != 'ES':
+                    check_executing_order.get(self.event['case_id']).append(self.event['activity'])
             else:
                 check_executing_order[self.event['case_id']] = []
                 check_executing_order[self.event['case_id']].append(self.event['activity'])

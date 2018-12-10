@@ -1,6 +1,6 @@
 from streaming_event_compliance.objects.automata import automata
 from streaming_event_compliance.objects.automata import alertlog
-from streaming_event_compliance.utils.config import WINDOWS
+from streaming_event_compliance.utils.config import WINDOW_SIZE
 from streaming_event_compliance.objects.exceptions.exception import NoUserError
 
 from streaming_event_compliance.database import db
@@ -63,7 +63,7 @@ def init_automata_from_database():
     '''
     conns = automata.Connection.query.all()
     autos = {}
-    for ws in WINDOWS:
+    for ws in WINDOW_SIZE:
         auto = automata.Automata(ws)
         autos[ws] = auto
     if len(conns) != 0:
@@ -79,7 +79,7 @@ def init_automata_from_database():
 def init_alert_log_from_database(uuid):
     records = alertlog.AlertRecord.query.filter_by(user_id=uuid).all()
     alogs = {}
-    for ws in WINDOWS:
+    for ws in WINDOW_SIZE:
         alog = alertlog.AlertLog(uuid, ws)
         alogs[ws] = alog
     for record in records:
