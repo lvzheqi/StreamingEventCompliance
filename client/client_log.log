@@ -1,0 +1,1530 @@
+2018-12-10 15:10:35,917  INFO saby main 'Post request to server:http://127.0.0.1:5000/login?uuid=saby'
+2018-12-10 15:10:36,010 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:10:36,025 http://127.0.0.1:5000 "POST /login?uuid=saby HTTP/1.1" 200 0
+2018-12-10 15:10:36,025  INFO saby main 'The options are displayed'
+2018-12-10 15:10:50,685  INFO saby main 'The user selected option 1'
+2018-12-10 15:10:50,685  INFO saby main 'Calling run_compliance_checker()'
+2018-12-10 15:10:50,685  INFO saby run_compliance_checker 'Calling read_log()'
+2018-12-10 15:10:50,685  INFO saby read_log 'Creating a trace logger file: '
+2018-12-10 15:10:50,716  INFO saby read_log 'Transforming trace logger to event logger'
+2018-12-10 15:10:50,716  INFO saby read_log 'Sorting event logger'
+2018-12-10 15:10:50,731  INFO saby run_compliance_checker 'Calling simulate_stream_event()'
+2018-12-10 15:10:51,278  INFO saby simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:10:51,278  INFO saby invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2018-12-10 15:10:51,278  INFO saby invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2018-12-10 15:10:51,278  INFO saby run Thread:0 Case_id:Case1.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:10:51,278 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:10:51,418 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 500 291
+2018-12-10 15:10:51,418  ERROR saby run Thread:0 Case_id:Case1.0 Activity:a 'Error by compliance checking'
+2018-12-10 15:10:51,965  INFO saby simulate_stream_event Case_id:Case3.0 Activity:uiy 'Calling invoke_event_thread()'
+2018-12-10 15:10:51,965  INFO saby invoke_event_thread Case_id:Case3.0 Activity:uiy 'Initialising thread'
+2018-12-10 15:10:51,965  INFO saby invoke_event_thread Case_id:Case3.0 Activity:uiy 'Starting thread for event '
+2018-12-10 15:10:51,965  INFO saby run Thread:1 Case_id:Case3.0 Activity:uiy 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:10:51,965 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:10:51,965 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 500 291
+2018-12-10 15:10:51,965  ERROR saby run Thread:1 Case_id:Case3.0 Activity:uiy 'Error by compliance checking'
+2018-12-10 15:10:52,513  INFO saby simulate_stream_event Case_id:Case2.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:10:52,513  INFO saby invoke_event_thread Case_id:Case2.0 Activity:a 'Initialising thread'
+2018-12-10 15:10:52,513  INFO saby invoke_event_thread Case_id:Case2.0 Activity:a 'Starting thread for event '
+2018-12-10 15:10:52,513  INFO saby run Thread:2 Case_id:Case2.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:10:52,513 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:10:52,513 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 500 291
+2018-12-10 15:10:52,513  ERROR saby run Thread:2 Case_id:Case2.0 Activity:a 'Error by compliance checking'
+2018-12-10 15:10:53,075  INFO saby simulate_stream_event Case_id:Case1.2 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:10:53,075  INFO saby invoke_event_thread Case_id:Case1.2 Activity:a 'Initialising thread'
+2018-12-10 15:10:53,075  INFO saby invoke_event_thread Case_id:Case1.2 Activity:a 'Starting thread for event '
+2018-12-10 15:10:53,075  INFO saby run Thread:3 Case_id:Case1.2 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:10:53,075 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:10:53,075 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 500 291
+2018-12-10 15:10:53,075  ERROR saby run Thread:3 Case_id:Case1.2 Activity:a 'Error by compliance checking'
+2018-12-10 15:10:53,356  ERROR saby main 'Compliance checking is interrupted by user'
+2018-12-10 15:10:53,356  INFO saby main 'The options are displayed'
+2018-12-10 15:13:06,694  INFO saby main 'Post request to server:http://127.0.0.1:5000/login?uuid=saby'
+2018-12-10 15:13:06,710 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:13:06,710 http://127.0.0.1:5000 "POST /login?uuid=saby HTTP/1.1" 200 0
+2018-12-10 15:13:06,710  INFO saby main 'The options are displayed'
+2018-12-10 15:13:07,882  INFO saby main 'The user selected option 1'
+2018-12-10 15:13:07,882  INFO saby main 'Calling run_compliance_checker()'
+2018-12-10 15:13:07,882  INFO saby run_compliance_checker 'Calling read_log()'
+2018-12-10 15:13:07,882  INFO saby read_log 'Creating a trace logger file: '
+2018-12-10 15:13:07,882  INFO saby read_log 'Transforming trace logger to event logger'
+2018-12-10 15:13:07,882  INFO saby read_log 'Sorting event logger'
+2018-12-10 15:13:07,882  INFO saby run_compliance_checker 'Calling simulate_stream_event()'
+2018-12-10 15:13:08,444  INFO saby simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:13:08,444  INFO saby invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2018-12-10 15:13:08,444  INFO saby invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2018-12-10 15:13:08,444  INFO saby run Thread:0 Case_id:Case1.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:13:08,444 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:13:08,444 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 500 291
+2018-12-10 15:13:08,444  ERROR saby run Thread:0 Case_id:Case1.0 Activity:a 'Error by compliance checking'
+2018-12-10 15:13:08,991  INFO saby simulate_stream_event Case_id:Case3.0 Activity:uiy 'Calling invoke_event_thread()'
+2018-12-10 15:13:08,991  INFO saby invoke_event_thread Case_id:Case3.0 Activity:uiy 'Initialising thread'
+2018-12-10 15:13:08,991  INFO saby invoke_event_thread Case_id:Case3.0 Activity:uiy 'Starting thread for event '
+2018-12-10 15:13:08,991  INFO saby run Thread:1 Case_id:Case3.0 Activity:uiy 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:13:08,991 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:13:08,991 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 500 291
+2018-12-10 15:13:08,991  ERROR saby run Thread:1 Case_id:Case3.0 Activity:uiy 'Error by compliance checking'
+2018-12-10 15:13:09,538  INFO saby simulate_stream_event Case_id:Case2.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:13:09,538  INFO saby invoke_event_thread Case_id:Case2.0 Activity:a 'Initialising thread'
+2018-12-10 15:13:09,538  INFO saby invoke_event_thread Case_id:Case2.0 Activity:a 'Starting thread for event '
+2018-12-10 15:13:09,538  INFO saby run Thread:2 Case_id:Case2.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:13:09,538 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:13:09,538 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 500 291
+2018-12-10 15:13:09,538  ERROR saby run Thread:2 Case_id:Case2.0 Activity:a 'Error by compliance checking'
+2018-12-10 15:13:10,101  INFO saby simulate_stream_event Case_id:Case1.2 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:13:10,101  INFO saby invoke_event_thread Case_id:Case1.2 Activity:a 'Initialising thread'
+2018-12-10 15:13:10,101  INFO saby invoke_event_thread Case_id:Case1.2 Activity:a 'Starting thread for event '
+2018-12-10 15:13:10,101  INFO saby run Thread:3 Case_id:Case1.2 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:13:10,101 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:13:10,101 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 500 291
+2018-12-10 15:13:10,101  ERROR saby run Thread:3 Case_id:Case1.2 Activity:a 'Error by compliance checking'
+2018-12-10 15:13:10,585  ERROR saby main 'Compliance checking is interrupted by user'
+2018-12-10 15:13:10,585  INFO saby main 'The options are displayed'
+2018-12-10 15:14:21,201  INFO saby main 'The user selected option 1'
+2018-12-10 15:14:21,201  INFO saby main 'Calling run_compliance_checker()'
+2018-12-10 15:14:21,201  INFO saby run_compliance_checker 'Calling read_log()'
+2018-12-10 15:14:21,201  INFO saby read_log 'Creating a trace logger file: '
+2018-12-10 15:14:21,201  INFO saby read_log 'Transforming trace logger to event logger'
+2018-12-10 15:14:21,201  INFO saby read_log 'Sorting event logger'
+2018-12-10 15:14:21,201  INFO saby run_compliance_checker 'Calling simulate_stream_event()'
+2018-12-10 15:14:21,748  INFO saby simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:14:21,748  INFO saby invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2018-12-10 15:14:21,748  INFO saby invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2018-12-10 15:14:21,748  INFO saby run Thread:4 Case_id:Case1.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:14:21,748 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:14:21,748 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 500 291
+2018-12-10 15:14:21,748  ERROR saby run Thread:4 Case_id:Case1.0 Activity:a 'Error by compliance checking'
+2018-12-10 15:14:22,295  INFO saby simulate_stream_event Case_id:Case3.0 Activity:uiy 'Calling invoke_event_thread()'
+2018-12-10 15:14:22,295  INFO saby invoke_event_thread Case_id:Case3.0 Activity:uiy 'Initialising thread'
+2018-12-10 15:14:22,295  INFO saby invoke_event_thread Case_id:Case3.0 Activity:uiy 'Starting thread for event '
+2018-12-10 15:14:22,295  INFO saby run Thread:5 Case_id:Case3.0 Activity:uiy 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:14:22,295 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:14:22,295 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 500 291
+2018-12-10 15:14:22,295  ERROR saby run Thread:5 Case_id:Case3.0 Activity:uiy 'Error by compliance checking'
+2018-12-10 15:14:22,842  INFO saby simulate_stream_event Case_id:Case2.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:14:22,842  INFO saby invoke_event_thread Case_id:Case2.0 Activity:a 'Initialising thread'
+2018-12-10 15:14:22,842  INFO saby invoke_event_thread Case_id:Case2.0 Activity:a 'Starting thread for event '
+2018-12-10 15:14:22,842  INFO saby run Thread:6 Case_id:Case2.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:14:22,842 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:14:22,842 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 500 291
+2018-12-10 15:14:22,842  ERROR saby run Thread:6 Case_id:Case2.0 Activity:a 'Error by compliance checking'
+2018-12-10 15:14:23,405  INFO saby simulate_stream_event Case_id:Case1.2 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:14:23,405  INFO saby invoke_event_thread Case_id:Case1.2 Activity:a 'Initialising thread'
+2018-12-10 15:14:23,405  INFO saby invoke_event_thread Case_id:Case1.2 Activity:a 'Starting thread for event '
+2018-12-10 15:14:23,405  INFO saby run Thread:7 Case_id:Case1.2 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:14:23,405 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:14:23,405 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 500 291
+2018-12-10 15:14:23,405  ERROR saby run Thread:7 Case_id:Case1.2 Activity:a 'Error by compliance checking'
+2018-12-10 15:14:23,842  ERROR saby main 'Compliance checking is interrupted by user'
+2018-12-10 15:14:23,842  INFO saby main 'The options are displayed'
+2018-12-10 15:18:29,414  INFO saby main 'The user selected option 1'
+2018-12-10 15:18:29,414  INFO saby main 'Calling run_compliance_checker()'
+2018-12-10 15:18:29,414  INFO saby run_compliance_checker 'Calling read_log()'
+2018-12-10 15:18:29,414  INFO saby read_log 'Creating a trace logger file: '
+2018-12-10 15:18:29,414  INFO saby read_log 'Transforming trace logger to event logger'
+2018-12-10 15:18:29,414  INFO saby read_log 'Sorting event logger'
+2018-12-10 15:18:29,414  INFO saby run_compliance_checker 'Calling simulate_stream_event()'
+2018-12-10 15:18:29,961  INFO saby simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:18:29,961  INFO saby invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2018-12-10 15:18:29,961  INFO saby invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2018-12-10 15:18:29,961  INFO saby run Thread:8 Case_id:Case1.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:29,961 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:29,961 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:29,961  INFO saby run Thread:8 Case_id:Case1.0 Activity:a 'The server response is: Automata not available'
+2018-12-10 15:18:30,508  INFO saby simulate_stream_event Case_id:Case3.0 Activity:uiy 'Calling invoke_event_thread()'
+2018-12-10 15:18:30,508  INFO saby invoke_event_thread Case_id:Case3.0 Activity:uiy 'Initialising thread'
+2018-12-10 15:18:30,508  INFO saby invoke_event_thread Case_id:Case3.0 Activity:uiy 'Starting thread for event '
+2018-12-10 15:18:30,508  INFO saby run Thread:9 Case_id:Case3.0 Activity:uiy 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:30,508 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:30,508 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:30,508  INFO saby run Thread:9 Case_id:Case3.0 Activity:uiy 'The server response is: Automata not available'
+2018-12-10 15:18:31,086  INFO saby simulate_stream_event Case_id:Case2.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:18:31,086  INFO saby invoke_event_thread Case_id:Case2.0 Activity:a 'Initialising thread'
+2018-12-10 15:18:31,086  INFO saby invoke_event_thread Case_id:Case2.0 Activity:a 'Starting thread for event '
+2018-12-10 15:18:31,086  INFO saby run Thread:10 Case_id:Case2.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:31,086 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:31,086 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:31,086  INFO saby run Thread:10 Case_id:Case2.0 Activity:a 'The server response is: Automata not available'
+2018-12-10 15:18:31,649  INFO saby simulate_stream_event Case_id:Case1.2 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:18:31,649  INFO saby invoke_event_thread Case_id:Case1.2 Activity:a 'Initialising thread'
+2018-12-10 15:18:31,649  INFO saby invoke_event_thread Case_id:Case1.2 Activity:a 'Starting thread for event '
+2018-12-10 15:18:31,649  INFO saby run Thread:11 Case_id:Case1.2 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:31,649 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:31,649 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:31,649  INFO saby run Thread:11 Case_id:Case1.2 Activity:a 'The server response is: Automata not available'
+2018-12-10 15:18:32,195  INFO saby simulate_stream_event Case_id:Case1.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:18:32,195  INFO saby invoke_event_thread Case_id:Case1.1 Activity:a 'Initialising thread'
+2018-12-10 15:18:32,195  INFO saby invoke_event_thread Case_id:Case1.1 Activity:a 'Starting thread for event '
+2018-12-10 15:18:32,195  INFO saby run Thread:12 Case_id:Case1.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:32,195 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:32,195 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:32,195  INFO saby run Thread:12 Case_id:Case1.1 Activity:a 'The server response is: Automata not available'
+2018-12-10 15:18:32,758  INFO saby simulate_stream_event Case_id:Case2.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:18:32,758  INFO saby invoke_event_thread Case_id:Case2.1 Activity:a 'Initialising thread'
+2018-12-10 15:18:32,758  INFO saby invoke_event_thread Case_id:Case2.1 Activity:a 'Starting thread for event '
+2018-12-10 15:18:32,758  INFO saby run Thread:13 Case_id:Case2.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:32,758 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:32,758 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:32,758  INFO saby run Thread:13 Case_id:Case2.1 Activity:a 'The server response is: Automata not available'
+2018-12-10 15:18:33,305  INFO saby simulate_stream_event Case_id:Case1.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 15:18:33,305  INFO saby invoke_event_thread Case_id:Case1.0 Activity:b 'Initialising thread'
+2018-12-10 15:18:33,305  INFO saby invoke_event_thread Case_id:Case1.0 Activity:b 'Starting thread for event '
+2018-12-10 15:18:33,305  INFO saby run Thread:14 Case_id:Case1.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:33,305 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:33,305 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:33,305  INFO saby run Thread:14 Case_id:Case1.0 Activity:b 'The server response is: Automata not available'
+2018-12-10 15:18:33,852  INFO saby simulate_stream_event Case_id:Case3.0 Activity:edse 'Calling invoke_event_thread()'
+2018-12-10 15:18:33,852  INFO saby invoke_event_thread Case_id:Case3.0 Activity:edse 'Initialising thread'
+2018-12-10 15:18:33,852  INFO saby invoke_event_thread Case_id:Case3.0 Activity:edse 'Starting thread for event '
+2018-12-10 15:18:33,852  INFO saby run Thread:15 Case_id:Case3.0 Activity:edse 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:33,852 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:33,852 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:33,852  INFO saby run Thread:15 Case_id:Case3.0 Activity:edse 'The server response is: Automata not available'
+2018-12-10 15:18:34,399  INFO saby simulate_stream_event Case_id:Case2.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 15:18:34,399  INFO saby invoke_event_thread Case_id:Case2.0 Activity:c 'Initialising thread'
+2018-12-10 15:18:34,399  INFO saby invoke_event_thread Case_id:Case2.0 Activity:c 'Starting thread for event '
+2018-12-10 15:18:34,399  INFO saby run Thread:16 Case_id:Case2.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:34,399 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:34,399 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:34,399  INFO saby run Thread:16 Case_id:Case2.0 Activity:c 'The server response is: Automata not available'
+2018-12-10 15:18:34,946  INFO saby simulate_stream_event Case_id:Case1.2 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 15:18:34,946  INFO saby invoke_event_thread Case_id:Case1.2 Activity:b 'Initialising thread'
+2018-12-10 15:18:34,946  INFO saby invoke_event_thread Case_id:Case1.2 Activity:b 'Starting thread for event '
+2018-12-10 15:18:34,946  INFO saby run Thread:17 Case_id:Case1.2 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:34,946 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:34,946 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:34,946  INFO saby run Thread:17 Case_id:Case1.2 Activity:b 'The server response is: Automata not available'
+2018-12-10 15:18:35,493  INFO saby simulate_stream_event Case_id:Case1.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 15:18:35,493  INFO saby invoke_event_thread Case_id:Case1.1 Activity:b 'Initialising thread'
+2018-12-10 15:18:35,493  INFO saby invoke_event_thread Case_id:Case1.1 Activity:b 'Starting thread for event '
+2018-12-10 15:18:35,493  INFO saby run Thread:18 Case_id:Case1.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:35,493 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:35,493 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:35,493  INFO saby run Thread:18 Case_id:Case1.1 Activity:b 'The server response is: Automata not available'
+2018-12-10 15:18:36,040  INFO saby simulate_stream_event Case_id:Case2.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 15:18:36,040  INFO saby invoke_event_thread Case_id:Case2.1 Activity:c 'Initialising thread'
+2018-12-10 15:18:36,040  INFO saby invoke_event_thread Case_id:Case2.1 Activity:c 'Starting thread for event '
+2018-12-10 15:18:36,040  INFO saby run Thread:19 Case_id:Case2.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:36,040 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:36,040 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:36,040  INFO saby run Thread:19 Case_id:Case2.1 Activity:c 'The server response is: Automata not available'
+2018-12-10 15:18:36,603  INFO saby simulate_stream_event Case_id:Case1.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 15:18:36,603  INFO saby invoke_event_thread Case_id:Case1.0 Activity:c 'Initialising thread'
+2018-12-10 15:18:36,603  INFO saby invoke_event_thread Case_id:Case1.0 Activity:c 'Starting thread for event '
+2018-12-10 15:18:36,603  INFO saby run Thread:20 Case_id:Case1.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:36,603 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:36,603 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:36,603  INFO saby run Thread:20 Case_id:Case1.0 Activity:c 'The server response is: Automata not available'
+2018-12-10 15:18:37,165  INFO saby simulate_stream_event Case_id:Case3.0 Activity:djkh 'Calling invoke_event_thread()'
+2018-12-10 15:18:37,165  INFO saby invoke_event_thread Case_id:Case3.0 Activity:djkh 'Initialising thread'
+2018-12-10 15:18:37,165  INFO saby invoke_event_thread Case_id:Case3.0 Activity:djkh 'Starting thread for event '
+2018-12-10 15:18:37,165  INFO saby run Thread:21 Case_id:Case3.0 Activity:djkh 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:37,165 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:37,165 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:37,165  INFO saby run Thread:21 Case_id:Case3.0 Activity:djkh 'The server response is: Automata not available'
+2018-12-10 15:18:37,711  INFO saby simulate_stream_event Case_id:Case2.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 15:18:37,711  INFO saby invoke_event_thread Case_id:Case2.0 Activity:b 'Initialising thread'
+2018-12-10 15:18:37,711  INFO saby invoke_event_thread Case_id:Case2.0 Activity:b 'Starting thread for event '
+2018-12-10 15:18:37,711  INFO saby run Thread:22 Case_id:Case2.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:37,711 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:37,711 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:37,711  INFO saby run Thread:22 Case_id:Case2.0 Activity:b 'The server response is: Automata not available'
+2018-12-10 15:18:38,259  INFO saby simulate_stream_event Case_id:Case1.2 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 15:18:38,259  INFO saby invoke_event_thread Case_id:Case1.2 Activity:c 'Initialising thread'
+2018-12-10 15:18:38,259  INFO saby invoke_event_thread Case_id:Case1.2 Activity:c 'Starting thread for event '
+2018-12-10 15:18:38,259  INFO saby run Thread:23 Case_id:Case1.2 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:38,259 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:38,259 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:38,259  INFO saby run Thread:23 Case_id:Case1.2 Activity:c 'The server response is: Automata not available'
+2018-12-10 15:18:38,806  INFO saby simulate_stream_event Case_id:Case1.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 15:18:38,806  INFO saby invoke_event_thread Case_id:Case1.1 Activity:c 'Initialising thread'
+2018-12-10 15:18:38,806  INFO saby invoke_event_thread Case_id:Case1.1 Activity:c 'Starting thread for event '
+2018-12-10 15:18:38,806  INFO saby run Thread:24 Case_id:Case1.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:38,806 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:38,806 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:38,806  INFO saby run Thread:24 Case_id:Case1.1 Activity:c 'The server response is: Automata not available'
+2018-12-10 15:18:39,352  INFO saby simulate_stream_event Case_id:Case2.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 15:18:39,352  INFO saby invoke_event_thread Case_id:Case2.1 Activity:b 'Initialising thread'
+2018-12-10 15:18:39,352  INFO saby invoke_event_thread Case_id:Case2.1 Activity:b 'Starting thread for event '
+2018-12-10 15:18:39,352  INFO saby run Thread:25 Case_id:Case2.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:39,352 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:39,352 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:39,352  INFO saby run Thread:25 Case_id:Case2.1 Activity:b 'The server response is: Automata not available'
+2018-12-10 15:18:39,894  INFO saby simulate_stream_event Case_id:Case1.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 15:18:39,894  INFO saby invoke_event_thread Case_id:Case1.0 Activity:d 'Initialising thread'
+2018-12-10 15:18:39,894  INFO saby invoke_event_thread Case_id:Case1.0 Activity:d 'Starting thread for event '
+2018-12-10 15:18:39,894  INFO saby run Thread:26 Case_id:Case1.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:39,894 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:39,894 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:39,894  INFO saby run Thread:26 Case_id:Case1.0 Activity:d 'The server response is: Automata not available'
+2018-12-10 15:18:40,432  INFO saby simulate_stream_event Case_id:Case3.0 Activity:assf 'Calling invoke_event_thread()'
+2018-12-10 15:18:40,432  INFO saby invoke_event_thread Case_id:Case3.0 Activity:assf 'Initialising thread'
+2018-12-10 15:18:40,433  INFO saby invoke_event_thread Case_id:Case3.0 Activity:assf 'Starting thread for event '
+2018-12-10 15:18:40,433  INFO saby run Thread:27 Case_id:Case3.0 Activity:assf 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:40,433 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:40,433 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:40,433  INFO saby run Thread:27 Case_id:Case3.0 Activity:assf 'The server response is: Automata not available'
+2018-12-10 15:18:40,980  INFO saby simulate_stream_event Case_id:Case2.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 15:18:40,980  INFO saby invoke_event_thread Case_id:Case2.0 Activity:d 'Initialising thread'
+2018-12-10 15:18:40,980  INFO saby invoke_event_thread Case_id:Case2.0 Activity:d 'Starting thread for event '
+2018-12-10 15:18:40,980  INFO saby run Thread:28 Case_id:Case2.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:40,980 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:40,980 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:40,980  INFO saby run Thread:28 Case_id:Case2.0 Activity:d 'The server response is: Automata not available'
+2018-12-10 15:18:41,526  INFO saby simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 15:18:41,526  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-10 15:18:41,526  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-10 15:18:41,526  INFO saby run Thread:29 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:41,526 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:41,526 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:41,526  INFO saby run Thread:29 Case_id:Case1.2 Activity:d 'The server response is: Automata not available'
+2018-12-10 15:18:42,089  INFO saby simulate_stream_event Case_id:Case1.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 15:18:42,089  INFO saby invoke_event_thread Case_id:Case1.1 Activity:d 'Initialising thread'
+2018-12-10 15:18:42,089  INFO saby invoke_event_thread Case_id:Case1.1 Activity:d 'Starting thread for event '
+2018-12-10 15:18:42,089  INFO saby run Thread:30 Case_id:Case1.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:42,089 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:42,089 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:42,089  INFO saby run Thread:30 Case_id:Case1.1 Activity:d 'The server response is: Automata not available'
+2018-12-10 15:18:42,635  INFO saby simulate_stream_event Case_id:Case2.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 15:18:42,635  INFO saby invoke_event_thread Case_id:Case2.1 Activity:d 'Initialising thread'
+2018-12-10 15:18:42,635  INFO saby invoke_event_thread Case_id:Case2.1 Activity:d 'Starting thread for event '
+2018-12-10 15:18:42,635  INFO saby run Thread:31 Case_id:Case2.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:42,635 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:42,635 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:42,635  INFO saby run Thread:31 Case_id:Case2.1 Activity:d 'The server response is: Automata not available'
+2018-12-10 15:18:43,198  INFO saby simulate_stream_event Case_id:Case2.0 Activity:e 'Calling invoke_event_thread()'
+2018-12-10 15:18:43,198  INFO saby invoke_event_thread Case_id:Case2.0 Activity:e 'Initialising thread'
+2018-12-10 15:18:43,198  INFO saby invoke_event_thread Case_id:Case2.0 Activity:e 'Starting thread for event '
+2018-12-10 15:18:43,198  INFO saby run Thread:32 Case_id:Case2.0 Activity:e 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:43,198 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:43,198 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:43,198  INFO saby run Thread:32 Case_id:Case2.0 Activity:e 'The server response is: Automata not available'
+2018-12-10 15:18:43,745  INFO saby simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 15:18:43,745  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-10 15:18:43,745  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-10 15:18:43,745  INFO saby run Thread:33 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:43,745 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:43,745 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:43,745  INFO saby run Thread:33 Case_id:Case1.2 Activity:d 'The server response is: Automata not available'
+2018-12-10 15:18:44,291  INFO saby simulate_stream_event Case_id:Case3.0 Activity:g 'Calling invoke_event_thread()'
+2018-12-10 15:18:44,291  INFO saby invoke_event_thread Case_id:Case3.0 Activity:g 'Initialising thread'
+2018-12-10 15:18:44,291  INFO saby invoke_event_thread Case_id:Case3.0 Activity:g 'Starting thread for event '
+2018-12-10 15:18:44,291  INFO saby run Thread:34 Case_id:Case3.0 Activity:g 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:44,291 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:44,291 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:44,291  INFO saby run Thread:34 Case_id:Case3.0 Activity:g 'The server response is: Automata not available'
+2018-12-10 15:18:44,854  INFO saby simulate_stream_event Case_id:Case2.0 Activity:x 'Calling invoke_event_thread()'
+2018-12-10 15:18:44,854  INFO saby invoke_event_thread Case_id:Case2.0 Activity:x 'Initialising thread'
+2018-12-10 15:18:44,854  INFO saby invoke_event_thread Case_id:Case2.0 Activity:x 'Starting thread for event '
+2018-12-10 15:18:44,854  INFO saby run Thread:35 Case_id:Case2.0 Activity:x 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:44,854 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:44,854 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:44,854  INFO saby run Thread:35 Case_id:Case2.0 Activity:x 'The server response is: Automata not available'
+2018-12-10 15:18:45,403  INFO saby simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 15:18:45,403  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-10 15:18:45,403  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-10 15:18:45,403  INFO saby run Thread:36 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:45,403 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:45,403 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:45,403  INFO saby run Thread:36 Case_id:Case1.2 Activity:d 'The server response is: Automata not available'
+2018-12-10 15:18:45,949  INFO saby simulate_stream_event Case_id:Case3.0 Activity:h 'Calling invoke_event_thread()'
+2018-12-10 15:18:45,949  INFO saby invoke_event_thread Case_id:Case3.0 Activity:h 'Initialising thread'
+2018-12-10 15:18:45,949  INFO saby invoke_event_thread Case_id:Case3.0 Activity:h 'Starting thread for event '
+2018-12-10 15:18:45,949  INFO saby run Thread:37 Case_id:Case3.0 Activity:h 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:45,949 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:45,949 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:45,949  INFO saby run Thread:37 Case_id:Case3.0 Activity:h 'The server response is: Automata not available'
+2018-12-10 15:18:46,496  INFO saby simulate_stream_event Case_id:Case2.0 Activity:z 'Calling invoke_event_thread()'
+2018-12-10 15:18:46,496  INFO saby invoke_event_thread Case_id:Case2.0 Activity:z 'Initialising thread'
+2018-12-10 15:18:46,496  INFO saby invoke_event_thread Case_id:Case2.0 Activity:z 'Starting thread for event '
+2018-12-10 15:18:46,496  INFO saby run Thread:38 Case_id:Case2.0 Activity:z 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:46,496 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:46,496 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:46,496  INFO saby run Thread:38 Case_id:Case2.0 Activity:z 'The server response is: Automata not available'
+2018-12-10 15:18:47,043  INFO saby simulate_stream_event Case_id:Case1.2 Activity:z 'Calling invoke_event_thread()'
+2018-12-10 15:18:47,043  INFO saby invoke_event_thread Case_id:Case1.2 Activity:z 'Initialising thread'
+2018-12-10 15:18:47,043  INFO saby invoke_event_thread Case_id:Case1.2 Activity:z 'Starting thread for event '
+2018-12-10 15:18:47,043  INFO saby run Thread:39 Case_id:Case1.2 Activity:z 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:47,043 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:47,043 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:47,043  INFO saby run Thread:39 Case_id:Case1.2 Activity:z 'The server response is: Automata not available'
+2018-12-10 15:18:47,591  INFO saby simulate_stream_event Case_id:Case3.0 Activity:i 'Calling invoke_event_thread()'
+2018-12-10 15:18:47,591  INFO saby invoke_event_thread Case_id:Case3.0 Activity:i 'Initialising thread'
+2018-12-10 15:18:47,591  INFO saby invoke_event_thread Case_id:Case3.0 Activity:i 'Starting thread for event '
+2018-12-10 15:18:47,591  INFO saby run Thread:40 Case_id:Case3.0 Activity:i 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:47,591 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:47,591 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:47,591  INFO saby run Thread:40 Case_id:Case3.0 Activity:i 'The server response is: Automata not available'
+2018-12-10 15:18:48,137  INFO saby simulate_stream_event Case_id:Case2.0 Activity:i 'Calling invoke_event_thread()'
+2018-12-10 15:18:48,137  INFO saby invoke_event_thread Case_id:Case2.0 Activity:i 'Initialising thread'
+2018-12-10 15:18:48,137  INFO saby invoke_event_thread Case_id:Case2.0 Activity:i 'Starting thread for event '
+2018-12-10 15:18:48,137  INFO saby run Thread:41 Case_id:Case2.0 Activity:i 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:48,137 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:48,137 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:48,137  INFO saby run Thread:41 Case_id:Case2.0 Activity:i 'The server response is: Automata not available'
+2018-12-10 15:18:48,684  INFO saby simulate_stream_event Case_id:Case1.2 Activity:h 'Calling invoke_event_thread()'
+2018-12-10 15:18:48,684  INFO saby invoke_event_thread Case_id:Case1.2 Activity:h 'Initialising thread'
+2018-12-10 15:18:48,684  INFO saby invoke_event_thread Case_id:Case1.2 Activity:h 'Starting thread for event '
+2018-12-10 15:18:48,684  INFO saby run Thread:42 Case_id:Case1.2 Activity:h 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:48,684 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:48,684 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:48,684  INFO saby run Thread:42 Case_id:Case1.2 Activity:h 'The server response is: Automata not available'
+2018-12-10 15:18:49,247  INFO saby simulate_stream_event Case_id:Case3.0 Activity:j 'Calling invoke_event_thread()'
+2018-12-10 15:18:49,247  INFO saby invoke_event_thread Case_id:Case3.0 Activity:j 'Initialising thread'
+2018-12-10 15:18:49,247  INFO saby invoke_event_thread Case_id:Case3.0 Activity:j 'Starting thread for event '
+2018-12-10 15:18:49,247  INFO saby run Thread:43 Case_id:Case3.0 Activity:j 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:49,247 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:49,247 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:49,247  INFO saby run Thread:43 Case_id:Case3.0 Activity:j 'The server response is: Automata not available'
+2018-12-10 15:18:49,794  INFO saby simulate_stream_event Case_id:Case2.0 Activity:k 'Calling invoke_event_thread()'
+2018-12-10 15:18:49,794  INFO saby invoke_event_thread Case_id:Case2.0 Activity:k 'Initialising thread'
+2018-12-10 15:18:49,794  INFO saby invoke_event_thread Case_id:Case2.0 Activity:k 'Starting thread for event '
+2018-12-10 15:18:49,794  INFO saby run Thread:44 Case_id:Case2.0 Activity:k 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:49,794 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:49,794 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:49,794  INFO saby run Thread:44 Case_id:Case2.0 Activity:k 'The server response is: Automata not available'
+2018-12-10 15:18:50,356  INFO saby simulate_stream_event Case_id:Case1.2 Activity:l 'Calling invoke_event_thread()'
+2018-12-10 15:18:50,356  INFO saby invoke_event_thread Case_id:Case1.2 Activity:l 'Initialising thread'
+2018-12-10 15:18:50,356  INFO saby invoke_event_thread Case_id:Case1.2 Activity:l 'Starting thread for event '
+2018-12-10 15:18:50,356  INFO saby run Thread:45 Case_id:Case1.2 Activity:l 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:50,356 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:50,356 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:50,356  INFO saby run Thread:45 Case_id:Case1.2 Activity:l 'The server response is: Automata not available'
+2018-12-10 15:18:50,903  INFO saby simulate_stream_event Case_id:Case1.2 Activity:m 'Calling invoke_event_thread()'
+2018-12-10 15:18:50,903  INFO saby invoke_event_thread Case_id:Case1.2 Activity:m 'Initialising thread'
+2018-12-10 15:18:50,903  INFO saby invoke_event_thread Case_id:Case1.2 Activity:m 'Starting thread for event '
+2018-12-10 15:18:50,903  INFO saby run Thread:46 Case_id:Case1.2 Activity:m 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:50,903 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:50,903 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:50,903  INFO saby run Thread:46 Case_id:Case1.2 Activity:m 'The server response is: Automata not available'
+2018-12-10 15:18:51,451  INFO saby simulate_stream_event Case_id:Case1.1 Activity:m 'Calling invoke_event_thread()'
+2018-12-10 15:18:51,451  INFO saby invoke_event_thread Case_id:Case1.1 Activity:m 'Initialising thread'
+2018-12-10 15:18:51,451  INFO saby invoke_event_thread Case_id:Case1.1 Activity:m 'Starting thread for event '
+2018-12-10 15:18:51,451  INFO saby run Thread:47 Case_id:Case1.1 Activity:m 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:51,451 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:51,451 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:51,451  INFO saby run Thread:47 Case_id:Case1.1 Activity:m 'The server response is: Automata not available'
+2018-12-10 15:18:51,998  INFO saby simulate_stream_event Case_id:Case1.0 Activity:m 'Calling invoke_event_thread()'
+2018-12-10 15:18:51,998  INFO saby invoke_event_thread Case_id:Case1.0 Activity:m 'Initialising thread'
+2018-12-10 15:18:51,998  INFO saby invoke_event_thread Case_id:Case1.0 Activity:m 'Starting thread for event '
+2018-12-10 15:18:51,998  INFO saby run Thread:48 Case_id:Case1.0 Activity:m 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:51,998 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:51,998 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:51,998  INFO saby run Thread:48 Case_id:Case1.0 Activity:m 'The server response is: Automata not available'
+2018-12-10 15:18:52,544  INFO saby simulate_stream_event Case_id:Case2.1 Activity:x 'Calling invoke_event_thread()'
+2018-12-10 15:18:52,544  INFO saby invoke_event_thread Case_id:Case2.1 Activity:x 'Initialising thread'
+2018-12-10 15:18:52,544  INFO saby invoke_event_thread Case_id:Case2.1 Activity:x 'Starting thread for event '
+2018-12-10 15:18:52,544  INFO saby run Thread:49 Case_id:Case2.1 Activity:x 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:52,544 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:52,544 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:52,544  INFO saby run Thread:49 Case_id:Case2.1 Activity:x 'The server response is: Automata not available'
+2018-12-10 15:18:53,091  INFO saby simulate_stream_event Case_id:Case1.2 Activity:n 'Calling invoke_event_thread()'
+2018-12-10 15:18:53,091  INFO saby invoke_event_thread Case_id:Case1.2 Activity:n 'Initialising thread'
+2018-12-10 15:18:53,091  INFO saby invoke_event_thread Case_id:Case1.2 Activity:n 'Starting thread for event '
+2018-12-10 15:18:53,091  INFO saby run Thread:50 Case_id:Case1.2 Activity:n 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:53,091 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:53,091 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:53,091  INFO saby run Thread:50 Case_id:Case1.2 Activity:n 'The server response is: Automata not available'
+2018-12-10 15:18:53,639  INFO saby simulate_stream_event Case_id:Case1.1 Activity:n 'Calling invoke_event_thread()'
+2018-12-10 15:18:53,639  INFO saby invoke_event_thread Case_id:Case1.1 Activity:n 'Initialising thread'
+2018-12-10 15:18:53,639  INFO saby invoke_event_thread Case_id:Case1.1 Activity:n 'Starting thread for event '
+2018-12-10 15:18:53,639  INFO saby run Thread:51 Case_id:Case1.1 Activity:n 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:53,639 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:53,639 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:53,639  INFO saby run Thread:51 Case_id:Case1.1 Activity:n 'The server response is: Automata not available'
+2018-12-10 15:18:54,181  INFO saby simulate_stream_event Case_id:Case1.0 Activity:n 'Calling invoke_event_thread()'
+2018-12-10 15:18:54,181  INFO saby invoke_event_thread Case_id:Case1.0 Activity:n 'Initialising thread'
+2018-12-10 15:18:54,181  INFO saby invoke_event_thread Case_id:Case1.0 Activity:n 'Starting thread for event '
+2018-12-10 15:18:54,181  INFO saby run Thread:52 Case_id:Case1.0 Activity:n 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:54,181 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:54,181 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:54,181  INFO saby run Thread:52 Case_id:Case1.0 Activity:n 'The server response is: Automata not available'
+2018-12-10 15:18:54,728  INFO saby simulate_stream_event Case_id:Case2.1 Activity:v 'Calling invoke_event_thread()'
+2018-12-10 15:18:54,728  INFO saby invoke_event_thread Case_id:Case2.1 Activity:v 'Initialising thread'
+2018-12-10 15:18:54,728  INFO saby invoke_event_thread Case_id:Case2.1 Activity:v 'Starting thread for event '
+2018-12-10 15:18:54,728  INFO saby run Thread:53 Case_id:Case2.1 Activity:v 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:54,728 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:54,728 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:54,728  INFO saby run Thread:53 Case_id:Case2.1 Activity:v 'The server response is: Automata not available'
+2018-12-10 15:18:55,275  INFO saby simulate_stream_event Case_id:Case1.2 Activity:o 'Calling invoke_event_thread()'
+2018-12-10 15:18:55,275  INFO saby invoke_event_thread Case_id:Case1.2 Activity:o 'Initialising thread'
+2018-12-10 15:18:55,275  INFO saby invoke_event_thread Case_id:Case1.2 Activity:o 'Starting thread for event '
+2018-12-10 15:18:55,275  INFO saby run Thread:54 Case_id:Case1.2 Activity:o 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:55,275 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:55,275 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:55,275  INFO saby run Thread:54 Case_id:Case1.2 Activity:o 'The server response is: Automata not available'
+2018-12-10 15:18:55,822  INFO saby simulate_stream_event Case_id:Case1.1 Activity:o 'Calling invoke_event_thread()'
+2018-12-10 15:18:55,822  INFO saby invoke_event_thread Case_id:Case1.1 Activity:o 'Initialising thread'
+2018-12-10 15:18:55,822  INFO saby invoke_event_thread Case_id:Case1.1 Activity:o 'Starting thread for event '
+2018-12-10 15:18:55,822  INFO saby run Thread:55 Case_id:Case1.1 Activity:o 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:55,822 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:55,822 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:55,822  INFO saby run Thread:55 Case_id:Case1.1 Activity:o 'The server response is: Automata not available'
+2018-12-10 15:18:56,369  INFO saby simulate_stream_event Case_id:Case1.0 Activity:j 'Calling invoke_event_thread()'
+2018-12-10 15:18:56,369  INFO saby invoke_event_thread Case_id:Case1.0 Activity:j 'Initialising thread'
+2018-12-10 15:18:56,369  INFO saby invoke_event_thread Case_id:Case1.0 Activity:j 'Starting thread for event '
+2018-12-10 15:18:56,369  INFO saby run Thread:56 Case_id:Case1.0 Activity:j 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:56,369 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:56,369 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:56,369  INFO saby run Thread:56 Case_id:Case1.0 Activity:j 'The server response is: Automata not available'
+2018-12-10 15:18:56,916  INFO saby simulate_stream_event Case_id:Case2.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 15:18:56,916  INFO saby invoke_event_thread Case_id:Case2.1 Activity:d 'Initialising thread'
+2018-12-10 15:18:56,916  INFO saby invoke_event_thread Case_id:Case2.1 Activity:d 'Starting thread for event '
+2018-12-10 15:18:56,916  INFO saby run Thread:57 Case_id:Case2.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:56,916 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:56,916 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:56,916  INFO saby run Thread:57 Case_id:Case2.1 Activity:d 'The server response is: Automata not available'
+2018-12-10 15:18:57,462  INFO saby simulate_stream_event Case_id:Case1.2 Activity:p 'Calling invoke_event_thread()'
+2018-12-10 15:18:57,462  INFO saby invoke_event_thread Case_id:Case1.2 Activity:p 'Initialising thread'
+2018-12-10 15:18:57,462  INFO saby invoke_event_thread Case_id:Case1.2 Activity:p 'Starting thread for event '
+2018-12-10 15:18:57,462  INFO saby run Thread:58 Case_id:Case1.2 Activity:p 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:57,462 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:57,462 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:57,462  INFO saby run Thread:58 Case_id:Case1.2 Activity:p 'The server response is: Automata not available'
+2018-12-10 15:18:58,009  INFO saby simulate_stream_event Case_id:Case1.1 Activity:p 'Calling invoke_event_thread()'
+2018-12-10 15:18:58,009  INFO saby invoke_event_thread Case_id:Case1.1 Activity:p 'Initialising thread'
+2018-12-10 15:18:58,009  INFO saby invoke_event_thread Case_id:Case1.1 Activity:p 'Starting thread for event '
+2018-12-10 15:18:58,009  INFO saby run Thread:59 Case_id:Case1.1 Activity:p 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:58,009 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:58,009 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:58,009  INFO saby run Thread:59 Case_id:Case1.1 Activity:p 'The server response is: Automata not available'
+2018-12-10 15:18:58,556  INFO saby simulate_stream_event Case_id:Case1.0 Activity:p 'Calling invoke_event_thread()'
+2018-12-10 15:18:58,556  INFO saby invoke_event_thread Case_id:Case1.0 Activity:p 'Initialising thread'
+2018-12-10 15:18:58,557  INFO saby invoke_event_thread Case_id:Case1.0 Activity:p 'Starting thread for event '
+2018-12-10 15:18:58,557  INFO saby run Thread:60 Case_id:Case1.0 Activity:p 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:58,559 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:58,562 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:58,563  INFO saby run Thread:60 Case_id:Case1.0 Activity:p 'The server response is: Automata not available'
+2018-12-10 15:18:59,117  INFO saby simulate_stream_event Case_id:Case2.1 Activity:ghki 'Calling invoke_event_thread()'
+2018-12-10 15:18:59,117  INFO saby invoke_event_thread Case_id:Case2.1 Activity:ghki 'Initialising thread'
+2018-12-10 15:18:59,117  INFO saby invoke_event_thread Case_id:Case2.1 Activity:ghki 'Starting thread for event '
+2018-12-10 15:18:59,117  INFO saby run Thread:61 Case_id:Case2.1 Activity:ghki 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:59,117 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:59,117 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:59,117  INFO saby run Thread:61 Case_id:Case2.1 Activity:ghki 'The server response is: Automata not available'
+2018-12-10 15:18:59,679  INFO saby simulate_stream_event Case_id:Case1.2 Activity:q 'Calling invoke_event_thread()'
+2018-12-10 15:18:59,679  INFO saby invoke_event_thread Case_id:Case1.2 Activity:q 'Initialising thread'
+2018-12-10 15:18:59,679  INFO saby invoke_event_thread Case_id:Case1.2 Activity:q 'Starting thread for event '
+2018-12-10 15:18:59,679  INFO saby run Thread:62 Case_id:Case1.2 Activity:q 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:18:59,679 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:18:59,679 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:18:59,679  INFO saby run Thread:62 Case_id:Case1.2 Activity:q 'The server response is: Automata not available'
+2018-12-10 15:19:00,226  INFO saby simulate_stream_event Case_id:Case1.1 Activity:q 'Calling invoke_event_thread()'
+2018-12-10 15:19:00,226  INFO saby invoke_event_thread Case_id:Case1.1 Activity:q 'Initialising thread'
+2018-12-10 15:19:00,226  INFO saby invoke_event_thread Case_id:Case1.1 Activity:q 'Starting thread for event '
+2018-12-10 15:19:00,226  INFO saby run Thread:63 Case_id:Case1.1 Activity:q 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:00,226 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:00,226 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:00,226  INFO saby run Thread:63 Case_id:Case1.1 Activity:q 'The server response is: Automata not available'
+2018-12-10 15:19:00,774  INFO saby simulate_stream_event Case_id:Case1.0 Activity:q 'Calling invoke_event_thread()'
+2018-12-10 15:19:00,774  INFO saby invoke_event_thread Case_id:Case1.0 Activity:q 'Initialising thread'
+2018-12-10 15:19:00,774  INFO saby invoke_event_thread Case_id:Case1.0 Activity:q 'Starting thread for event '
+2018-12-10 15:19:00,774  INFO saby run Thread:64 Case_id:Case1.0 Activity:q 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:00,774 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:00,774 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:00,774  INFO saby run Thread:64 Case_id:Case1.0 Activity:q 'The server response is: Automata not available'
+2018-12-10 15:19:01,321  INFO saby simulate_stream_event Case_id:Case2.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 15:19:01,321  INFO saby invoke_event_thread Case_id:Case2.1 Activity:b 'Initialising thread'
+2018-12-10 15:19:01,321  INFO saby invoke_event_thread Case_id:Case2.1 Activity:b 'Starting thread for event '
+2018-12-10 15:19:01,321  INFO saby run Thread:65 Case_id:Case2.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:01,321 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:01,321 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:01,321  INFO saby run Thread:65 Case_id:Case2.1 Activity:b 'The server response is: Automata not available'
+2018-12-10 15:19:01,321  INFO saby simulate_stream_event Case_id:NONE Activity:END 'Calling invoke_event_thread()'
+2018-12-10 15:19:01,321  INFO saby invoke_event_thread Case_id:NONE Activity:END 'Initialising thread'
+2018-12-10 15:19:01,321  INFO saby invoke_event_thread Case_id:NONE Activity:END 'Starting thread for event '
+2018-12-10 15:19:01,321  INFO saby run Thread:66 Case_id:NONE Activity:END 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:01,321 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:01,321 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:01,321  INFO saby run Thread:66 Case_id:NONE Activity:END 'The server response is: Automata not available'
+2018-12-10 15:19:02,368  INFO saby main 'compliance checking is completed'
+2018-12-10 15:19:02,368  INFO saby main 'The options are displayed'
+2018-12-10 15:19:24,095  INFO saby main 'The user selected option 1'
+2018-12-10 15:19:24,095  INFO saby main 'Calling run_compliance_checker()'
+2018-12-10 15:19:24,095  INFO saby run_compliance_checker 'Calling read_log()'
+2018-12-10 15:19:24,095  INFO saby read_log 'Creating a trace logger file: '
+2018-12-10 15:19:24,095  INFO saby read_log 'Transforming trace logger to event logger'
+2018-12-10 15:19:24,095  INFO saby read_log 'Sorting event logger'
+2018-12-10 15:19:24,095  INFO saby run_compliance_checker 'Calling simulate_stream_event()'
+2018-12-10 15:19:24,642  INFO saby simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:19:24,642  INFO saby invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2018-12-10 15:19:24,642  INFO saby invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2018-12-10 15:19:24,642  INFO saby run Thread:67 Case_id:Case1.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:24,642 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:24,642 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:24,642  INFO saby run Thread:67 Case_id:Case1.0 Activity:a 'The server response is: Automata not available'
+2018-12-10 15:19:25,194  INFO saby simulate_stream_event Case_id:Case3.0 Activity:uiy 'Calling invoke_event_thread()'
+2018-12-10 15:19:25,194  INFO saby invoke_event_thread Case_id:Case3.0 Activity:uiy 'Initialising thread'
+2018-12-10 15:19:25,194  INFO saby invoke_event_thread Case_id:Case3.0 Activity:uiy 'Starting thread for event '
+2018-12-10 15:19:25,194  INFO saby run Thread:68 Case_id:Case3.0 Activity:uiy 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:25,194 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:25,194 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:25,194  INFO saby run Thread:68 Case_id:Case3.0 Activity:uiy 'The server response is: Automata not available'
+2018-12-10 15:19:25,757  INFO saby simulate_stream_event Case_id:Case2.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:19:25,757  INFO saby invoke_event_thread Case_id:Case2.0 Activity:a 'Initialising thread'
+2018-12-10 15:19:25,757  INFO saby invoke_event_thread Case_id:Case2.0 Activity:a 'Starting thread for event '
+2018-12-10 15:19:25,757  INFO saby run Thread:69 Case_id:Case2.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:25,757 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:25,757 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:25,757  INFO saby run Thread:69 Case_id:Case2.0 Activity:a 'The server response is: Automata not available'
+2018-12-10 15:19:26,305  INFO saby simulate_stream_event Case_id:Case1.2 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:19:26,305  INFO saby invoke_event_thread Case_id:Case1.2 Activity:a 'Initialising thread'
+2018-12-10 15:19:26,305  INFO saby invoke_event_thread Case_id:Case1.2 Activity:a 'Starting thread for event '
+2018-12-10 15:19:26,305  INFO saby run Thread:70 Case_id:Case1.2 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:26,305 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:26,305 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:26,305  INFO saby run Thread:70 Case_id:Case1.2 Activity:a 'The server response is: Automata not available'
+2018-12-10 15:19:26,867  INFO saby simulate_stream_event Case_id:Case1.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:19:26,867  INFO saby invoke_event_thread Case_id:Case1.1 Activity:a 'Initialising thread'
+2018-12-10 15:19:26,867  INFO saby invoke_event_thread Case_id:Case1.1 Activity:a 'Starting thread for event '
+2018-12-10 15:19:26,867  INFO saby run Thread:71 Case_id:Case1.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:26,867 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:26,867 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:26,867  INFO saby run Thread:71 Case_id:Case1.1 Activity:a 'The server response is: Automata not available'
+2018-12-10 15:19:27,430  INFO saby simulate_stream_event Case_id:Case2.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:19:27,430  INFO saby invoke_event_thread Case_id:Case2.1 Activity:a 'Initialising thread'
+2018-12-10 15:19:27,430  INFO saby invoke_event_thread Case_id:Case2.1 Activity:a 'Starting thread for event '
+2018-12-10 15:19:27,430  INFO saby run Thread:72 Case_id:Case2.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:27,430 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:27,430 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:27,430  INFO saby run Thread:72 Case_id:Case2.1 Activity:a 'The server response is: Automata not available'
+2018-12-10 15:19:27,976  INFO saby simulate_stream_event Case_id:Case1.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 15:19:27,976  INFO saby invoke_event_thread Case_id:Case1.0 Activity:b 'Initialising thread'
+2018-12-10 15:19:27,976  INFO saby invoke_event_thread Case_id:Case1.0 Activity:b 'Starting thread for event '
+2018-12-10 15:19:27,976  INFO saby run Thread:73 Case_id:Case1.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:27,976 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:27,976 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:27,976  INFO saby run Thread:73 Case_id:Case1.0 Activity:b 'The server response is: Automata not available'
+2018-12-10 15:19:28,524  INFO saby simulate_stream_event Case_id:Case3.0 Activity:edse 'Calling invoke_event_thread()'
+2018-12-10 15:19:28,524  INFO saby invoke_event_thread Case_id:Case3.0 Activity:edse 'Initialising thread'
+2018-12-10 15:19:28,524  INFO saby invoke_event_thread Case_id:Case3.0 Activity:edse 'Starting thread for event '
+2018-12-10 15:19:28,524  INFO saby run Thread:74 Case_id:Case3.0 Activity:edse 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:28,524 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:28,524 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:28,524  INFO saby run Thread:74 Case_id:Case3.0 Activity:edse 'The server response is: Automata not available'
+2018-12-10 15:19:29,070  INFO saby simulate_stream_event Case_id:Case2.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 15:19:29,070  INFO saby invoke_event_thread Case_id:Case2.0 Activity:c 'Initialising thread'
+2018-12-10 15:19:29,070  INFO saby invoke_event_thread Case_id:Case2.0 Activity:c 'Starting thread for event '
+2018-12-10 15:19:29,070  INFO saby run Thread:75 Case_id:Case2.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:29,070 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:29,070 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:29,070  INFO saby run Thread:75 Case_id:Case2.0 Activity:c 'The server response is: Automata not available'
+2018-12-10 15:19:29,617  INFO saby simulate_stream_event Case_id:Case1.2 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 15:19:29,617  INFO saby invoke_event_thread Case_id:Case1.2 Activity:b 'Initialising thread'
+2018-12-10 15:19:29,617  INFO saby invoke_event_thread Case_id:Case1.2 Activity:b 'Starting thread for event '
+2018-12-10 15:19:29,617  INFO saby run Thread:76 Case_id:Case1.2 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:29,617 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:29,617 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:29,617  INFO saby run Thread:76 Case_id:Case1.2 Activity:b 'The server response is: Automata not available'
+2018-12-10 15:19:30,164  INFO saby simulate_stream_event Case_id:Case1.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 15:19:30,164  INFO saby invoke_event_thread Case_id:Case1.1 Activity:b 'Initialising thread'
+2018-12-10 15:19:30,164  INFO saby invoke_event_thread Case_id:Case1.1 Activity:b 'Starting thread for event '
+2018-12-10 15:19:30,164  INFO saby run Thread:77 Case_id:Case1.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:30,164 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:30,164 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:30,164  INFO saby run Thread:77 Case_id:Case1.1 Activity:b 'The server response is: Automata not available'
+2018-12-10 15:19:30,712  INFO saby simulate_stream_event Case_id:Case2.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 15:19:30,712  INFO saby invoke_event_thread Case_id:Case2.1 Activity:c 'Initialising thread'
+2018-12-10 15:19:30,712  INFO saby invoke_event_thread Case_id:Case2.1 Activity:c 'Starting thread for event '
+2018-12-10 15:19:30,712  INFO saby run Thread:78 Case_id:Case2.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:30,712 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:30,712 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:30,712  INFO saby run Thread:78 Case_id:Case2.1 Activity:c 'The server response is: Automata not available'
+2018-12-10 15:19:31,274  INFO saby simulate_stream_event Case_id:Case1.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 15:19:31,274  INFO saby invoke_event_thread Case_id:Case1.0 Activity:c 'Initialising thread'
+2018-12-10 15:19:31,274  INFO saby invoke_event_thread Case_id:Case1.0 Activity:c 'Starting thread for event '
+2018-12-10 15:19:31,274  INFO saby run Thread:79 Case_id:Case1.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:31,274 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:31,274 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:31,274  INFO saby run Thread:79 Case_id:Case1.0 Activity:c 'The server response is: Automata not available'
+2018-12-10 15:19:31,821  INFO saby simulate_stream_event Case_id:Case3.0 Activity:djkh 'Calling invoke_event_thread()'
+2018-12-10 15:19:31,821  INFO saby invoke_event_thread Case_id:Case3.0 Activity:djkh 'Initialising thread'
+2018-12-10 15:19:31,821  INFO saby invoke_event_thread Case_id:Case3.0 Activity:djkh 'Starting thread for event '
+2018-12-10 15:19:31,821  INFO saby run Thread:80 Case_id:Case3.0 Activity:djkh 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:31,821 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:31,821 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:31,821  INFO saby run Thread:80 Case_id:Case3.0 Activity:djkh 'The server response is: Automata not available'
+2018-12-10 15:19:32,384  INFO saby simulate_stream_event Case_id:Case2.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 15:19:32,384  INFO saby invoke_event_thread Case_id:Case2.0 Activity:b 'Initialising thread'
+2018-12-10 15:19:32,384  INFO saby invoke_event_thread Case_id:Case2.0 Activity:b 'Starting thread for event '
+2018-12-10 15:19:32,384  INFO saby run Thread:81 Case_id:Case2.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:32,384 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:32,384 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:32,384  INFO saby run Thread:81 Case_id:Case2.0 Activity:b 'The server response is: Automata not available'
+2018-12-10 15:19:32,919  INFO saby simulate_stream_event Case_id:Case1.2 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 15:19:32,919  INFO saby invoke_event_thread Case_id:Case1.2 Activity:c 'Initialising thread'
+2018-12-10 15:19:32,919  INFO saby invoke_event_thread Case_id:Case1.2 Activity:c 'Starting thread for event '
+2018-12-10 15:19:32,919  INFO saby run Thread:82 Case_id:Case1.2 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:32,919 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:32,919 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:32,919  INFO saby run Thread:82 Case_id:Case1.2 Activity:c 'The server response is: Automata not available'
+2018-12-10 15:19:33,462  INFO saby simulate_stream_event Case_id:Case1.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 15:19:33,462  INFO saby invoke_event_thread Case_id:Case1.1 Activity:c 'Initialising thread'
+2018-12-10 15:19:33,462  INFO saby invoke_event_thread Case_id:Case1.1 Activity:c 'Starting thread for event '
+2018-12-10 15:19:33,462  INFO saby run Thread:83 Case_id:Case1.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:33,462 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:33,462 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:33,462  INFO saby run Thread:83 Case_id:Case1.1 Activity:c 'The server response is: Automata not available'
+2018-12-10 15:19:33,995  INFO saby simulate_stream_event Case_id:Case2.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 15:19:33,995  INFO saby invoke_event_thread Case_id:Case2.1 Activity:b 'Initialising thread'
+2018-12-10 15:19:33,995  INFO saby invoke_event_thread Case_id:Case2.1 Activity:b 'Starting thread for event '
+2018-12-10 15:19:33,995  INFO saby run Thread:84 Case_id:Case2.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:33,995 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:33,995 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:33,995  INFO saby run Thread:84 Case_id:Case2.1 Activity:b 'The server response is: Automata not available'
+2018-12-10 15:19:34,534  INFO saby simulate_stream_event Case_id:Case1.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 15:19:34,534  INFO saby invoke_event_thread Case_id:Case1.0 Activity:d 'Initialising thread'
+2018-12-10 15:19:34,534  INFO saby invoke_event_thread Case_id:Case1.0 Activity:d 'Starting thread for event '
+2018-12-10 15:19:34,534  INFO saby run Thread:85 Case_id:Case1.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:34,534 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:34,534 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:34,534  INFO saby run Thread:85 Case_id:Case1.0 Activity:d 'The server response is: Automata not available'
+2018-12-10 15:19:35,080  INFO saby simulate_stream_event Case_id:Case3.0 Activity:assf 'Calling invoke_event_thread()'
+2018-12-10 15:19:35,080  INFO saby invoke_event_thread Case_id:Case3.0 Activity:assf 'Initialising thread'
+2018-12-10 15:19:35,080  INFO saby invoke_event_thread Case_id:Case3.0 Activity:assf 'Starting thread for event '
+2018-12-10 15:19:35,080  INFO saby run Thread:86 Case_id:Case3.0 Activity:assf 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:35,080 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:35,080 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:35,080  INFO saby run Thread:86 Case_id:Case3.0 Activity:assf 'The server response is: Automata not available'
+2018-12-10 15:19:35,643  INFO saby simulate_stream_event Case_id:Case2.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 15:19:35,643  INFO saby invoke_event_thread Case_id:Case2.0 Activity:d 'Initialising thread'
+2018-12-10 15:19:35,643  INFO saby invoke_event_thread Case_id:Case2.0 Activity:d 'Starting thread for event '
+2018-12-10 15:19:35,643  INFO saby run Thread:87 Case_id:Case2.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:35,643 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:35,643 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:35,643  INFO saby run Thread:87 Case_id:Case2.0 Activity:d 'The server response is: Automata not available'
+2018-12-10 15:19:36,205  INFO saby simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 15:19:36,205  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-10 15:19:36,205  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-10 15:19:36,205  INFO saby run Thread:88 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:36,205 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:36,205 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:36,205  INFO saby run Thread:88 Case_id:Case1.2 Activity:d 'The server response is: Automata not available'
+2018-12-10 15:19:36,774  INFO saby simulate_stream_event Case_id:Case1.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 15:19:36,774  INFO saby invoke_event_thread Case_id:Case1.1 Activity:d 'Initialising thread'
+2018-12-10 15:19:36,774  INFO saby invoke_event_thread Case_id:Case1.1 Activity:d 'Starting thread for event '
+2018-12-10 15:19:36,774  INFO saby run Thread:89 Case_id:Case1.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:36,774 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:36,774 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:36,774  INFO saby run Thread:89 Case_id:Case1.1 Activity:d 'The server response is: Automata not available'
+2018-12-10 15:19:37,320  INFO saby simulate_stream_event Case_id:Case2.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 15:19:37,320  INFO saby invoke_event_thread Case_id:Case2.1 Activity:d 'Initialising thread'
+2018-12-10 15:19:37,320  INFO saby invoke_event_thread Case_id:Case2.1 Activity:d 'Starting thread for event '
+2018-12-10 15:19:37,320  INFO saby run Thread:90 Case_id:Case2.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:37,320 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:37,320 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:37,320  INFO saby run Thread:90 Case_id:Case2.1 Activity:d 'The server response is: Automata not available'
+2018-12-10 15:19:37,867  INFO saby simulate_stream_event Case_id:Case2.0 Activity:e 'Calling invoke_event_thread()'
+2018-12-10 15:19:37,867  INFO saby invoke_event_thread Case_id:Case2.0 Activity:e 'Initialising thread'
+2018-12-10 15:19:37,867  INFO saby invoke_event_thread Case_id:Case2.0 Activity:e 'Starting thread for event '
+2018-12-10 15:19:37,867  INFO saby run Thread:91 Case_id:Case2.0 Activity:e 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:37,867 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:37,867 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:37,867  INFO saby run Thread:91 Case_id:Case2.0 Activity:e 'The server response is: Automata not available'
+2018-12-10 15:19:38,415  INFO saby simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 15:19:38,415  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-10 15:19:38,415  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-10 15:19:38,415  INFO saby run Thread:92 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:38,415 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:38,415 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:38,415  INFO saby run Thread:92 Case_id:Case1.2 Activity:d 'The server response is: Automata not available'
+2018-12-10 15:19:38,962  INFO saby simulate_stream_event Case_id:Case3.0 Activity:g 'Calling invoke_event_thread()'
+2018-12-10 15:19:38,962  INFO saby invoke_event_thread Case_id:Case3.0 Activity:g 'Initialising thread'
+2018-12-10 15:19:38,962  INFO saby invoke_event_thread Case_id:Case3.0 Activity:g 'Starting thread for event '
+2018-12-10 15:19:38,962  INFO saby run Thread:93 Case_id:Case3.0 Activity:g 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:38,962 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:38,962 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:38,962  INFO saby run Thread:93 Case_id:Case3.0 Activity:g 'The server response is: Automata not available'
+2018-12-10 15:19:39,517  INFO saby simulate_stream_event Case_id:Case2.0 Activity:x 'Calling invoke_event_thread()'
+2018-12-10 15:19:39,517  INFO saby invoke_event_thread Case_id:Case2.0 Activity:x 'Initialising thread'
+2018-12-10 15:19:39,517  INFO saby invoke_event_thread Case_id:Case2.0 Activity:x 'Starting thread for event '
+2018-12-10 15:19:39,517  INFO saby run Thread:94 Case_id:Case2.0 Activity:x 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:39,517 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:39,517 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:39,517  INFO saby run Thread:94 Case_id:Case2.0 Activity:x 'The server response is: Automata not available'
+2018-12-10 15:19:40,063  INFO saby simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 15:19:40,063  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-10 15:19:40,063  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-10 15:19:40,063  INFO saby run Thread:95 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:40,063 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:40,063 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:40,063  INFO saby run Thread:95 Case_id:Case1.2 Activity:d 'The server response is: Automata not available'
+2018-12-10 15:19:40,610  INFO saby simulate_stream_event Case_id:Case3.0 Activity:h 'Calling invoke_event_thread()'
+2018-12-10 15:19:40,610  INFO saby invoke_event_thread Case_id:Case3.0 Activity:h 'Initialising thread'
+2018-12-10 15:19:40,610  INFO saby invoke_event_thread Case_id:Case3.0 Activity:h 'Starting thread for event '
+2018-12-10 15:19:40,610  INFO saby run Thread:96 Case_id:Case3.0 Activity:h 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:40,610 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:40,610 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:40,610  INFO saby run Thread:96 Case_id:Case3.0 Activity:h 'The server response is: Automata not available'
+2018-12-10 15:19:41,157  INFO saby simulate_stream_event Case_id:Case2.0 Activity:z 'Calling invoke_event_thread()'
+2018-12-10 15:19:41,157  INFO saby invoke_event_thread Case_id:Case2.0 Activity:z 'Initialising thread'
+2018-12-10 15:19:41,157  INFO saby invoke_event_thread Case_id:Case2.0 Activity:z 'Starting thread for event '
+2018-12-10 15:19:41,157  INFO saby run Thread:97 Case_id:Case2.0 Activity:z 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:41,157 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:41,157 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:41,157  INFO saby run Thread:97 Case_id:Case2.0 Activity:z 'The server response is: Automata not available'
+2018-12-10 15:19:41,720  INFO saby simulate_stream_event Case_id:Case1.2 Activity:z 'Calling invoke_event_thread()'
+2018-12-10 15:19:41,720  INFO saby invoke_event_thread Case_id:Case1.2 Activity:z 'Initialising thread'
+2018-12-10 15:19:41,720  INFO saby invoke_event_thread Case_id:Case1.2 Activity:z 'Starting thread for event '
+2018-12-10 15:19:41,720  INFO saby run Thread:98 Case_id:Case1.2 Activity:z 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:41,720 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:41,720 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:41,720  INFO saby run Thread:98 Case_id:Case1.2 Activity:z 'The server response is: Automata not available'
+2018-12-10 15:19:42,267  INFO saby simulate_stream_event Case_id:Case3.0 Activity:i 'Calling invoke_event_thread()'
+2018-12-10 15:19:42,267  INFO saby invoke_event_thread Case_id:Case3.0 Activity:i 'Initialising thread'
+2018-12-10 15:19:42,267  INFO saby invoke_event_thread Case_id:Case3.0 Activity:i 'Starting thread for event '
+2018-12-10 15:19:42,267  INFO saby run Thread:99 Case_id:Case3.0 Activity:i 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:42,267 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:42,267 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:42,267  INFO saby run Thread:99 Case_id:Case3.0 Activity:i 'The server response is: Automata not available'
+2018-12-10 15:19:42,823  INFO saby simulate_stream_event Case_id:Case2.0 Activity:i 'Calling invoke_event_thread()'
+2018-12-10 15:19:42,823  INFO saby invoke_event_thread Case_id:Case2.0 Activity:i 'Initialising thread'
+2018-12-10 15:19:42,823  INFO saby invoke_event_thread Case_id:Case2.0 Activity:i 'Starting thread for event '
+2018-12-10 15:19:42,823  INFO saby run Thread:100 Case_id:Case2.0 Activity:i 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:42,823 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:42,855 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:42,855  INFO saby run Thread:100 Case_id:Case2.0 Activity:i 'The server response is: Automata not available'
+2018-12-10 15:19:43,402  INFO saby simulate_stream_event Case_id:Case1.2 Activity:h 'Calling invoke_event_thread()'
+2018-12-10 15:19:43,402  INFO saby invoke_event_thread Case_id:Case1.2 Activity:h 'Initialising thread'
+2018-12-10 15:19:43,402  INFO saby invoke_event_thread Case_id:Case1.2 Activity:h 'Starting thread for event '
+2018-12-10 15:19:43,402  INFO saby run Thread:101 Case_id:Case1.2 Activity:h 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:43,402 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:43,402 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:43,402  INFO saby run Thread:101 Case_id:Case1.2 Activity:h 'The server response is: Automata not available'
+2018-12-10 15:19:43,949  INFO saby simulate_stream_event Case_id:Case3.0 Activity:j 'Calling invoke_event_thread()'
+2018-12-10 15:19:43,949  INFO saby invoke_event_thread Case_id:Case3.0 Activity:j 'Initialising thread'
+2018-12-10 15:19:43,949  INFO saby invoke_event_thread Case_id:Case3.0 Activity:j 'Starting thread for event '
+2018-12-10 15:19:43,949  INFO saby run Thread:102 Case_id:Case3.0 Activity:j 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:43,949 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:43,949 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:43,949  INFO saby run Thread:102 Case_id:Case3.0 Activity:j 'The server response is: Automata not available'
+2018-12-10 15:19:44,495  INFO saby simulate_stream_event Case_id:Case2.0 Activity:k 'Calling invoke_event_thread()'
+2018-12-10 15:19:44,495  INFO saby invoke_event_thread Case_id:Case2.0 Activity:k 'Initialising thread'
+2018-12-10 15:19:44,495  INFO saby invoke_event_thread Case_id:Case2.0 Activity:k 'Starting thread for event '
+2018-12-10 15:19:44,495  INFO saby run Thread:103 Case_id:Case2.0 Activity:k 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:44,495 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:44,495 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:44,495  INFO saby run Thread:103 Case_id:Case2.0 Activity:k 'The server response is: Automata not available'
+2018-12-10 15:19:45,042  INFO saby simulate_stream_event Case_id:Case1.2 Activity:l 'Calling invoke_event_thread()'
+2018-12-10 15:19:45,057  INFO saby invoke_event_thread Case_id:Case1.2 Activity:l 'Initialising thread'
+2018-12-10 15:19:45,057  INFO saby invoke_event_thread Case_id:Case1.2 Activity:l 'Starting thread for event '
+2018-12-10 15:19:45,057  INFO saby run Thread:104 Case_id:Case1.2 Activity:l 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:45,057 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:45,057 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:45,057  INFO saby run Thread:104 Case_id:Case1.2 Activity:l 'The server response is: Automata not available'
+2018-12-10 15:19:45,637  INFO saby simulate_stream_event Case_id:Case1.2 Activity:m 'Calling invoke_event_thread()'
+2018-12-10 15:19:45,637  INFO saby invoke_event_thread Case_id:Case1.2 Activity:m 'Initialising thread'
+2018-12-10 15:19:45,637  INFO saby invoke_event_thread Case_id:Case1.2 Activity:m 'Starting thread for event '
+2018-12-10 15:19:45,652  INFO saby run Thread:105 Case_id:Case1.2 Activity:m 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:45,652 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:45,652 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:45,668  INFO saby run Thread:105 Case_id:Case1.2 Activity:m 'The server response is: Automata not available'
+2018-12-10 15:19:46,230  INFO saby simulate_stream_event Case_id:Case1.1 Activity:m 'Calling invoke_event_thread()'
+2018-12-10 15:19:46,230  INFO saby invoke_event_thread Case_id:Case1.1 Activity:m 'Initialising thread'
+2018-12-10 15:19:46,230  INFO saby invoke_event_thread Case_id:Case1.1 Activity:m 'Starting thread for event '
+2018-12-10 15:19:46,230  INFO saby run Thread:106 Case_id:Case1.1 Activity:m 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:46,230 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:46,230 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:46,230  INFO saby run Thread:106 Case_id:Case1.1 Activity:m 'The server response is: Automata not available'
+2018-12-10 15:19:46,777  INFO saby simulate_stream_event Case_id:Case1.0 Activity:m 'Calling invoke_event_thread()'
+2018-12-10 15:19:46,777  INFO saby invoke_event_thread Case_id:Case1.0 Activity:m 'Initialising thread'
+2018-12-10 15:19:46,777  INFO saby invoke_event_thread Case_id:Case1.0 Activity:m 'Starting thread for event '
+2018-12-10 15:19:46,777  INFO saby run Thread:107 Case_id:Case1.0 Activity:m 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:46,777 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:46,777 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:46,777  INFO saby run Thread:107 Case_id:Case1.0 Activity:m 'The server response is: Automata not available'
+2018-12-10 15:19:47,324  INFO saby simulate_stream_event Case_id:Case2.1 Activity:x 'Calling invoke_event_thread()'
+2018-12-10 15:19:47,324  INFO saby invoke_event_thread Case_id:Case2.1 Activity:x 'Initialising thread'
+2018-12-10 15:19:47,324  INFO saby invoke_event_thread Case_id:Case2.1 Activity:x 'Starting thread for event '
+2018-12-10 15:19:47,324  INFO saby run Thread:108 Case_id:Case2.1 Activity:x 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:47,324 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:47,340 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:47,340  INFO saby run Thread:108 Case_id:Case2.1 Activity:x 'The server response is: Automata not available'
+2018-12-10 15:19:47,887  INFO saby simulate_stream_event Case_id:Case1.2 Activity:n 'Calling invoke_event_thread()'
+2018-12-10 15:19:47,887  INFO saby invoke_event_thread Case_id:Case1.2 Activity:n 'Initialising thread'
+2018-12-10 15:19:47,887  INFO saby invoke_event_thread Case_id:Case1.2 Activity:n 'Starting thread for event '
+2018-12-10 15:19:47,887  INFO saby run Thread:109 Case_id:Case1.2 Activity:n 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:47,887 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:47,887 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:47,887  INFO saby run Thread:109 Case_id:Case1.2 Activity:n 'The server response is: Automata not available'
+2018-12-10 15:19:48,454  INFO saby simulate_stream_event Case_id:Case1.1 Activity:n 'Calling invoke_event_thread()'
+2018-12-10 15:19:48,454  INFO saby invoke_event_thread Case_id:Case1.1 Activity:n 'Initialising thread'
+2018-12-10 15:19:48,454  INFO saby invoke_event_thread Case_id:Case1.1 Activity:n 'Starting thread for event '
+2018-12-10 15:19:48,454  INFO saby run Thread:110 Case_id:Case1.1 Activity:n 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:48,454 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:48,454 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:48,454  INFO saby run Thread:110 Case_id:Case1.1 Activity:n 'The server response is: Automata not available'
+2018-12-10 15:19:49,000  INFO saby simulate_stream_event Case_id:Case1.0 Activity:n 'Calling invoke_event_thread()'
+2018-12-10 15:19:49,000  INFO saby invoke_event_thread Case_id:Case1.0 Activity:n 'Initialising thread'
+2018-12-10 15:19:49,000  INFO saby invoke_event_thread Case_id:Case1.0 Activity:n 'Starting thread for event '
+2018-12-10 15:19:49,000  INFO saby run Thread:111 Case_id:Case1.0 Activity:n 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:49,016 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:49,016 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:49,016  INFO saby run Thread:111 Case_id:Case1.0 Activity:n 'The server response is: Automata not available'
+2018-12-10 15:19:49,562  INFO saby simulate_stream_event Case_id:Case2.1 Activity:v 'Calling invoke_event_thread()'
+2018-12-10 15:19:49,562  INFO saby invoke_event_thread Case_id:Case2.1 Activity:v 'Initialising thread'
+2018-12-10 15:19:49,562  INFO saby invoke_event_thread Case_id:Case2.1 Activity:v 'Starting thread for event '
+2018-12-10 15:19:49,562  INFO saby run Thread:112 Case_id:Case2.1 Activity:v 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:49,562 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:49,562 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:49,562  INFO saby run Thread:112 Case_id:Case2.1 Activity:v 'The server response is: Automata not available'
+2018-12-10 15:19:50,109  INFO saby simulate_stream_event Case_id:Case1.2 Activity:o 'Calling invoke_event_thread()'
+2018-12-10 15:19:50,109  INFO saby invoke_event_thread Case_id:Case1.2 Activity:o 'Initialising thread'
+2018-12-10 15:19:50,109  INFO saby invoke_event_thread Case_id:Case1.2 Activity:o 'Starting thread for event '
+2018-12-10 15:19:50,109  INFO saby run Thread:113 Case_id:Case1.2 Activity:o 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:50,109 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:50,109 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:50,109  INFO saby run Thread:113 Case_id:Case1.2 Activity:o 'The server response is: Automata not available'
+2018-12-10 15:19:50,657  INFO saby simulate_stream_event Case_id:Case1.1 Activity:o 'Calling invoke_event_thread()'
+2018-12-10 15:19:50,657  INFO saby invoke_event_thread Case_id:Case1.1 Activity:o 'Initialising thread'
+2018-12-10 15:19:50,657  INFO saby invoke_event_thread Case_id:Case1.1 Activity:o 'Starting thread for event '
+2018-12-10 15:19:50,657  INFO saby run Thread:114 Case_id:Case1.1 Activity:o 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:50,657 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:50,657 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:50,657  INFO saby run Thread:114 Case_id:Case1.1 Activity:o 'The server response is: Automata not available'
+2018-12-10 15:19:51,223  INFO saby simulate_stream_event Case_id:Case1.0 Activity:j 'Calling invoke_event_thread()'
+2018-12-10 15:19:51,223  INFO saby invoke_event_thread Case_id:Case1.0 Activity:j 'Initialising thread'
+2018-12-10 15:19:51,223  INFO saby invoke_event_thread Case_id:Case1.0 Activity:j 'Starting thread for event '
+2018-12-10 15:19:51,223  INFO saby run Thread:115 Case_id:Case1.0 Activity:j 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:51,223 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:51,223 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:51,223  INFO saby run Thread:115 Case_id:Case1.0 Activity:j 'The server response is: Automata not available'
+2018-12-10 15:19:51,769  INFO saby simulate_stream_event Case_id:Case2.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 15:19:51,769  INFO saby invoke_event_thread Case_id:Case2.1 Activity:d 'Initialising thread'
+2018-12-10 15:19:51,769  INFO saby invoke_event_thread Case_id:Case2.1 Activity:d 'Starting thread for event '
+2018-12-10 15:19:51,769  INFO saby run Thread:116 Case_id:Case2.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:51,769 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:51,769 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:51,769  INFO saby run Thread:116 Case_id:Case2.1 Activity:d 'The server response is: Automata not available'
+2018-12-10 15:19:52,316  INFO saby simulate_stream_event Case_id:Case1.2 Activity:p 'Calling invoke_event_thread()'
+2018-12-10 15:19:52,316  INFO saby invoke_event_thread Case_id:Case1.2 Activity:p 'Initialising thread'
+2018-12-10 15:19:52,316  INFO saby invoke_event_thread Case_id:Case1.2 Activity:p 'Starting thread for event '
+2018-12-10 15:19:52,316  INFO saby run Thread:117 Case_id:Case1.2 Activity:p 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:52,316 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:52,316 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:52,316  INFO saby run Thread:117 Case_id:Case1.2 Activity:p 'The server response is: Automata not available'
+2018-12-10 15:19:52,864  INFO saby simulate_stream_event Case_id:Case1.1 Activity:p 'Calling invoke_event_thread()'
+2018-12-10 15:19:52,864  INFO saby invoke_event_thread Case_id:Case1.1 Activity:p 'Initialising thread'
+2018-12-10 15:19:52,864  INFO saby invoke_event_thread Case_id:Case1.1 Activity:p 'Starting thread for event '
+2018-12-10 15:19:52,864  INFO saby run Thread:118 Case_id:Case1.1 Activity:p 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:52,864 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:52,864 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:19:52,864  INFO saby run Thread:118 Case_id:Case1.1 Activity:p 'The server response is: Automata not available'
+2018-12-10 15:19:53,410  INFO saby simulate_stream_event Case_id:Case1.0 Activity:p 'Calling invoke_event_thread()'
+2018-12-10 15:19:53,410  INFO saby invoke_event_thread Case_id:Case1.0 Activity:p 'Initialising thread'
+2018-12-10 15:19:53,410  INFO saby invoke_event_thread Case_id:Case1.0 Activity:p 'Starting thread for event '
+2018-12-10 15:19:53,410  INFO saby run Thread:119 Case_id:Case1.0 Activity:p 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:53,410 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:55,364  ERROR saby run Thread:119 Case_id:Case1.0 Activity:p 'The server got disconnected, please try again later '
+2018-12-10 15:19:55,364  INFO saby simulate_stream_event Case_id:NONE Activity:END 'Calling invoke_event_thread()'
+2018-12-10 15:19:55,364  INFO saby invoke_event_thread Case_id:NONE Activity:END 'Initialising thread'
+2018-12-10 15:19:55,364  INFO saby invoke_event_thread Case_id:NONE Activity:END 'Starting thread for event '
+2018-12-10 15:19:55,364  INFO saby run Thread:120 Case_id:NONE Activity:END 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:55,364 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:56,381  ERROR saby run Thread:120 Case_id:NONE Activity:END 'The server got disconnected, please try again later '
+2018-12-10 15:19:56,694  INFO saby main 'compliance checking is completed'
+2018-12-10 15:19:56,694  INFO saby main 'The options are displayed'
+2018-12-10 15:19:58,835  INFO saby main 'The user selected option 1'
+2018-12-10 15:19:58,835  INFO saby main 'Calling run_compliance_checker()'
+2018-12-10 15:19:58,835  INFO saby run_compliance_checker 'Calling read_log()'
+2018-12-10 15:19:58,835  INFO saby read_log 'Creating a trace logger file: '
+2018-12-10 15:19:58,835  INFO saby read_log 'Transforming trace logger to event logger'
+2018-12-10 15:19:58,835  INFO saby read_log 'Sorting event logger'
+2018-12-10 15:19:58,835  INFO saby run_compliance_checker 'Calling simulate_stream_event()'
+2018-12-10 15:19:59,381  INFO saby simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:19:59,381  INFO saby invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2018-12-10 15:19:59,381  INFO saby invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2018-12-10 15:19:59,381  INFO saby run Thread:121 Case_id:Case1.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:19:59,381 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:19:59,491 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 500 291
+2018-12-10 15:19:59,491  ERROR saby run Thread:121 Case_id:Case1.0 Activity:a 'Error by compliance checking'
+2018-12-10 15:20:00,053  INFO saby simulate_stream_event Case_id:Case3.0 Activity:uiy 'Calling invoke_event_thread()'
+2018-12-10 15:20:00,053  INFO saby invoke_event_thread Case_id:Case3.0 Activity:uiy 'Initialising thread'
+2018-12-10 15:20:00,053  INFO saby invoke_event_thread Case_id:Case3.0 Activity:uiy 'Starting thread for event '
+2018-12-10 15:20:00,053  INFO saby run Thread:122 Case_id:Case3.0 Activity:uiy 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:00,053 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:00,053 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 500 291
+2018-12-10 15:20:00,053  ERROR saby run Thread:122 Case_id:Case3.0 Activity:uiy 'Error by compliance checking'
+2018-12-10 15:20:00,592  INFO saby simulate_stream_event Case_id:Case2.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:20:00,592  INFO saby invoke_event_thread Case_id:Case2.0 Activity:a 'Initialising thread'
+2018-12-10 15:20:00,592  INFO saby invoke_event_thread Case_id:Case2.0 Activity:a 'Starting thread for event '
+2018-12-10 15:20:00,593  INFO saby run Thread:123 Case_id:Case2.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:00,595 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:00,599 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 500 291
+2018-12-10 15:20:00,600  ERROR saby run Thread:123 Case_id:Case2.0 Activity:a 'Error by compliance checking'
+2018-12-10 15:20:01,147  INFO saby simulate_stream_event Case_id:Case1.2 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:20:01,147  INFO saby invoke_event_thread Case_id:Case1.2 Activity:a 'Initialising thread'
+2018-12-10 15:20:01,147  INFO saby invoke_event_thread Case_id:Case1.2 Activity:a 'Starting thread for event '
+2018-12-10 15:20:01,147  INFO saby run Thread:124 Case_id:Case1.2 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:01,147 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:01,147 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 500 291
+2018-12-10 15:20:01,147  ERROR saby run Thread:124 Case_id:Case1.2 Activity:a 'Error by compliance checking'
+2018-12-10 15:20:01,694  INFO saby simulate_stream_event Case_id:Case1.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:20:01,694  INFO saby invoke_event_thread Case_id:Case1.1 Activity:a 'Initialising thread'
+2018-12-10 15:20:01,694  INFO saby invoke_event_thread Case_id:Case1.1 Activity:a 'Starting thread for event '
+2018-12-10 15:20:01,694  INFO saby run Thread:125 Case_id:Case1.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:01,694 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:01,694 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 500 291
+2018-12-10 15:20:01,694  ERROR saby run Thread:125 Case_id:Case1.1 Activity:a 'Error by compliance checking'
+2018-12-10 15:20:02,241  INFO saby simulate_stream_event Case_id:Case2.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:20:02,241  INFO saby invoke_event_thread Case_id:Case2.1 Activity:a 'Initialising thread'
+2018-12-10 15:20:02,241  INFO saby invoke_event_thread Case_id:Case2.1 Activity:a 'Starting thread for event '
+2018-12-10 15:20:02,241  INFO saby run Thread:126 Case_id:Case2.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:02,241 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:02,241 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 500 291
+2018-12-10 15:20:02,241  ERROR saby run Thread:126 Case_id:Case2.1 Activity:a 'Error by compliance checking'
+2018-12-10 15:20:02,803  INFO saby simulate_stream_event Case_id:Case1.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 15:20:02,803  INFO saby invoke_event_thread Case_id:Case1.0 Activity:b 'Initialising thread'
+2018-12-10 15:20:02,803  INFO saby invoke_event_thread Case_id:Case1.0 Activity:b 'Starting thread for event '
+2018-12-10 15:20:02,803  INFO saby run Thread:127 Case_id:Case1.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:02,803 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:02,803 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 500 291
+2018-12-10 15:20:02,803  ERROR saby run Thread:127 Case_id:Case1.0 Activity:b 'Error by compliance checking'
+2018-12-10 15:20:03,350  INFO saby simulate_stream_event Case_id:Case3.0 Activity:edse 'Calling invoke_event_thread()'
+2018-12-10 15:20:03,350  INFO saby invoke_event_thread Case_id:Case3.0 Activity:edse 'Initialising thread'
+2018-12-10 15:20:03,350  INFO saby invoke_event_thread Case_id:Case3.0 Activity:edse 'Starting thread for event '
+2018-12-10 15:20:03,350  INFO saby run Thread:128 Case_id:Case3.0 Activity:edse 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:03,350 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:03,350 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 500 291
+2018-12-10 15:20:03,350  ERROR saby run Thread:128 Case_id:Case3.0 Activity:edse 'Error by compliance checking'
+2018-12-10 15:20:03,912  INFO saby simulate_stream_event Case_id:Case2.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 15:20:03,912  INFO saby invoke_event_thread Case_id:Case2.0 Activity:c 'Initialising thread'
+2018-12-10 15:20:03,912  INFO saby invoke_event_thread Case_id:Case2.0 Activity:c 'Starting thread for event '
+2018-12-10 15:20:03,912  INFO saby run Thread:129 Case_id:Case2.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:03,912 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:03,912 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 500 291
+2018-12-10 15:20:03,912  ERROR saby run Thread:129 Case_id:Case2.0 Activity:c 'Error by compliance checking'
+2018-12-10 15:20:04,475  INFO saby simulate_stream_event Case_id:Case1.2 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 15:20:04,475  INFO saby invoke_event_thread Case_id:Case1.2 Activity:b 'Initialising thread'
+2018-12-10 15:20:04,475  INFO saby invoke_event_thread Case_id:Case1.2 Activity:b 'Starting thread for event '
+2018-12-10 15:20:04,475  INFO saby run Thread:130 Case_id:Case1.2 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:04,475 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:04,475 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 500 291
+2018-12-10 15:20:04,475  ERROR saby run Thread:130 Case_id:Case1.2 Activity:b 'Error by compliance checking'
+2018-12-10 15:20:05,022  INFO saby simulate_stream_event Case_id:Case1.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 15:20:05,022  INFO saby invoke_event_thread Case_id:Case1.1 Activity:b 'Initialising thread'
+2018-12-10 15:20:05,022  INFO saby invoke_event_thread Case_id:Case1.1 Activity:b 'Starting thread for event '
+2018-12-10 15:20:05,022  INFO saby run Thread:131 Case_id:Case1.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:05,022 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:05,022 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 500 291
+2018-12-10 15:20:05,022  ERROR saby run Thread:131 Case_id:Case1.1 Activity:b 'Error by compliance checking'
+2018-12-10 15:20:05,585  INFO saby simulate_stream_event Case_id:Case2.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 15:20:05,585  INFO saby invoke_event_thread Case_id:Case2.1 Activity:c 'Initialising thread'
+2018-12-10 15:20:05,585  INFO saby invoke_event_thread Case_id:Case2.1 Activity:c 'Starting thread for event '
+2018-12-10 15:20:05,585  INFO saby run Thread:132 Case_id:Case2.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:05,585 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:05,585 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 500 291
+2018-12-10 15:20:05,585  ERROR saby run Thread:132 Case_id:Case2.1 Activity:c 'Error by compliance checking'
+2018-12-10 15:20:06,131  INFO saby simulate_stream_event Case_id:Case1.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 15:20:06,131  INFO saby invoke_event_thread Case_id:Case1.0 Activity:c 'Initialising thread'
+2018-12-10 15:20:06,131  INFO saby invoke_event_thread Case_id:Case1.0 Activity:c 'Starting thread for event '
+2018-12-10 15:20:06,131  INFO saby run Thread:133 Case_id:Case1.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:06,131 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:06,131 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 500 291
+2018-12-10 15:20:06,131  ERROR saby run Thread:133 Case_id:Case1.0 Activity:c 'Error by compliance checking'
+2018-12-10 15:20:06,679  INFO saby simulate_stream_event Case_id:Case3.0 Activity:djkh 'Calling invoke_event_thread()'
+2018-12-10 15:20:06,679  INFO saby invoke_event_thread Case_id:Case3.0 Activity:djkh 'Initialising thread'
+2018-12-10 15:20:06,679  INFO saby invoke_event_thread Case_id:Case3.0 Activity:djkh 'Starting thread for event '
+2018-12-10 15:20:06,679  INFO saby run Thread:134 Case_id:Case3.0 Activity:djkh 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:06,679 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:06,679 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 500 291
+2018-12-10 15:20:06,679  ERROR saby run Thread:134 Case_id:Case3.0 Activity:djkh 'Error by compliance checking'
+2018-12-10 15:20:07,225  INFO saby simulate_stream_event Case_id:Case2.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 15:20:07,225  INFO saby invoke_event_thread Case_id:Case2.0 Activity:b 'Initialising thread'
+2018-12-10 15:20:07,225  INFO saby invoke_event_thread Case_id:Case2.0 Activity:b 'Starting thread for event '
+2018-12-10 15:20:07,225  INFO saby run Thread:135 Case_id:Case2.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:07,225 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:07,225 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 500 291
+2018-12-10 15:20:07,225  ERROR saby run Thread:135 Case_id:Case2.0 Activity:b 'Error by compliance checking'
+2018-12-10 15:20:07,773  INFO saby simulate_stream_event Case_id:Case1.2 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 15:20:07,773  INFO saby invoke_event_thread Case_id:Case1.2 Activity:c 'Initialising thread'
+2018-12-10 15:20:07,773  INFO saby invoke_event_thread Case_id:Case1.2 Activity:c 'Starting thread for event '
+2018-12-10 15:20:07,773  INFO saby run Thread:136 Case_id:Case1.2 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:07,773 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:07,773 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 500 291
+2018-12-10 15:20:07,773  ERROR saby run Thread:136 Case_id:Case1.2 Activity:c 'Error by compliance checking'
+2018-12-10 15:20:08,320  INFO saby simulate_stream_event Case_id:Case1.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 15:20:08,320  INFO saby invoke_event_thread Case_id:Case1.1 Activity:c 'Initialising thread'
+2018-12-10 15:20:08,320  INFO saby invoke_event_thread Case_id:Case1.1 Activity:c 'Starting thread for event '
+2018-12-10 15:20:08,320  INFO saby run Thread:137 Case_id:Case1.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:08,320 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:08,320 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 500 291
+2018-12-10 15:20:08,320  ERROR saby run Thread:137 Case_id:Case1.1 Activity:c 'Error by compliance checking'
+2018-12-10 15:20:08,866  INFO saby simulate_stream_event Case_id:Case2.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 15:20:08,866  INFO saby invoke_event_thread Case_id:Case2.1 Activity:b 'Initialising thread'
+2018-12-10 15:20:08,866  INFO saby invoke_event_thread Case_id:Case2.1 Activity:b 'Starting thread for event '
+2018-12-10 15:20:08,866  INFO saby run Thread:138 Case_id:Case2.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:08,866 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:08,866 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 500 291
+2018-12-10 15:20:08,866  ERROR saby run Thread:138 Case_id:Case2.1 Activity:b 'Error by compliance checking'
+2018-12-10 15:20:09,430  INFO saby simulate_stream_event Case_id:Case1.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 15:20:09,430  INFO saby invoke_event_thread Case_id:Case1.0 Activity:d 'Initialising thread'
+2018-12-10 15:20:09,430  INFO saby invoke_event_thread Case_id:Case1.0 Activity:d 'Starting thread for event '
+2018-12-10 15:20:09,430  INFO saby run Thread:139 Case_id:Case1.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:09,430 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:10,445  ERROR saby run Thread:139 Case_id:Case1.0 Activity:d 'The server got disconnected, please try again later '
+2018-12-10 15:20:10,445  INFO saby simulate_stream_event Case_id:NONE Activity:END 'Calling invoke_event_thread()'
+2018-12-10 15:20:10,445  INFO saby invoke_event_thread Case_id:NONE Activity:END 'Initialising thread'
+2018-12-10 15:20:10,445  INFO saby invoke_event_thread Case_id:NONE Activity:END 'Starting thread for event '
+2018-12-10 15:20:10,445  INFO saby run Thread:140 Case_id:NONE Activity:END 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:10,445 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:11,461  ERROR saby run Thread:140 Case_id:NONE Activity:END 'The server got disconnected, please try again later '
+2018-12-10 15:20:11,476  INFO saby main 'compliance checking is completed'
+2018-12-10 15:20:11,476  INFO saby main 'The options are displayed'
+2018-12-10 15:20:24,150  INFO saby main 'The user selected option 1'
+2018-12-10 15:20:24,150  INFO saby main 'Calling run_compliance_checker()'
+2018-12-10 15:20:24,150  INFO saby run_compliance_checker 'Calling read_log()'
+2018-12-10 15:20:24,150  INFO saby read_log 'Creating a trace logger file: '
+2018-12-10 15:20:24,150  INFO saby read_log 'Transforming trace logger to event logger'
+2018-12-10 15:20:24,150  INFO saby read_log 'Sorting event logger'
+2018-12-10 15:20:24,150  INFO saby run_compliance_checker 'Calling simulate_stream_event()'
+2018-12-10 15:20:24,712  INFO saby simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:20:24,712  INFO saby invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2018-12-10 15:20:24,712  INFO saby invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2018-12-10 15:20:24,712  INFO saby run Thread:141 Case_id:Case1.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:24,712 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:24,712 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:24,712  INFO saby run Thread:141 Case_id:Case1.0 Activity:a 'The server response is: Automata not available'
+2018-12-10 15:20:25,259  INFO saby simulate_stream_event Case_id:Case3.0 Activity:uiy 'Calling invoke_event_thread()'
+2018-12-10 15:20:25,259  INFO saby invoke_event_thread Case_id:Case3.0 Activity:uiy 'Initialising thread'
+2018-12-10 15:20:25,259  INFO saby invoke_event_thread Case_id:Case3.0 Activity:uiy 'Starting thread for event '
+2018-12-10 15:20:25,259  INFO saby run Thread:142 Case_id:Case3.0 Activity:uiy 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:25,259 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:25,259 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:25,259  INFO saby run Thread:142 Case_id:Case3.0 Activity:uiy 'The server response is: Automata not available'
+2018-12-10 15:20:25,807  INFO saby simulate_stream_event Case_id:Case2.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:20:25,807  INFO saby invoke_event_thread Case_id:Case2.0 Activity:a 'Initialising thread'
+2018-12-10 15:20:25,807  INFO saby invoke_event_thread Case_id:Case2.0 Activity:a 'Starting thread for event '
+2018-12-10 15:20:25,807  INFO saby run Thread:143 Case_id:Case2.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:25,807 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:25,807 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:25,807  INFO saby run Thread:143 Case_id:Case2.0 Activity:a 'The server response is: Automata not available'
+2018-12-10 15:20:26,354  INFO saby simulate_stream_event Case_id:Case1.2 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:20:26,354  INFO saby invoke_event_thread Case_id:Case1.2 Activity:a 'Initialising thread'
+2018-12-10 15:20:26,354  INFO saby invoke_event_thread Case_id:Case1.2 Activity:a 'Starting thread for event '
+2018-12-10 15:20:26,354  INFO saby run Thread:144 Case_id:Case1.2 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:26,354 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:26,354 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:26,354  INFO saby run Thread:144 Case_id:Case1.2 Activity:a 'The server response is: Automata not available'
+2018-12-10 15:20:26,900  INFO saby simulate_stream_event Case_id:Case1.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:20:26,900  INFO saby invoke_event_thread Case_id:Case1.1 Activity:a 'Initialising thread'
+2018-12-10 15:20:26,900  INFO saby invoke_event_thread Case_id:Case1.1 Activity:a 'Starting thread for event '
+2018-12-10 15:20:26,900  INFO saby run Thread:145 Case_id:Case1.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:26,900 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:26,900 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:26,900  INFO saby run Thread:145 Case_id:Case1.1 Activity:a 'The server response is: Automata not available'
+2018-12-10 15:20:27,441  INFO saby simulate_stream_event Case_id:Case2.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:20:27,441  INFO saby invoke_event_thread Case_id:Case2.1 Activity:a 'Initialising thread'
+2018-12-10 15:20:27,441  INFO saby invoke_event_thread Case_id:Case2.1 Activity:a 'Starting thread for event '
+2018-12-10 15:20:27,441  INFO saby run Thread:146 Case_id:Case2.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:27,441 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:27,441 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:27,441  INFO saby run Thread:146 Case_id:Case2.1 Activity:a 'The server response is: Automata not available'
+2018-12-10 15:20:28,003  INFO saby simulate_stream_event Case_id:Case1.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 15:20:28,003  INFO saby invoke_event_thread Case_id:Case1.0 Activity:b 'Initialising thread'
+2018-12-10 15:20:28,003  INFO saby invoke_event_thread Case_id:Case1.0 Activity:b 'Starting thread for event '
+2018-12-10 15:20:28,003  INFO saby run Thread:147 Case_id:Case1.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:28,003 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:28,003 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:28,003  INFO saby run Thread:147 Case_id:Case1.0 Activity:b 'The server response is: Automata not available'
+2018-12-10 15:20:28,551  INFO saby simulate_stream_event Case_id:Case3.0 Activity:edse 'Calling invoke_event_thread()'
+2018-12-10 15:20:28,551  INFO saby invoke_event_thread Case_id:Case3.0 Activity:edse 'Initialising thread'
+2018-12-10 15:20:28,551  INFO saby invoke_event_thread Case_id:Case3.0 Activity:edse 'Starting thread for event '
+2018-12-10 15:20:28,551  INFO saby run Thread:148 Case_id:Case3.0 Activity:edse 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:28,551 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:28,551 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:28,551  INFO saby run Thread:148 Case_id:Case3.0 Activity:edse 'The server response is: Automata not available'
+2018-12-10 15:20:29,098  INFO saby simulate_stream_event Case_id:Case2.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 15:20:29,098  INFO saby invoke_event_thread Case_id:Case2.0 Activity:c 'Initialising thread'
+2018-12-10 15:20:29,098  INFO saby invoke_event_thread Case_id:Case2.0 Activity:c 'Starting thread for event '
+2018-12-10 15:20:29,098  INFO saby run Thread:149 Case_id:Case2.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:29,098 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:29,098 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:29,098  INFO saby run Thread:149 Case_id:Case2.0 Activity:c 'The server response is: Automata not available'
+2018-12-10 15:20:29,644  INFO saby simulate_stream_event Case_id:Case1.2 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 15:20:29,644  INFO saby invoke_event_thread Case_id:Case1.2 Activity:b 'Initialising thread'
+2018-12-10 15:20:29,644  INFO saby invoke_event_thread Case_id:Case1.2 Activity:b 'Starting thread for event '
+2018-12-10 15:20:29,644  INFO saby run Thread:150 Case_id:Case1.2 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:29,644 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:29,644 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:29,644  INFO saby run Thread:150 Case_id:Case1.2 Activity:b 'The server response is: Automata not available'
+2018-12-10 15:20:30,191  INFO saby simulate_stream_event Case_id:Case1.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 15:20:30,191  INFO saby invoke_event_thread Case_id:Case1.1 Activity:b 'Initialising thread'
+2018-12-10 15:20:30,191  INFO saby invoke_event_thread Case_id:Case1.1 Activity:b 'Starting thread for event '
+2018-12-10 15:20:30,191  INFO saby run Thread:151 Case_id:Case1.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:30,191 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:30,191 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:30,191  INFO saby run Thread:151 Case_id:Case1.1 Activity:b 'The server response is: Automata not available'
+2018-12-10 15:20:30,739  INFO saby simulate_stream_event Case_id:Case2.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 15:20:30,739  INFO saby invoke_event_thread Case_id:Case2.1 Activity:c 'Initialising thread'
+2018-12-10 15:20:30,739  INFO saby invoke_event_thread Case_id:Case2.1 Activity:c 'Starting thread for event '
+2018-12-10 15:20:30,739  INFO saby run Thread:152 Case_id:Case2.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:30,739 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:30,739 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:30,739  INFO saby run Thread:152 Case_id:Case2.1 Activity:c 'The server response is: Automata not available'
+2018-12-10 15:20:31,301  INFO saby simulate_stream_event Case_id:Case1.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 15:20:31,301  INFO saby invoke_event_thread Case_id:Case1.0 Activity:c 'Initialising thread'
+2018-12-10 15:20:31,301  INFO saby invoke_event_thread Case_id:Case1.0 Activity:c 'Starting thread for event '
+2018-12-10 15:20:31,301  INFO saby run Thread:153 Case_id:Case1.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:31,301 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:31,301 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:31,301  INFO saby run Thread:153 Case_id:Case1.0 Activity:c 'The server response is: Automata not available'
+2018-12-10 15:20:31,847  INFO saby simulate_stream_event Case_id:Case3.0 Activity:djkh 'Calling invoke_event_thread()'
+2018-12-10 15:20:31,847  INFO saby invoke_event_thread Case_id:Case3.0 Activity:djkh 'Initialising thread'
+2018-12-10 15:20:31,847  INFO saby invoke_event_thread Case_id:Case3.0 Activity:djkh 'Starting thread for event '
+2018-12-10 15:20:31,847  INFO saby run Thread:154 Case_id:Case3.0 Activity:djkh 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:31,847 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:31,847 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:31,847  INFO saby run Thread:154 Case_id:Case3.0 Activity:djkh 'The server response is: Automata not available'
+2018-12-10 15:20:32,394  INFO saby simulate_stream_event Case_id:Case2.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 15:20:32,394  INFO saby invoke_event_thread Case_id:Case2.0 Activity:b 'Initialising thread'
+2018-12-10 15:20:32,394  INFO saby invoke_event_thread Case_id:Case2.0 Activity:b 'Starting thread for event '
+2018-12-10 15:20:32,394  INFO saby run Thread:155 Case_id:Case2.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:32,394 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:32,394 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:32,394  INFO saby run Thread:155 Case_id:Case2.0 Activity:b 'The server response is: Automata not available'
+2018-12-10 15:20:32,941  INFO saby simulate_stream_event Case_id:Case1.2 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 15:20:32,941  INFO saby invoke_event_thread Case_id:Case1.2 Activity:c 'Initialising thread'
+2018-12-10 15:20:32,941  INFO saby invoke_event_thread Case_id:Case1.2 Activity:c 'Starting thread for event '
+2018-12-10 15:20:32,941  INFO saby run Thread:156 Case_id:Case1.2 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:32,941 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:32,941 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:32,941  INFO saby run Thread:156 Case_id:Case1.2 Activity:c 'The server response is: Automata not available'
+2018-12-10 15:20:33,503  INFO saby simulate_stream_event Case_id:Case1.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-10 15:20:33,503  INFO saby invoke_event_thread Case_id:Case1.1 Activity:c 'Initialising thread'
+2018-12-10 15:20:33,503  INFO saby invoke_event_thread Case_id:Case1.1 Activity:c 'Starting thread for event '
+2018-12-10 15:20:33,503  INFO saby run Thread:157 Case_id:Case1.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:33,503 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:33,503 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:33,503  INFO saby run Thread:157 Case_id:Case1.1 Activity:c 'The server response is: Automata not available'
+2018-12-10 15:20:34,050  INFO saby simulate_stream_event Case_id:Case2.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 15:20:34,050  INFO saby invoke_event_thread Case_id:Case2.1 Activity:b 'Initialising thread'
+2018-12-10 15:20:34,050  INFO saby invoke_event_thread Case_id:Case2.1 Activity:b 'Starting thread for event '
+2018-12-10 15:20:34,050  INFO saby run Thread:158 Case_id:Case2.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:34,050 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:34,050 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:34,050  INFO saby run Thread:158 Case_id:Case2.1 Activity:b 'The server response is: Automata not available'
+2018-12-10 15:20:34,598  INFO saby simulate_stream_event Case_id:Case1.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 15:20:34,598  INFO saby invoke_event_thread Case_id:Case1.0 Activity:d 'Initialising thread'
+2018-12-10 15:20:34,598  INFO saby invoke_event_thread Case_id:Case1.0 Activity:d 'Starting thread for event '
+2018-12-10 15:20:34,598  INFO saby run Thread:159 Case_id:Case1.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:34,598 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:34,598 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:34,598  INFO saby run Thread:159 Case_id:Case1.0 Activity:d 'The server response is: Automata not available'
+2018-12-10 15:20:35,144  INFO saby simulate_stream_event Case_id:Case3.0 Activity:assf 'Calling invoke_event_thread()'
+2018-12-10 15:20:35,144  INFO saby invoke_event_thread Case_id:Case3.0 Activity:assf 'Initialising thread'
+2018-12-10 15:20:35,144  INFO saby invoke_event_thread Case_id:Case3.0 Activity:assf 'Starting thread for event '
+2018-12-10 15:20:35,144  INFO saby run Thread:160 Case_id:Case3.0 Activity:assf 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:35,144 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:35,144 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:35,144  INFO saby run Thread:160 Case_id:Case3.0 Activity:assf 'The server response is: Automata not available'
+2018-12-10 15:20:35,691  INFO saby simulate_stream_event Case_id:Case2.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 15:20:35,691  INFO saby invoke_event_thread Case_id:Case2.0 Activity:d 'Initialising thread'
+2018-12-10 15:20:35,691  INFO saby invoke_event_thread Case_id:Case2.0 Activity:d 'Starting thread for event '
+2018-12-10 15:20:35,691  INFO saby run Thread:161 Case_id:Case2.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:35,691 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:35,691 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:35,691  INFO saby run Thread:161 Case_id:Case2.0 Activity:d 'The server response is: Automata not available'
+2018-12-10 15:20:36,238  INFO saby simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 15:20:36,238  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-10 15:20:36,238  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-10 15:20:36,238  INFO saby run Thread:162 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:36,238 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:36,238 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:36,238  INFO saby run Thread:162 Case_id:Case1.2 Activity:d 'The server response is: Automata not available'
+2018-12-10 15:20:36,785  INFO saby simulate_stream_event Case_id:Case1.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 15:20:36,785  INFO saby invoke_event_thread Case_id:Case1.1 Activity:d 'Initialising thread'
+2018-12-10 15:20:36,785  INFO saby invoke_event_thread Case_id:Case1.1 Activity:d 'Starting thread for event '
+2018-12-10 15:20:36,785  INFO saby run Thread:163 Case_id:Case1.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:36,785 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:36,785 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:36,785  INFO saby run Thread:163 Case_id:Case1.1 Activity:d 'The server response is: Automata not available'
+2018-12-10 15:20:37,332  INFO saby simulate_stream_event Case_id:Case2.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 15:20:37,332  INFO saby invoke_event_thread Case_id:Case2.1 Activity:d 'Initialising thread'
+2018-12-10 15:20:37,332  INFO saby invoke_event_thread Case_id:Case2.1 Activity:d 'Starting thread for event '
+2018-12-10 15:20:37,332  INFO saby run Thread:164 Case_id:Case2.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:37,332 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:37,332 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:37,332  INFO saby run Thread:164 Case_id:Case2.1 Activity:d 'The server response is: Automata not available'
+2018-12-10 15:20:37,879  INFO saby simulate_stream_event Case_id:Case2.0 Activity:e 'Calling invoke_event_thread()'
+2018-12-10 15:20:37,879  INFO saby invoke_event_thread Case_id:Case2.0 Activity:e 'Initialising thread'
+2018-12-10 15:20:37,879  INFO saby invoke_event_thread Case_id:Case2.0 Activity:e 'Starting thread for event '
+2018-12-10 15:20:37,879  INFO saby run Thread:165 Case_id:Case2.0 Activity:e 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:37,879 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:37,879 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:37,879  INFO saby run Thread:165 Case_id:Case2.0 Activity:e 'The server response is: Automata not available'
+2018-12-10 15:20:38,427  INFO saby simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 15:20:38,427  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-10 15:20:38,427  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-10 15:20:38,427  INFO saby run Thread:166 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:38,427 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:38,427 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:38,427  INFO saby run Thread:166 Case_id:Case1.2 Activity:d 'The server response is: Automata not available'
+2018-12-10 15:20:38,973  INFO saby simulate_stream_event Case_id:Case3.0 Activity:g 'Calling invoke_event_thread()'
+2018-12-10 15:20:38,973  INFO saby invoke_event_thread Case_id:Case3.0 Activity:g 'Initialising thread'
+2018-12-10 15:20:38,973  INFO saby invoke_event_thread Case_id:Case3.0 Activity:g 'Starting thread for event '
+2018-12-10 15:20:38,973  INFO saby run Thread:167 Case_id:Case3.0 Activity:g 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:38,973 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:38,973 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:38,973  INFO saby run Thread:167 Case_id:Case3.0 Activity:g 'The server response is: Automata not available'
+2018-12-10 15:20:39,511  INFO saby simulate_stream_event Case_id:Case2.0 Activity:x 'Calling invoke_event_thread()'
+2018-12-10 15:20:39,511  INFO saby invoke_event_thread Case_id:Case2.0 Activity:x 'Initialising thread'
+2018-12-10 15:20:39,511  INFO saby invoke_event_thread Case_id:Case2.0 Activity:x 'Starting thread for event '
+2018-12-10 15:20:39,511  INFO saby run Thread:168 Case_id:Case2.0 Activity:x 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:39,511 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:39,511 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:39,511  INFO saby run Thread:168 Case_id:Case2.0 Activity:x 'The server response is: Automata not available'
+2018-12-10 15:20:40,058  INFO saby simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 15:20:40,058  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-10 15:20:40,058  INFO saby invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-10 15:20:40,058  INFO saby run Thread:169 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:40,058 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:40,058 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:40,058  INFO saby run Thread:169 Case_id:Case1.2 Activity:d 'The server response is: Automata not available'
+2018-12-10 15:20:40,605  INFO saby simulate_stream_event Case_id:Case3.0 Activity:h 'Calling invoke_event_thread()'
+2018-12-10 15:20:40,605  INFO saby invoke_event_thread Case_id:Case3.0 Activity:h 'Initialising thread'
+2018-12-10 15:20:40,605  INFO saby invoke_event_thread Case_id:Case3.0 Activity:h 'Starting thread for event '
+2018-12-10 15:20:40,605  INFO saby run Thread:170 Case_id:Case3.0 Activity:h 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:40,605 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:40,605 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:40,605  INFO saby run Thread:170 Case_id:Case3.0 Activity:h 'The server response is: Automata not available'
+2018-12-10 15:20:41,151  INFO saby simulate_stream_event Case_id:Case2.0 Activity:z 'Calling invoke_event_thread()'
+2018-12-10 15:20:41,151  INFO saby invoke_event_thread Case_id:Case2.0 Activity:z 'Initialising thread'
+2018-12-10 15:20:41,151  INFO saby invoke_event_thread Case_id:Case2.0 Activity:z 'Starting thread for event '
+2018-12-10 15:20:41,151  INFO saby run Thread:171 Case_id:Case2.0 Activity:z 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:41,151 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:41,151 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:41,151  INFO saby run Thread:171 Case_id:Case2.0 Activity:z 'The server response is: Automata not available'
+2018-12-10 15:20:41,715  INFO saby simulate_stream_event Case_id:Case1.2 Activity:z 'Calling invoke_event_thread()'
+2018-12-10 15:20:41,715  INFO saby invoke_event_thread Case_id:Case1.2 Activity:z 'Initialising thread'
+2018-12-10 15:20:41,715  INFO saby invoke_event_thread Case_id:Case1.2 Activity:z 'Starting thread for event '
+2018-12-10 15:20:41,715  INFO saby run Thread:172 Case_id:Case1.2 Activity:z 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:41,715 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:41,715 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:41,715  INFO saby run Thread:172 Case_id:Case1.2 Activity:z 'The server response is: Automata not available'
+2018-12-10 15:20:42,262  INFO saby simulate_stream_event Case_id:Case3.0 Activity:i 'Calling invoke_event_thread()'
+2018-12-10 15:20:42,262  INFO saby invoke_event_thread Case_id:Case3.0 Activity:i 'Initialising thread'
+2018-12-10 15:20:42,262  INFO saby invoke_event_thread Case_id:Case3.0 Activity:i 'Starting thread for event '
+2018-12-10 15:20:42,262  INFO saby run Thread:173 Case_id:Case3.0 Activity:i 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:42,262 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:42,262 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:42,262  INFO saby run Thread:173 Case_id:Case3.0 Activity:i 'The server response is: Automata not available'
+2018-12-10 15:20:42,808  INFO saby simulate_stream_event Case_id:Case2.0 Activity:i 'Calling invoke_event_thread()'
+2018-12-10 15:20:42,808  INFO saby invoke_event_thread Case_id:Case2.0 Activity:i 'Initialising thread'
+2018-12-10 15:20:42,808  INFO saby invoke_event_thread Case_id:Case2.0 Activity:i 'Starting thread for event '
+2018-12-10 15:20:42,808  INFO saby run Thread:174 Case_id:Case2.0 Activity:i 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:42,808 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:42,808 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:42,808  INFO saby run Thread:174 Case_id:Case2.0 Activity:i 'The server response is: Automata not available'
+2018-12-10 15:20:43,355  INFO saby simulate_stream_event Case_id:Case1.2 Activity:h 'Calling invoke_event_thread()'
+2018-12-10 15:20:43,355  INFO saby invoke_event_thread Case_id:Case1.2 Activity:h 'Initialising thread'
+2018-12-10 15:20:43,355  INFO saby invoke_event_thread Case_id:Case1.2 Activity:h 'Starting thread for event '
+2018-12-10 15:20:43,355  INFO saby run Thread:175 Case_id:Case1.2 Activity:h 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:43,355 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:43,355 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:43,355  INFO saby run Thread:175 Case_id:Case1.2 Activity:h 'The server response is: Automata not available'
+2018-12-10 15:20:43,903  INFO saby simulate_stream_event Case_id:Case3.0 Activity:j 'Calling invoke_event_thread()'
+2018-12-10 15:20:43,903  INFO saby invoke_event_thread Case_id:Case3.0 Activity:j 'Initialising thread'
+2018-12-10 15:20:43,903  INFO saby invoke_event_thread Case_id:Case3.0 Activity:j 'Starting thread for event '
+2018-12-10 15:20:43,903  INFO saby run Thread:176 Case_id:Case3.0 Activity:j 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:43,903 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:43,903 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:43,903  INFO saby run Thread:176 Case_id:Case3.0 Activity:j 'The server response is: Automata not available'
+2018-12-10 15:20:44,449  INFO saby simulate_stream_event Case_id:Case2.0 Activity:k 'Calling invoke_event_thread()'
+2018-12-10 15:20:44,449  INFO saby invoke_event_thread Case_id:Case2.0 Activity:k 'Initialising thread'
+2018-12-10 15:20:44,449  INFO saby invoke_event_thread Case_id:Case2.0 Activity:k 'Starting thread for event '
+2018-12-10 15:20:44,449  INFO saby run Thread:177 Case_id:Case2.0 Activity:k 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:44,449 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:44,449 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:44,449  INFO saby run Thread:177 Case_id:Case2.0 Activity:k 'The server response is: Automata not available'
+2018-12-10 15:20:44,996  INFO saby simulate_stream_event Case_id:Case1.2 Activity:l 'Calling invoke_event_thread()'
+2018-12-10 15:20:44,996  INFO saby invoke_event_thread Case_id:Case1.2 Activity:l 'Initialising thread'
+2018-12-10 15:20:44,996  INFO saby invoke_event_thread Case_id:Case1.2 Activity:l 'Starting thread for event '
+2018-12-10 15:20:44,996  INFO saby run Thread:178 Case_id:Case1.2 Activity:l 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:44,996 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:44,996 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:44,996  INFO saby run Thread:178 Case_id:Case1.2 Activity:l 'The server response is: Automata not available'
+2018-12-10 15:20:45,544  INFO saby simulate_stream_event Case_id:Case1.2 Activity:m 'Calling invoke_event_thread()'
+2018-12-10 15:20:45,544  INFO saby invoke_event_thread Case_id:Case1.2 Activity:m 'Initialising thread'
+2018-12-10 15:20:45,544  INFO saby invoke_event_thread Case_id:Case1.2 Activity:m 'Starting thread for event '
+2018-12-10 15:20:45,544  INFO saby run Thread:179 Case_id:Case1.2 Activity:m 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:45,544 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:45,544 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:45,544  INFO saby run Thread:179 Case_id:Case1.2 Activity:m 'The server response is: Automata not available'
+2018-12-10 15:20:46,090  INFO saby simulate_stream_event Case_id:Case1.1 Activity:m 'Calling invoke_event_thread()'
+2018-12-10 15:20:46,090  INFO saby invoke_event_thread Case_id:Case1.1 Activity:m 'Initialising thread'
+2018-12-10 15:20:46,090  INFO saby invoke_event_thread Case_id:Case1.1 Activity:m 'Starting thread for event '
+2018-12-10 15:20:46,090  INFO saby run Thread:180 Case_id:Case1.1 Activity:m 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:46,090 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:46,090 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:46,090  INFO saby run Thread:180 Case_id:Case1.1 Activity:m 'The server response is: Automata not available'
+2018-12-10 15:20:46,637  INFO saby simulate_stream_event Case_id:Case1.0 Activity:m 'Calling invoke_event_thread()'
+2018-12-10 15:20:46,637  INFO saby invoke_event_thread Case_id:Case1.0 Activity:m 'Initialising thread'
+2018-12-10 15:20:46,637  INFO saby invoke_event_thread Case_id:Case1.0 Activity:m 'Starting thread for event '
+2018-12-10 15:20:46,637  INFO saby run Thread:181 Case_id:Case1.0 Activity:m 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:46,637 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:46,637 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:46,637  INFO saby run Thread:181 Case_id:Case1.0 Activity:m 'The server response is: Automata not available'
+2018-12-10 15:20:47,184  INFO saby simulate_stream_event Case_id:Case2.1 Activity:x 'Calling invoke_event_thread()'
+2018-12-10 15:20:47,184  INFO saby invoke_event_thread Case_id:Case2.1 Activity:x 'Initialising thread'
+2018-12-10 15:20:47,184  INFO saby invoke_event_thread Case_id:Case2.1 Activity:x 'Starting thread for event '
+2018-12-10 15:20:47,184  INFO saby run Thread:182 Case_id:Case2.1 Activity:x 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:47,184 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:47,184 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:47,184  INFO saby run Thread:182 Case_id:Case2.1 Activity:x 'The server response is: Automata not available'
+2018-12-10 15:20:47,747  INFO saby simulate_stream_event Case_id:Case1.2 Activity:n 'Calling invoke_event_thread()'
+2018-12-10 15:20:47,747  INFO saby invoke_event_thread Case_id:Case1.2 Activity:n 'Initialising thread'
+2018-12-10 15:20:47,747  INFO saby invoke_event_thread Case_id:Case1.2 Activity:n 'Starting thread for event '
+2018-12-10 15:20:47,747  INFO saby run Thread:183 Case_id:Case1.2 Activity:n 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:47,747 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:47,747 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:47,747  INFO saby run Thread:183 Case_id:Case1.2 Activity:n 'The server response is: Automata not available'
+2018-12-10 15:20:48,293  INFO saby simulate_stream_event Case_id:Case1.1 Activity:n 'Calling invoke_event_thread()'
+2018-12-10 15:20:48,293  INFO saby invoke_event_thread Case_id:Case1.1 Activity:n 'Initialising thread'
+2018-12-10 15:20:48,293  INFO saby invoke_event_thread Case_id:Case1.1 Activity:n 'Starting thread for event '
+2018-12-10 15:20:48,293  INFO saby run Thread:184 Case_id:Case1.1 Activity:n 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:48,293 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:48,293 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:48,293  INFO saby run Thread:184 Case_id:Case1.1 Activity:n 'The server response is: Automata not available'
+2018-12-10 15:20:48,842  INFO saby simulate_stream_event Case_id:Case1.0 Activity:n 'Calling invoke_event_thread()'
+2018-12-10 15:20:48,842  INFO saby invoke_event_thread Case_id:Case1.0 Activity:n 'Initialising thread'
+2018-12-10 15:20:48,842  INFO saby invoke_event_thread Case_id:Case1.0 Activity:n 'Starting thread for event '
+2018-12-10 15:20:48,842  INFO saby run Thread:185 Case_id:Case1.0 Activity:n 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:48,842 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:48,842 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:48,842  INFO saby run Thread:185 Case_id:Case1.0 Activity:n 'The server response is: Automata not available'
+2018-12-10 15:20:49,388  INFO saby simulate_stream_event Case_id:Case2.1 Activity:v 'Calling invoke_event_thread()'
+2018-12-10 15:20:49,388  INFO saby invoke_event_thread Case_id:Case2.1 Activity:v 'Initialising thread'
+2018-12-10 15:20:49,388  INFO saby invoke_event_thread Case_id:Case2.1 Activity:v 'Starting thread for event '
+2018-12-10 15:20:49,388  INFO saby run Thread:186 Case_id:Case2.1 Activity:v 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:49,388 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:49,388 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:49,388  INFO saby run Thread:186 Case_id:Case2.1 Activity:v 'The server response is: Automata not available'
+2018-12-10 15:20:49,935  INFO saby simulate_stream_event Case_id:Case1.2 Activity:o 'Calling invoke_event_thread()'
+2018-12-10 15:20:49,935  INFO saby invoke_event_thread Case_id:Case1.2 Activity:o 'Initialising thread'
+2018-12-10 15:20:49,935  INFO saby invoke_event_thread Case_id:Case1.2 Activity:o 'Starting thread for event '
+2018-12-10 15:20:49,935  INFO saby run Thread:187 Case_id:Case1.2 Activity:o 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:49,935 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:49,935 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:49,935  INFO saby run Thread:187 Case_id:Case1.2 Activity:o 'The server response is: Automata not available'
+2018-12-10 15:20:50,483  INFO saby simulate_stream_event Case_id:Case1.1 Activity:o 'Calling invoke_event_thread()'
+2018-12-10 15:20:50,483  INFO saby invoke_event_thread Case_id:Case1.1 Activity:o 'Initialising thread'
+2018-12-10 15:20:50,483  INFO saby invoke_event_thread Case_id:Case1.1 Activity:o 'Starting thread for event '
+2018-12-10 15:20:50,483  INFO saby run Thread:188 Case_id:Case1.1 Activity:o 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:50,483 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:50,483 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:50,483  INFO saby run Thread:188 Case_id:Case1.1 Activity:o 'The server response is: Automata not available'
+2018-12-10 15:20:51,029  INFO saby simulate_stream_event Case_id:Case1.0 Activity:j 'Calling invoke_event_thread()'
+2018-12-10 15:20:51,029  INFO saby invoke_event_thread Case_id:Case1.0 Activity:j 'Initialising thread'
+2018-12-10 15:20:51,029  INFO saby invoke_event_thread Case_id:Case1.0 Activity:j 'Starting thread for event '
+2018-12-10 15:20:51,029  INFO saby run Thread:189 Case_id:Case1.0 Activity:j 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:51,029 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:51,029 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:51,029  INFO saby run Thread:189 Case_id:Case1.0 Activity:j 'The server response is: Automata not available'
+2018-12-10 15:20:51,576  INFO saby simulate_stream_event Case_id:Case2.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-10 15:20:51,576  INFO saby invoke_event_thread Case_id:Case2.1 Activity:d 'Initialising thread'
+2018-12-10 15:20:51,576  INFO saby invoke_event_thread Case_id:Case2.1 Activity:d 'Starting thread for event '
+2018-12-10 15:20:51,576  INFO saby run Thread:190 Case_id:Case2.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:51,576 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:51,576 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:51,576  INFO saby run Thread:190 Case_id:Case2.1 Activity:d 'The server response is: Automata not available'
+2018-12-10 15:20:52,123  INFO saby simulate_stream_event Case_id:Case1.2 Activity:p 'Calling invoke_event_thread()'
+2018-12-10 15:20:52,123  INFO saby invoke_event_thread Case_id:Case1.2 Activity:p 'Initialising thread'
+2018-12-10 15:20:52,123  INFO saby invoke_event_thread Case_id:Case1.2 Activity:p 'Starting thread for event '
+2018-12-10 15:20:52,123  INFO saby run Thread:191 Case_id:Case1.2 Activity:p 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:52,123 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:52,123 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:52,123  INFO saby run Thread:191 Case_id:Case1.2 Activity:p 'The server response is: Automata not available'
+2018-12-10 15:20:52,671  INFO saby simulate_stream_event Case_id:Case1.1 Activity:p 'Calling invoke_event_thread()'
+2018-12-10 15:20:52,671  INFO saby invoke_event_thread Case_id:Case1.1 Activity:p 'Initialising thread'
+2018-12-10 15:20:52,671  INFO saby invoke_event_thread Case_id:Case1.1 Activity:p 'Starting thread for event '
+2018-12-10 15:20:52,671  INFO saby run Thread:192 Case_id:Case1.1 Activity:p 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:52,671 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:52,671 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:52,671  INFO saby run Thread:192 Case_id:Case1.1 Activity:p 'The server response is: Automata not available'
+2018-12-10 15:20:53,217  INFO saby simulate_stream_event Case_id:Case1.0 Activity:p 'Calling invoke_event_thread()'
+2018-12-10 15:20:53,217  INFO saby invoke_event_thread Case_id:Case1.0 Activity:p 'Initialising thread'
+2018-12-10 15:20:53,217  INFO saby invoke_event_thread Case_id:Case1.0 Activity:p 'Starting thread for event '
+2018-12-10 15:20:53,217  INFO saby run Thread:193 Case_id:Case1.0 Activity:p 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:53,217 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:53,217 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:53,217  INFO saby run Thread:193 Case_id:Case1.0 Activity:p 'The server response is: Automata not available'
+2018-12-10 15:20:53,764  INFO saby simulate_stream_event Case_id:Case2.1 Activity:ghki 'Calling invoke_event_thread()'
+2018-12-10 15:20:53,764  INFO saby invoke_event_thread Case_id:Case2.1 Activity:ghki 'Initialising thread'
+2018-12-10 15:20:53,764  INFO saby invoke_event_thread Case_id:Case2.1 Activity:ghki 'Starting thread for event '
+2018-12-10 15:20:53,764  INFO saby run Thread:194 Case_id:Case2.1 Activity:ghki 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:53,764 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:53,764 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:53,764  INFO saby run Thread:194 Case_id:Case2.1 Activity:ghki 'The server response is: Automata not available'
+2018-12-10 15:20:54,311  INFO saby simulate_stream_event Case_id:Case1.2 Activity:q 'Calling invoke_event_thread()'
+2018-12-10 15:20:54,311  INFO saby invoke_event_thread Case_id:Case1.2 Activity:q 'Initialising thread'
+2018-12-10 15:20:54,311  INFO saby invoke_event_thread Case_id:Case1.2 Activity:q 'Starting thread for event '
+2018-12-10 15:20:54,311  INFO saby run Thread:195 Case_id:Case1.2 Activity:q 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:54,311 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:54,311 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:54,311  INFO saby run Thread:195 Case_id:Case1.2 Activity:q 'The server response is: Automata not available'
+2018-12-10 15:20:54,859  INFO saby simulate_stream_event Case_id:Case1.1 Activity:q 'Calling invoke_event_thread()'
+2018-12-10 15:20:54,859  INFO saby invoke_event_thread Case_id:Case1.1 Activity:q 'Initialising thread'
+2018-12-10 15:20:54,859  INFO saby invoke_event_thread Case_id:Case1.1 Activity:q 'Starting thread for event '
+2018-12-10 15:20:54,859  INFO saby run Thread:196 Case_id:Case1.1 Activity:q 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:54,859 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:54,859 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:54,859  INFO saby run Thread:196 Case_id:Case1.1 Activity:q 'The server response is: Automata not available'
+2018-12-10 15:20:55,405  INFO saby simulate_stream_event Case_id:Case1.0 Activity:q 'Calling invoke_event_thread()'
+2018-12-10 15:20:55,405  INFO saby invoke_event_thread Case_id:Case1.0 Activity:q 'Initialising thread'
+2018-12-10 15:20:55,405  INFO saby invoke_event_thread Case_id:Case1.0 Activity:q 'Starting thread for event '
+2018-12-10 15:20:55,405  INFO saby run Thread:197 Case_id:Case1.0 Activity:q 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:55,405 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:55,405 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:55,405  INFO saby run Thread:197 Case_id:Case1.0 Activity:q 'The server response is: Automata not available'
+2018-12-10 15:20:55,952  INFO saby simulate_stream_event Case_id:Case2.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-10 15:20:55,952  INFO saby invoke_event_thread Case_id:Case2.1 Activity:b 'Initialising thread'
+2018-12-10 15:20:55,952  INFO saby invoke_event_thread Case_id:Case2.1 Activity:b 'Starting thread for event '
+2018-12-10 15:20:55,952  INFO saby run Thread:198 Case_id:Case2.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:55,952 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:55,952 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:55,952  INFO saby run Thread:198 Case_id:Case2.1 Activity:b 'The server response is: Automata not available'
+2018-12-10 15:20:55,952  INFO saby simulate_stream_event Case_id:NONE Activity:END 'Calling invoke_event_thread()'
+2018-12-10 15:20:55,952  INFO saby invoke_event_thread Case_id:NONE Activity:END 'Initialising thread'
+2018-12-10 15:20:55,952  INFO saby invoke_event_thread Case_id:NONE Activity:END 'Starting thread for event '
+2018-12-10 15:20:55,952  INFO saby run Thread:199 Case_id:NONE Activity:END 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:20:55,952 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:20:55,952 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 22
+2018-12-10 15:20:55,952  INFO saby run Thread:199 Case_id:NONE Activity:END 'The server response is: Automata not available'
+2018-12-10 15:20:56,968  INFO saby main 'compliance checking is completed'
+2018-12-10 15:20:56,968  INFO saby main 'The options are displayed'
+2018-12-10 15:23:30,038  INFO saby main 'The user selected option 1'
+2018-12-10 15:23:30,038  INFO saby main 'Calling run_compliance_checker()'
+2018-12-10 15:23:30,038  INFO saby run_compliance_checker 'Calling read_log()'
+2018-12-10 15:23:30,038  INFO saby read_log 'Creating a trace logger file: '
+2018-12-10 15:23:30,038  INFO saby read_log 'Transforming trace logger to event logger'
+2018-12-10 15:23:30,038  INFO saby read_log 'Sorting event logger'
+2018-12-10 15:23:30,038  INFO saby run_compliance_checker 'Calling simulate_stream_event()'
+2018-12-10 15:23:30,585  INFO saby simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:23:30,585  INFO saby invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2018-12-10 15:23:30,585  INFO saby invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2018-12-10 15:23:30,585  INFO saby run Thread:200 Case_id:Case1.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:23:30,585 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:23:30,585 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 9
+2018-12-10 15:23:30,585  INFO saby run Thread:200 Case_id:Case1.0 Activity:a 'The server response is: Deviation'
+2018-12-10 15:23:31,132  INFO saby simulate_stream_event Case_id:Case3.0 Activity:uiy 'Calling invoke_event_thread()'
+2018-12-10 15:23:31,132  INFO saby invoke_event_thread Case_id:Case3.0 Activity:uiy 'Initialising thread'
+2018-12-10 15:23:31,132  INFO saby invoke_event_thread Case_id:Case3.0 Activity:uiy 'Starting thread for event '
+2018-12-10 15:23:31,132  INFO saby run Thread:201 Case_id:Case3.0 Activity:uiy 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:23:31,132 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:30:15,068  INFO sabya main 'Post request to server:http://127.0.0.1:5000/login?uuid=sabya'
+2018-12-10 15:30:15,068 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-10 15:30:15,084 http://127.0.0.1:5000 "POST /login?uuid=sabya HTTP/1.1" 200 0
+2018-12-10 15:30:15,084  INFO sabya main 'The options are displayed'
+2018-12-10 15:30:16,287  INFO sabya main 'The user selected option 1'
+2018-12-10 15:30:16,287  INFO sabya main 'Calling run_compliance_checker()'
+2018-12-10 15:30:16,287  INFO sabya run_compliance_checker 'Calling read_log()'
+2018-12-10 15:30:16,287  INFO sabya read_log 'Creating a trace logger file: '
+2018-12-10 15:30:16,287  INFO sabya read_log 'Transforming trace logger to event logger'
+2018-12-10 15:30:16,287  INFO sabya read_log 'Sorting event logger'
+2018-12-10 15:30:16,287  INFO sabya run_compliance_checker 'Calling simulate_stream_event()'
+2018-12-10 15:30:16,835  INFO sabya simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-10 15:30:16,835  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2018-12-10 15:30:16,835  INFO sabya invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2018-12-10 15:30:16,835  INFO sabya run Thread:0 Case_id:Case1.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-10 15:30:16,835 Starting new HTTP connection (1): 127.0.0.1:5000
