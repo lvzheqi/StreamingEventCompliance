@@ -26,8 +26,6 @@ def build_automata():
     globalvar.set_auto_status()
     globalvar.clear_memorizer()
 
-
-
 def build_automata_pro():
     """
     Reads the training event logger from database.config.TRAINING_EVENT_LOG_PATH and build automata.
@@ -67,6 +65,7 @@ def build_automata_pro():
         else:
             C.dictionary_cases[event['case_id']] = ['*' for i in range(0, MAXIMUN_WINDOW_SIZE)]
             C.dictionary_cases[event['case_id']].append(event['activity'])
+
             lock = threading.RLock()
             # Create a lock for the new case
             C.lock_List[event['case_id']] = lock
@@ -84,6 +83,9 @@ def build_automata_pro():
     # print('before adding end')
     # for item in C.dictionary_cases:
     #     print(len(C.dictionary_cases.get(item)), item, C.dictionary_cases.get(item))
+
+        threads.append(thread)
+        threads_index = threads_index + 1
 
     end_message = {}
     for item in C.dictionary_cases:
