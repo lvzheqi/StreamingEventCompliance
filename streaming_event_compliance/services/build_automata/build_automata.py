@@ -27,6 +27,7 @@ def build_automata():
     globalvar.clear_memorizer()
 
 
+
 def build_automata_pro():
     """
     Reads the training event logger from database.config.TRAINING_EVENT_LOG_PATH and build automata.
@@ -66,7 +67,7 @@ def build_automata_pro():
         else:
             C.dictionary_cases[event['case_id']] = ['*' for i in range(0, MAXIMUN_WINDOW_SIZE)]
             C.dictionary_cases[event['case_id']].append(event['activity'])
-            lock = threading.Lock()
+            lock = threading.RLock()
             # Create a lock for the new case
             C.lock_List[event['case_id']] = lock
             thread = case_thread.CaseThreadForTraining(event, threads_index, T, C)
@@ -75,16 +76,26 @@ def build_automata_pro():
                 thread.start()
             except KeyboardInterrupt:
                 print('Error: Thread is interrupt!')
-
         threads.append(thread)
         threads_index = threads_index + 1
+
+    # for th in T.dictionary_threads:
+    #     T.dictionary_threads.get(th).join()
+    # print('before adding end')
+    # for item in C.dictionary_cases:
+    #     print(len(C.dictionary_cases.get(item)), item, C.dictionary_cases.get(item))
 
     end_message = {}
     for item in C.dictionary_cases:
         end_message['case_id'] = item
         end_message['activity'] = '!@#$%^'
         C.dictionary_cases.get(item).append(end_message['activity'])
+        # print(len(C.dictionary_cases.get(item)),'a adding end', item, C.dictionary_cases.get(item))
         thread = case_thread.CaseThreadForTraining(end_message, threads_index, T, C)
         T.dictionary_threads[threads_index] = thread
         thread.start()
+        threads.append(thread)
+        threads_index = threads_index + 1
 
+    # for item in C.dictionary_cases:
+    #     print(len(C.dictionary_cases.get(item)), 'after threading', item, C.dictionary_cases.get(item))
