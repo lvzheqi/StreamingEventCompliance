@@ -45,6 +45,7 @@ class BuildingAutomataTestCase(unittest.TestCase):
             else:
                 expected_log[event['case_id']] = []
                 expected_log[event['case_id']].append(event['activity'])
+
         end_message = {}
         for case in expected_log:
             end_message['case_id'] = item

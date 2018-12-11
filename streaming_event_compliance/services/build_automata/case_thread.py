@@ -12,8 +12,8 @@ class CaseThreadForTraining(Thread):
     def __init__(self, event, index, T, C):
         self.event = event
         self.index = index
-        self.T = globalvar.get_thread_memory()
-        self.C = globalvar.get_case_memory()
+        self.T = T
+        self.C = C
         Thread.__init__(self)
 
     def run(self):
@@ -93,6 +93,3 @@ def calcuate_connection_for_different_prefix_automata(windowsMemory):
                     print('Exception2', ec.__class__)
                 else:
                     CL.lock_List.get((source_node, sink_node)).release()
-
-
-

@@ -11,4 +11,3 @@ from pm4py.objects.log import transform
 class ComplianceCheckerTestCase(unittest.TestCase):
     def test_call_compliance_checker(self):
         pass
-
