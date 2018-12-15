@@ -38,6 +38,7 @@ class CaseThreadForTraining(Thread):
             calcuate_connection_for_different_prefix_automata(windows_memory)
 
             if len(self.C.dictionary_cases.get(self.event['case_id'])) > MAXIMUN_WINDOW_SIZE:
+                print(self.C.dictionary_cases.get(self.event['case_id']))
                 self.C.dictionary_cases.get(self.event['case_id']).pop(0)
 
             '''--------For Testing: Before releasing lock, which thread used it will be stored-------'''
@@ -73,7 +74,6 @@ def calcuate_connection_for_different_prefix_automata(windowsMemory):
         sink_node = ','.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws + 1: MAXIMUN_WINDOW_SIZE + 1])
         if CL.lock_List.get((source_node, sink_node)):
             if CL.lock_List.get((source_node, sink_node)).acquire():
-                print(windowsMemory)
                 if windowsMemory[MAXIMUN_WINDOW_SIZE] == '!@#$%^' and source_node.find('*') == -1:
                     # only add source_node into database, don't add connection
                     autos.get(ws).update_automata(automata.Connection(source_node, '!@#$%^', 0))
