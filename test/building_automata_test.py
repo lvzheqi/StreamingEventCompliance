@@ -45,8 +45,13 @@ class BuildingAutomataTestCase(unittest.TestCase):
             else:
                 expected_log[event['case_id']] = []
                 expected_log[event['case_id']].append(event['activity'])
+
+        end_message = {}
+        for case in expected_log:
+            end_message['case_id'] = item
+            end_message['activity'] = '!@#$%^'
+            expected_log.get(case).append(end_message['activity'])
         build_automata.build_automata()
-        print(expected_log)
         self.assertEqual(expected_log, case_thread.check_executing_order)
 
     def test_calcuate_connection_for_different_prefix_automata(self):
