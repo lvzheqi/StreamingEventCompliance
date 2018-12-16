@@ -1,6 +1,7 @@
 
 from streaming_event_compliance import app, db
 import time
+from streaming_event_compliance.objects.exceptions.exception import ThreadException, ReadFileException
 
 if __name__ == '__main__':
 
@@ -17,7 +18,14 @@ if __name__ == '__main__':
     auto_status = globalvar.get_autos_status()
     if auto_status == 0:
         start = time.clock()
-        globalvar.call_buildautos()
+
+        try:
+            globalvar.call_buildautos()
+        except ReadFileException as ec:
+            print(ec.get_message())
+        except ThreadException as ec:
+            print(ec.get_message())
+
         ends = time.clock()
         print(ends - start)
     else:
