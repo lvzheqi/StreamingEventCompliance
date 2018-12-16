@@ -29,7 +29,7 @@ class CaseThreadForCC(Thread):
                 windows_memory = self.C.dictionary_cases.get(self.event['case_id'])
             else:
                 windows_memory = self.C.dictionary_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE+1]
-            create_source_sink_node(windows_memory, self.client_uuid)
+            create_source_sink_node(windows_memory, self.client_uuid, self.event)
             if len(self.C.dictionary_cases.get(self.event['case_id'])) > MAXIMUN_WINDOW_SIZE:
                 self.C.dictionary_cases.get(self.event['case_id']).pop(0)
             self.C.lock_List.get(self.event['case_id']).release()
@@ -42,14 +42,14 @@ class CaseThreadForCC(Thread):
                 windows_memory = self.C.dictionary_cases.get(self.event['case_id'])
             else:
                 windows_memory = self.C.dictionary_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
-            message = create_source_sink_node(windows_memory, self.client_uuid)
+            message = create_source_sink_node(windows_memory, self.client_uuid, self.event)
             if len(self.C.dictionary_cases.get(self.event['case_id'])) > MAXIMUN_WINDOW_SIZE:
                 self.C.dictionary_cases.get(self.event['case_id']).pop(0)
             self.C.lock_List.get(self.event['case_id']).release()
             thread_queue.put(message)
 
 
-def create_source_sink_node(windowsMemory, client_uuid):
+def create_source_sink_node(windowsMemory, client_uuid, event):
     """
     Create sink node and source node based on prefix sizes and call function to check compliance with automata in db
     :param windowsMemory: a list of activities from the same case_id of current event(another event),
@@ -59,25 +59,63 @@ def create_source_sink_node(windowsMemory, client_uuid):
     :return:
     """
     for ws in WINDOW_SIZE:# [1, 2, 3, 4]
-        # print(windowsMemory)
+        print(windowsMemory)
         source_node = ','.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws: MAXIMUN_WINDOW_SIZE])
         sink_node = ','.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws + 1: MAXIMUN_WINDOW_SIZE+1])
         if source_node.find('*') == -1:
-            # print('WS: ' + str(ws) + ' Source: ' + source_node + ' Sink: ' + sink_node)
+            print('WS: ' + str(ws) + ' Source: ' + source_node + ' Sink: ' + sink_node)
             matches = compare_automata.check_automata_with_source_sink(ws, source_node, sink_node, client_uuid)
             if matches == 0:
-                print("Alert !!!  No connection from " + source_node + " to " + sink_node)
-                return "Alert !!!  No connection from " + source_node + " to " + sink_node
-            else:
-                return "OK"
+                print("Alert !!!  No connection from " + source_node + " to " + sink_node + " due to missing node")
+                response = {
+                    'case_id': event['case_id'],
+                    'source_node': sink_node,
+                    'sink_node': None,
+                    'cause': 'No such source node',
+                    'message': 'Alert'
+                }
+                return response
+            elif matches == 1:
+                print("Alert !!!  No connection from " + source_node + " to " + sink_node + " due to less probability")
+                response = {
+                    'case_id': event['case_id'],
+                    'source_node': sink_node,
+                    'sink_node': None,
+                    'cause': 'Probability less than threshold',
+                    'message': 'Alert'
+                }
+                return response
         elif source_node.find('*') != -1 and sink_node.find('*') == -1:
-            # print('WS: ' + str(ws) + ' Source: ' + source_node + ' Sink: ' + sink_node)
+            print('WS: ' + str(ws) + ' Source: ' + source_node + ' Sink: ' + sink_node)
             matches = compare_automata.check_automata_only_sourcenode(ws, sink_node, client_uuid)
             if matches == 0:
-                print("Alert !!!  No connection from " + source_node + " to " + sink_node)
-                return "Alert !!!  No connection from " + source_node + " to " + sink_node
-            else:
-                return "OK"
+                print("Alert !!!  No connection from " + source_node + " to " + sink_node + " due to missing node")
+                response = {
+                    'case_id': event['case_id'],
+                    'source_node': source_node,
+                    'sink_node': sink_node,
+                    'cause': 'No such connection',
+                    'message': 'Alert'
+                }
+                return response
+            elif matches == 1:
+                print("Alert !!!  No connection from " + source_node + " to " + sink_node + " due to less probability")
+                response = {
+                    'case_id': event['case_id'],
+                    'source_node': source_node,
+                    'sink_node': sink_node,
+                    'cause': 'Probability less than threshold',
+                    'message': 'Alert'
+                }
+                return response
+    response = {
+        'case_id': event['case_id'],
+        'source_node': source_node,
+        'sink_node': sink_node,
+        'cause': '',
+        'message': 'OK'
+    }
+    return response
 
     # TODO: Implement returning to main function ALERT, Threading comments to be removed ,
     # TODO: When and where to save alert into db
