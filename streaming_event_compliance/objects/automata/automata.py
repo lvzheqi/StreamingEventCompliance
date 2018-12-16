@@ -46,9 +46,19 @@ class Automata:
                 conn.probability = 0
 
     def contains_source_node(self, source_node):
+        '''
+        check, whether the given source_node is in the automata
+        :param source_node: string
+        :return: boolean
+        '''
         return source_node in self.nodes
 
     def contains_connection(self, connection):
+        '''
+        check, whether the given connection is in the automata
+        :param connection: Connection object
+        :return: boolean
+        '''
         return connection in self.connections
 
     def get_connection_probability(self, connection):

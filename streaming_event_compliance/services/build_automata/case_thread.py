@@ -1,10 +1,10 @@
 from threading import Thread
 import threading
-import time
+import queue
 from streaming_event_compliance.utils.config import WINDOW_SIZE, MAXIMUN_WINDOW_SIZE
 from streaming_event_compliance.services import globalvar
 from streaming_event_compliance.objects.automata import automata
-from streaming_event_compliance.services.exception import EventException
+from streaming_event_compliance.objects.exceptions.exception import ThreadException
 
 check_executing_order = {}
 
@@ -15,6 +15,17 @@ class CaseThreadForTraining(Thread):
         self.T = T
         self.C = C
         Thread.__init__(self)
+        self._status_queue = queue.Queue()
+
+    def wait_for_exc_info(self):
+        return self._status_queue.get()
+
+    def join_with_exception(self):
+        ex_info = self.wait_for_exc_info()
+        if ex_info is None:
+            return
+        else:
+            raise ThreadException(ex_info[1])
 
     def run(self):
         """
@@ -24,7 +35,6 @@ class CaseThreadForTraining(Thread):
         have event, that means currently all the events from this case has been processed.
         This thread can do noting excepting waiting.
         But during the processing the list will change, some events will be added into it,
-        how do we let the thread know that?
         """
         if self.C.lock_List.get(self.event['case_id']).acquire():
             try:
@@ -43,6 +53,9 @@ class CaseThreadForTraining(Thread):
                     check_executing_order[self.event['case_id']] = []
                     check_executing_order[self.event['case_id']].append(self.event['activity'])
                 '''--------For Testing: Before releasing lock, which thread used it will be stored-------'''
+                self._status_queue.put(None)
+            # except Exception:
+            #     self._status_queue.put(sys.exc_info())
             except Exception as ec:
                 print('caselock', ec.__class__)
             else:
@@ -71,7 +84,6 @@ def calcuate_connection_for_different_prefix_automata(windowsMemory):
             if CL.lock_List.get((source_node, sink_node)).acquire():
                 try:
                     if windowsMemory[MAXIMUN_WINDOW_SIZE] == '!@#$%^' and source_node.find('*') == -1:
-                        # only add source_node into database, don't add connection
                         autos.get(ws).update_automata(automata.Connection(source_node, '!@#$%^', 0))
                     elif source_node.find('*') == -1:
                         autos.get(ws).update_automata(automata.Connection(source_node, sink_node, 1))
@@ -85,7 +97,6 @@ def calcuate_connection_for_different_prefix_automata(windowsMemory):
             if CL.lock_List.get((source_node, sink_node)).acquire():
                 try:
                     if windowsMemory[MAXIMUN_WINDOW_SIZE] == '!@#$%^' and source_node.find('*') == -1:
-                        # only add source_node into database, don't add connection
                         autos.get(ws).update_automata(automata.Connection(source_node, '!@#$%^', 0))
                     elif source_node.find('*') == -1:
                         autos.get(ws).update_automata(automata.Connection(source_node, sink_node, 1))
