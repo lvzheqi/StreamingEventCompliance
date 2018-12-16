@@ -1,29 +1,12 @@
-from streaming_event_compliance.services import visualization_deviation_automata
+from streaming_event_compliance.services import deviation_pdf
 from streaming_event_compliance.services.compliance_check import case_thread_cc
 from streaming_event_compliance.services import globalvar
 from streaming_event_compliance.utils.config import MAXIMUN_WINDOW_SIZE
-from multiprocessing import Process
-from streaming_event_compliance.database import dbtools
-from streaming_event_compliance.services.compliance_check.compare_automata import alert_logs
 import threading
 import queue
+from streaming_event_compliance.database import dbtools
 
-threads = []
-threads_index = 0
-
-
-def compliance_checker():
-    print("---------------------Start: Compliance checking starts!--------------------------------------")
-    process_ = Process(target=compliance_checker_pro())
-    process_.start()
-    process_.join()
-    # update the alert log into database
-    dbtools.insert_alert_log(alert_logs)
-    print("---------------------End: Everything for compliance checking is Done!---------------------------")
-    globalvar.clear_memorizer()
-
-
-def compliance_checker_pro(client_uuid, event):
+def compliance_checker(client_uuid, event):
     '''
     This function creates a case_memorizer for each case_id and starts thread.
     The threads return "deviation" message at the end if there is any deviation
@@ -33,68 +16,95 @@ def compliance_checker_pro(client_uuid, event):
     :return:the deviation information or success information.
     '''
     if globalvar.get_autos_status():
-        C = globalvar.get_case_memory()
-        T = globalvar.get_thread_memory()
-        print(event['case_id'] + " " + event['activity'])
-        global threads_index
-        if event['case_id'] != 'NONE' and event['activity'] != 'END':
-            if event['case_id'] in C.dictionary_cases:
-                    # 1. Append the incoming event to already existing caseMemory of the with same case_id
-                    # 2. Create a new thread for this case
-                    # 3. Start it
-                    C.dictionary_cases.get(event['case_id']).append(event['activity'])
-                    thread = case_thread_cc.CaseThreadForCC(event, threads_index, T, C, client_uuid)
-                    T.dictionary_threads[threads_index] = case_thread_cc
-                    try:
-                        thread_queue = queue.Queue()
-                        thread = threading.Thread(target=thread.thread_run, args=[thread_queue])
-                        thread.start()
-                        threads.append(case_thread_cc)
-                        threads_index = threads_index + 1
-                        response = thread_queue.get()
-                        print(response)
-                        return response
-                    except KeyboardInterrupt:
-                        print('Error: Thread is interrupt!')
-                        return "Server Error!"
-            else:
-                    # 1. Add it to the caseMemory
-                    # 2. Create a new thread for this case
-                    # 3. Start it
-                    C.dictionary_cases[event['case_id']] = ['*' for i in range(0, MAXIMUN_WINDOW_SIZE)]
-                    C.dictionary_cases[event['case_id']].append(event['activity'])
-                    thread = case_thread_cc.CaseThreadForCC(event, threads_index, T, C, client_uuid)
-                    T.dictionary_threads[threads_index] = case_thread_cc
-                    lock = threading.Lock()
-                    # Create a lock for the new case
-                    C.lock_List[event['case_id']] = lock
-                    # this is just for remember the threads information that we have ceated.
-                    try:
-                        thread_queue = queue.Queue()
-                        thread = threading.Thread(target=thread.thread_run, args=[thread_queue])
-                        thread.start()
-                        threads.append(case_thread_cc)
-                        threads_index = threads_index + 1
-                        response = thread_queue.get()
-                        print(response)
-                        return response
-                    except KeyboardInterrupt:
-                        print('Error: Thread is interrupt!')
-                        return "Server Error!"
+        CCM = globalvar.get_client_case_memory()
+        CTM = globalvar.get_client_thread_memory()
+        if client_uuid not in CCM.dictionary_cases:
+            CCM.dictionary_cases[client_uuid] = {}
+            CTM.dictionary_threads[client_uuid] = {}
+            CCM.lock_List[client_uuid] = {}
+            client_cases = CCM.dictionary_cases.get(client_uuid)
+            client_threads = CTM.dictionary_threads.get(client_uuid)
+            client_locks = CCM.lock_List.get(client_uuid)
 
-         # TODO: analyse and write non-compliance event to the database AlertLog with client_uuid
-         # TODO: Sabya Remove the below elif... This portion is only for now to show the content of alert logs...
-         # TODO: After inserting Alert_logs into table remove this below elif part
-        elif event['case_id'] == 'NONE' and event['activity'] == 'END':
+            client_cases[event['case_id']] = ['*' for i in range(0, MAXIMUN_WINDOW_SIZE)]
+            client_cases[event['case_id']].append(event['activity'])
+            thread = case_thread_cc.CaseThreadForCC(event, client_uuid)
+            client_threads[client_uuid] = [thread]
+            lock = threading.Lock()
+            client_locks[event['case_id']] = lock
+            try:
+                thread_queue = queue.Queue()
+                thread = threading.Thread(target=thread.thread_run, args=[thread_queue])
+                thread.start()
+                response = thread_queue.get()
+                print(response)
+                return response
+            except KeyboardInterrupt:
+                print('Error: Thread is interrupt!')
+                return "Server Error!"
 
-            print(alert_logs)
-            return "OK"
         else:
-            visualization_deviation_automata.build_deviation_pdf(client_uuid)
-        # deviation information should be returned here, or we return it form thread.start()
-            return "OK"
-    # return event['case_id'] + "->" + event['activity']
-    return "automata is not build"
+            client_cases = CCM.dictionary_cases.get(client_uuid)
+            client_threads = CTM.dictionary_threads.get(client_uuid)
+            client_locks = CCM.lock_List.get(client_uuid)
+            if event['case_id'] != 'NONE' and event['activity'] != 'END':
+                if event['case_id'] in client_cases:
+                    client_cases.get(event['case_id']).append(event['activity'])
+                    thread = case_thread_cc.CaseThreadForCC(event, client_uuid)
+                    try:
+                        thread_queue = queue.Queue()
+                        thread = threading.Thread(target=thread.thread_run, args=[thread_queue])
+                        thread.start()
+                        client_threads.get(client_uuid).append(thread)
+                        response = thread_queue.get()
+                        return response
+                    except KeyboardInterrupt:
+                        print('Error: Thread is interrupt!')
+                        return "Server Error!"
+                else:
+                    client_cases[event['case_id']] = ['*' for i in range(0, MAXIMUN_WINDOW_SIZE)]
+                    client_cases[event['case_id']].append(event['activity'])
+                    thread = case_thread_cc.CaseThreadForCC(event, client_uuid)
+                    lock = threading.Lock()
+                    client_locks[event['case_id']] = lock
+                    try:
+                        thread_queue = queue.Queue()
+                        thread = threading.Thread(target=thread.thread_run, args=[thread_queue])
+                        thread.start()
+                        client_threads[client_uuid] = [thread]
+                        response = thread_queue.get()
+                        print(response)
+                        return response
+                    except KeyboardInterrupt:
+                        print('Error: Thread is interrupt!')
+                        return "Server Error!"
+
+             # TODO: analyse and write non-compliance event to the database AlertLog with client_uuid
+             # TODO: Sabya Remove the below elif... This portion is only for now to show the content of alert logs...
+             # TODO: After inserting Alert_logs into table remove this below elif part
+            elif event['case_id'] == 'NONE' and event['activity'] == 'END':
+                alert_logs = globalvar.get_client_alert_logs()
+                print(alert_logs)
+                for th in client_threads.get(client_uuid):
+                    try:
+                        th.join_with_exception()
+                    except Exception as ec:
+                        print(ec.__class__)
+                        print(th, "---is not join due to exception")
+                    else:
+                        # update the alert log for particular client into database
+                        dbtools.create_user(client_uuid)
+                        dbtools.insert_alert_log(alert_logs.get(client_uuid))
+                        deviation_pdf.build_deviation_pdf(client_uuid)
+                        dbtools.update_user_status()
+                    finally:
+                        pass
+                        # if dbtools.check_user_status(client_uuid):
+                        #     return "OK, deviation_pdf is also build!"
+                        # else:
+                        #     return "something wrong"
+    else:
+        return "automata is not build"
 
 
 def error_handle():

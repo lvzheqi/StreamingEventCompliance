@@ -1,6 +1,5 @@
 from streaming_event_compliance.database import dbtools
 from streaming_event_compliance.services.build_automata import build_automata
-from streaming_event_compliance.objects.automata import alertlog
 
 
 # Below are operations of autos and auto's status
@@ -55,7 +54,7 @@ def get_users():
     return users
 
 
-# Below are definitions and operations of various kinds of Memorizer
+# Below are definitions and operations of various kinds of Memorizer of building automata
 class ThreadMemorizer(object):
     '''
     This object is for storing the threads that server creates for each case;
@@ -80,7 +79,6 @@ class CaseMemorizer(object):
         self.dictionary_cases = {}
         self.lock_List = {}
 
-
 class ConnectionsLocker(object):
     '''
     This object is for storing the threads that server creates for each case;
@@ -99,7 +97,6 @@ def clear_memorizer():
     T.dictionary_threads = {}
     C.dictionary_cases = {}
     C.lock_List = {}
-
 
 def get_connection_locks():
     return CL
@@ -130,3 +127,39 @@ def test_alertlog():
     alog4.update_alert_record(alertlog.AlertRecord(uuid, 'a,d,b,c', 'd,b,c,d', 1, 'M'))
     alogs = {1: alog1, 2: alog2, 3: alog3, 4: alog4}
     alert_logs[uuid] = alogs
+
+class ClientThreadMemorizer(object):
+    def __init__(self):
+        self.client_number = 0
+        self.dictionary_threads = {}
+
+
+class ClientCaseMemorizer(object):
+    def __init__(self):
+        self.client_number = 0
+        self.dictionary_cases = {}
+        self.lock_List = {}
+
+
+CTM = ThreadMemorizer()
+CCM = CaseMemorizer()
+
+
+def get_client_case_memory():
+    return CCM
+
+
+def get_client_thread_memory():
+    return CTM
+
+
+def get_alert_logs():
+    return alert_logs
+
+client_alert_logs = {}
+
+
+def get_client_alert_logs():
+    client_alert_logs = {'client1':{'windowsize1':{},'windowsize2':{}},
+                         'client2':{'windowsize1':{}, 'windowsize2':{}}}
+    return client_alert_logs
