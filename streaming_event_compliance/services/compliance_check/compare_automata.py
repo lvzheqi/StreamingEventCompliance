@@ -5,6 +5,8 @@ from streaming_event_compliance.objects.automata import alertlog
 client_alert_logs = {}  #{'uuid1': {1: alog, 2: alog, 3:alog}, 'uuid2': {}}
 alert_logs = {}
 
+
+
 def check_automata_only_sourcenode(windowsize, sink_node, client_uuid):
     '''
         This function takes sink_node given and checks if the automata of 'windowsize'  has the

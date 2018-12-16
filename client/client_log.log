@@ -3284,3 +3284,119 @@
 2018-12-10 16:50:55,072  INFO saby main 'The options are displayed'
 2018-12-10 17:10:41,356  INFO saby main 'The user selected option 3'
 2018-12-10 17:10:41,357  INFO saby main 'Exiting...'
+2018-12-16 12:52:26,715  INFO cli main 'Post request to server:http://127.0.0.1:5000/login?uuid=cli'
+2018-12-16 12:52:26,727 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 12:52:26,729 http://127.0.0.1:5000 "POST /login?uuid=cli HTTP/1.1" 200 0
+2018-12-16 12:52:26,730  INFO cli main 'The options are displayed'
+2018-12-16 12:52:27,582  INFO cli main 'The user selected option 1'
+2018-12-16 12:52:27,582  INFO cli main 'Calling run_compliance_checker()'
+2018-12-16 12:52:27,582  INFO cli run_compliance_checker 'Calling read_log()'
+2018-12-16 12:52:27,582  INFO cli read_log 'Creating a trace logger file: '
+2018-12-16 12:52:27,588  INFO cli read_log 'Transforming trace logger to event logger'
+2018-12-16 12:52:27,588  INFO cli read_log 'Sorting event logger'
+2018-12-16 12:52:27,588  INFO cli run_compliance_checker 'Calling simulate_stream_event()'
+2018-12-16 12:52:28,102  INFO cli simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-16 12:52:28,102  INFO cli invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2018-12-16 12:52:28,102  INFO cli invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2018-12-16 12:52:28,103  INFO cli run Thread:0 Case_id:Case1.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 12:52:28,104 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 12:52:28,110 http://127.0.0.1:5000 "POST /compliance-checker?uuid=cli HTTP/1.1" 500 291
+2018-12-16 12:52:28,110  ERROR cli run Thread:0 Case_id:Case1.0 Activity:a 'Error by compliance checking'
+2018-12-16 12:52:28,620  INFO cli simulate_stream_event Case_id:Case3.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-16 12:52:28,620  INFO cli invoke_event_thread Case_id:Case3.0 Activity:a 'Initialising thread'
+2018-12-16 12:52:28,621  INFO cli invoke_event_thread Case_id:Case3.0 Activity:a 'Starting thread for event '
+2018-12-16 12:52:28,621  INFO cli run Thread:1 Case_id:Case3.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 12:52:28,625 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 12:52:28,628 http://127.0.0.1:5000 "POST /compliance-checker?uuid=cli HTTP/1.1" 500 291
+2018-12-16 12:52:28,628  ERROR cli run Thread:1 Case_id:Case3.0 Activity:a 'Error by compliance checking'
+2018-12-16 12:52:29,149  INFO cli simulate_stream_event Case_id:Case2.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-16 12:52:29,149  INFO cli invoke_event_thread Case_id:Case2.0 Activity:a 'Initialising thread'
+2018-12-16 12:52:29,149  INFO cli invoke_event_thread Case_id:Case2.0 Activity:a 'Starting thread for event '
+2018-12-16 12:52:29,149  INFO cli run Thread:2 Case_id:Case2.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 12:52:29,151 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 12:52:29,154 http://127.0.0.1:5000 "POST /compliance-checker?uuid=cli HTTP/1.1" 500 291
+2018-12-16 12:52:29,155  ERROR cli run Thread:2 Case_id:Case2.0 Activity:a 'Error by compliance checking'
+2018-12-16 12:52:29,674  INFO cli simulate_stream_event Case_id:Case1.2 Activity:a 'Calling invoke_event_thread()'
+2018-12-16 12:52:29,675  INFO cli invoke_event_thread Case_id:Case1.2 Activity:a 'Initialising thread'
+2018-12-16 12:52:29,675  INFO cli invoke_event_thread Case_id:Case1.2 Activity:a 'Starting thread for event '
+2018-12-16 12:52:29,675  INFO cli run Thread:3 Case_id:Case1.2 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 12:52:29,678 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 12:52:29,683 http://127.0.0.1:5000 "POST /compliance-checker?uuid=cli HTTP/1.1" 500 291
+2018-12-16 12:52:29,684  ERROR cli run Thread:3 Case_id:Case1.2 Activity:a 'Error by compliance checking'
+2018-12-16 12:52:30,200  INFO cli simulate_stream_event Case_id:Case1.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-16 12:52:30,201  INFO cli invoke_event_thread Case_id:Case1.1 Activity:a 'Initialising thread'
+2018-12-16 12:52:30,201  INFO cli invoke_event_thread Case_id:Case1.1 Activity:a 'Starting thread for event '
+2018-12-16 12:52:30,201  INFO cli run Thread:4 Case_id:Case1.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 12:52:30,203 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 12:52:30,206 http://127.0.0.1:5000 "POST /compliance-checker?uuid=cli HTTP/1.1" 500 291
+2018-12-16 12:52:30,206  ERROR cli run Thread:4 Case_id:Case1.1 Activity:a 'Error by compliance checking'
+2018-12-16 12:52:30,724  INFO cli simulate_stream_event Case_id:Case2.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-16 12:52:30,724  INFO cli invoke_event_thread Case_id:Case2.1 Activity:a 'Initialising thread'
+2018-12-16 12:52:30,724  INFO cli invoke_event_thread Case_id:Case2.1 Activity:a 'Starting thread for event '
+2018-12-16 12:52:30,725  INFO cli run Thread:5 Case_id:Case2.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 12:52:30,727 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 12:52:30,730 http://127.0.0.1:5000 "POST /compliance-checker?uuid=cli HTTP/1.1" 500 291
+2018-12-16 12:52:30,731  ERROR cli run Thread:5 Case_id:Case2.1 Activity:a 'Error by compliance checking'
+2018-12-16 12:52:31,247  INFO cli simulate_stream_event Case_id:Case1.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-16 12:52:31,247  INFO cli invoke_event_thread Case_id:Case1.0 Activity:b 'Initialising thread'
+2018-12-16 12:52:31,247  INFO cli invoke_event_thread Case_id:Case1.0 Activity:b 'Starting thread for event '
+2018-12-16 12:52:31,247  INFO cli run Thread:6 Case_id:Case1.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 12:52:31,250 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 12:52:31,255 http://127.0.0.1:5000 "POST /compliance-checker?uuid=cli HTTP/1.1" 500 291
+2018-12-16 12:52:31,256  ERROR cli run Thread:6 Case_id:Case1.0 Activity:b 'Error by compliance checking'
+2018-12-16 12:52:31,770  INFO cli simulate_stream_event Case_id:Case3.0 Activity:e 'Calling invoke_event_thread()'
+2018-12-16 12:52:31,770  INFO cli invoke_event_thread Case_id:Case3.0 Activity:e 'Initialising thread'
+2018-12-16 12:52:31,771  INFO cli invoke_event_thread Case_id:Case3.0 Activity:e 'Starting thread for event '
+2018-12-16 12:52:31,771  INFO cli run Thread:7 Case_id:Case3.0 Activity:e 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 12:52:31,775 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 12:52:31,778 http://127.0.0.1:5000 "POST /compliance-checker?uuid=cli HTTP/1.1" 500 291
+2018-12-16 12:52:31,778  ERROR cli run Thread:7 Case_id:Case3.0 Activity:e 'Error by compliance checking'
+2018-12-16 12:52:32,288  INFO cli simulate_stream_event Case_id:Case2.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-16 12:52:32,288  INFO cli invoke_event_thread Case_id:Case2.0 Activity:c 'Initialising thread'
+2018-12-16 12:52:32,288  INFO cli invoke_event_thread Case_id:Case2.0 Activity:c 'Starting thread for event '
+2018-12-16 12:52:32,289  INFO cli run Thread:8 Case_id:Case2.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 12:52:32,292 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 12:52:32,296 http://127.0.0.1:5000 "POST /compliance-checker?uuid=cli HTTP/1.1" 500 291
+2018-12-16 12:52:32,296  ERROR cli run Thread:8 Case_id:Case2.0 Activity:c 'Error by compliance checking'
+2018-12-16 12:52:32,815  INFO cli simulate_stream_event Case_id:Case1.2 Activity:b 'Calling invoke_event_thread()'
+2018-12-16 12:52:32,816  INFO cli invoke_event_thread Case_id:Case1.2 Activity:b 'Initialising thread'
+2018-12-16 12:52:32,816  INFO cli invoke_event_thread Case_id:Case1.2 Activity:b 'Starting thread for event '
+2018-12-16 12:52:32,816  INFO cli run Thread:9 Case_id:Case1.2 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 12:52:32,819 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 12:52:32,823 http://127.0.0.1:5000 "POST /compliance-checker?uuid=cli HTTP/1.1" 500 291
+2018-12-16 12:52:32,823  ERROR cli run Thread:9 Case_id:Case1.2 Activity:b 'Error by compliance checking'
+2018-12-16 12:52:33,334  INFO cli simulate_stream_event Case_id:Case1.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-16 12:52:33,334  INFO cli invoke_event_thread Case_id:Case1.1 Activity:b 'Initialising thread'
+2018-12-16 12:52:33,334  INFO cli invoke_event_thread Case_id:Case1.1 Activity:b 'Starting thread for event '
+2018-12-16 12:52:33,335  INFO cli run Thread:10 Case_id:Case1.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 12:52:33,338 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 12:52:33,342 http://127.0.0.1:5000 "POST /compliance-checker?uuid=cli HTTP/1.1" 500 291
+2018-12-16 12:52:33,342  ERROR cli run Thread:10 Case_id:Case1.1 Activity:b 'Error by compliance checking'
+2018-12-16 12:52:33,851  INFO cli simulate_stream_event Case_id:Case2.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-16 12:52:33,852  INFO cli invoke_event_thread Case_id:Case2.1 Activity:c 'Initialising thread'
+2018-12-16 12:52:33,852  INFO cli invoke_event_thread Case_id:Case2.1 Activity:c 'Starting thread for event '
+2018-12-16 12:52:33,853  INFO cli run Thread:11 Case_id:Case2.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 12:52:33,856 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 12:52:33,859 http://127.0.0.1:5000 "POST /compliance-checker?uuid=cli HTTP/1.1" 500 291
+2018-12-16 12:52:33,860  ERROR cli run Thread:11 Case_id:Case2.1 Activity:c 'Error by compliance checking'
+2018-12-16 12:52:34,368  INFO cli simulate_stream_event Case_id:Case1.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-16 12:52:34,369  INFO cli invoke_event_thread Case_id:Case1.0 Activity:c 'Initialising thread'
+2018-12-16 12:52:34,369  INFO cli invoke_event_thread Case_id:Case1.0 Activity:c 'Starting thread for event '
+2018-12-16 12:52:34,369  INFO cli run Thread:12 Case_id:Case1.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 12:52:34,372 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 12:52:34,375 http://127.0.0.1:5000 "POST /compliance-checker?uuid=cli HTTP/1.1" 500 291
+2018-12-16 12:52:34,376  ERROR cli run Thread:12 Case_id:Case1.0 Activity:c 'Error by compliance checking'
+2018-12-16 12:52:34,887  INFO cli simulate_stream_event Case_id:Case3.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-16 12:52:34,887  INFO cli invoke_event_thread Case_id:Case3.0 Activity:d 'Initialising thread'
+2018-12-16 12:52:34,887  INFO cli invoke_event_thread Case_id:Case3.0 Activity:d 'Starting thread for event '
+2018-12-16 12:52:34,887  INFO cli run Thread:13 Case_id:Case3.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 12:52:34,889 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 12:52:34,889  ERROR cli run Thread:13 Case_id:Case3.0 Activity:d 'The server got disconnected, please try again later '
+2018-12-16 12:52:34,889  INFO cli simulate_stream_event Case_id:NONE Activity:END 'Calling invoke_event_thread()'
+2018-12-16 12:52:34,889  INFO cli invoke_event_thread Case_id:NONE Activity:END 'Initialising thread'
+2018-12-16 12:52:34,890  INFO cli invoke_event_thread Case_id:NONE Activity:END 'Starting thread for event '
+2018-12-16 12:52:34,890  INFO cli run Thread:14 Case_id:NONE Activity:END 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 12:52:34,891 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 12:52:34,892  ERROR cli run Thread:14 Case_id:NONE Activity:END 'The server got disconnected, please try again later '
+2018-12-16 12:52:34,903  INFO cli main 'compliance checking is completed'
+2018-12-16 12:52:34,904  INFO cli main 'The options are displayed'
