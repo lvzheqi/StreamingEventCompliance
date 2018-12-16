@@ -1,12 +1,15 @@
 from threading import Thread
 import threading
 import queue
+import traceback
+import sys
 from streaming_event_compliance.utils.config import WINDOW_SIZE, MAXIMUN_WINDOW_SIZE
 from streaming_event_compliance.services import globalvar
 from streaming_event_compliance.objects.automata import automata
 from streaming_event_compliance.objects.exceptions.exception import ThreadException
 
 check_executing_order = {}
+
 
 class CaseThreadForTraining(Thread):
     def __init__(self, event, index, T, C):
@@ -29,12 +32,12 @@ class CaseThreadForTraining(Thread):
 
     def run(self):
         """
-        in caseMemorier every case we will memory the last 5 events that have been processed,
-        so for the current event processing event should in the 6. position? So after we processed
-        one event, we should delete the first one in the list. And if in the 6. position we don't
-        have event, that means currently all the events from this case has been processed.
-        This thread can do noting excepting waiting.
-        But during the processing the list will change, some events will be added into it,
+            In caseMemorier for every case we will store the last 4 events that have been processed,
+            so for the current event processing event should in the 5. position. So after we processed
+            one event, we should remove the first one from the list. And if in the 5. position we don't
+            have event, that means currently all the events from this case has been processed.
+            This thread can do noting excepting waiting.
+            But during the processing the list will change, some events will be added into it,
         """
         if self.C.lock_List.get(self.event['case_id']).acquire():
             try:
@@ -54,12 +57,10 @@ class CaseThreadForTraining(Thread):
                     check_executing_order[self.event['case_id']].append(self.event['activity'])
                 '''--------For Testing: Before releasing lock, which thread used it will be stored-------'''
                 self._status_queue.put(None)
-            # except Exception:
-            #     self._status_queue.put(sys.exc_info())
-            except Exception as ec:
-                print('caselock', ec.__class__)
-            else:
                 self.C.lock_List.get(self.event['case_id']).release()
+            except Exception:
+                print('caselock', traceback.format_exc())
+                self._status_queue.put(sys.exc_info())
 
 
 def calcuate_connection_for_different_prefix_automata(windowsMemory):
@@ -87,10 +88,9 @@ def calcuate_connection_for_different_prefix_automata(windowsMemory):
                         autos.get(ws).update_automata(automata.Connection(source_node, '!@#$%^', 0))
                     elif source_node.find('*') == -1:
                         autos.get(ws).update_automata(automata.Connection(source_node, sink_node, 1))
-                except Exception as ec:
-                    print('Exception1', print(ec.__repr__(), ec.__class__))
-                else:
                     CL.lock_List.get((source_node, sink_node)).release()
+                except Exception:
+                    print('Exception1', traceback.format_exc())
         else:
             lock = threading.RLock()
             CL.lock_List[source_node, sink_node] = lock
@@ -100,7 +100,7 @@ def calcuate_connection_for_different_prefix_automata(windowsMemory):
                         autos.get(ws).update_automata(automata.Connection(source_node, '!@#$%^', 0))
                     elif source_node.find('*') == -1:
                         autos.get(ws).update_automata(automata.Connection(source_node, sink_node, 1))
-                except Exception as ec:
-                    print('Exception2', ec.__class__)
-                else:
                     CL.lock_List.get((source_node, sink_node)).release()
+                except Exception:
+                    print('Exception2', traceback.format_exc())
+
