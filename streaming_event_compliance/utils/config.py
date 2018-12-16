@@ -9,7 +9,7 @@ MAXIMUN_WINDOW_SIZE = 4
 
 BASE_DIR = os.path.dirname(__file__) + os.sep + '..' + os.sep + '..' + os.sep
 CLEINT_DATA_PATH = BASE_DIR + 'p_automata' + os.sep
-TRAINING_EVENT_LOG_PATH = BASE_DIR + 'data' + os.sep + 'Example_EventLogForTraining_Backup.xes'
+#TRAINING_EVENT_LOG_PATH = BASE_DIR + 'data' + os.sep + 'Example_EventLogForTraining_Backup.xes'
 # TRAINING_EVENT_LOG_PATH = BASE_DIR + 'data' + os.sep + 'A21.xes'
 # TRAINING_EVENT_LOG_PATH = BASE_DIR + 'data' + os.sep + 'A1.xes'
 TRAINING_EVENT_LOG_PATH = BASE_DIR + 'data' + os.sep + 'A4.xes'
