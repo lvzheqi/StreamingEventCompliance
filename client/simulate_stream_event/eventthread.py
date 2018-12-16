@@ -1,5 +1,5 @@
 from .client_logging import ClientLogging
-from .exception import ServerRequestException
+from .exception import ServerRequestException, ThreadException
 from threading import Thread
 import requests
 import sys
@@ -32,7 +32,7 @@ class EventThread(Thread):
         if ex_info is None:
             return
         else:
-            raise ex_info[1]
+            raise ThreadException(ex_info[1])
 
     def run(self):
         func_name = sys._getframe().f_code.co_name

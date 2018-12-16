@@ -47,7 +47,7 @@ class Client_cls(object):
                                      'Post request to http://127.0.0.1:5000/show-deviation-pdf?uuid=' + self.uuid)
             r = requests.post('http://127.0.0.1:5000/show-deviation-pdf?uuid=' + self.uuid)
             if r.status_code != 200:
-                raise ServerRequestException('PDF can not be created.')
+                raise ConnectionException
             else:
                 if r.text:  # TODO: according to the status of server
                     ClientLogging().log_info(func_name, self.uuid, 'Compliance checking is done. '
@@ -63,7 +63,7 @@ class Client_cls(object):
                     print('Warning: You have not do the compliance checking, '
                           'please do the compliance checking at first!')
         except Exception:
-            raise ConnectionException
+            raise ServerRequestException('PDF can not be created.')
 
 
 def main(argv):
