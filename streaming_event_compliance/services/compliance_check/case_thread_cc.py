@@ -86,5 +86,4 @@ def create_source_sink_node(windowsMemory, client_uuid):
                 return "OK"
 
     # TODO: Implement returning to main function ALERT, Threading comments to be removed ,
-    # TODO: When and where to save alert into db
     # TODO: if an event detected as alert what to do given option at start to keep or remove it from windows memory
