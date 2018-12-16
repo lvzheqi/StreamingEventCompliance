@@ -1,6 +1,7 @@
 import logging
-from simulate_stream_event import config
+from . import config
 from pythonlangutil.overload import Overload, signature
+import os
 
 
 class ClientLogging:
@@ -36,6 +37,14 @@ class ClientLogging:
                     Default value: DEBUG
         log_format: It is the format in which the time and message will be stored.
         '''
+        fsize = os.path.getsize(config.CLIENT_LOG_PATH)
+        fsize = fsize / float(1024 * 1024)
+        print(fsize)
+        if fsize > 2:
+            os.remove(config.CLIENT_LOG_PATH)
+        if not os.path.exists(config.CLIENT_LOG_PATH):
+            with open(config.CLIENT_LOG_PATH, 'w'):
+                pass
         self.filename = config.CLIENT_LOG_PATH
         self.level = config.LOG_LEVEL
         self.log_format = config.LOG_FORMAT
