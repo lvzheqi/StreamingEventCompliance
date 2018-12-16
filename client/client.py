@@ -1,4 +1,4 @@
-from simulate_stream_event import eventlog
+from simulate_stream_event import eventlog, config
 from simulate_stream_event.client_logging import ClientLogging
 from simulate_stream_event.exception import ReadFileException, ConnectionException, ServerRequestException
 from multiprocessing import Process
@@ -139,9 +139,11 @@ def main(argv):
                     ClientLogging().log_error(func_name, argv[0], 'Input file is not readable!')
                     print('------------------the compliance checking is interrupt------------------------')
                 except KeyboardInterrupt:
+                    client.cc_status = False
                     ClientLogging().log_error(func_name, argv[0], 'Compliance checking is interrupted by user')
                     print('------------------the compliance checking is interrupt------------------------')
                 except ConnectionException as e:
+                    client.cc_status = False
                     e.get_message()
                     ClientLogging().log_error(func_name, argv[0], 'Server is not available')
                     print('------------------the compliance checking is interrupt------------------------')
