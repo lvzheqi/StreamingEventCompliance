@@ -6,25 +6,28 @@ class AlertLog:
     def __init__(self, uuid, window_size):
         self.window_size = window_size
         self.uuid = uuid
-        self.alert_log = []
+        self.alert_log = {}
 
     def update_alert_record(self, alert_record):
-        if alert_record in self.alert_log:
-            index = self.alert_log.index(alert_record)
-            alert = self.alert_log[index]
+        key = hash(alert_record)
+        if key in self.alert_log:
+            alert = self.alert_log[key]
             alert.alert_count += alert_record.alert_count
         else:
-            self.alert_log.append(alert_record)
+            self.alert_log[hash(alert_record)] = alert_record
 
     def add_alert_record_from_database(self, alert_record):
-        self.alert_log.append(alert_record)
+        self.alert_log[hash(alert_record)] = alert_record
 
     def get_max_count(self):
         count = 0
-        for record in self.alert_log:
+        for record in self.alert_log.values():
             if record.alert_count > count:
                 count = record.alert_count
         return count
+
+    def get_alert_log(self):
+        return self.alert_log.values()
 
     def __repr__(self):
         return 'User name: %s' % self.uuid + '\n' + \
@@ -35,7 +38,7 @@ class AlertLog:
 class User(db.Model):
     __tablename__ = 'User'
 
-    user_name = db.Column('user_name', db.String(100), primary_key=True, unique=True)
+    user_name = db.Column('user_name', db.String(350), primary_key=True, unique=True)
     status = db.Column('status', db.Boolean)
 
     def __init__(self, user_name):
@@ -48,10 +51,10 @@ class User(db.Model):
 class AlertRecord(db.Model):
     __tablename__ = 'AlertRecord'
 
-    user_id = db.Column('user_id', db.String(100), db.ForeignKey('User.user_name'),
+    user_id = db.Column('user_id', db.String(350), db.ForeignKey('User.user_name'),
                         primary_key=True)
-    source_node = db.Column('source_node', db.String(100), primary_key=True)
-    sink_node = db.Column('sink_node', db.String(100), primary_key=True)
+    source_node = db.Column('source_node', db.String(350), primary_key=True)
+    sink_node = db.Column('sink_node', db.String(350), primary_key=True)
     alert_cause = db.Column('alert_cause', db.String(1))
     alert_count = db.Column('alert_count', db.Float)
 
@@ -66,6 +69,9 @@ class AlertRecord(db.Model):
         return self.user_id == other.user_id and \
                self.source_node == other.source_node and \
                self.sink_node == other.sink_node
+
+    def __hash__(self):
+        return hash((self.user_id, self.source_node, self.sink_node))
 
     def __repr__(self):
         return "<Source node: %s, sink node: %s, alert_cause: %s, alert_count: %s>" \

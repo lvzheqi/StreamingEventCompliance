@@ -76,6 +76,7 @@ def calcuate_connection_for_different_prefix_automata(windowsMemory):
                     elif source_node.find('*') == -1:
                         autos.get(ws).update_automata(automata.Connection(source_node, sink_node, 1))
                 except Exception as ec:
+                    print(ec)
                     print('Exception1', print(ec.__repr__(), ec.__class__))
                 else:
                     CL.lock_List.get((source_node, sink_node)).release()
@@ -90,6 +91,7 @@ def calcuate_connection_for_different_prefix_automata(windowsMemory):
                     elif source_node.find('*') == -1:
                         autos.get(ws).update_automata(automata.Connection(source_node, sink_node, 1))
                 except Exception as ec:
+                    print(ec)
                     print('Exception2', ec.__class__)
                 else:
                     CL.lock_List.get((source_node, sink_node)).release()
