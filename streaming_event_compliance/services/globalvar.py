@@ -37,7 +37,7 @@ def set_auto_status():
     status = 1
 
 
-# Below are definitions and operations of various kinds of Memorizer
+# Below are definitions and operations of various kinds of Memorizer of building automata
 class ThreadMemorizer(object):
     '''
     This object is for storing the threads that server creates for each case;
@@ -93,7 +93,36 @@ def get_thread_memory():
     return T
 
 
-alert_logs = {}
+# Below are definitions and operations of various kinds of Memorizer of Compliance checking
+class ClientThreadMemorizer(object):
+    def __init__(self):
+        self.client_number = 0
+        self.dictionary_threads = {}
 
-def get_alert_logs():
-    return alert_logs
+
+class ClientCaseMemorizer(object):
+    def __init__(self):
+        self.client_number = 0
+        self.dictionary_cases = {}
+        self.lock_List = {}
+
+
+CTM = ThreadMemorizer()
+CCM = CaseMemorizer()
+
+
+def get_client_case_memory():
+    return CCM
+
+
+def get_client_thread_memory():
+    return CTM
+
+
+client_alert_logs = {}
+
+
+def get_client_alert_logs():
+    client_alert_logs = {'client1':{'windowsize1':{},'windowsize2':{}},
+                         'client2':{'windowsize1':{}, 'windowsize2':{}}}
+    return client_alert_logs
