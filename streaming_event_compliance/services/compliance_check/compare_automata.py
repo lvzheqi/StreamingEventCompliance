@@ -2,7 +2,7 @@ from streaming_event_compliance.services import globalvar
 from streaming_event_compliance.utils.config import THRESHOLD
 from streaming_event_compliance.objects.automata import alertlog
 
-client_alert_logs = {}  #{'uuid1': {1: alog, 2: alog, 3:alog}, 'uuid2': {}}
+client_alert_logs = globalvar.get_alert_logs()  #{'uuid1': {1: alog, 2: alog, 3:alog}, 'uuid2': {}}
 alert_logs = {}
 
 

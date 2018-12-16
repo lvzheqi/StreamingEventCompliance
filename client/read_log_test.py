@@ -12,6 +12,7 @@ class TestClient(unittest.TestCase):
                           lambda: eventlog.read_log(client_uuid, path))
         print(exception.ReadFileException, exception.ReadFileException.message)
 
+
 if __name__ == '__main__':
     unittest.main()
 
