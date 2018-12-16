@@ -1,7 +1,7 @@
 from streaming_event_compliance.objects.automata import automata
 from streaming_event_compliance.objects.automata import alertlog
 from streaming_event_compliance.utils.config import WINDOW_SIZE
-from streaming_event_compliance.objects.exceptions.exception import NoUserError
+from streaming_event_compliance.objects.exceptions.exception import NoUserException
 
 from streaming_event_compliance.database import db
 
@@ -44,7 +44,7 @@ def check_user_status(uuid):
     if user is not None:
         return user.status
     else:
-        raise NoUserError
+        raise NoUserException
 
 
 def update_user_status(uuid, status):
@@ -53,7 +53,7 @@ def update_user_status(uuid, status):
         user.status = status
         db.session.commit()
     else:
-        raise NoUserError
+        raise NoUserException
 
 
 def init_automata_from_database():

@@ -1,28 +1,32 @@
 from threading import Thread
-import time
 from streaming_event_compliance.utils.config import WINDOW_SIZE, MAXIMUN_WINDOW_SIZE
 from . import compare_automata
-import queue
 from streaming_event_compliance.services import globalvar
-
+from streaming_event_compliance.objects.exceptions.exception import ThreadException
+import sys
+import queue
 
 class CaseThreadForCC(Thread):
     def __init__(self, event, client_uuid):
         self.event = event
         self.CCM = globalvar.get_client_case_memory()
         self.client_uuid = client_uuid
-        self.__status_queue = queue.Queue()
+        self._status_queue = queue.Queue()
+        self._message = queue.Queue()
         Thread.__init__(self)
 
     def wait_for_exc_info(self):
-        return self.__status_queue.get()
+        return self._status_queue.get()
 
     def join_with_exception(self):
         ex_info = self.wait_for_exc_info()
         if ex_info is None:
             return
         else:
-            raise ex_info[1]
+            raise ThreadException(ex_info[1])
+
+    def get_message(self):
+        return self._message
 
     def run(self):
         """
@@ -33,22 +37,22 @@ class CaseThreadForCC(Thread):
         This function acquires lock on caseMemorizer and releases lock when processing of the
         event is done
         """
-        pass
-
-    def thread_run(self, thread_queue):
         client_cases = self.CCM.dictionary_cases.get(self.client_uuid)
         client_locks = self.CCM.lock_List.get(self.client_uuid)
-
-        if client_locks.get(self.event['case_id']).acquire():
-            if len(client_cases.get(self.event['case_id'])) < MAXIMUN_WINDOW_SIZE + 1:
-                windows_memory = client_cases.get(self.event['case_id'])
-            else:
-                windows_memory = client_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
-            message = create_source_sink_node(windows_memory, self.client_uuid)
-            if len(client_cases.get(self.event['case_id'])) > MAXIMUN_WINDOW_SIZE:
-                client_cases.get(self.event['case_id']).pop(0)
-            client_locks.get(self.event['case_id']).release()
-            thread_queue.put(message)
+        try:
+            if client_locks.get(self.event['case_id']).acquire():
+                if len(client_cases.get(self.event['case_id'])) < MAXIMUN_WINDOW_SIZE + 1:
+                    windows_memory = client_cases.get(self.event['case_id'])
+                else:
+                    windows_memory = client_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
+                message = create_source_sink_node(windows_memory, self.client_uuid)
+                if len(client_cases.get(self.event['case_id'])) > MAXIMUN_WINDOW_SIZE:
+                    client_cases.get(self.event['case_id']).pop(0)
+                client_locks.get(self.event['case_id']).release()
+                self._message.put(message)
+                self._status_queue.put(None)
+        except Exception:
+            self._status_queue.put(sys.exc_info())
 
 
 def create_source_sink_node(windowsMemory, client_uuid):
