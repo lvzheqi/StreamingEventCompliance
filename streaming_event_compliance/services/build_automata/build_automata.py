@@ -17,16 +17,21 @@ threads_index = 0
 
 def build_automata():
     print("---------------------Start: Traininging automata starts!--------------------------------------")
-    process_ = Process(target=build_automata_pro())
-    process_.start()
-    process_.join()
-    autos = globalvar.get_autos()
-    for ws in WINDOW_SIZE:
-        autos[ws].set_probability()
-    dbtools.insert_node_and_connection(autos)
-    print("---------------------End: Everything for training automata is Done!---------------------------")
-    globalvar.set_auto_status()
-    globalvar.clear_memorizer()
+    try:
+        process_ = Process(target=build_automata_pro())
+        process_.start()
+        process_.join()
+    except ThreadException as ec:
+        raise ec
+    else:
+        autos = globalvar.get_autos()
+        for ws in WINDOW_SIZE:
+            autos[ws].set_probability()
+        dbtools.insert_node_and_connection(autos)
+        print("---------------------End: Everything for training automata is Done!---------------------------")
+    finally:
+        globalvar.set_auto_status()
+        globalvar.clear_memorizer()
 
 
 def build_automata_pro():
@@ -84,17 +89,31 @@ def build_automata_pro():
     except Exception:
         raise ThreadException(traceback.format_exc())
     else:
+        print('----------------------------------------------------------------------------------------------\n')
+        for item in C.dictionary_cases:
+            print(len(C.dictionary_cases.get(item)), C.dictionary_cases.get(item))
+        print('----------------------------------------------------------------------------------------------\n')
         end_message = {}
         for item in C.dictionary_cases:
             end_message['case_id'] = item
             end_message['activity'] = '!@#$%^'
             C.dictionary_cases.get(item).append(end_message['activity'])
-            # print(len(C.dictionary_cases.get(item)),'a adding end', item, C.dictionary_cases.get(item))
             thread = case_thread.CaseThreadForTraining(end_message, threads_index, T, C)
-            T.dictionary_threads[threads_index] = thread
             thread.start()
+            T.dictionary_threads[threads_index] = thread
             threads.append(thread)
             threads_index = threads_index + 1
+        print('----------------------------------------------------------------------------------------------\n')
+        for item in C.dictionary_cases:
+            print(len(C.dictionary_cases.get(item)), C.dictionary_cases.get(item))
+        print('----------------------------------------------------------------------------------------------\n')
+
+    # try:
+    #     for th in threads:
+    #         th.join_with_exception()
+    # except ThreadException:
+    #     print('join error')
+    #     raise ThreadException(traceback.format_exc())
 
     # for item in C.dictionary_cases:
     #     print(len(C.dictionary_cases.get(item)), 'after threading', item, C.dictionary_cases.get(item))
