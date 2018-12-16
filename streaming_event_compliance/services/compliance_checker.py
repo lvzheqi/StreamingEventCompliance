@@ -1,4 +1,4 @@
-from streaming_event_compliance.services import deviation_pdf
+from streaming_event_compliance.services import visualization_deviation_automata
 from streaming_event_compliance.services.compliance_check import case_thread_cc
 from streaming_event_compliance.services import globalvar
 from streaming_event_compliance.utils.config import MAXIMUN_WINDOW_SIZE
@@ -80,7 +80,7 @@ def compliance_checker(client_uuid, event):
             print(alert_logs)
             return "OK"
         else:
-            deviation_pdf.build_deviation_pdf(client_uuid)
+            visualization_deviation_automata.build_deviation_pdf(client_uuid)
         # deviation information should be returned here, or we return it form thread.start()
             return "OK"
     # return event['case_id'] + "->" + event['activity']

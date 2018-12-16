@@ -4,7 +4,7 @@ import time
 from streaming_event_compliance.utils.config import WINDOW_SIZE, MAXIMUN_WINDOW_SIZE
 from streaming_event_compliance.services import globalvar
 from streaming_event_compliance.objects.automata import automata
-from streaming_event_compliance.services.exception import EventException
+from streaming_event_compliance.objects.exceptions.exception import EventException
 
 check_executing_order = {}
 

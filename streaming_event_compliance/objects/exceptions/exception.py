@@ -1,18 +1,19 @@
-class Error(Exception):
-    """Base class for exceptions in this module."""
-    pass
+class MyException(Exception):
+    def __init__(self, message):
+        super().__init__(self)
+        self.message = message
+
+    def get_message(self):
+        print(self.message)
 
 
-class EventError(Error):
-    """Exception raised for errors in the request.
-
-    Attributes:
-        event -- an event Object
-    """
-
+class EventException(MyException):
     def __init__(self, event):
-        self.event = event
+        mess = 'ServerRequestError: Server Error! ' + str(event)
+        super().__init__(mess)
 
 
-class NoUserError(Error):
-    pass
+class NoUserException(MyException):
+    def __init__(self):
+        mess = 'NoUserError: No user exist!'
+        super().__init__(mess)
