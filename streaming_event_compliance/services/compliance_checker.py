@@ -2,9 +2,10 @@ from streaming_event_compliance.services import deviation_pdf
 from streaming_event_compliance.services.compliance_check import case_thread_cc
 from streaming_event_compliance.services import globalvar
 from streaming_event_compliance.utils.config import MAXIMUN_WINDOW_SIZE
-from streaming_event_compliance.services.compliance_check.compare_automata import  alert_logs
+from streaming_event_compliance.services.compliance_check.compare_automata import  client_alert_logs
 import threading
 import queue
+import json
 
 threads = []
 threads_index = 0
@@ -40,10 +41,17 @@ def compliance_checker(client_uuid, event):
                         threads_index = threads_index + 1
                         response = thread_queue.get()
                         print(response)
-                        return response
+                        return json.dumps(response)
                     except KeyboardInterrupt:
                         print('Error: Thread is interrupt!')
-                        return "Server Error!"
+                        response = {
+                            'case_id': None,
+                            'source_node': None,
+                            'sink_node': None,
+                            'cause': None,
+                            'message': 'Server Error'
+                        }
+                        return response
             else:
                     # 1. Add it to the caseMemory
                     # 2. Create a new thread for this case
@@ -64,11 +72,17 @@ def compliance_checker(client_uuid, event):
                         threads_index = threads_index + 1
                         response = thread_queue.get()
                         print(response)
-                        return response
+                        return json.dumps(response)
                     except KeyboardInterrupt:
                         print('Error: Thread is interrupt!')
-                        return "Server Error!"
-
+                        response = {
+                            'case_id': None,
+                            'source_node': None,
+                            'sink_node': None,
+                            'cause': None,
+                            'message': 'Server Error'
+                        }
+                        return response
              # while len(threads) > 3:
              #   threads[0].join()  #TODO: Jingjing: why we need to join these threads?
              #  del threads[0]     # why we delete?
@@ -77,14 +91,35 @@ def compliance_checker(client_uuid, event):
          # TODO: Sabya Remove the below elif... This portion is only for now to show the content of alert logs...
          # TODO: After inserting Alert_logs into table remove this below elif part
         elif event['case_id'] == 'NONE' and event['activity'] == 'END':
-            print(alert_logs)
-            return "OK"
+            print(client_alert_logs)
+            response = {
+                'case_id': None,
+                'source_node': None,
+                'sink_node': 'End',
+                'cause': None,
+                'message': 'OK'
+            }
+            return response
         else:
             deviation_pdf.build_deviation_pdf(client_uuid)
         # deviation information should be returned here, or we return it form thread.start()
-            return "OK"
+            response = {
+                'case_id': None,
+                'source_node': None,
+                'sink_node': None,
+                'cause': None,
+                'message': 'PDF'
+            }
+            return response
     # return event['case_id'] + "->" + event['activity']
-    return "automata is not build"
+    response = {
+        'case_id': None,
+        'source_node': None,
+        'sink_node': None,
+        'cause': None,
+        'message': 'Automata not built!'
+    }
+    return response
 
 
 def error_handle():
