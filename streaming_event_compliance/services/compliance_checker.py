@@ -1,16 +1,16 @@
-from streaming_event_compliance.services import deviation_pdf
+from streaming_event_compliance.services import visualization_deviation_automata
 from streaming_event_compliance.services.compliance_check import case_thread_cc
 from streaming_event_compliance.services import globalvar
 from streaming_event_compliance.utils.config import MAXIMUN_WINDOW_SIZE
-from streaming_event_compliance.services.compliance_check.compare_automata import  alert_logs
-import threading
-import queue
 from multiprocessing import Process
 from streaming_event_compliance.database import dbtools
 from streaming_event_compliance.services.compliance_check.compare_automata import alert_logs
+import threading
+import queue
 
 threads = []
 threads_index = 0
+
 
 def compliance_checker():
     print("---------------------Start: Compliance checking starts!--------------------------------------")
@@ -21,6 +21,7 @@ def compliance_checker():
     dbtools.insert_alert_log(alert_logs)
     print("---------------------End: Everything for compliance checking is Done!---------------------------")
     globalvar.clear_memorizer()
+
 
 def compliance_checker_pro(client_uuid, event):
     '''
