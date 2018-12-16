@@ -19,14 +19,14 @@ def insert_node_and_connection(autos):
         for node, degree in auto.nodes.items():
             source_node = automata.Node(node, degree)
             db.session.add(source_node)
-        for conn in auto.connections:
+        for conn in auto.get_connections():
             db.session.add(conn)
     db.session.commit()
 
 
 def insert_alert_log(alogs):
     for alog in alogs.values():
-        for alert in alog.alert_log:
+        for alert in alog.get_alert_log():
             db.session.add(alert)
     db.session.commit()
 

@@ -18,13 +18,13 @@ def visualization_automata(autos, alogs, uuid):
             sub.attr(color='black', label='Probability Graph With Prefix Size ' + str(auto.window_size))
             for node in auto.nodes.keys():
                 sub.node(node, node)
-            for conn in auto.connections:
+            for conn in auto.get_connections():
                 if conn.count > 0 and conn.probability > THRESHOLD:
                     sub.edge(conn.source_node, conn.sink_node, penwidth='0.5')
                              # label=str(conn.probability), penwidth=str(conn.probability*2))
 
             max_count = alog.get_max_count()
-            for record in alog.alert_log:
+            for record in alog.get_alert_log():
                 sub.node(record.source_node, record.source_node, fillcolor='red', style='filled')
                 sub.node(record.sink_node, record.sink_node, fillcolor='red', style='filled')
                 if record.alert_cause == 'M':
