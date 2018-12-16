@@ -82,8 +82,6 @@ def check_automata_with_source_sink(windowsize, source_node, sink_node, client_u
     print("alert due to missing node")
     return 0
 
-    # TODO:  alertlog needs to be inserted into table after finishing all threads
-    # TODO:  Insert username into table when threads are all joined
     # TODO: Once server busy message is received at client side then processing must be stopped and next events must
     # not be thrown to server. If this is not handled the server takes the incomplete data and fires alert
     # TODO : Implement the deletion of all logs and other stuffs once processing done for one time for all events

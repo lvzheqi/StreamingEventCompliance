@@ -49,7 +49,7 @@ class Client_cls(object):
             if r.status_code != 200:
                 raise ConnectionException
             else:
-                if r.text:  # TODO: according to the status of server
+                if r.text:
                     ClientLogging().log_info(func_name, self.uuid, 'Compliance checking is done. '
                                                                    'Deviations PDF is available at '
                                                                    'http://127.0.0.1:5000/show-deviation-pdf?uuid=' +

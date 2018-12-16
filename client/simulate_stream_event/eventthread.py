@@ -44,11 +44,9 @@ class EventThread(Thread):
                               json=json.dumps(self.event))
             self._status_queue.put(None)
             if r.status_code != 200:
-                # TODO: jingjinghuo: Problem: What time this belowing code will be executed?
                 ClientLogging().log_error(func_name, self.client_uuid, self.index, self.event['case_id'],
                                           self.event['activity'],
                                           'Error by compliance checking')
-
                 ServerRequestException('Failure by compliance checking').get_message()
             else:
                 ClientLogging().log_info(func_name, self.client_uuid, self.index, self.event['case_id'],
