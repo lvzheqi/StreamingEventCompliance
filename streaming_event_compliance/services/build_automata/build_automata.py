@@ -26,6 +26,7 @@ def build_automata():
     globalvar.set_auto_status()
     globalvar.clear_memorizer()
 
+
 def build_automata_pro():
     """
     Reads the training event logger from database.config.TRAINING_EVENT_LOG_PATH and build automata.

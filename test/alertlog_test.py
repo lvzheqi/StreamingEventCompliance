@@ -17,16 +17,20 @@ class AlertlogTest(unittest.TestCase):
     def test_alertlog(self):
         for alog in self.alog1.alert_log:
             if alog.sink_node is 'B':
-                self.assertAlmostEqual(alog.alert_count, 1)
+                self.assertEqual(alog.alert_count, 1)
             elif alog.sink_node is 'C':
-                self.assertAlmostEqual(alog.alert_count, 1)
+                self.assertEqual(alog.alert_count, 1)
             elif alog.sink_node is '$':
-                self.assertAlmostEqual(alog.alert_count, 0)
+                self.assertEqual(alog.alert_count, 0)
         for alog in self.alog2.alert_log:
             if alog.sink_node is 'B,D':
-                self.assertAlmostEqual(alog.alert_count, 2)
+                self.assertEqual(alog.alert_count, 2)
             elif alog.sink_node is 'B,W':
-                self.assertAlmostEqual(alog.alert_count, 1)
+                self.assertEqual(alog.alert_count, 1)
+
+    def test_get_max_count(self):
+        self.assertEqual(self.alog1.get_max_count(), 1)
+        self.assertEqual(self.alog2.get_max_count(), 2)
 
 
 if __name__ == '__main__':
