@@ -1,5 +1,4 @@
 import unittest
-# from streaming_event_compliance.services. import probability_automata
 from streaming_event_compliance.services import globalvar, visualization_deviation_automata
 from streaming_event_compliance.objects.automata import alertlog
 
@@ -9,7 +8,7 @@ class CreateProbabilityAutomataTest(unittest.TestCase):
     def setUp(self):
         globalvar.init()
 
-        self.uuid = 'u1'
+        self.uuid = 'client1'
         alog1 = alertlog.AlertLog(self.uuid, 1)
         alog2 = alertlog.AlertLog(self.uuid, 2)
         alog3 = alertlog.AlertLog(self.uuid, 3)
@@ -24,7 +23,7 @@ class CreateProbabilityAutomataTest(unittest.TestCase):
         alog3.update_alert_record(alertlog.AlertRecord(self.uuid, 'd,b,c', 'b,c,d', 1, 'M'))
         alog4.update_alert_record(alertlog.AlertRecord(self.uuid, 'a,d,b,c', 'd,b,c,d', 1, 'M'))
         alogs = {1: alog1, 2: alog2, 3: alog3, 4: alog4}
-        self.u_alogs = {'u1': alogs}
+        self.u_alogs = {'client1': alogs}
 
     def test_create_automata(self):
         visualization_deviation_automata.visualization_automata(globalvar.autos, self.u_alogs[self.uuid], self.uuid)

@@ -39,7 +39,6 @@ class ClientLogging:
         '''
         fsize = os.path.getsize(config.CLIENT_LOG_PATH)
         fsize = fsize / float(1024 * 1024)
-        print(fsize)
         if fsize > 2:
             os.remove(config.CLIENT_LOG_PATH)
         if not os.path.exists(config.CLIENT_LOG_PATH):

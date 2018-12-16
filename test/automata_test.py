@@ -16,14 +16,14 @@ class AutomataTest(unittest.TestCase):
         self.auto2.set_probability()
 
     def test_update_automata(self):
-        for conn in self.auto1.connections:
+        for conn in self.auto1.connections.values():
             if conn.sink_node is 'B':
                 self.assertAlmostEqual(conn.probability, 2/3)
             elif conn.sink_node is 'C':
                 self.assertAlmostEqual(conn.probability, 1/3)
             elif conn.sink_node is '$':
                 self.assertAlmostEqual(conn.probability, 0)
-        for conn in self.auto2.connections:
+        for conn in self.auto2.connections.values():
             if conn.sink_node is 'B,C':
                 self.assertAlmostEqual(conn.probability, 1)
             elif conn.sink_node is 'D,B':
