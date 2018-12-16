@@ -7798,3 +7798,331 @@
 2018-12-16 16:26:51,852  ERROR cli run Thread:71 Case_id:NONE Activity:END 'Error by compliance checking'
 2018-12-16 16:29:36,000  INFO cli main 'The user selected option 3'
 2018-12-16 16:29:36,001  INFO cli main 'Exiting...'
+2018-12-16 16:44:16,004  INFO client1 login 'Post request to server:http://127.0.0.1:5000/login?uuid=client1'
+2018-12-16 16:44:16,023 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:44:16,029 http://127.0.0.1:5000 "POST /login?uuid=client1 HTTP/1.1" 200 5
+2018-12-16 16:44:16,029  INFO client1 main 'The options are displayed'
+2018-12-16 16:44:17,036  INFO client1 main 'The user selected option 1'
+2018-12-16 16:44:17,036  INFO client1 main 'The user selected option 1'
+2018-12-16 16:44:17,036  INFO client1 main 'Calling run_compliance_checker()'
+2018-12-16 16:44:17,036  INFO client1 run_compliance_checker 'Calling read_log()'
+2018-12-16 16:44:17,036  INFO client1 read_log 'Creating a trace logger file: '
+2018-12-16 16:44:17,042  INFO client1 read_log 'Transforming trace logger to event logger'
+2018-12-16 16:44:17,042  INFO client1 read_log 'Sorting event logger'
+2018-12-16 16:44:17,042  INFO client1 run_compliance_checker 'Calling simulate_stream_event()'
+2018-12-16 16:44:17,564  INFO client1 simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-16 16:44:17,564  INFO client1 invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2018-12-16 16:44:17,564  INFO client1 invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2018-12-16 16:44:17,564  INFO client1 run Thread:0 Case_id:Case1.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 16:44:17,566 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:44:17,615 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 36
+2018-12-16 16:44:17,615  INFO client1 run Thread:0 Case_id:Case1.0 Activity:a 'The server response is: Alert !!!  No connection from * to a'
+2018-12-16 16:44:18,135  INFO client1 simulate_stream_event Case_id:Case3.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-16 16:44:18,135  INFO client1 invoke_event_thread Case_id:Case3.0 Activity:a 'Initialising thread'
+2018-12-16 16:44:18,135  INFO client1 invoke_event_thread Case_id:Case3.0 Activity:a 'Starting thread for event '
+2018-12-16 16:44:18,136  INFO client1 run Thread:1 Case_id:Case3.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 16:44:18,138 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:44:18,141 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 36
+2018-12-16 16:44:18,142  INFO client1 run Thread:1 Case_id:Case3.0 Activity:a 'The server response is: Alert !!!  No connection from * to a'
+2018-12-16 16:44:18,659  INFO client1 simulate_stream_event Case_id:Case2.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-16 16:44:18,659  INFO client1 invoke_event_thread Case_id:Case2.0 Activity:a 'Initialising thread'
+2018-12-16 16:44:18,659  INFO client1 invoke_event_thread Case_id:Case2.0 Activity:a 'Starting thread for event '
+2018-12-16 16:44:18,660  INFO client1 run Thread:2 Case_id:Case2.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 16:44:18,662 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:44:18,664 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 36
+2018-12-16 16:44:18,665  INFO client1 run Thread:2 Case_id:Case2.0 Activity:a 'The server response is: Alert !!!  No connection from * to a'
+2018-12-16 16:44:19,178  INFO client1 simulate_stream_event Case_id:Case1.2 Activity:a 'Calling invoke_event_thread()'
+2018-12-16 16:44:19,178  INFO client1 invoke_event_thread Case_id:Case1.2 Activity:a 'Initialising thread'
+2018-12-16 16:44:19,178  INFO client1 invoke_event_thread Case_id:Case1.2 Activity:a 'Starting thread for event '
+2018-12-16 16:44:19,179  INFO client1 run Thread:3 Case_id:Case1.2 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 16:44:19,181 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:44:19,184 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 36
+2018-12-16 16:44:19,185  INFO client1 run Thread:3 Case_id:Case1.2 Activity:a 'The server response is: Alert !!!  No connection from * to a'
+2018-12-16 16:44:19,701  INFO client1 simulate_stream_event Case_id:Case1.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-16 16:44:19,701  INFO client1 invoke_event_thread Case_id:Case1.1 Activity:a 'Initialising thread'
+2018-12-16 16:44:19,701  INFO client1 invoke_event_thread Case_id:Case1.1 Activity:a 'Starting thread for event '
+2018-12-16 16:44:19,701  INFO client1 run Thread:4 Case_id:Case1.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 16:44:19,703 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:44:19,708 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 36
+2018-12-16 16:44:19,709  INFO client1 run Thread:4 Case_id:Case1.1 Activity:a 'The server response is: Alert !!!  No connection from * to a'
+2018-12-16 16:44:20,225  INFO client1 simulate_stream_event Case_id:Case2.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-16 16:44:20,225  INFO client1 invoke_event_thread Case_id:Case2.1 Activity:a 'Initialising thread'
+2018-12-16 16:44:20,226  INFO client1 invoke_event_thread Case_id:Case2.1 Activity:a 'Starting thread for event '
+2018-12-16 16:44:20,226  INFO client1 run Thread:5 Case_id:Case2.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 16:44:20,228 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:44:20,230 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 36
+2018-12-16 16:44:20,231  INFO client1 run Thread:5 Case_id:Case2.1 Activity:a 'The server response is: Alert !!!  No connection from * to a'
+2018-12-16 16:44:20,753  INFO client1 simulate_stream_event Case_id:Case1.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-16 16:44:20,753  INFO client1 invoke_event_thread Case_id:Case1.0 Activity:b 'Initialising thread'
+2018-12-16 16:44:20,754  INFO client1 invoke_event_thread Case_id:Case1.0 Activity:b 'Starting thread for event '
+2018-12-16 16:44:20,754  INFO client1 run Thread:6 Case_id:Case1.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 16:44:20,756 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:44:20,758 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 36
+2018-12-16 16:44:20,759  INFO client1 run Thread:6 Case_id:Case1.0 Activity:b 'The server response is: Alert !!!  No connection from a to b'
+2018-12-16 16:44:21,279  INFO client1 simulate_stream_event Case_id:Case3.0 Activity:e 'Calling invoke_event_thread()'
+2018-12-16 16:44:21,279  INFO client1 invoke_event_thread Case_id:Case3.0 Activity:e 'Initialising thread'
+2018-12-16 16:44:21,280  INFO client1 invoke_event_thread Case_id:Case3.0 Activity:e 'Starting thread for event '
+2018-12-16 16:44:21,280  INFO client1 run Thread:7 Case_id:Case3.0 Activity:e 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 16:44:21,282 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:44:21,284 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 36
+2018-12-16 16:44:21,288  INFO client1 run Thread:7 Case_id:Case3.0 Activity:e 'The server response is: Alert !!!  No connection from a to e'
+2018-12-16 16:44:21,802  INFO client1 simulate_stream_event Case_id:Case2.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-16 16:44:21,802  INFO client1 invoke_event_thread Case_id:Case2.0 Activity:c 'Initialising thread'
+2018-12-16 16:44:21,802  INFO client1 invoke_event_thread Case_id:Case2.0 Activity:c 'Starting thread for event '
+2018-12-16 16:44:21,803  INFO client1 run Thread:8 Case_id:Case2.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 16:44:21,805 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:44:21,809 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 36
+2018-12-16 16:44:21,810  INFO client1 run Thread:8 Case_id:Case2.0 Activity:c 'The server response is: Alert !!!  No connection from a to c'
+2018-12-16 16:44:22,329  INFO client1 simulate_stream_event Case_id:Case1.2 Activity:b 'Calling invoke_event_thread()'
+2018-12-16 16:44:22,330  INFO client1 invoke_event_thread Case_id:Case1.2 Activity:b 'Initialising thread'
+2018-12-16 16:44:22,330  INFO client1 invoke_event_thread Case_id:Case1.2 Activity:b 'Starting thread for event '
+2018-12-16 16:44:22,330  INFO client1 run Thread:9 Case_id:Case1.2 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 16:44:22,335 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:44:22,337  ERROR client1 run Thread:9 Case_id:Case1.2 Activity:b 'The server got disconnected, please try again later '
+2018-12-16 16:44:22,337  ERROR client1 main 'Server is not available'
+2018-12-16 16:44:22,338  INFO client1 main 'The options are displayed'
+2018-12-16 16:47:51,171  INFO client1 main 'The user selected option 1'
+2018-12-16 16:47:51,173  INFO client1 main 'The user selected option 1'
+2018-12-16 16:47:51,173  INFO client1 main 'Calling run_compliance_checker()'
+2018-12-16 16:47:51,173  INFO client1 run_compliance_checker 'Calling read_log()'
+2018-12-16 16:47:51,174  INFO client1 read_log 'Creating a trace logger file: '
+2018-12-16 16:47:51,176  INFO client1 read_log 'Transforming trace logger to event logger'
+2018-12-16 16:47:51,177  INFO client1 read_log 'Sorting event logger'
+2018-12-16 16:47:51,177  INFO client1 run_compliance_checker 'Calling simulate_stream_event()'
+2018-12-16 16:47:51,695  INFO client1 simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-16 16:47:51,695  INFO client1 invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2018-12-16 16:47:51,695  INFO client1 invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2018-12-16 16:47:51,695  INFO client1 run Thread:10 Case_id:Case1.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 16:47:51,697 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:47:51,750 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 36
+2018-12-16 16:47:51,750  INFO client1 run Thread:10 Case_id:Case1.0 Activity:a 'The server response is: Alert !!!  No connection from * to a'
+2018-12-16 16:47:52,268  INFO client1 simulate_stream_event Case_id:Case3.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-16 16:47:52,268  INFO client1 invoke_event_thread Case_id:Case3.0 Activity:a 'Initialising thread'
+2018-12-16 16:47:52,269  INFO client1 invoke_event_thread Case_id:Case3.0 Activity:a 'Starting thread for event '
+2018-12-16 16:47:52,269  INFO client1 run Thread:11 Case_id:Case3.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 16:47:52,271 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:47:52,275 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 36
+2018-12-16 16:47:52,275  INFO client1 run Thread:11 Case_id:Case3.0 Activity:a 'The server response is: Alert !!!  No connection from * to a'
+2018-12-16 16:47:52,796  INFO client1 simulate_stream_event Case_id:Case2.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-16 16:47:52,797  INFO client1 invoke_event_thread Case_id:Case2.0 Activity:a 'Initialising thread'
+2018-12-16 16:47:52,797  INFO client1 invoke_event_thread Case_id:Case2.0 Activity:a 'Starting thread for event '
+2018-12-16 16:47:52,797  INFO client1 run Thread:12 Case_id:Case2.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 16:47:52,800 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:47:52,804 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 36
+2018-12-16 16:47:52,804  INFO client1 run Thread:12 Case_id:Case2.0 Activity:a 'The server response is: Alert !!!  No connection from * to a'
+2018-12-16 16:47:53,325  INFO client1 simulate_stream_event Case_id:Case1.2 Activity:a 'Calling invoke_event_thread()'
+2018-12-16 16:47:53,326  INFO client1 invoke_event_thread Case_id:Case1.2 Activity:a 'Initialising thread'
+2018-12-16 16:47:53,327  INFO client1 invoke_event_thread Case_id:Case1.2 Activity:a 'Starting thread for event '
+2018-12-16 16:47:53,328  INFO client1 run Thread:13 Case_id:Case1.2 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 16:47:53,330 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:47:53,335 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 36
+2018-12-16 16:47:53,335  INFO client1 run Thread:13 Case_id:Case1.2 Activity:a 'The server response is: Alert !!!  No connection from * to a'
+2018-12-16 16:47:53,859  INFO client1 simulate_stream_event Case_id:Case1.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-16 16:47:53,860  INFO client1 invoke_event_thread Case_id:Case1.1 Activity:a 'Initialising thread'
+2018-12-16 16:47:53,860  INFO client1 invoke_event_thread Case_id:Case1.1 Activity:a 'Starting thread for event '
+2018-12-16 16:47:53,860  INFO client1 run Thread:14 Case_id:Case1.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 16:47:53,862 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:47:53,864 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 36
+2018-12-16 16:47:53,865  INFO client1 run Thread:14 Case_id:Case1.1 Activity:a 'The server response is: Alert !!!  No connection from * to a'
+2018-12-16 16:47:54,382  INFO client1 simulate_stream_event Case_id:Case2.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-16 16:47:54,382  INFO client1 invoke_event_thread Case_id:Case2.1 Activity:a 'Initialising thread'
+2018-12-16 16:47:54,382  INFO client1 invoke_event_thread Case_id:Case2.1 Activity:a 'Starting thread for event '
+2018-12-16 16:47:54,382  INFO client1 run Thread:15 Case_id:Case2.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 16:47:54,384 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:47:54,390 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 36
+2018-12-16 16:47:54,391  INFO client1 run Thread:15 Case_id:Case2.1 Activity:a 'The server response is: Alert !!!  No connection from * to a'
+2018-12-16 16:47:54,916  INFO client1 simulate_stream_event Case_id:Case1.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-16 16:47:54,916  INFO client1 invoke_event_thread Case_id:Case1.0 Activity:b 'Initialising thread'
+2018-12-16 16:47:54,916  INFO client1 invoke_event_thread Case_id:Case1.0 Activity:b 'Starting thread for event '
+2018-12-16 16:47:54,916  INFO client1 run Thread:16 Case_id:Case1.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 16:47:54,922 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:47:54,925 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 36
+2018-12-16 16:47:54,926  INFO client1 run Thread:16 Case_id:Case1.0 Activity:b 'The server response is: Alert !!!  No connection from a to b'
+2018-12-16 16:47:55,446  INFO client1 simulate_stream_event Case_id:Case3.0 Activity:e 'Calling invoke_event_thread()'
+2018-12-16 16:47:55,447  INFO client1 invoke_event_thread Case_id:Case3.0 Activity:e 'Initialising thread'
+2018-12-16 16:47:55,447  INFO client1 invoke_event_thread Case_id:Case3.0 Activity:e 'Starting thread for event '
+2018-12-16 16:47:55,447  INFO client1 run Thread:17 Case_id:Case3.0 Activity:e 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 16:47:55,449 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:47:55,455 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 36
+2018-12-16 16:47:55,457  INFO client1 run Thread:17 Case_id:Case3.0 Activity:e 'The server response is: Alert !!!  No connection from a to e'
+2018-12-16 16:47:55,976  INFO client1 simulate_stream_event Case_id:Case2.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-16 16:47:55,976  INFO client1 invoke_event_thread Case_id:Case2.0 Activity:c 'Initialising thread'
+2018-12-16 16:47:55,977  INFO client1 invoke_event_thread Case_id:Case2.0 Activity:c 'Starting thread for event '
+2018-12-16 16:47:55,977  INFO client1 run Thread:18 Case_id:Case2.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 16:47:55,979 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:47:55,982 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 36
+2018-12-16 16:47:55,982  INFO client1 run Thread:18 Case_id:Case2.0 Activity:c 'The server response is: Alert !!!  No connection from a to c'
+2018-12-16 16:47:56,500  INFO client1 simulate_stream_event Case_id:Case1.2 Activity:b 'Calling invoke_event_thread()'
+2018-12-16 16:47:56,501  INFO client1 invoke_event_thread Case_id:Case1.2 Activity:b 'Initialising thread'
+2018-12-16 16:47:56,501  INFO client1 invoke_event_thread Case_id:Case1.2 Activity:b 'Starting thread for event '
+2018-12-16 16:47:56,501  INFO client1 run Thread:19 Case_id:Case1.2 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 16:47:56,504 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:47:56,506 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 36
+2018-12-16 16:47:56,508  INFO client1 run Thread:19 Case_id:Case1.2 Activity:b 'The server response is: Alert !!!  No connection from a to b'
+2018-12-16 16:47:57,027  INFO client1 simulate_stream_event Case_id:Case1.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-16 16:47:57,027  INFO client1 invoke_event_thread Case_id:Case1.1 Activity:b 'Initialising thread'
+2018-12-16 16:47:57,027  INFO client1 invoke_event_thread Case_id:Case1.1 Activity:b 'Starting thread for event '
+2018-12-16 16:47:57,027  INFO client1 run Thread:20 Case_id:Case1.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 16:47:57,030 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:47:57,034 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 36
+2018-12-16 16:47:57,034  INFO client1 run Thread:20 Case_id:Case1.1 Activity:b 'The server response is: Alert !!!  No connection from a to b'
+2018-12-16 16:47:57,551  INFO client1 simulate_stream_event Case_id:Case2.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-16 16:47:57,552  INFO client1 invoke_event_thread Case_id:Case2.1 Activity:c 'Initialising thread'
+2018-12-16 16:47:57,552  INFO client1 invoke_event_thread Case_id:Case2.1 Activity:c 'Starting thread for event '
+2018-12-16 16:47:57,552  INFO client1 run Thread:21 Case_id:Case2.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 16:47:57,554 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:47:57,557 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 36
+2018-12-16 16:47:57,558  INFO client1 run Thread:21 Case_id:Case2.1 Activity:c 'The server response is: Alert !!!  No connection from a to c'
+2018-12-16 16:47:58,074  INFO client1 simulate_stream_event Case_id:Case1.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-16 16:47:58,074  INFO client1 invoke_event_thread Case_id:Case1.0 Activity:c 'Initialising thread'
+2018-12-16 16:47:58,074  INFO client1 invoke_event_thread Case_id:Case1.0 Activity:c 'Starting thread for event '
+2018-12-16 16:47:58,075  INFO client1 run Thread:22 Case_id:Case1.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 16:47:58,077 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:47:58,079 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 36
+2018-12-16 16:47:58,080  INFO client1 run Thread:22 Case_id:Case1.0 Activity:c 'The server response is: Alert !!!  No connection from b to c'
+2018-12-16 16:47:58,604  INFO client1 simulate_stream_event Case_id:Case3.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-16 16:47:58,610  INFO client1 invoke_event_thread Case_id:Case3.0 Activity:d 'Initialising thread'
+2018-12-16 16:47:58,611  INFO client1 invoke_event_thread Case_id:Case3.0 Activity:d 'Starting thread for event '
+2018-12-16 16:47:58,611  INFO client1 run Thread:23 Case_id:Case3.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 16:47:58,613 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:47:58,615 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 36
+2018-12-16 16:47:58,616  INFO client1 run Thread:23 Case_id:Case3.0 Activity:d 'The server response is: Alert !!!  No connection from e to d'
+2018-12-16 16:47:59,134  INFO client1 simulate_stream_event Case_id:Case2.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-16 16:47:59,135  INFO client1 invoke_event_thread Case_id:Case2.0 Activity:b 'Initialising thread'
+2018-12-16 16:47:59,135  INFO client1 invoke_event_thread Case_id:Case2.0 Activity:b 'Starting thread for event '
+2018-12-16 16:47:59,135  INFO client1 run Thread:24 Case_id:Case2.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 16:47:59,137 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:47:59,140 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 36
+2018-12-16 16:47:59,140  INFO client1 run Thread:24 Case_id:Case2.0 Activity:b 'The server response is: Alert !!!  No connection from c to b'
+2018-12-16 16:47:59,657  INFO client1 simulate_stream_event Case_id:Case1.2 Activity:c 'Calling invoke_event_thread()'
+2018-12-16 16:47:59,657  INFO client1 invoke_event_thread Case_id:Case1.2 Activity:c 'Initialising thread'
+2018-12-16 16:47:59,657  INFO client1 invoke_event_thread Case_id:Case1.2 Activity:c 'Starting thread for event '
+2018-12-16 16:47:59,657  INFO client1 run Thread:25 Case_id:Case1.2 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 16:47:59,659 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:47:59,662 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 36
+2018-12-16 16:47:59,662  INFO client1 run Thread:25 Case_id:Case1.2 Activity:c 'The server response is: Alert !!!  No connection from b to c'
+2018-12-16 16:48:00,184  INFO client1 simulate_stream_event Case_id:Case1.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-16 16:48:00,184  INFO client1 invoke_event_thread Case_id:Case1.1 Activity:c 'Initialising thread'
+2018-12-16 16:48:00,185  INFO client1 invoke_event_thread Case_id:Case1.1 Activity:c 'Starting thread for event '
+2018-12-16 16:48:00,185  INFO client1 run Thread:26 Case_id:Case1.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 16:48:00,187 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:48:00,190 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 36
+2018-12-16 16:48:00,190  INFO client1 run Thread:26 Case_id:Case1.1 Activity:c 'The server response is: Alert !!!  No connection from b to c'
+2018-12-16 16:48:00,709  INFO client1 simulate_stream_event Case_id:Case2.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-16 16:48:00,710  INFO client1 invoke_event_thread Case_id:Case2.1 Activity:b 'Initialising thread'
+2018-12-16 16:48:00,710  INFO client1 invoke_event_thread Case_id:Case2.1 Activity:b 'Starting thread for event '
+2018-12-16 16:48:00,710  INFO client1 run Thread:27 Case_id:Case2.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 16:48:00,712 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:48:00,715 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 36
+2018-12-16 16:48:00,716  INFO client1 run Thread:27 Case_id:Case2.1 Activity:b 'The server response is: Alert !!!  No connection from c to b'
+2018-12-16 16:48:01,232  INFO client1 simulate_stream_event Case_id:Case1.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-16 16:48:01,232  INFO client1 invoke_event_thread Case_id:Case1.0 Activity:d 'Initialising thread'
+2018-12-16 16:48:01,233  INFO client1 invoke_event_thread Case_id:Case1.0 Activity:d 'Starting thread for event '
+2018-12-16 16:48:01,233  INFO client1 run Thread:28 Case_id:Case1.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 16:48:01,235 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:48:01,237 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 36
+2018-12-16 16:48:01,238  INFO client1 run Thread:28 Case_id:Case1.0 Activity:d 'The server response is: Alert !!!  No connection from c to d'
+2018-12-16 16:48:01,750  INFO client1 simulate_stream_event Case_id:Case2.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-16 16:48:01,750  INFO client1 invoke_event_thread Case_id:Case2.0 Activity:d 'Initialising thread'
+2018-12-16 16:48:01,751  INFO client1 invoke_event_thread Case_id:Case2.0 Activity:d 'Starting thread for event '
+2018-12-16 16:48:01,751  INFO client1 run Thread:29 Case_id:Case2.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 16:48:01,753 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:48:01,756 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 36
+2018-12-16 16:48:01,756  INFO client1 run Thread:29 Case_id:Case2.0 Activity:d 'The server response is: Alert !!!  No connection from b to d'
+2018-12-16 16:48:02,277  INFO client1 simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-16 16:48:02,277  INFO client1 invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-16 16:48:02,277  INFO client1 invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-16 16:48:02,278  INFO client1 run Thread:30 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 16:48:02,279 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:48:02,282 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 36
+2018-12-16 16:48:02,282  INFO client1 run Thread:30 Case_id:Case1.2 Activity:d 'The server response is: Alert !!!  No connection from c to d'
+2018-12-16 16:48:02,799  INFO client1 simulate_stream_event Case_id:Case1.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-16 16:48:02,800  INFO client1 invoke_event_thread Case_id:Case1.1 Activity:d 'Initialising thread'
+2018-12-16 16:48:02,800  INFO client1 invoke_event_thread Case_id:Case1.1 Activity:d 'Starting thread for event '
+2018-12-16 16:48:02,800  INFO client1 run Thread:31 Case_id:Case1.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 16:48:02,802 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:48:02,805 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 36
+2018-12-16 16:48:02,806  INFO client1 run Thread:31 Case_id:Case1.1 Activity:d 'The server response is: Alert !!!  No connection from c to d'
+2018-12-16 16:48:03,322  INFO client1 simulate_stream_event Case_id:Case2.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-16 16:48:03,322  INFO client1 invoke_event_thread Case_id:Case2.1 Activity:d 'Initialising thread'
+2018-12-16 16:48:03,323  INFO client1 invoke_event_thread Case_id:Case2.1 Activity:d 'Starting thread for event '
+2018-12-16 16:48:03,323  INFO client1 run Thread:32 Case_id:Case2.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 16:48:03,325 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:48:03,327 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 200 36
+2018-12-16 16:48:03,328  INFO client1 run Thread:32 Case_id:Case2.1 Activity:d 'The server response is: Alert !!!  No connection from b to d'
+2018-12-16 16:48:03,328  INFO client1 simulate_stream_event Case_id:NONE Activity:END 'Calling invoke_event_thread()'
+2018-12-16 16:48:03,328  INFO client1 invoke_event_thread Case_id:NONE Activity:END 'Initialising thread'
+2018-12-16 16:48:03,329  INFO client1 invoke_event_thread Case_id:NONE Activity:END 'Starting thread for event '
+2018-12-16 16:48:03,329  INFO client1 run Thread:33 Case_id:NONE Activity:END 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-16 16:48:03,331 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:48:03,340 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client1 HTTP/1.1" 500 291
+2018-12-16 16:48:03,344  ERROR client1 run Thread:33 Case_id:NONE Activity:END 'Error by compliance checking'
+2018-12-16 16:48:03,344  INFO client1 main 'compliance checking is completed'
+2018-12-16 16:48:03,345  INFO client1 main 'The options are displayed'
+2018-12-16 16:50:06,612  INFO client1 main 'The user selected option 2'
+2018-12-16 16:50:06,613  INFO client1 main 'Calling run_show_deviation_pdf() '
+2018-12-16 16:50:06,614  INFO client1 run_show_deviation_pdf 'Post request to http://127.0.0.1:5000/show-deviation-pdf?uuid=client1'
+2018-12-16 16:50:06,616 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-16 16:50:06,620 http://127.0.0.1:5000 "POST /show-deviation-pdf?uuid=client1 HTTP/1.1" 200 None
+2018-12-16 16:50:06,623 SHIFT_JIS Japanese prober hit error at byte 88
+2018-12-16 16:50:06,623 EUC-JP Japanese prober hit error at byte 17
+2018-12-16 16:50:06,623 GB2312 Chinese prober hit error at byte 21
+2018-12-16 16:50:06,623 EUC-KR Korean prober hit error at byte 17
+2018-12-16 16:50:06,623 CP949 Korean prober hit error at byte 17
+2018-12-16 16:50:06,623 Big5 Chinese prober hit error at byte 21
+2018-12-16 16:50:06,624 EUC-TW Taiwan prober hit error at byte 17
+2018-12-16 16:50:06,636 windows-1251 confidence = 0.042755873991439944, below negative shortcut threshhold 0.05
+2018-12-16 16:50:06,650 KOI8-R confidence = 0.03855015261516248, below negative shortcut threshhold 0.05
+2018-12-16 16:50:06,660 ISO-8859-5 confidence = 0.04309962713438979, below negative shortcut threshhold 0.05
+2018-12-16 16:50:06,671 MacCyrillic confidence = 0.04400946778483844, below negative shortcut threshhold 0.05
+2018-12-16 16:50:06,681 IBM866 confidence = 0.03488968813690614, below negative shortcut threshhold 0.05
+2018-12-16 16:50:06,692 IBM855 confidence = 0.04397124223113823, below negative shortcut threshhold 0.05
+2018-12-16 16:50:06,722 ISO-8859-5 confidence = 0.04261144348661499, below negative shortcut threshhold 0.05
+2018-12-16 16:50:06,733 windows-1251 confidence = 0.04293236029077201, below negative shortcut threshhold 0.05
+2018-12-16 16:50:06,743 TIS-620 confidence = 0.0423014452177257, below negative shortcut threshhold 0.05
+2018-12-16 16:50:06,768 windows-1255 confidence = 0.0443180042739222, below negative shortcut threshhold 0.05
+2018-12-16 16:50:06,778 windows-1255 confidence = 0.04234831519508121, below negative shortcut threshhold 0.05
+2018-12-16 16:50:06,790 windows-1251 not active
+2018-12-16 16:50:06,791 KOI8-R not active
+2018-12-16 16:50:06,791 ISO-8859-5 not active
+2018-12-16 16:50:06,791 MacCyrillic not active
+2018-12-16 16:50:06,791 IBM866 not active
+2018-12-16 16:50:06,791 IBM855 not active
+2018-12-16 16:50:06,791 ISO-8859-7 Greek confidence = 0.08163320310074205
+2018-12-16 16:50:06,791 windows-1253 Greek confidence = 0.08266087949529305
+2018-12-16 16:50:06,791 ISO-8859-5 not active
+2018-12-16 16:50:06,791 windows-1251 not active
+2018-12-16 16:50:06,791 TIS-620 not active
+2018-12-16 16:50:06,792 ISO-8859-9 Turkish confidence = 0.09120302742171738
+2018-12-16 16:50:06,792 windows-1255 Hebrew confidence = 0.0
+2018-12-16 16:50:06,792 windows-1255 not active
+2018-12-16 16:50:06,792 windows-1255 not active
+2018-12-16 16:50:06,792 no probers hit minimum threshold
+2018-12-16 16:50:06,792 utf-8  confidence = 0.010000000000000009
+2018-12-16 16:50:06,792 SHIFT_JIS Japanese confidence = 0.01
+2018-12-16 16:50:06,792 EUC-JP Japanese confidence = 0.01
+2018-12-16 16:50:06,792 GB2312 Chinese confidence = 0.01
+2018-12-16 16:50:06,792 EUC-KR Korean confidence = 0.01
+2018-12-16 16:50:06,792 CP949 Korean confidence = 0.01
+2018-12-16 16:50:06,792 Big5 Chinese confidence = 0.01
+2018-12-16 16:50:06,792 EUC-TW Taiwan confidence = 0.01
+2018-12-16 16:50:06,792 windows-1251 Russian confidence = 0.042755873991439944
+2018-12-16 16:50:06,792 KOI8-R Russian confidence = 0.03855015261516248
+2018-12-16 16:50:06,792 ISO-8859-5 Russian confidence = 0.04309962713438979
+2018-12-16 16:50:06,792 MacCyrillic Russian confidence = 0.04400946778483844
+2018-12-16 16:50:06,792 IBM866 Russian confidence = 0.03488968813690614
+2018-12-16 16:50:06,792 IBM855 Russian confidence = 0.04397124223113823
+2018-12-16 16:50:06,793 ISO-8859-7 Greek confidence = 0.08163320310074205
+2018-12-16 16:50:06,793 windows-1253 Greek confidence = 0.08266087949529305
+2018-12-16 16:50:06,793 ISO-8859-5 Bulgairan confidence = 0.04261144348661499
+2018-12-16 16:50:06,793 windows-1251 Bulgarian confidence = 0.04293236029077201
+2018-12-16 16:50:06,793 TIS-620 Thai confidence = 0.0423014452177257
+2018-12-16 16:50:06,793 ISO-8859-9 Turkish confidence = 0.09120302742171738
+2018-12-16 16:50:06,793 windows-1255 Hebrew confidence = 0.0
+2018-12-16 16:50:06,793 windows-1255 Hebrew confidence = 0.0443180042739222
+2018-12-16 16:50:06,793 windows-1255 Hebrew confidence = 0.04234831519508121
+2018-12-16 16:50:06,793 windows-1255 Hebrew confidence = 0.04234831519508121
+2018-12-16 16:50:06,793  INFO client1 run_show_deviation_pdf 'Compliance checking is done. Deviations PDF is available at http://127.0.0.1:5000/show-deviation-pdf?uuid=client1'
+2018-12-16 16:50:06,794  INFO client1 main 'The options are displayed'
+2018-12-16 16:50:14,590  INFO client1 main 'The user selected option 3'
+2018-12-16 16:50:14,590  INFO client1 main 'Exiting...'

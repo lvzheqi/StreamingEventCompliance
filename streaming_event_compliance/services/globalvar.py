@@ -1,5 +1,6 @@
 from streaming_event_compliance.database import dbtools
 from streaming_event_compliance.services.build_automata import build_automata
+from streaming_event_compliance.objects.automata import alertlog
 
 
 # Below are operations of autos and auto's status
@@ -37,6 +38,7 @@ def call_buildautos():
 
 
 def get_alert_logs():
+    test_alertlog()
     return alert_logs
 
 
@@ -79,6 +81,7 @@ class CaseMemorizer(object):
         self.dictionary_cases = {}
         self.lock_List = {}
 
+
 class ConnectionsLocker(object):
     '''
     This object is for storing the threads that server creates for each case;
@@ -98,6 +101,7 @@ def clear_memorizer():
     C.dictionary_cases = {}
     C.lock_List = {}
 
+
 def get_connection_locks():
     return CL
 
@@ -109,24 +113,6 @@ def get_case_memory():
 def get_thread_memory():
     return T
 
-
-def test_alertlog():
-    uuid = 'client1'
-    alog1 = alertlog.AlertLog(uuid, 1)
-    alog2 = alertlog.AlertLog(uuid, 2)
-    alog3 = alertlog.AlertLog(uuid, 3)
-    alog4 = alertlog.AlertLog(uuid, 4)
-    alog1.update_alert_record(alertlog.AlertRecord(uuid, 'a', 'd', 4, 'M'))
-    alog1.update_alert_record(alertlog.AlertRecord(uuid, 'a', 'f', 2, 'M'))
-    alog1.update_alert_record(alertlog.AlertRecord(uuid, 'd', 'b', 1, 'M'))
-    alog1.update_alert_record(alertlog.AlertRecord(uuid, 'a', 'e', 1, 'T'))
-    alog2.update_alert_record(alertlog.AlertRecord(uuid, 'a,d', 'd,b', 1, 'M'))
-    alog2.update_alert_record(alertlog.AlertRecord(uuid, 'd,b', 'b,c', 1, 'M'))
-    alog3.update_alert_record(alertlog.AlertRecord(uuid, 'a,d,b', 'd,b,c', 1, 'M'))
-    alog3.update_alert_record(alertlog.AlertRecord(uuid, 'd,b,c', 'b,c,d', 1, 'M'))
-    alog4.update_alert_record(alertlog.AlertRecord(uuid, 'a,d,b,c', 'd,b,c,d', 1, 'M'))
-    alogs = {1: alog1, 2: alog2, 3: alog3, 4: alog4}
-    alert_logs[uuid] = alogs
 
 class ClientThreadMemorizer(object):
     def __init__(self):
@@ -153,13 +139,20 @@ def get_client_thread_memory():
     return CTM
 
 
-def get_alert_logs():
-    return alert_logs
-
-client_alert_logs = {}
-
-
-def get_client_alert_logs():
-    client_alert_logs = {'client1':{'windowsize1':{},'windowsize2':{}},
-                         'client2':{'windowsize1':{}, 'windowsize2':{}}}
-    return client_alert_logs
+def test_alertlog():
+    uuid = 'client1'
+    alog1 = alertlog.AlertLog(uuid, 1)
+    alog2 = alertlog.AlertLog(uuid, 2)
+    alog3 = alertlog.AlertLog(uuid, 3)
+    alog4 = alertlog.AlertLog(uuid, 4)
+    alog1.update_alert_record(alertlog.AlertRecord(uuid, 'a', 'd', 4, 'M'))
+    alog1.update_alert_record(alertlog.AlertRecord(uuid, 'a', 'f', 2, 'M'))
+    alog1.update_alert_record(alertlog.AlertRecord(uuid, 'd', 'b', 1, 'M'))
+    alog1.update_alert_record(alertlog.AlertRecord(uuid, 'a', 'e', 1, 'T'))
+    alog2.update_alert_record(alertlog.AlertRecord(uuid, 'a,d', 'd,b', 1, 'M'))
+    alog2.update_alert_record(alertlog.AlertRecord(uuid, 'd,b', 'b,c', 1, 'M'))
+    alog3.update_alert_record(alertlog.AlertRecord(uuid, 'a,d,b', 'd,b,c', 1, 'M'))
+    alog3.update_alert_record(alertlog.AlertRecord(uuid, 'd,b,c', 'b,c,d', 1, 'M'))
+    alog4.update_alert_record(alertlog.AlertRecord(uuid, 'a,d,b,c', 'd,b,c,d', 1, 'M'))
+    alogs = {1: alog1, 2: alog2, 3: alog3, 4: alog4}
+    alert_logs[uuid] = alogs

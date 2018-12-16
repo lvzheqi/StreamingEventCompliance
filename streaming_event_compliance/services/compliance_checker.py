@@ -1,10 +1,11 @@
-from streaming_event_compliance.services import deviation_pdf
+from streaming_event_compliance.services import visualization_deviation_automata
 from streaming_event_compliance.services.compliance_check import case_thread_cc
 from streaming_event_compliance.services import globalvar
 from streaming_event_compliance.utils.config import MAXIMUN_WINDOW_SIZE
 import threading
 import queue
 from streaming_event_compliance.database import dbtools
+
 
 def compliance_checker(client_uuid, event):
     '''
@@ -83,7 +84,7 @@ def compliance_checker(client_uuid, event):
              # TODO: Sabya Remove the below elif... This portion is only for now to show the content of alert logs...
              # TODO: After inserting Alert_logs into table remove this below elif part
             elif event['case_id'] == 'NONE' and event['activity'] == 'END':
-                alert_logs = globalvar.get_client_alert_logs()
+                alert_logs = globalvar.get_alert_logs()
                 print(alert_logs)
                 for th in client_threads.get(client_uuid):
                     try:
@@ -95,7 +96,7 @@ def compliance_checker(client_uuid, event):
                         # update the alert log for particular client into database
                         dbtools.create_user(client_uuid)
                         dbtools.insert_alert_log(alert_logs.get(client_uuid))
-                        deviation_pdf.build_deviation_pdf(client_uuid)
+                        visualization_deviation_automata.build_deviation_pdf(client_uuid)
                         dbtools.update_user_status()
                     finally:
                         pass
