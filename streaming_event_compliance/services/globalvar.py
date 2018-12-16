@@ -27,9 +27,6 @@ def get_autos_status():
 
 def call_buildautos():
     build_automata.build_automata()
-    # running the below two lines to get automata to memory for compliance checking
-    # init()
-    # autos = get_autos()
 
 
 def set_auto_status():
@@ -120,7 +117,6 @@ def get_client_thread_memory():
 
 
 client_alert_logs = {}
-
 
 def get_client_alert_logs():
     client_alert_logs = {'client1':{'windowsize1':{},'windowsize2':{}},
