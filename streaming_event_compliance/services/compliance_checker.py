@@ -5,12 +5,24 @@ from streaming_event_compliance.utils.config import MAXIMUN_WINDOW_SIZE
 from streaming_event_compliance.services.compliance_check.compare_automata import  alert_logs
 import threading
 import queue
+from multiprocessing import Process
+from streaming_event_compliance.database import dbtools
+from streaming_event_compliance.services.compliance_check.compare_automata import alert_logs
 
 threads = []
 threads_index = 0
 
+def compliance_checker():
+    print("---------------------Start: Compliance checking starts!--------------------------------------")
+    process_ = Process(target=compliance_checker_pro())
+    process_.start()
+    process_.join()
+    # update the alert log into database
+    dbtools.insert_alert_log(alert_logs)
+    print("---------------------End: Everything for compliance checking is Done!---------------------------")
+    globalvar.clear_memorizer()
 
-def compliance_checker(client_uuid, event):
+def compliance_checker_pro(client_uuid, event):
     '''
     This function creates a case_memorizer for each case_id and starts thread.
     The threads return "deviation" message at the end if there is any deviation
@@ -69,19 +81,16 @@ def compliance_checker(client_uuid, event):
                         print('Error: Thread is interrupt!')
                         return "Server Error!"
 
-             # while len(threads) > 3:
-             #   threads[0].join()  #TODO: Jingjing: why we need to join these threads?
-             #  del threads[0]     # why we delete?
-
          # TODO: analyse and write non-compliance event to the database AlertLog with client_uuid
          # TODO: Sabya Remove the below elif... This portion is only for now to show the content of alert logs...
          # TODO: After inserting Alert_logs into table remove this below elif part
         elif event['case_id'] == 'NONE' and event['activity'] == 'END':
+
             print(alert_logs)
             return "OK"
         else:
             deviation_pdf.build_deviation_pdf(client_uuid)
-        # deviation information should be returned here, or we return it form thread.start()
+            # deviation information should be returned here, or we return it form thread.start()
             return "OK"
     # return event['case_id'] + "->" + event['activity']
     return "automata is not build"
