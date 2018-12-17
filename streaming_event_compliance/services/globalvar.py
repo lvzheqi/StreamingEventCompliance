@@ -9,6 +9,17 @@ auto_status = 0
 alert_logs = {}
 users = {}
 
+indexN = 0
+
+
+def set_index():
+    global indexN
+    indexN += 1
+
+
+def get_index():
+    return indexN
+
 
 def init():
     global autos, auto_status

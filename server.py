@@ -28,6 +28,8 @@ if __name__ == '__main__':
 
         ends = time.clock()
         print(ends - start)
+
+        print(globalvar.get_index())
     else:
         print("Automata have been created in database and readed out! You can use it do compliance checking!")
     app.debug = False
