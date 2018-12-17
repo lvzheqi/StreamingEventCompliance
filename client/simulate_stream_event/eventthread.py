@@ -5,7 +5,7 @@ import json
 import queue
 from .client_logging import ClientLogging
 from .exception import ServerRequestException, ThreadException
-
+import traceback
 
 class ThreadMemorizer(object):
     '''
@@ -32,7 +32,7 @@ class EventThread(Thread):
         if ex_info is None:
             return
         else:
-            raise ThreadException(ex_info[1])
+            raise ThreadException(traceback.format_exc())
 
     def run(self):
         func_name = sys._getframe().f_code.co_name

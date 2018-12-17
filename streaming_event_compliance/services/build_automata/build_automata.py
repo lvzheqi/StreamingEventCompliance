@@ -81,15 +81,19 @@ def build_automata_pro():
                     threads.append(thread)
                     threads_index = threads_index + 1
             except Exception:
+                print('some raise')
                 raise ThreadException(traceback.format_exc())
 
     #TODO:Jingjing-This join can be done after adding end event！
+
     try:
         for th in threads:
             th.join_with_exception()
     except Exception:
         raise ThreadException(traceback.format_exc())
     else:
+        threads_index = 0
+        threads = []
         print("all event join succusful, begin end event")
         event = {}
         threads = []
@@ -103,7 +107,9 @@ def build_automata_pro():
             T.dictionary_threads[threads_index] = thread
             threads.append(thread)
             threads_index = threads_index + 1
+    print(threads_index)
     for th in threads:
+        print(th)
         try:
             th.join_with_exception()
         except ThreadException:

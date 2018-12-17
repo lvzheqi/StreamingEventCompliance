@@ -46,11 +46,12 @@ class CaseThreadForCC(Thread):
                 else:
                     windows_memory = client_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
                 message = create_source_sink_node(windows_memory, self.client_uuid, self.event)
-
+                print(message,'++')
                 if len(client_cases.get(self.event['case_id'])) > MAXIMUN_WINDOW_SIZE:
                     client_cases.get(self.event['case_id']).pop(0)
                 client_locks.get(self.event['case_id']).release()
                 self._message.put(message)
+
                 self._status_queue.put(None)
         except Exception:
             self._status_queue.put(sys.exc_info())
@@ -73,7 +74,11 @@ def create_source_sink_node(windowsMemory, client_uuid, event):
             break
         elif source_node.find('*') != -1:
             source_node = None
+        print(source_node)
+        print('before matches')
+        print(sink_node)
         matches = compare_automata.check_alert(ws, source_node, sink_node, client_uuid)
+        print(matches, '-matches')
         if matches == 2:
             print("Alert !!!  No connection from " + source_node + " to " + sink_node + " due to missing node")
             response = {
@@ -94,15 +99,14 @@ def create_source_sink_node(windowsMemory, client_uuid, event):
                 'message': 'Alert'
             }
             return response
-    # response = {
-    #     'case_id': event['case_id'],
-    #     'source_node': source_node,
-    #     'sink_node': sink_node,
-    #     'cause': '',
-    #     'message': 'OK'
-    # }
-    # return response
-    return
+    response = {
+        'case_id': event['case_id'],
+        'source_node': source_node,
+        'sink_node': sink_node,
+        'cause': '',
+        'message': 'OK'
+    }
+    return response
 
     # TODO: Implement returning to main function ALERT, Threading comments to be removed ,
     # TODO: if an event detected as alert what to do given option at start to keep or remove it from windows memory

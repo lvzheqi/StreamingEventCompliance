@@ -44,6 +44,7 @@ class CaseThreadForTraining(Thread):
         try:
             if self.event['activity'] != '~!@#$%':
                 if self.C.lock_List.get(self.event['case_id']).acquire():
+                    # print('case ', self.event['case_id'], len(self.C.dictionary_cases.get(self.event['case_id'])), self.C.dictionary_cases.get(self.event['case_id']))
                     windows_memory = self.C.dictionary_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
                     if len(windows_memory) != 5:
                         print('----len(windows_memory) is not 5')
@@ -66,21 +67,14 @@ class CaseThreadForTraining(Thread):
             elif self.event['activity'] == '~!@#$%':
                 if self.C.lock_List.get(self.event['case_id']).acquire():
                     windows_memory = self.C.dictionary_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
-                    if len(windows_memory) != 5:
-                        print('case ', self.event['case_id'], len(self.C.dictionary_cases.get(self.event['case_id'])),
-                              self.C.dictionary_cases.get(self.event['case_id']))
-                        print(windows_memory)
-                        index = index + 1
-                        print('len(windows_memory) is not 5')
-                    if self.event['activity'] != windows_memory[MAXIMUN_WINDOW_SIZE]:
-                        pass
+                    try:
+                        windows_memory[MAXIMUN_WINDOW_SIZE]
+                    except:
+                        globalvar.set_index()
                     calcuate_connection_for_different_prefix_automata(windows_memory)
                     if len(self.C.dictionary_cases.get(self.event['case_id'])) > MAXIMUN_WINDOW_SIZE:
                         self.C.dictionary_cases.get(self.event['case_id']).pop(0)
-                    try:
-                        self.C.lock_List.get(self.event['case_id']).release()
-                    except Exception:
-                        print('eendevnet')
+                    self.C.lock_List.get(self.event['case_id']).release()
                     self._status_queue.put(None)
         except Exception:
                 print('Caselock', traceback.format_exc())
