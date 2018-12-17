@@ -66,6 +66,10 @@ def get_users():
     return users
 
 
+def get_user_status(uuid):
+    return users.get(uuid)
+
+
 # Below are definitions and operations of various kinds of Memorizer of building automata
 class ThreadMemorizer(object):
     '''

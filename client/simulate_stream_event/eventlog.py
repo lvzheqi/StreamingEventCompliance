@@ -40,8 +40,7 @@ def simulate_stream_event(client_uuid, event_log):
         event_thread = invoke_event_thread(dic, client_uuid)
         try:
             event_thread.join_with_exception()
-        except Exception as e:
-            print(e)
+        except Exception:
             raise ConnectionException
 
     end_message = {'case_id': 'NONE', 'activity': 'END'}
