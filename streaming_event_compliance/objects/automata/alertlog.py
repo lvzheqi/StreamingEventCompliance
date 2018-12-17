@@ -14,7 +14,6 @@ class AlertLog:
             alert = self.alert_log[key]
             alert.alert_count += alert_record.alert_count
         else:
-            print(alert_record)
             self.alert_log[key] = alert_record
 
     def add_alert_record_from_database(self, alert_record):

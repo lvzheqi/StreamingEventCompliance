@@ -44,7 +44,7 @@ def check_user_status(uuid):
     if user is not None:
         return user.status
     else:
-        raise NoUserException
+        return None
 
 
 def update_user_status(uuid, status):

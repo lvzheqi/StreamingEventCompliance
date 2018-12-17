@@ -32,14 +32,6 @@ class DBToolsTest(unittest.TestCase):
         self.assertEqual(status, 1)
         self.assertEqual(repr(autos), repr(autos2))
 
-    def test_user(self):
-        dbtools.create_user('1')
-        dbtools.create_user('2')
-        dbtools.update_user_status('1', True)
-        dbtools.update_user_status('2', False)
-        self.assertEqual(dbtools.check_user_status('1'), True)
-        self.assertEqual(dbtools.check_user_status('2'), False)
-
     def test_alert_log(self):
         uuid = '1'
         dbtools.create_user('1')
@@ -59,6 +51,14 @@ class DBToolsTest(unittest.TestCase):
         dbtools.insert_alert_log(alogs)
         alogs2 = dbtools.init_alert_log_from_database(uuid)
         self.assertEqual(repr(alogs), repr(alogs2))
+
+    def test_user(self):
+        dbtools.create_user('1')
+        dbtools.create_user('2')
+        dbtools.update_user_status('1', True)
+        dbtools.update_user_status('2', False)
+        self.assertEqual(dbtools.check_user_status('1'), True)
+        self.assertEqual(dbtools.check_user_status('2'), False)
 
 
 if __name__ == '__main__':

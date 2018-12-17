@@ -46,11 +46,11 @@ class BuildingAutomataTestCase(unittest.TestCase):
                 expected_log[event['case_id']] = []
                 expected_log[event['case_id']].append(event['activity'])
 
-        end_message = {}
-        for case in expected_log:
-            end_message['case_id'] = item
-            end_message['activity'] = '!@#$%^'
-            expected_log.get(case).append(end_message['activity'])
+        # end_message = {}
+        # for case in expected_log:
+        #     end_message['case_id'] = item
+        #     end_message['activity'] = '~!@#$%'
+        #     expected_log.get(case).append(end_message['activity'])
         build_automata.build_automata()
         self.assertEqual(expected_log, case_thread.check_executing_order)
 
@@ -73,15 +73,15 @@ class BuildingAutomataTestCase(unittest.TestCase):
             self.assertEqual(autos_manuals[ws].nodes, autos[ws].nodes)
 
     def test_calcuate_connection_for_different_prefix_automata_with_endevent(self):
-        windowsMemory = ['a', 'b', 'c', 'd', '!@#$%^']
+        windowsMemory = ['a', 'b', 'c', 'd', '~!@#$%']
         autos_manual1 = automata.Automata(1)
-        autos_manual1.update_automata(automata.Connection('d', '!@#$%^', 0))
+        autos_manual1.update_automata(automata.Connection('d', '~!@#$%', 0))
         autos_manual2 = automata.Automata(2)
-        autos_manual2.update_automata(automata.Connection('c,d', '!@#$%^', 0))
+        autos_manual2.update_automata(automata.Connection('c,d', '~!@#$%', 0))
         autos_manual3 = automata.Automata(3)
-        autos_manual3.update_automata(automata.Connection('b,c,d', '!@#$%^', 0))
+        autos_manual3.update_automata(automata.Connection('b,c,d', '~!@#$%', 0))
         autos_manual4 = automata.Automata(4)
-        autos_manual4.update_automata(automata.Connection('a,b,c,d', '!@#$%^', 0))
+        autos_manual4.update_automata(automata.Connection('a,b,c,d', '~!@#$%', 0))
         autos_manuals = {1: autos_manual1, 2: autos_manual2, 3: autos_manual3, 4: autos_manual4}
         case_thread.calcuate_connection_for_different_prefix_automata(windowsMemory)
         autos = globalvar.get_autos()
