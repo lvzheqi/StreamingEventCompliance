@@ -1,8 +1,8 @@
-from streaming_event_compliance.services import deviation_pdf
+from streaming_event_compliance.services import visualization_deviation_automata
 from streaming_event_compliance.services.compliance_check import case_thread_cc
 from streaming_event_compliance.services import globalvar
 from streaming_event_compliance.utils.config import MAXIMUN_WINDOW_SIZE
-from streaming_event_compliance.services.compliance_check.compare_automata import  client_alert_logs
+from streaming_event_compliance.services.compliance_check.compare_automata import alert_logs
 import threading
 import queue
 import json
@@ -40,7 +40,6 @@ def compliance_checker(client_uuid, event):
                         threads.append(case_thread_cc)
                         threads_index = threads_index + 1
                         response = thread_queue.get()
-                        print(response)
                         return json.dumps(response)
                     except KeyboardInterrupt:
                         print('Error: Thread is interrupt!')
@@ -51,7 +50,7 @@ def compliance_checker(client_uuid, event):
                             'cause': None,
                             'message': 'Server Error'
                         }
-                        return response
+                        return json.dumps(response)
             else:
                     # 1. Add it to the caseMemory
                     # 2. Create a new thread for this case
@@ -63,7 +62,7 @@ def compliance_checker(client_uuid, event):
                     lock = threading.Lock()
                     # Create a lock for the new case
                     C.lock_List[event['case_id']] = lock
-                    # this is just for remember the threads information that we have ceated.
+                    # this is just for remember the threads information that we have created.
                     try:
                         thread_queue = queue.Queue()
                         thread = threading.Thread(target=thread.thread_run, args=[thread_queue])
@@ -71,7 +70,6 @@ def compliance_checker(client_uuid, event):
                         threads.append(case_thread_cc)
                         threads_index = threads_index + 1
                         response = thread_queue.get()
-                        print(response)
                         return json.dumps(response)
                     except KeyboardInterrupt:
                         print('Error: Thread is interrupt!')
@@ -82,7 +80,7 @@ def compliance_checker(client_uuid, event):
                             'cause': None,
                             'message': 'Server Error'
                         }
-                        return response
+                        return json.dumps(response)
              # while len(threads) > 3:
              #   threads[0].join()  #TODO: Jingjing: why we need to join these threads?
              #  del threads[0]     # why we delete?
@@ -91,7 +89,7 @@ def compliance_checker(client_uuid, event):
          # TODO: Sabya Remove the below elif... This portion is only for now to show the content of alert logs...
          # TODO: After inserting Alert_logs into table remove this below elif part
         elif event['case_id'] == 'NONE' and event['activity'] == 'END':
-            print(client_alert_logs)
+            print(alert_logs)
             response = {
                 'case_id': None,
                 'source_node': None,
@@ -99,9 +97,9 @@ def compliance_checker(client_uuid, event):
                 'cause': None,
                 'message': 'OK'
             }
-            return response
+            return json.dumps(response)
         else:
-            deviation_pdf.build_deviation_pdf(client_uuid)
+            visualization_deviation_automata.build_deviation_pdf(client_uuid)
         # deviation information should be returned here, or we return it form thread.start()
             response = {
                 'case_id': None,
@@ -110,8 +108,7 @@ def compliance_checker(client_uuid, event):
                 'cause': None,
                 'message': 'PDF'
             }
-            return response
-    # return event['case_id'] + "->" + event['activity']
+            return json.dumps(response)
     response = {
         'case_id': None,
         'source_node': None,
@@ -119,7 +116,7 @@ def compliance_checker(client_uuid, event):
         'cause': None,
         'message': 'Automata not built!'
     }
-    return response
+    return json.dumps(response)
 
 
 def error_handle():
