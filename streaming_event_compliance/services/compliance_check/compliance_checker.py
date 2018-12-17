@@ -7,6 +7,7 @@ from streaming_event_compliance.database import dbtools
 from streaming_event_compliance.objects.exceptions.exception import ThreadException
 import traceback
 
+
 def compliance_checker(client_uuid, event):
     """
     This function will do compliance checking for each event from the streaming data provided from client_uuid.
