@@ -7,7 +7,7 @@ class Automata:
     def __init__(self, window_size):
         self.window_size = window_size
         self.nodes = {}
-        self.connections = []
+        self.connections = {}
 
     def update_node(self, node, count):
         if node in self.nodes:
@@ -20,7 +20,7 @@ class Automata:
         add connection directly from database into the automata
         :param connection: Connection object
         '''
-        self.connections.append(connection)
+        self.connections[hash(connection)] = connection
 
     def update_automata(self, connection):
         '''
@@ -30,15 +30,14 @@ class Automata:
         :return:
         '''
         if self.contains_connection(connection):
-            index = self.connections.index(connection)
-            conn = self.connections[index]
+            conn = self.connections[hash(connection)]
             conn.count += connection.count
         else:
-            self.connections.append(connection)
+            self.connections[hash(connection)] = connection
         self.update_node(connection.source_node, connection.count)
 
     def set_probability(self):
-        for conn in self.connections:
+        for conn in self.connections.values():
             degree = self.nodes[conn.source_node]
             try:
                 conn.probability = conn.count / degree
@@ -59,7 +58,7 @@ class Automata:
         :param connection: Connection object
         :return: boolean
         '''
-        return connection in self.connections
+        return hash(connection) in self.connections
 
     def get_connection_probability(self, connection):
         '''
@@ -68,11 +67,13 @@ class Automata:
         :return: probability or -1
         '''
         if self.contains_connection(connection):
-            index = self.connections.index(connection)
-            conn = self.connections[index]
+            conn = self.connections[hash(connection)]
             return conn.probability
         else:
             return -1
+
+    def get_connections(self):
+        return self.connections.values()
 
     def __repr__(self):
         return "Window size :%s" % self.window_size + \
@@ -90,7 +91,7 @@ class Node(db.Model):
         self.degree = degree
 
     def __repr__(self):
-        return "<Node :%s, degree:%s>" % (self.node, self.degree)
+        return "<Node: %s, degree: %s>" % (self.node, self.degree)
 
 
 class Connection(db.Model):
@@ -114,8 +115,11 @@ class Connection(db.Model):
         return self.source_node == other.source_node and \
                                   self.sink_node == other.sink_node
 
+    def __hash__(self):
+        return hash((self.source_node, self.sink_node))
+
     def __repr__(self):
-        return "<Source node :%s, sink node:%s, probability: %s>" % \
+        return "<Source node: %s, sink node: %s, probability: %s>" % \
                (self.source_node, self.sink_node, self.probability)
 
 

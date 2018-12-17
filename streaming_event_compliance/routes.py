@@ -1,10 +1,11 @@
 from streaming_event_compliance import app
 from flask import request, send_file
 from flask_api import status
-from streaming_event_compliance.services import compliance_checker, visualization_deviation_automata, globalvar
+from streaming_event_compliance.services import visualization_deviation_automata, globalvar
+from streaming_event_compliance.services.compliance_check import compliance_checker
 from streaming_event_compliance.utils.config import CLEINT_DATA_PATH, AUTOMATA_FILE, FILE_TYPE
 from streaming_event_compliance.database import dbtools
-from streaming_event_compliance.objects.exceptions.exception import NoUserException
+from streaming_event_compliance.objects.exceptions.exception import NoUserException, ThreadException
 import json
 
 
@@ -35,7 +36,11 @@ def call_compliance_checker():
     client_uuid = request.args.get('uuid')
     event = request.json
     event = json.loads(event)
-    return compliance_checker.compliance_checker(client_uuid, event), status.HTTP_200_OK
+    try:
+        return compliance_checker.compliance_checker(client_uuid, event), status.HTTP_200_OK
+    except ThreadException as tec:
+        print('Error! Something wrong in compliance checking!')
+        return "Server Error!"
 
 
 @app.route('/show-deviation-pdf', methods=['GET', 'POST'])
