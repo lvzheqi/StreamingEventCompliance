@@ -32,6 +32,8 @@ def compliance_checker(client_uuid, event):
     :return:
     """
     if globalvar.get_autos_status():
+        alert_logs = globalvar.get_alert_logs()
+        alert_logs[client_uuid] = {}
         CCM = globalvar.get_client_case_memory()
         CTM = globalvar.get_client_thread_memory()
         if client_uuid not in CCM.dictionary_cases:
@@ -49,17 +51,8 @@ def compliance_checker(client_uuid, event):
             client_locks[event['case_id']] = lock
             try:
                 thread.start()
-                print(thread, '---')
                 message = thread.get_message().get()
-                print(message, '---')
-                response = {
-                    'case_id': None,
-                    'source_node': None,
-                    'sink_node': None,
-                    'cause': None,
-                    'message': message
-                }
-                return json.dumps(response)
+                return json.dumps(message)
             except Exception:
                 raise ThreadException(traceback.format_exc())
         else:
@@ -74,14 +67,7 @@ def compliance_checker(client_uuid, event):
                         thread.start()
                         client_threads.get(client_uuid).append(thread)
                         message = thread.get_message().get()
-                        response = {
-                            'case_id': None,
-                            'source_node': None,
-                            'sink_node': None,
-                            'cause': None,
-                            'message': message
-                        }
-                        return json.dumps(response)
+                        return json.dumps(message)
                     except Exception:
                         raise ThreadException(traceback.format_exc())
                 else:
@@ -106,15 +92,10 @@ def compliance_checker(client_uuid, event):
                     raise ThreadException(traceback.format_exc())
                 else:
                     alert_logs = globalvar.get_alert_logs()
-                    # TODO: Jingjing: After alert_logs is correct, using following four lines instead;
-                    # dbtools.create_user(client_uuid)
-                    # dbtools.insert_alert_log(alert_logs.get(client_uuid))
-                    # visualization_deviation_automata.build_deviation_pdf(client_uuid)
-                    # dbtools.update_user_status(client_uuid, True)
-                    dbtools.create_user('client1')
-                    dbtools.insert_alert_log(alert_logs.get('client1'))
-                    visualization_deviation_automata.build_deviation_pdf('client1')
-                    dbtools.update_user_status('client1', True)
+                    dbtools.create_user(client_uuid)
+                    dbtools.insert_alert_log(alert_logs.get(client_uuid))
+                    visualization_deviation_automata.build_deviation_pdf(client_uuid)
+                    dbtools.update_user_status(client_uuid, True)
                     response = {
                         'case_id': None,
                         'source_node': None,
