@@ -98,8 +98,8 @@ class Connection(db.Model):
     __tablename__ = 'Connection'
     # source_node = db.Column('source_node', db.String(10), db.ForeignKey('Node.node'), primary_key=True)
     # sink_node = db.Column('sink_node', db.String(10), db.ForeignKey('Node.node'), primary_key=True)
-    source_node = db.Column('source_node', db.String, primary_key=True)
-    sink_node = db.Column('sink_node', db.String, primary_key=True)
+    source_node = db.Column('source_node', db.String(350), primary_key=True)
+    sink_node = db.Column('sink_node', db.String(350), primary_key=True)
     count = db.Column('count', db.Integer)
     probability = db.Column('probability', db.Float)
     # db.ForeignKeyConstraint(

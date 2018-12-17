@@ -52,7 +52,9 @@ class EventThread(Thread):
                 ClientLogging().log_info(func_name, self.client_uuid, self.index, self.event['case_id'],
                                          self.event['activity'],
                                          'The server response is: ' + response.text)
+
                 print('Info:', response.text)
+                # print(type(json.loads(response)))
 
         except Exception:
             ClientLogging().log_error(func_name, self.client_uuid, self.index, self.event['case_id'],

@@ -72,7 +72,6 @@ def compliance_checker(client_uuid, event):
                         thread.start()
                         client_threads.get(client_uuid).append(thread)
                         message = thread.get_message().get()
-                        print(message, 'message')
                         return json.dumps(message)
                     except Exception:
                         raise ThreadException(traceback.format_exc())
@@ -86,7 +85,6 @@ def compliance_checker(client_uuid, event):
                         thread.start()
                         client_threads[client_uuid] = [thread]
                         message = thread.get_message().get()
-                        print(message)
                         return json.dumps(message)
                     except Exception:
                         raise ThreadException(traceback.format_exc())

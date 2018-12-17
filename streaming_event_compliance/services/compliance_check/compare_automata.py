@@ -4,6 +4,7 @@ from streaming_event_compliance.objects.automata import alertlog, automata
 
 
 def check_alert(windowsize, source_node, sink_node, client_uuid):
+    print(source_node,',',sink_node,'++')
     '''
         This function takes sink_node, source_node and checks if the automata of 'windowsize'
         has any source_node and sink_node that matches tbe source_node, sink_node  passed. If
@@ -20,13 +21,11 @@ def check_alert(windowsize, source_node, sink_node, client_uuid):
     alert_log = globalvar.get_user_alert_logs(client_uuid)[windowsize]
     auto = globalvar.get_autos()[windowsize]
     conn = automata.Connection(source_node, sink_node)
-    print('curent con checkin:', conn)
     if auto.contains_connection(conn):
         if auto.get_connection_probability(conn) >= THRESHOLD:
             return 0
         else:
             alert_log.update_alert_record(alertlog.AlertRecord(client_uuid, source_node, sink_node, 1, 'T'))
-            print()
             return 1
     elif source_node is None and auto.contains_source_node(sink_node):
         return 0
