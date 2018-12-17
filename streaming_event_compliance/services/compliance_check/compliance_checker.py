@@ -6,8 +6,6 @@ import threading
 from streaming_event_compliance.database import dbtools
 from streaming_event_compliance.objects.exceptions.exception import ThreadException
 import traceback
-import json
-
 
 def compliance_checker(client_uuid, event):
     """
@@ -49,17 +47,8 @@ def compliance_checker(client_uuid, event):
             client_locks[event['case_id']] = lock
             try:
                 thread.start()
-                print(thread, '---')
-                message = thread.get_message().get()
-                print(message, '---')
-                response = {
-                    'case_id': None,
-                    'source_node': None,
-                    'sink_node': None,
-                    'cause': None,
-                    'message': message
-                }
-                return json.dumps(response)
+                response = thread.get_message().get()
+                return response
             except Exception:
                 raise ThreadException(traceback.format_exc())
         else:
@@ -73,15 +62,8 @@ def compliance_checker(client_uuid, event):
                     try:
                         thread.start()
                         client_threads.get(client_uuid).append(thread)
-                        message = thread.get_message().get()
-                        response = {
-                            'case_id': None,
-                            'source_node': None,
-                            'sink_node': None,
-                            'cause': None,
-                            'message': message
-                        }
-                        return json.dumps(response)
+                        response = thread.get_message().get()
+                        return response
                     except Exception:
                         raise ThreadException(traceback.format_exc())
                 else:
@@ -95,40 +77,25 @@ def compliance_checker(client_uuid, event):
                         client_threads[client_uuid] = [thread]
                         response = thread.get_message().get()
                         print(response)
-                        return json.dumps(response)
+                        return response
                     except Exception:
                         raise ThreadException(traceback.format_exc())
             elif event['case_id'] == 'NONE' and event['activity'] == 'END':
-                try:
-                    for th in client_threads.get(client_uuid):
+                for th in client_threads.get(client_uuid):
+                    try:
                         th.join_with_exception()
-                except Exception:
-                    raise ThreadException(traceback.format_exc())
-                else:
-                    alert_logs = globalvar.get_alert_logs()
-                    # TODO: Jingjing: After alert_logs is correct, using following four lines instead;
-                    # dbtools.create_user(client_uuid)
-                    # dbtools.insert_alert_log(alert_logs.get(client_uuid))
-                    # visualization_deviation_automata.build_deviation_pdf(client_uuid)
-                    # dbtools.update_user_status(client_uuid, True)
-                    dbtools.create_user('client1')
-                    dbtools.insert_alert_log(alert_logs.get('client1'))
-                    visualization_deviation_automata.build_deviation_pdf('client1')
-                    dbtools.update_user_status('client1', True)
-                    response = {
-                        'case_id': None,
-                        'source_node': None,
-                        'sink_node': None,
-                        'cause': None,
-                        'message': 'The compliance checking is over, you can get the deviation pdf!'
-                    }
-                    return json.dumps(response)
+                    except Exception:
+                        raise ThreadException(traceback.format_exc())
+                alert_logs = globalvar.get_alert_logs()
+                # TODO: Jingjing: After alert_logs is correct, using following four lines instead;
+                # dbtools.create_user(client_uuid)
+                # dbtools.insert_alert_log(alert_logs.get(client_uuid))
+                # visualization_deviation_automata.build_deviation_pdf(client_uuid)
+                # dbtools.update_user_status(client_uuid, True)
+                dbtools.create_user('client1')
+                dbtools.insert_alert_log(alert_logs.get('client1'))
+                visualization_deviation_automata.build_deviation_pdf('client1')
+                dbtools.update_user_status('client1', True)
+                return "The compliance checking is over, and you can get your deviation automata!"
     else:
-        response = {
-            'case_id': None,
-            'source_node': None,
-            'sink_node': None,
-            'cause': None,
-            'message': '"Sorry, automata has not built, please wait for a while!"'
-        }
-        return json.dumps(response)
+        return "Sorry, automata has not built, please wait for a while!"

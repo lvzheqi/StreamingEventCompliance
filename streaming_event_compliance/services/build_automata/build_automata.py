@@ -50,7 +50,7 @@ def build_automata_pro():
     except Exception:
         raise ReadFileException(config.TRAINING_EVENT_LOG_PATH)
 
-    global threads_index
+    global threads_index, threads
     for one_event in event_log:
         event = {}
         try:
@@ -75,18 +75,22 @@ def build_automata_pro():
                     thread = case_thread.CaseThreadForTraining(event, threads_index, T, C)
                     thread.start()
             except Exception:
+                print('some raise')
                 raise ThreadException(traceback.format_exc())
             else:
                 T.dictionary_threads[threads_index] = thread
                 threads.append(thread)
                 threads_index = threads_index + 1
     #TODO:Jingjing-This join can be done after adding end event！
+
     try:
         for th in threads:
             th.join_with_exception()
     except Exception:
         raise ThreadException(traceback.format_exc())
     else:
+        threads_index = 0
+        threads = []
         print("all event join succusful, begin end event")
         event = {}
         for item in C.dictionary_cases:
@@ -98,7 +102,9 @@ def build_automata_pro():
             T.dictionary_threads[threads_index] = thread
             threads.append(thread)
             threads_index = threads_index + 1
+    print(threads_index)
     for th in threads:
+        print(th)
         try:
             th.join_with_exception()
         except ThreadException:
