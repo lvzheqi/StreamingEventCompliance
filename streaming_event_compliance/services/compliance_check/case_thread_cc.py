@@ -50,7 +50,6 @@ class CaseThreadForCC(Thread):
                     client_cases.get(self.event['case_id']).pop(0)
                 client_locks.get(self.event['case_id']).release()
                 self._message.put(message)
-
                 self._status_queue.put(None)
         except Exception:
             self._status_queue.put(sys.exc_info())
@@ -65,7 +64,7 @@ def create_source_sink_node(windowsMemory, client_uuid, event):
                          (i.e. event == windowsMemory[maximum_window_size])
     :return:
     """
-
+    response = {}
     for ws in WINDOW_SIZE:
         source_node = ','.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws: MAXIMUN_WINDOW_SIZE])
         sink_node = ','.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws + 1: MAXIMUN_WINDOW_SIZE+1])
@@ -74,38 +73,35 @@ def create_source_sink_node(windowsMemory, client_uuid, event):
         elif source_node.find('*') != -1:
             source_node = None
         matches = compare_automata.check_alert(ws, source_node, sink_node, client_uuid)
+        print(source_node, sink_node, '-matches:', matches)
         if matches == 2:
-            print("Alert !!!  No connection from " + str(source_node) + " to " + str(sink_node) + " due to missing node")
+            print("Alert !!!  No connection from " + source_node + " to " + sink_node + " due to missing node")
             response = {
                 'case_id': event['case_id'],
-                'source_node': str(source_node),
-                'sink_node': str(sink_node),
+                'source_node': source_node,
+                'sink_node': sink_node,
                 'cause': 'No such source node',
                 'message': 'Alert'
             }
-            print(response)
             return response
         elif matches == 1:
-            print("Alert !!!  No connection from " + str(source_node) + " to " + str(sink_node) + " due to less probability")
+            print("Alert !!!  No connection from " + source_node + " to " + sink_node + " due to less probability")
             response = {
                 'case_id': event['case_id'],
-                'source_node': str(source_node),
-                'sink_node': str(sink_node),
+                'source_node': source_node,
+                'sink_node': sink_node,
                 'cause': 'Probability less than threshold',
                 'message': 'Alert'
             }
             return response
         else:
-            print(source_node, ',', sink_node)
-            print(matches)
-            print('skip')
-    response = {
-        'case_id': event['case_id'],
-        'source_node': source_node,
-        'sink_node': sink_node,
-        'cause': '',
-        'message': 'OK'
-    }
+            response = {
+                'case_id': event['case_id'],
+                'source_node': source_node,
+                'sink_node': sink_node,
+                'cause': '',
+                'message': 'OK'
+            }
     return response
 
     # TODO: Implement returning to main function ALERT, Threading comments to be removed ,
