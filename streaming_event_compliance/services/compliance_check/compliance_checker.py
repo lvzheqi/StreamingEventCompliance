@@ -5,6 +5,7 @@ from streaming_event_compliance.utils.config import MAXIMUN_WINDOW_SIZE
 import threading
 from streaming_event_compliance.database import dbtools
 from streaming_event_compliance.objects.exceptions.exception import ThreadException
+from streaming_event_compliance.objects.automata import alertlog
 import traceback
 import json
 
@@ -33,7 +34,10 @@ def compliance_checker(client_uuid, event):
     """
     if globalvar.get_autos_status():
         alert_logs = globalvar.get_alert_logs()
-        alert_logs[client_uuid] = {}
+        alert_logs[client_uuid] = {1: alertlog.AlertLog(client_uuid, 1),
+                                   2: alertlog.AlertLog(client_uuid, 2),
+                                   3: alertlog.AlertLog(client_uuid, 3),
+                                   4: alertlog.AlertLog(client_uuid, 4)}
         CCM = globalvar.get_client_case_memory()
         CTM = globalvar.get_client_thread_memory()
         if client_uuid not in CCM.dictionary_cases:
@@ -51,7 +55,9 @@ def compliance_checker(client_uuid, event):
             client_locks[event['case_id']] = lock
             try:
                 thread.start()
+                print('thread start')
                 message = thread.get_message().get()
+                print(message,'--')
                 return json.dumps(message)
             except Exception:
                 raise ThreadException(traceback.format_exc())
@@ -67,6 +73,7 @@ def compliance_checker(client_uuid, event):
                         thread.start()
                         client_threads.get(client_uuid).append(thread)
                         message = thread.get_message().get()
+                        print(message, 'message')
                         return json.dumps(message)
                     except Exception:
                         raise ThreadException(traceback.format_exc())
@@ -79,9 +86,9 @@ def compliance_checker(client_uuid, event):
                     try:
                         thread.start()
                         client_threads[client_uuid] = [thread]
-                        response = thread.get_message().get()
-                        print(response)
-                        return json.dumps(response)
+                        message = thread.get_message().get()
+                        print(message)
+                        return json.dumps(message)
                     except Exception:
                         raise ThreadException(traceback.format_exc())
             elif event['case_id'] == 'NONE' and event['activity'] == 'END':
