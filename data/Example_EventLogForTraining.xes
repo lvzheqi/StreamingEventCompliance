@@ -44,36 +44,6 @@
 			<string key="concept:name" value="djkh"/>
 			<string key="lifecycle:transition" value="complete"/>
 		</event>
-		<event>
-			<string key="org:resource" value="UNDEFINED"/>
-			<date key="time:timestamp" value="2010-10-27T22:34:19.495+02:00"/>
-			<string key="concept:name" value="assf"/>
-			<string key="lifecycle:transition" value="complete"/>
-		</event>
-		<event>
-			<string key="org:resource" value="UNDEFINED"/>
-			<date key="time:timestamp" value="2010-10-27T22:35:19.495+02:00"/>
-			<string key="concept:name" value="g"/>
-			<string key="lifecycle:transition" value="complete"/>
-		</event>
-		<event>
-			<string key="org:resource" value="UNDEFINED"/>
-			<date key="time:timestamp" value="2010-10-27T22:36:19.495+02:00"/>
-			<string key="concept:name" value="h"/>
-			<string key="lifecycle:transition" value="complete"/>
-		</event>
-		<event>
-			<string key="org:resource" value="UNDEFINED"/>
-			<date key="time:timestamp" value="2010-10-27T22:37:19.495+02:00"/>
-			<string key="concept:name" value="i"/>
-			<string key="lifecycle:transition" value="complete"/>
-		</event>
-		<event>
-			<string key="org:resource" value="UNDEFINED"/>
-			<date key="time:timestamp" value="2010-10-27T22:38:19.495+02:00"/>
-			<string key="concept:name" value="j"/>
-			<string key="lifecycle:transition" value="complete"/>
-		</event>
 	</trace>
 	<trace>
 		<string key="concept:name" value="Case2.0"/>

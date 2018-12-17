@@ -2,6 +2,7 @@
 from streaming_event_compliance import app, db
 import time
 from streaming_event_compliance.objects.exceptions.exception import ThreadException, ReadFileException
+from streaming_event_compliance.services.build_automata import case_thread
 
 if __name__ == '__main__':
 
@@ -28,6 +29,7 @@ if __name__ == '__main__':
 
         ends = time.clock()
         print(ends - start)
+        print(case_thread.index)
     else:
         print("Automata have been created in database and readed out! You can use it do compliance checking!")
     app.debug = False

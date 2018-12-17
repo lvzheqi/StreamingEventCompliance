@@ -63,7 +63,7 @@ def build_automata_pro():
             raise EventException(event)
         else:
             try:
-                if C.dictionary_cases.get(event['case_id']):
+                if event['case_id'] in C.dictionary_cases:
                     C.dictionary_cases.get(event['case_id']).append(event['activity'])
                     thread = case_thread.CaseThreadForTraining(event, threads_index, T, C)
                     thread.start()
@@ -87,6 +87,7 @@ def build_automata_pro():
     except Exception:
         raise ThreadException(traceback.format_exc())
     else:
+        print("all event join succusful, begin end event")
         event = {}
         for item in C.dictionary_cases:
             event['case_id'] = item
@@ -101,4 +102,6 @@ def build_automata_pro():
         try:
             th.join_with_exception()
         except ThreadException:
-            raise ThreadException(traceback.format_exc())
+            raise ThreadException('endevent'+traceback.format_exc())
+        else:
+            print(th, "end event join succusful")

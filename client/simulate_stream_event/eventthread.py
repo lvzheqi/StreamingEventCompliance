@@ -1,10 +1,10 @@
-from .client_logging import ClientLogging
-from .exception import ServerRequestException, ThreadException
 from threading import Thread
 import requests
 import sys
 import json
 import queue
+from .client_logging import ClientLogging
+from .exception import ServerRequestException, ThreadException
 
 
 class ThreadMemorizer(object):
@@ -39,11 +39,11 @@ class EventThread(Thread):
         try:
             ClientLogging().log_info(func_name, self.client_uuid, self.index, self.event['case_id'],
                                      self.event['activity'],
-                                     'Posting event to server:http://127.0.0.1:5000/compliance-checker')
-            r = requests.post('http://127.0.0.1:5000/compliance-checker?uuid=' + self.client_uuid,
+                                     "Posting event to server:http://127.0.0.1:5000/compliance-checker")
+            response = requests.post('http://127.0.0.1:5000/compliance-checker?uuid=' + self.client_uuid,
                               json=json.dumps(self.event))
             self._status_queue.put(None)
-            if r.status_code != 200:
+            if response.status_code != 200:
                 ClientLogging().log_error(func_name, self.client_uuid, self.index, self.event['case_id'],
                                           self.event['activity'],
                                           'Error by compliance checking')
@@ -51,8 +51,8 @@ class EventThread(Thread):
             else:
                 ClientLogging().log_info(func_name, self.client_uuid, self.index, self.event['case_id'],
                                          self.event['activity'],
-                                         'The server response is: ' + r.text)
-                print('Info:', r.text)
+                                         'The server response is: ' + response.text)
+                print('Info:', response.text)
 
         except Exception:
             ClientLogging().log_error(func_name, self.client_uuid, self.index, self.event['case_id'],
