@@ -49,11 +49,11 @@ def call_buildautos():
 
 
 def get_alert_logs():
+    test_alertlog()
     return alert_logs
 
 
 def get_user_alert_logs(uuid):
-    test_alertlog()
     return alert_logs[uuid]
 
 

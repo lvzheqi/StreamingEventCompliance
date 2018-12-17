@@ -9,7 +9,7 @@ from streaming_event_compliance.objects.automata import automata
 from streaming_event_compliance.objects.exceptions.exception import ThreadException
 
 check_executing_order = {}
-
+index = 0
 
 class CaseThreadForTraining(Thread):
     def __init__(self, event, index, T, C):
@@ -28,6 +28,7 @@ class CaseThreadForTraining(Thread):
         if ex_info is None:
             return
         else:
+            print('join exception')
             raise ThreadException(ex_info[1])
 
     def run(self):
@@ -39,31 +40,51 @@ class CaseThreadForTraining(Thread):
             This thread can do noting excepting waiting.
             But during the processing the list will change, some events will be added into it,
         """
-        if self.C.lock_List.get(self.event['case_id']).acquire():
-            try:
-                windows_memory = self.C.dictionary_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
-                try:
-                    windows_memory[MAXIMUN_WINDOW_SIZE]
-                except:
-                    print(windows_memory)
-                    print(self.C.dictionary_cases.get(self.event['case_id']))
-                    globalvar.set_index()
-                calcuate_connection_for_different_prefix_automata(windows_memory)
-                if len(self.C.dictionary_cases.get(self.event['case_id'])) > MAXIMUN_WINDOW_SIZE:
-                    self.C.dictionary_cases.get(self.event['case_id']).pop(0)
+        try:
+            if self.event['activity'] != '~!@#$%':
+                if self.C.lock_List.get(self.event['case_id']).acquire():
+                    # print('case ', self.event['case_id'], len(self.C.dictionary_cases.get(self.event['case_id'])), self.C.dictionary_cases.get(self.event['case_id']))
+                    windows_memory = self.C.dictionary_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
+                    # print(windows_memory)
+                    if len(windows_memory) != 5:
+                        global index
+                        index = index+1
+                        print('len(windows_memory) is not 5')
+                    if self.event['activity'] != windows_memory[MAXIMUN_WINDOW_SIZE]:
+                        pass
+                    calcuate_connection_for_different_prefix_automata(windows_memory)
+                    if len(self.C.dictionary_cases.get(self.event['case_id'])) > MAXIMUN_WINDOW_SIZE:
+                        self.C.dictionary_cases.get(self.event['case_id']).pop(0)
 
-                global check_executing_order
-                '''--------For Testing: Before releasing lock, which thread used it will be stored-------'''
-                if check_executing_order.get(self.event['case_id']):
-                    check_executing_order.get(self.event['case_id']).append(self.event['activity'])
-                else:
-                    check_executing_order[self.event['case_id']] = []
-                    check_executing_order[self.event['case_id']].append(self.event['activity'])
-                '''--------For Testing: Before releasing lock, which thread used it will be stored-------'''
-                self._status_queue.put(None)
-                self.C.lock_List.get(self.event['case_id']).release()
-            except Exception:
-                print('caselock', traceback.format_exc())
+                    global check_executing_order
+                    '''--------For Testing: Before releasing lock, which thread used it will be stored-------'''
+                    if check_executing_order.get(self.event['case_id']):
+                        check_executing_order.get(self.event['case_id']).append(self.event['activity'])
+                    else:
+                        check_executing_order[self.event['case_id']] = []
+                        check_executing_order[self.event['case_id']].append(self.event['activity'])
+                    '''--------For Testing: Before releasing lock, which thread used it will be stored-------'''
+                    self.C.lock_List.get(self.event['case_id']).release()
+                    self._status_queue.put(None)
+            elif self.event['activity'] == '~!@#$%':
+                if self.C.lock_List.get(self.event['case_id']).acquire():
+                    print('case ', self.event['case_id'], len(self.C.dictionary_cases.get(self.event['case_id'])), self.C.dictionary_cases.get(self.event['case_id']))
+                    windows_memory = self.C.dictionary_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
+                    print(windows_memory)
+                    if len(windows_memory) != 5:
+                        print('len(windows_memory) is not 5')
+                    if self.event['activity'] != windows_memory[MAXIMUN_WINDOW_SIZE]:
+                        pass
+                    calcuate_connection_for_different_prefix_automata(windows_memory)
+                    if len(self.C.dictionary_cases.get(self.event['case_id'])) > MAXIMUN_WINDOW_SIZE:
+                        self.C.dictionary_cases.get(self.event['case_id']).pop(0)
+                    try:
+                        self.C.lock_List.get(self.event['case_id']).release()
+                    except Exception:
+                        print('eendevnet')
+                    self._status_queue.put(None)
+        except Exception:
+                print('Caselock', traceback.format_exc())
                 self._status_queue.put(sys.exc_info())
 
 
@@ -88,23 +109,23 @@ def calcuate_connection_for_different_prefix_automata(windowsMemory):
         if CL.lock_List.get((source_node, sink_node)):
             if CL.lock_List.get((source_node, sink_node)).acquire():
                 try:
-                    if windowsMemory[MAXIMUN_WINDOW_SIZE] == '!@#$%^' and source_node.find('*') == -1:
-                        autos.get(ws).update_automata(automata.Connection(source_node, '!@#$%^', 0))
+                    if windowsMemory[MAXIMUN_WINDOW_SIZE] == '~!@#$%' and source_node.find('*') == -1:
+                        autos.get(ws).update_automata(automata.Connection(source_node, '~!@#$%', 0))
                     elif source_node.find('*') == -1:
                         autos.get(ws).update_automata(automata.Connection(source_node, sink_node, 1))
                     CL.lock_List.get((source_node, sink_node)).release()
-                except Exception:
-                    print('Exception1', traceback.format_exc())
+                except Exception as ec:
+                    raise ec
         else:
             lock = threading.RLock()
             CL.lock_List[source_node, sink_node] = lock
             if CL.lock_List.get((source_node, sink_node)).acquire():
                 try:
-                    if windowsMemory[MAXIMUN_WINDOW_SIZE] == '!@#$%^' and source_node.find('*') == -1:
-                        autos.get(ws).update_automata(automata.Connection(source_node, '!@#$%^', 0))
+                    if windowsMemory[MAXIMUN_WINDOW_SIZE] == '~!@#$%' and source_node.find('*') == -1:
+                        autos.get(ws).update_automata(automata.Connection(source_node, '~!@#$%', 0))
                     elif source_node.find('*') == -1:
                         autos.get(ws).update_automata(automata.Connection(source_node, sink_node, 1))
                     CL.lock_List.get((source_node, sink_node)).release()
-                except Exception:
-                    print('Exception2', traceback.format_exc())
+                except Exception as ec:
+                    raise ec
 
