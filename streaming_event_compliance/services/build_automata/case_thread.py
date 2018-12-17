@@ -9,7 +9,7 @@ from streaming_event_compliance.objects.automata import automata
 from streaming_event_compliance.objects.exceptions.exception import ThreadException
 
 check_executing_order = {}
-
+index = 0
 
 class CaseThreadForTraining(Thread):
     def __init__(self, event, index, T, C):
@@ -41,28 +41,48 @@ class CaseThreadForTraining(Thread):
             But during the processing the list will change, some events will be added into it,
         """
         try:
-            if self.C.lock_List.get(self.event['case_id']).acquire():
-                # TODO：Jingjing-在出错之前加入这个，join的时候能成功； 但这个巨大的错误还是存在的！
-                self._status_queue.put(None)
-                windows_memory = self.C.dictionary_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
-                if len(windows_memory) != 5:
-                    print('len(windows_memory) is not 5')
-                if self.event['activity'] != windows_memory[MAXIMUN_WINDOW_SIZE]:
-                    print('window is wrong')
-                calcuate_connection_for_different_prefix_automata(windows_memory)
-                if len(self.C.dictionary_cases.get(self.event['case_id'])) > MAXIMUN_WINDOW_SIZE:
-                    self.C.dictionary_cases.get(self.event['case_id']).pop(0)
+            if self.event['activity'] != '~!@#$%':
+                if self.C.lock_List.get(self.event['case_id']).acquire():
+                    # print('case ', self.event['case_id'], len(self.C.dictionary_cases.get(self.event['case_id'])), self.C.dictionary_cases.get(self.event['case_id']))
+                    windows_memory = self.C.dictionary_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
+                    # print(windows_memory)
+                    if len(windows_memory) != 5:
+                        global index
+                        index = index+1
+                        print('len(windows_memory) is not 5')
+                    if self.event['activity'] != windows_memory[MAXIMUN_WINDOW_SIZE]:
+                        pass
+                    calcuate_connection_for_different_prefix_automata(windows_memory)
+                    if len(self.C.dictionary_cases.get(self.event['case_id'])) > MAXIMUN_WINDOW_SIZE:
+                        self.C.dictionary_cases.get(self.event['case_id']).pop(0)
 
-                global check_executing_order
-                '''--------For Testing: Before releasing lock, which thread used it will be stored-------'''
-                if check_executing_order.get(self.event['case_id']):
-                    check_executing_order.get(self.event['case_id']).append(self.event['activity'])
-                else:
-                    check_executing_order[self.event['case_id']] = []
-                    check_executing_order[self.event['case_id']].append(self.event['activity'])
-                '''--------For Testing: Before releasing lock, which thread used it will be stored-------'''
-                self.C.lock_List.get(self.event['case_id']).release()
-                self._status_queue.put(None)
+                    global check_executing_order
+                    '''--------For Testing: Before releasing lock, which thread used it will be stored-------'''
+                    if check_executing_order.get(self.event['case_id']):
+                        check_executing_order.get(self.event['case_id']).append(self.event['activity'])
+                    else:
+                        check_executing_order[self.event['case_id']] = []
+                        check_executing_order[self.event['case_id']].append(self.event['activity'])
+                    '''--------For Testing: Before releasing lock, which thread used it will be stored-------'''
+                    self.C.lock_List.get(self.event['case_id']).release()
+                    self._status_queue.put(None)
+            elif self.event['activity'] == '~!@#$%':
+                if self.C.lock_List.get(self.event['case_id']).acquire():
+                    print('case ', self.event['case_id'], len(self.C.dictionary_cases.get(self.event['case_id'])), self.C.dictionary_cases.get(self.event['case_id']))
+                    windows_memory = self.C.dictionary_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
+                    print(windows_memory)
+                    if len(windows_memory) != 5:
+                        print('len(windows_memory) is not 5')
+                    if self.event['activity'] != windows_memory[MAXIMUN_WINDOW_SIZE]:
+                        pass
+                    calcuate_connection_for_different_prefix_automata(windows_memory)
+                    if len(self.C.dictionary_cases.get(self.event['case_id'])) > MAXIMUN_WINDOW_SIZE:
+                        self.C.dictionary_cases.get(self.event['case_id']).pop(0)
+                    try:
+                        self.C.lock_List.get(self.event['case_id']).release()
+                    except Exception:
+                        print('eendevnet')
+                    self._status_queue.put(None)
         except Exception:
                 print('Caselock', traceback.format_exc())
                 self._status_queue.put(sys.exc_info())
