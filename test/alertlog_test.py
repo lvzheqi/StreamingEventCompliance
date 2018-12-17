@@ -15,6 +15,7 @@ class AlertlogTest(unittest.TestCase):
         self.alog2.update_alert_record(alertlog.AlertRecord(self.uuid, 'A,C', 'B,W', 1))
 
     def test_alertlog(self):
+        print(self.alog1)
         for alog in self.alog1.alert_log.values():
             if alog.sink_node is 'B':
                 self.assertEqual(alog.alert_count, 1)

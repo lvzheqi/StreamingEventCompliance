@@ -17,17 +17,14 @@ def check_alert(windowsize, source_node, sink_node, client_uuid):
         :param client_uuid: user name
         :return: alert message
     '''
-    print('--',globalvar.get_user_alert_logs(client_uuid))
     alert_log = globalvar.get_user_alert_logs(client_uuid)[windowsize]
-    print('++', alert_log)
     auto = globalvar.get_autos()[windowsize]
-    print(auto,'1111')
     conn = automata.Connection(source_node, sink_node)
     if auto.contains_connection(conn):
         if auto.get_connection_probability(conn) >= THRESHOLD:
             return 0
         else:
-            alert_log.update_alert_record(alert_log.AlertRecord(client_uuid, source_node, sink_node, 1, 'T'))
+            alert_log.update_alert_record(alertlog.AlertRecord(client_uuid, source_node, sink_node, 1, 'T'))
             return 1
     elif source_node is None and auto.contains_source_node(sink_node):
         return 0
