@@ -38,7 +38,7 @@ def call_compliance_checker():
     event = json.loads(event)
     try:
         return compliance_checker.compliance_checker(client_uuid, event), status.HTTP_200_OK
-    except ThreadException as tec:
+    except ThreadException:
         print('Error! Something wrong in compliance checking!')
         return "Server Error!"
 
