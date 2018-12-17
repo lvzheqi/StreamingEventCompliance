@@ -2,7 +2,7 @@ from streaming_event_compliance.services import globalvar
 from streaming_event_compliance.utils.config import THRESHOLD
 from streaming_event_compliance.objects.automata import alertlog
 
-client_alert_logs = globalvar.get_alert_logs()  #{'uuid1': {1: alog, 2: alog, 3:alog}, 'uuid2': {}}
+#client_alert_logs = globalvar.get_alert_logs()  #{'uuid1': {1: alog, 2: alog, 3:alog}, 'uuid2': {}}
 alert_logs = {}
 
 
@@ -27,31 +27,23 @@ def check_automata_only_sourcenode(windowsize, sink_node, client_uuid):
             if connection.probability >= THRESHOLD:
                 return 2
             else:
-                # Insert source_node as None if the sink_node is an initial node
-                alert_record = alertlog.AlertRecord(client_uuid, None, sink_node, 1, "T")
+                # Insert source_node as sink_node if the sink_node is an initial node
+                alert_record = alertlog.AlertRecord(client_uuid, sink_node, None, 1, "T")
 
                 # Create an alert_log object for windowsize(given) if it is not created previously
-                if windowsize not in alert_logs:
-                    alert_logs[windowsize] = alertlog.AlertLog(client_uuid, windowsize)
-                alert_logs[windowsize].update_alert_record(alert_record)
-                # add the alert_log to client_alert_logs with client_uuid as the key
-                client_alert_logs[client_uuid] = alert_logs # this is not right because alertlogs
-                # can have logs of different client
-                # what we can do here is at receiving end event, get all alertlogs and loop through it
-                # to get client_uuid if it matches the running client id the add it to the dictionary of client_alert_log
-                #print(client_alert_logs)
+                if client_uuid not in alert_logs:
+                    alert_logs[client_uuid] = alertlog.AlertLog(client_uuid, windowsize)
+                alert_logs[client_uuid].update_alert_record(alert_record)
                 print(alert_logs)
                 print("alert due to probability lesser than threshold")
                 return 1
-    # Insert source_node as None if the sink_node is an initial node
-    alert_record = alertlog.AlertRecord(client_uuid, None, sink_node, 1, "M")
+    # Insert source_node as sink_node if the sink_node is an initial node
+    alert_record = alertlog.AlertRecord(client_uuid, sink_node, None, 1, "M")
 
     # Create an alert_log object for windowsize(given) if it is not created previously
-    if windowsize not in alert_logs:
-        alert_logs[windowsize] = alertlog.AlertLog(client_uuid, windowsize)
-    alert_logs[windowsize].update_alert_record(alert_record)
-    client_alert_logs[client_uuid] = alert_logs
-    #print(client_alert_logs)
+    if client_uuid not in alert_logs:
+        alert_logs[client_uuid] = alertlog.AlertLog(client_uuid, windowsize)
+    alert_logs[client_uuid].update_alert_record(alert_record)
     print(alert_logs)
     print("alert due to missing node")
     return 0
@@ -80,21 +72,17 @@ def check_automata_with_source_sink(windowsize, source_node, sink_node, client_u
             else:
                 alert_record = alertlog.AlertRecord(client_uuid, source_node, sink_node, 1, "T")
                 # Create an alert_log object for windowsize(given) if it is not created previously
-                if windowsize not in alert_logs:
-                    alert_logs[windowsize] = alertlog.AlertLog(client_uuid, windowsize)
-                alert_logs[windowsize].update_alert_record(alert_record)
-                client_alert_logs[client_uuid] = alert_logs
-                #print(client_alert_logs)
+                if client_uuid not in alert_logs:
+                    alert_logs[client_uuid] = alertlog.AlertLog(client_uuid, windowsize)
+                alert_logs[client_uuid].update_alert_record(alert_record)
                 print(alert_logs)
                 print("alert due to probability lesser than threshold")
                 return 1
     alert_record = alertlog.AlertRecord(client_uuid, source_node, sink_node, 1, "M")
     # Create an alert_log object for windowsize(given) if it is not created previously
-    if windowsize not in alert_logs:
-        alert_logs[windowsize] = alertlog.AlertLog(client_uuid, windowsize)
-    alert_logs[windowsize].update_alert_record(alert_record)
-    client_alert_logs[client_uuid] = alert_logs
-    #print(client_alert_logs)
+    if client_uuid not in alert_logs:
+        alert_logs[client_uuid] = alertlog.AlertLog(client_uuid, windowsize)
+    alert_logs[client_uuid].update_alert_record(alert_record)
     print(alert_logs)
     print("alert due to missing node")
     return 0

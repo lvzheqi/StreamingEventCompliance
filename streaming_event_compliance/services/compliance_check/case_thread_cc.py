@@ -63,7 +63,7 @@ def create_source_sink_node(windowsMemory, client_uuid, event):
         source_node = ','.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws: MAXIMUN_WINDOW_SIZE])
         sink_node = ','.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws + 1: MAXIMUN_WINDOW_SIZE+1])
         if source_node.find('*') == -1:
-            print('WS: ' + str(ws) + ' Source: ' + source_node + ' Sink: ' + sink_node)
+            #print('WS: ' + str(ws) + ' Source: ' + source_node + ' Sink: ' + sink_node)
             matches = compare_automata.check_automata_with_source_sink(ws, source_node, sink_node, client_uuid)
             if matches == 0:
                 print("Alert !!!  No connection from " + source_node + " to " + sink_node + " due to missing node")
@@ -86,7 +86,7 @@ def create_source_sink_node(windowsMemory, client_uuid, event):
                 }
                 return response
         elif source_node.find('*') != -1 and sink_node.find('*') == -1:
-            print('WS: ' + str(ws) + ' Source: ' + source_node + ' Sink: ' + sink_node)
+            #print('WS: ' + str(ws) + ' Source: ' + source_node + ' Sink: ' + sink_node)
             matches = compare_automata.check_automata_only_sourcenode(ws, sink_node, client_uuid)
             if matches == 0:
                 print("Alert !!!  No connection from " + source_node + " to " + sink_node + " due to missing node")
