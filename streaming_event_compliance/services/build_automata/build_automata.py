@@ -50,7 +50,7 @@ def build_automata_pro():
     except Exception:
         raise ReadFileException(config.TRAINING_EVENT_LOG_PATH)
 
-    global threads_index
+    global threads_index, threads
     for one_event in event_log:
         event = {}
         try:
@@ -67,6 +67,9 @@ def build_automata_pro():
                     C.dictionary_cases.get(event['case_id']).append(event['activity'])
                     thread = case_thread.CaseThreadForTraining(event, threads_index, T, C)
                     thread.start()
+                    T.dictionary_threads[threads_index] = thread
+                    threads.append(thread)
+                    threads_index = threads_index + 1
                 else:
                     C.dictionary_cases[event['case_id']] = ['*' for i in range(0, MAXIMUN_WINDOW_SIZE)]
                     C.dictionary_cases[event['case_id']].append(event['activity'])
@@ -74,12 +77,12 @@ def build_automata_pro():
                     C.lock_List[event['case_id']] = lock
                     thread = case_thread.CaseThreadForTraining(event, threads_index, T, C)
                     thread.start()
+                    T.dictionary_threads[threads_index] = thread
+                    threads.append(thread)
+                    threads_index = threads_index + 1
             except Exception:
                 raise ThreadException(traceback.format_exc())
-            else:
-                T.dictionary_threads[threads_index] = thread
-                threads.append(thread)
-                threads_index = threads_index + 1
+
     #TODO:Jingjing-This join can be done after adding end event！
     try:
         for th in threads:
@@ -89,6 +92,8 @@ def build_automata_pro():
     else:
         print("all event join succusful, begin end event")
         event = {}
+        threads = []
+        threads_index = 0
         for item in C.dictionary_cases:
             event['case_id'] = item
             event['activity'] = '~!@#$%'
@@ -102,6 +107,6 @@ def build_automata_pro():
         try:
             th.join_with_exception()
         except ThreadException:
+            print(th, "end event join not succusful")
             raise ThreadException('endevent'+traceback.format_exc())
-        else:
-            print(th, "end event join succusful")
+

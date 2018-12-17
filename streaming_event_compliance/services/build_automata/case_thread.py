@@ -29,7 +29,7 @@ class CaseThreadForTraining(Thread):
             return
         else:
             print('join exception')
-            raise ThreadException(ex_info[1])
+            raise ThreadException(traceback.format_exc())
 
     def run(self):
         """
@@ -40,16 +40,13 @@ class CaseThreadForTraining(Thread):
             This thread can do noting excepting waiting.
             But during the processing the list will change, some events will be added into it,
         """
+        global index
         try:
             if self.event['activity'] != '~!@#$%':
                 if self.C.lock_List.get(self.event['case_id']).acquire():
-                    # print('case ', self.event['case_id'], len(self.C.dictionary_cases.get(self.event['case_id'])), self.C.dictionary_cases.get(self.event['case_id']))
                     windows_memory = self.C.dictionary_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
-                    # print(windows_memory)
                     if len(windows_memory) != 5:
-                        global index
-                        index = index+1
-                        print('len(windows_memory) is not 5')
+                        print('----len(windows_memory) is not 5')
                     if self.event['activity'] != windows_memory[MAXIMUN_WINDOW_SIZE]:
                         pass
                     calcuate_connection_for_different_prefix_automata(windows_memory)
@@ -68,10 +65,12 @@ class CaseThreadForTraining(Thread):
                     self._status_queue.put(None)
             elif self.event['activity'] == '~!@#$%':
                 if self.C.lock_List.get(self.event['case_id']).acquire():
-                    print('case ', self.event['case_id'], len(self.C.dictionary_cases.get(self.event['case_id'])), self.C.dictionary_cases.get(self.event['case_id']))
                     windows_memory = self.C.dictionary_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
-                    print(windows_memory)
                     if len(windows_memory) != 5:
+                        print('case ', self.event['case_id'], len(self.C.dictionary_cases.get(self.event['case_id'])),
+                              self.C.dictionary_cases.get(self.event['case_id']))
+                        print(windows_memory)
+                        index = index + 1
                         print('len(windows_memory) is not 5')
                     if self.event['activity'] != windows_memory[MAXIMUN_WINDOW_SIZE]:
                         pass
