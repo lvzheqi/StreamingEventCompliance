@@ -33,6 +33,30 @@ def visualization_automata(autos, alogs, uuid):
                 else:
                     sub.edge(record.source_node, record.sink_node, color='green', label='count = ' + str(record.alert_count),
                              penwidth=str(record.alert_count / max_count * 3))
+
+    with viz.subgraph(name='cluster00') as sub:
+        sub.graph_attr['rankdir'] = 'RL'
+        sub.node('text0', shape='plaintext', style='solid', label='node, where causes alert',
+                 penwidth='2', width='3.5')
+        sub.node('activity', 'activity', fillcolor='red', style='filled')
+
+        sub.node('text1', shape='plaintext', style='solid', label='connections, when such exists\r in primal automata',
+                 penwidth='2', width='3.5')
+        sub.node('s_node1', 's_node1')
+        sub.node('ss_node1', 'ss_node1')
+        sub.edge('s_node1', 'ss_node1', color='black', label='', penwidth='1.5')
+
+        sub.node('text2', shape='plaintext', style='solid', label='alerts, when no such connections in primal automata ', width='3.5')
+        sub.node('s_node2', 's_node2', fillcolor='red', style='filled')
+        sub.node('ss_node2', 'ss_node2', fillcolor='red', style='filled')
+        sub.edge('s_node2', 'ss_node2', color='red', label='', penwidth='1.5')
+
+        sub.node('text3', shape='plaintext', style='solid', label='alerts, when the probability is below Threshold ', width='3.5')
+        sub.node('s_node3', 's_node3', fillcolor='red', style='filled')
+        sub.node('ss_node3', 'ss_node3', fillcolor='red', style='filled')
+        sub.edge('s_node3', 'ss_node3', color='green', label='', penwidth='1.5')
+        sub.graph_attr['rank'] = 'source; text1; text2; text3'
+
     viz.render(filename=uuid + '_' + AUTOMATA_FILE, directory=CLEINT_DATA_PATH, view=False, cleanup=True)
     return viz
 
@@ -52,7 +76,7 @@ def show_deviation_pdf(client_uuid):
     Else if no file present with that name then, this function calls the build_deviation_pdf(client_uuid) to create a pdf
     :param client_uuid: user name
     '''
-    path = CLEINT_DATA_PATH + client_uuid + "_" + AUTOMATA_FILE + FILE_TYPE
+    path = CLEINT_DATA_PATH + client_uuid + '_' + AUTOMATA_FILE + FILE_TYPE
     if not os.path.exists(path):
         build_deviation_pdf(client_uuid)
 
