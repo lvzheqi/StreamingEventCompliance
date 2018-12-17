@@ -49,7 +49,6 @@ def call_buildautos():
 
 
 def get_alert_logs():
-    test_alertlog()
     return alert_logs
 
 
@@ -151,6 +150,31 @@ def get_client_case_memory():
 
 def get_client_thread_memory():
     return CTM
+
+
+client_checking_status = {}
+
+
+def get_client_checking_status():
+    return client_checking_status
+
+
+def compliance_checking_init(client_uuid):
+    alert_logs[client_uuid] = {1: alertlog.AlertLog(client_uuid, 1),
+                               2: alertlog.AlertLog(client_uuid, 2),
+                               3: alertlog.AlertLog(client_uuid, 3),
+                               4: alertlog.AlertLog(client_uuid, 4)}
+    CCM.dictionary_cases[client_uuid] = {}
+    CTM.dictionary_threads[client_uuid] = {}
+    CCM.lock_List[client_uuid] = {}
+
+
+def compliance_checking_clear(client_uuid):
+    alert_logs.pop(client_uuid)
+    CCM.dictionary_cases.pop(client_uuid)
+    CTM.dictionary_threads.pop(client_uuid)
+    CCM.lock_List.pop(client_uuid)
+    client_checking_status.pop(client_uuid)
 
 
 def test_alertlog():
