@@ -32,11 +32,16 @@ def call_compliance_checker():
     :return: status code, application/json
     '''
     client_uuid = request.args.get('uuid')
-
     if globalvar.get_user_status(client_uuid):
         dbtools.delete_alert(client_uuid)
         dbtools.update_user_status(client_uuid, False)
         globalvar.set_user(client_uuid, False)
+
+    cc_status = globalvar.get_client_checking_status()
+    if client_uuid not in cc_status:
+        cc_status[client_uuid] = True
+        globalvar.compliance_checking_init(client_uuid)
+
     event = request.json
     event = json.loads(event)
     try:
