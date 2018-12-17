@@ -22,7 +22,7 @@ def check_automata_only_sourcenode(windowsize, sink_node, client_uuid):
     '''
     global alert_logs
     autos = globalvar.get_autos()
-    for connection in autos[windowsize].connections:
+    for connection in autos[windowsize].get_connections():
         if connection.source_node == sink_node:
             if connection.probability >= THRESHOLD:
                 return 2
@@ -65,7 +65,7 @@ def check_automata_with_source_sink(windowsize, source_node, sink_node, client_u
     '''
     global alert_logs
     autos = globalvar.get_autos()
-    for connection in autos[windowsize].connections:
+    for connection in autos[windowsize].get_connections():
         if connection.source_node == source_node and connection.sink_node == sink_node:
             if connection.probability >= THRESHOLD:
                 return 2

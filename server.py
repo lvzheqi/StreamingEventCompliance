@@ -1,6 +1,7 @@
 
 from streaming_event_compliance import app, db
-
+import time
+from streaming_event_compliance.objects.exceptions.exception import ThreadException, ReadFileException
 
 if __name__ == '__main__':
 
@@ -16,7 +17,17 @@ if __name__ == '__main__':
     globalvar.init()
     auto_status = globalvar.get_autos_status()
     if auto_status == 0:
-        globalvar.call_buildautos()
+        start = time.clock()
+
+        try:
+            globalvar.call_buildautos()
+        except ReadFileException as ec:
+            print(ec.get_message())
+        except ThreadException as ec:
+            print(ec.get_message())
+
+        ends = time.clock()
+        print(ends - start)
     else:
         print("Automata have been created in database and readed out! You can use it do compliance checking!")
     app.debug = False

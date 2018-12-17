@@ -19,7 +19,13 @@ class ServerRequestException(MyException):
         super().__init__(mess)
 
 
-class ReadFileException (MyException):
+class ReadFileException(MyException):
     def __init__(self, path):
         mess = "ReadFileError: The input path '" + path + "' does not exist or is empty!"
+        super().__init__(mess)
+
+
+class ThreadException(MyException):
+    def __init__(self, info):
+        mess = 'ThreadError: ' + info
         super().__init__(mess)

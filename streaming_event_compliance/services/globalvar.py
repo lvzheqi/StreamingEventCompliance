@@ -38,7 +38,6 @@ def call_buildautos():
 
 
 def get_alert_logs():
-    test_alertlog()
     return alert_logs
 
 
@@ -140,6 +139,7 @@ def get_client_thread_memory():
 
 
 def test_alertlog():
+    global alert_logs
     uuid = 'client1'
     alog1 = alertlog.AlertLog(uuid, 1)
     alog2 = alertlog.AlertLog(uuid, 2)

@@ -1,4 +1,4 @@
-from simulate_stream_event import eventlog
+from simulate_stream_event import eventlog, config
 from simulate_stream_event.client_logging import ClientLogging
 from simulate_stream_event.exception import ReadFileException, ConnectionException, ServerRequestException
 from multiprocessing import Process
@@ -47,7 +47,7 @@ class Client_cls(object):
                                      'Post request to http://127.0.0.1:5000/show-deviation-pdf?uuid=' + self.uuid)
             r = requests.post('http://127.0.0.1:5000/show-deviation-pdf?uuid=' + self.uuid)
             if r.status_code != 200:
-                raise ServerRequestException('PDF can not be created.')
+                raise ConnectionException
             else:
                 if r.text:  # TODO: according to the status of server
                     ClientLogging().log_info(func_name, self.uuid, 'Compliance checking is done. '
@@ -63,7 +63,7 @@ class Client_cls(object):
                     print('Warning: You have not do the compliance checking, '
                           'please do the compliance checking at first!')
         except Exception:
-            raise ConnectionException
+            raise ServerRequestException('PDF can not be created.')
 
 
 def main(argv):
@@ -139,9 +139,11 @@ def main(argv):
                     ClientLogging().log_error(func_name, argv[0], 'Input file is not readable!')
                     print('------------------the compliance checking is interrupt------------------------')
                 except KeyboardInterrupt:
+                    client.cc_status = False
                     ClientLogging().log_error(func_name, argv[0], 'Compliance checking is interrupted by user')
                     print('------------------the compliance checking is interrupt------------------------')
                 except ConnectionException as e:
+                    client.cc_status = False
                     e.get_message()
                     ClientLogging().log_error(func_name, argv[0], 'Server is not available')
                     print('------------------the compliance checking is interrupt------------------------')
