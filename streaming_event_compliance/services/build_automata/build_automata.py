@@ -63,7 +63,7 @@ def build_automata_pro():
             raise EventException(event)
         else:
             try:
-                if C.dictionary_cases.get(event['case_id']):
+                if event['case_id'] in C.dictionary_cases:
                     C.dictionary_cases.get(event['case_id']).append(event['activity'])
                     thread = case_thread.CaseThreadForTraining(event, threads_index, T, C)
                     T.dictionary_threads[threads_index] = thread
@@ -83,16 +83,17 @@ def build_automata_pro():
                 threads_index = threads_index + 1
 
     #TODO:Jingjing-This join can be done after adding end event?
+
     try:
         for th in threads:
             th.join_with_exception()
     except Exception:
         raise ThreadException(traceback.format_exc())
     else:
-        print('----------------------------------------------------------------------------------------------\n')
-        for item in C.dictionary_cases:
-            print(len(C.dictionary_cases.get(item)), C.dictionary_cases.get(item))
-        print('----------------------------------------------------------------------------------------------\n')
+        # print('----------------------------------------------------------------------------------------------\n')
+        # for item in C.dictionary_cases:
+            # print(len(C.dictionary_cases.get(item)), C.dictionary_cases.get(item))
+        # print('----------------------------------------------------------------------------------------------\n')
         end_message = {}
         for item in C.dictionary_cases:
             end_message['case_id'] = item
@@ -100,13 +101,15 @@ def build_automata_pro():
             C.dictionary_cases.get(item).append(end_message['activity'])
             thread = case_thread.CaseThreadForTraining(end_message, threads_index, T, C)
             thread.start()
-            T.dictionary_threads[threads_index] = thread
-            threads.append(thread)
+            # T.dictionary_threads[threads_index] = thread
+            # threads.append(thread)
             threads_index = threads_index + 1
-        print('----------------------------------------------------------------------------------------------\n')
-        for item in C.dictionary_cases:
-            print(len(C.dictionary_cases.get(item)), C.dictionary_cases.get(item))
-        print('----------------------------------------------------------------------------------------------\n')
+        # print('----------------------------------------------------------------------------------------------\n')
+        # for item in C.dictionary_cases:
+        #     if len(C.dictionary_cases.get(item)) != 5:
+        #         print(len(C.dictionary_cases.get(item)), C.dictionary_cases.get(item))
+        # print('----------------------------------------------------------------------------------------------\n')
+
 
     # try:
     #     for th in threads:

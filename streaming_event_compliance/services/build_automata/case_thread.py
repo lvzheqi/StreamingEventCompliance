@@ -42,8 +42,12 @@ class CaseThreadForTraining(Thread):
         if self.C.lock_List.get(self.event['case_id']).acquire():
             try:
                 windows_memory = self.C.dictionary_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
-                if self.event['activity'] != windows_memory[MAXIMUN_WINDOW_SIZE]:
-                    print('window is wrong')
+                try:
+                    windows_memory[MAXIMUN_WINDOW_SIZE]
+                except:
+                    print(windows_memory)
+                    print(self.C.dictionary_cases.get(self.event['case_id']))
+                    globalvar.set_index()
                 calcuate_connection_for_different_prefix_automata(windows_memory)
                 if len(self.C.dictionary_cases.get(self.event['case_id'])) > MAXIMUN_WINDOW_SIZE:
                     self.C.dictionary_cases.get(self.event['case_id']).pop(0)
