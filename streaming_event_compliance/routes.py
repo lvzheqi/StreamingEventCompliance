@@ -17,14 +17,12 @@ def index():
 @app.route('/login', methods=['POST'])
 def call_login():
     uuid = request.args.get('uuid')
-    try:
-        user_status = dbtools.check_user_status(uuid)
-        return str(user_status), status.HTTP_200_OK
-    except NoUserException:
+    if dbtools.check_user_status(uuid) is None:
         user_status = False
-        return str(user_status), status.HTTP_200_OK
-    finally:
-        globalvar.set_user(uuid, user_status)
+    else:
+        user_status = dbtools.check_user_status(uuid)
+    globalvar.set_user(uuid, user_status)
+    return str(user_status), status.HTTP_200_OK
 
 
 @app.route('/compliance-checker', methods=['POST'])
@@ -34,6 +32,11 @@ def call_compliance_checker():
     :return: status code, application/json
     '''
     client_uuid = request.args.get('uuid')
+
+    if globalvar.get_user_status(client_uuid):
+        dbtools.delete_alert(client_uuid)
+        dbtools.update_user_status(client_uuid, False)
+        globalvar.set_user(client_uuid, False)
     event = request.json
     event = json.loads(event)
     try:

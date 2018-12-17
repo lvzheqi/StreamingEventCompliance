@@ -32,7 +32,7 @@ class EventThread(Thread):
         if ex_info is None:
             return
         else:
-            raise ThreadException(traceback.format_exc())
+            raise ThreadException(ex_info)
 
     def run(self):
         func_name = sys._getframe().f_code.co_name

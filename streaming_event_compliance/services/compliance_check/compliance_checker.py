@@ -38,6 +38,7 @@ def compliance_checker(client_uuid, event):
                                    2: alertlog.AlertLog(client_uuid, 2),
                                    3: alertlog.AlertLog(client_uuid, 3),
                                    4: alertlog.AlertLog(client_uuid, 4)}
+
         CCM = globalvar.get_client_case_memory()
         CTM = globalvar.get_client_thread_memory()
         if client_uuid not in CCM.dictionary_cases:
@@ -55,9 +56,7 @@ def compliance_checker(client_uuid, event):
             client_locks[event['case_id']] = lock
             try:
                 thread.start()
-                print('thread start')
                 message = thread.get_message().get()
-                print(message,'--')
                 return json.dumps(message)
             except Exception:
                 raise ThreadException(traceback.format_exc())
@@ -103,20 +102,8 @@ def compliance_checker(client_uuid, event):
                     dbtools.insert_alert_log(alert_logs.get(client_uuid))
                     visualization_deviation_automata.build_deviation_pdf(client_uuid)
                     dbtools.update_user_status(client_uuid, True)
-                    response = {
-                        'case_id': None,
-                        'source_node': None,
-                        'sink_node': None,
-                        'cause': None,
-                        'message': 'The compliance checking is over, you can get the deviation pdf!'
-                    }
-                    return json.dumps(response)
+                    response = 'The compliance checking is over, you can get the deviation pdf!'
+                    return response
     else:
-        response = {
-            'case_id': None,
-            'source_node': None,
-            'sink_node': None,
-            'cause': None,
-            'message': '"Sorry, automata has not built, please wait for a while!"'
-        }
-        return json.dumps(response)
+        response = 'Sorry, automata has not built, please wait for a while!'
+        return response
