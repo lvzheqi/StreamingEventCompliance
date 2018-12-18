@@ -5,7 +5,8 @@ import threading
 from streaming_event_compliance.utils.config import MAXIMUN_WINDOW_SIZE, WINDOW_SIZE
 from streaming_event_compliance.database import dbtools
 from streaming_event_compliance.utils import config
-from streaming_event_compliance.services import globalvar
+from streaming_event_compliance.objects.variable.globalvar import T, C, gVars
+from streaming_event_compliance.services import setup
 from streaming_event_compliance.objects.exceptions.exception import ReadFileException, ThreadException, EventException
 from multiprocessing import Process
 import traceback
@@ -25,14 +26,14 @@ def build_automata():
     except ThreadException as ec:
         raise ec
     else:
-        autos = globalvar.get_autos()
+        autos = gVars.autos
         for ws in WINDOW_SIZE:
             autos[ws].set_probability()
         dbtools.insert_node_and_connection(autos)
         print("---------------------End: Everything for training automata is Done!---------------------------")
     finally:
-        globalvar.set_auto_status()
-        globalvar.clear_memorizer()
+        gVars.auto_status = 1
+        setup.clear_build_automata_memorizer()
 
 
 def build_automata_pro():
@@ -42,8 +43,8 @@ def build_automata_pro():
         and stores corresponding information into the database.
     :return:
     """
-    C = globalvar.get_case_memory()
-    T = globalvar.get_thread_memory()
+    # C = globalvar.get_case_memory()
+    # T = globalvar.get_thread_memory()
     try:
         trace_log = xes_importer.import_log(config.TRAINING_EVENT_LOG_PATH)
         event_log = transform.transform_trace_log_to_event_log(trace_log)

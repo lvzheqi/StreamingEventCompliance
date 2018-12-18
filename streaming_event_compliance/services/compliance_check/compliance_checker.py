@@ -1,6 +1,6 @@
-from streaming_event_compliance.services import visualization_deviation_automata
+from streaming_event_compliance.services import visualization_deviation_automata, setup
 from streaming_event_compliance.services.compliance_check import case_thread_cc
-from streaming_event_compliance.services import globalvar
+from streaming_event_compliance.objects.variable.globalvar import gVars, CCM, CTM
 from streaming_event_compliance.utils.config import MAXIMUN_WINDOW_SIZE
 import threading
 from streaming_event_compliance.database import dbtools
@@ -33,10 +33,10 @@ def compliance_checker(client_uuid, event):
     :param event:
     :return:
     """
-    if globalvar.get_autos_status():
-        client_cases = globalvar.get_client_case_memory().dictionary_cases.get(client_uuid)
-        client_threads = globalvar.get_client_thread_memory().dictionary_threads.get(client_uuid)
-        client_locks = globalvar.get_client_case_memory().lock_List.get(client_uuid)
+    if gVars.auto_status:
+        client_cases = CCM.dictionary_cases.get(client_uuid)
+        client_threads = CTM.dictionary_threads.get(client_uuid)
+        client_locks = CCM.lock_List.get(client_uuid)
         if event['case_id'] != 'NONE' and event['activity'] != 'END':
             if event['case_id'] in client_cases:
                 client_cases.get(event['case_id']).append(event['activity'])
@@ -69,14 +69,14 @@ def compliance_checker(client_uuid, event):
                 console.error('compliance_checker' + traceback.format_exc())
                 raise ThreadException(traceback.format_exc())
             else:
-                alert_log = globalvar.get_user_alert_logs(client_uuid)
+                alert_log = gVars.get_client_alert_logs(client_uuid)
                 dbtools.create_user(client_uuid)
                 dbtools.insert_alert_log(alert_log)
                 visualization_deviation_automata.build_deviation_pdf(client_uuid)
                 dbtools.update_user_status(client_uuid, True)
 
-                globalvar.set_user(client_uuid, True)
-                globalvar.compliance_checking_clear(client_uuid)
+                gVars.clients_status[client_uuid] = True
+                setup.clear_cc_memorizer(client_uuid)
                 return json.dumps({'body': 'The compliance checking is over, you can get the deviation pdf!'})
     else:
         return json.dumps({'body': 'Sorry, automata has not built, please wait for a while!'})

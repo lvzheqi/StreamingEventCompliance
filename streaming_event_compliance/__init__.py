@@ -9,4 +9,5 @@ app.config['SQLALCHEMY_DATABASE_URI'] = config.DATABASE_PATH
 
 db = SQLAlchemy(app)
 
+
 from streaming_event_compliance import routes
