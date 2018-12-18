@@ -19,12 +19,9 @@ def visualization_automata(autos, alogs, uuid):
             for node in auto.get_nodes().keys():
                 sub.node(node, node)
             for conn in auto.get_connections():
-                try:
-                    if conn.source_node != 'NONE' and conn.count > 0 and conn.probability > THRESHOLD:
-                        sub.edge(conn.source_node, conn.sink_node, penwidth='0.5')
-                             # label=str(conn.probability), penwidth=str(conn.probability*2))
-                except Exception as e:
-                    print(e)
+                if conn.source_node != 'NONE' and conn.count > 0 and conn.probability > THRESHOLD:
+                    sub.edge(conn.source_node, conn.sink_node, penwidth='0.5')
+                         # label=str(conn.probability), penwidth=str(conn.probability*2))
 
             max_count = alog.get_max_count()
             for record in alog.get_alert_log():

@@ -8,6 +8,7 @@ if __name__ == '__main__':
     try:
         db.create_all()
     except Exception as ec:
+        print(ec)
         print('Error: Database connection!', ec.__class__)
         exit(1)
 

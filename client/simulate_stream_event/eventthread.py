@@ -53,14 +53,22 @@ class EventThread(Thread):
                                          self.event['activity'],
                                          'The server response is: ' + response.text)
                 message = response.json()
-                print(message)
                 if message['body'] == 'M':
-                    print("Alert: no such connection in case '", message['case_id'], "'")
-                    print('    The connection:', message['source_node'], '-->', message['sink_node'])
-                    if len(message['expect']) != 0:
-                        print('    The expected connection:')
-                        for s_node in message['expect']:
-                            print('\t', message['source_node'], '-->', s_node, ': ', message['expect'][s_node])
+                    # print(message['source_node'])
+                    if message['source_node'] == 'NONE':
+                        print("Alert: no such start node'", message['source_node'], "'in case '",
+                              message['case_id'], "'")
+                        if len(message['expect']) != 0:
+                            print('    The expected start node:')
+                            for s_node in message['expect']:
+                                print("\t '", s_node, "' with probability: ", message['expect'][s_node])
+                    else:
+                        print("Alert: no such connection in case '", message['case_id'], "'")
+                        print('    The connection:', message['source_node'], '-->', message['sink_node'])
+                        if len(message['expect']) != 0:
+                            print('    The expected connection:')
+                            for s_node in message['expect']:
+                                print('\t', message['source_node'], '-->', s_node, ': ', message['expect'][s_node])
                 elif message['body'] == 'T':
                     print("Alert: The threshold of the connection in case'", message['case_id'] ,"'is too low.")
                     print('   The minimal expected probability from ', message['source_node'], '-->',
