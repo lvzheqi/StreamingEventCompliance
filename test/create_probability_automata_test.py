@@ -1,13 +1,14 @@
 import unittest
 from streaming_event_compliance.services import visualization_deviation_automata
-from streaming_event_compliance.objects.variable import globalvar
+from streaming_event_compliance.objects.variable.globalvar import gVars
 from streaming_event_compliance.objects.automata import alertlog
+from streaming_event_compliance.services import setup
 
 
 class CreateProbabilityAutomataTest(unittest.TestCase):
 
     def setUp(self):
-        globalvar.init()
+        setup.init_automata()
 
         self.uuid = 'client1'
         alog1 = alertlog.AlertLog()
@@ -27,7 +28,7 @@ class CreateProbabilityAutomataTest(unittest.TestCase):
         self.u_alogs = {'client1': alogs}
 
     def test_create_automata(self):
-        visualization_deviation_automata.visualization_automata(globalvar.autos, self.u_alogs[self.uuid], self.uuid)
+        visualization_deviation_automata.visualization_automata(gVars.autos, self.u_alogs[self.uuid], self.uuid)
 
 
 if __name__ == '__main__':
