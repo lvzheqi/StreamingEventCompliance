@@ -1,9 +1,10 @@
 from streaming_event_compliance import app
 from streaming_event_compliance.services import globalvar
-from flask_sqlalchemy import SQLAlchemy
 import pytest
-import os
 import json
+from streaming_event_compliance.utils import config
+from pm4py.objects.log.importer.xes import factory as xes_importer
+from pm4py.objects.log import transform
 
 
 @pytest.fixture
@@ -29,16 +30,33 @@ def test_index(client):
 
 def test_call_login(client):
     rv = login(client, app.config['client_uuid'])
+    print(rv.data)
     assert b'False' in rv.data
 
 
 def test_compliance_check(client):
-    event = {}
-    event['case_id'] = 'case1'
-    event['activity'] = 'b'
-    rv = compliance_check(client, app.config['client_uuid'], event)
-    # assert b'Sorry, automata has not built, please wait for a while!' in rv.data
-    assert b"{'case_id': 'case1', 'source_node': None, 'sink_node': 'b', 'cause': '', 'message': 'OK'}" in rv.data
+    """
+    Case1: No alerts
+    :param client:
+    :return:
+    """
+    trace_log = xes_importer.import_log(config.TRAINING_EVENT_LOG_PATH)
+    event_log = transform.transform_trace_log_to_event_log(trace_log)
+    event_log.sort()
+    sum = len(event_log)
+    print(sum)
+    for one_event in event_log:
+        event = {}
+        for item in one_event.keys():
+            if item == 'concept:name':
+                event['activity'] = one_event.get(item)
+            elif item == 'case:concept:name':
+                event['case_id'] = one_event.get(item)
+        print(sum)
+        # rv = compliance_check(client, app.config['client_uuid'], event)
+        # print(rv)
+        # assert b'{"body": "OK"}' in rv.data
+
 
 
 
