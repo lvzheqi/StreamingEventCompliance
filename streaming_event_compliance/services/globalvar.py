@@ -160,10 +160,10 @@ def get_client_checking_status():
 
 
 def compliance_checking_init(client_uuid):
-    alert_logs[client_uuid] = {1: alertlog.AlertLog(client_uuid, 1),
-                               2: alertlog.AlertLog(client_uuid, 2),
-                               3: alertlog.AlertLog(client_uuid, 3),
-                               4: alertlog.AlertLog(client_uuid, 4)}
+    alert_logs[client_uuid] = {1: alertlog.AlertLog(),
+                               2: alertlog.AlertLog(),
+                               3: alertlog.AlertLog(),
+                               4: alertlog.AlertLog()}
     CCM.dictionary_cases[client_uuid] = {}
     CTM.dictionary_threads[client_uuid] = {}
     CCM.lock_List[client_uuid] = {}
@@ -180,10 +180,10 @@ def compliance_checking_clear(client_uuid):
 def test_alertlog():
     global alert_logs
     uuid = 'client1'
-    alog1 = alertlog.AlertLog(uuid, 1)
-    alog2 = alertlog.AlertLog(uuid, 2)
-    alog3 = alertlog.AlertLog(uuid, 3)
-    alog4 = alertlog.AlertLog(uuid, 4)
+    alog1 = alertlog.AlertLog()
+    alog2 = alertlog.AlertLog()
+    alog3 = alertlog.AlertLog()
+    alog4 = alertlog.AlertLog()
     alog1.update_alert_record(alertlog.AlertRecord(uuid, 'a', 'd', 4, 'M'))
     alog1.update_alert_record(alertlog.AlertRecord(uuid, 'a', 'f', 2, 'M'))
     alog1.update_alert_record(alertlog.AlertRecord(uuid, 'd', 'b', 1, 'M'))

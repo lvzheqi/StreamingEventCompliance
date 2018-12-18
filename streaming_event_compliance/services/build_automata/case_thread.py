@@ -92,7 +92,7 @@ def calcuate_connection_for_different_prefix_automata(windowsMemory):
                          (i.e. event == windowsMemory[maximum_window_size])
 
     :param event:
-    :return:
+    :return：
     """
     autos = globalvar.get_autos()
     CL = globalvar.get_connection_locks()
@@ -106,6 +106,8 @@ def calcuate_connection_for_different_prefix_automata(windowsMemory):
                         autos.get(ws).update_automata(automata.Connection(source_node, '~!@#$%', 0))
                     elif source_node.find('*') == -1:
                         autos.get(ws).update_automata(automata.Connection(source_node, sink_node, 1))
+                    elif source_node.find('*') != -1 and sink_node.find('*') == -1:
+                        autos.get(ws).update_automata(automata.Connection('NONE', sink_node, 1))
                     CL.lock_List.get((source_node, sink_node)).release()
                 except Exception as ec:
                     raise ec

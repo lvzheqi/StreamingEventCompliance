@@ -3,7 +3,6 @@ from pm4py.objects.log import transform
 from . import eventthread
 from .client_logging import ClientLogging
 from .exception import ReadFileException, ConnectionException
-import time
 import sys
 
 threads = []

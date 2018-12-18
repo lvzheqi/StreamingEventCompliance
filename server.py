@@ -13,7 +13,7 @@ if __name__ == '__main__':
 
     from streaming_event_compliance.services import globalvar
     from streaming_event_compliance.database import dbtools
-    dbtools.empty_tables()  # TODO: Jingjing-After building the correct automata, uncommend this line;
+    dbtools.empty_tables()  # TODO: After building the correct automata, uncommend this line;
     globalvar.init()
     auto_status = globalvar.get_autos_status()
     if auto_status == 0:
