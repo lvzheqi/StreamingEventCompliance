@@ -1,4 +1,4 @@
-from streaming_event_compliance.services import globalvar
+from streaming_event_compliance.objects.variable.globalvar import gVars
 from streaming_event_compliance.utils.config import CLEINT_DATA_PATH, AUTOMATA_FILE, FILE_TYPE, WINDOW_SIZE, \
     MAXIMUN_WINDOW_SIZE, THRESHOLD
 from graphviz import Digraph
@@ -68,7 +68,7 @@ def build_deviation_pdf(client_uuid):
     stored in AlertLog entity in database. This pdf is stored in local as “<client_uuid>_deviations.pdf”.
     :param client_uuid: user name
     '''
-    visualization_automata(globalvar.autos, globalvar.get_user_alert_logs(client_uuid), client_uuid)
+    visualization_automata(gVars.autos, gVars.get_user_alert_logs(client_uuid), client_uuid)
 
 
 def show_deviation_pdf(client_uuid):

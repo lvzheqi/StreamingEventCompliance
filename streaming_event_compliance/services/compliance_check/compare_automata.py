@@ -1,4 +1,4 @@
-from streaming_event_compliance.services import globalvar
+from streaming_event_compliance.objects.variable.globalvar import gVars
 from streaming_event_compliance.utils.config import THRESHOLD
 from streaming_event_compliance.objects.automata import alertlog, automata
 
@@ -17,8 +17,9 @@ def check_alert(windowsize, source_node, sink_node, client_uuid):
         :param client_uuid: user name
         :return: alert message
     '''
-    alert_log = globalvar.get_user_alert_logs(client_uuid)[windowsize]
-    auto = globalvar.get_autos()[windowsize]
+    alert_log = gVars.get_user_alert_logs(client_uuid)[windowsize]
+    auto = gVars.autos[windowsize]
+    print(auto)
     conn = automata.Connection(source_node, sink_node)
     if auto.contains_connection(conn):
         if auto.get_connection_probability(conn) >= THRESHOLD:
