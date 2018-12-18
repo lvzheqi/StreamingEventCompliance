@@ -19,6 +19,7 @@ class BuildingAutomataTestCase(unittest.TestCase):
     def setUp(self):
         '''do something before every test method'''
         dbtools.empty_tables()
+        # init automata
         globalvar.init()
 
     def test_multi_threading_for_building_automata(self):
@@ -45,7 +46,7 @@ class BuildingAutomataTestCase(unittest.TestCase):
                 expected_log[event['case_id']] = []
                 expected_log[event['case_id']].append(event['activity'])
 
-        end_message = {}
+        # end_message = {}
         # for case in expected_log:
         #     end_message['case_id'] = item
         #     end_message['activity'] = '~!@#$%'
@@ -55,39 +56,37 @@ class BuildingAutomataTestCase(unittest.TestCase):
 
     def test_calcuate_connection_for_different_prefix_automata(self):
         windowsMemory = ['a', 'b', 'c', 'd', 'e']
-        autos_manual1 = automata.Automata(1)
+        autos_manual1 = automata.Automata()
         autos_manual1.update_automata(automata.Connection('d', 'e', 1))
-        autos_manual2 = automata.Automata(2)
+        autos_manual2 = automata.Automata()
         autos_manual2.update_automata(automata.Connection('c,d', 'd,e', 1))
-        autos_manual3 = automata.Automata(3)
+        autos_manual3 = automata.Automata()
         autos_manual3.update_automata(automata.Connection('b,c,d', 'c,d,e', 1))
-        autos_manual4 = automata.Automata(4)
+        autos_manual4 = automata.Automata()
         autos_manual4.update_automata(automata.Connection('a,b,c,d', 'b,c,d,e', 1))
         autos_manuals = {1: autos_manual1, 2: autos_manual2, 3: autos_manual3, 4: autos_manual4}
         case_thread.calcuate_connection_for_different_prefix_automata(windowsMemory)
         autos = globalvar.get_autos()
-        # self.assertEqual(autos_manuals, autos)
         for ws in config.WINDOW_SIZE:
-            self.assertEqual(autos_manuals[ws].connections, autos[ws].connections)
-            self.assertEqual(autos_manuals[ws].nodes, autos[ws].nodes)
+            self.assertEqual(autos_manuals[ws].get_connections(), autos[ws].get_connections())
+            self.assertEqual(autos_manuals[ws].get_nodes(), autos[ws].get_nodes())
 
     def test_calcuate_connection_for_different_prefix_automata_with_endevent(self):
         windowsMemory = ['a', 'b', 'c', 'd', '~!@#$%']
-        autos_manual1 = automata.Automata(1)
+        autos_manual1 = automata.Automata()
         autos_manual1.update_automata(automata.Connection('d', '~!@#$%', 0))
-        autos_manual2 = automata.Automata(2)
+        autos_manual2 = automata.Automata()
         autos_manual2.update_automata(automata.Connection('c,d', '~!@#$%', 0))
-        autos_manual3 = automata.Automata(3)
+        autos_manual3 = automata.Automata()
         autos_manual3.update_automata(automata.Connection('b,c,d', '~!@#$%', 0))
-        autos_manual4 = automata.Automata(4)
+        autos_manual4 = automata.Automata()
         autos_manual4.update_automata(automata.Connection('a,b,c,d', '~!@#$%', 0))
         autos_manuals = {1: autos_manual1, 2: autos_manual2, 3: autos_manual3, 4: autos_manual4}
         case_thread.calcuate_connection_for_different_prefix_automata(windowsMemory)
         autos = globalvar.get_autos()
         for ws in config.WINDOW_SIZE:
-            self.assertEqual(autos_manuals[ws].connections, autos[ws].connections)
-            self.assertEqual(autos_manuals[ws].nodes, autos[ws].nodes)
-
+            self.assertEqual(autos_manuals[ws].get_connections(), autos[ws].get_connections())
+            self.assertEqual(autos_manuals[ws].get_nodes(), autos[ws].get_nodes())
 
 
 if __name__ == '__main__':

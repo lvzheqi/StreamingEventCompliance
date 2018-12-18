@@ -107,9 +107,7 @@ def build_automata_pro():
             T.dictionary_threads[threads_index] = thread
             threads.append(thread)
             threads_index = threads_index + 1
-    print(threads_index)
     for th in threads:
-        print(th)
         try:
             th.join_with_exception()
         except ThreadException:
