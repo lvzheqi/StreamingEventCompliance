@@ -24,10 +24,8 @@ class CaseThreadForCC(Thread):
     def join_with_exception(self):
         ex_info = self.wait_for_exc_info()
         if ex_info is None:
-            print('-----')
             return
         else:
-            print('++++')
             raise ThreadException(traceback.format_exc())
 
     def get_message(self):
@@ -45,7 +43,6 @@ class CaseThreadForCC(Thread):
         client_cases = self.CCM.dictionary_cases.get(self.client_uuid)
         client_locks = self.CCM.lock_List.get(self.client_uuid)
         try:
-            self._status_queue.put(None)
             if client_locks.get(self.event['case_id']).acquire():
                 if len(client_cases.get(self.event['case_id'])) < MAXIMUN_WINDOW_SIZE + 1:
                     windows_memory = client_cases.get(self.event['case_id'])
@@ -58,7 +55,7 @@ class CaseThreadForCC(Thread):
                 self._message.put(message)
                 self._status_queue.put(None)
         except Exception as e:
-            print(sys.exc_info(),'----')
+            print(e)
             self._status_queue.put(sys.exc_info())
 
 

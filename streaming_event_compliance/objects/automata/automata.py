@@ -78,7 +78,7 @@ class Automata:
         return list(self._connections.values())
 
     def get_sink_nodes(self, source_node):
-        if source_node is None:
+        if source_node == 'NONE':
             return {}
         sink_nodes = {}
         for conn in self._connections.values():
