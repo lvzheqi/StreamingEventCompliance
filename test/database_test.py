@@ -8,10 +8,10 @@ class DBToolsTest(unittest.TestCase):
         dbtools.empty_tables()
 
     def create_automata(self):
-        auto1 = automata.Automata(1)
-        auto2 = automata.Automata(2)
-        auto3 = automata.Automata(3)
-        auto4 = automata.Automata(4)
+        auto1 = automata.Automata()
+        auto2 = automata.Automata()
+        auto3 = automata.Automata()
+        auto4 = automata.Automata()
         auto1.update_automata(automata.Connection('A', 'B,', 1))
         auto1.update_automata(automata.Connection('A', 'B,', 1))
         auto1.update_automata(automata.Connection('A', 'C', 1))
@@ -35,10 +35,10 @@ class DBToolsTest(unittest.TestCase):
     def test_alert_log(self):
         uuid = '1'
         dbtools.create_user('1')
-        alog1 = alertlog.AlertLog(uuid, 1)
-        alog2 = alertlog.AlertLog(uuid, 2)
-        alog3 = alertlog.AlertLog(uuid, 3)
-        alog4 = alertlog.AlertLog(uuid, 4)
+        alog1 = alertlog.AlertLog()
+        alog2 = alertlog.AlertLog()
+        alog3 = alertlog.AlertLog()
+        alog4 = alertlog.AlertLog()
         alog1.update_alert_record(alertlog.AlertRecord(uuid, 'A', 'B', 1))
         alog1.update_alert_record(alertlog.AlertRecord(uuid, 'A', 'B', 1))
         alog1.update_alert_record(alertlog.AlertRecord(uuid, 'B', 'B', 1))

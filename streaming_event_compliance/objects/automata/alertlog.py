@@ -3,36 +3,32 @@ from streaming_event_compliance.database import db
 
 class AlertLog:
 
-    def __init__(self, uuid, window_size):
-        self.window_size = window_size
-        self.uuid = uuid
-        self.alert_log = {}
+    def __init__(self):
+        self._alert_log = {}
 
     def update_alert_record(self, alert_record):
         key = hash(alert_record)
-        if key in self.alert_log:
-            alert = self.alert_log[key]
+        if key in self._alert_log:
+            alert = self._alert_log[key]
             alert.alert_count += alert_record.alert_count
         else:
-            self.alert_log[key] = alert_record
+            self._alert_log[key] = alert_record
 
     def add_alert_record_from_database(self, alert_record):
-        self.alert_log[hash(alert_record)] = alert_record
+        self._alert_log[hash(alert_record)] = alert_record
 
     def get_max_count(self):
         count = 0
-        for record in self.alert_log.values():
+        for record in self._alert_log.values():
             if record.alert_count > count:
                 count = record.alert_count
         return count
 
     def get_alert_log(self):
-        return self.alert_log.values()
+        return list(self._alert_log.values())
 
     def __repr__(self):
-        return 'User name: %s' % self.uuid + '\n' + \
-               'Window size: %s' % self.window_size + '\n' + \
-               'alert logger:\n %s' % self.alert_log + '\n'
+        return 'alert logger:\n %s' % self.get_alert_log() + '\n'
 
 
 class User(db.Model):

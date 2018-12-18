@@ -14,9 +14,9 @@ def visualization_automata(autos, alogs, uuid):
     for i in range(MAXIMUN_WINDOW_SIZE - 1, -1, -1):
         auto = autos[WINDOW_SIZE[i]]
         alog = alogs[WINDOW_SIZE[i]]
-        with viz.subgraph(name='cluster' + str(auto.window_size)) as sub:
-            sub.attr(color='black', label='Probability Graph With Prefix Size ' + str(auto.window_size))
-            for node in auto.nodes.keys():
+        with viz.subgraph(name='cluster' + str(WINDOW_SIZE[i])) as sub:
+            sub.attr(color='black', label='Probability Graph With Prefix Size ' + str(WINDOW_SIZE[i]))
+            for node in auto.get_nodes().keys():
                 sub.node(node, node)
             for conn in auto.get_connections():
                 if conn.count > 0 and conn.probability > THRESHOLD:

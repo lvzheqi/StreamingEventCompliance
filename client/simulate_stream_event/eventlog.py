@@ -3,7 +3,6 @@ from pm4py.objects.log import transform
 from . import eventthread
 from .client_logging import ClientLogging
 from .exception import ReadFileException, ConnectionException
-import time
 import sys
 
 threads = []
@@ -30,7 +29,6 @@ def simulate_stream_event(client_uuid, event_log):
     for event in event_log:
         dic = {}
         for item in event.keys():
-            time.sleep(.1) # TODO: Jingjing-remove
             if item == 'concept:name':
                 dic['activity'] = event.get(item)
             elif item == 'case:concept:name':

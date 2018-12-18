@@ -42,10 +42,9 @@ def compliance_checker(client_uuid, event):
                 try:
                     thread.start()
                     client_threads.get(client_uuid).append(thread)
-                    message = thread.get_message().get()
-                    print(message, 'message')
-                    return json.dumps(message)
-                except Exception:
+                    return json.dumps(thread.get_message().get())
+                except Exception as e:
+                    print(e)
                     raise ThreadException(traceback.format_exc())
             else:
                 client_cases[event['case_id']] = ['*' for i in range(0, MAXIMUN_WINDOW_SIZE)]
@@ -56,16 +55,16 @@ def compliance_checker(client_uuid, event):
                 try:
                     thread.start()
                     client_threads[client_uuid] = [thread]
-                    message = thread.get_message().get()
-                    print(message)
-                    return json.dumps(message)
-                except Exception:
+                    return json.dumps(thread.get_message().get())
+                except Exception as e:
+                    print(e)
                     raise ThreadException(traceback.format_exc())
         elif event['case_id'] == 'NONE' and event['activity'] == 'END':
             try:
                 for th in client_threads.get(client_uuid):
                     th.join_with_exception()
-            except Exception:
+            except Exception as e:
+                print(e)
                 raise ThreadException(traceback.format_exc())
             else:
                 alert_log = globalvar.get_user_alert_logs(client_uuid)
@@ -75,8 +74,7 @@ def compliance_checker(client_uuid, event):
                 dbtools.update_user_status(client_uuid, True)
                 globalvar.set_user(client_uuid, True)
                 globalvar.compliance_checking_clear(client_uuid)
-                response = 'The compliance checking is over, you can get the deviation pdf!'
-                return response
+                return json.dumps({'body': 'The compliance checking is over, you can get the deviation pdf!'})
     else:
-        response = 'Sorry, automata has not built, please wait for a while!'
-        return response
+        return json.dumps({'body': 'Sorry, automata has not built, please wait for a while!'})
+
