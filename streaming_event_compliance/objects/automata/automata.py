@@ -6,9 +6,11 @@ class Automata:
     def __init__(self):
         self._nodes = {}
         self._connections = {}
+        self._total_number = 0
 
     def update_node(self, node, count):
         if node == 'NONE':
+            self._total_number += 1
             return
         if node in self._nodes:
             self._nodes[node] += count
@@ -38,12 +40,14 @@ class Automata:
 
     def set_probability(self):
         for conn in self.get_connections():
-            if conn.source_node != 'NONE':
+            if conn.source_node == 'NONE':
+                conn.probability = conn.count / self._total_number
+            else:
                 degree = self._nodes[conn.source_node]
-                try:
-                    conn.probability = conn.count / degree
-                except ZeroDivisionError:
+                if degree == 0:
                     conn.probability = 0
+                else:
+                    conn.probability = conn.count / degree
 
     def contains_source_node(self, source_node):
         '''
@@ -77,10 +81,8 @@ class Automata:
         return list(self._connections.values())
 
     def get_sink_nodes(self, source_node):
-        if source_node == 'NONE':
-            return {}
         sink_nodes = {}
-        for conn in self._connections.values():
+        for conn in self.get_connections():
             if conn.source_node == source_node and conn.probability > 0:
                 sink_nodes[conn.sink_node] = conn.probability
         return sink_nodes
