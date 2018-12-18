@@ -5,6 +5,8 @@ from multiprocessing import Process
 import sys
 import requests
 import os
+from console_logging.console import Console
+console=Console()
 
 
 class Client_cls(object):
@@ -54,13 +56,13 @@ class Client_cls(object):
                                                                    'Deviations PDF is available at '
                                                                    'http://127.0.0.1:5000/show-deviation-pdf?uuid=' +
                                              self.uuid)
-                    print('The compliance checking is already done! You can get the pdf on the following link:')
-                    print('http://127.0.0.1:5000/show-deviation-pdf?uuid=' + self.uuid)
+                    console.info('The compliance checking is already done! You can get the pdf on the following link:')
+                    console.info('http://127.0.0.1:5000/show-deviation-pdf?uuid=' + self.uuid)
                 else:
                     ClientLogging().log_error(func_name, self.uuid, self.uuid +
                                               ' has not done compliance checking, '
                                               'hence warning generated to first do compliance checking')
-                    print('Warning: You have not do the compliance checking, '
+                    console.info('Warning: You have not do the compliance checking, '
                           'please do the compliance checking at first!')
         except Exception:
             raise ServerRequestException('PDF can not be created.')
@@ -70,7 +72,7 @@ def main(argv):
     func_name = sys._getframe().f_code.co_name
 
     if len(argv) >= 3 or len(argv) < 1:
-        print('Please give one or two args, e.g. python client.py user_name (file_path)')
+        console.error('Please give one or two args, e.g. python client.py user_name (file_path)')
         ClientLogging().log_error(func_name,
                                   'Username or Event logger path arguments were not provided during the run time')
         return
@@ -104,7 +106,7 @@ def main(argv):
         print('\tPress 2, if you want to show the deviation pdf')
         print('\tPress 3, if you want to exit')
         if len(argv) == 2:
-            print('Note: you can interrupt with CTR_C, once you start to do the compliance checking')
+            console.info('Note: you can interrupt with CTR_C, once you start to do the compliance checking')
         try:
             services = input()
         except Exception:
@@ -114,10 +116,10 @@ def main(argv):
             redo = '1'
             ClientLogging().log_info(func_name, argv[0], 'The user selected option 1')
             if client.cc_status:
-                print('You have already done the compliance check! Do you really want to restart? '
+                console.info('You have already done the compliance check! Do you really want to restart? '
                       'Or do you want to render the deviation pdf?')
-                print('\tIf you want to restart, please press 1 again!')
-                print('\tIf you want to skip, please press 2!')
+                console.info('\tIf you want to restart, please press 1 again!')
+                console.info('\tIf you want to skip, please press 2!')
                 try:
                     redo = input()
                 except Exception:
@@ -126,43 +128,43 @@ def main(argv):
             if redo == '1':
                 ClientLogging().log_info(func_name, argv[0], 'The user selected option 1')
                 ClientLogging().log_info(func_name, argv[0], 'Calling run_compliance_checker()')
-                print('---------------start to do compliance checking, please wait-------------------')
+                console.info('---------------start to do compliance checking, please wait-------------------')
                 try:
                     p_main = Process(target=client.run_compliance_checker())
                     p_main.start()
                     p_main.join()
                     ClientLogging().log_info(func_name, argv[0], 'compliance checking is completed')
-                    print('------------------the compliance checking is finishing------------------------')
+                    console.info('------------------the compliance checking is finishing------------------------')
                     client.cc_status = True
                 except ReadFileException as e:
                     e.get_message()
                     ClientLogging().log_error(func_name, argv[0], 'Input file is not readable!')
-                    print('------------------the compliance checking is interrupt------------------------')
+                    console.info('------------------the compliance checking is interrupt------------------------')
                 except KeyboardInterrupt:
                     client.cc_status = False
                     ClientLogging().log_error(func_name, argv[0], 'Compliance checking is interrupted by user')
-                    print('------------------the compliance checking is interrupt------------------------')
+                    console.info('------------------the compliance checking is interrupt------------------------')
                 except ConnectionException as e:
                     client.cc_status = False
                     e.get_message()
                     ClientLogging().log_error(func_name, argv[0], 'Server is not available')
-                    print('------------------the compliance checking is interrupt------------------------')
+                    console.info('------------------the compliance checking is interrupt------------------------')
             elif redo == '2':
                 ClientLogging().log_info(func_name, argv[0], 'The user selected option 2')
                 pass
             else:
                 ClientLogging().log_error(func_name, argv[0], 'The users input is invalid')
-                print('Your input is invalid, please try again!')
-                print('------------------------------------------------------------------------------')
+                console.info('Your input is invalid, please try again!')
+                console.info('------------------------------------------------------------------------------')
 
         elif services == '2':
             if not client.cc_status:
-                print('You have not done the compliance checking. Please do the compliance checking ahead!')
-                print('------------------------------------------------------------------------------')
+                console.info('You have not done the compliance checking. Please do the compliance checking ahead!')
+                console.info('------------------------------------------------------------------------------')
             else:
                 ClientLogging().log_info(func_name, argv[0], 'The user selected option 2')
                 ClientLogging().log_info(func_name, argv[0], 'Calling run_show_deviation_pdf() ')
-                print('-----------------start to render deviation pdf, please wait-------------------')
+                console.info('-----------------start to render deviation pdf, please wait-------------------')
                 try:
                     client.run_show_deviation_pdf()
                 except ConnectionException as e:
@@ -172,17 +174,17 @@ def main(argv):
                 except ServerRequestException as e:
                     e.get_message()
                     ClientLogging().log_error(func_name, argv[0], 'pdf can not be created')
-                print('------------------------------------------------------------------------------')
+                console.info('------------------------------------------------------------------------------')
 
         elif services == '3':
             ClientLogging().log_info(func_name, argv[0], 'The user selected option 3')
             ClientLogging().log_info(func_name, argv[0], 'Exiting...')
-            print('Bye!')
+            console.info('Bye!')
             return
         else:
             ClientLogging().log_error(func_name, argv[0], 'The users input is invalid')
-            print('Your input is invalid, please try again!')
-            print('------------------------------------------------------------------------------')
+            console.info('Your input is invalid, please try again!')
+            console.info('------------------------------------------------------------------------------')
 
 
 if __name__ == '__main__':
