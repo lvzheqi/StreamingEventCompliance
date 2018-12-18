@@ -58,8 +58,6 @@ def test_compliance_check(client):
         # assert b'{"body": "OK"}' in rv.data
 
 
-
-
 def login(client, username):
     return client.post('/login', data=dict(
         username=username
