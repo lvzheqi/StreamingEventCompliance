@@ -37,14 +37,13 @@ class Automata:
         self.update_node(connection.source_node, connection.count)
 
     def set_probability(self):
-        for conn in self._connections.values():
-            if conn.source_node == 'NONE':
-                return
-            degree = self._nodes[conn.source_node]
-            try:
-                conn.probability = conn.count / degree
-            except ZeroDivisionError:
-                conn.probability = 0
+        for conn in self.get_connections():
+            if conn.source_node != 'NONE':
+                degree = self._nodes[conn.source_node]
+                try:
+                    conn.probability = conn.count / degree
+                except ZeroDivisionError:
+                    conn.probability = 0
 
     def contains_source_node(self, source_node):
         '''

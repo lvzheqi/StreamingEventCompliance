@@ -19,18 +19,22 @@ def visualization_automata(autos, alogs, uuid):
             for node in auto.get_nodes().keys():
                 sub.node(node, node)
             for conn in auto.get_connections():
-                if conn.count > 0 and conn.probability > THRESHOLD:
-                    sub.edge(conn.source_node, conn.sink_node, penwidth='0.5')
+                try:
+                    if conn.source_node != 'NONE' and conn.count > 0 and conn.probability > THRESHOLD:
+                        sub.edge(conn.source_node, conn.sink_node, penwidth='0.5')
                              # label=str(conn.probability), penwidth=str(conn.probability*2))
+                except Exception as e:
+                    print(e)
 
             max_count = alog.get_max_count()
             for record in alog.get_alert_log():
-                sub.node(record.source_node, record.source_node, fillcolor='red', style='filled')
+                if record.source_node != 'NONE':
+                    sub.node(record.source_node, record.source_node, fillcolor='red', style='filled')
                 sub.node(record.sink_node, record.sink_node, fillcolor='red', style='filled')
-                if record.alert_cause == 'M':
+                if record.alert_cause == 'M' and record.source_node != 'NONE':
                     sub.edge(record.source_node, record.sink_node, color='red', label='count = ' + str(record.alert_count),
                              penwidth=str(record.alert_count / max_count * 3))
-                else:
+                elif record.alert_cause == 'T':
                     sub.edge(record.source_node, record.sink_node, color='green', label='count = ' + str(record.alert_count),
                              penwidth=str(record.alert_count / max_count * 3))
 

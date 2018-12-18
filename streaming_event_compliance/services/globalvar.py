@@ -1,6 +1,7 @@
 from streaming_event_compliance.database import dbtools
 from streaming_event_compliance.services.build_automata import build_automata
 from streaming_event_compliance.objects.automata import alertlog
+from streaming_event_compliance.utils.config import WINDOW_SIZE
 
 
 # Below are operations of autos and auto's status
