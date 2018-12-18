@@ -16,7 +16,7 @@ def empty_tables():
 
 def insert_node_and_connection(autos):
     for auto in autos.values():
-        for node, degree in auto.nodes.items():
+        for node, degree in auto.get_nodes().items():
             source_node = automata.Node(node, degree)
             db.session.add(source_node)
         for conn in auto.get_connections():
@@ -64,7 +64,7 @@ def init_automata_from_database():
     conns = automata.Connection.query.all()
     autos = {}
     for ws in WINDOW_SIZE:
-        auto = automata.Automata(ws)
+        auto = automata.Automata()
         autos[ws] = auto
     if len(conns) != 0:
         for conn in conns:
@@ -80,7 +80,7 @@ def init_alert_log_from_database(uuid):
     records = alertlog.AlertRecord.query.filter_by(user_id=uuid).all()
     alogs = {}
     for ws in WINDOW_SIZE:
-        alog = alertlog.AlertLog(uuid, ws)
+        alog = alertlog.AlertLog()
         alogs[ws] = alog
     for record in records:
         ws = record.source_node.count(',') + 1

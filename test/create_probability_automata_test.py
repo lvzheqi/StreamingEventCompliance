@@ -9,10 +9,10 @@ class CreateProbabilityAutomataTest(unittest.TestCase):
         globalvar.init()
 
         self.uuid = 'client1'
-        alog1 = alertlog.AlertLog(self.uuid, 1)
-        alog2 = alertlog.AlertLog(self.uuid, 2)
-        alog3 = alertlog.AlertLog(self.uuid, 3)
-        alog4 = alertlog.AlertLog(self.uuid, 4)
+        alog1 = alertlog.AlertLog()
+        alog2 = alertlog.AlertLog()
+        alog3 = alertlog.AlertLog()
+        alog4 = alertlog.AlertLog()
         alog1.update_alert_record(alertlog.AlertRecord(self.uuid, 'a', 'd', 4, 'M'))
         alog1.update_alert_record(alertlog.AlertRecord(self.uuid, 'a', 'f', 2, 'M'))
         alog1.update_alert_record(alertlog.AlertRecord(self.uuid, 'd', 'b', 1, 'M'))

@@ -4,8 +4,8 @@ from streaming_event_compliance.objects.automata import automata
 
 class AutomataTest(unittest.TestCase):
     def setUp(self):
-        self.auto1 = automata.Automata(1)
-        self.auto2 = automata.Automata(2)
+        self.auto1 = automata.Automata()
+        self.auto2 = automata.Automata()
         self.auto1.update_automata(automata.Connection('A', 'B', 1))
         self.auto1.update_automata(automata.Connection('A', 'B', 1))
         self.auto1.update_automata(automata.Connection('A', 'C', 1))
@@ -16,20 +16,20 @@ class AutomataTest(unittest.TestCase):
         self.auto2.set_probability()
 
     def test_update_automata(self):
-        for conn in self.auto1.connections.values():
+        for conn in self.auto1._connections.values():
             if conn.sink_node is 'B':
                 self.assertAlmostEqual(conn.probability, 2/3)
             elif conn.sink_node is 'C':
                 self.assertAlmostEqual(conn.probability, 1/3)
             elif conn.sink_node is '$':
                 self.assertAlmostEqual(conn.probability, 0)
-        for conn in self.auto2.connections.values():
+        for conn in self.auto2._connections.values():
             if conn.sink_node is 'B,C':
                 self.assertAlmostEqual(conn.probability, 1)
             elif conn.sink_node is 'D,B':
                 self.assertAlmostEqual(conn.probability, 1)
-        self.assertEqual(self.auto1.nodes, {'A': 3, 'C': 0})
-        self.assertEqual(self.auto2.nodes, {'A,B': 1, 'B,D': 1})
+        self.assertEqual(self.auto1.get_nodes(), {'A': 3, 'C': 0})
+        self.assertEqual(self.auto2.get_nodes(), {'A,B': 1, 'B,D': 1})
 
     def test_contains_source_node(self):
         self.assertEqual(self.auto1.contains_source_node('C'), True)

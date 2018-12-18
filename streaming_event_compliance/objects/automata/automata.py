@@ -1,26 +1,26 @@
 from streaming_event_compliance.database import db
 # TODO: needs to consider, whether the attribute is private
-# TODO: change map methods
 
 
 class Automata:
-    def __init__(self, window_size):
-        self.window_size = window_size
-        self.nodes = {}
-        self.connections = {}
+    def __init__(self):
+        self._nodes = {}
+        self._connections = {}
 
     def update_node(self, node, count):
-        if node in self.nodes:
-            self.nodes[node] += count
+        if node == 'NONE':
+            return
+        if node in self._nodes:
+            self._nodes[node] += count
         else:
-            self.nodes[node] = count
+            self._nodes[node] = count
 
     def add_connection_from_database(self, connection):
         '''
         add connection directly from database into the automata
         :param connection: Connection object
         '''
-        self.connections[hash(connection)] = connection
+        self._connections[hash(connection)] = connection
 
     def update_automata(self, connection):
         '''
@@ -30,15 +30,17 @@ class Automata:
         :return:
         '''
         if self.contains_connection(connection):
-            conn = self.connections[hash(connection)]
+            conn = self._connections[hash(connection)]
             conn.count += connection.count
         else:
-            self.connections[hash(connection)] = connection
+            self._connections[hash(connection)] = connection
         self.update_node(connection.source_node, connection.count)
 
     def set_probability(self):
-        for conn in self.connections.values():
-            degree = self.nodes[conn.source_node]
+        for conn in self._connections.values():
+            if conn.source_node == 'NONE':
+                return
+            degree = self._nodes[conn.source_node]
             try:
                 conn.probability = conn.count / degree
             except ZeroDivisionError:
@@ -50,7 +52,7 @@ class Automata:
         :param source_node: string
         :return: boolean
         '''
-        return source_node in self.nodes
+        return source_node in self._nodes
 
     def contains_connection(self, connection):
         '''
@@ -58,7 +60,7 @@ class Automata:
         :param connection: Connection object
         :return: boolean
         '''
-        return hash(connection) in self.connections
+        return hash(connection) in self._connections
 
     def get_connection_probability(self, connection):
         '''
@@ -67,18 +69,29 @@ class Automata:
         :return: probability or -1
         '''
         if self.contains_connection(connection):
-            conn = self.connections[hash(connection)]
+            conn = self._connections[hash(connection)]
             return conn.probability
         else:
             return -1
 
     def get_connections(self):
-        return self.connections.values()
+        return list(self._connections.values())
+
+    def get_sink_nodes(self, source_node):
+        if source_node is None:
+            return {}
+        sink_nodes = {}
+        for conn in self._connections.values():
+            if conn.source_node == source_node and conn.probability > 0:
+                sink_nodes[conn.sink_node] = conn.probability
+        return sink_nodes
+
+    def get_nodes(self):
+        return self._nodes
 
     def __repr__(self):
-        return "Window size :%s" % self.window_size + \
-               '\nNodes: %s' % self.nodes + \
-               '\nConnections: \n %s' % self.connections + '\n'
+        return '\nNodes: %s' % self.get_nodes() + \
+               '\nConnections: \n %s' % self.get_connections() + '\n'
 
 
 class Node(db.Model):
