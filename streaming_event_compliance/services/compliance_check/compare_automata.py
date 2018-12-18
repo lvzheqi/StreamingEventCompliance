@@ -17,7 +17,7 @@ def check_alert(windowsize, source_node, sink_node, client_uuid):
         :param client_uuid: user name
         :return: alert message
     '''
-    alert_log = gVars.get_user_alert_logs(client_uuid)[windowsize]
+    alert_log = gVars.get_client_alert_logs(client_uuid)[windowsize]
     auto = gVars.autos[windowsize]
     print(auto)
     conn = automata.Connection(source_node, sink_node)

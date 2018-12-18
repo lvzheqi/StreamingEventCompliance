@@ -12,11 +12,11 @@ if __name__ == '__main__':
         exit(1)
 
     from streaming_event_compliance.objects.variable.globalvar import gVars
-    from streaming_event_compliance.services import init_server
+    from streaming_event_compliance.services import setup
     from streaming_event_compliance.services.build_automata import build_automata
     from streaming_event_compliance.database import dbtools
     dbtools.empty_tables()  # TODO: After building the correct automata, uncommend this line;
-    init_server.init_automatas()
+    setup.init_automata()
     if gVars.auto_status == 0:
         start = time.clock()
         try:
