@@ -7,7 +7,8 @@ from streaming_event_compliance.objects.automata import automata
 import sys
 import queue
 import traceback
-
+from console_logging.console import Console
+console = Console()
 
 class CaseThreadForCC(Thread):
     def __init__(self, event, client_uuid):
@@ -54,8 +55,8 @@ class CaseThreadForCC(Thread):
                 client_locks.get(self.event['case_id']).release()
                 self._message.put(message)
                 self._status_queue.put(None)
-        except Exception as e:
-            print(e)
+        except Exception:
+            console.error('ComplianceCaselock' + traceback.format_exc())
             self._status_queue.put(sys.exc_info())
 
 
@@ -68,8 +69,8 @@ def create_source_sink_node(windowsMemory, client_uuid, event):
                          (i.e. event == windowsMemory[maximum_window_size])
     :return:
     """
+    response = {}
     try:
-        response = {}
         for ws in WINDOW_SIZE:
             source_node = ','.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws: MAXIMUN_WINDOW_SIZE])
             sink_node = ','.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws + 1: MAXIMUN_WINDOW_SIZE+1])
@@ -100,8 +101,9 @@ def create_source_sink_node(windowsMemory, client_uuid, event):
             else:
                 response = {'body': 'OK'}
         return response
-    except Exception as e:
-        raise e
+    except Exception as ec:
+        raise ec
+
 
     # TODO: Implement returning to main function ALERT, Threading comments to be removed ,
     # TODO: if an event detected as alert what to do given option at start to keep or remove it from windows memory
