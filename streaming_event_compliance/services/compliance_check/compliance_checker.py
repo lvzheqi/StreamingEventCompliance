@@ -73,6 +73,7 @@ def compliance_checker(client_uuid, event):
                 dbtools.insert_alert_log(alert_log)
                 visualization_deviation_automata.build_deviation_pdf(client_uuid)
                 dbtools.update_user_status(client_uuid, True)
+
                 globalvar.set_user(client_uuid, True)
                 globalvar.compliance_checking_clear(client_uuid)
                 response = 'The compliance checking is over, you can get the deviation pdf!'
