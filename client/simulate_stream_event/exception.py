@@ -1,10 +1,15 @@
+from console_logging.console import Console
+console=Console()
+
+
 class MyException(Exception):
     def __init__(self, message):
         super().__init__(self)
         self.message = message
 
     def get_message(self):
-        print(self.message)
+        console.error(self.message)
+        # print(self.message)
 
 
 class ConnectionException(MyException):

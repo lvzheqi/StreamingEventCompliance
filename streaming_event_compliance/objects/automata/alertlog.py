@@ -47,10 +47,10 @@ class User(db.Model):
 class AlertRecord(db.Model):
     __tablename__ = 'AlertRecord'
 
-    user_id = db.Column('user_id', db.String(350), db.ForeignKey('User.user_name'),
+    user_id = db.Column('user_id', db.String(250), db.ForeignKey('User.user_name'),
                         primary_key=True)
-    source_node = db.Column('source_node', db.String(350), primary_key=True)
-    sink_node = db.Column('sink_node', db.String(350), primary_key=True)
+    source_node = db.Column('source_node', db.String(250), primary_key=True)
+    sink_node = db.Column('sink_node', db.String(250), primary_key=True)
     alert_cause = db.Column('alert_cause', db.String(1))
     alert_count = db.Column('alert_count', db.Float)
 
