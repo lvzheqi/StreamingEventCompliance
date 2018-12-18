@@ -1,7 +1,7 @@
 from threading import Thread
 from streaming_event_compliance.utils.config import WINDOW_SIZE, MAXIMUN_WINDOW_SIZE, THRESHOLD
 from . import compare_automata
-from streaming_event_compliance.services import globalvar
+from streaming_event_compliance.objects.variable.globalvar import gVars, CCM
 from streaming_event_compliance.objects.exceptions.exception import ThreadException
 from streaming_event_compliance.objects.automata import automata
 import sys
@@ -13,7 +13,7 @@ console = Console()
 class CaseThreadForCC(Thread):
     def __init__(self, event, client_uuid):
         self.event = event
-        self.CCM = globalvar.get_client_case_memory()
+        self.CCM = CCM
         self.client_uuid = client_uuid
         self._status_queue = queue.Queue()
         self._message = queue.Queue()
@@ -85,7 +85,7 @@ def create_source_sink_node(windowsMemory, client_uuid, event):
                     'case_id': event['case_id'],
                     'source_node': source_node,
                     'sink_node': sink_node,
-                    'expect': globalvar.autos[ws].get_sink_nodes(source_node),
+                    'expect': gVars.autos[ws].get_sink_nodes(source_node),
                     'body': 'M'
                     }
             elif matches == 1:
@@ -94,7 +94,7 @@ def create_source_sink_node(windowsMemory, client_uuid, event):
                     'case_id': event['case_id'],
                     'source_node': source_node,
                     'sink_node': sink_node,
-                    'cause': globalvar.autos[ws].get_connection_probability(automata.Connection(source_node, sink_node)),
+                    'cause': gVars.autos[ws].get_connection_probability(automata.Connection(source_node, sink_node)),
                     'expect': THRESHOLD,
                     'body': 'T'
                     }

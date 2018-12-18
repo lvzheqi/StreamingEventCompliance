@@ -1,5 +1,6 @@
 import unittest
-from streaming_event_compliance.services import globalvar, visualization_deviation_automata
+from streaming_event_compliance.services import visualization_deviation_automata
+from streaming_event_compliance.objects.variable import globalvar
 from streaming_event_compliance.objects.automata import alertlog
 
 

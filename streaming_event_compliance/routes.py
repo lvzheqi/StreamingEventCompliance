@@ -1,11 +1,12 @@
 from streaming_event_compliance import app
 from flask import request, send_file
 from flask_api import status
-from streaming_event_compliance.services import visualization_deviation_automata, globalvar
+from streaming_event_compliance.services import visualization_deviation_automata, setup
+from streaming_event_compliance.objects.variable.globalvar import gVars
 from streaming_event_compliance.services.compliance_check import compliance_checker
 from streaming_event_compliance.utils.config import CLEINT_DATA_PATH, AUTOMATA_FILE, FILE_TYPE
 from streaming_event_compliance.database import dbtools
-from streaming_event_compliance.objects.exceptions.exception import NoUserException, ThreadException
+from streaming_event_compliance.objects.exceptions.exception import ThreadException
 import json
 
 
@@ -21,7 +22,7 @@ def call_login():
         user_status = False
     else:
         user_status = dbtools.check_user_status(uuid)
-    globalvar.set_user(uuid, user_status)
+    gVars.clients_status[uuid] = user_status
     return str(user_status), status.HTTP_200_OK
 
 
@@ -31,21 +32,20 @@ def call_compliance_checker():
     This function provides the interface to check the compliance of the event.
     :return: status code, application/json
     '''
-    client_uuid = request.args.get('uuid')
-    if globalvar.get_user_status(client_uuid):
-        dbtools.delete_alert(client_uuid)
-        dbtools.update_user_status(client_uuid, False)
-        globalvar.set_user(client_uuid, False)
+    uuid = request.args.get('uuid')
+    if gVars.get_client_status(uuid):
+        dbtools.delete_alert(uuid)
+        dbtools.update_user_status(uuid, False)
+        gVars.clients_status[uuid] = False
 
-    cc_status = globalvar.get_client_checking_status()
-    if client_uuid not in cc_status:
-        cc_status[client_uuid] = True
-        globalvar.compliance_checking_init(client_uuid)
+    if uuid not in gVars.clients_cc_status:
+        gVars.clients_cc_status[uuid] = True
+        setup.init_compliance_checking(uuid)
 
     event = request.json
     event = json.loads(event)
     try:
-        return compliance_checker.compliance_checker(client_uuid, event), status.HTTP_200_OK
+        return compliance_checker.compliance_checker(uuid, event), status.HTTP_200_OK
     except ThreadException:
         print('Error! Something wrong in compliance checking!')
         return "Server Error!"

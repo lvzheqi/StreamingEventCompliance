@@ -1,5 +1,5 @@
 from streaming_event_compliance import app
-from streaming_event_compliance.services import globalvar
+from streaming_event_compliance.objects.variable import globalvar
 import pytest
 import json
 from streaming_event_compliance.utils import config
