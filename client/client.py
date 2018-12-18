@@ -139,28 +139,32 @@ def main(argv):
                 except ReadFileException as e:
                     e.get_message()
                     ClientLogging().log_error(func_name, argv[0], 'Input file is not readable!')
-                    console.secure('Warning', '------------------the compliance checking is interrupt------------------------')
+                    console.secure('Warning',
+                                   '------------------the compliance checking is interrupt------------------------')
                 except KeyboardInterrupt:
                     client.cc_status = False
                     ClientLogging().log_error(func_name, argv[0], 'Compliance checking is interrupted by user')
-                    console.info('------------------the compliance checking is interrupt------------------------')
+                    console.secure('Warning',
+                                   '------------------the compliance checking is interrupt------------------------')
                 except ConnectionException as e:
                     client.cc_status = False
                     e.get_message()
                     ClientLogging().log_error(func_name, argv[0], 'Server is not available')
-                    console.info('------------------the compliance checking is interrupt------------------------')
+                    console.secure('Warning',
+                                   '------------------the compliance checking is interrupt------------------------')
             elif redo == '2':
                 ClientLogging().log_info(func_name, argv[0], 'The user selected option 2')
                 pass
             else:
                 ClientLogging().log_error(func_name, argv[0], 'The users input is invalid')
-                console.info('Your input is invalid, please try again!')
-                console.info('------------------------------------------------------------------------------')
+                console.secure('Warning', 'Your input is invalid, please try again!')
+                print('------------------------------------------------------------------------------')
 
         elif services == '2':
             if not client.cc_status:
-                console.info('You have not done the compliance checking. Please do the compliance checking ahead!')
-                console.info('------------------------------------------------------------------------------')
+                console.secure('Warning',
+                               'You have not done the compliance checking. Please do the compliance checking ahead!')
+                print('------------------------------------------------------------------------------')
             else:
                 ClientLogging().log_info(func_name, argv[0], 'The user selected option 2')
                 ClientLogging().log_info(func_name, argv[0], 'Calling run_show_deviation_pdf() ')
@@ -174,7 +178,7 @@ def main(argv):
                 except ServerRequestException as e:
                     e.get_message()
                     ClientLogging().log_error(func_name, argv[0], 'pdf can not be created')
-                console.info('------------------------------------------------------------------------------')
+                print('------------------------------------------------------------------------------')
 
         elif services == '3':
             ClientLogging().log_info(func_name, argv[0], 'The user selected option 3')
@@ -183,8 +187,8 @@ def main(argv):
             return
         else:
             ClientLogging().log_error(func_name, argv[0], 'The users input is invalid')
-            console.info('Your input is invalid, please try again!')
-            console.info('------------------------------------------------------------------------------')
+            console.secure('Warning', 'Your input is invalid, please try again!')
+            print('------------------------------------------------------------------------------')
 
 
 if __name__ == '__main__':
