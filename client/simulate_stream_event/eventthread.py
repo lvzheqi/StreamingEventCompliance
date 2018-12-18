@@ -55,7 +55,6 @@ class EventThread(Thread):
                                          'The server response is: ' + response.text)
                 message = response.json()
                 if message['body'] == 'M':
-                    # print(message['source_node'])
                     if message['source_node'] == 'NONE':
                         console.info("Alert: no such start node'" + message['source_node']+ "'in case '" +
                               message['case_id'] + "'")
@@ -78,8 +77,7 @@ class EventThread(Thread):
                           message['sink_node'], ': ', message['cause'])
                 elif message['body'] != 'OK':
                     print('Info:', message['body'])
-        except Exception as e:
-            print(e)
+        except Exception:
             ClientLogging().log_error(func_name, self.client_uuid, self.index, self.event['case_id'],
                                       self.event['activity'],
                                       'The server got disconnected, please try again later ')

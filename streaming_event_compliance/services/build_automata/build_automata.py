@@ -9,7 +9,8 @@ from streaming_event_compliance.services import globalvar
 from streaming_event_compliance.objects.exceptions.exception import ReadFileException, ThreadException, EventException
 from multiprocessing import Process
 import traceback
-
+from console_logging.console import Console
+console = Console()
 
 threads = []
 threads_index = 0
@@ -81,7 +82,7 @@ def build_automata_pro():
                     threads.append(thread)
                     threads_index = threads_index + 1
             except Exception:
-                print('some raise')
+                console.error('build_auto_pro:' + traceback.format_exc())
                 raise ThreadException(traceback.format_exc())
 
     #TODO:Jingjing-This join can be done after adding end event！

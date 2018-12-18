@@ -44,7 +44,7 @@ def test_compliance_check(client):
 
     path = config.BASE_DIR + 'data' + os.sep + 'Abelow100M.xes'
     print(path)
-    path = config.TRAINING_EVENT_LOG_PATH
+    # path = config.TRAINING_EVENT_LOG_PATH
     trace_log = xes_importer.import_log(path)
     event_log = transform.transform_trace_log_to_event_log(trace_log)
     event_log.sort()

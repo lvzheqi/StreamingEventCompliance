@@ -6,7 +6,7 @@ import sys
 import requests
 import os
 from console_logging.console import Console
-console=Console()
+console = Console()
 
 
 class Client_cls(object):
@@ -62,8 +62,8 @@ class Client_cls(object):
                     ClientLogging().log_error(func_name, self.uuid, self.uuid +
                                               ' has not done compliance checking, '
                                               'hence warning generated to first do compliance checking')
-                    console.info('Warning: You have not do the compliance checking, '
-                          'please do the compliance checking at first!')
+                    console.secure("Warning", "You have not do the compliance checking, "
+                                              "please do the compliance checking at first!.")
         except Exception:
             raise ServerRequestException('PDF can not be created.')
 
@@ -72,7 +72,7 @@ def main(argv):
     func_name = sys._getframe().f_code.co_name
 
     if len(argv) >= 3 or len(argv) < 1:
-        console.error('Please give one or two args, e.g. python client.py user_name (file_path)')
+        console.secure("Warning", 'Please give one or two args, e.g. python client.py user_name (file_path)')
         ClientLogging().log_error(func_name,
                                   'Username or Event logger path arguments were not provided during the run time')
         return
@@ -116,10 +116,10 @@ def main(argv):
             redo = '1'
             ClientLogging().log_info(func_name, argv[0], 'The user selected option 1')
             if client.cc_status:
-                console.info('You have already done the compliance check! Do you really want to restart? '
+                console.secure("Warning",'You have already done the compliance check! Do you really want to restart? '
                       'Or do you want to render the deviation pdf?')
-                console.info('\tIf you want to restart, please press 1 again!')
-                console.info('\tIf you want to skip, please press 2!')
+                print('\tIf you want to restart, please press 1 again!')
+                print('\tIf you want to skip, please press 2!')
                 try:
                     redo = input()
                 except Exception:
@@ -134,12 +134,12 @@ def main(argv):
                     p_main.start()
                     p_main.join()
                     ClientLogging().log_info(func_name, argv[0], 'compliance checking is completed')
-                    console.info('------------------the compliance checking is finishing------------------------')
+                    console.success('------------------the compliance checking is finishing------------------------')
                     client.cc_status = True
                 except ReadFileException as e:
                     e.get_message()
                     ClientLogging().log_error(func_name, argv[0], 'Input file is not readable!')
-                    console.info('------------------the compliance checking is interrupt------------------------')
+                    console.secure('Warning', '------------------the compliance checking is interrupt------------------------')
                 except KeyboardInterrupt:
                     client.cc_status = False
                     ClientLogging().log_error(func_name, argv[0], 'Compliance checking is interrupted by user')
