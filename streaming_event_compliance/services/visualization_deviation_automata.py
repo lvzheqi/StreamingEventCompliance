@@ -68,7 +68,7 @@ def build_deviation_pdf(client_uuid):
     stored in AlertLog entity in database. This pdf is stored in local as “<client_uuid>_deviations.pdf”.
     :param client_uuid: user name
     '''
-    visualization_automata(gVars.autos, gVars.get_user_alert_logs(client_uuid), client_uuid)
+    visualization_automata(gVars.autos, gVars.get_client_alert_logs(client_uuid), client_uuid)
 
 
 def show_deviation_pdf(client_uuid):

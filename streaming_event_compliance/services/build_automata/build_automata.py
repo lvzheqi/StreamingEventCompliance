@@ -6,7 +6,7 @@ from streaming_event_compliance.utils.config import MAXIMUN_WINDOW_SIZE, WINDOW_
 from streaming_event_compliance.database import dbtools
 from streaming_event_compliance.utils import config
 from streaming_event_compliance.objects.variable.globalvar import T, C, gVars
-from streaming_event_compliance.services import init_server
+from streaming_event_compliance.services import setup
 from streaming_event_compliance.objects.exceptions.exception import ReadFileException, ThreadException, EventException
 from multiprocessing import Process
 import traceback
@@ -32,7 +32,7 @@ def build_automata():
         print("---------------------End: Everything for training automata is Done!---------------------------")
     finally:
         gVars.auto_status = 1
-        init_server.clear_build_automata_memorizer()
+        setup.clear_build_automata_memorizer()
 
 
 def build_automata_pro():

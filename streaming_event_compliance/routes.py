@@ -1,7 +1,7 @@
 from streaming_event_compliance import app
 from flask import request, send_file
 from flask_api import status
-from streaming_event_compliance.services import visualization_deviation_automata, init_server
+from streaming_event_compliance.services import visualization_deviation_automata, setup
 from streaming_event_compliance.objects.variable.globalvar import gVars
 from streaming_event_compliance.services.compliance_check import compliance_checker
 from streaming_event_compliance.utils.config import CLEINT_DATA_PATH, AUTOMATA_FILE, FILE_TYPE
@@ -22,7 +22,7 @@ def call_login():
         user_status = False
     else:
         user_status = dbtools.check_user_status(uuid)
-    gVars.clients[uuid] = user_status
+    gVars.clients_status[uuid] = user_status
     return str(user_status), status.HTTP_200_OK
 
 
@@ -36,11 +36,11 @@ def call_compliance_checker():
     if gVars.get_client_status(uuid):
         dbtools.delete_alert(uuid)
         dbtools.update_user_status(uuid, False)
-        gVars.clients[uuid] = False
+        gVars.clients_status[uuid] = False
 
-    if uuid not in gVars.client_checking_status:
-        gVars.client_checking_status[uuid] = True
-        init_server.init_compliance_checking(uuid)
+    if uuid not in gVars.clients_cc_status:
+        gVars.clients_cc_status[uuid] = True
+        setup.init_compliance_checking(uuid)
 
     event = request.json
     event = json.loads(event)
