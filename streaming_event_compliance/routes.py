@@ -8,10 +8,10 @@ from streaming_event_compliance.services.compliance_check import compliance_chec
 from streaming_event_compliance.utils.config import CLEINT_DATA_PATH, AUTOMATA_FILE, FILE_TYPE
 from streaming_event_compliance.database import dbtools
 from streaming_event_compliance.objects.exceptions.exception import ThreadException
-import json
+import json, traceback
 from console_logging.console import Console
 console = Console()
-
+console.setVerbosity(5)
 
 @app.route('/')
 def index():
@@ -36,22 +36,26 @@ def call_compliance_checker():
     :return: status code, application/json
     '''
     uuid = request.args.get('uuid')
-    if gVars.get_client_status(uuid):
-        dbtools.delete_alert(uuid)
-        dbtools.update_user_status(uuid, False)
-        gVars.clients_status[uuid] = False
-
-    if uuid not in gVars.clients_cc_status:
-        gVars.clients_cc_status[uuid] = True
-        setup.init_compliance_checking(uuid)
-
-    event = request.json
-    event = json.loads(event)
+    response = json.dumps({'body': 'Error, something wrong!'})
     try:
-        return compliance_checker.compliance_checker(uuid, event), status.HTTP_200_OK
+        if gVars.get_client_status(uuid):
+            dbtools.delete_alert(uuid)
+            dbtools.update_user_status(uuid, False)
+            gVars.clients_status[uuid] = False
+
+        if uuid not in gVars.clients_cc_status:
+            gVars.clients_cc_status[uuid] = True
+            setup.init_compliance_checking(uuid)
+
+        event = request.json
+        event = json.loads(event)
+        response = compliance_checker.compliance_checker(uuid, event), status.HTTP_200_OK
+    except KeyError:
+        console.error('Error! Something wrong in parameter getting!' + traceback.format_exc())
     except ThreadException:
-        console.error('Error! Something wrong in call_compliance_checker!')
-        return "Server Error!"
+        console.error('Error! Something wrong in threading!' + traceback.format_exc())
+    finally:
+        return response
 
 
 @app.route('/show-deviation-pdf', methods=['GET', 'POST'])
@@ -67,5 +71,5 @@ def call_show_deviation_pdf():
         automata_pdf = open(CLEINT_DATA_PATH + client_uuid + "_" + AUTOMATA_FILE + FILE_TYPE, 'rb')
         return send_file(automata_pdf, attachment_filename='file.pdf'), status.HTTP_200_OK
     except Exception:
-        console.error('Error! Something wrong in call_show_deviation_pdf!')
+        console.error('Error! Something wrong in call_show_deviation_pdf!' + traceback.format_exc())
         return '', status.HTTP_404_NOT_FOUND

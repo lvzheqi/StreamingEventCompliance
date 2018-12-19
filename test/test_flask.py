@@ -9,7 +9,9 @@ from pm4py.objects.log.importer.xes import factory as xes_importer
 from pm4py.objects.log import transform
 import time
 import os
-
+from console_logging.console import Console
+console = Console()
+console.setVerbosity(5)
 
 @pytest.fixture
 def client():
@@ -48,7 +50,12 @@ def test_compliance_check_time(client):
     start = time.clock()
     compliance_check(client, uuid, event_log)
     end = time.clock()
-    results = sum / (end - start)
+    runtime = end - start
+    results = sum / runtime
+    console.secure("Path:", str(path))
+    console.secure("Events_number:", str(sum))
+    console.secure("Running time:", str(runtime))
+    console.secure("Average speed:", str(results) + " per second!\n")
     assert results > 300
 
     path = config.BASE_DIR + 'data' + os.sep + 'A4.xes'
@@ -57,7 +64,12 @@ def test_compliance_check_time(client):
     start = time.clock()
     compliance_check(client, uuid, event_log)
     end = time.clock()
-    results = sum / (end - start)
+    runtime = end - start
+    results = sum / runtime
+    console.secure("Path:", str(path))
+    console.secure("Events_number:", str(sum))
+    console.secure("Running time:", str(runtime))
+    console.secure("Average speed:", str(results) + " per second!\n")
     assert results > 300
 
 
@@ -68,6 +80,9 @@ def compliance_check(client, uuid, event_log):
     :param client:
     :return:
     """
+    ok = 0
+    alertT = 0
+    alertM = 0
     for one_event in event_log:
         event = {}
         for item in one_event.keys():
@@ -76,7 +91,14 @@ def compliance_check(client, uuid, event_log):
             elif item == 'case:concept:name':
                 event['case_id'] = one_event.get(item)
         rv = client.post('/compliance-checker?uuid=' + uuid, json=json.dumps(event))
+        if b'OK' in rv.data:
+            ok += 1
+        elif b'T' in rv.data:
+            alertT += 1
+        elif b'M' in rv.data:
+            alertM += 1
         assert b'Error' not in rv.data
+    console.secure("Results:", "OK:" + str(ok)+ "; Alert T:" + str(alertT) + "; Alert M:" + str(alertM))
 
 
 def login(client, uuid):
