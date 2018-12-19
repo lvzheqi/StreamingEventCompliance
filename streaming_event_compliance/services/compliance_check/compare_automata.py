@@ -58,5 +58,4 @@ def check_alert(windowsize, source_node, sink_node, client_uuid):
                     lock_list.get((source_node, sink_node)).release()
                     return 2
     except Exception as ec:
-        console.error('check_alert' + traceback.format_exc())
         raise ec

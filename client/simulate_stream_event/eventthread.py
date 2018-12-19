@@ -1,10 +1,10 @@
 from threading import Thread
 import requests
-import sys
+import sys, traceback
 import json
 import queue
 from .client_logging import ClientLogging
-from .exception import ServerRequestException, ThreadException
+from .exception import ServerRequestException, ThreadException, ConnectionException
 from console_logging.console import Console
 console=Console()
 console.setVerbosity(5)
@@ -33,8 +33,11 @@ class EventThread(Thread):
         ex_info = self.wait_for_exc_info()
         if ex_info is None:
             return
+        elif isinstance(ex_info, ZeroDivisionError):
+            console.error(traceback.format_exc())
+            raise ThreadException(str(ex_info))
         else:
-            raise ThreadException(ex_info)
+            raise ConnectionException
 
     def run(self):
         func_name = sys._getframe().f_code.co_name
@@ -44,7 +47,6 @@ class EventThread(Thread):
                                      "Posting event to server:http://127.0.0.1:5000/compliance-checker")
             response = requests.post('http://127.0.0.1:5000/compliance-checker?uuid=' + self.client_uuid,
                               json=json.dumps(self.event))
-            self._status_queue.put(None)
             if response.status_code != 200:
                 ClientLogging().log_error(func_name, self.client_uuid, self.index, self.event['case_id'],
                                           self.event['activity'],
@@ -80,10 +82,11 @@ class EventThread(Thread):
                     console.error(message['body'])
                 elif message['body'] != 'OK':
                     console.info('Info:' + message['body'])
-        except Exception:
+                self._status_queue.put(None)
+        except Exception as ec:
             ClientLogging().log_error(func_name, self.client_uuid, self.index, self.event['case_id'],
                                       self.event['activity'],
                                       'The server got disconnected, please try again later ')
-            self._status_queue.put(sys.exc_info())
+            self._status_queue.put(ec)
 
 

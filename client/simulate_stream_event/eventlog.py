@@ -2,8 +2,11 @@ from pm4py.objects.log.importer.xes import factory as xes_importer
 from pm4py.objects.log import transform
 from . import eventthread
 from .client_logging import ClientLogging
-from .exception import ReadFileException, ConnectionException
-import sys
+from .exception import ReadFileException, ConnectionException, ThreadException
+import sys, traceback
+from console_logging.console import Console
+console = Console()
+console.setVerbosity(5)
 
 threads = []
 T = eventthread.ThreadMemorizer()
@@ -38,8 +41,10 @@ def simulate_stream_event(client_uuid, event_log):
         event_thread = invoke_event_thread(dic, client_uuid)
         try:
             event_thread.join_with_exception()
-        except Exception:
+        except ConnectionException:
             raise ConnectionException
+        except ThreadException as ec:
+            raise ThreadException(str(ec))
 
     end_message = {'case_id': 'NONE', 'activity': 'END'}
     ClientLogging().log_info(func_name, client_uuid, end_message['case_id'], end_message['activity'],

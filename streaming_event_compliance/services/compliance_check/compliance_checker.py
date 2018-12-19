@@ -63,22 +63,25 @@ def compliance_checker(client_uuid, event):
                     console.error('compliance_checker' + traceback.format_exc())
                     raise ThreadException(traceback.format_exc())
         elif event['case_id'] == 'NONE' and event['activity'] == 'END':
-            try:
-                for th in client_threads.get(client_uuid):
+            for th in client_threads.get(client_uuid):
+                try:
                     th.join_with_exception()
-            except Exception:
-                console.error('compliance_checker' + traceback.format_exc())
-                raise ThreadException(traceback.format_exc())
-            else:
-                alert_log = gVars.get_client_alert_logs(client_uuid)
-                dbtools.create_user(client_uuid)
-                dbtools.insert_alert_log(alert_log)
-                visualization_deviation_automata.build_deviation_pdf(client_uuid)
-                dbtools.update_user_status(client_uuid, True)
+                except ZeroDivisionError:
+                    print(traceback.format_exc())
+                except ThreadException as ec:
+                    console.error('compliance_checker' + traceback.format_exc())
+                    raise ThreadException(str(ec))
+                except Exception:
+                    console.error(traceback.format_exc())
+            alert_log = gVars.get_client_alert_logs(client_uuid)
+            dbtools.create_user(client_uuid)
+            dbtools.insert_alert_log(alert_log)
+            visualization_deviation_automata.build_deviation_pdf(client_uuid)
+            dbtools.update_user_status(client_uuid, True)
 
-                gVars.clients_status[client_uuid] = True
-                setup.clear_cc_memorizer(client_uuid)
-                return json.dumps({'body': 'The compliance checking is over, you can get the deviation pdf!'})
+            gVars.clients_status[client_uuid] = True
+            setup.clear_cc_memorizer(client_uuid)
+            return json.dumps({'body': 'The compliance checking is over, you can get the deviation pdf!'})
     else:
         return json.dumps({'body': 'Sorry, automata has not built, please wait for a while!'})
 

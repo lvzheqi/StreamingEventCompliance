@@ -31,6 +31,12 @@ class ReadFileException(MyException):
 
 
 class ThreadException(MyException):
+
     def __init__(self, info):
-        mess = 'ThreadError: ' + info
-        super().__init__(mess)
+        self.exception = info
+        self.mess = 'ThreadError' + " " + str(self.exception)
+        super().__init__(self.mess)
+
+    def __str__(self):
+        s = str(self.exception)
+        return s

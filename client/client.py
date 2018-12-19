@@ -1,8 +1,8 @@
 from simulate_stream_event import eventlog, config
 from simulate_stream_event.client_logging import ClientLogging
-from simulate_stream_event.exception import ReadFileException, ConnectionException, ServerRequestException
+from simulate_stream_event.exception import ReadFileException, ConnectionException, ServerRequestException, ThreadException
 from multiprocessing import Process
-import sys
+import sys, traceback
 import requests
 import os
 from console_logging.console import Console
@@ -41,6 +41,8 @@ class Client_cls(object):
             raise ReadFileException(self.path)
         except ConnectionException:
             raise ConnectionException
+        except ThreadException:
+            raise ThreadException(traceback.format_exc())
 
     def run_show_deviation_pdf(self):
         func_name = sys._getframe().f_code.co_name
@@ -146,6 +148,12 @@ def main(argv):
                     ClientLogging().log_error(func_name, argv[0], 'Compliance checking is interrupted by user')
                     console.secure('Warning',
                                    '------------------the compliance checking is interrupt------------------------')
+                except ThreadException as e:
+                    client.cc_status = False
+                    e.get_message()
+                    ClientLogging().log_error(func_name, argv[0], 'Server is not available')
+                    console.error('------------------the compliance checking is interrupt------------------------')
+
                 except ConnectionException as e:
                     client.cc_status = False
                     e.get_message()
