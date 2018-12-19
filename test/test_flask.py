@@ -24,7 +24,6 @@ def client():
 
 
 def test_index(client):
-    """Start with a blank database."""
     rv = client.get('/')
     assert b'Welcome to Compliance Server! We will provide 2 services!' in rv.data
 
@@ -42,7 +41,7 @@ def test_compliance_check(client):
     """
     login(client, app.config['client_uuid'])
     print(gVars.clients_status)
-    # path = config.BASE_DIR + 'data' + os.sep + 'Abelow100M.xes'
+    # path = config.BASE_DIR + 'data' + os.sep + 'A4.xes'
     path = config.TRAINING_EVENT_LOG_PATH
     trace_log = xes_importer.import_log(path)
     event_log = transform.transform_trace_log_to_event_log(trace_log)
@@ -63,12 +62,10 @@ def test_compliance_check(client):
     assert results > 300
 
 
-def login(client, client_uuid):
-    print('do logon', client_uuid)
-    assert client.get('/create').status_code == 200
-    return client.post('/login', data={'uuid':client_uuid,})
+def login(client, uuid):
+    print('do logon', uuid)
+    return client.post('/login?uuid=' + uuid)
 
 
-def compliance_check(client, client_uuid, event):
-    print('do cc:', client_uuid)
-    return client.post('/compliance-checker?uuid=' + client_uuid, json=json.dumps(event))
+def compliance_check(client, uuid, event):
+    return client.post('/compliance-checker?uuid=' + uuid, json=json.dumps(event))

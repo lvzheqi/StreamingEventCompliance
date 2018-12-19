@@ -18,7 +18,6 @@ def index():
 @app.route('/login', methods=['POST'])
 def call_login():
     uuid = request.args.get('uuid')
-    print('routes:', uuid)
     if dbtools.check_user_status(uuid) is None:
         user_status = False
     else:
