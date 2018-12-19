@@ -7,7 +7,7 @@ import requests
 import os
 from console_logging.console import Console
 console = Console()
-
+console.setVerbosity(5)
 
 class Client_cls(object):
     def __init__(self, user_name, path=None):
@@ -106,7 +106,7 @@ def main(argv):
         print('\tPress 2, if you want to show the deviation pdf')
         print('\tPress 3, if you want to exit')
         if len(argv) == 2:
-            console.info('Note: you can interrupt with CTR_C, once you start to do the compliance checking')
+            console.secure("Note:", 'you can interrupt with CTR_C, once you start to do the compliance checking')
         try:
             services = input()
         except Exception:
@@ -134,7 +134,7 @@ def main(argv):
                     p_main.start()
                     p_main.join()
                     ClientLogging().log_info(func_name, argv[0], 'compliance checking is completed')
-                    console.success('------------------the compliance checking is finishing------------------------')
+                    console.info('------------------the compliance checking is finishing------------------------')
                     client.cc_status = True
                 except ReadFileException as e:
                     e.get_message()

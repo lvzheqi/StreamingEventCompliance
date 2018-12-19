@@ -1,6 +1,6 @@
 from console_logging.console import Console
 console=Console()
-
+console.setVerbosity(5)
 
 class MyException(Exception):
     def __init__(self, message):

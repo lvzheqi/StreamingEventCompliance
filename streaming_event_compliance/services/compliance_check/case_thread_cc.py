@@ -9,6 +9,8 @@ import queue
 import traceback
 from console_logging.console import Console
 console = Console()
+console.setVerbosity(5)
+
 
 class CaseThreadForCC(Thread):
     def __init__(self, event, client_uuid):
@@ -80,7 +82,7 @@ def create_source_sink_node(windowsMemory, client_uuid, event):
                 source_node = 'NONE'
             matches = compare_automata.check_alert(ws, source_node, sink_node, client_uuid)
             if matches == 2:
-                print("Alert !!!  No connection from ", source_node, " to ", sink_node, " due to missing node")
+                # console.secure("Alert !!!", " No connection from " + source_node + " to " + sink_node + " due to missing node")
                 return {
                     'case_id': event['case_id'],
                     'source_node': source_node,
@@ -89,7 +91,7 @@ def create_source_sink_node(windowsMemory, client_uuid, event):
                     'body': 'M'
                     }
             elif matches == 1:
-                print("Alert !!!  No connection from ", source_node, " to ", sink_node, " due to less probability")
+                # console.secure("Alert !!!", " No connection from " + source_node + " to " + sink_node + " due to less probability")
                 return {
                     'case_id': event['case_id'],
                     'source_node': source_node,

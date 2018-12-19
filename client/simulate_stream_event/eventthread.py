@@ -7,6 +7,7 @@ from .client_logging import ClientLogging
 from .exception import ServerRequestException, ThreadException
 from console_logging.console import Console
 console=Console()
+console.setVerbosity(5)
 
 class ThreadMemorizer(object):
     '''
@@ -56,27 +57,29 @@ class EventThread(Thread):
                 message = response.json()
                 if message['body'] == 'M':
                     if message['source_node'] == 'NONE':
-                        console.info("Alert: no such start node'" + message['source_node']+ "'in case '" +
+                        console.secure("Alert:", " no such start node'" + message['source_node']+ "'in case '" +
                               message['case_id'] + "'")
                         if len(message['expect']) != 0:
                             print('    The expected start node:')
                             for s_node in message['expect']:
                                 print("\t '", s_node, "' with probability: ", message['expect'][s_node])
                     else:
-                        console.info("Alert: no such connection in case '" + message['case_id'] + "'")
+                        console.secure("Alert:", " no such connection in case '" + message['case_id'] + "'")
                         print('    The connection:', message['source_node'], '-->', message['sink_node'])
                         if len(message['expect']) != 0:
                             print('    The expected connection:')
                             for s_node in message['expect']:
                                 print('\t', message['source_node'], '-->', s_node, ': ', message['expect'][s_node])
                 elif message['body'] == 'T':
-                    console.info("Alert: The threshold of the connection in case'" + message['case_id'] + "'is too low.")
+                    console.secure("Alert:", " The threshold of the connection in case'" + message['case_id'] + "'is too low.")
                     print('   The minimal expected probability from ', message['source_node'], '-->',
                           message['sink_node'], ': ', message['expect'])
                     print('               The true probability from ', message['source_node'], '-->',
                           message['sink_node'], ': ', message['cause'])
+                elif 'Error' in message['body']:
+                    console.error(message['body'])
                 elif message['body'] != 'OK':
-                    print('Info:', message['body'])
+                    console.info('Info:' + message['body'])
         except Exception:
             ClientLogging().log_error(func_name, self.client_uuid, self.index, self.event['case_id'],
                                       self.event['activity'],
