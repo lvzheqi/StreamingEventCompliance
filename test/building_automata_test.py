@@ -1,9 +1,9 @@
 import unittest
 from streaming_event_compliance.utils import config
-from streaming_event_compliance.services.build_automata import build_automata
-from streaming_event_compliance.services.build_automata import case_thread
+from streaming_event_compliance.services.build_automata import build_automata, case_thread
+from streaming_event_compliance.services import setup
 from streaming_event_compliance.database import dbtools
-from streaming_event_compliance.objects.variable import globalvar
+from streaming_event_compliance.objects.variable.globalvar import gVars
 from pm4py.objects.log.importer.xes import factory as xes_importer
 from pm4py.objects.log import transform
 from streaming_event_compliance.objects.automata import automata
@@ -20,7 +20,7 @@ class BuildingAutomataTestCase(unittest.TestCase):
         '''do something before every test method'''
         dbtools.empty_tables()
         # init automata
-        globalvar.init()
+        setup.init_automata()
 
     def test_multi_threading_for_building_automata(self):
         '''
@@ -66,10 +66,9 @@ class BuildingAutomataTestCase(unittest.TestCase):
         autos_manual4.update_automata(automata.Connection('a,b,c,d', 'b,c,d,e', 1))
         autos_manuals = {1: autos_manual1, 2: autos_manual2, 3: autos_manual3, 4: autos_manual4}
         case_thread.calcuate_connection_for_different_prefix_automata(windowsMemory)
-        autos = globalvar.get_autos()
         for ws in config.WINDOW_SIZE:
-            self.assertEqual(autos_manuals[ws].get_connections(), autos[ws].get_connections())
-            self.assertEqual(autos_manuals[ws].get_nodes(), autos[ws].get_nodes())
+            self.assertEqual(autos_manuals[ws].get_connections(), gVars.autos[ws].get_connections())
+            self.assertEqual(autos_manuals[ws].get_nodes(), gVars.autos[ws].get_nodes())
 
     def test_calcuate_connection_for_different_prefix_automata_with_endevent(self):
         windowsMemory = ['a', 'b', 'c', 'd', '~!@#$%']
@@ -83,10 +82,9 @@ class BuildingAutomataTestCase(unittest.TestCase):
         autos_manual4.update_automata(automata.Connection('a,b,c,d', '~!@#$%', 0))
         autos_manuals = {1: autos_manual1, 2: autos_manual2, 3: autos_manual3, 4: autos_manual4}
         case_thread.calcuate_connection_for_different_prefix_automata(windowsMemory)
-        autos = globalvar.get_autos()
         for ws in config.WINDOW_SIZE:
-            self.assertEqual(autos_manuals[ws].get_connections(), autos[ws].get_connections())
-            self.assertEqual(autos_manuals[ws].get_nodes(), autos[ws].get_nodes())
+            self.assertEqual(autos_manuals[ws].get_connections(), gVars.autos[ws].get_connections())
+            self.assertEqual(autos_manuals[ws].get_nodes(), gVars.autos[ws].get_nodes())
 
 
 if __name__ == '__main__':
