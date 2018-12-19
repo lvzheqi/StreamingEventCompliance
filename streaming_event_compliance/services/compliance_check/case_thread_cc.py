@@ -26,10 +26,16 @@ class CaseThreadForCC(Thread):
 
     def join_with_exception(self):
         ex_info = self.wait_for_exc_info()
+        print(ex_info, ';;;', traceback.format_exc())
         if ex_info is None:
+            console.info('succussful')
             return
+        elif isinstance(ex_info, ZeroDivisionError):
+            print(ex_info, 'not succussful')
+            raise ThreadException(str(ex_info))
         else:
-            raise ThreadException(traceback.format_exc())
+            raise Exception
+
 
     def get_message(self):
         return self._message
@@ -57,9 +63,9 @@ class CaseThreadForCC(Thread):
                 client_locks.get(self.event['case_id']).release()
                 self._message.put(message)
                 self._status_queue.put(None)
-        except Exception:
-            console.error('ComplianceCaselock' + traceback.format_exc())
-            self._status_queue.put(sys.exc_info())
+        except Exception as ec:
+            console.error('run - ComplianceCaselock ' + traceback.format_exc())
+            self._status_queue.put(ec)
 
 
 def create_source_sink_node(windowsMemory, client_uuid, event):
