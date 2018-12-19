@@ -44,12 +44,15 @@ class CaseThreadForTraining(Thread):
         try:
             if self.event['activity'] != '~!@#$%':
                 if self.C.lock_List.get(self.event['case_id']).acquire():
-                    # print('case ', self.event['case_id'], len(self.C.dictionary_cases.get(self.event['case_id'])), self.C.dictionary_cases.get(self.event['case_id']))
                     windows_memory = self.C.dictionary_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
+
+                    '''--------for checking threads error--------'''
                     if len(windows_memory) != 5:
                         print('----len(windows_memory) is not 5')
                     if self.event['activity'] != windows_memory[MAXIMUN_WINDOW_SIZE]:
                         pass
+                    '''---------for checking threads error--------'''
+
                     calcuate_connection_for_different_prefix_automata(windows_memory)
                     if len(self.C.dictionary_cases.get(self.event['case_id'])) > MAXIMUN_WINDOW_SIZE:
                         self.C.dictionary_cases.get(self.event['case_id']).pop(0)
@@ -67,7 +70,12 @@ class CaseThreadForTraining(Thread):
             elif self.event['activity'] == '~!@#$%':
                 if self.C.lock_List.get(self.event['case_id']).acquire():
                     windows_memory = self.C.dictionary_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
-                    windows_memory[MAXIMUN_WINDOW_SIZE]
+
+                    '''---------for checking threads error--------'''
+                    if self.event['activity'] != windows_memory[MAXIMUN_WINDOW_SIZE]:
+                        pass
+                    '''---------for checking threads error--------'''
+
                     calcuate_connection_for_different_prefix_automata(windows_memory)
                     if len(self.C.dictionary_cases.get(self.event['case_id'])) > MAXIMUN_WINDOW_SIZE:
                         self.C.dictionary_cases.get(self.event['case_id']).pop(0)
@@ -94,8 +102,8 @@ def calcuate_connection_for_different_prefix_automata(windowsMemory):
     for ws in WINDOW_SIZE:  # [1, 2, 3, 4]
         source_node = ','.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws: MAXIMUN_WINDOW_SIZE])
         sink_node = ','.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws + 1: MAXIMUN_WINDOW_SIZE + 1])
-        if CL.lock_List.get((source_node, sink_node)):
-            if CL.lock_List.get((source_node, sink_node)).acquire():
+        if CL.lock_list.get((source_node, sink_node)):
+            if CL.lock_list.get((source_node, sink_node)).acquire():
                 try:
                     if windowsMemory[MAXIMUN_WINDOW_SIZE] == '~!@#$%' and source_node.find('*') == -1:
                         gVars.autos.get(ws).update_automata(automata.Connection(source_node, '~!@#$%', 0))
@@ -103,19 +111,19 @@ def calcuate_connection_for_different_prefix_automata(windowsMemory):
                         gVars.autos.get(ws).update_automata(automata.Connection(source_node, sink_node, 1))
                     elif source_node.find('*') != -1 and sink_node.find('*') == -1:
                         gVars.autos.get(ws).update_automata(automata.Connection('NONE', sink_node, 1))
-                    CL.lock_List.get((source_node, sink_node)).release()
+                    CL.lock_list.get((source_node, sink_node)).release()
                 except Exception as ec:
                     raise ec
         else:
             lock = threading.RLock()
-            CL.lock_List[source_node, sink_node] = lock
-            if CL.lock_List.get((source_node, sink_node)).acquire():
+            CL.lock_list[source_node, sink_node] = lock
+            if CL.lock_list.get((source_node, sink_node)).acquire():
                 try:
                     if windowsMemory[MAXIMUN_WINDOW_SIZE] == '~!@#$%' and source_node.find('*') == -1:
                         gVars.autos.get(ws).update_automata(automata.Connection(source_node, '~!@#$%', 0))
                     elif source_node.find('*') == -1:
                         gVars.autos.get(ws).update_automata(automata.Connection(source_node, sink_node, 1))
-                    CL.lock_List.get((source_node, sink_node)).release()
+                    CL.lock_list.get((source_node, sink_node)).release()
                 except Exception as ec:
                     raise ec
 

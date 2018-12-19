@@ -75,7 +75,10 @@ class ConnectionsLocker(object):
     '''
 
     def __init__(self):
-        self.lock_List = {}
+        self.lock_list = {}
+
+    def clear_memorizer(self):
+        self.lock_list = {}
 
     def __setattr__(self, name: str, value: Any) -> None:
         super().__setattr__(name, value)
@@ -84,12 +87,13 @@ class ConnectionsLocker(object):
         return super().__getattribute__(name)
 
 
+
 class ClientThreadMemorizer(ThreadMemorizer):
     def __init__(self):
         super().__init__()
         self.client_number = 0
 
-    def clear_client_memorizer(self, uuid):
+    def init_client_memorizer(self, uuid):
         self.dictionary_threads[uuid] = {}
 
 
@@ -98,9 +102,21 @@ class ClientCaseMemorizer(CaseMemorizer):
         super().__init__()
         self.client_number = 0
 
-    def clear_client_memorizer(self, uuid):
+    def init_client_memorizer(self, uuid):
         self.dictionary_cases[uuid] = {}
         self.lock_List[uuid] = {}
+
+
+class ClientAlertsLocker(object):
+    '''
+    This object is for storing the threads that server creates for each case;
+    '''
+
+    def __init__(self):
+        self.c_alerts_lock_list = {}
+
+    def init_client_memorizer(self, uuid):
+        self.c_alerts_lock_list[uuid] = {}
 
 
 T = ThreadMemorizer()
@@ -109,6 +125,7 @@ CL = ConnectionsLocker()
 
 CTM = ClientThreadMemorizer()
 CCM = ClientCaseMemorizer()
+CAL = ClientAlertsLocker()
 
 gVars = GlobalVars()
 
