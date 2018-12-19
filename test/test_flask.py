@@ -33,21 +33,41 @@ def test_call_login(client):
     assert b'False' in rv.data
 
 
-def test_compliance_check(client):
+def test_compliance_check_time(client):
     """
-    Case1: No alerts
+    Use event log with different length to test the time(average time).
     :param client:
     :return:
     """
-    login(client, app.config['client_uuid'])
-    print(gVars.clients_status)
-    # path = config.BASE_DIR + 'data' + os.sep + 'A4.xes'
+    uuid = app.config['client_uuid']
+    login(client, uuid)
+
     path = config.TRAINING_EVENT_LOG_PATH
-    trace_log = xes_importer.import_log(path)
-    event_log = transform.transform_trace_log_to_event_log(trace_log)
-    event_log.sort()
+    event_log = prepare_event_log(path)
     sum = len(event_log)
     start = time.clock()
+    compliance_check(client, uuid, event_log)
+    end = time.clock()
+    results = sum / (end - start)
+    assert results > 300
+
+    path = config.BASE_DIR + 'data' + os.sep + 'A4.xes'
+    event_log = prepare_event_log(path)
+    sum = len(event_log)
+    start = time.clock()
+    compliance_check(client, uuid, event_log)
+    end = time.clock()
+    results = sum / (end - start)
+    assert results > 300
+
+
+def compliance_check(client, uuid, event_log):
+    """
+    Use the same event log as the trianing phase to do compliacnce checker, so the alerts should be only the
+    type 'T'.
+    :param client:
+    :return:
+    """
     for one_event in event_log:
         event = {}
         for item in one_event.keys():
@@ -55,17 +75,25 @@ def test_compliance_check(client):
                 event['activity'] = one_event.get(item)
             elif item == 'case:concept:name':
                 event['case_id'] = one_event.get(item)
-        rv = compliance_check(client, app.config['client_uuid'], event)
-    end = time.clock()
-    results = sum / (end - start)
-    print(results)
-    assert results > 300
+        rv = client.post('/compliance-checker?uuid=' + uuid, json=json.dumps(event))
+        assert b'Error' not in rv.data
 
 
 def login(client, uuid):
-    print('do logon', uuid)
     return client.post('/login?uuid=' + uuid)
 
 
-def compliance_check(client, uuid, event):
-    return client.post('/compliance-checker?uuid=' + uuid, json=json.dumps(event))
+def prepare_event_log(path):
+    trace_log = xes_importer.import_log(path)
+    event_log = transform.transform_trace_log_to_event_log(trace_log)
+    event_log.sort()
+    return event_log
+
+
+def compliance_check_correctness(client):
+    """
+
+    :param client:
+    :return:
+    """
+    pass

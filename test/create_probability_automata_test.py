@@ -1,5 +1,5 @@
 import unittest
-from streaming_event_compliance.services import visualization_deviation_automata
+from streaming_event_compliance.services.visualization import visualization_deviation_automata
 from streaming_event_compliance.objects.variable.globalvar import gVars
 from streaming_event_compliance.objects.automata import alertlog
 from streaming_event_compliance.services import setup
