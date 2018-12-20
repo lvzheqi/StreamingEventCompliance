@@ -11,8 +11,8 @@ class TestClientLogging(unittest.TestCase):
     def test_log_info_2(self):
         func_name = sys._getframe().f_code.co_name
         test_data_in_log_file = ''
-        compare_test_data_in_log_file = 'INFO Username:Unknown test_log_info_2 Testing logging info with 2 arguments'
-        ServerLogging().log_info(func_name, 'Testing logging info with 2 arguments')
+        compare_test_data_in_log_file = "INFO Username:Unknown test_log_info_2 'Testing logging info with 2 arguments'"
+        ServerLogging().log_info(func_name, "Testing logging info with 2 arguments")
         with open(SERVER_LOG_PATH, 'r') as f:
             lines = f.read().splitlines()
             test_data_in_log_file = lines[-1]
@@ -25,8 +25,8 @@ class TestClientLogging(unittest.TestCase):
         func_name = sys._getframe().f_code.co_name
         uuid = 'test_user'
         test_data_in_log_file = ''
-        compare_test_data_in_log_file = 'INFO test_user test_log_info_3 Testing logging info with 3 arguments'
-        ServerLogging().log_info(func_name, uuid, 'Testing logging info with 3 arguments')
+        compare_test_data_in_log_file = "INFO test_user test_log_info_3 'Testing logging info with 3 arguments'"
+        ServerLogging().log_info(func_name, uuid, "Testing logging info with 3 arguments")
         with open(SERVER_LOG_PATH, 'r') as f:
             lines = f.read().splitlines()
             test_data_in_log_file = lines[-1]
@@ -43,10 +43,10 @@ class TestClientLogging(unittest.TestCase):
             'activity': 'testing_log_info_5',
         }
         test_data_in_log_file = ''
-        compare_test_data_in_log_file = 'INFO test_user test_log_info_5 Case_id:test1 Activity:testing_log_info_5 ' \
-                                        'Testing logging info with 5 arguments'
-        ServerLogging().log_info(func_name, uuid, dic['case_id'], dic['activity'], 'Testing logging info with 5 '
-                                                                                   'arguments')
+        compare_test_data_in_log_file = "INFO test_user test_log_info_5 Case_id:test1 Activity:testing_log_info_5 " \
+                                        "'Testing logging info with 5 arguments'"
+        ServerLogging().log_info(func_name, uuid, dic['case_id'], dic['activity'], "Testing logging info with 5 "
+                                                                                   "arguments")
         with open(SERVER_LOG_PATH, 'r') as f:
             lines = f.read().splitlines()
             test_data_in_log_file = lines[-1]
@@ -64,11 +64,11 @@ class TestClientLogging(unittest.TestCase):
         }
         thread_id = 1
         test_data_in_log_file = ''
-        compare_test_data_in_log_file = 'INFO test_user test_log_info_6 Thread:1 Case_id:test1 Activity:testing_' \
-                                        'log_info_6 ' \
-                                        'Testing logging info with 6 arguments'
-        ServerLogging().log_info(func_name, uuid, thread_id, dic['case_id'], dic['activity'], 'Testing logging info with 6 '
-                                                                                   'arguments')
+        compare_test_data_in_log_file = "INFO test_user test_log_info_6 Thread:1 Case_id:test1 Activity:testing_" \
+                                        "log_info_6 " \
+                                        "'Testing logging info with 6 arguments'"
+        ServerLogging().log_info(func_name, uuid, thread_id, dic['case_id'], dic['activity'], "Testing logging info with 6 "
+                                                                                   "arguments")
         with open(SERVER_LOG_PATH, 'r') as f:
             lines = f.read().splitlines()
             test_data_in_log_file = lines[-1]
@@ -80,8 +80,8 @@ class TestClientLogging(unittest.TestCase):
     def test_log_error_2(self):
         func_name = sys._getframe().f_code.co_name
         test_data_in_log_file = ''
-        compare_test_data_in_log_file = 'ERROR Username:Unknown test_log_error_2 Testing logging error with 2 arguments'
-        ServerLogging().log_error(func_name, 'Testing logging error with 2 arguments')
+        compare_test_data_in_log_file = "ERROR Username:Unknown test_log_error_2 'Testing logging error with 2 arguments'"
+        ServerLogging().log_error(func_name, "Testing logging error with 2 arguments")
         with open(SERVER_LOG_PATH, 'r') as f:
             lines = f.read().splitlines()
             test_data_in_log_file = lines[-1]
@@ -94,8 +94,8 @@ class TestClientLogging(unittest.TestCase):
         func_name = sys._getframe().f_code.co_name
         uuid = 'test_user'
         test_data_in_log_file = ''
-        compare_test_data_in_log_file = 'ERROR test_user test_log_error_3 Testing logging error with 3 arguments'
-        ServerLogging().log_error(func_name, uuid, 'Testing logging error with 3 arguments')
+        compare_test_data_in_log_file = "ERROR test_user test_log_error_3 'Testing logging error with 3 arguments'"
+        ServerLogging().log_error(func_name, uuid, "Testing logging error with 3 arguments")
         with open(SERVER_LOG_PATH, 'r') as f:
             lines = f.read().splitlines()
             test_data_in_log_file = lines[-1]
@@ -112,10 +112,10 @@ class TestClientLogging(unittest.TestCase):
             'activity': 'testing_log_info_5',
         }
         test_data_in_log_file = ''
-        compare_test_data_in_log_file = 'ERROR test_user test_log_error_5 Case_id:test1 Activity:testing_log_info_5 ' \
-                                        'Testing logging error with 5 arguments'
-        ServerLogging().log_error(func_name, uuid, dic['case_id'], dic['activity'], 'Testing logging error with 5 '
-                                                                                    'arguments')
+        compare_test_data_in_log_file = "ERROR test_user test_log_error_5 Case_id:test1 Activity:testing_log_info_5 " \
+                                        "'Testing logging error with 5 arguments'"
+        ServerLogging().log_error(func_name, uuid, dic['case_id'], dic['activity'], "Testing logging error with 5 "
+                                                                                    "arguments")
         with open(SERVER_LOG_PATH, 'r') as f:
             lines = f.read().splitlines()
             test_data_in_log_file = lines[-1]
@@ -133,12 +133,12 @@ class TestClientLogging(unittest.TestCase):
         }
         thread_id = 1
         test_data_in_log_file = ''
-        compare_test_data_in_log_file = 'ERROR test_user test_log_error_6 Thread:1 Case_id:test1 Activity:testing_' \
-                                        'log_info_6 ' \
-                                        'Testing logging error with 6 arguments'
+        compare_test_data_in_log_file = "ERROR test_user test_log_error_6 Thread:1 Case_id:test1 Activity:testing_" \
+                                        "log_info_6 " \
+                                        "'Testing logging error with 6 arguments'"
         ServerLogging().log_error(func_name, uuid, thread_id, dic['case_id'], dic['activity'],
-                                  'Testing logging error with 6 '
-                                  'arguments')
+                                  "Testing logging error with 6 "
+                                  "arguments")
         with open(SERVER_LOG_PATH, 'r') as f:
             lines = f.read().splitlines()
             test_data_in_log_file = lines[-1]
@@ -150,3 +150,4 @@ class TestClientLogging(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
