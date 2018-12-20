@@ -32,14 +32,11 @@ class CaseThreadForCC(Thread):
     def join_with_exception(self):
         ex_info = self.wait_for_exc_info()
         if ex_info is None:
-            console.info('Will join successful')
             return
         elif isinstance(ex_info, ZeroDivisionError):
-            print(ex_info, 'Will not join successful')
             raise ThreadException(str(ex_info))
         else:
             raise Exception
-
 
     def get_message(self):
         return self._message

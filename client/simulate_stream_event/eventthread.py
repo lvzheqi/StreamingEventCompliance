@@ -6,7 +6,7 @@ import queue
 from .client_logging import ClientLogging
 from .exception import ServerRequestException, ThreadException, ConnectionException
 from console_logging.console import Console
-console=Console()
+console = Console()
 console.setVerbosity(5)
 
 class ThreadMemorizer(object):
