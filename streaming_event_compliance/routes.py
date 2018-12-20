@@ -44,7 +44,6 @@ def call_compliance_checker():
             check_client_stauts(uuid)
         elif gVars.get_client_status(uuid):
             dbtools.delete_alert(uuid)
-            os.remove(CLEINT_DATA_PATH + uuid + '_' + AUTOMATA_FILE + FILE_TYPE)
             dbtools.update_user_status(uuid, False)
             gVars.clients_status[uuid] = False
 

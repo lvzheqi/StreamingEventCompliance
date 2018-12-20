@@ -8,12 +8,16 @@ from streaming_event_compliance.database import dbtools
 from streaming_event_compliance.objects.exceptions.exception import ThreadException
 import traceback
 import json
+import os
 from console_logging.console import Console
 
 console = Console()
 console.setVerbosity(5)
 MAXIMUN_WINDOW_SIZE = app.config['MAXIMUN_WINDOW_SIZE']
 THRESHOLD = app.config['THRESHOLD']
+CLEINT_DATA_PATH = app.config['CLEINT_DATA_PATH']
+AUTOMATA_FILE = app.config['AUTOMATA_FILE']
+FILE_TYPE = app.config['FILE_TYPE']
 
 
 def compliance_checker(client_uuid, event):
@@ -80,6 +84,9 @@ def compliance_checker(client_uuid, event):
             alert_log = gVars.get_client_alert_logs(client_uuid)
             dbtools.create_user(client_uuid)
             dbtools.insert_alert_log(alert_log)
+            path = CLEINT_DATA_PATH + client_uuid + '_' + AUTOMATA_FILE + FILE_TYPE
+            if os.path.exists(path):
+                os.remove(path)
             visualization_deviation_automata.show_deviation_pdf(client_uuid)
             dbtools.update_user_status(client_uuid, True)
             gVars.clients_status[client_uuid] = True

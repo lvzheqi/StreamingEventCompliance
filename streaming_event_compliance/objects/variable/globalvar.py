@@ -1,7 +1,16 @@
 from typing import Any
 
 
-class GlobalVars:
+class Singleton(object):
+    _instance = None
+
+    def __new__(cls, *args, **kw):
+        if not cls._instance:
+            cls._instance = super(Singleton, cls).__new__(cls, *args, **kw)
+        return cls._instance
+
+
+class GlobalVars(Singleton):
     def __init__(self):
         self.autos = {}
         self.auto_status = 0
@@ -25,7 +34,7 @@ class GlobalVars:
         return super().__getattribute__(name)
 
 
-class ThreadMemorizer(object):
+class ThreadMemorizer(Singleton):
     '''
     This object is for storing the threads that server creates for each case;
     '''
@@ -43,7 +52,7 @@ class ThreadMemorizer(object):
         return super().__getattribute__(name)
 
 
-class CaseMemorizer(object):
+class CaseMemorizer(Singleton):
     '''
     This object is for storing the cases that server receives;
 
@@ -69,7 +78,7 @@ class CaseMemorizer(object):
         return super().__getattribute__(name)
 
 
-class ConnectionsLocker(object):
+class ConnectionsLocker(Singleton):
     '''
     This object is for storing the threads that server creates for each case;
     '''
@@ -106,7 +115,7 @@ class ClientCaseMemorizer(CaseMemorizer):
         self.lock_List[uuid] = {}
 
 
-class ClientAlertsLocker(object):
+class ClientAlertsLocker(Singleton):
     '''
     This object is for storing the threads that server creates for each case;
     '''
