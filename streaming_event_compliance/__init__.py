@@ -31,8 +31,9 @@ config.read(app.config['CONFIG_PATH'])
 
 # Checking config['USER-DEFINED']:
 if config['USER-DEFINED'].get('TRAINING_EVENT_LOG_PATH') and config['USER-DEFINED']['TRAINING_EVENT_LOG_PATH'] is not None:
+
     app.config['TRAINING_EVENT_LOG_PATH'] = app.config['BASE_DIR'] + \
-                                    config['USER-DEFINED']['TRAINING_EVENT_LOG_PATH']
+                                    config['USER-DEFINED']['TRAINING_EVENT_LOG_PATH'].replace('/', os.sep)
 
 if config['USER-DEFINED'].get('WINDOW_SIZE') and config['USER-DEFINED']['WINDOW_SIZE'] is not None:
     app.config['WINDOW_SIZE'] = list(map(int, re.findall(r"\d+", config['USER-DEFINED']['WINDOW_SIZE'])))
@@ -47,6 +48,7 @@ if config['USER-DEFINED'].get('CHECKING_TYPE') and config['USER-DEFINED']['CHECK
 if config['USER-DEFINED'].get('CHECKING_TYPE') and config['USER-DEFINED']['ALERT_TYPE'] is not None:
     app.config['ALERT_TYPE'] = config['USER-DEFINED']['ALERT_TYPE']
 
+console.info(app.config['TRAINING_EVENT_LOG_PATH'])
 
 db = SQLAlchemy(app)
 
