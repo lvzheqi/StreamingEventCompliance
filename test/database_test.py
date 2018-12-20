@@ -49,7 +49,7 @@ class DBToolsTest(unittest.TestCase):
         alog4.update_alert_record(alertlog.AlertRecord(uuid, 'A,L,K,K', 'B,S,S,D', 1))
         alogs = {1: alog1, 2: alog2, 3: alog3, 4: alog4}
         dbtools.insert_alert_log(alogs)
-        alogs2 = dbtools.init_alert_log_from_database(uuid)
+        alogs2, status = dbtools.init_alert_log_from_database(uuid)
         self.assertEqual(repr(alogs), repr(alogs2))
 
     def test_user(self):

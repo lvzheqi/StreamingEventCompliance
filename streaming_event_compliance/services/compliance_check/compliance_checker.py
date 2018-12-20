@@ -1,7 +1,6 @@
 from streaming_event_compliance.services import setup
 from streaming_event_compliance.services.visualization import visualization_deviation_automata
 from streaming_event_compliance.services.compliance_check import case_thread_cc
-from streaming_event_compliance.objects.automata import alertlog, automata
 from streaming_event_compliance.objects.variable.globalvar import gVars, CCM, CTM
 from streaming_event_compliance import app
 import threading
@@ -10,6 +9,7 @@ from streaming_event_compliance.objects.exceptions.exception import ThreadExcept
 import traceback
 import json
 from console_logging.console import Console
+
 console = Console()
 console.setVerbosity(5)
 MAXIMUN_WINDOW_SIZE = app.config['MAXIMUN_WINDOW_SIZE']
@@ -87,5 +87,3 @@ def compliance_checker(client_uuid, event):
             return json.dumps({'body': 'The compliance checking is over, you can get the deviation pdf!'})
     else:
         return json.dumps({'body': 'Sorry, automata has not built, please wait for a while!'})
-
-

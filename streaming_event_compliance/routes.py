@@ -25,6 +25,8 @@ def index():
 @app.route('/login', methods=['POST'])
 def call_login():
     uuid = request.args.get('uuid')
+    if uuid in gVars.clients_cc_status:
+        return 'Refuse', status.HTTP_200_OK
     return str(check_client_stauts(uuid)), status.HTTP_200_OK
 
 
@@ -74,7 +76,7 @@ def call_show_deviation_pdf():
     pdf_status = visualization_deviation_automata.show_deviation_pdf(client_uuid)
     if pdf_status == 1:
         try:
-            automata_pdf = open(CLEINT_DATA_PATH + client_uuid + "_" + AUTOMATA_FILE + FILE_TYPE, 'rb')
+            automata_pdf = open(CLEINT_DATA_PATH + client_uuid + '_' + AUTOMATA_FILE + FILE_TYPE, 'rb')
             return send_file(automata_pdf, attachment_filename='file.pdf'), status.HTTP_200_OK
         except Exception:
             console.error('Error! Something wrong in call_show_deviation_pdf!' + traceback.format_exc())

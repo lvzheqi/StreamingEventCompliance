@@ -50,7 +50,7 @@ class ClientLogging:
         self.filemode = 'a'
 
     @Overload
-    @signature("str", "str")
+    @signature('str', 'str')
     def log_info(self, func_name, message):
         '''
         This function is used to log info messages
@@ -67,7 +67,7 @@ class ClientLogging:
         logging.info(message)
 
     @log_info.overload
-    @signature("str", "str", "str")
+    @signature('str', 'str', 'str')
     def log_info(self, func_name, username, message):
         '''
         This function is used to log info messages
@@ -85,7 +85,7 @@ class ClientLogging:
         logging.info(message)
 
     @log_info.overload
-    @signature("str", "str", "str", "str", "str")
+    @signature('str', 'str', 'str', 'str', 'str')
     def log_info(self, func_name, username, case_id, activity, message):
         '''
         This function is used to log info messages
@@ -100,13 +100,13 @@ class ClientLogging:
             message:        User defined custom messages
         '''
         message = "'" + message + "'"
-        message = "Case_id:" + case_id + ' ' + "Activity:" + activity + ' ' + message
+        message = 'Case_id:' + case_id + ' ' + 'Activity:' + activity + ' ' + message
         message = ' INFO ' + username + ' ' + func_name + ' ' + message
         logging.basicConfig(filename=self.filename, filemode=self.filemode, level=self.level, format=self.log_format)
         logging.info(message)
 
     @log_info.overload
-    @signature("str", "str", "int",  "str", "str", "str")
+    @signature('str', 'str', 'int',  'str', 'str', 'str')
     def log_info(self, func_name, username, thread_id, case_id, activity, message):
         '''
         This function is used to log info messages
@@ -122,13 +122,13 @@ class ClientLogging:
             message:        User defined custom messages
          '''
         message = "'" + message + "'"
-        message = "Thread:" + str(thread_id) + ' ' + "Case_id:" + case_id + ' ' + "Activity:" + activity + ' ' + message
+        message = 'Thread:' + str(thread_id) + ' ' + 'Case_id:' + case_id + ' ' + 'Activity:' + activity + ' ' + message
         message = ' INFO ' + username + ' ' + func_name + ' ' + message
         logging.basicConfig(filename=self.filename, filemode=self.filemode, level=self.level, format=self.log_format)
         logging.info(message)
 
     @Overload
-    @signature("str", "str")
+    @signature('str', 'str')
     def log_error(self, func_name, message):
         '''
         This function is used to log info messages
@@ -145,7 +145,7 @@ class ClientLogging:
         logging.error(message)
 
     @log_error.overload
-    @signature("str", "str", "str")
+    @signature('str', 'str', 'str')
     def log_error(self, func_name, username, message):
         '''
         This function is used to log info messages
@@ -163,7 +163,7 @@ class ClientLogging:
         logging.error(message)
 
     @log_error.overload
-    @signature("str", "str", "str", "str", "str")
+    @signature('str', 'str', 'str', 'str', 'str')
     def log_error(self, func_name, username, case_id, activity, message):
         '''
         This function is used to log info messages
@@ -178,13 +178,13 @@ class ClientLogging:
             message:        User defined custom messages
         '''
         message = "'" + message + "'"
-        message = "Case_id:" + case_id + ' ' + "Activity:" + activity + ' ' + message
+        message = 'Case_id:' + case_id + ' ' + 'Activity:' + activity + ' ' + message
         message = ' ERROR ' + username + ' ' + func_name + ' ' + message
         logging.basicConfig(filename=self.filename, filemode=self.filemode, level=self.level, format=self.log_format)
         logging.error(message)
 
     @log_error.overload
-    @signature("str", "str", "int", "str", "str", "str")
+    @signature('str', 'str', 'int', 'str', 'str', 'str')
     def log_error(self, func_name, username, thread_id, case_id, activity, message,):
         '''
         This function is used to log info messages
@@ -200,7 +200,7 @@ class ClientLogging:
             message:        User defined custom messages
          '''
         message = "'" + message + "'"
-        message = "Thread:" + str(thread_id) + ' ' + "Case_id:" + case_id + ' ' + "Activity:" + activity + ' ' + message
+        message = 'Thread:' + str(thread_id) + ' ' + 'Case_id:' + case_id + ' ' + 'Activity:' + activity + ' ' + message
         message = ' ERROR ' + username + ' ' + func_name + ' ' + message
         logging.basicConfig(filename=self.filename, filemode=self.filemode, level=self.level, format=self.log_format)
         logging.error(message)
