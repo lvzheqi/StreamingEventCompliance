@@ -1,12 +1,11 @@
 from threading import Thread
-from streaming_event_compliance.utils.config import WINDOW_SIZE, MAXIMUN_WINDOW_SIZE, THRESHOLD
-from . import compare_automata
-from streaming_event_compliance.objects.variable.globalvar import gVars, CCM
+from streaming_event_compliance.utils.config import WINDOW_SIZE, MAXIMUN_WINDOW_SIZE, THRESHOLD, CHECKING_TYPE
+from streaming_event_compliance.objects.variable.globalvar import gVars, CCM, CAL
 from streaming_event_compliance.objects.exceptions.exception import ThreadException
-from streaming_event_compliance.objects.automata import automata
-import sys
+from streaming_event_compliance.objects.automata import automata, alertlog
 import queue
 import traceback
+import threading
 from console_logging.console import Console
 console = Console()
 console.setVerbosity(5)
@@ -28,14 +27,13 @@ class CaseThreadForCC(Thread):
         ex_info = self.wait_for_exc_info()
         print(ex_info, ';;;', traceback.format_exc())
         if ex_info is None:
-            console.info('succussful')
+            console.info('successful')
             return
         elif isinstance(ex_info, ZeroDivisionError):
-            print(ex_info, 'not succussful')
+            print(ex_info, 'not successful')
             raise ThreadException(str(ex_info))
         else:
             raise Exception
-
 
     def get_message(self):
         return self._message
@@ -53,17 +51,17 @@ class CaseThreadForCC(Thread):
         client_locks = self.CCM.lock_List.get(self.client_uuid)
         try:
             if client_locks.get(self.event['case_id']).acquire():
-                if len(client_cases.get(self.event['case_id'])) < MAXIMUN_WINDOW_SIZE + 1:
-                    windows_memory = client_cases.get(self.event['case_id'])
+                windows_memory = client_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
+                type, response = create_source_sink_node(windows_memory, self.client_uuid, self.event)
+                if type == 2 and CHECKING_TYPE == 'DELETE_M_EVENT':
+                    client_cases.get(self.event['case_id']).pop(MAXIMUN_WINDOW_SIZE)
                 else:
-                    windows_memory = client_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
-                message = create_source_sink_node(windows_memory, self.client_uuid, self.event)
-                if len(client_cases.get(self.event['case_id'])) > MAXIMUN_WINDOW_SIZE:
                     client_cases.get(self.event['case_id']).pop(0)
                 client_locks.get(self.event['case_id']).release()
-                self._message.put(message)
+                self._message.put(response)
                 self._status_queue.put(None)
         except Exception as ec:
+            print(ec)
             console.error('run - ComplianceCaselock ' + traceback.format_exc())
             self._status_queue.put(ec)
 
@@ -86,19 +84,19 @@ def create_source_sink_node(windowsMemory, client_uuid, event):
                 break
             elif source_node.find('*') != -1:
                 source_node = 'NONE'
-            matches = compare_automata.check_alert(ws, source_node, sink_node, client_uuid)
+            matches = check_alert(ws, source_node, sink_node, client_uuid)
             if matches == 2:
                 # console.secure("Alert !!!", " No connection from " + source_node + " to " + sink_node + " due to missing node")
-                return {
+                return 2, {
                     'case_id': event['case_id'],
                     'source_node': source_node,
                     'sink_node': sink_node,
                     'expect': gVars.autos[ws].get_sink_nodes(source_node),
                     'body': 'M'
-                    }
+                }
             elif matches == 1:
                 # console.secure("Alert !!!", " No connection from " + source_node + " to " + sink_node + " due to less probability")
-                return {
+                return 1, {
                     'case_id': event['case_id'],
                     'source_node': source_node,
                     'sink_node': sink_node,
@@ -108,10 +106,65 @@ def create_source_sink_node(windowsMemory, client_uuid, event):
                     }
             else:
                 response = {'body': 'OK'}
-        return response
+        return 0, response
     except Exception as ec:
+        print(ec)
         raise ec
 
 
-    # TODO: Implement returning to main function ALERT, Threading comments to be removed ,
-    # TODO: if an event detected as alert what to do given option at start to keep or remove it from windows memory
+def check_alert(windowsize, source_node, sink_node, client_uuid):
+    '''
+        This function takes sink_node, source_node and checks if the automata of 'windowsize'
+        has any source_node and sink_node that matches tbe source_node, sink_node  passed. If
+        there is a match then checks for its probability ,if probability below than threshold or
+        no match found then it inserts data to Alertlog object and returns an alert messsage
+        The automata is retrieved directly from 'autos' variable rather than db. This autos
+        variable was initialized when automata was built using training set
+        :param windowsize: The length of the automata node.
+        :param sink_node: the combination of event that we want to check the compliance for and
+               the additional events(based on window size)
+        :param client_uuid: user name
+        :return: alert message
+    '''
+    lock_list = CAL.c_alerts_lock_list.get(client_uuid)
+    try:
+        alert_log = gVars.get_client_alert_logs(client_uuid)[windowsize]
+        auto = gVars.autos[windowsize]
+        # console.info(auto)
+        conn = automata.Connection(source_node, sink_node)
+        if auto.contains_connection(conn):
+            if auto.get_connection_probability(conn) >= THRESHOLD:
+                return 0
+            else:
+                if lock_list.get((source_node, sink_node)):
+                    if lock_list.get((source_node, sink_node)).acquire():
+                        alert_log.update_alert_record(
+                            alertlog.AlertRecord(client_uuid, source_node, sink_node, 1, 'T'))
+                        lock_list.get((source_node, sink_node)).release()
+                        return 1
+                else:
+                    lock = threading.RLock()
+                    lock_list[source_node, sink_node] = lock
+                    if lock_list.get((source_node, sink_node)).acquire():
+                        alert_log.update_alert_record(
+                            alertlog.AlertRecord(client_uuid, source_node, sink_node, 1, 'T'))
+                        lock_list.get((source_node, sink_node)).release()
+                        return 1
+        elif source_node == 'NONE' and auto.contains_source_node(sink_node):
+            return 0
+        else:
+            if lock_list.get((source_node, sink_node)):
+                if lock_list.get((source_node, sink_node)).acquire():
+                    alert_log.update_alert_record(alertlog.AlertRecord(client_uuid, source_node, sink_node, 1, 'M'))
+                    lock_list.get((source_node, sink_node)).release()
+                    return 2
+            else:
+                lock = threading.RLock()
+                lock_list[source_node, sink_node] = lock
+                if lock_list.get((source_node, sink_node)).acquire():
+                    alert_log.update_alert_record(alertlog.AlertRecord(client_uuid, source_node, sink_node, 1, 'M'))
+                    lock_list.get((source_node, sink_node)).release()
+                    return 2
+    except Exception as ec:
+        print(ec)
+        raise ec

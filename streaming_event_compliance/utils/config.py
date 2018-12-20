@@ -24,4 +24,5 @@ THRESHOLD = 0.2
 
 LOG_LEVEL = 'DEBUG'
 LOG_FORMAT = '%(asctime)-15s %(message)s'
+CHECKING_TYPE = 'DELETE_M_EVENT'
 
