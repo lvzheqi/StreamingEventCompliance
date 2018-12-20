@@ -19,7 +19,6 @@ class BuildingAutomataTestCase(unittest.TestCase):
     def setUp(self):
         '''do something before every test method'''
         dbtools.empty_tables()
-        # init automata
         setup.init_automata()
 
     def test_multi_threading_for_building_automata(self):

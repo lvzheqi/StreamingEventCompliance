@@ -12,6 +12,7 @@ check_executing_order = {}
 WINDOW_SIZE = app.config['WINDOW_SIZE']
 MAXIMUN_WINDOW_SIZE = app.config['MAXIMUN_WINDOW_SIZE']
 
+
 class CaseThreadForTraining(Thread):
     def __init__(self, event, index, T, C):
         self.event = event
@@ -33,14 +34,14 @@ class CaseThreadForTraining(Thread):
             raise ThreadException(traceback.format_exc())
 
     def run(self):
-        """
+        '''
             In caseMemorier for every case we will store the last 4 events that have been processed,
             so for the current event processing event should in the 5. position. So after we processed
             one event, we should remove the first one from the list. And if in the 5. position we don't
             have event, that means currently all the events from this case has been processed.
             This thread can do noting excepting waiting.
             But during the processing the list will change, some events will be added into it,
-        """
+        '''
         global index
         try:
             if self.event['activity'] != '~!@#$%':
@@ -72,8 +73,8 @@ class CaseThreadForTraining(Thread):
 
 
 def calcuate_connection_for_different_prefix_automata(windowsMemory):
-    """
-    "autos" is a list of automata (global variable)
+    '''
+    'autos' is a list of automata (global variable)
     Connect to the database
     Store information of automata in database
     :param windowsMemory: a list of activities from the same case_id of current event(another event),
@@ -83,7 +84,7 @@ def calcuate_connection_for_different_prefix_automata(windowsMemory):
 
     :param event:
     :return：
-    """
+    '''
     for ws in WINDOW_SIZE:  # [1, 2, 3, 4]
         source_node = ','.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws: MAXIMUN_WINDOW_SIZE])
         sink_node = ','.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws + 1: MAXIMUN_WINDOW_SIZE + 1])

@@ -7,6 +7,7 @@ from streaming_event_compliance.database import db
 
 WINDOW_SIZE = app.config['WINDOW_SIZE']
 
+
 def empty_tables():
     db.session.query(automata.Connection).delete()
     db.session.query(automata.Node).delete()
@@ -97,5 +98,3 @@ def delete_alert(uuid):
     for record in records:
         db.session.delete(record)
     db.session.commit()
-
-
