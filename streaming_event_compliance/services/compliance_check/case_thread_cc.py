@@ -16,6 +16,7 @@ MAXIMUN_WINDOW_SIZE = app.config['MAXIMUN_WINDOW_SIZE']
 THRESHOLD = app.config['THRESHOLD']
 CHECKING_TYPE = app.config['CHECKING_TYPE']
 
+
 class CaseThreadForCC(Thread):
     def __init__(self, event, client_uuid):
         self.event = event
@@ -31,14 +32,11 @@ class CaseThreadForCC(Thread):
     def join_with_exception(self):
         ex_info = self.wait_for_exc_info()
         if ex_info is None:
-            console.info('Will join successful')
             return
         elif isinstance(ex_info, ZeroDivisionError):
-            print(ex_info, 'Will not join successful')
             raise ThreadException(str(ex_info))
         else:
             raise Exception
-
 
     def get_message(self):
         return self._message
@@ -71,14 +69,14 @@ class CaseThreadForCC(Thread):
 
 
 def create_source_sink_node(windowsMemory, client_uuid, event):
-    """
+    '''
     Create sink node and source node based on prefix sizes and call function to check compliance with automata in db
     :param windowsMemory: a list of activities from the same case_id of current event(another event),
                          size is maximum_window_size,
                          and the current event is at the last position of the windowsMemory
                          (i.e. event == windowsMemory[maximum_window_size])
     :return:
-    """
+    '''
     response = {}
     try:
         for ws in WINDOW_SIZE:
@@ -90,7 +88,7 @@ def create_source_sink_node(windowsMemory, client_uuid, event):
                 source_node = 'NONE'
             matches = check_alert(ws, source_node, sink_node, client_uuid)
             if matches == 2:
-                # console.secure("Alert !!!", " No connection from " + source_node + " to " + sink_node + " due to missing node")
+                # console.secure('Alert !!!', ' No connection from ' + source_node + ' to ' + sink_node + ' due to missing node')
                 return 2, {
                     'case_id': event['case_id'],
                     'source_node': source_node,
@@ -99,7 +97,7 @@ def create_source_sink_node(windowsMemory, client_uuid, event):
                     'body': 'M'
                 }
             elif matches == 1:
-                # console.secure("Alert !!!", " No connection from " + source_node + " to " + sink_node + " due to less probability")
+                # console.secure('Alert !!!', ' No connection from ' + source_node + ' to ' + sink_node + ' due to less probability')
                 return 1, {
                     'case_id': event['case_id'],
                     'source_node': source_node,

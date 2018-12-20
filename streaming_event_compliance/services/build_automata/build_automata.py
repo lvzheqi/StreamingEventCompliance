@@ -19,8 +19,9 @@ WINDOW_SIZE = app.config['WINDOW_SIZE']
 MAXIMUN_WINDOW_SIZE = app.config['MAXIMUN_WINDOW_SIZE']
 TRAINING_EVENT_LOG_PATH = app.config['TRAINING_EVENT_LOG_PATH']
 
+
 def build_automata():
-    console.info("---------------------Start: Traininging automata starts!--------------------------------------")
+    console.info('---------------------Start: Traininging automata starts!--------------------------------------')
     try:
         process_ = Process(target=build_automata_pro())
         process_.start()
@@ -32,19 +33,19 @@ def build_automata():
         for ws in WINDOW_SIZE:
             autos[ws].set_probability()
         dbtools.insert_node_and_connection(autos)
-        console.info("---------------------End: Everything for training automata is Done!---------------------------")
+        console.info('---------------------End: Everything for training automata is Done!---------------------------')
     finally:
         gVars.auto_status = 1
         setup.clear_build_automata_memorizer()
 
 
 def build_automata_pro():
-    """
+    '''
         Reads the training event logger from database.config.TRAINING_EVENT_LOG_PATH and build automata.
         It generates the probability between SourceNode and SinkNode with different prefix size
         and stores corresponding information into the database.
     :return:
-    """
+    '''
     try:
         trace_log = xes_importer.import_log(TRAINING_EVENT_LOG_PATH)
         event_log = transform.transform_trace_log_to_event_log(trace_log)
@@ -86,7 +87,7 @@ def build_automata_pro():
                 console.error('build_auto_pro:' + traceback.format_exc())
                 raise ThreadException(traceback.format_exc())
 
-    #TODO:Jingjing-This join can be done after adding end event！
+    # TODO: Jingjing-This join can be done after adding end event！
     try:
         for th in threads:
             th.join_with_exception()
@@ -95,7 +96,7 @@ def build_automata_pro():
     else:
         threads_index = 0
         threads = []
-        # print("all event join succusful, begin end event")
+        # print('all event join succusful, begin end event')
         event = {}
         threads = []
         threads_index = 0
@@ -112,6 +113,5 @@ def build_automata_pro():
         try:
             th.join_with_exception()
         except ThreadException:
-            # print(th, "end event join not succusful")
+            # print(th, 'end event join not succusful')
             raise ThreadException('endevent'+traceback.format_exc())
-

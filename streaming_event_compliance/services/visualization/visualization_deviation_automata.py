@@ -11,6 +11,7 @@ WINDOW_SIZE = app.config['WINDOW_SIZE']
 MAXIMUN_WINDOW_SIZE = app.config['MAXIMUN_WINDOW_SIZE']
 THRESHOLD = app.config['THRESHOLD']
 
+
 def visualization_automata(autos, alogs, uuid):
     viz = Digraph(comment='probability_automata', format='pdf', engine='dot')
     viz.format = 'pdf'
@@ -82,5 +83,3 @@ def show_deviation_pdf(uuid):
         return status
     else:
         return 1
-
-
