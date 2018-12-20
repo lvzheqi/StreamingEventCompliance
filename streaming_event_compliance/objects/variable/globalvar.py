@@ -13,7 +13,7 @@ class GlobalVars:
         return self.auto_status
 
     def get_client_alert_logs(self, uuid):
-        return self.alert_logs[uuid]
+        return self.alert_logs.get(uuid)
 
     def get_client_status(self, uuid):
         return self.clients_status[uuid]
@@ -87,7 +87,6 @@ class ConnectionsLocker(object):
         return super().__getattribute__(name)
 
 
-
 class ClientThreadMemorizer(ThreadMemorizer):
     def __init__(self):
         super().__init__()
@@ -117,6 +116,12 @@ class ClientAlertsLocker(object):
 
     def init_client_memorizer(self, uuid):
         self.c_alerts_lock_list[uuid] = {}
+
+    def __setattr__(self, name: str, value: Any) -> None:
+        super().__setattr__(name, value)
+
+    def __getattribute__(self, name: str) -> Any:
+        return super().__getattribute__(name)
 
 
 T = ThreadMemorizer()

@@ -59,7 +59,7 @@ class EventThread(Thread):
                 message = response.json()
                 if message['body'] == 'M':
                     if message['source_node'] == 'NONE':
-                        console.secure("Alert:", " no such start node'" + message['source_node']+ "'in case '" +
+                        console.secure("Alert:", " no such start node' " + message['sink_node'] + " 'in case '" +
                               message['case_id'] + "'")
                         if len(message['expect']) != 0:
                             print('    The expected start node:')
