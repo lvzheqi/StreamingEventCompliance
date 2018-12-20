@@ -1,5 +1,5 @@
 import unittest
-from streaming_event_compliance.utils import config
+from streaming_event_compliance import app
 from streaming_event_compliance.services.build_automata import build_automata, case_thread
 from streaming_event_compliance.services import setup
 from streaming_event_compliance.database import dbtools
@@ -29,7 +29,7 @@ class BuildingAutomataTestCase(unittest.TestCase):
         :return:
         '''
         # read file
-        trace_log = xes_importer.import_log(config.TRAINING_EVENT_LOG_PATH)
+        trace_log = xes_importer.import_log(app.config['TRAINING_EVENT_LOG_PATH'])
         event_log = transform.transform_trace_log_to_event_log(trace_log)
         event_log.sort()
         expected_log = {}
@@ -66,7 +66,7 @@ class BuildingAutomataTestCase(unittest.TestCase):
         autos_manual4.update_automata(automata.Connection('a,b,c,d', 'b,c,d,e', 1))
         autos_manuals = {1: autos_manual1, 2: autos_manual2, 3: autos_manual3, 4: autos_manual4}
         case_thread.calcuate_connection_for_different_prefix_automata(windowsMemory)
-        for ws in config.WINDOW_SIZE:
+        for ws in app.config['WINDOW_SIZE']:
             self.assertEqual(autos_manuals[ws].get_connections(), gVars.autos[ws].get_connections())
             self.assertEqual(autos_manuals[ws].get_nodes(), gVars.autos[ws].get_nodes())
 
@@ -82,7 +82,7 @@ class BuildingAutomataTestCase(unittest.TestCase):
         autos_manual4.update_automata(automata.Connection('a,b,c,d', '~!@#$%', 0))
         autos_manuals = {1: autos_manual1, 2: autos_manual2, 3: autos_manual3, 4: autos_manual4}
         case_thread.calcuate_connection_for_different_prefix_automata(windowsMemory)
-        for ws in config.WINDOW_SIZE:
+        for ws in app.config['WINDOW_SIZE']:
             self.assertEqual(autos_manuals[ws].get_connections(), gVars.autos[ws].get_connections())
             self.assertEqual(autos_manuals[ws].get_nodes(), gVars.autos[ws].get_nodes())
 

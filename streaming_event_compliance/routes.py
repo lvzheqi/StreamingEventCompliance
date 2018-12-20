@@ -5,7 +5,6 @@ from streaming_event_compliance.services import setup
 from streaming_event_compliance.services.visualization import visualization_deviation_automata
 from streaming_event_compliance.objects.variable.globalvar import gVars
 from streaming_event_compliance.services.compliance_check import compliance_checker
-from streaming_event_compliance.utils.config import CLEINT_DATA_PATH, AUTOMATA_FILE, FILE_TYPE
 from streaming_event_compliance.database import dbtools
 from streaming_event_compliance.objects.exceptions.exception import ThreadException
 import json, traceback
@@ -68,7 +67,8 @@ def call_show_deviation_pdf():
     client_uuid = request.args.get('uuid')
     visualization_deviation_automata.show_deviation_pdf(client_uuid)
     try:
-        automata_pdf = open(CLEINT_DATA_PATH + client_uuid + "_" + AUTOMATA_FILE + FILE_TYPE, 'rb')
+        automata_pdf = open(app.config['CLEINT_DATA_PATH'] + client_uuid + "_"
+                            + app.config['AUTOMATA_FILE'] + app.config['FILE_TYPE'], 'rb')
         return send_file(automata_pdf, attachment_filename='file.pdf'), status.HTTP_200_OK
     except Exception:
         console.error('Error! Something wrong in call_show_deviation_pdf!' + traceback.format_exc())

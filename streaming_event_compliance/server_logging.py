@@ -1,5 +1,5 @@
 import logging
-from streaming_event_compliance.utils import config
+from streaming_event_compliance import app
 from pythonlangutil.overload import Overload, signature
 
 
@@ -36,9 +36,9 @@ class ServerLogging:
                     Default value: DEBUG
         log_format: It is the format in which the time and message will be stored.
         '''
-        self.filename = config.SERVER_LOG_PATH
-        self.level = config.LOG_LEVEL
-        self.log_format = config.LOG_FORMAT
+        self.filename = app.config['SERVER_LOG_PATH']
+        self.level = app.config['LOG_LEVEL']
+        self.log_format = app.config['LOG_FORMAT']
         self.filemode = 'a'
 
     @Overload

@@ -1,10 +1,11 @@
 from streaming_event_compliance.objects.automata import automata
 from streaming_event_compliance.objects.automata import alertlog
-from streaming_event_compliance.utils.config import WINDOW_SIZE
+from streaming_event_compliance import app
 from streaming_event_compliance.objects.exceptions.exception import NoUserException
 
 from streaming_event_compliance.database import db
 
+WINDOW_SIZE = app.config['WINDOW_SIZE']
 
 def empty_tables():
     db.session.query(automata.Connection).delete()

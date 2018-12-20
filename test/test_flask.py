@@ -4,7 +4,6 @@ from streaming_event_compliance.services.build_automata import build_automata
 from streaming_event_compliance.services import setup
 import pytest
 import json
-from streaming_event_compliance.utils import config
 from pm4py.objects.log.importer.xes import factory as xes_importer
 from pm4py.objects.log import transform
 import time
@@ -44,7 +43,7 @@ def test_compliance_check_time(client):
     uuid = app.config['client_uuid']
     login(client, uuid)
 
-    path = config.TRAINING_EVENT_LOG_PATH
+    path = app.config['TRAINING_EVENT_LOG_PATH']
     event_log = prepare_event_log(path)
     sum = len(event_log)
     start = time.clock()
@@ -58,7 +57,7 @@ def test_compliance_check_time(client):
     console.secure("Average speed:", str(results) + " per second!\n")
     assert results > 300
 
-    path = config.BASE_DIR + 'data' + os.sep + 'A4.xes'
+    path = app.config['BASE_DIR'] + 'data' + os.sep + 'A4.xes'
     event_log = prepare_event_log(path)
     sum = len(event_log)
     start = time.clock()

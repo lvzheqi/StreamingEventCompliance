@@ -1,16 +1,18 @@
 from threading import Thread
-from streaming_event_compliance.utils.config import WINDOW_SIZE, MAXIMUN_WINDOW_SIZE, THRESHOLD
+from streaming_event_compliance import app
 from . import compare_automata
 from streaming_event_compliance.objects.variable.globalvar import gVars, CCM
 from streaming_event_compliance.objects.exceptions.exception import ThreadException
 from streaming_event_compliance.objects.automata import automata
-import sys
 import queue
 import traceback
 from console_logging.console import Console
 console = Console()
 console.setVerbosity(5)
 
+WINDOW_SIZE = app.config['WINDOW_SIZE']
+MAXIMUN_WINDOW_SIZE = app.config['MAXIMUN_WINDOW_SIZE']
+THRESHOLD = app.config['THRESHOLD']
 
 class CaseThreadForCC(Thread):
     def __init__(self, event, client_uuid):

@@ -2216,3 +2216,1044 @@
 2018-12-19 20:29:20,833  INFO cl main 'The options are displayed'
 2018-12-19 20:29:20,960 http://127.0.0.1:5000 "POST /compliance-checker?uuid=cl HTTP/1.1" 200 75
 2018-12-19 20:29:20,962  INFO cl run Thread:23 Case_id:NONE Activity:END 'The server response is: {"body": "The compliance checking is over, you can get the deviation pdf!"}'
+2018-12-20 14:01:50,306  INFO client login 'Post request to server:http://127.0.0.1:5000/login?uuid=client'
+2018-12-20 14:01:50,314 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:01:50,319 http://127.0.0.1:5000 "POST /login?uuid=client HTTP/1.1" 200 5
+2018-12-20 14:01:50,319  INFO client main 'The options are displayed'
+2018-12-20 14:01:51,501  INFO client main 'The user selected option 1'
+2018-12-20 14:01:51,501  INFO client main 'The user selected option 1'
+2018-12-20 14:01:51,502  INFO client main 'Calling run_compliance_checker()'
+2018-12-20 14:01:51,502  INFO client run_compliance_checker 'Calling read_log()'
+2018-12-20 14:01:51,502  INFO client read_log 'Creating a trace logger file: '
+2018-12-20 14:01:51,508  INFO client read_log 'Transforming trace logger to event logger'
+2018-12-20 14:01:51,508  INFO client read_log 'Sorting event logger'
+2018-12-20 14:01:51,508  INFO client run_compliance_checker 'Calling simulate_stream_event()'
+2018-12-20 14:01:51,508  INFO client simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-20 14:01:51,508  INFO client invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2018-12-20 14:01:51,508  INFO client invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2018-12-20 14:01:51,509  INFO client run Thread:0 Case_id:Case1.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:01:51,510 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:01:51,514 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:01:51,515  INFO client run Thread:0 Case_id:Case1.0 Activity:a 'The server response is: {"body": "OK"}'
+2018-12-20 14:01:51,515  INFO client simulate_stream_event Case_id:Case3.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-20 14:01:51,515  INFO client invoke_event_thread Case_id:Case3.0 Activity:a 'Initialising thread'
+2018-12-20 14:01:51,515  INFO client invoke_event_thread Case_id:Case3.0 Activity:a 'Starting thread for event '
+2018-12-20 14:01:51,515  INFO client run Thread:1 Case_id:Case3.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:01:51,517 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:01:51,518 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:01:51,519  INFO client run Thread:1 Case_id:Case3.0 Activity:a 'The server response is: {"body": "OK"}'
+2018-12-20 14:01:51,519  INFO client simulate_stream_event Case_id:Case2.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-20 14:01:51,519  INFO client invoke_event_thread Case_id:Case2.0 Activity:a 'Initialising thread'
+2018-12-20 14:01:51,519  INFO client invoke_event_thread Case_id:Case2.0 Activity:a 'Starting thread for event '
+2018-12-20 14:01:51,519  INFO client run Thread:2 Case_id:Case2.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:01:51,520 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:01:51,522 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:01:51,522  INFO client run Thread:2 Case_id:Case2.0 Activity:a 'The server response is: {"body": "OK"}'
+2018-12-20 14:01:51,523  INFO client simulate_stream_event Case_id:Case1.2 Activity:a 'Calling invoke_event_thread()'
+2018-12-20 14:01:51,523  INFO client invoke_event_thread Case_id:Case1.2 Activity:a 'Initialising thread'
+2018-12-20 14:01:51,523  INFO client invoke_event_thread Case_id:Case1.2 Activity:a 'Starting thread for event '
+2018-12-20 14:01:51,523  INFO client run Thread:3 Case_id:Case1.2 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:01:51,524 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:01:51,526 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:01:51,526  INFO client run Thread:3 Case_id:Case1.2 Activity:a 'The server response is: {"body": "OK"}'
+2018-12-20 14:01:51,526  INFO client simulate_stream_event Case_id:Case1.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-20 14:01:51,526  INFO client invoke_event_thread Case_id:Case1.1 Activity:a 'Initialising thread'
+2018-12-20 14:01:51,526  INFO client invoke_event_thread Case_id:Case1.1 Activity:a 'Starting thread for event '
+2018-12-20 14:01:51,526  INFO client run Thread:4 Case_id:Case1.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:01:51,528 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:01:51,530 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:01:51,531  INFO client run Thread:4 Case_id:Case1.1 Activity:a 'The server response is: {"body": "OK"}'
+2018-12-20 14:01:51,531  INFO client simulate_stream_event Case_id:Case2.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-20 14:01:51,531  INFO client invoke_event_thread Case_id:Case2.1 Activity:a 'Initialising thread'
+2018-12-20 14:01:51,531  INFO client invoke_event_thread Case_id:Case2.1 Activity:a 'Starting thread for event '
+2018-12-20 14:01:51,531  INFO client run Thread:5 Case_id:Case2.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:01:51,532 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:01:51,534 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:01:51,534  INFO client run Thread:5 Case_id:Case2.1 Activity:a 'The server response is: {"body": "OK"}'
+2018-12-20 14:01:51,534  INFO client simulate_stream_event Case_id:Case1.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-20 14:01:51,534  INFO client invoke_event_thread Case_id:Case1.0 Activity:b 'Initialising thread'
+2018-12-20 14:01:51,534  INFO client invoke_event_thread Case_id:Case1.0 Activity:b 'Starting thread for event '
+2018-12-20 14:01:51,535  INFO client run Thread:6 Case_id:Case1.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:01:51,536 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:01:51,540 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:01:51,540  INFO client run Thread:6 Case_id:Case1.0 Activity:b 'The server response is: {"body": "OK"}'
+2018-12-20 14:01:51,540  INFO client simulate_stream_event Case_id:Case3.0 Activity:e 'Calling invoke_event_thread()'
+2018-12-20 14:01:51,540  INFO client invoke_event_thread Case_id:Case3.0 Activity:e 'Initialising thread'
+2018-12-20 14:01:51,540  INFO client invoke_event_thread Case_id:Case3.0 Activity:e 'Starting thread for event '
+2018-12-20 14:01:51,541  INFO client run Thread:7 Case_id:Case3.0 Activity:e 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:01:51,542 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:01:51,545 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 107
+2018-12-20 14:01:51,545  INFO client run Thread:7 Case_id:Case3.0 Activity:e 'The server response is: {"case_id": "Case3.0", "source_node": "a", "sink_node": "e", "cause": 0.166667, "expect": 0.2, "body": "T"}'
+2018-12-20 14:01:51,546  INFO client simulate_stream_event Case_id:Case2.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-20 14:01:51,546  INFO client invoke_event_thread Case_id:Case2.0 Activity:c 'Initialising thread'
+2018-12-20 14:01:51,546  INFO client invoke_event_thread Case_id:Case2.0 Activity:c 'Starting thread for event '
+2018-12-20 14:01:51,546  INFO client run Thread:8 Case_id:Case2.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:01:51,547 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:01:51,550 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:01:51,550  INFO client run Thread:8 Case_id:Case2.0 Activity:c 'The server response is: {"body": "OK"}'
+2018-12-20 14:01:51,550  INFO client simulate_stream_event Case_id:Case1.2 Activity:b 'Calling invoke_event_thread()'
+2018-12-20 14:01:51,551  INFO client invoke_event_thread Case_id:Case1.2 Activity:b 'Initialising thread'
+2018-12-20 14:01:51,551  INFO client invoke_event_thread Case_id:Case1.2 Activity:b 'Starting thread for event '
+2018-12-20 14:01:51,551  INFO client run Thread:9 Case_id:Case1.2 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:01:51,552 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:01:51,553 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:01:51,553  INFO client run Thread:9 Case_id:Case1.2 Activity:b 'The server response is: {"body": "OK"}'
+2018-12-20 14:01:51,554  INFO client simulate_stream_event Case_id:Case1.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-20 14:01:51,554  INFO client invoke_event_thread Case_id:Case1.1 Activity:b 'Initialising thread'
+2018-12-20 14:01:51,554  INFO client invoke_event_thread Case_id:Case1.1 Activity:b 'Starting thread for event '
+2018-12-20 14:01:51,554  INFO client run Thread:10 Case_id:Case1.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:01:51,555 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:01:51,556 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:01:51,556  INFO client run Thread:10 Case_id:Case1.1 Activity:b 'The server response is: {"body": "OK"}'
+2018-12-20 14:01:51,557  INFO client simulate_stream_event Case_id:Case2.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-20 14:01:51,557  INFO client invoke_event_thread Case_id:Case2.1 Activity:c 'Initialising thread'
+2018-12-20 14:01:51,557  INFO client invoke_event_thread Case_id:Case2.1 Activity:c 'Starting thread for event '
+2018-12-20 14:01:51,557  INFO client run Thread:11 Case_id:Case2.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:01:51,558 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:01:51,559 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:01:51,559  INFO client run Thread:11 Case_id:Case2.1 Activity:c 'The server response is: {"body": "OK"}'
+2018-12-20 14:01:51,559  INFO client simulate_stream_event Case_id:Case1.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-20 14:01:51,560  INFO client invoke_event_thread Case_id:Case1.0 Activity:c 'Initialising thread'
+2018-12-20 14:01:51,560  INFO client invoke_event_thread Case_id:Case1.0 Activity:c 'Starting thread for event '
+2018-12-20 14:01:51,560  INFO client run Thread:12 Case_id:Case1.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:01:51,561 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:01:51,564 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:01:51,565  INFO client run Thread:12 Case_id:Case1.0 Activity:c 'The server response is: {"body": "OK"}'
+2018-12-20 14:01:51,565  INFO client simulate_stream_event Case_id:Case3.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-20 14:01:51,565  INFO client invoke_event_thread Case_id:Case3.0 Activity:d 'Initialising thread'
+2018-12-20 14:01:51,565  INFO client invoke_event_thread Case_id:Case3.0 Activity:d 'Starting thread for event '
+2018-12-20 14:01:51,565  INFO client run Thread:13 Case_id:Case3.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:01:51,566 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:01:51,569 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:01:51,570  INFO client run Thread:13 Case_id:Case3.0 Activity:d 'The server response is: {"body": "OK"}'
+2018-12-20 14:01:51,570  INFO client simulate_stream_event Case_id:Case2.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-20 14:01:51,570  INFO client invoke_event_thread Case_id:Case2.0 Activity:b 'Initialising thread'
+2018-12-20 14:01:51,570  INFO client invoke_event_thread Case_id:Case2.0 Activity:b 'Starting thread for event '
+2018-12-20 14:01:51,570  INFO client run Thread:14 Case_id:Case2.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:01:51,571 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:01:51,575 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:01:51,575  INFO client run Thread:14 Case_id:Case2.0 Activity:b 'The server response is: {"body": "OK"}'
+2018-12-20 14:01:51,575  INFO client simulate_stream_event Case_id:Case1.2 Activity:c 'Calling invoke_event_thread()'
+2018-12-20 14:01:51,575  INFO client invoke_event_thread Case_id:Case1.2 Activity:c 'Initialising thread'
+2018-12-20 14:01:51,575  INFO client invoke_event_thread Case_id:Case1.2 Activity:c 'Starting thread for event '
+2018-12-20 14:01:51,575  INFO client run Thread:15 Case_id:Case1.2 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:01:51,576 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:01:51,578 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:01:51,578  INFO client run Thread:15 Case_id:Case1.2 Activity:c 'The server response is: {"body": "OK"}'
+2018-12-20 14:01:51,578  INFO client simulate_stream_event Case_id:Case1.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-20 14:01:51,578  INFO client invoke_event_thread Case_id:Case1.1 Activity:c 'Initialising thread'
+2018-12-20 14:01:51,578  INFO client invoke_event_thread Case_id:Case1.1 Activity:c 'Starting thread for event '
+2018-12-20 14:01:51,578  INFO client run Thread:16 Case_id:Case1.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:01:51,579 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:01:51,581 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:01:51,582  INFO client run Thread:16 Case_id:Case1.1 Activity:c 'The server response is: {"body": "OK"}'
+2018-12-20 14:01:51,582  INFO client simulate_stream_event Case_id:Case2.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-20 14:01:51,582  INFO client invoke_event_thread Case_id:Case2.1 Activity:b 'Initialising thread'
+2018-12-20 14:01:51,582  INFO client invoke_event_thread Case_id:Case2.1 Activity:b 'Starting thread for event '
+2018-12-20 14:01:51,582  INFO client run Thread:17 Case_id:Case2.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:01:51,583 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:01:51,585 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:01:51,585  INFO client run Thread:17 Case_id:Case2.1 Activity:b 'The server response is: {"body": "OK"}'
+2018-12-20 14:01:51,585  INFO client simulate_stream_event Case_id:Case1.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-20 14:01:51,585  INFO client invoke_event_thread Case_id:Case1.0 Activity:d 'Initialising thread'
+2018-12-20 14:01:51,585  INFO client invoke_event_thread Case_id:Case1.0 Activity:d 'Starting thread for event '
+2018-12-20 14:01:51,586  INFO client run Thread:18 Case_id:Case1.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:01:51,586 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:01:51,591 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:01:51,591  INFO client run Thread:18 Case_id:Case1.0 Activity:d 'The server response is: {"body": "OK"}'
+2018-12-20 14:01:51,591  INFO client simulate_stream_event Case_id:Case2.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-20 14:01:51,592  INFO client invoke_event_thread Case_id:Case2.0 Activity:d 'Initialising thread'
+2018-12-20 14:01:51,592  INFO client invoke_event_thread Case_id:Case2.0 Activity:d 'Starting thread for event '
+2018-12-20 14:01:51,592  INFO client run Thread:19 Case_id:Case2.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:01:51,593 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:01:51,597 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:01:51,598  INFO client run Thread:19 Case_id:Case2.0 Activity:d 'The server response is: {"body": "OK"}'
+2018-12-20 14:01:51,598  INFO client simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-20 14:01:51,598  INFO client invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-20 14:01:51,598  INFO client invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-20 14:01:51,598  INFO client run Thread:20 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:01:51,599 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:01:51,601 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:01:51,601  INFO client run Thread:20 Case_id:Case1.2 Activity:d 'The server response is: {"body": "OK"}'
+2018-12-20 14:01:51,601  INFO client simulate_stream_event Case_id:Case1.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-20 14:01:51,601  INFO client invoke_event_thread Case_id:Case1.1 Activity:d 'Initialising thread'
+2018-12-20 14:01:51,601  INFO client invoke_event_thread Case_id:Case1.1 Activity:d 'Starting thread for event '
+2018-12-20 14:01:51,601  INFO client run Thread:21 Case_id:Case1.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:01:51,602 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:01:51,603 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:01:51,604  INFO client run Thread:21 Case_id:Case1.1 Activity:d 'The server response is: {"body": "OK"}'
+2018-12-20 14:01:51,604  INFO client simulate_stream_event Case_id:Case2.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-20 14:01:51,604  INFO client invoke_event_thread Case_id:Case2.1 Activity:d 'Initialising thread'
+2018-12-20 14:01:51,604  INFO client invoke_event_thread Case_id:Case2.1 Activity:d 'Starting thread for event '
+2018-12-20 14:01:51,604  INFO client run Thread:22 Case_id:Case2.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:01:51,605 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:01:51,606 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:01:51,606  INFO client run Thread:22 Case_id:Case2.1 Activity:d 'The server response is: {"body": "OK"}'
+2018-12-20 14:01:51,607  INFO client simulate_stream_event Case_id:NONE Activity:END 'Calling invoke_event_thread()'
+2018-12-20 14:01:51,607  INFO client invoke_event_thread Case_id:NONE Activity:END 'Initialising thread'
+2018-12-20 14:01:51,607  INFO client invoke_event_thread Case_id:NONE Activity:END 'Starting thread for event '
+2018-12-20 14:01:51,607  INFO client run Thread:23 Case_id:NONE Activity:END 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:01:51,608 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:01:51,614  INFO client main 'compliance checking is completed'
+2018-12-20 14:01:51,615  INFO client main 'The options are displayed'
+2018-12-20 14:01:51,760 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 75
+2018-12-20 14:01:51,761  INFO client run Thread:23 Case_id:NONE Activity:END 'The server response is: {"body": "The compliance checking is over, you can get the deviation pdf!"}'
+2018-12-20 14:01:55,955  INFO client main 'The user selected option 2'
+2018-12-20 14:01:55,955  INFO client main 'Calling run_show_deviation_pdf() '
+2018-12-20 14:01:55,956  INFO client run_show_deviation_pdf 'Post request to http://127.0.0.1:5000/show-deviation-pdf?uuid=client'
+2018-12-20 14:01:55,958 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:01:55,960 http://127.0.0.1:5000 "POST /show-deviation-pdf?uuid=client HTTP/1.1" 404 0
+2018-12-20 14:01:55,961  ERROR client main 'pdf can not be created'
+2018-12-20 14:01:55,961  INFO client main 'The options are displayed'
+2018-12-20 14:02:32,399  INFO client main 'The user selected option 1'
+2018-12-20 14:02:33,987  INFO client main 'The user selected option 1'
+2018-12-20 14:02:33,988  INFO client main 'Calling run_compliance_checker()'
+2018-12-20 14:02:33,988  INFO client run_compliance_checker 'Calling read_log()'
+2018-12-20 14:02:33,988  INFO client read_log 'Creating a trace logger file: '
+2018-12-20 14:02:33,992  INFO client read_log 'Transforming trace logger to event logger'
+2018-12-20 14:02:33,993  INFO client read_log 'Sorting event logger'
+2018-12-20 14:02:33,993  INFO client run_compliance_checker 'Calling simulate_stream_event()'
+2018-12-20 14:02:33,993  INFO client simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-20 14:02:33,993  INFO client invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2018-12-20 14:02:33,993  INFO client invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2018-12-20 14:02:33,994  INFO client run Thread:24 Case_id:Case1.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:33,996 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:34,000 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:02:34,001  INFO client run Thread:24 Case_id:Case1.0 Activity:a 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:02:34,001  INFO client simulate_stream_event Case_id:Case3.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-20 14:02:34,001  INFO client invoke_event_thread Case_id:Case3.0 Activity:a 'Initialising thread'
+2018-12-20 14:02:34,001  INFO client invoke_event_thread Case_id:Case3.0 Activity:a 'Starting thread for event '
+2018-12-20 14:02:34,001  INFO client run Thread:25 Case_id:Case3.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:34,003 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:34,004 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:02:34,005  INFO client run Thread:25 Case_id:Case3.0 Activity:a 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:02:34,005  INFO client simulate_stream_event Case_id:Case2.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-20 14:02:34,005  INFO client invoke_event_thread Case_id:Case2.0 Activity:a 'Initialising thread'
+2018-12-20 14:02:34,005  INFO client invoke_event_thread Case_id:Case2.0 Activity:a 'Starting thread for event '
+2018-12-20 14:02:34,006  INFO client run Thread:26 Case_id:Case2.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:34,007 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:34,008 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:02:34,008  INFO client run Thread:26 Case_id:Case2.0 Activity:a 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:02:34,009  INFO client simulate_stream_event Case_id:Case1.2 Activity:a 'Calling invoke_event_thread()'
+2018-12-20 14:02:34,009  INFO client invoke_event_thread Case_id:Case1.2 Activity:a 'Initialising thread'
+2018-12-20 14:02:34,009  INFO client invoke_event_thread Case_id:Case1.2 Activity:a 'Starting thread for event '
+2018-12-20 14:02:34,009  INFO client run Thread:27 Case_id:Case1.2 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:34,010 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:34,011 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:02:34,012  INFO client run Thread:27 Case_id:Case1.2 Activity:a 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:02:34,012  INFO client simulate_stream_event Case_id:Case1.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-20 14:02:34,012  INFO client invoke_event_thread Case_id:Case1.1 Activity:a 'Initialising thread'
+2018-12-20 14:02:34,012  INFO client invoke_event_thread Case_id:Case1.1 Activity:a 'Starting thread for event '
+2018-12-20 14:02:34,013  INFO client run Thread:28 Case_id:Case1.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:34,014 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:34,016 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:02:34,017  INFO client run Thread:28 Case_id:Case1.1 Activity:a 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:02:34,017  INFO client simulate_stream_event Case_id:Case2.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-20 14:02:34,017  INFO client invoke_event_thread Case_id:Case2.1 Activity:a 'Initialising thread'
+2018-12-20 14:02:34,017  INFO client invoke_event_thread Case_id:Case2.1 Activity:a 'Starting thread for event '
+2018-12-20 14:02:34,017  INFO client run Thread:29 Case_id:Case2.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:34,018 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:34,019 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:02:34,020  INFO client run Thread:29 Case_id:Case2.1 Activity:a 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:02:34,020  INFO client simulate_stream_event Case_id:Case1.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-20 14:02:34,020  INFO client invoke_event_thread Case_id:Case1.0 Activity:b 'Initialising thread'
+2018-12-20 14:02:34,020  INFO client invoke_event_thread Case_id:Case1.0 Activity:b 'Starting thread for event '
+2018-12-20 14:02:34,020  INFO client run Thread:30 Case_id:Case1.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:34,021 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:34,023 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:02:34,023  INFO client run Thread:30 Case_id:Case1.0 Activity:b 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:02:34,023  INFO client simulate_stream_event Case_id:Case3.0 Activity:e 'Calling invoke_event_thread()'
+2018-12-20 14:02:34,024  INFO client invoke_event_thread Case_id:Case3.0 Activity:e 'Initialising thread'
+2018-12-20 14:02:34,024  INFO client invoke_event_thread Case_id:Case3.0 Activity:e 'Starting thread for event '
+2018-12-20 14:02:34,024  INFO client run Thread:31 Case_id:Case3.0 Activity:e 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:34,025 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:34,026 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:02:34,026  INFO client run Thread:31 Case_id:Case3.0 Activity:e 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:02:34,027  INFO client simulate_stream_event Case_id:Case2.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-20 14:02:34,027  INFO client invoke_event_thread Case_id:Case2.0 Activity:c 'Initialising thread'
+2018-12-20 14:02:34,027  INFO client invoke_event_thread Case_id:Case2.0 Activity:c 'Starting thread for event '
+2018-12-20 14:02:34,027  INFO client run Thread:32 Case_id:Case2.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:34,028 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:34,029 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:02:34,030  INFO client run Thread:32 Case_id:Case2.0 Activity:c 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:02:34,030  INFO client simulate_stream_event Case_id:Case1.2 Activity:b 'Calling invoke_event_thread()'
+2018-12-20 14:02:34,030  INFO client invoke_event_thread Case_id:Case1.2 Activity:b 'Initialising thread'
+2018-12-20 14:02:34,030  INFO client invoke_event_thread Case_id:Case1.2 Activity:b 'Starting thread for event '
+2018-12-20 14:02:34,030  INFO client run Thread:33 Case_id:Case1.2 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:34,032 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:34,033 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:02:34,033  INFO client run Thread:33 Case_id:Case1.2 Activity:b 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:02:34,033  INFO client simulate_stream_event Case_id:Case1.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-20 14:02:34,033  INFO client invoke_event_thread Case_id:Case1.1 Activity:b 'Initialising thread'
+2018-12-20 14:02:34,033  INFO client invoke_event_thread Case_id:Case1.1 Activity:b 'Starting thread for event '
+2018-12-20 14:02:34,033  INFO client run Thread:34 Case_id:Case1.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:34,034 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:34,035 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:02:34,036  INFO client run Thread:34 Case_id:Case1.1 Activity:b 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:02:34,036  INFO client simulate_stream_event Case_id:Case2.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-20 14:02:34,036  INFO client invoke_event_thread Case_id:Case2.1 Activity:c 'Initialising thread'
+2018-12-20 14:02:34,036  INFO client invoke_event_thread Case_id:Case2.1 Activity:c 'Starting thread for event '
+2018-12-20 14:02:34,036  INFO client run Thread:35 Case_id:Case2.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:34,037 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:34,038 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:02:34,038  INFO client run Thread:35 Case_id:Case2.1 Activity:c 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:02:34,039  INFO client simulate_stream_event Case_id:Case1.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-20 14:02:34,039  INFO client invoke_event_thread Case_id:Case1.0 Activity:c 'Initialising thread'
+2018-12-20 14:02:34,039  INFO client invoke_event_thread Case_id:Case1.0 Activity:c 'Starting thread for event '
+2018-12-20 14:02:34,039  INFO client run Thread:36 Case_id:Case1.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:34,040 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:34,041 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:02:34,041  INFO client run Thread:36 Case_id:Case1.0 Activity:c 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:02:34,041  INFO client simulate_stream_event Case_id:Case3.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-20 14:02:34,041  INFO client invoke_event_thread Case_id:Case3.0 Activity:d 'Initialising thread'
+2018-12-20 14:02:34,041  INFO client invoke_event_thread Case_id:Case3.0 Activity:d 'Starting thread for event '
+2018-12-20 14:02:34,042  INFO client run Thread:37 Case_id:Case3.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:34,042 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:34,043 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:02:34,044  INFO client run Thread:37 Case_id:Case3.0 Activity:d 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:02:34,044  INFO client simulate_stream_event Case_id:Case2.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-20 14:02:34,044  INFO client invoke_event_thread Case_id:Case2.0 Activity:b 'Initialising thread'
+2018-12-20 14:02:34,044  INFO client invoke_event_thread Case_id:Case2.0 Activity:b 'Starting thread for event '
+2018-12-20 14:02:34,044  INFO client run Thread:38 Case_id:Case2.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:34,045 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:34,046 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:02:34,047  INFO client run Thread:38 Case_id:Case2.0 Activity:b 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:02:34,047  INFO client simulate_stream_event Case_id:Case1.2 Activity:c 'Calling invoke_event_thread()'
+2018-12-20 14:02:34,047  INFO client invoke_event_thread Case_id:Case1.2 Activity:c 'Initialising thread'
+2018-12-20 14:02:34,047  INFO client invoke_event_thread Case_id:Case1.2 Activity:c 'Starting thread for event '
+2018-12-20 14:02:34,047  INFO client run Thread:39 Case_id:Case1.2 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:34,048 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:34,049 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:02:34,049  INFO client run Thread:39 Case_id:Case1.2 Activity:c 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:02:34,049  INFO client simulate_stream_event Case_id:Case1.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-20 14:02:34,049  INFO client invoke_event_thread Case_id:Case1.1 Activity:c 'Initialising thread'
+2018-12-20 14:02:34,050  INFO client invoke_event_thread Case_id:Case1.1 Activity:c 'Starting thread for event '
+2018-12-20 14:02:34,050  INFO client run Thread:40 Case_id:Case1.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:34,051 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:34,052 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:02:34,052  INFO client run Thread:40 Case_id:Case1.1 Activity:c 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:02:34,052  INFO client simulate_stream_event Case_id:Case2.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-20 14:02:34,052  INFO client invoke_event_thread Case_id:Case2.1 Activity:b 'Initialising thread'
+2018-12-20 14:02:34,052  INFO client invoke_event_thread Case_id:Case2.1 Activity:b 'Starting thread for event '
+2018-12-20 14:02:34,052  INFO client run Thread:41 Case_id:Case2.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:34,053 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:34,054 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:02:34,055  INFO client run Thread:41 Case_id:Case2.1 Activity:b 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:02:34,055  INFO client simulate_stream_event Case_id:Case1.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-20 14:02:34,055  INFO client invoke_event_thread Case_id:Case1.0 Activity:d 'Initialising thread'
+2018-12-20 14:02:34,055  INFO client invoke_event_thread Case_id:Case1.0 Activity:d 'Starting thread for event '
+2018-12-20 14:02:34,055  INFO client run Thread:42 Case_id:Case1.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:34,056 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:34,057 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:02:34,058  INFO client run Thread:42 Case_id:Case1.0 Activity:d 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:02:34,058  INFO client simulate_stream_event Case_id:Case2.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-20 14:02:34,058  INFO client invoke_event_thread Case_id:Case2.0 Activity:d 'Initialising thread'
+2018-12-20 14:02:34,058  INFO client invoke_event_thread Case_id:Case2.0 Activity:d 'Starting thread for event '
+2018-12-20 14:02:34,058  INFO client run Thread:43 Case_id:Case2.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:34,059 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:34,061 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:02:34,061  INFO client run Thread:43 Case_id:Case2.0 Activity:d 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:02:34,061  INFO client simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-20 14:02:34,062  INFO client invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-20 14:02:34,062  INFO client invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-20 14:02:34,062  INFO client run Thread:44 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:34,063 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:34,064 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:02:34,064  INFO client run Thread:44 Case_id:Case1.2 Activity:d 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:02:34,064  INFO client simulate_stream_event Case_id:Case1.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-20 14:02:34,064  INFO client invoke_event_thread Case_id:Case1.1 Activity:d 'Initialising thread'
+2018-12-20 14:02:34,065  INFO client invoke_event_thread Case_id:Case1.1 Activity:d 'Starting thread for event '
+2018-12-20 14:02:34,065  INFO client run Thread:45 Case_id:Case1.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:34,066 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:34,067 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:02:34,067  INFO client run Thread:45 Case_id:Case1.1 Activity:d 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:02:34,067  INFO client simulate_stream_event Case_id:Case2.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-20 14:02:34,067  INFO client invoke_event_thread Case_id:Case2.1 Activity:d 'Initialising thread'
+2018-12-20 14:02:34,067  INFO client invoke_event_thread Case_id:Case2.1 Activity:d 'Starting thread for event '
+2018-12-20 14:02:34,067  INFO client run Thread:46 Case_id:Case2.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:34,068 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:34,069 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:02:34,069  INFO client run Thread:46 Case_id:Case2.1 Activity:d 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:02:34,070  INFO client simulate_stream_event Case_id:NONE Activity:END 'Calling invoke_event_thread()'
+2018-12-20 14:02:34,070  INFO client invoke_event_thread Case_id:NONE Activity:END 'Initialising thread'
+2018-12-20 14:02:34,070  INFO client invoke_event_thread Case_id:NONE Activity:END 'Starting thread for event '
+2018-12-20 14:02:34,070  INFO client run Thread:47 Case_id:NONE Activity:END 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:34,075 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:34,076  INFO client main 'compliance checking is completed'
+2018-12-20 14:02:34,077  INFO client main 'The options are displayed'
+2018-12-20 14:02:34,078 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:02:34,078  INFO client run Thread:47 Case_id:NONE Activity:END 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:02:37,686  INFO client login 'Post request to server:http://127.0.0.1:5000/login?uuid=client'
+2018-12-20 14:02:37,693 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:37,696 http://127.0.0.1:5000 "POST /login?uuid=client HTTP/1.1" 200 5
+2018-12-20 14:02:37,697  INFO client main 'The options are displayed'
+2018-12-20 14:02:38,311  INFO client main 'The user selected option 1'
+2018-12-20 14:02:38,311  INFO client main 'The user selected option 1'
+2018-12-20 14:02:38,312  INFO client main 'Calling run_compliance_checker()'
+2018-12-20 14:02:38,312  INFO client run_compliance_checker 'Calling read_log()'
+2018-12-20 14:02:38,312  INFO client read_log 'Creating a trace logger file: '
+2018-12-20 14:02:38,317  INFO client read_log 'Transforming trace logger to event logger'
+2018-12-20 14:02:38,317  INFO client read_log 'Sorting event logger'
+2018-12-20 14:02:38,317  INFO client run_compliance_checker 'Calling simulate_stream_event()'
+2018-12-20 14:02:38,318  INFO client simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-20 14:02:38,318  INFO client invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2018-12-20 14:02:38,318  INFO client invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2018-12-20 14:02:38,318  INFO client run Thread:0 Case_id:Case1.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:38,320 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:38,324 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:02:38,325  INFO client run Thread:0 Case_id:Case1.0 Activity:a 'The server response is: {"body": "OK"}'
+2018-12-20 14:02:38,325  INFO client simulate_stream_event Case_id:Case3.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-20 14:02:38,325  INFO client invoke_event_thread Case_id:Case3.0 Activity:a 'Initialising thread'
+2018-12-20 14:02:38,325  INFO client invoke_event_thread Case_id:Case3.0 Activity:a 'Starting thread for event '
+2018-12-20 14:02:38,325  INFO client run Thread:1 Case_id:Case3.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:38,326 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:38,328 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:02:38,329  INFO client run Thread:1 Case_id:Case3.0 Activity:a 'The server response is: {"body": "OK"}'
+2018-12-20 14:02:38,329  INFO client simulate_stream_event Case_id:Case2.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-20 14:02:38,329  INFO client invoke_event_thread Case_id:Case2.0 Activity:a 'Initialising thread'
+2018-12-20 14:02:38,329  INFO client invoke_event_thread Case_id:Case2.0 Activity:a 'Starting thread for event '
+2018-12-20 14:02:38,329  INFO client run Thread:2 Case_id:Case2.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:38,330 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:38,332 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:02:38,332  INFO client run Thread:2 Case_id:Case2.0 Activity:a 'The server response is: {"body": "OK"}'
+2018-12-20 14:02:38,332  INFO client simulate_stream_event Case_id:Case1.2 Activity:a 'Calling invoke_event_thread()'
+2018-12-20 14:02:38,332  INFO client invoke_event_thread Case_id:Case1.2 Activity:a 'Initialising thread'
+2018-12-20 14:02:38,332  INFO client invoke_event_thread Case_id:Case1.2 Activity:a 'Starting thread for event '
+2018-12-20 14:02:38,333  INFO client run Thread:3 Case_id:Case1.2 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:38,334 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:38,335 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:02:38,336  INFO client run Thread:3 Case_id:Case1.2 Activity:a 'The server response is: {"body": "OK"}'
+2018-12-20 14:02:38,336  INFO client simulate_stream_event Case_id:Case1.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-20 14:02:38,336  INFO client invoke_event_thread Case_id:Case1.1 Activity:a 'Initialising thread'
+2018-12-20 14:02:38,336  INFO client invoke_event_thread Case_id:Case1.1 Activity:a 'Starting thread for event '
+2018-12-20 14:02:38,336  INFO client run Thread:4 Case_id:Case1.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:38,337 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:38,339 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:02:38,339  INFO client run Thread:4 Case_id:Case1.1 Activity:a 'The server response is: {"body": "OK"}'
+2018-12-20 14:02:38,340  INFO client simulate_stream_event Case_id:Case2.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-20 14:02:38,340  INFO client invoke_event_thread Case_id:Case2.1 Activity:a 'Initialising thread'
+2018-12-20 14:02:38,340  INFO client invoke_event_thread Case_id:Case2.1 Activity:a 'Starting thread for event '
+2018-12-20 14:02:38,340  INFO client run Thread:5 Case_id:Case2.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:38,341 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:38,342 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:02:38,342  INFO client run Thread:5 Case_id:Case2.1 Activity:a 'The server response is: {"body": "OK"}'
+2018-12-20 14:02:38,343  INFO client simulate_stream_event Case_id:Case1.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-20 14:02:38,343  INFO client invoke_event_thread Case_id:Case1.0 Activity:b 'Initialising thread'
+2018-12-20 14:02:38,343  INFO client invoke_event_thread Case_id:Case1.0 Activity:b 'Starting thread for event '
+2018-12-20 14:02:38,343  INFO client run Thread:6 Case_id:Case1.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:38,344 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:38,347 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:02:38,348  INFO client run Thread:6 Case_id:Case1.0 Activity:b 'The server response is: {"body": "OK"}'
+2018-12-20 14:02:38,348  INFO client simulate_stream_event Case_id:Case3.0 Activity:e 'Calling invoke_event_thread()'
+2018-12-20 14:02:38,348  INFO client invoke_event_thread Case_id:Case3.0 Activity:e 'Initialising thread'
+2018-12-20 14:02:38,348  INFO client invoke_event_thread Case_id:Case3.0 Activity:e 'Starting thread for event '
+2018-12-20 14:02:38,348  INFO client run Thread:7 Case_id:Case3.0 Activity:e 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:38,349 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:38,352 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 107
+2018-12-20 14:02:38,352  INFO client run Thread:7 Case_id:Case3.0 Activity:e 'The server response is: {"case_id": "Case3.0", "source_node": "a", "sink_node": "e", "cause": 0.166667, "expect": 0.2, "body": "T"}'
+2018-12-20 14:02:38,353  INFO client simulate_stream_event Case_id:Case2.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-20 14:02:38,353  INFO client invoke_event_thread Case_id:Case2.0 Activity:c 'Initialising thread'
+2018-12-20 14:02:38,353  INFO client invoke_event_thread Case_id:Case2.0 Activity:c 'Starting thread for event '
+2018-12-20 14:02:38,353  INFO client run Thread:8 Case_id:Case2.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:38,354 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:38,358 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:02:38,358  INFO client run Thread:8 Case_id:Case2.0 Activity:c 'The server response is: {"body": "OK"}'
+2018-12-20 14:02:38,358  INFO client simulate_stream_event Case_id:Case1.2 Activity:b 'Calling invoke_event_thread()'
+2018-12-20 14:02:38,358  INFO client invoke_event_thread Case_id:Case1.2 Activity:b 'Initialising thread'
+2018-12-20 14:02:38,358  INFO client invoke_event_thread Case_id:Case1.2 Activity:b 'Starting thread for event '
+2018-12-20 14:02:38,359  INFO client run Thread:9 Case_id:Case1.2 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:38,360 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:38,361 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:02:38,361  INFO client run Thread:9 Case_id:Case1.2 Activity:b 'The server response is: {"body": "OK"}'
+2018-12-20 14:02:38,362  INFO client simulate_stream_event Case_id:Case1.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-20 14:02:38,362  INFO client invoke_event_thread Case_id:Case1.1 Activity:b 'Initialising thread'
+2018-12-20 14:02:38,362  INFO client invoke_event_thread Case_id:Case1.1 Activity:b 'Starting thread for event '
+2018-12-20 14:02:38,362  INFO client run Thread:10 Case_id:Case1.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:38,363 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:38,364 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:02:38,364  INFO client run Thread:10 Case_id:Case1.1 Activity:b 'The server response is: {"body": "OK"}'
+2018-12-20 14:02:38,364  INFO client simulate_stream_event Case_id:Case2.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-20 14:02:38,364  INFO client invoke_event_thread Case_id:Case2.1 Activity:c 'Initialising thread'
+2018-12-20 14:02:38,365  INFO client invoke_event_thread Case_id:Case2.1 Activity:c 'Starting thread for event '
+2018-12-20 14:02:38,365  INFO client run Thread:11 Case_id:Case2.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:38,366 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:38,367 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:02:38,367  INFO client run Thread:11 Case_id:Case2.1 Activity:c 'The server response is: {"body": "OK"}'
+2018-12-20 14:02:38,367  INFO client simulate_stream_event Case_id:Case1.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-20 14:02:38,367  INFO client invoke_event_thread Case_id:Case1.0 Activity:c 'Initialising thread'
+2018-12-20 14:02:38,367  INFO client invoke_event_thread Case_id:Case1.0 Activity:c 'Starting thread for event '
+2018-12-20 14:02:38,367  INFO client run Thread:12 Case_id:Case1.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:38,368 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:38,372 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:02:38,372  INFO client run Thread:12 Case_id:Case1.0 Activity:c 'The server response is: {"body": "OK"}'
+2018-12-20 14:02:38,372  INFO client simulate_stream_event Case_id:Case3.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-20 14:02:38,373  INFO client invoke_event_thread Case_id:Case3.0 Activity:d 'Initialising thread'
+2018-12-20 14:02:38,373  INFO client invoke_event_thread Case_id:Case3.0 Activity:d 'Starting thread for event '
+2018-12-20 14:02:38,373  INFO client run Thread:13 Case_id:Case3.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:38,374 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:38,377 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:02:38,377  INFO client run Thread:13 Case_id:Case3.0 Activity:d 'The server response is: {"body": "OK"}'
+2018-12-20 14:02:38,377  INFO client simulate_stream_event Case_id:Case2.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-20 14:02:38,377  INFO client invoke_event_thread Case_id:Case2.0 Activity:b 'Initialising thread'
+2018-12-20 14:02:38,377  INFO client invoke_event_thread Case_id:Case2.0 Activity:b 'Starting thread for event '
+2018-12-20 14:02:38,378  INFO client run Thread:14 Case_id:Case2.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:38,379 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:38,382 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:02:38,383  INFO client run Thread:14 Case_id:Case2.0 Activity:b 'The server response is: {"body": "OK"}'
+2018-12-20 14:02:38,383  INFO client simulate_stream_event Case_id:Case1.2 Activity:c 'Calling invoke_event_thread()'
+2018-12-20 14:02:38,383  INFO client invoke_event_thread Case_id:Case1.2 Activity:c 'Initialising thread'
+2018-12-20 14:02:38,383  INFO client invoke_event_thread Case_id:Case1.2 Activity:c 'Starting thread for event '
+2018-12-20 14:02:38,383  INFO client run Thread:15 Case_id:Case1.2 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:38,384 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:38,385 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:02:38,386  INFO client run Thread:15 Case_id:Case1.2 Activity:c 'The server response is: {"body": "OK"}'
+2018-12-20 14:02:38,386  INFO client simulate_stream_event Case_id:Case1.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-20 14:02:38,386  INFO client invoke_event_thread Case_id:Case1.1 Activity:c 'Initialising thread'
+2018-12-20 14:02:38,386  INFO client invoke_event_thread Case_id:Case1.1 Activity:c 'Starting thread for event '
+2018-12-20 14:02:38,386  INFO client run Thread:16 Case_id:Case1.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:38,387 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:38,389 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:02:38,390  INFO client run Thread:16 Case_id:Case1.1 Activity:c 'The server response is: {"body": "OK"}'
+2018-12-20 14:02:38,390  INFO client simulate_stream_event Case_id:Case2.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-20 14:02:38,390  INFO client invoke_event_thread Case_id:Case2.1 Activity:b 'Initialising thread'
+2018-12-20 14:02:38,390  INFO client invoke_event_thread Case_id:Case2.1 Activity:b 'Starting thread for event '
+2018-12-20 14:02:38,390  INFO client run Thread:17 Case_id:Case2.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:38,391 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:38,392 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:02:38,393  INFO client run Thread:17 Case_id:Case2.1 Activity:b 'The server response is: {"body": "OK"}'
+2018-12-20 14:02:38,393  INFO client simulate_stream_event Case_id:Case1.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-20 14:02:38,393  INFO client invoke_event_thread Case_id:Case1.0 Activity:d 'Initialising thread'
+2018-12-20 14:02:38,393  INFO client invoke_event_thread Case_id:Case1.0 Activity:d 'Starting thread for event '
+2018-12-20 14:02:38,393  INFO client run Thread:18 Case_id:Case1.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:38,394 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:38,398 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:02:38,399  INFO client run Thread:18 Case_id:Case1.0 Activity:d 'The server response is: {"body": "OK"}'
+2018-12-20 14:02:38,399  INFO client simulate_stream_event Case_id:Case2.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-20 14:02:38,399  INFO client invoke_event_thread Case_id:Case2.0 Activity:d 'Initialising thread'
+2018-12-20 14:02:38,399  INFO client invoke_event_thread Case_id:Case2.0 Activity:d 'Starting thread for event '
+2018-12-20 14:02:38,399  INFO client run Thread:19 Case_id:Case2.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:38,400 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:38,405 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:02:38,405  INFO client run Thread:19 Case_id:Case2.0 Activity:d 'The server response is: {"body": "OK"}'
+2018-12-20 14:02:38,405  INFO client simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-20 14:02:38,405  INFO client invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-20 14:02:38,406  INFO client invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-20 14:02:38,406  INFO client run Thread:20 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:38,407 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:38,408 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:02:38,408  INFO client run Thread:20 Case_id:Case1.2 Activity:d 'The server response is: {"body": "OK"}'
+2018-12-20 14:02:38,408  INFO client simulate_stream_event Case_id:Case1.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-20 14:02:38,408  INFO client invoke_event_thread Case_id:Case1.1 Activity:d 'Initialising thread'
+2018-12-20 14:02:38,409  INFO client invoke_event_thread Case_id:Case1.1 Activity:d 'Starting thread for event '
+2018-12-20 14:02:38,409  INFO client run Thread:21 Case_id:Case1.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:38,410 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:38,411 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:02:38,411  INFO client run Thread:21 Case_id:Case1.1 Activity:d 'The server response is: {"body": "OK"}'
+2018-12-20 14:02:38,411  INFO client simulate_stream_event Case_id:Case2.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-20 14:02:38,411  INFO client invoke_event_thread Case_id:Case2.1 Activity:d 'Initialising thread'
+2018-12-20 14:02:38,411  INFO client invoke_event_thread Case_id:Case2.1 Activity:d 'Starting thread for event '
+2018-12-20 14:02:38,412  INFO client run Thread:22 Case_id:Case2.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:38,412 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:38,414 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:02:38,414  INFO client run Thread:22 Case_id:Case2.1 Activity:d 'The server response is: {"body": "OK"}'
+2018-12-20 14:02:38,414  INFO client simulate_stream_event Case_id:NONE Activity:END 'Calling invoke_event_thread()'
+2018-12-20 14:02:38,414  INFO client invoke_event_thread Case_id:NONE Activity:END 'Initialising thread'
+2018-12-20 14:02:38,414  INFO client invoke_event_thread Case_id:NONE Activity:END 'Starting thread for event '
+2018-12-20 14:02:38,414  INFO client run Thread:23 Case_id:NONE Activity:END 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:02:38,415 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:38,421  INFO client main 'compliance checking is completed'
+2018-12-20 14:02:38,422  INFO client main 'The options are displayed'
+2018-12-20 14:02:38,561 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 75
+2018-12-20 14:02:38,563  INFO client run Thread:23 Case_id:NONE Activity:END 'The server response is: {"body": "The compliance checking is over, you can get the deviation pdf!"}'
+2018-12-20 14:02:40,205  INFO client main 'The user selected option 2'
+2018-12-20 14:02:40,206  INFO client main 'Calling run_show_deviation_pdf() '
+2018-12-20 14:02:40,206  INFO client run_show_deviation_pdf 'Post request to http://127.0.0.1:5000/show-deviation-pdf?uuid=client'
+2018-12-20 14:02:40,209 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:02:40,213 http://127.0.0.1:5000 "POST /show-deviation-pdf?uuid=client HTTP/1.1" 200 None
+2018-12-20 14:02:40,215 SHIFT_JIS Japanese prober hit error at byte 84
+2018-12-20 14:02:40,215 EUC-JP Japanese prober hit error at byte 17
+2018-12-20 14:02:40,215 GB2312 Chinese prober hit error at byte 21
+2018-12-20 14:02:40,215 EUC-KR Korean prober hit error at byte 17
+2018-12-20 14:02:40,215 CP949 Korean prober hit error at byte 17
+2018-12-20 14:02:40,216 Big5 Chinese prober hit error at byte 21
+2018-12-20 14:02:40,216 EUC-TW Taiwan prober hit error at byte 17
+2018-12-20 14:02:40,227 windows-1251 confidence = 0.04288699879707874, below negative shortcut threshhold 0.05
+2018-12-20 14:02:40,236 KOI8-R confidence = 0.0449405445054906, below negative shortcut threshhold 0.05
+2018-12-20 14:02:40,244 ISO-8859-5 confidence = 0.04101704596051938, below negative shortcut threshhold 0.05
+2018-12-20 14:02:40,251 MacCyrillic confidence = 0.04334241938807072, below negative shortcut threshhold 0.05
+2018-12-20 14:02:40,259 IBM866 confidence = 0.041217034915826074, below negative shortcut threshhold 0.05
+2018-12-20 14:02:40,267 IBM855 confidence = 0.039458239799315, below negative shortcut threshhold 0.05
+2018-12-20 14:02:40,289 ISO-8859-5 confidence = 0.0404666188596132, below negative shortcut threshhold 0.05
+2018-12-20 14:02:40,296 windows-1251 confidence = 0.043661478775636545, below negative shortcut threshhold 0.05
+2018-12-20 14:02:40,303 TIS-620 confidence = 0.03831747459883691, below negative shortcut threshhold 0.05
+2018-12-20 14:02:40,320 windows-1255 confidence = 0.04440448113069304, below negative shortcut threshhold 0.05
+2018-12-20 14:02:40,327 windows-1255 confidence = 0.04223083520121856, below negative shortcut threshhold 0.05
+2018-12-20 14:02:40,335 windows-1251 not active
+2018-12-20 14:02:40,336 KOI8-R not active
+2018-12-20 14:02:40,336 ISO-8859-5 not active
+2018-12-20 14:02:40,336 MacCyrillic not active
+2018-12-20 14:02:40,336 IBM866 not active
+2018-12-20 14:02:40,336 IBM855 not active
+2018-12-20 14:02:40,336 ISO-8859-7 Greek confidence = 0.07029523269492585
+2018-12-20 14:02:40,336 windows-1253 Greek confidence = 0.07181012819330614
+2018-12-20 14:02:40,336 ISO-8859-5 not active
+2018-12-20 14:02:40,336 windows-1251 not active
+2018-12-20 14:02:40,336 TIS-620 not active
+2018-12-20 14:02:40,336 ISO-8859-9 Turkish confidence = 0.08636778864314258
+2018-12-20 14:02:40,336 windows-1255 Hebrew confidence = 0.0
+2018-12-20 14:02:40,336 windows-1255 not active
+2018-12-20 14:02:40,336 windows-1255 not active
+2018-12-20 14:02:40,336 no probers hit minimum threshold
+2018-12-20 14:02:40,336 utf-8  confidence = 0.010000000000000009
+2018-12-20 14:02:40,336 SHIFT_JIS Japanese confidence = 0.01
+2018-12-20 14:02:40,336 EUC-JP Japanese confidence = 0.01
+2018-12-20 14:02:40,336 GB2312 Chinese confidence = 0.01
+2018-12-20 14:02:40,336 EUC-KR Korean confidence = 0.01
+2018-12-20 14:02:40,336 CP949 Korean confidence = 0.01
+2018-12-20 14:02:40,336 Big5 Chinese confidence = 0.01
+2018-12-20 14:02:40,336 EUC-TW Taiwan confidence = 0.01
+2018-12-20 14:02:40,336 windows-1251 Russian confidence = 0.04288699879707874
+2018-12-20 14:02:40,336 KOI8-R Russian confidence = 0.0449405445054906
+2018-12-20 14:02:40,336 ISO-8859-5 Russian confidence = 0.04101704596051938
+2018-12-20 14:02:40,336 MacCyrillic Russian confidence = 0.04334241938807072
+2018-12-20 14:02:40,337 IBM866 Russian confidence = 0.041217034915826074
+2018-12-20 14:02:40,337 IBM855 Russian confidence = 0.039458239799315
+2018-12-20 14:02:40,337 ISO-8859-7 Greek confidence = 0.07029523269492585
+2018-12-20 14:02:40,337 windows-1253 Greek confidence = 0.07181012819330614
+2018-12-20 14:02:40,337 ISO-8859-5 Bulgairan confidence = 0.0404666188596132
+2018-12-20 14:02:40,337 windows-1251 Bulgarian confidence = 0.043661478775636545
+2018-12-20 14:02:40,337 TIS-620 Thai confidence = 0.03831747459883691
+2018-12-20 14:02:40,337 ISO-8859-9 Turkish confidence = 0.08636778864314258
+2018-12-20 14:02:40,337 windows-1255 Hebrew confidence = 0.0
+2018-12-20 14:02:40,337 windows-1255 Hebrew confidence = 0.04440448113069304
+2018-12-20 14:02:40,337 windows-1255 Hebrew confidence = 0.04223083520121856
+2018-12-20 14:02:40,337 windows-1255 Hebrew confidence = 0.04223083520121856
+2018-12-20 14:02:40,338  INFO client run_show_deviation_pdf 'Compliance checking is done. Deviations PDF is available at http://127.0.0.1:5000/show-deviation-pdf?uuid=client'
+2018-12-20 14:02:40,339  INFO client main 'The options are displayed'
+2018-12-20 14:03:17,532  INFO client main 'The user selected option 1'
+2018-12-20 14:03:18,393  INFO client main 'The user selected option 1'
+2018-12-20 14:03:18,394  INFO client main 'Calling run_compliance_checker()'
+2018-12-20 14:03:18,394  INFO client run_compliance_checker 'Calling read_log()'
+2018-12-20 14:03:18,394  INFO client read_log 'Creating a trace logger file: '
+2018-12-20 14:03:18,398  INFO client read_log 'Transforming trace logger to event logger'
+2018-12-20 14:03:18,399  INFO client read_log 'Sorting event logger'
+2018-12-20 14:03:18,399  INFO client run_compliance_checker 'Calling simulate_stream_event()'
+2018-12-20 14:03:18,399  INFO client simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-20 14:03:18,399  INFO client invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2018-12-20 14:03:18,399  INFO client invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2018-12-20 14:03:18,400  INFO client run Thread:24 Case_id:Case1.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:18,401 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:18,406 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:03:18,406  INFO client run Thread:24 Case_id:Case1.0 Activity:a 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:03:18,407  INFO client simulate_stream_event Case_id:Case3.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-20 14:03:18,407  INFO client invoke_event_thread Case_id:Case3.0 Activity:a 'Initialising thread'
+2018-12-20 14:03:18,407  INFO client invoke_event_thread Case_id:Case3.0 Activity:a 'Starting thread for event '
+2018-12-20 14:03:18,407  INFO client run Thread:25 Case_id:Case3.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:18,409 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:18,410 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:03:18,411  INFO client run Thread:25 Case_id:Case3.0 Activity:a 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:03:18,411  INFO client simulate_stream_event Case_id:Case2.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-20 14:03:18,411  INFO client invoke_event_thread Case_id:Case2.0 Activity:a 'Initialising thread'
+2018-12-20 14:03:18,411  INFO client invoke_event_thread Case_id:Case2.0 Activity:a 'Starting thread for event '
+2018-12-20 14:03:18,412  INFO client run Thread:26 Case_id:Case2.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:18,413 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:18,414 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:03:18,414  INFO client run Thread:26 Case_id:Case2.0 Activity:a 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:03:18,415  INFO client simulate_stream_event Case_id:Case1.2 Activity:a 'Calling invoke_event_thread()'
+2018-12-20 14:03:18,415  INFO client invoke_event_thread Case_id:Case1.2 Activity:a 'Initialising thread'
+2018-12-20 14:03:18,415  INFO client invoke_event_thread Case_id:Case1.2 Activity:a 'Starting thread for event '
+2018-12-20 14:03:18,415  INFO client run Thread:27 Case_id:Case1.2 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:18,416 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:18,417 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:03:18,418  INFO client run Thread:27 Case_id:Case1.2 Activity:a 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:03:18,418  INFO client simulate_stream_event Case_id:Case1.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-20 14:03:18,418  INFO client invoke_event_thread Case_id:Case1.1 Activity:a 'Initialising thread'
+2018-12-20 14:03:18,418  INFO client invoke_event_thread Case_id:Case1.1 Activity:a 'Starting thread for event '
+2018-12-20 14:03:18,418  INFO client run Thread:28 Case_id:Case1.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:18,420 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:18,421 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:03:18,421  INFO client run Thread:28 Case_id:Case1.1 Activity:a 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:03:18,421  INFO client simulate_stream_event Case_id:Case2.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-20 14:03:18,421  INFO client invoke_event_thread Case_id:Case2.1 Activity:a 'Initialising thread'
+2018-12-20 14:03:18,422  INFO client invoke_event_thread Case_id:Case2.1 Activity:a 'Starting thread for event '
+2018-12-20 14:03:18,422  INFO client run Thread:29 Case_id:Case2.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:18,423 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:18,424 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:03:18,424  INFO client run Thread:29 Case_id:Case2.1 Activity:a 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:03:18,424  INFO client simulate_stream_event Case_id:Case1.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-20 14:03:18,424  INFO client invoke_event_thread Case_id:Case1.0 Activity:b 'Initialising thread'
+2018-12-20 14:03:18,425  INFO client invoke_event_thread Case_id:Case1.0 Activity:b 'Starting thread for event '
+2018-12-20 14:03:18,425  INFO client run Thread:30 Case_id:Case1.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:18,426 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:18,427 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:03:18,427  INFO client run Thread:30 Case_id:Case1.0 Activity:b 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:03:18,427  INFO client simulate_stream_event Case_id:Case3.0 Activity:e 'Calling invoke_event_thread()'
+2018-12-20 14:03:18,427  INFO client invoke_event_thread Case_id:Case3.0 Activity:e 'Initialising thread'
+2018-12-20 14:03:18,427  INFO client invoke_event_thread Case_id:Case3.0 Activity:e 'Starting thread for event '
+2018-12-20 14:03:18,428  INFO client run Thread:31 Case_id:Case3.0 Activity:e 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:18,429 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:18,430 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:03:18,431  INFO client run Thread:31 Case_id:Case3.0 Activity:e 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:03:18,431  INFO client simulate_stream_event Case_id:Case2.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-20 14:03:18,431  INFO client invoke_event_thread Case_id:Case2.0 Activity:c 'Initialising thread'
+2018-12-20 14:03:18,431  INFO client invoke_event_thread Case_id:Case2.0 Activity:c 'Starting thread for event '
+2018-12-20 14:03:18,431  INFO client run Thread:32 Case_id:Case2.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:18,432 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:18,434 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:03:18,434  INFO client run Thread:32 Case_id:Case2.0 Activity:c 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:03:18,434  INFO client simulate_stream_event Case_id:Case1.2 Activity:b 'Calling invoke_event_thread()'
+2018-12-20 14:03:18,434  INFO client invoke_event_thread Case_id:Case1.2 Activity:b 'Initialising thread'
+2018-12-20 14:03:18,434  INFO client invoke_event_thread Case_id:Case1.2 Activity:b 'Starting thread for event '
+2018-12-20 14:03:18,434  INFO client run Thread:33 Case_id:Case1.2 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:18,435 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:18,437 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:03:18,437  INFO client run Thread:33 Case_id:Case1.2 Activity:b 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:03:18,437  INFO client simulate_stream_event Case_id:Case1.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-20 14:03:18,437  INFO client invoke_event_thread Case_id:Case1.1 Activity:b 'Initialising thread'
+2018-12-20 14:03:18,437  INFO client invoke_event_thread Case_id:Case1.1 Activity:b 'Starting thread for event '
+2018-12-20 14:03:18,437  INFO client run Thread:34 Case_id:Case1.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:18,438 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:18,440 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:03:18,440  INFO client run Thread:34 Case_id:Case1.1 Activity:b 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:03:18,440  INFO client simulate_stream_event Case_id:Case2.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-20 14:03:18,441  INFO client invoke_event_thread Case_id:Case2.1 Activity:c 'Initialising thread'
+2018-12-20 14:03:18,441  INFO client invoke_event_thread Case_id:Case2.1 Activity:c 'Starting thread for event '
+2018-12-20 14:03:18,441  INFO client run Thread:35 Case_id:Case2.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:18,442 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:18,443 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:03:18,443  INFO client run Thread:35 Case_id:Case2.1 Activity:c 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:03:18,443  INFO client simulate_stream_event Case_id:Case1.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-20 14:03:18,443  INFO client invoke_event_thread Case_id:Case1.0 Activity:c 'Initialising thread'
+2018-12-20 14:03:18,443  INFO client invoke_event_thread Case_id:Case1.0 Activity:c 'Starting thread for event '
+2018-12-20 14:03:18,443  INFO client run Thread:36 Case_id:Case1.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:18,444 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:18,445 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:03:18,446  INFO client run Thread:36 Case_id:Case1.0 Activity:c 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:03:18,446  INFO client simulate_stream_event Case_id:Case3.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-20 14:03:18,446  INFO client invoke_event_thread Case_id:Case3.0 Activity:d 'Initialising thread'
+2018-12-20 14:03:18,446  INFO client invoke_event_thread Case_id:Case3.0 Activity:d 'Starting thread for event '
+2018-12-20 14:03:18,446  INFO client run Thread:37 Case_id:Case3.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:18,447 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:18,448 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:03:18,448  INFO client run Thread:37 Case_id:Case3.0 Activity:d 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:03:18,448  INFO client simulate_stream_event Case_id:Case2.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-20 14:03:18,449  INFO client invoke_event_thread Case_id:Case2.0 Activity:b 'Initialising thread'
+2018-12-20 14:03:18,449  INFO client invoke_event_thread Case_id:Case2.0 Activity:b 'Starting thread for event '
+2018-12-20 14:03:18,449  INFO client run Thread:38 Case_id:Case2.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:18,450 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:18,451 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:03:18,451  INFO client run Thread:38 Case_id:Case2.0 Activity:b 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:03:18,451  INFO client simulate_stream_event Case_id:Case1.2 Activity:c 'Calling invoke_event_thread()'
+2018-12-20 14:03:18,451  INFO client invoke_event_thread Case_id:Case1.2 Activity:c 'Initialising thread'
+2018-12-20 14:03:18,451  INFO client invoke_event_thread Case_id:Case1.2 Activity:c 'Starting thread for event '
+2018-12-20 14:03:18,451  INFO client run Thread:39 Case_id:Case1.2 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:18,452 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:18,453 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:03:18,454  INFO client run Thread:39 Case_id:Case1.2 Activity:c 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:03:18,454  INFO client simulate_stream_event Case_id:Case1.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-20 14:03:18,454  INFO client invoke_event_thread Case_id:Case1.1 Activity:c 'Initialising thread'
+2018-12-20 14:03:18,454  INFO client invoke_event_thread Case_id:Case1.1 Activity:c 'Starting thread for event '
+2018-12-20 14:03:18,454  INFO client run Thread:40 Case_id:Case1.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:18,455 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:18,456 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:03:18,456  INFO client run Thread:40 Case_id:Case1.1 Activity:c 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:03:18,457  INFO client simulate_stream_event Case_id:Case2.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-20 14:03:18,457  INFO client invoke_event_thread Case_id:Case2.1 Activity:b 'Initialising thread'
+2018-12-20 14:03:18,457  INFO client invoke_event_thread Case_id:Case2.1 Activity:b 'Starting thread for event '
+2018-12-20 14:03:18,457  INFO client run Thread:41 Case_id:Case2.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:18,458 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:18,459 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:03:18,459  INFO client run Thread:41 Case_id:Case2.1 Activity:b 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:03:18,459  INFO client simulate_stream_event Case_id:Case1.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-20 14:03:18,459  INFO client invoke_event_thread Case_id:Case1.0 Activity:d 'Initialising thread'
+2018-12-20 14:03:18,459  INFO client invoke_event_thread Case_id:Case1.0 Activity:d 'Starting thread for event '
+2018-12-20 14:03:18,460  INFO client run Thread:42 Case_id:Case1.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:18,460 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:18,461 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:03:18,462  INFO client run Thread:42 Case_id:Case1.0 Activity:d 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:03:18,462  INFO client simulate_stream_event Case_id:Case2.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-20 14:03:18,462  INFO client invoke_event_thread Case_id:Case2.0 Activity:d 'Initialising thread'
+2018-12-20 14:03:18,462  INFO client invoke_event_thread Case_id:Case2.0 Activity:d 'Starting thread for event '
+2018-12-20 14:03:18,462  INFO client run Thread:43 Case_id:Case2.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:18,463 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:18,464 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:03:18,464  INFO client run Thread:43 Case_id:Case2.0 Activity:d 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:03:18,465  INFO client simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-20 14:03:18,465  INFO client invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-20 14:03:18,465  INFO client invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-20 14:03:18,465  INFO client run Thread:44 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:18,466 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:18,468 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:03:18,468  INFO client run Thread:44 Case_id:Case1.2 Activity:d 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:03:18,468  INFO client simulate_stream_event Case_id:Case1.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-20 14:03:18,468  INFO client invoke_event_thread Case_id:Case1.1 Activity:d 'Initialising thread'
+2018-12-20 14:03:18,469  INFO client invoke_event_thread Case_id:Case1.1 Activity:d 'Starting thread for event '
+2018-12-20 14:03:18,469  INFO client run Thread:45 Case_id:Case1.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:18,470 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:18,471 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:03:18,471  INFO client run Thread:45 Case_id:Case1.1 Activity:d 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:03:18,471  INFO client simulate_stream_event Case_id:Case2.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-20 14:03:18,471  INFO client invoke_event_thread Case_id:Case2.1 Activity:d 'Initialising thread'
+2018-12-20 14:03:18,471  INFO client invoke_event_thread Case_id:Case2.1 Activity:d 'Starting thread for event '
+2018-12-20 14:03:18,472  INFO client run Thread:46 Case_id:Case2.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:18,473 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:18,474 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:03:18,474  INFO client run Thread:46 Case_id:Case2.1 Activity:d 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:03:18,475  INFO client simulate_stream_event Case_id:NONE Activity:END 'Calling invoke_event_thread()'
+2018-12-20 14:03:18,475  INFO client invoke_event_thread Case_id:NONE Activity:END 'Initialising thread'
+2018-12-20 14:03:18,475  INFO client invoke_event_thread Case_id:NONE Activity:END 'Starting thread for event '
+2018-12-20 14:03:18,475  INFO client run Thread:47 Case_id:NONE Activity:END 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:18,480 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:18,481  INFO client main 'compliance checking is completed'
+2018-12-20 14:03:18,482  INFO client main 'The options are displayed'
+2018-12-20 14:03:18,483 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 35
+2018-12-20 14:03:18,483  INFO client run Thread:47 Case_id:NONE Activity:END 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-20 14:03:21,907  INFO client login 'Post request to server:http://127.0.0.1:5000/login?uuid=client'
+2018-12-20 14:03:21,913 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:21,917 http://127.0.0.1:5000 "POST /login?uuid=client HTTP/1.1" 200 5
+2018-12-20 14:03:21,918  INFO client main 'The options are displayed'
+2018-12-20 14:03:22,421  INFO client main 'The user selected option 1'
+2018-12-20 14:03:22,421  INFO client main 'The user selected option 1'
+2018-12-20 14:03:22,422  INFO client main 'Calling run_compliance_checker()'
+2018-12-20 14:03:22,422  INFO client run_compliance_checker 'Calling read_log()'
+2018-12-20 14:03:22,422  INFO client read_log 'Creating a trace logger file: '
+2018-12-20 14:03:22,427  INFO client read_log 'Transforming trace logger to event logger'
+2018-12-20 14:03:22,427  INFO client read_log 'Sorting event logger'
+2018-12-20 14:03:22,427  INFO client run_compliance_checker 'Calling simulate_stream_event()'
+2018-12-20 14:03:22,427  INFO client simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-20 14:03:22,427  INFO client invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2018-12-20 14:03:22,428  INFO client invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2018-12-20 14:03:22,428  INFO client run Thread:0 Case_id:Case1.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:22,430 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:22,434 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:03:22,434  INFO client run Thread:0 Case_id:Case1.0 Activity:a 'The server response is: {"body": "OK"}'
+2018-12-20 14:03:22,435  INFO client simulate_stream_event Case_id:Case3.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-20 14:03:22,435  INFO client invoke_event_thread Case_id:Case3.0 Activity:a 'Initialising thread'
+2018-12-20 14:03:22,435  INFO client invoke_event_thread Case_id:Case3.0 Activity:a 'Starting thread for event '
+2018-12-20 14:03:22,435  INFO client run Thread:1 Case_id:Case3.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:22,436 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:22,438 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:03:22,439  INFO client run Thread:1 Case_id:Case3.0 Activity:a 'The server response is: {"body": "OK"}'
+2018-12-20 14:03:22,439  INFO client simulate_stream_event Case_id:Case2.0 Activity:a 'Calling invoke_event_thread()'
+2018-12-20 14:03:22,439  INFO client invoke_event_thread Case_id:Case2.0 Activity:a 'Initialising thread'
+2018-12-20 14:03:22,439  INFO client invoke_event_thread Case_id:Case2.0 Activity:a 'Starting thread for event '
+2018-12-20 14:03:22,439  INFO client run Thread:2 Case_id:Case2.0 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:22,441 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:22,443 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:03:22,444  INFO client run Thread:2 Case_id:Case2.0 Activity:a 'The server response is: {"body": "OK"}'
+2018-12-20 14:03:22,444  INFO client simulate_stream_event Case_id:Case1.2 Activity:a 'Calling invoke_event_thread()'
+2018-12-20 14:03:22,444  INFO client invoke_event_thread Case_id:Case1.2 Activity:a 'Initialising thread'
+2018-12-20 14:03:22,444  INFO client invoke_event_thread Case_id:Case1.2 Activity:a 'Starting thread for event '
+2018-12-20 14:03:22,444  INFO client run Thread:3 Case_id:Case1.2 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:22,445 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:22,447 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:03:22,448  INFO client run Thread:3 Case_id:Case1.2 Activity:a 'The server response is: {"body": "OK"}'
+2018-12-20 14:03:22,448  INFO client simulate_stream_event Case_id:Case1.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-20 14:03:22,448  INFO client invoke_event_thread Case_id:Case1.1 Activity:a 'Initialising thread'
+2018-12-20 14:03:22,448  INFO client invoke_event_thread Case_id:Case1.1 Activity:a 'Starting thread for event '
+2018-12-20 14:03:22,448  INFO client run Thread:4 Case_id:Case1.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:22,449 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:22,451 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:03:22,451  INFO client run Thread:4 Case_id:Case1.1 Activity:a 'The server response is: {"body": "OK"}'
+2018-12-20 14:03:22,451  INFO client simulate_stream_event Case_id:Case2.1 Activity:a 'Calling invoke_event_thread()'
+2018-12-20 14:03:22,451  INFO client invoke_event_thread Case_id:Case2.1 Activity:a 'Initialising thread'
+2018-12-20 14:03:22,452  INFO client invoke_event_thread Case_id:Case2.1 Activity:a 'Starting thread for event '
+2018-12-20 14:03:22,452  INFO client run Thread:5 Case_id:Case2.1 Activity:a 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:22,453 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:22,454 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:03:22,455  INFO client run Thread:5 Case_id:Case2.1 Activity:a 'The server response is: {"body": "OK"}'
+2018-12-20 14:03:22,455  INFO client simulate_stream_event Case_id:Case1.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-20 14:03:22,455  INFO client invoke_event_thread Case_id:Case1.0 Activity:b 'Initialising thread'
+2018-12-20 14:03:22,455  INFO client invoke_event_thread Case_id:Case1.0 Activity:b 'Starting thread for event '
+2018-12-20 14:03:22,455  INFO client run Thread:6 Case_id:Case1.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:22,457 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:22,461 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:03:22,462  INFO client run Thread:6 Case_id:Case1.0 Activity:b 'The server response is: {"body": "OK"}'
+2018-12-20 14:03:22,462  INFO client simulate_stream_event Case_id:Case3.0 Activity:e 'Calling invoke_event_thread()'
+2018-12-20 14:03:22,462  INFO client invoke_event_thread Case_id:Case3.0 Activity:e 'Initialising thread'
+2018-12-20 14:03:22,462  INFO client invoke_event_thread Case_id:Case3.0 Activity:e 'Starting thread for event '
+2018-12-20 14:03:22,462  INFO client run Thread:7 Case_id:Case3.0 Activity:e 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:22,463 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:22,466 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 107
+2018-12-20 14:03:22,466  INFO client run Thread:7 Case_id:Case3.0 Activity:e 'The server response is: {"case_id": "Case3.0", "source_node": "a", "sink_node": "e", "cause": 0.166667, "expect": 0.2, "body": "T"}'
+2018-12-20 14:03:22,467  INFO client simulate_stream_event Case_id:Case2.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-20 14:03:22,467  INFO client invoke_event_thread Case_id:Case2.0 Activity:c 'Initialising thread'
+2018-12-20 14:03:22,467  INFO client invoke_event_thread Case_id:Case2.0 Activity:c 'Starting thread for event '
+2018-12-20 14:03:22,467  INFO client run Thread:8 Case_id:Case2.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:22,468 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:22,471 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:03:22,472  INFO client run Thread:8 Case_id:Case2.0 Activity:c 'The server response is: {"body": "OK"}'
+2018-12-20 14:03:22,472  INFO client simulate_stream_event Case_id:Case1.2 Activity:b 'Calling invoke_event_thread()'
+2018-12-20 14:03:22,472  INFO client invoke_event_thread Case_id:Case1.2 Activity:b 'Initialising thread'
+2018-12-20 14:03:22,472  INFO client invoke_event_thread Case_id:Case1.2 Activity:b 'Starting thread for event '
+2018-12-20 14:03:22,472  INFO client run Thread:9 Case_id:Case1.2 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:22,473 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:22,475 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:03:22,476  INFO client run Thread:9 Case_id:Case1.2 Activity:b 'The server response is: {"body": "OK"}'
+2018-12-20 14:03:22,476  INFO client simulate_stream_event Case_id:Case1.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-20 14:03:22,476  INFO client invoke_event_thread Case_id:Case1.1 Activity:b 'Initialising thread'
+2018-12-20 14:03:22,476  INFO client invoke_event_thread Case_id:Case1.1 Activity:b 'Starting thread for event '
+2018-12-20 14:03:22,476  INFO client run Thread:10 Case_id:Case1.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:22,478 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:22,479 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:03:22,479  INFO client run Thread:10 Case_id:Case1.1 Activity:b 'The server response is: {"body": "OK"}'
+2018-12-20 14:03:22,480  INFO client simulate_stream_event Case_id:Case2.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-20 14:03:22,480  INFO client invoke_event_thread Case_id:Case2.1 Activity:c 'Initialising thread'
+2018-12-20 14:03:22,480  INFO client invoke_event_thread Case_id:Case2.1 Activity:c 'Starting thread for event '
+2018-12-20 14:03:22,480  INFO client run Thread:11 Case_id:Case2.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:22,481 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:22,482 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:03:22,482  INFO client run Thread:11 Case_id:Case2.1 Activity:c 'The server response is: {"body": "OK"}'
+2018-12-20 14:03:22,482  INFO client simulate_stream_event Case_id:Case1.0 Activity:c 'Calling invoke_event_thread()'
+2018-12-20 14:03:22,483  INFO client invoke_event_thread Case_id:Case1.0 Activity:c 'Initialising thread'
+2018-12-20 14:03:22,483  INFO client invoke_event_thread Case_id:Case1.0 Activity:c 'Starting thread for event '
+2018-12-20 14:03:22,483  INFO client run Thread:12 Case_id:Case1.0 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:22,484 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:22,487 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:03:22,488  INFO client run Thread:12 Case_id:Case1.0 Activity:c 'The server response is: {"body": "OK"}'
+2018-12-20 14:03:22,488  INFO client simulate_stream_event Case_id:Case3.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-20 14:03:22,488  INFO client invoke_event_thread Case_id:Case3.0 Activity:d 'Initialising thread'
+2018-12-20 14:03:22,488  INFO client invoke_event_thread Case_id:Case3.0 Activity:d 'Starting thread for event '
+2018-12-20 14:03:22,488  INFO client run Thread:13 Case_id:Case3.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:22,489 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:22,492 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:03:22,492  INFO client run Thread:13 Case_id:Case3.0 Activity:d 'The server response is: {"body": "OK"}'
+2018-12-20 14:03:22,493  INFO client simulate_stream_event Case_id:Case2.0 Activity:b 'Calling invoke_event_thread()'
+2018-12-20 14:03:22,493  INFO client invoke_event_thread Case_id:Case2.0 Activity:b 'Initialising thread'
+2018-12-20 14:03:22,493  INFO client invoke_event_thread Case_id:Case2.0 Activity:b 'Starting thread for event '
+2018-12-20 14:03:22,493  INFO client run Thread:14 Case_id:Case2.0 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:22,494 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:22,498 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:03:22,498  INFO client run Thread:14 Case_id:Case2.0 Activity:b 'The server response is: {"body": "OK"}'
+2018-12-20 14:03:22,498  INFO client simulate_stream_event Case_id:Case1.2 Activity:c 'Calling invoke_event_thread()'
+2018-12-20 14:03:22,498  INFO client invoke_event_thread Case_id:Case1.2 Activity:c 'Initialising thread'
+2018-12-20 14:03:22,498  INFO client invoke_event_thread Case_id:Case1.2 Activity:c 'Starting thread for event '
+2018-12-20 14:03:22,498  INFO client run Thread:15 Case_id:Case1.2 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:22,499 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:22,501 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:03:22,502  INFO client run Thread:15 Case_id:Case1.2 Activity:c 'The server response is: {"body": "OK"}'
+2018-12-20 14:03:22,502  INFO client simulate_stream_event Case_id:Case1.1 Activity:c 'Calling invoke_event_thread()'
+2018-12-20 14:03:22,502  INFO client invoke_event_thread Case_id:Case1.1 Activity:c 'Initialising thread'
+2018-12-20 14:03:22,502  INFO client invoke_event_thread Case_id:Case1.1 Activity:c 'Starting thread for event '
+2018-12-20 14:03:22,502  INFO client run Thread:16 Case_id:Case1.1 Activity:c 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:22,503 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:22,505 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:03:22,505  INFO client run Thread:16 Case_id:Case1.1 Activity:c 'The server response is: {"body": "OK"}'
+2018-12-20 14:03:22,505  INFO client simulate_stream_event Case_id:Case2.1 Activity:b 'Calling invoke_event_thread()'
+2018-12-20 14:03:22,505  INFO client invoke_event_thread Case_id:Case2.1 Activity:b 'Initialising thread'
+2018-12-20 14:03:22,506  INFO client invoke_event_thread Case_id:Case2.1 Activity:b 'Starting thread for event '
+2018-12-20 14:03:22,506  INFO client run Thread:17 Case_id:Case2.1 Activity:b 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:22,507 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:22,508 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:03:22,508  INFO client run Thread:17 Case_id:Case2.1 Activity:b 'The server response is: {"body": "OK"}'
+2018-12-20 14:03:22,509  INFO client simulate_stream_event Case_id:Case1.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-20 14:03:22,509  INFO client invoke_event_thread Case_id:Case1.0 Activity:d 'Initialising thread'
+2018-12-20 14:03:22,509  INFO client invoke_event_thread Case_id:Case1.0 Activity:d 'Starting thread for event '
+2018-12-20 14:03:22,509  INFO client run Thread:18 Case_id:Case1.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:22,510 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:22,514 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:03:22,515  INFO client run Thread:18 Case_id:Case1.0 Activity:d 'The server response is: {"body": "OK"}'
+2018-12-20 14:03:22,515  INFO client simulate_stream_event Case_id:Case2.0 Activity:d 'Calling invoke_event_thread()'
+2018-12-20 14:03:22,515  INFO client invoke_event_thread Case_id:Case2.0 Activity:d 'Initialising thread'
+2018-12-20 14:03:22,515  INFO client invoke_event_thread Case_id:Case2.0 Activity:d 'Starting thread for event '
+2018-12-20 14:03:22,515  INFO client run Thread:19 Case_id:Case2.0 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:22,516 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:22,520 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:03:22,521  INFO client run Thread:19 Case_id:Case2.0 Activity:d 'The server response is: {"body": "OK"}'
+2018-12-20 14:03:22,521  INFO client simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2018-12-20 14:03:22,521  INFO client invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2018-12-20 14:03:22,521  INFO client invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2018-12-20 14:03:22,521  INFO client run Thread:20 Case_id:Case1.2 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:22,523 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:22,525 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:03:22,525  INFO client run Thread:20 Case_id:Case1.2 Activity:d 'The server response is: {"body": "OK"}'
+2018-12-20 14:03:22,526  INFO client simulate_stream_event Case_id:Case1.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-20 14:03:22,526  INFO client invoke_event_thread Case_id:Case1.1 Activity:d 'Initialising thread'
+2018-12-20 14:03:22,526  INFO client invoke_event_thread Case_id:Case1.1 Activity:d 'Starting thread for event '
+2018-12-20 14:03:22,526  INFO client run Thread:21 Case_id:Case1.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:22,527 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:22,528 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:03:22,528  INFO client run Thread:21 Case_id:Case1.1 Activity:d 'The server response is: {"body": "OK"}'
+2018-12-20 14:03:22,529  INFO client simulate_stream_event Case_id:Case2.1 Activity:d 'Calling invoke_event_thread()'
+2018-12-20 14:03:22,529  INFO client invoke_event_thread Case_id:Case2.1 Activity:d 'Initialising thread'
+2018-12-20 14:03:22,529  INFO client invoke_event_thread Case_id:Case2.1 Activity:d 'Starting thread for event '
+2018-12-20 14:03:22,529  INFO client run Thread:22 Case_id:Case2.1 Activity:d 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:22,530 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:22,531 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 14
+2018-12-20 14:03:22,531  INFO client run Thread:22 Case_id:Case2.1 Activity:d 'The server response is: {"body": "OK"}'
+2018-12-20 14:03:22,532  INFO client simulate_stream_event Case_id:NONE Activity:END 'Calling invoke_event_thread()'
+2018-12-20 14:03:22,532  INFO client invoke_event_thread Case_id:NONE Activity:END 'Initialising thread'
+2018-12-20 14:03:22,532  INFO client invoke_event_thread Case_id:NONE Activity:END 'Starting thread for event '
+2018-12-20 14:03:22,532  INFO client run Thread:23 Case_id:NONE Activity:END 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-20 14:03:22,533 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:22,540  INFO client main 'compliance checking is completed'
+2018-12-20 14:03:22,540  INFO client main 'The options are displayed'
+2018-12-20 14:03:22,647 http://127.0.0.1:5000 "POST /compliance-checker?uuid=client HTTP/1.1" 200 75
+2018-12-20 14:03:22,648  INFO client run Thread:23 Case_id:NONE Activity:END 'The server response is: {"body": "The compliance checking is over, you can get the deviation pdf!"}'
+2018-12-20 14:03:24,165  INFO client main 'The user selected option 2'
+2018-12-20 14:03:24,165  INFO client main 'Calling run_show_deviation_pdf() '
+2018-12-20 14:03:24,166  INFO client run_show_deviation_pdf 'Post request to http://127.0.0.1:5000/show-deviation-pdf?uuid=client'
+2018-12-20 14:03:24,169 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-20 14:03:24,173 http://127.0.0.1:5000 "POST /show-deviation-pdf?uuid=client HTTP/1.1" 200 None
+2018-12-20 14:03:24,175 SHIFT_JIS Japanese prober hit error at byte 84
+2018-12-20 14:03:24,175 EUC-JP Japanese prober hit error at byte 17
+2018-12-20 14:03:24,175 GB2312 Chinese prober hit error at byte 21
+2018-12-20 14:03:24,175 EUC-KR Korean prober hit error at byte 17
+2018-12-20 14:03:24,175 CP949 Korean prober hit error at byte 17
+2018-12-20 14:03:24,175 Big5 Chinese prober hit error at byte 21
+2018-12-20 14:03:24,176 EUC-TW Taiwan prober hit error at byte 17
+2018-12-20 14:03:24,186 windows-1251 confidence = 0.04237495208432192, below negative shortcut threshhold 0.05
+2018-12-20 14:03:24,195 KOI8-R confidence = 0.04360237851188182, below negative shortcut threshhold 0.05
+2018-12-20 14:03:24,203 ISO-8859-5 confidence = 0.04117605218965809, below negative shortcut threshhold 0.05
+2018-12-20 14:03:24,211 MacCyrillic confidence = 0.04363419647734033, below negative shortcut threshhold 0.05
+2018-12-20 14:03:24,219 IBM866 confidence = 0.040789610604011574, below negative shortcut threshhold 0.05
+2018-12-20 14:03:24,227 IBM855 confidence = 0.039383345378779896, below negative shortcut threshhold 0.05
+2018-12-20 14:03:24,248 ISO-8859-5 confidence = 0.04079024428582428, below negative shortcut threshhold 0.05
+2018-12-20 14:03:24,256 windows-1251 confidence = 0.04288434739911463, below negative shortcut threshhold 0.05
+2018-12-20 14:03:24,263 TIS-620 confidence = 0.0386642672708638, below negative shortcut threshhold 0.05
+2018-12-20 14:03:24,280 windows-1255 confidence = 0.0457338343356232, below negative shortcut threshhold 0.05
+2018-12-20 14:03:24,287 windows-1255 confidence = 0.04387975997066549, below negative shortcut threshhold 0.05
+2018-12-20 14:03:24,295 windows-1251 not active
+2018-12-20 14:03:24,296 KOI8-R not active
+2018-12-20 14:03:24,296 ISO-8859-5 not active
+2018-12-20 14:03:24,296 MacCyrillic not active
+2018-12-20 14:03:24,296 IBM866 not active
+2018-12-20 14:03:24,296 IBM855 not active
+2018-12-20 14:03:24,296 ISO-8859-7 Greek confidence = 0.07182714231892354
+2018-12-20 14:03:24,296 windows-1253 Greek confidence = 0.07308683140949858
+2018-12-20 14:03:24,296 ISO-8859-5 not active
+2018-12-20 14:03:24,296 windows-1251 not active
+2018-12-20 14:03:24,296 TIS-620 not active
+2018-12-20 14:03:24,296 ISO-8859-9 Turkish confidence = 0.08786192712342086
+2018-12-20 14:03:24,296 windows-1255 Hebrew confidence = 0.0
+2018-12-20 14:03:24,296 windows-1255 not active
+2018-12-20 14:03:24,296 windows-1255 not active
+2018-12-20 14:03:24,296 no probers hit minimum threshold
+2018-12-20 14:03:24,296 utf-8  confidence = 0.010000000000000009
+2018-12-20 14:03:24,296 SHIFT_JIS Japanese confidence = 0.01
+2018-12-20 14:03:24,296 EUC-JP Japanese confidence = 0.01
+2018-12-20 14:03:24,296 GB2312 Chinese confidence = 0.01
+2018-12-20 14:03:24,296 EUC-KR Korean confidence = 0.01
+2018-12-20 14:03:24,296 CP949 Korean confidence = 0.01
+2018-12-20 14:03:24,296 Big5 Chinese confidence = 0.01
+2018-12-20 14:03:24,296 EUC-TW Taiwan confidence = 0.01
+2018-12-20 14:03:24,297 windows-1251 Russian confidence = 0.04237495208432192
+2018-12-20 14:03:24,297 KOI8-R Russian confidence = 0.04360237851188182
+2018-12-20 14:03:24,297 ISO-8859-5 Russian confidence = 0.04117605218965809
+2018-12-20 14:03:24,297 MacCyrillic Russian confidence = 0.04363419647734033
+2018-12-20 14:03:24,297 IBM866 Russian confidence = 0.040789610604011574
+2018-12-20 14:03:24,297 IBM855 Russian confidence = 0.039383345378779896
+2018-12-20 14:03:24,297 ISO-8859-7 Greek confidence = 0.07182714231892354
+2018-12-20 14:03:24,297 windows-1253 Greek confidence = 0.07308683140949858
+2018-12-20 14:03:24,297 ISO-8859-5 Bulgairan confidence = 0.04079024428582428
+2018-12-20 14:03:24,297 windows-1251 Bulgarian confidence = 0.04288434739911463
+2018-12-20 14:03:24,297 TIS-620 Thai confidence = 0.0386642672708638
+2018-12-20 14:03:24,297 ISO-8859-9 Turkish confidence = 0.08786192712342086
+2018-12-20 14:03:24,297 windows-1255 Hebrew confidence = 0.0
+2018-12-20 14:03:24,297 windows-1255 Hebrew confidence = 0.0457338343356232
+2018-12-20 14:03:24,297 windows-1255 Hebrew confidence = 0.04387975997066549
+2018-12-20 14:03:24,297 windows-1255 Hebrew confidence = 0.04387975997066549
+2018-12-20 14:03:24,297  INFO client run_show_deviation_pdf 'Compliance checking is done. Deviations PDF is available at http://127.0.0.1:5000/show-deviation-pdf?uuid=client'
+2018-12-20 14:03:24,298  INFO client main 'The options are displayed'
+2018-12-20 14:03:25,733  INFO client main 'The user selected option 3'
+2018-12-20 14:03:25,733  INFO client main 'Exiting...'

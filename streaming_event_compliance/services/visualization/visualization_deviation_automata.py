@@ -1,9 +1,14 @@
 from streaming_event_compliance.objects.variable.globalvar import gVars
-from streaming_event_compliance.utils.config import CLEINT_DATA_PATH, AUTOMATA_FILE, FILE_TYPE, WINDOW_SIZE, \
-    MAXIMUN_WINDOW_SIZE, THRESHOLD
+from streaming_event_compliance import app
 from graphviz import Digraph
 import os
 
+CLEINT_DATA_PATH = app.config['CLEINT_DATA_PATH']
+AUTOMATA_FILE = app.config['AUTOMATA_FILE']
+FILE_TYPE = app.config['FILE_TYPE']
+WINDOW_SIZE = app.config['WINDOW_SIZE']
+MAXIMUN_WINDOW_SIZE = app.config['MAXIMUN_WINDOW_SIZE']
+THRESHOLD = app.config['THRESHOLD']
 
 def visualization_automata(autos, alogs, uuid):
     viz = Digraph(comment='probability_automata', format='pdf', engine='dot')

@@ -1,4 +1,4 @@
-from streaming_event_compliance.utils.config import WINDOW_SIZE, MAXIMUN_WINDOW_SIZE
+from streaming_event_compliance import app
 from streaming_event_compliance.objects.variable.globalvar import gVars, CL
 from streaming_event_compliance.objects.automata import automata
 from streaming_event_compliance.objects.exceptions.exception import ThreadException
@@ -9,7 +9,8 @@ import traceback
 import sys
 
 check_executing_order = {}
-
+WINDOW_SIZE = app.config['WINDOW_SIZE']
+MAXIMUN_WINDOW_SIZE = app.config['MAXIMUN_WINDOW_SIZE']
 
 class CaseThreadForTraining(Thread):
     def __init__(self, event, index, T, C):

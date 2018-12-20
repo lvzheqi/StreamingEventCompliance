@@ -1,10 +1,11 @@
 from streaming_event_compliance.objects.variable.globalvar import gVars, CAL
-from streaming_event_compliance.utils.config import THRESHOLD
+from streaming_event_compliance import app
 from streaming_event_compliance.objects.automata import alertlog, automata
 import traceback, threading
 from console_logging.console import Console
 console = Console()
 console.setVerbosity(5)
+
 
 def check_alert(windowsize, source_node, sink_node, client_uuid):
     '''
@@ -27,7 +28,7 @@ def check_alert(windowsize, source_node, sink_node, client_uuid):
         # console.info(auto)
         conn = automata.Connection(source_node, sink_node)
         if auto.contains_connection(conn):
-            if auto.get_connection_probability(conn) >= THRESHOLD:
+            if auto.get_connection_probability(conn) >= app.config['THRESHOLD']:
                 return 0
             else:
                 if lock_list.get((source_node, sink_node)):
