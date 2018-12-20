@@ -28,6 +28,11 @@ class Client_cls(object):
             else:
                 if r.text == 'True':
                     self.cc_status = True
+                    return True
+                elif r.text == 'False':
+                    return True
+                elif r.text == 'Refuse':
+                    return False
         except Exception:
             raise ConnectionException
 
@@ -91,7 +96,12 @@ def main(argv):
         client = Client_cls(argv[0], argv[1])
 
     try:
-        client.login()
+        if not client.login():
+            ClientLogging().log_error(func_name, argv[0], 'The user with the same name is just doing the '
+                                                          'compliance checking, please try it later!')
+            console.secure("Refuse", 'The user with the same name is just doing the compliance checking, '
+                                     'please try it with other name!')
+            return
     except ConnectionException as e:
         e.get_message()
         ClientLogging().log_error(func_name, argv[0], 'The server is not available, please try it later!')
@@ -109,7 +119,7 @@ def main(argv):
         print('\tPress 2, if you want to show the deviation pdf')
         print('\tPress 3, if you want to exit')
         if len(argv) == 2:
-            console.secure("Note:", 'you can interrupt with CTR_C, once you start to do the compliance checking')
+            console.secure('Note:', 'you can interrupt with CTR_C, once you start to do the compliance checking')
         try:
             services = input()
         except Exception:
@@ -119,8 +129,8 @@ def main(argv):
             redo = '1'
             ClientLogging().log_info(func_name, argv[0], 'The user selected option 1')
             if client.cc_status:
-                console.secure("Warning",'You have already done the compliance check! Do you really want to restart? '
-                      'Or do you want to render the deviation pdf?')
+                console.secure('Warning', 'You have already done the compliance check! Do you really want to'
+                                          ' restart? Or do you want to render the deviation pdf?')
                 print('\tIf you want to restart, please press 1 again!')
                 print('\tIf you want to skip, please press 2!')
                 try:

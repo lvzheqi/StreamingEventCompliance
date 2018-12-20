@@ -44,7 +44,7 @@ class EventThread(Thread):
         try:
             ClientLogging().log_info(func_name, self.client_uuid, self.index, self.event['case_id'],
                                      self.event['activity'],
-                                     "Posting event to server:http://127.0.0.1:5000/compliance-checker")
+                                     'Posting event to server:http://127.0.0.1:5000/compliance-checker')
             response = requests.post('http://127.0.0.1:5000/compliance-checker?uuid=' + self.client_uuid,
                               json=json.dumps(self.event))
             if response.status_code != 200:
@@ -59,21 +59,22 @@ class EventThread(Thread):
                 message = response.json()
                 if message['body'] == 'M':
                     if message['source_node'] == 'NONE':
-                        console.secure("Alert:", " no such start node' " + message['sink_node'] + " 'in case '" +
+                        console.secure("Alert:", " no such start node' " + message['sink_node'] + " 'in case ' " +
                               message['case_id'] + "'")
                         if len(message['expect']) != 0:
                             print('    The expected start node:')
                             for s_node in message['expect']:
-                                print("\t '", s_node, "' with probability: ", message['expect'][s_node])
+                                print('\t '', s_node, '' with probability: ', message['expect'][s_node])
                     else:
-                        console.secure("Alert:", " no such connection in case '" + message['case_id'] + "'")
+                        console.secure('Alert:', " no such connection in case '" + message['case_id'] + "'")
                         print('    The connection:', message['source_node'], '-->', message['sink_node'])
                         if len(message['expect']) != 0:
                             print('    The expected connection:')
                             for s_node in message['expect']:
                                 print('\t', message['source_node'], '-->', s_node, ': ', message['expect'][s_node])
                 elif message['body'] == 'T':
-                    console.secure("Alert:", " The threshold of the connection in case'" + message['case_id'] + "'is too low.")
+                    console.secure('Alert:', " The threshold of the connection in case'" + message['case_id']
+                                   + "'is too low.")
                     print('   The minimal expected probability from ', message['source_node'], '-->',
                           message['sink_node'], ': ', message['expect'])
                     print('               The true probability from ', message['source_node'], '-->',

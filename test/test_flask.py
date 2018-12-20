@@ -12,6 +12,7 @@ from console_logging.console import Console
 console = Console()
 console.setVerbosity(5)
 
+
 @pytest.fixture
 def client():
     app.config['TESTING'] = True
@@ -35,11 +36,11 @@ def test_call_login(client):
 
 
 def test_compliance_check_time(client):
-    """
+    '''
     Use event log with different length to test the time(average time).
     :param client:
     :return:
-    """
+    '''
     uuid = app.config['client_uuid']
     login(client, uuid)
 
@@ -51,10 +52,10 @@ def test_compliance_check_time(client):
     end = time.clock()
     runtime = end - start
     results = sum / runtime
-    console.secure("Path:", str(path))
-    console.secure("Events_number:", str(sum))
-    console.secure("Running time:", str(runtime))
-    console.secure("Average speed:", str(results) + " per second!\n")
+    console.secure('Path:', str(path))
+    console.secure('Events_number:', str(sum))
+    console.secure('Running time:', str(runtime))
+    console.secure('Average speed:', str(results) + ' per second!\n')
     assert results > 300
 
     path = app.config['BASE_DIR'] + 'data' + os.sep + 'A4.xes'
@@ -65,20 +66,20 @@ def test_compliance_check_time(client):
     end = time.clock()
     runtime = end - start
     results = sum / runtime
-    console.secure("Path:", str(path))
-    console.secure("Events_number:", str(sum))
-    console.secure("Running time:", str(runtime))
-    console.secure("Average speed:", str(results) + " per second!\n")
+    console.secure('Path:', str(path))
+    console.secure('Events_number:', str(sum))
+    console.secure('Running time:', str(runtime))
+    console.secure('Average speed:', str(results) + ' per second!\n')
     assert results > 300
 
 
 def compliance_check(client, uuid, event_log):
-    """
+    '''
     Use the same event log as the trianing phase to do compliacnce checker, so the alerts should be only the
     type 'T'.
     :param client:
     :return:
-    """
+    '''
     ok = 0
     alertT = 0
     alertM = 0
@@ -97,7 +98,7 @@ def compliance_check(client, uuid, event_log):
         elif b'M' in rv.data:
             alertM += 1
         assert b'Error' not in rv.data
-    console.secure("Results:", "OK:" + str(ok)+ "; Alert T:" + str(alertT) + "; Alert M:" + str(alertM))
+    console.secure('Results:', 'OK:' + str(ok)+ '; Alert T:' + str(alertT) + '; Alert M:' + str(alertM))
 
 
 def login(client, uuid):
@@ -112,9 +113,9 @@ def prepare_event_log(path):
 
 
 def compliance_check_correctness(client):
-    """
+    '''
 
     :param client:
     :return:
-    """
+    '''
     pass
