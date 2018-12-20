@@ -82,11 +82,13 @@ def init_alert_log_from_database(uuid):
     for ws in WINDOW_SIZE:
         alog = alertlog.AlertLog()
         alogs[ws] = alog
-    for record in records:
-        ws = record.source_node.count(',') + 1
-        alog = alogs[ws]
-        alog.add_alert_record_from_database(record)
-    return alogs
+    if len(records) != 0:
+        for record in records:
+            ws = record.source_node.count(',') + 1
+            alog = alogs[ws]
+            alog.add_alert_record_from_database(record)
+        return alogs, 1
+    return alogs, 0
 
 
 def delete_alert(uuid):

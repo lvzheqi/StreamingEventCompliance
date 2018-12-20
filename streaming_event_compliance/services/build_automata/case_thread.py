@@ -54,8 +54,7 @@ class CaseThreadForTraining(Thread):
                     '''---------for checking threads error--------'''
 
                     calcuate_connection_for_different_prefix_automata(windows_memory)
-                    if len(self.C.dictionary_cases.get(self.event['case_id'])) > MAXIMUN_WINDOW_SIZE:
-                        self.C.dictionary_cases.get(self.event['case_id']).pop(0)
+                    self.C.dictionary_cases.get(self.event['case_id']).pop(0)
 
                     global check_executing_order
                     '''--------For Testing: Before releasing lock, which thread used it will be stored-------'''
@@ -77,8 +76,7 @@ class CaseThreadForTraining(Thread):
                     '''---------for checking threads error--------'''
 
                     calcuate_connection_for_different_prefix_automata(windows_memory)
-                    if len(self.C.dictionary_cases.get(self.event['case_id'])) > MAXIMUN_WINDOW_SIZE:
-                        self.C.dictionary_cases.get(self.event['case_id']).pop(0)
+                    self.C.dictionary_cases.get(self.event['case_id']).pop(0)
                     self.C.lock_List.get(self.event['case_id']).release()
                     self._status_queue.put(None)
         except Exception:

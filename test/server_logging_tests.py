@@ -1,5 +1,5 @@
 import unittest
-from streaming_event_compliance.server_logging import ServerLogging
+from streaming_event_compliance.objects.logging.server_logging import ServerLogging
 from streaming_event_compliance.utils.config import SERVER_LOG_PATH
 import sys
 
