@@ -1,8 +1,9 @@
 import unittest
 from streaming_event_compliance.server_logging import ServerLogging
-from streaming_event_compliance.utils.config import SERVER_LOG_PATH
+from streaming_event_compliance import app
 import sys
 
+SERVER_LOG_PATH = app.config['SERVER_LOG_PATH']
 
 class TestClientLogging(unittest.TestCase):
 

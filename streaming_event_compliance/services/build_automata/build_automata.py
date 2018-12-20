@@ -1,10 +1,9 @@
+from streaming_event_compliance import app
 from pm4py.objects.log.importer.xes import factory as xes_importer
 from pm4py.objects.log import transform
 from streaming_event_compliance.services.build_automata import case_thread
 import threading
-from streaming_event_compliance.utils.config import MAXIMUN_WINDOW_SIZE, WINDOW_SIZE
 from streaming_event_compliance.database import dbtools
-from streaming_event_compliance.utils import config
 from streaming_event_compliance.objects.variable.globalvar import T, C, gVars
 from streaming_event_compliance.services import setup
 from streaming_event_compliance.objects.exceptions.exception import ReadFileException, ThreadException, EventException
@@ -12,10 +11,13 @@ from multiprocessing import Process
 import traceback
 from console_logging.console import Console
 console = Console()
+console.setVerbosity(5)
 
 threads = []
 threads_index = 0
-
+WINDOW_SIZE = app.config['WINDOW_SIZE']
+MAXIMUN_WINDOW_SIZE = app.config['MAXIMUN_WINDOW_SIZE']
+TRAINING_EVENT_LOG_PATH = app.config['TRAINING_EVENT_LOG_PATH']
 
 def build_automata():
     print("---------------------Start: Traininging automata starts!--------------------------------------")
@@ -43,14 +45,12 @@ def build_automata_pro():
         and stores corresponding information into the database.
     :return:
     """
-    # C = globalvar.get_case_memory()
-    # T = globalvar.get_thread_memory()
     try:
-        trace_log = xes_importer.import_log(config.TRAINING_EVENT_LOG_PATH)
+        trace_log = xes_importer.import_log(TRAINING_EVENT_LOG_PATH)
         event_log = transform.transform_trace_log_to_event_log(trace_log)
         event_log.sort()
     except Exception:
-        raise ReadFileException(config.TRAINING_EVENT_LOG_PATH)
+        raise ReadFileException(TRAINING_EVENT_LOG_PATH)
 
     global threads_index, threads
     for one_event in event_log:
