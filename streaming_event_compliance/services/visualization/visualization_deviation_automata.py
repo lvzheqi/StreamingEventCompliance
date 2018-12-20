@@ -1,5 +1,6 @@
 from streaming_event_compliance.objects.variable.globalvar import gVars
 from streaming_event_compliance import app
+from streaming_event_compliance.services import setup
 from graphviz import Digraph
 import os
 
@@ -67,24 +68,19 @@ def visualization_automata(autos, alogs, uuid):
     return viz
 
 
-def build_deviation_pdf(client_uuid):
-    '''
-    Creates a deviation PDF for the given client_uuid, based on the deviations history
-    stored in AlertLog entity in database. This pdf is stored in local as “<client_uuid>_deviations.pdf”.
-    :param client_uuid: user name
-    '''
-    visualization_automata(gVars.autos, gVars.get_client_alert_logs(client_uuid), client_uuid)
-
-
-def show_deviation_pdf(client_uuid):
+def show_deviation_pdf(uuid):
     '''
     Returns the file “<client_uuid>_deviations.pdf”  if present in the local.
     Else if no file present with that name then, this function calls the build_deviation_pdf(client_uuid) to create a pdf
     :param client_uuid: user name
     '''
-    path = CLEINT_DATA_PATH + client_uuid + '_' + AUTOMATA_FILE + FILE_TYPE
+    path = CLEINT_DATA_PATH + uuid + '_' + AUTOMATA_FILE + FILE_TYPE
     if not os.path.exists(path):
-        build_deviation_pdf(client_uuid)
-
+        alogs, status = setup.init_client_alert_automata(uuid)
+        if status == 1:
+            visualization_automata(gVars.autos, alogs, uuid)
+        return status
+    else:
+        return 1
 
 

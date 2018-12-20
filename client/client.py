@@ -9,6 +9,7 @@ from console_logging.console import Console
 console = Console()
 console.setVerbosity(5)
 
+
 class Client_cls(object):
     def __init__(self, user_name, path=None):
         self.dictionary_threads = {}
@@ -53,7 +54,7 @@ class Client_cls(object):
             if r.status_code != 200:
                 raise ConnectionException
             else:
-                if r.text:
+                if r.text != '':
                     ClientLogging().log_info(func_name, self.uuid, 'Compliance checking is done. '
                                                                    'Deviations PDF is available at '
                                                                    'http://127.0.0.1:5000/show-deviation-pdf?uuid=' +

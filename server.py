@@ -1,8 +1,10 @@
 from streaming_event_compliance import app, db
 import time
 from streaming_event_compliance.objects.exceptions.exception import ThreadException, ReadFileException
-import configparser
-import os, re
+from console_logging.console import Console
+console = Console()
+console.setVerbosity(5)
+
 
 if __name__ == '__main__':
 
@@ -26,9 +28,8 @@ if __name__ == '__main__':
             print(ec.get_message())
         except ThreadException as ec:
             print(ec.get_message())
-
         ends = time.clock()
-        print(ends - start)
+        console.secure("The Total Time:", str(ends - start) + "Seconds.")
 
     else:
         print("Automata have been created in database and readed out! You can use it do compliance checking!")

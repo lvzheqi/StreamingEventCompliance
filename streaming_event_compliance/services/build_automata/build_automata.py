@@ -20,7 +20,7 @@ MAXIMUN_WINDOW_SIZE = app.config['MAXIMUN_WINDOW_SIZE']
 TRAINING_EVENT_LOG_PATH = app.config['TRAINING_EVENT_LOG_PATH']
 
 def build_automata():
-    print("---------------------Start: Traininging automata starts!--------------------------------------")
+    console.info("---------------------Start: Traininging automata starts!--------------------------------------")
     try:
         process_ = Process(target=build_automata_pro())
         process_.start()
@@ -32,7 +32,7 @@ def build_automata():
         for ws in WINDOW_SIZE:
             autos[ws].set_probability()
         dbtools.insert_node_and_connection(autos)
-        print("---------------------End: Everything for training automata is Done!---------------------------")
+        console.info("---------------------End: Everything for training automata is Done!---------------------------")
     finally:
         gVars.auto_status = 1
         setup.clear_build_automata_memorizer()
@@ -87,7 +87,6 @@ def build_automata_pro():
                 raise ThreadException(traceback.format_exc())
 
     #TODO:Jingjing-This join can be done after adding end event！
-
     try:
         for th in threads:
             th.join_with_exception()
@@ -96,7 +95,7 @@ def build_automata_pro():
     else:
         threads_index = 0
         threads = []
-        print("all event join succusful, begin end event")
+        # print("all event join succusful, begin end event")
         event = {}
         threads = []
         threads_index = 0
@@ -113,6 +112,6 @@ def build_automata_pro():
         try:
             th.join_with_exception()
         except ThreadException:
-            print(th, "end event join not succusful")
+            # print(th, "end event join not succusful")
             raise ThreadException('endevent'+traceback.format_exc())
 
