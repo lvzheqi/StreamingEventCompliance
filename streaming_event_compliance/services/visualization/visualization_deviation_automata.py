@@ -18,7 +18,7 @@ def visualization_automata(autos, alogs, uuid):
     viz.graph_attr['rankdir'] = 'LR'
     viz.attr('node', shape='circle', fixedsize='true', width='0.7')
 
-    for i in range(MAXIMUN_WINDOW_SIZE - 1, -1, -1):
+    for i in range(len(WINDOW_SIZE) - 1, -1, -1):
         auto = autos[WINDOW_SIZE[i]]
         alog = alogs[WINDOW_SIZE[i]]
         with viz.subgraph(name='cluster' + str(WINDOW_SIZE[i])) as sub:

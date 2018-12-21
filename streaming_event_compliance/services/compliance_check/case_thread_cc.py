@@ -86,6 +86,7 @@ def create_source_sink_node(windowsMemory, client_uuid, event):
             source_node = ','.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws: MAXIMUN_WINDOW_SIZE])
             sink_node = ','.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws + 1: MAXIMUN_WINDOW_SIZE+1])
             if source_node.find('*') != -1 and sink_node.find('*') != -1:
+                response[ws] = {'body': 'OK'}
                 break
             elif source_node.find('*') != -1:
                 source_node = 'NONE'
@@ -98,7 +99,6 @@ def create_source_sink_node(windowsMemory, client_uuid, event):
                     'expect': gVars.autos[ws].get_sink_nodes(source_node),
                     'body': 'M'
                 }
-                print(ALERT_TYPE, '-----')
                 if ALERT_TYPE == 'RETURN_ONE':
                     return response
             elif matches == 1:
@@ -112,7 +112,6 @@ def create_source_sink_node(windowsMemory, client_uuid, event):
                 }
             else:
                 response[ws] = {'body': 'OK'}
-        print(response)
         return response
     except Exception as ec:
         console.error('Exception from create_source_sink_node:' + traceback.format_exc())
