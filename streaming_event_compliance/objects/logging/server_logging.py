@@ -53,7 +53,7 @@ class ServerLogging:
             func_name:      This is the name of the function from where this logging event was called.
             message:        User defined custom messages
         '''
-        message = " ' " + message + " ' "
+        message = "'" + message + "'"
         message = ' INFO ' + 'Username:Unknown ' + func_name + ' ' + message
         logging.basicConfig(filename=self.filename, filemode=self.filemode, level=self.level, format=self.log_format)
         logging.info(message)
@@ -71,7 +71,7 @@ class ServerLogging:
             username:       It is the username of the user that has initiated the client
             message:        User defined custom messages
         '''
-        message = " ' " + message + " ' "
+        message = "'" + message + "'"
         message = ' INFO ' + username + ' ' + func_name + ' ' + message
         logging.basicConfig(filename=self.filename, filemode=self.filemode, level=self.level, format=self.log_format)
         logging.info(message)
@@ -91,7 +91,7 @@ class ServerLogging:
             activity:       This is the activity of the event being processed.
             message:        User defined custom messages
         '''
-        message = " ' " + message + " ' "
+        message = "'" + message + "'"
         message = 'Case_id:' + case_id + ' ' + 'Activity:' + activity + ' ' + message
         message = ' INFO ' + username + ' ' + func_name + ' ' + message
         logging.basicConfig(filename=self.filename, filemode=self.filemode, level=self.level, format=self.log_format)
@@ -113,7 +113,7 @@ class ServerLogging:
             activity:       This is the activity of the event being processed.
             message:        User defined custom messages
         '''
-        message = " ' " + message + " ' "
+        message = "'" + message + "'"
         message = 'Thread:' + str(thread_id) + ' ' + 'Case_id:' + case_id + ' ' + 'Activity:' + activity + ' ' + message
         message = ' INFO ' + username + ' ' + func_name + ' ' + message
         logging.basicConfig(filename=self.filename, filemode=self.filemode, level=self.level, format=self.log_format)
@@ -131,7 +131,7 @@ class ServerLogging:
             func_name:      This is the name of the function from where this logging event was called.
             message:        User defined custom messages
         '''
-        message = " ' " + message + " ' "
+        message = "'" + message + "'"
         message = ' ERROR ' + 'Username:Unknown ' + func_name + ' ' + message
         logging.basicConfig(filename=self.filename, filemode=self.filemode, level=self.level, format=self.log_format)
         logging.error(message)
@@ -149,7 +149,7 @@ class ServerLogging:
             username:       It is the username of the user that has initiated the client
             message:        User defined custom messages
         '''
-        message = " ' " + message + " ' "
+        message = "'" + message + "'"
         message = ' ERROR ' + username + ' ' + func_name + ' ' + message
         logging.basicConfig(filename=self.filename, filemode=self.filemode, level=self.level, format=self.log_format)
         logging.error(message)
@@ -169,7 +169,7 @@ class ServerLogging:
             activity:       This is the activity of the event being processed.
             message:        User defined custom messages
         '''
-        message = " ' " + message + " ' "
+        message = "'" + message + "'"
         message = 'Case_id:' + case_id + ' ' + 'Activity:' + activity + ' ' + message
         message = ' ERROR ' + username + ' ' + func_name + ' ' + message
         logging.basicConfig(filename=self.filename, filemode=self.filemode, level=self.level, format=self.log_format)
@@ -191,7 +191,7 @@ class ServerLogging:
             activity:       This is the activity of the event being processed.
             message:        User defined custom messages
          '''
-        message = " ' " + message + " ' "
+        message = "'" + message + "'"
         message = 'Thread:' + str(thread_id) + ' ' + 'Case_id:' + case_id + ' ' + 'Activity:' + activity + ' ' + message
         message = ' ERROR ' + username + ' ' + func_name + ' ' + message
         logging.basicConfig(filename=self.filename, filemode=self.filemode, level=self.level, format=self.log_format)
