@@ -46,7 +46,7 @@ if config['USER-DEFINED'].get('THRESHOLD') and config['USER-DEFINED']['THRESHOLD
 if config['USER-DEFINED'].get('CHECKING_TYPE') and config['USER-DEFINED']['CHECKING_TYPE'] is not '':
     app.config['CHECKING_TYPE'] = config['USER-DEFINED']['CHECKING_TYPE']
 
-if config['USER-DEFINED'].get('CHECKING_TYPE') and config['USER-DEFINED']['ALERT_TYPE'] is not '':
+if config['USER-DEFINED'].get('ALERT_TYPE') and config['USER-DEFINED']['ALERT_TYPE'] is not '':
     app.config['ALERT_TYPE'] = config['USER-DEFINED']['ALERT_TYPE']
 
 console.secure("PATH", app.config['TRAINING_EVENT_LOG_PATH'])

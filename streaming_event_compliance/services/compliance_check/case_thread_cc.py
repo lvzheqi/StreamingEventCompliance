@@ -98,7 +98,6 @@ def create_source_sink_node(windowsMemory, client_uuid, event):
                     'expect': gVars.autos[ws].get_sink_nodes(source_node),
                     'body': 'M'
                 }
-                print(ALERT_TYPE, '-----')
                 if ALERT_TYPE == 'RETURN_ONE':
                     return response
             elif matches == 1:
