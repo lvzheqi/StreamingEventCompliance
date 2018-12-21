@@ -34,7 +34,7 @@ class AlertLog:
 class Client(db.Model):
     __tablename__ = 'Client'
 
-    client_name = db.Column('user_name', db.String(350), primary_key=True, unique=True)
+    client_name = db.Column('client_name', db.String(350), primary_key=True, unique=True)
     status = db.Column('status', db.Boolean)
 
     def __init__(self, client_name, status=False):

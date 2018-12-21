@@ -11,7 +11,7 @@ def empty_tables():
     db.session.query(automata.Connection).delete()
     db.session.query(automata.Node).delete()
     db.session.query(alertlog.AlertRecord).delete()
-    db.session.query(alertlog.User).delete()
+    db.session.query(alertlog.Client).delete()
     db.session.commit()
 
 
@@ -33,15 +33,15 @@ def insert_alert_log(alogs):
 
 
 def create_client(uuid):
-    client = alertlog.User.query.filter_by(user_name=uuid).first()
+    client = alertlog.Client.query.filter_by(client_name=uuid).first()
     if client is None:
-        client = alertlog.User(uuid)
+        client = alertlog.Client(uuid)
         db.session.add(client)
         db.session.commit()
 
 
 def check_client_status(uuid):
-    client = alertlog.User.query.filter_by(user_name=uuid).first()
+    client = alertlog.Client.query.filter_by(client_name=uuid).first()
     if client is not None:
         return client.status
     else:
@@ -49,14 +49,15 @@ def check_client_status(uuid):
 
 
 def update_client_status(uuid, status):
-    client = alertlog.User.query.filter_by(user_name=uuid).first()
+    client = alertlog.Client.query.filter_by(client_name=uuid).first()
     if client is not None:
         client.status = status
 
     else:
-        client = alertlog.User(uuid, status)
+        client = alertlog.Client(uuid, status)
         db.session.add(client)
     db.session.commit()
+
 
 def init_automata_from_database():
     '''
@@ -79,7 +80,7 @@ def init_automata_from_database():
 
 
 def init_alert_log_from_database(uuid):
-    records = alertlog.AlertRecord.query.filter_by(user_id=uuid).all()
+    records = alertlog.AlertRecord.query.filter_by(client_id=uuid).all()
     alogs = {}
     for ws in WINDOW_SIZE:
         alog = alertlog.AlertLog()
@@ -94,7 +95,7 @@ def init_alert_log_from_database(uuid):
 
 
 def delete_alert(uuid):
-    records = alertlog.AlertRecord.query.filter_by(user_id=uuid).all()
+    records = alertlog.AlertRecord.query.filter_by(client_id=uuid).all()
     for record in records:
         db.session.delete(record)
     db.session.commit()

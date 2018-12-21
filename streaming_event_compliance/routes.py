@@ -85,9 +85,8 @@ def call_show_deviation_pdf():
 
 
 def check_client_stauts(uuid):
-    if dbtools.check_client_status(uuid) is None:
+    client_status = dbtools.check_client_status(uuid)
+    if client_status is None:
         client_status = False
-    else:
-        client_status = dbtools.check_client_status(uuid)
     gVars.clients_status[uuid] = client_status
     return client_status
