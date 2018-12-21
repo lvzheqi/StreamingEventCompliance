@@ -82,13 +82,13 @@ def compliance_checker(client_uuid, event):
                 except Exception:
                     console.error(traceback.format_exc())
             alert_log = gVars.get_client_alert_logs(client_uuid)
-            dbtools.create_user(client_uuid)
+            dbtools.create_client(client_uuid)
             dbtools.insert_alert_log(alert_log)
             path = CLEINT_DATA_PATH + client_uuid + '_' + AUTOMATA_FILE + FILE_TYPE
             if os.path.exists(path):
                 os.remove(path)
             visualization_deviation_automata.show_deviation_pdf(client_uuid)
-            dbtools.update_user_status(client_uuid, True)
+            dbtools.update_client_status(client_uuid, True)
             gVars.clients_status[client_uuid] = True
             setup.clear_cc_memorizer(client_uuid)
             return json.dumps({'End': {'body': 'The compliance checking is over, you can get the deviation pdf!'}})

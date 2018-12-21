@@ -33,7 +33,8 @@ class Client_cls(object):
                     return True
                 elif r.text == 'Refuse':
                     return False
-        except Exception:
+        except Exception as e:
+            print(e)
             raise ConnectionException
 
     def run_compliance_checker(self):
