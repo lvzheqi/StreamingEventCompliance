@@ -13,12 +13,6 @@ class EventException(MyException):
         super().__init__(mess)
 
 
-class NoUserException(MyException):
-    def __init__(self):
-        mess = 'NoUserError: No user exist!'
-        super().__init__(mess)
-
-
 class ReadFileException(MyException):
     def __init__(self, path):
         mess = "ReadFileError: The input path '" + path + "' does not exist or is empty!"

@@ -1,7 +1,6 @@
 from streaming_event_compliance.objects.automata import automata
 from streaming_event_compliance.objects.automata import alertlog
 from streaming_event_compliance import app
-from streaming_event_compliance.objects.exceptions.exception import NoUserException
 
 from streaming_event_compliance.database import db
 
@@ -33,30 +32,31 @@ def insert_alert_log(alogs):
     db.session.commit()
 
 
-def create_user(uuid):
-    user = alertlog.User.query.filter_by(user_name=uuid).first()
-    if user is None:
-        user = alertlog.User(uuid)
-        db.session.add(user)
+def create_client(uuid):
+    client = alertlog.User.query.filter_by(user_name=uuid).first()
+    if client is None:
+        client = alertlog.User(uuid)
+        db.session.add(client)
         db.session.commit()
 
 
-def check_user_status(uuid):
-    user = alertlog.User.query.filter_by(user_name=uuid).first()
-    if user is not None:
-        return user.status
+def check_client_status(uuid):
+    client = alertlog.User.query.filter_by(user_name=uuid).first()
+    if client is not None:
+        return client.status
     else:
         return None
 
 
-def update_user_status(uuid, status):
-    user = alertlog.User.query.filter_by(user_name=uuid).first()
-    if user is not None:
-        user.status = status
-        db.session.commit()
-    else:
-        raise NoUserException
+def update_client_status(uuid, status):
+    client = alertlog.User.query.filter_by(user_name=uuid).first()
+    if client is not None:
+        client.status = status
 
+    else:
+        client = alertlog.User(uuid, status)
+        db.session.add(client)
+    db.session.commit()
 
 def init_automata_from_database():
     '''
