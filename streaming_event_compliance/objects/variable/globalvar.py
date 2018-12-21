@@ -1,7 +1,16 @@
 from typing import Any
 
 
-class GlobalVars:
+class Singleton(object):
+    _instance = None
+
+    def __new__(cls, *args, **kw):
+        if not cls._instance:
+            cls._instance = super(Singleton, cls).__new__(cls, *args, **kw)
+        return cls._instance
+
+
+class GlobalVars(Singleton):
     def __init__(self):
         self.autos = {}
         self.auto_status = 0
@@ -25,7 +34,7 @@ class GlobalVars:
         return super().__getattribute__(name)
 
 
-class ThreadMemorizer(object):
+class ThreadMemorizer(Singleton):
     '''
     This object is for storing the threads that server creates for each case;
     '''
@@ -43,7 +52,7 @@ class ThreadMemorizer(object):
         return super().__getattribute__(name)
 
 
-class CaseMemorizer(object):
+class CaseMemorizer(Singleton):
     '''
     This object is for storing the cases that server receives;
 
@@ -69,7 +78,7 @@ class CaseMemorizer(object):
         return super().__getattribute__(name)
 
 
-class ConnectionsLocker(object):
+class ConnectionsLocker(Singleton):
     '''
     This object is for storing the threads that server creates for each case;
     '''
@@ -87,26 +96,41 @@ class ConnectionsLocker(object):
         return super().__getattribute__(name)
 
 
-class ClientThreadMemorizer(ThreadMemorizer):
+class ClientThreadMemorizer(Singleton):
     def __init__(self):
         super().__init__()
         self.client_number = 0
+        self.dictionary_threads = {}
 
     def init_client_memorizer(self, uuid):
         self.dictionary_threads[uuid] = {}
 
+    def __setattr__(self, name: str, value: Any) -> None:
+        super().__setattr__(name, value)
 
-class ClientCaseMemorizer(CaseMemorizer):
+    def __getattribute__(self, name: str) -> Any:
+        return super().__getattribute__(name)
+
+
+class ClientCaseMemorizer(Singleton):
     def __init__(self):
         super().__init__()
         self.client_number = 0
+        self.dictionary_cases = {}
+        self.lock_List = {}
 
     def init_client_memorizer(self, uuid):
         self.dictionary_cases[uuid] = {}
         self.lock_List[uuid] = {}
 
+    def __setattr__(self, name: str, value: Any) -> None:
+        super().__setattr__(name, value)
 
-class ClientAlertsLocker(object):
+    def __getattribute__(self, name: str) -> Any:
+        return super().__getattribute__(name)
+
+
+class ClientAlertsLocker(Singleton):
     '''
     This object is for storing the threads that server creates for each case;
     '''
