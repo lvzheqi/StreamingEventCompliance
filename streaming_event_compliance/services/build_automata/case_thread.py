@@ -111,8 +111,6 @@ def calcuate_connection_for_different_prefix_automata(windowsMemory):
                 try:
                     if windowsMemory[MAXIMUN_WINDOW_SIZE] == '~!@#$%' and source_node.find('*') == -1:
                         gVars.autos.get(ws).update_automata(automata.Connection(source_node, '~!@#$%', 0))
-                        ServerLogging().log_info(func_name, "server", , self.event['case_id'],
-                                                 self.event['activity'], "Acquiring lock")
                     elif source_node.find('*') == -1:
                         gVars.autos.get(ws).update_automata(automata.Connection(source_node, sink_node, 1))
                     elif source_node.find('*') != -1 and sink_node.find('*') == -1:
