@@ -6,7 +6,7 @@ import sys
 SERVER_LOG_PATH = app.config['SERVER_LOG_PATH']
 
 
-class TestClientLogging(unittest.TestCase):
+class TestServerLogging(unittest.TestCase):
 
     def test_log_info_2(self):
         func_name = sys._getframe().f_code.co_name

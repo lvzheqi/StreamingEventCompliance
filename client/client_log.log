@@ -14335,3 +14335,256 @@
 2018-12-20 22:09:43,078 windows-1255 Hebrew confidence = 0.04508894577284357
 2018-12-20 22:09:43,078  INFO client1 run_show_deviation_pdf 'Compliance checking is done. Deviations PDF is available at http://127.0.0.1:5000/show-deviation-pdf?uuid=client1'
 2018-12-20 22:09:43,079  INFO client1 main 'The options are displayed'
+2018-12-21 08:17:02,623  ERROR Username:Unknown test_log_error_2 'Testing logging error with 2 arguments'
+2018-12-21 08:17:02,654  ERROR test_user test_log_error_3 'Testing logging error with 3 arguments'
+2018-12-21 08:17:02,670  ERROR test_user test_log_error_5 Case_id:test1 Activity:testing_log_info_5 'Testing logging error with 5 arguments'
+2018-12-21 08:17:02,701  ERROR test_user test_log_error_6 Thread:1 Case_id:test1 Activity:testing_log_info_6 'Testing logging error with 6 arguments'
+2018-12-21 08:17:02,717  INFO Username:Unknown test_log_info_2 'Testing logging info with 2 arguments'
+2018-12-21 08:17:02,748  INFO test_user test_log_info_3 'Testing logging info with 3 arguments'
+2018-12-21 08:17:02,779  INFO test_user test_log_info_5 Case_id:test1 Activity:testing_log_info_5 'Testing logging info with 5 arguments'
+2018-12-21 08:17:02,795  INFO test_user test_log_info_6 Thread:1 Case_id:test1 Activity:testing_log_info_6 'Testing logging info with 6 arguments'
+2018-12-21 09:17:14,122  INFO saby login 'Post request to server:http://127.0.0.1:5000/login?uuid=saby'
+2018-12-21 09:17:14,122 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-21 09:17:14,200 http://127.0.0.1:5000 "POST /login?uuid=saby HTTP/1.1" 200 5
+2018-12-21 09:17:14,200  INFO saby main 'The options are displayed'
+2018-12-21 09:17:16,908  INFO saby main 'The user selected option 1'
+2018-12-21 09:17:16,908  INFO saby main 'The user selected option 1'
+2018-12-21 09:17:16,923  INFO saby main 'Calling run_compliance_checker()'
+2018-12-21 09:17:16,923  INFO saby run_compliance_checker 'Calling read_log()'
+2018-12-21 09:17:16,939  INFO saby read_log 'Creating a trace logger file: '
+2018-12-21 09:17:17,001  INFO saby read_log 'Transforming trace logger to event logger'
+2018-12-21 09:17:17,017  INFO saby read_log 'Sorting event logger'
+2018-12-21 09:17:17,017  INFO saby run_compliance_checker 'Calling simulate_stream_event()'
+2018-12-21 09:17:17,033  INFO saby simulate_stream_event Case_id:173709 Activity:App_Fully_Submission 'Calling invoke_event_thread()'
+2018-12-21 09:17:17,033  INFO saby invoke_event_thread Case_id:173709 Activity:App_Fully_Submission 'Initialising thread'
+2018-12-21 09:17:17,048  INFO saby invoke_event_thread Case_id:173709 Activity:App_Fully_Submission 'Starting thread for event '
+2018-12-21 09:17:17,048  INFO saby run Thread:0 Case_id:173709 Activity:App_Fully_Submission 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-21 09:17:17,048 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-21 09:17:17,048 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 35
+2018-12-21 09:17:17,064  INFO saby run Thread:0 Case_id:173709 Activity:App_Fully_Submission 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-21 09:17:17,064  INFO saby simulate_stream_event Case_id:173709 Activity:App_Incomplete_Submission 'Calling invoke_event_thread()'
+2018-12-21 09:17:17,080  INFO saby invoke_event_thread Case_id:173709 Activity:App_Incomplete_Submission 'Initialising thread'
+2018-12-21 09:17:17,080  INFO saby invoke_event_thread Case_id:173709 Activity:App_Incomplete_Submission 'Starting thread for event '
+2018-12-21 09:17:17,095  INFO saby run Thread:1 Case_id:173709 Activity:App_Incomplete_Submission 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-21 09:17:17,095 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-21 09:17:17,095 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 35
+2018-12-21 09:17:17,095  INFO saby run Thread:1 Case_id:173709 Activity:App_Incomplete_Submission 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-21 09:17:17,111  INFO saby simulate_stream_event Case_id:173709 Activity:Err_Pre_Acceptation 'Calling invoke_event_thread()'
+2018-12-21 09:17:17,111  INFO saby invoke_event_thread Case_id:173709 Activity:Err_Pre_Acceptation 'Initialising thread'
+2018-12-21 09:17:17,126  INFO saby invoke_event_thread Case_id:173709 Activity:Err_Pre_Acceptation 'Starting thread for event '
+2018-12-21 09:17:17,126  INFO saby run Thread:2 Case_id:173709 Activity:Err_Pre_Acceptation 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-21 09:17:17,126 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-21 09:17:17,142 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 35
+2018-12-21 09:17:17,142  INFO saby run Thread:2 Case_id:173709 Activity:Err_Pre_Acceptation 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-21 09:17:17,158  INFO saby simulate_stream_event Case_id:173709 Activity:W_Complete_Application 'Calling invoke_event_thread()'
+2018-12-21 09:17:17,158  INFO saby invoke_event_thread Case_id:173709 Activity:W_Complete_Application 'Initialising thread'
+2018-12-21 09:17:17,158  INFO saby invoke_event_thread Case_id:173709 Activity:W_Complete_Application 'Starting thread for event '
+2018-12-21 09:17:17,173  INFO saby run Thread:3 Case_id:173709 Activity:W_Complete_Application 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-21 09:17:17,173 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-21 09:17:17,173 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 35
+2018-12-21 09:17:17,189  INFO saby run Thread:3 Case_id:173709 Activity:W_Complete_Application 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-21 09:17:17,189  INFO saby simulate_stream_event Case_id:173709 Activity:W_Complete_Application 'Calling invoke_event_thread()'
+2018-12-21 09:17:17,205  INFO saby invoke_event_thread Case_id:173709 Activity:W_Complete_Application 'Initialising thread'
+2018-12-21 09:17:17,205  INFO saby invoke_event_thread Case_id:173709 Activity:W_Complete_Application 'Starting thread for event '
+2018-12-21 09:17:17,205  INFO saby run Thread:4 Case_id:173709 Activity:W_Complete_Application 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-21 09:17:17,220 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-21 09:17:17,220 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 35
+2018-12-21 09:17:17,220  INFO saby run Thread:4 Case_id:173709 Activity:W_Complete_Application 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-21 09:17:17,236  INFO saby simulate_stream_event Case_id:173709 Activity:W_Complete_Application 'Calling invoke_event_thread()'
+2018-12-21 09:17:17,236  INFO saby invoke_event_thread Case_id:173709 Activity:W_Complete_Application 'Initialising thread'
+2018-12-21 09:17:17,251  INFO saby invoke_event_thread Case_id:173709 Activity:W_Complete_Application 'Starting thread for event '
+2018-12-21 09:17:17,251  INFO saby run Thread:5 Case_id:173709 Activity:W_Complete_Application 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-21 09:17:17,251 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-21 09:17:17,251 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 35
+2018-12-21 09:17:17,267  INFO saby run Thread:5 Case_id:173709 Activity:W_Complete_Application 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-21 09:17:17,267  INFO saby simulate_stream_event Case_id:173709 Activity:W_Complete_Application 'Calling invoke_event_thread()'
+2018-12-21 09:17:17,283  INFO saby invoke_event_thread Case_id:173709 Activity:W_Complete_Application 'Initialising thread'
+2018-12-21 09:17:17,283  INFO saby invoke_event_thread Case_id:173709 Activity:W_Complete_Application 'Starting thread for event '
+2018-12-21 09:17:17,298  INFO saby run Thread:6 Case_id:173709 Activity:W_Complete_Application 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-21 09:17:17,298 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-21 09:17:17,298 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 35
+2018-12-21 09:17:17,314  INFO saby run Thread:6 Case_id:173709 Activity:W_Complete_Application 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-21 09:17:17,314  INFO saby simulate_stream_event Case_id:174090 Activity:App_Fully_Submission 'Calling invoke_event_thread()'
+2018-12-21 09:17:17,314  INFO saby invoke_event_thread Case_id:174090 Activity:App_Fully_Submission 'Initialising thread'
+2018-12-21 09:17:17,330  INFO saby invoke_event_thread Case_id:174090 Activity:App_Fully_Submission 'Starting thread for event '
+2018-12-21 09:17:17,330  INFO saby run Thread:7 Case_id:174090 Activity:App_Fully_Submission 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-21 09:17:17,345 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-21 09:17:17,345 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 35
+2018-12-21 09:17:17,345  INFO saby run Thread:7 Case_id:174090 Activity:App_Fully_Submission 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-21 09:17:17,361  INFO saby simulate_stream_event Case_id:174090 Activity:App_Incomplete_Submission 'Calling invoke_event_thread()'
+2018-12-21 09:17:17,361  INFO saby invoke_event_thread Case_id:174090 Activity:App_Incomplete_Submission 'Initialising thread'
+2018-12-21 09:17:17,376  INFO saby invoke_event_thread Case_id:174090 Activity:App_Incomplete_Submission 'Starting thread for event '
+2018-12-21 09:17:17,376  INFO saby run Thread:8 Case_id:174090 Activity:App_Incomplete_Submission 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-21 09:17:17,376 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-21 09:17:17,376 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 35
+2018-12-21 09:17:17,392  INFO saby run Thread:8 Case_id:174090 Activity:App_Incomplete_Submission 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-21 09:17:17,392  INFO saby simulate_stream_event Case_id:174090 Activity:App_Pre_Acceptation 'Calling invoke_event_thread()'
+2018-12-21 09:17:17,408  INFO saby invoke_event_thread Case_id:174090 Activity:App_Pre_Acceptation 'Initialising thread'
+2018-12-21 09:17:17,408  INFO saby invoke_event_thread Case_id:174090 Activity:App_Pre_Acceptation 'Starting thread for event '
+2018-12-21 09:17:17,423  INFO saby run Thread:9 Case_id:174090 Activity:App_Pre_Acceptation 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-21 09:17:17,423 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-21 09:17:17,423 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 35
+2018-12-21 09:17:17,439  INFO saby run Thread:9 Case_id:174090 Activity:App_Pre_Acceptation 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-21 09:17:17,439  INFO saby simulate_stream_event Case_id:174090 Activity:W_Complete_Application 'Calling invoke_event_thread()'
+2018-12-21 09:17:17,439  INFO saby invoke_event_thread Case_id:174090 Activity:W_Complete_Application 'Initialising thread'
+2018-12-21 09:17:17,454  INFO saby invoke_event_thread Case_id:174090 Activity:W_Complete_Application 'Starting thread for event '
+2018-12-21 09:17:17,454  INFO saby run Thread:10 Case_id:174090 Activity:W_Complete_Application 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-21 09:17:17,470 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-21 09:17:17,470 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 35
+2018-12-21 09:17:17,470  INFO saby run Thread:10 Case_id:174090 Activity:W_Complete_Application 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-21 09:17:17,486  INFO saby simulate_stream_event Case_id:174111 Activity:App_Fully_Submission 'Calling invoke_event_thread()'
+2018-12-21 09:17:17,486  INFO saby invoke_event_thread Case_id:174111 Activity:App_Fully_Submission 'Initialising thread'
+2018-12-21 09:17:17,501  INFO saby invoke_event_thread Case_id:174111 Activity:App_Fully_Submission 'Starting thread for event '
+2018-12-21 09:17:17,501  INFO saby run Thread:11 Case_id:174111 Activity:App_Fully_Submission 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-21 09:17:17,501 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-21 09:17:17,501 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 35
+2018-12-21 09:17:17,517  INFO saby run Thread:11 Case_id:174111 Activity:App_Fully_Submission 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-21 09:17:17,517  INFO saby simulate_stream_event Case_id:174111 Activity:App_Incomplete_Submission 'Calling invoke_event_thread()'
+2018-12-21 09:17:17,533  INFO saby invoke_event_thread Case_id:174111 Activity:App_Incomplete_Submission 'Initialising thread'
+2018-12-21 09:17:17,533  INFO saby invoke_event_thread Case_id:174111 Activity:App_Incomplete_Submission 'Starting thread for event '
+2018-12-21 09:17:17,548  INFO saby run Thread:12 Case_id:174111 Activity:App_Incomplete_Submission 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-21 09:17:17,548 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-21 09:17:17,548 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 35
+2018-12-21 09:17:17,548  INFO saby run Thread:12 Case_id:174111 Activity:App_Incomplete_Submission 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-21 09:17:17,564  INFO saby simulate_stream_event Case_id:174111 Activity:W_Handling_Leads 'Calling invoke_event_thread()'
+2018-12-21 09:17:17,564  INFO saby invoke_event_thread Case_id:174111 Activity:W_Handling_Leads 'Initialising thread'
+2018-12-21 09:17:17,579  INFO saby invoke_event_thread Case_id:174111 Activity:W_Handling_Leads 'Starting thread for event '
+2018-12-21 09:17:17,579  INFO saby run Thread:13 Case_id:174111 Activity:W_Handling_Leads 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-21 09:17:17,579 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-21 09:17:17,595 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 35
+2018-12-21 09:17:17,595  INFO saby run Thread:13 Case_id:174111 Activity:W_Handling_Leads 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-21 09:17:17,595  INFO saby simulate_stream_event Case_id:174111 Activity:W_Handling_Leads 'Calling invoke_event_thread()'
+2018-12-21 09:17:17,611  INFO saby invoke_event_thread Case_id:174111 Activity:W_Handling_Leads 'Initialising thread'
+2018-12-21 09:17:17,611  INFO saby invoke_event_thread Case_id:174111 Activity:W_Handling_Leads 'Starting thread for event '
+2018-12-21 09:17:17,626  INFO saby run Thread:14 Case_id:174111 Activity:W_Handling_Leads 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-21 09:17:17,626 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-21 09:17:17,626 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 35
+2018-12-21 09:17:17,642  INFO saby run Thread:14 Case_id:174111 Activity:W_Handling_Leads 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-21 09:17:17,642  INFO saby simulate_stream_event Case_id:174111 Activity:App_Pre_Acceptation 'Calling invoke_event_thread()'
+2018-12-21 09:17:17,658  INFO saby invoke_event_thread Case_id:174111 Activity:App_Pre_Acceptation 'Initialising thread'
+2018-12-21 09:17:17,658  INFO saby invoke_event_thread Case_id:174111 Activity:App_Pre_Acceptation 'Starting thread for event '
+2018-12-21 09:17:17,658  INFO saby run Thread:15 Case_id:174111 Activity:App_Pre_Acceptation 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-21 09:17:17,673 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-21 09:17:17,673 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 35
+2018-12-21 09:17:17,673  INFO saby run Thread:15 Case_id:174111 Activity:App_Pre_Acceptation 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-21 09:17:17,689  INFO saby simulate_stream_event Case_id:174111 Activity:W_Complete_Application 'Calling invoke_event_thread()'
+2018-12-21 09:17:17,689  INFO saby invoke_event_thread Case_id:174111 Activity:W_Complete_Application 'Initialising thread'
+2018-12-21 09:17:17,704  INFO saby invoke_event_thread Case_id:174111 Activity:W_Complete_Application 'Starting thread for event '
+2018-12-21 09:17:17,704  INFO saby run Thread:16 Case_id:174111 Activity:W_Complete_Application 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-21 09:17:17,704 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-21 09:17:17,704 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 35
+2018-12-21 09:17:17,720  INFO saby run Thread:16 Case_id:174111 Activity:W_Complete_Application 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-21 09:17:17,720  INFO saby simulate_stream_event Case_id:174111 Activity:W_Handling_Leads 'Calling invoke_event_thread()'
+2018-12-21 09:17:17,736  INFO saby invoke_event_thread Case_id:174111 Activity:W_Handling_Leads 'Initialising thread'
+2018-12-21 09:17:17,736  INFO saby invoke_event_thread Case_id:174111 Activity:W_Handling_Leads 'Starting thread for event '
+2018-12-21 09:17:17,751  INFO saby run Thread:17 Case_id:174111 Activity:W_Handling_Leads 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-21 09:17:17,751 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-21 09:17:17,751 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 35
+2018-12-21 09:17:17,751  INFO saby run Thread:17 Case_id:174111 Activity:W_Handling_Leads 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-21 09:17:17,767  INFO saby simulate_stream_event Case_id:174090 Activity:W_Complete_Application 'Calling invoke_event_thread()'
+2018-12-21 09:17:17,767  INFO saby invoke_event_thread Case_id:174090 Activity:W_Complete_Application 'Initialising thread'
+2018-12-21 09:17:17,783  INFO saby invoke_event_thread Case_id:174090 Activity:W_Complete_Application 'Starting thread for event '
+2018-12-21 09:17:17,783  INFO saby run Thread:18 Case_id:174090 Activity:W_Complete_Application 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-21 09:17:17,783 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-21 09:17:17,798 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 35
+2018-12-21 09:17:17,798  INFO saby run Thread:18 Case_id:174090 Activity:W_Complete_Application 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-21 09:17:17,814  INFO saby simulate_stream_event Case_id:174111 Activity:W_Complete_Application 'Calling invoke_event_thread()'
+2018-12-21 09:17:17,814  INFO saby invoke_event_thread Case_id:174111 Activity:W_Complete_Application 'Initialising thread'
+2018-12-21 09:17:17,814  INFO saby invoke_event_thread Case_id:174111 Activity:W_Complete_Application 'Starting thread for event '
+2018-12-21 09:17:17,829  INFO saby run Thread:19 Case_id:174111 Activity:W_Complete_Application 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-21 09:17:17,829 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-21 09:17:17,829 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 35
+2018-12-21 09:17:17,845  INFO saby run Thread:19 Case_id:174111 Activity:W_Complete_Application 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-21 09:17:17,845  INFO saby simulate_stream_event Case_id:174138 Activity:App_Fully_Submission 'Calling invoke_event_thread()'
+2018-12-21 09:17:17,861  INFO saby invoke_event_thread Case_id:174138 Activity:App_Fully_Submission 'Initialising thread'
+2018-12-21 09:17:17,861  INFO saby invoke_event_thread Case_id:174138 Activity:App_Fully_Submission 'Starting thread for event '
+2018-12-21 09:17:17,861  INFO saby run Thread:20 Case_id:174138 Activity:App_Fully_Submission 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-21 09:17:17,876 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-21 09:17:17,876 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 35
+2018-12-21 09:17:17,876  INFO saby run Thread:20 Case_id:174138 Activity:App_Fully_Submission 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-21 09:17:17,892  INFO saby simulate_stream_event Case_id:174138 Activity:Err_Incomplete_Submission 'Calling invoke_event_thread()'
+2018-12-21 09:17:17,892  INFO saby invoke_event_thread Case_id:174138 Activity:Err_Incomplete_Submission 'Initialising thread'
+2018-12-21 09:17:17,908  INFO saby invoke_event_thread Case_id:174138 Activity:Err_Incomplete_Submission 'Starting thread for event '
+2018-12-21 09:17:17,908  INFO saby run Thread:21 Case_id:174138 Activity:Err_Incomplete_Submission 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-21 09:17:17,908 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-21 09:17:17,923 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 35
+2018-12-21 09:17:17,923  INFO saby run Thread:21 Case_id:174138 Activity:Err_Incomplete_Submission 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-21 09:17:17,939  INFO saby simulate_stream_event Case_id:174138 Activity:W_Handling_Leads 'Calling invoke_event_thread()'
+2018-12-21 09:17:17,939  INFO saby invoke_event_thread Case_id:174138 Activity:W_Handling_Leads 'Initialising thread'
+2018-12-21 09:17:17,939  INFO saby invoke_event_thread Case_id:174138 Activity:W_Handling_Leads 'Starting thread for event '
+2018-12-21 09:17:17,954  INFO saby run Thread:22 Case_id:174138 Activity:W_Handling_Leads 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-21 09:17:17,954 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-21 09:17:17,954 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 35
+2018-12-21 09:17:17,970  INFO saby run Thread:22 Case_id:174138 Activity:W_Handling_Leads 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-21 09:17:17,970  INFO saby simulate_stream_event Case_id:174138 Activity:W_Handling_Leads 'Calling invoke_event_thread()'
+2018-12-21 09:17:17,986  INFO saby invoke_event_thread Case_id:174138 Activity:W_Handling_Leads 'Initialising thread'
+2018-12-21 09:17:17,986  INFO saby invoke_event_thread Case_id:174138 Activity:W_Handling_Leads 'Starting thread for event '
+2018-12-21 09:17:18,001  INFO saby run Thread:23 Case_id:174138 Activity:W_Handling_Leads 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-21 09:17:18,001 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-21 09:17:18,001 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 35
+2018-12-21 09:17:18,001  INFO saby run Thread:23 Case_id:174138 Activity:W_Handling_Leads 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-21 09:17:18,017  INFO saby simulate_stream_event Case_id:174138 Activity:App_Pre_Acceptation 'Calling invoke_event_thread()'
+2018-12-21 09:17:18,017  INFO saby invoke_event_thread Case_id:174138 Activity:App_Pre_Acceptation 'Initialising thread'
+2018-12-21 09:17:18,032  INFO saby invoke_event_thread Case_id:174138 Activity:App_Pre_Acceptation 'Starting thread for event '
+2018-12-21 09:17:18,032  INFO saby run Thread:24 Case_id:174138 Activity:App_Pre_Acceptation 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-21 09:17:18,032 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-21 09:17:18,048 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 35
+2018-12-21 09:17:18,048  INFO saby run Thread:24 Case_id:174138 Activity:App_Pre_Acceptation 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-21 09:17:18,064  INFO saby simulate_stream_event Case_id:174138 Activity:W_Complete_Application 'Calling invoke_event_thread()'
+2018-12-21 09:17:18,064  INFO saby invoke_event_thread Case_id:174138 Activity:W_Complete_Application 'Initialising thread'
+2018-12-21 09:17:18,064  INFO saby invoke_event_thread Case_id:174138 Activity:W_Complete_Application 'Starting thread for event '
+2018-12-21 09:17:18,079  INFO saby run Thread:25 Case_id:174138 Activity:W_Complete_Application 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-21 09:17:18,079 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-21 09:17:18,079 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 35
+2018-12-21 09:17:18,095  INFO saby run Thread:25 Case_id:174138 Activity:W_Complete_Application 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-21 09:17:18,095  INFO saby simulate_stream_event Case_id:174138 Activity:W_Handling_Leads 'Calling invoke_event_thread()'
+2018-12-21 09:17:18,111  INFO saby invoke_event_thread Case_id:174138 Activity:W_Handling_Leads 'Initialising thread'
+2018-12-21 09:17:18,111  INFO saby invoke_event_thread Case_id:174138 Activity:W_Handling_Leads 'Starting thread for event '
+2018-12-21 09:17:18,126  INFO saby run Thread:26 Case_id:174138 Activity:W_Handling_Leads 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-21 09:17:18,126 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-21 09:17:18,126 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 35
+2018-12-21 09:17:18,126  INFO saby run Thread:26 Case_id:174138 Activity:W_Handling_Leads 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-21 09:17:18,142  INFO saby simulate_stream_event Case_id:174138 Activity:W_Complete_Application 'Calling invoke_event_thread()'
+2018-12-21 09:17:18,142  INFO saby invoke_event_thread Case_id:174138 Activity:W_Complete_Application 'Initialising thread'
+2018-12-21 09:17:18,157  INFO saby invoke_event_thread Case_id:174138 Activity:W_Complete_Application 'Starting thread for event '
+2018-12-21 09:17:18,157  INFO saby run Thread:27 Case_id:174138 Activity:W_Complete_Application 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-21 09:17:18,157 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-21 09:17:18,157 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 35
+2018-12-21 09:17:18,173  INFO saby run Thread:27 Case_id:174138 Activity:W_Complete_Application 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-21 09:17:18,173  INFO saby simulate_stream_event Case_id:174138 Activity:W_Complete_Application 'Calling invoke_event_thread()'
+2018-12-21 09:17:18,189  INFO saby invoke_event_thread Case_id:174138 Activity:W_Complete_Application 'Initialising thread'
+2018-12-21 09:17:18,189  INFO saby invoke_event_thread Case_id:174138 Activity:W_Complete_Application 'Starting thread for event '
+2018-12-21 09:17:18,204  INFO saby run Thread:28 Case_id:174138 Activity:W_Complete_Application 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-21 09:17:18,204 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-21 09:17:18,204 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 35
+2018-12-21 09:17:18,204  INFO saby run Thread:28 Case_id:174138 Activity:W_Complete_Application 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-21 09:17:18,220  INFO saby simulate_stream_event Case_id:174138 Activity:W_Complete_Application 'Calling invoke_event_thread()'
+2018-12-21 09:17:18,220  INFO saby invoke_event_thread Case_id:174138 Activity:W_Complete_Application 'Initialising thread'
+2018-12-21 09:17:18,236  INFO saby invoke_event_thread Case_id:174138 Activity:W_Complete_Application 'Starting thread for event '
+2018-12-21 09:17:18,236  INFO saby run Thread:29 Case_id:174138 Activity:W_Complete_Application 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-21 09:17:18,236 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-21 09:17:18,251 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 35
+2018-12-21 09:17:18,251  INFO saby run Thread:29 Case_id:174138 Activity:W_Complete_Application 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-21 09:17:18,267  INFO saby simulate_stream_event Case_id:174138 Activity:W_Complete_Application 'Calling invoke_event_thread()'
+2018-12-21 09:17:18,267  INFO saby invoke_event_thread Case_id:174138 Activity:W_Complete_Application 'Initialising thread'
+2018-12-21 09:17:18,267  INFO saby invoke_event_thread Case_id:174138 Activity:W_Complete_Application 'Starting thread for event '
+2018-12-21 09:17:18,282  INFO saby run Thread:30 Case_id:174138 Activity:W_Complete_Application 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-21 09:17:18,282 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-21 09:17:18,282 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 35
+2018-12-21 09:17:18,298  INFO saby run Thread:30 Case_id:174138 Activity:W_Complete_Application 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-21 09:17:18,298  INFO saby simulate_stream_event Case_id:174138 Activity:W_Complete_Application 'Calling invoke_event_thread()'
+2018-12-21 09:17:18,314  INFO saby invoke_event_thread Case_id:174138 Activity:W_Complete_Application 'Initialising thread'
+2018-12-21 09:17:18,314  INFO saby invoke_event_thread Case_id:174138 Activity:W_Complete_Application 'Starting thread for event '
+2018-12-21 09:17:18,329  INFO saby run Thread:31 Case_id:174138 Activity:W_Complete_Application 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-21 09:17:18,329 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-21 09:17:18,329 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 35
+2018-12-21 09:17:18,329  INFO saby run Thread:31 Case_id:174138 Activity:W_Complete_Application 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-21 09:17:18,345  INFO saby simulate_stream_event Case_id:NONE Activity:END 'Calling invoke_event_thread()'
+2018-12-21 09:17:18,345  INFO saby invoke_event_thread Case_id:NONE Activity:END 'Initialising thread'
+2018-12-21 09:17:18,361  INFO saby invoke_event_thread Case_id:NONE Activity:END 'Starting thread for event '
+2018-12-21 09:17:18,361  INFO saby run Thread:32 Case_id:NONE Activity:END 'Posting event to server:http://127.0.0.1:5000/compliance-checker'
+2018-12-21 09:17:18,361 Starting new HTTP connection (1): 127.0.0.1:5000
+2018-12-21 09:17:18,376 http://127.0.0.1:5000 "POST /compliance-checker?uuid=saby HTTP/1.1" 200 35
+2018-12-21 09:17:18,376  INFO saby run Thread:32 Case_id:NONE Activity:END 'The server response is: {"body": "Error, something wrong!"}'
+2018-12-21 09:17:19,501  INFO saby main 'compliance checking is completed'
+2018-12-21 09:17:19,516  INFO saby main 'The options are displayed'
