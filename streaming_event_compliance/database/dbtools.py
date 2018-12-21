@@ -71,8 +71,9 @@ def init_automata_from_database():
         autos[ws] = auto
     if len(conns) != 0:
         for conn in conns:
-            ws = conn.source_node.count(",") + 1
-            auto = autos[ws]
+            ws1 = conn.source_node.count(',') + 1
+            ws2 = conn.sink_node.count(',') + 1
+            auto = autos[max(ws1, ws2)]
             auto.add_connection_from_database(conn)
             auto.update_node(conn.source_node, conn.count)
         return autos, 1
@@ -87,8 +88,9 @@ def init_alert_log_from_database(uuid):
         alogs[ws] = alog
     if len(records) != 0:
         for record in records:
-            ws = record.source_node.count(',') + 1
-            alog = alogs[ws]
+            ws1 = record.source_node.count(',') + 1
+            ws2 = record.sink_node.count(',') + 1
+            alog = alogs[max(ws1, ws2)]
             alog.add_alert_record_from_database(record)
         return alogs, 1
     return alogs, 0

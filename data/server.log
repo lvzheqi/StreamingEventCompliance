@@ -2054,3 +2054,288 @@ UnboundLocalError: local variable 'client' referenced before assignment
 2018-12-21 15:24:37,551 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
 2018-12-21 15:24:37,729 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
 2018-12-21 15:24:47,444 127.0.0.1 - - [21/Dec/2018 15:24:47] "[37mPOST /show-deviation-pdf?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:26:15,013  INFO Username:Unknown <module> 'Created all db tables'
+2018-12-21 15:26:15,831  INFO Username:Unknown <module> 'Building automata...'
+2018-12-21 15:26:15,831  INFO Username:Unknown build_automata 'Traininging automata starts!'
+2018-12-21 15:26:24,688  INFO Username:Unknown build_automata 'Cleared automata memorizer'
+2018-12-21 15:26:40,026  INFO Username:Unknown <module> 'Created all db tables'
+2018-12-21 15:26:40,850  INFO Username:Unknown <module> 'Building automata...'
+2018-12-21 15:26:40,850  INFO Username:Unknown build_automata 'Traininging automata starts!'
+2018-12-21 15:26:40,852  INFO server build_automata_pro 'Training file processed and sorted'
+2018-12-21 15:26:40,852  INFO server build_automata_pro Case_id:Case1.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:26:40,853  INFO server build_automata_pro Case_id:Case3.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:26:40,853  INFO server build_automata_pro Case_id:Case2.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:26:40,854  INFO server build_automata_pro Case_id:Case1.2 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:26:40,854  INFO server build_automata_pro Case_id:Case1.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:26:40,854  INFO server build_automata_pro Case_id:Case2.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:26:40,860  ERROR server build_automata_pro 'All events thread join successful, begin end event'
+2018-12-21 15:26:40,869  INFO Username:Unknown build_automata 'Setting probabilities...'
+2018-12-21 15:26:40,883  INFO Username:Unknown build_automata 'Inserting automata to database'
+2018-12-21 15:26:40,884  INFO Username:Unknown build_automata 'Training automata ends!'
+2018-12-21 15:26:40,884  INFO Username:Unknown build_automata 'Cleared automata memorizer'
+2018-12-21 15:26:40,922  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-12-21 15:26:48,173 127.0.0.1 - - [21/Dec/2018 15:26:48] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:26:49,348 127.0.0.1 - - [21/Dec/2018 15:26:49] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:26:53,153 127.0.0.1 - - [21/Dec/2018 15:26:53] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:28:14,630  INFO Username:Unknown <module> 'Created all db tables'
+2018-12-21 15:28:15,112  INFO Username:Unknown <module> 'Building automata...'
+2018-12-21 15:28:15,112  INFO Username:Unknown build_automata 'Traininging automata starts!'
+2018-12-21 15:28:15,114  INFO server build_automata_pro 'Training file processed and sorted'
+2018-12-21 15:28:15,114  INFO server build_automata_pro Case_id:Case1.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:28:15,115  INFO server build_automata_pro Case_id:Case3.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:28:15,115  INFO server build_automata_pro Case_id:Case2.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:28:15,116  INFO server build_automata_pro Case_id:Case1.2 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:28:15,116  INFO server build_automata_pro Case_id:Case1.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:28:15,117  INFO server build_automata_pro Case_id:Case2.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:28:15,122  ERROR server build_automata_pro 'All events thread join successful, begin end event'
+2018-12-21 15:28:15,132  INFO Username:Unknown build_automata 'Setting probabilities...'
+2018-12-21 15:28:15,144  INFO Username:Unknown build_automata 'Inserting automata to database'
+2018-12-21 15:28:15,144  INFO Username:Unknown build_automata 'Training automata ends!'
+2018-12-21 15:28:15,144  INFO Username:Unknown build_automata 'Cleared automata memorizer'
+2018-12-21 15:28:15,178  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-12-21 15:28:18,184 127.0.0.1 - - [21/Dec/2018 15:28:18] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:28:19,744 127.0.0.1 - - [21/Dec/2018 15:28:19] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:29:42,446 127.0.0.1 - - [21/Dec/2018 15:29:42] "[37mPOST /login?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:03,349 127.0.0.1 - - [21/Dec/2018 15:30:03] "[37mPOST /login?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:22,557  INFO Username:Unknown <module> 'Created all db tables'
+2018-12-21 15:30:23,093  INFO Username:Unknown <module> 'Building automata...'
+2018-12-21 15:30:23,093  INFO Username:Unknown build_automata 'Traininging automata starts!'
+2018-12-21 15:30:23,095  INFO server build_automata_pro 'Training file processed and sorted'
+2018-12-21 15:30:23,095  INFO server build_automata_pro Case_id:Case1.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:30:23,096  INFO server build_automata_pro Case_id:Case3.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:30:23,096  INFO server build_automata_pro Case_id:Case2.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:30:23,096  INFO server build_automata_pro Case_id:Case1.2 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:30:23,097  INFO server build_automata_pro Case_id:Case1.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:30:23,097  INFO server build_automata_pro Case_id:Case2.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:30:23,103  ERROR server build_automata_pro 'All events thread join successful, begin end event'
+2018-12-21 15:30:23,113  INFO Username:Unknown build_automata 'Setting probabilities...'
+2018-12-21 15:30:23,124  INFO Username:Unknown build_automata 'Inserting automata to database'
+2018-12-21 15:30:23,124  INFO Username:Unknown build_automata 'Training automata ends!'
+2018-12-21 15:30:23,125  INFO Username:Unknown build_automata 'Cleared automata memorizer'
+2018-12-21 15:30:23,158  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-12-21 15:30:27,820 127.0.0.1 - - [21/Dec/2018 15:30:27] "[37mPOST /login?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:29,857 127.0.0.1 - - [21/Dec/2018 15:30:29] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:29,862 127.0.0.1 - - [21/Dec/2018 15:30:29] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:29,869 127.0.0.1 - - [21/Dec/2018 15:30:29] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:29,874 127.0.0.1 - - [21/Dec/2018 15:30:29] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:29,882 127.0.0.1 - - [21/Dec/2018 15:30:29] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:29,888 127.0.0.1 - - [21/Dec/2018 15:30:29] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:29,893 127.0.0.1 - - [21/Dec/2018 15:30:29] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:29,898 127.0.0.1 - - [21/Dec/2018 15:30:29] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:29,904 127.0.0.1 - - [21/Dec/2018 15:30:29] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:29,910 127.0.0.1 - - [21/Dec/2018 15:30:29] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:29,916 127.0.0.1 - - [21/Dec/2018 15:30:29] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:29,921 127.0.0.1 - - [21/Dec/2018 15:30:29] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:29,928 127.0.0.1 - - [21/Dec/2018 15:30:29] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:29,935 127.0.0.1 - - [21/Dec/2018 15:30:29] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:29,940 127.0.0.1 - - [21/Dec/2018 15:30:29] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:29,945 127.0.0.1 - - [21/Dec/2018 15:30:29] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:29,952 127.0.0.1 - - [21/Dec/2018 15:30:29] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:29,958 127.0.0.1 - - [21/Dec/2018 15:30:29] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:29,964 127.0.0.1 - - [21/Dec/2018 15:30:29] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:29,969 127.0.0.1 - - [21/Dec/2018 15:30:29] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:29,974 127.0.0.1 - - [21/Dec/2018 15:30:29] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:29,979 127.0.0.1 - - [21/Dec/2018 15:30:29] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:29,984 127.0.0.1 - - [21/Dec/2018 15:30:29] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:29,989 127.0.0.1 - - [21/Dec/2018 15:30:29] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:29,995 127.0.0.1 - - [21/Dec/2018 15:30:29] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:30,000 127.0.0.1 - - [21/Dec/2018 15:30:30] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:30,005 127.0.0.1 - - [21/Dec/2018 15:30:30] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:30,011 127.0.0.1 - - [21/Dec/2018 15:30:30] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:30,017 127.0.0.1 - - [21/Dec/2018 15:30:30] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:30,022 127.0.0.1 - - [21/Dec/2018 15:30:30] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:30,027 127.0.0.1 - - [21/Dec/2018 15:30:30] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:30,033 127.0.0.1 - - [21/Dec/2018 15:30:30] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:30,192 127.0.0.1 - - [21/Dec/2018 15:30:30] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:37,389 127.0.0.1 - - [21/Dec/2018 15:30:37] "[37mPOST /show-deviation-pdf?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:48,674  INFO Username:Unknown <module> 'Created all db tables'
+2018-12-21 15:30:49,238  INFO Username:Unknown <module> 'Building automata...'
+2018-12-21 15:30:49,238  INFO Username:Unknown build_automata 'Traininging automata starts!'
+2018-12-21 15:30:49,240  INFO server build_automata_pro 'Training file processed and sorted'
+2018-12-21 15:30:49,240  INFO server build_automata_pro Case_id:Case1.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:30:49,241  INFO server build_automata_pro Case_id:Case3.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:30:49,241  INFO server build_automata_pro Case_id:Case2.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:30:49,241  INFO server build_automata_pro Case_id:Case1.2 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:30:49,242  INFO server build_automata_pro Case_id:Case1.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:30:49,242  INFO server build_automata_pro Case_id:Case2.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:30:49,247  ERROR server build_automata_pro 'All events thread join successful, begin end event'
+2018-12-21 15:30:49,257  INFO Username:Unknown build_automata 'Setting probabilities...'
+2018-12-21 15:30:49,269  INFO Username:Unknown build_automata 'Inserting automata to database'
+2018-12-21 15:30:49,269  INFO Username:Unknown build_automata 'Training automata ends!'
+2018-12-21 15:30:49,270  INFO Username:Unknown build_automata 'Cleared automata memorizer'
+2018-12-21 15:30:49,305  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-12-21 15:30:57,203 127.0.0.1 - - [21/Dec/2018 15:30:57] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:57,209 127.0.0.1 - - [21/Dec/2018 15:30:57] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:57,215 127.0.0.1 - - [21/Dec/2018 15:30:57] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:57,221 127.0.0.1 - - [21/Dec/2018 15:30:57] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:57,226 127.0.0.1 - - [21/Dec/2018 15:30:57] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:57,234 127.0.0.1 - - [21/Dec/2018 15:30:57] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:57,238 127.0.0.1 - - [21/Dec/2018 15:30:57] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:57,243 127.0.0.1 - - [21/Dec/2018 15:30:57] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:57,250 127.0.0.1 - - [21/Dec/2018 15:30:57] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:57,255 127.0.0.1 - - [21/Dec/2018 15:30:57] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:57,261 127.0.0.1 - - [21/Dec/2018 15:30:57] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:57,267 127.0.0.1 - - [21/Dec/2018 15:30:57] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:57,272 127.0.0.1 - - [21/Dec/2018 15:30:57] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:57,277 127.0.0.1 - - [21/Dec/2018 15:30:57] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:57,282 127.0.0.1 - - [21/Dec/2018 15:30:57] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:57,287 127.0.0.1 - - [21/Dec/2018 15:30:57] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:57,293 127.0.0.1 - - [21/Dec/2018 15:30:57] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:57,298 127.0.0.1 - - [21/Dec/2018 15:30:57] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:57,303 127.0.0.1 - - [21/Dec/2018 15:30:57] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:57,309 127.0.0.1 - - [21/Dec/2018 15:30:57] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:57,315 127.0.0.1 - - [21/Dec/2018 15:30:57] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:57,320 127.0.0.1 - - [21/Dec/2018 15:30:57] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:57,326 127.0.0.1 - - [21/Dec/2018 15:30:57] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:57,331 127.0.0.1 - - [21/Dec/2018 15:30:57] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:57,337 127.0.0.1 - - [21/Dec/2018 15:30:57] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:57,342 127.0.0.1 - - [21/Dec/2018 15:30:57] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:57,349 127.0.0.1 - - [21/Dec/2018 15:30:57] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:57,354 127.0.0.1 - - [21/Dec/2018 15:30:57] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:57,359 127.0.0.1 - - [21/Dec/2018 15:30:57] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:57,364 127.0.0.1 - - [21/Dec/2018 15:30:57] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:57,369 127.0.0.1 - - [21/Dec/2018 15:30:57] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:57,375 127.0.0.1 - - [21/Dec/2018 15:30:57] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:30:57,502 127.0.0.1 - - [21/Dec/2018 15:30:57] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:31:07,386 127.0.0.1 - - [21/Dec/2018 15:31:07] "[37mPOST /show-deviation-pdf?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:31:12,316 127.0.0.1 - - [21/Dec/2018 15:31:12] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:31:12,323 127.0.0.1 - - [21/Dec/2018 15:31:12] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:31:12,328 127.0.0.1 - - [21/Dec/2018 15:31:12] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:31:12,334 127.0.0.1 - - [21/Dec/2018 15:31:12] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:31:12,339 127.0.0.1 - - [21/Dec/2018 15:31:12] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:31:12,345 127.0.0.1 - - [21/Dec/2018 15:31:12] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:31:12,350 127.0.0.1 - - [21/Dec/2018 15:31:12] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:31:12,356 127.0.0.1 - - [21/Dec/2018 15:31:12] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:31:12,362 127.0.0.1 - - [21/Dec/2018 15:31:12] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:31:12,367 127.0.0.1 - - [21/Dec/2018 15:31:12] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:31:12,373 127.0.0.1 - - [21/Dec/2018 15:31:12] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:31:12,379 127.0.0.1 - - [21/Dec/2018 15:31:12] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:31:12,383 127.0.0.1 - - [21/Dec/2018 15:31:12] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:31:12,390 127.0.0.1 - - [21/Dec/2018 15:31:12] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:31:12,395 127.0.0.1 - - [21/Dec/2018 15:31:12] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:31:12,400 127.0.0.1 - - [21/Dec/2018 15:31:12] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:31:12,405 127.0.0.1 - - [21/Dec/2018 15:31:12] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:31:12,411 127.0.0.1 - - [21/Dec/2018 15:31:12] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:31:12,417 127.0.0.1 - - [21/Dec/2018 15:31:12] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:31:12,422 127.0.0.1 - - [21/Dec/2018 15:31:12] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:31:12,427 127.0.0.1 - - [21/Dec/2018 15:31:12] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:31:12,432 127.0.0.1 - - [21/Dec/2018 15:31:12] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:31:12,438 127.0.0.1 - - [21/Dec/2018 15:31:12] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:31:12,444 127.0.0.1 - - [21/Dec/2018 15:31:12] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:31:12,449 127.0.0.1 - - [21/Dec/2018 15:31:12] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:31:12,455 127.0.0.1 - - [21/Dec/2018 15:31:12] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:31:12,460 127.0.0.1 - - [21/Dec/2018 15:31:12] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:31:12,465 127.0.0.1 - - [21/Dec/2018 15:31:12] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:31:12,472 127.0.0.1 - - [21/Dec/2018 15:31:12] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:31:12,478 127.0.0.1 - - [21/Dec/2018 15:31:12] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:31:12,483 127.0.0.1 - - [21/Dec/2018 15:31:12] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:31:12,488 127.0.0.1 - - [21/Dec/2018 15:31:12] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:31:12,585 127.0.0.1 - - [21/Dec/2018 15:31:12] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:32:59,309 127.0.0.1 - - [21/Dec/2018 15:32:59] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:32:59,314 127.0.0.1 - - [21/Dec/2018 15:32:59] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:32:59,320 127.0.0.1 - - [21/Dec/2018 15:32:59] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:32:59,326 127.0.0.1 - - [21/Dec/2018 15:32:59] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:32:59,331 127.0.0.1 - - [21/Dec/2018 15:32:59] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:32:59,338 127.0.0.1 - - [21/Dec/2018 15:32:59] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:32:59,343 127.0.0.1 - - [21/Dec/2018 15:32:59] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:32:59,348 127.0.0.1 - - [21/Dec/2018 15:32:59] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:32:59,354 127.0.0.1 - - [21/Dec/2018 15:32:59] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:32:59,359 127.0.0.1 - - [21/Dec/2018 15:32:59] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:32:59,365 127.0.0.1 - - [21/Dec/2018 15:32:59] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:32:59,370 127.0.0.1 - - [21/Dec/2018 15:32:59] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:32:59,375 127.0.0.1 - - [21/Dec/2018 15:32:59] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:32:59,380 127.0.0.1 - - [21/Dec/2018 15:32:59] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:32:59,387 127.0.0.1 - - [21/Dec/2018 15:32:59] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:32:59,392 127.0.0.1 - - [21/Dec/2018 15:32:59] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:32:59,396 127.0.0.1 - - [21/Dec/2018 15:32:59] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:32:59,403 127.0.0.1 - - [21/Dec/2018 15:32:59] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:32:59,409 127.0.0.1 - - [21/Dec/2018 15:32:59] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:32:59,415 127.0.0.1 - - [21/Dec/2018 15:32:59] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:32:59,420 127.0.0.1 - - [21/Dec/2018 15:32:59] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:32:59,425 127.0.0.1 - - [21/Dec/2018 15:32:59] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:32:59,430 127.0.0.1 - - [21/Dec/2018 15:32:59] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:32:59,436 127.0.0.1 - - [21/Dec/2018 15:32:59] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:32:59,442 127.0.0.1 - - [21/Dec/2018 15:32:59] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:32:59,447 127.0.0.1 - - [21/Dec/2018 15:32:59] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:32:59,452 127.0.0.1 - - [21/Dec/2018 15:32:59] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:32:59,457 127.0.0.1 - - [21/Dec/2018 15:32:59] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:32:59,462 127.0.0.1 - - [21/Dec/2018 15:32:59] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:32:59,469 127.0.0.1 - - [21/Dec/2018 15:32:59] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:32:59,474 127.0.0.1 - - [21/Dec/2018 15:32:59] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:32:59,479 127.0.0.1 - - [21/Dec/2018 15:32:59] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:32:59,572 127.0.0.1 - - [21/Dec/2018 15:32:59] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:33:02,463 127.0.0.1 - - [21/Dec/2018 15:33:02] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:33:02,470 127.0.0.1 - - [21/Dec/2018 15:33:02] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:33:02,478 127.0.0.1 - - [21/Dec/2018 15:33:02] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:33:02,485 127.0.0.1 - - [21/Dec/2018 15:33:02] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:33:02,490 127.0.0.1 - - [21/Dec/2018 15:33:02] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:33:02,496 127.0.0.1 - - [21/Dec/2018 15:33:02] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:33:02,503 127.0.0.1 - - [21/Dec/2018 15:33:02] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:33:02,509 127.0.0.1 - - [21/Dec/2018 15:33:02] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:33:02,514 127.0.0.1 - - [21/Dec/2018 15:33:02] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:33:02,520 127.0.0.1 - - [21/Dec/2018 15:33:02] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:33:02,526 127.0.0.1 - - [21/Dec/2018 15:33:02] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:33:02,531 127.0.0.1 - - [21/Dec/2018 15:33:02] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:33:02,538 127.0.0.1 - - [21/Dec/2018 15:33:02] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:33:02,543 127.0.0.1 - - [21/Dec/2018 15:33:02] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:33:02,548 127.0.0.1 - - [21/Dec/2018 15:33:02] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:33:02,554 127.0.0.1 - - [21/Dec/2018 15:33:02] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:33:02,559 127.0.0.1 - - [21/Dec/2018 15:33:02] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:33:02,565 127.0.0.1 - - [21/Dec/2018 15:33:02] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:33:02,570 127.0.0.1 - - [21/Dec/2018 15:33:02] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:33:02,575 127.0.0.1 - - [21/Dec/2018 15:33:02] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:33:02,580 127.0.0.1 - - [21/Dec/2018 15:33:02] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:33:02,587 127.0.0.1 - - [21/Dec/2018 15:33:02] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:33:02,592 127.0.0.1 - - [21/Dec/2018 15:33:02] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:33:02,597 127.0.0.1 - - [21/Dec/2018 15:33:02] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:33:02,604 127.0.0.1 - - [21/Dec/2018 15:33:02] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:33:02,609 127.0.0.1 - - [21/Dec/2018 15:33:02] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:33:02,614 127.0.0.1 - - [21/Dec/2018 15:33:02] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:33:02,621 127.0.0.1 - - [21/Dec/2018 15:33:02] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:33:02,626 127.0.0.1 - - [21/Dec/2018 15:33:02] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:33:02,630 127.0.0.1 - - [21/Dec/2018 15:33:02] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:33:02,635 127.0.0.1 - - [21/Dec/2018 15:33:02] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:33:02,641 127.0.0.1 - - [21/Dec/2018 15:33:02] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:33:02,735 127.0.0.1 - - [21/Dec/2018 15:33:02] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:34:03,966  INFO Username:Unknown build_automata 'Traininging automata starts!'
+2018-12-21 15:34:03,968  INFO server build_automata_pro 'Training file processed and sorted'
+2018-12-21 15:34:03,968  INFO server build_automata_pro Case_id:Case1.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:34:03,968  INFO server build_automata_pro Case_id:Case3.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:34:03,969  INFO server build_automata_pro Case_id:Case2.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:34:03,969  INFO server build_automata_pro Case_id:Case1.2 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:34:03,970  INFO server build_automata_pro Case_id:Case1.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:34:03,970  INFO server build_automata_pro Case_id:Case2.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:34:03,975  ERROR server build_automata_pro 'All events thread join successful, begin end event'
+2018-12-21 15:34:03,984  INFO Username:Unknown build_automata 'Setting probabilities...'
+2018-12-21 15:34:03,996  INFO Username:Unknown build_automata 'Inserting automata to database'
+2018-12-21 15:34:03,997  INFO Username:Unknown build_automata 'Training automata ends!'
+2018-12-21 15:34:03,997  INFO Username:Unknown build_automata 'Cleared automata memorizer'
+2018-12-21 15:34:04,132  ERROR Username:Unknown test_log_error_2 'Testing logging error with 2 arguments'
+2018-12-21 15:34:04,134  ERROR test_user test_log_error_3 'Testing logging error with 3 arguments'
+2018-12-21 15:34:04,135  ERROR test_user test_log_error_5 Case_id:test1 Activity:testing_log_info_5 'Testing logging error with 5 arguments'
+2018-12-21 15:34:04,136  ERROR test_user test_log_error_6 Thread:1 Case_id:test1 Activity:testing_log_info_6 'Testing logging error with 6 arguments'
+2018-12-21 15:34:04,137  INFO Username:Unknown test_log_info_2 'Testing logging info with 2 arguments'
+2018-12-21 15:34:04,138  INFO test_user test_log_info_3 'Testing logging info with 3 arguments'
+2018-12-21 15:34:04,138  INFO test_user test_log_info_5 Case_id:test1 Activity:testing_log_info_5 'Testing logging info with 5 arguments'
+2018-12-21 15:34:04,139  INFO test_user test_log_info_6 Thread:1 Case_id:test1 Activity:testing_log_info_6 'Testing logging info with 6 arguments'
+2018-12-21 15:34:50,134  INFO Username:Unknown build_automata 'Traininging automata starts!'
+2018-12-21 15:34:50,136  INFO server build_automata_pro 'Training file processed and sorted'
+2018-12-21 15:34:50,136  INFO server build_automata_pro Case_id:Case1.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:34:50,137  INFO server build_automata_pro Case_id:Case3.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:34:50,137  INFO server build_automata_pro Case_id:Case2.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:34:50,138  INFO server build_automata_pro Case_id:Case1.2 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:34:50,138  INFO server build_automata_pro Case_id:Case1.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:34:50,138  INFO server build_automata_pro Case_id:Case2.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:34:50,144  ERROR server build_automata_pro 'All events thread join successful, begin end event'
+2018-12-21 15:34:50,155  INFO Username:Unknown build_automata 'Setting probabilities...'
+2018-12-21 15:34:50,169  INFO Username:Unknown build_automata 'Inserting automata to database'
+2018-12-21 15:34:50,169  INFO Username:Unknown build_automata 'Training automata ends!'
+2018-12-21 15:34:50,170  INFO Username:Unknown build_automata 'Cleared automata memorizer'
+2018-12-21 15:34:50,395  ERROR Username:Unknown test_log_error_2 'Testing logging error with 2 arguments'
+2018-12-21 15:34:50,396  ERROR test_user test_log_error_3 'Testing logging error with 3 arguments'
+2018-12-21 15:34:50,397  ERROR test_user test_log_error_5 Case_id:test1 Activity:testing_log_info_5 'Testing logging error with 5 arguments'
+2018-12-21 15:34:50,398  ERROR test_user test_log_error_6 Thread:1 Case_id:test1 Activity:testing_log_info_6 'Testing logging error with 6 arguments'
+2018-12-21 15:34:50,399  INFO Username:Unknown test_log_info_2 'Testing logging info with 2 arguments'
+2018-12-21 15:34:50,400  INFO test_user test_log_info_3 'Testing logging info with 3 arguments'
+2018-12-21 15:34:50,401  INFO test_user test_log_info_5 Case_id:test1 Activity:testing_log_info_5 'Testing logging info with 5 arguments'
+2018-12-21 15:34:50,402  INFO test_user test_log_info_6 Thread:1 Case_id:test1 Activity:testing_log_info_6 'Testing logging info with 6 arguments'

@@ -8,7 +8,6 @@ CLEINT_DATA_PATH = app.config['CLEINT_DATA_PATH']
 AUTOMATA_FILE = app.config['AUTOMATA_FILE']
 FILE_TYPE = app.config['FILE_TYPE']
 WINDOW_SIZE = app.config['WINDOW_SIZE']
-MAXIMUN_WINDOW_SIZE = app.config['MAXIMUN_WINDOW_SIZE']
 THRESHOLD = app.config['THRESHOLD']
 
 
@@ -17,7 +16,7 @@ def visualization_automata(autos, alogs, uuid):
     viz.format = 'pdf'
     viz.attr('node', fixedsize='true', width='0.7')
     viz.attr(rankdir='LR')
-    for i in range(MAXIMUN_WINDOW_SIZE - 1, -1, -1):
+    for i in range(len(WINDOW_SIZE) - 1, -1, -1):
         auto = autos[WINDOW_SIZE[i]]
         alog = alogs[WINDOW_SIZE[i]]
         with viz.subgraph(name='cluster' + str(WINDOW_SIZE[i])) as sub:
