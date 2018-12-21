@@ -91,6 +91,6 @@ def compliance_checker(client_uuid, event):
             dbtools.update_user_status(client_uuid, True)
             gVars.clients_status[client_uuid] = True
             setup.clear_cc_memorizer(client_uuid)
-            return json.dumps({'body': 'The compliance checking is over, you can get the deviation pdf!'})
+            return json.dumps({'End': {'body': 'The compliance checking is over, you can get the deviation pdf!'}})
     else:
-        return json.dumps({'body': 'Sorry, automata has not built, please wait for a while!'})
+        return json.dumps({'End': {'body': 'Sorry, automata has not built, please wait for a while!'}})
