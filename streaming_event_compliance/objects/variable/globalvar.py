@@ -96,23 +96,38 @@ class ConnectionsLocker(Singleton):
         return super().__getattribute__(name)
 
 
-class ClientThreadMemorizer(ThreadMemorizer):
+class ClientThreadMemorizer(Singleton):
     def __init__(self):
         super().__init__()
         self.client_number = 0
+        self.dictionary_threads = {}
 
     def init_client_memorizer(self, uuid):
         self.dictionary_threads[uuid] = {}
 
+    def __setattr__(self, name: str, value: Any) -> None:
+        super().__setattr__(name, value)
 
-class ClientCaseMemorizer(CaseMemorizer):
+    def __getattribute__(self, name: str) -> Any:
+        return super().__getattribute__(name)
+
+
+class ClientCaseMemorizer(Singleton):
     def __init__(self):
         super().__init__()
         self.client_number = 0
+        self.dictionary_cases = {}
+        self.lock_List = {}
 
     def init_client_memorizer(self, uuid):
         self.dictionary_cases[uuid] = {}
         self.lock_List[uuid] = {}
+
+    def __setattr__(self, name: str, value: Any) -> None:
+        super().__setattr__(name, value)
+
+    def __getattribute__(self, name: str) -> Any:
+        return super().__getattribute__(name)
 
 
 class ClientAlertsLocker(Singleton):

@@ -10,7 +10,7 @@ class CreateProbabilityAutomataTest(unittest.TestCase):
     def setUp(self):
         setup.init_automata()
 
-        self.uuid = 'client1'
+        self.uuid = 'clien'
         alog1 = alertlog.AlertLog()
         alog2 = alertlog.AlertLog()
         alog3 = alertlog.AlertLog()
@@ -25,7 +25,7 @@ class CreateProbabilityAutomataTest(unittest.TestCase):
         alog3.update_alert_record(alertlog.AlertRecord(self.uuid, 'd,b,c', 'b,c,d', 1, 'M'))
         alog4.update_alert_record(alertlog.AlertRecord(self.uuid, 'a,d,b,c', 'd,b,c,d', 1, 'M'))
         alogs = {1: alog1, 2: alog2, 3: alog3, 4: alog4}
-        self.u_alogs = {'client1': alogs}
+        self.u_alogs = {'clien': alogs}
 
     def test_create_automata(self):
         visualization_deviation_automata.visualization_automata(gVars.autos, self.u_alogs[self.uuid], self.uuid)
