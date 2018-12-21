@@ -15,9 +15,8 @@ THRESHOLD = app.config['THRESHOLD']
 def visualization_automata(autos, alogs, uuid):
     viz = Digraph(comment='probability_automata', format='pdf', engine='dot')
     viz.format = 'pdf'
-    viz.graph_attr['rankdir'] = 'LR'
-    viz.attr('node', shape='circle', fixedsize='true', width='0.7')
-
+    viz.attr('node', fixedsize='true', width='0.7')
+    viz.attr(rankdir='LR')
     for i in range(MAXIMUN_WINDOW_SIZE - 1, -1, -1):
         auto = autos[WINDOW_SIZE[i]]
         alog = alogs[WINDOW_SIZE[i]]
@@ -42,56 +41,52 @@ def visualization_automata(autos, alogs, uuid):
                     sub.edge(record.source_node, record.sink_node, color='green', label='count = ' + str(record.alert_count),
                              penwidth=str(record.alert_count / max_count * 3))
 
-    with viz.subgraph(name='cluster00') as sub:
+    with viz.subgraph(name='cluster0') as sub:
+        # sub.attr(color='black', label='Legend')
+        sub = legend()
         # [fixedsize = true, width = 0.75]
-        sub.graph_attr['rankdir'] = 'LR'
 
-        sub.attr(rank='same')
-        sub.node('text0', shape='plaintext', style='solid', label='node, where causes alert',
-                 penwidth='2', width='3.5')
-        sub.node('activity', 'activity', fillcolor='red', style='filled')
-
-        sub.node('text1', shape='plaintext', style='solid', label='connections, when such exists\r in primal automata',
-                 penwidth='2', width='3.5')
-        sub.node('s_node1', 's_node1')
-        sub.node('ss_node1', 'ss_node1')
-        sub.edge('s_node1', 'ss_node1', color='black', label='', penwidth='1.5')
-
-        sub.node('text2', shape='plaintext', style='solid', label='alerts, when no such connections in primal automata ', width='3.5')
-        sub.node('s_node2', 's_node2', fillcolor='red', style='filled')
-        sub.node('ss_node2', 'ss_node2', fillcolor='red', style='filled')
-        sub.edge('s_node2', 'ss_node2', color='red', label='', penwidth='1.5')
-
-        sub.node('text3', shape='plaintext', style='solid', label='alerts, when the probability is below Threshold ', width='3.5')
-        sub.node('s_node3', 's_node3', fillcolor='red', style='filled')
-        sub.node('ss_node3', 'ss_node3', fillcolor='red', style='filled')
-        sub.edge('s_node3', 'ss_node3', color='green', label='', penwidth='1.5')
-        sub.graph_attr['rank'] = 'same; text1; s_node1; ss_node1'
-
-        c1 = Digraph('child1')
-        c1.attr(rank='same')
-        c1.node('text1')
-        c1.node('s_node1')
-        c1.node('ss_node1')
-        sub.subgraph(c1)
-
-        c2 = Digraph('child2')
-        c2.attr(rank='same')
-        c2.node('text2')
-        c2.node('s_node2')
-        c2.node('ss_node2')
-        sub.subgraph(c2)
-
-        c3 = Digraph('child3')
-        c3.graph_attr['rankdir'] = 'LR'
-        c3.attr(rank='same')
-        c3.node('text3')
-        c3.node('s_node3')
-        c3.node('ss_node3')
-        sub.subgraph(c3)
-
-    viz.render(filename=uuid + '_' + AUTOMATA_FILE, directory=CLEINT_DATA_PATH, view=False, cleanup=True)
+    # viz.subgraph(sub)
+    viz.render(filename=uuid + '_' + AUTOMATA_FILE, directory=CLEINT_DATA_PATH, view=False, cleanup=False)
     return viz
+
+
+def legend():
+    sub = Digraph()
+    # sub.attr(rankdir='LR')
+    sub.attr(color='black', label='Legend')
+    sub.attr(color='black', label='Legend')
+    sub.node('activity', 'activity', fillcolor='red', style='filled')
+    sub.node('text0', shape='plaintext', style='solid', label='node, where causes alert\\r',
+             penwidth='2', width='3.5')
+
+    sub.node('s_node1', 's_node1')
+    sub.node('ss_node1', 'ss_node1')
+    sub.edge('s_node1', 'ss_node1', color='black', label='', penwidth='1.5')
+    sub.node('text1', shape='plaintext', style='solid', label='connections, when such exists \\r in primal automata \\r',
+             penwidth='2', width='3.5')
+
+    sub.node('s_node2', 's_node2', fillcolor='red', style='filled')
+    sub.node('ss_node2', 'ss_node2', fillcolor='red', style='filled')
+    sub.edge('s_node2', 'ss_node2', color='red', label='', penwidth='1.5')
+    sub.node('text2', shape='plaintext', style='solid', label='alerts, when no such connections \\r in primal automata \\r', width='3.5')
+
+    sub.node('s_node3', 's_node3', fillcolor='red', style='filled')
+    sub.node('ss_node3', 'ss_node3', fillcolor='red', style='filled')
+    sub.edge('s_node3', 'ss_node3', color='green', label='', penwidth='1.5')
+    # sub.graph_attr['rank'] = 'source; text0 text1 text2 text3'
+    sub.node('text3', shape='plaintext', style='solid', label='alerts, when the probability is \\r below Threshold \\r', width='3.5')
+
+    #
+    c1 = Digraph('child1')
+    c1.attr(rank='source')
+    c1.node('text0')
+    c1.node('text1')
+    c1.node('text2')
+    c1.node('text3')
+    sub.subgraph(c1)
+
+    return sub
 
 
 def show_deviation_pdf(uuid):
