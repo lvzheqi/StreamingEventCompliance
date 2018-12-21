@@ -1415,3 +1415,642 @@
 2018-12-21 14:39:02,973  INFO Username:Unknown build_automata 'Training automata ends!'
 2018-12-21 14:39:02,973  INFO Username:Unknown build_automata 'Cleared automata memorizer'
 2018-12-21 14:39:03,023  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-12-21 15:03:28,179  INFO Username:Unknown <module> 'Created all db tables'
+2018-12-21 15:03:41,242  INFO Username:Unknown <module> 'Created all db tables'
+2018-12-21 15:03:41,293  ERROR Username:Unknown <module> 'Database connection error!'
+2018-12-21 15:03:50,550  INFO Username:Unknown <module> 'Created all db tables'
+2018-12-21 15:03:50,608  ERROR Username:Unknown <module> 'Database connection error!'
+2018-12-21 15:07:55,033  INFO Username:Unknown <module> 'Created all db tables'
+2018-12-21 15:07:56,181  INFO Username:Unknown <module> 'Building automata...'
+2018-12-21 15:07:56,182  INFO Username:Unknown build_automata 'Traininging automata starts!'
+2018-12-21 15:07:56,187  INFO server build_automata_pro 'Training file processed and sorted'
+2018-12-21 15:07:56,187  INFO server build_automata_pro Case_id:Case1.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:07:56,188  INFO server build_automata_pro Case_id:Case3.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:07:56,188  INFO server build_automata_pro Case_id:Case2.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:07:56,188  INFO server build_automata_pro Case_id:Case1.2 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:07:56,189  INFO server build_automata_pro Case_id:Case1.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:07:56,189  INFO server build_automata_pro Case_id:Case2.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:07:56,194  ERROR server build_automata_pro 'All events thread join successful, begin end event'
+2018-12-21 15:07:56,203  INFO Username:Unknown build_automata 'Setting probabilities...'
+2018-12-21 15:07:56,214  INFO Username:Unknown build_automata 'Inserting automata to database'
+2018-12-21 15:07:56,215  INFO Username:Unknown build_automata 'Training automata ends!'
+2018-12-21 15:07:56,215  INFO Username:Unknown build_automata 'Cleared automata memorizer'
+2018-12-21 15:07:56,253  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-12-21 15:08:04,435 Exception on /login [POST]
+Traceback (most recent call last):
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/base.py", line 379, in _entity_descriptor
+    return getattr(entity, key)
+AttributeError: type object 'Client' has no attribute 'user_name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/routes.py", line 30, in call_login
+    return str(check_client_stauts(uuid)), status.HTTP_200_OK
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/routes.py", line 88, in check_client_stauts
+    if dbtools.check_client_status(uuid) is None:
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/database/dbtools.py", line 44, in check_client_status
+    client = alertlog.Client.query.filter_by(user_name=uuid).first()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 1689, in filter_by
+    for key, value in kwargs.items()]
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 1689, in <listcomp>
+    for key, value in kwargs.items()]
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/base.py", line 383, in _entity_descriptor
+    (description, key)
+sqlalchemy.exc.InvalidRequestError: Entity '<class 'streaming_event_compliance.objects.automata.alertlog.Client'>' has no property 'user_name'
+2018-12-21 15:08:04,446 127.0.0.1 - - [21/Dec/2018 15:08:04] "[1m[35mPOST /login?uuid=client1 HTTP/1.1[0m" 500 -
+2018-12-21 15:09:07,289 Exception on /login [POST]
+Traceback (most recent call last):
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/base.py", line 379, in _entity_descriptor
+    return getattr(entity, key)
+AttributeError: type object 'Client' has no attribute 'user_name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/routes.py", line 30, in call_login
+    return str(check_client_stauts(uuid)), status.HTTP_200_OK
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/routes.py", line 88, in check_client_stauts
+    if dbtools.check_client_status(uuid) is None:
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/database/dbtools.py", line 44, in check_client_status
+    client = alertlog.Client.query.filter_by(user_name=uuid).first()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 1689, in filter_by
+    for key, value in kwargs.items()]
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 1689, in <listcomp>
+    for key, value in kwargs.items()]
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/base.py", line 383, in _entity_descriptor
+    (description, key)
+sqlalchemy.exc.InvalidRequestError: Entity '<class 'streaming_event_compliance.objects.automata.alertlog.Client'>' has no property 'user_name'
+2018-12-21 15:09:07,290 127.0.0.1 - - [21/Dec/2018 15:09:07] "[1m[35mPOST /login?uuid=client1 HTTP/1.1[0m" 500 -
+2018-12-21 15:11:49,768  INFO Username:Unknown <module> 'Created all db tables'
+2018-12-21 15:11:51,088  INFO Username:Unknown <module> 'Building automata...'
+2018-12-21 15:11:51,088  INFO Username:Unknown build_automata 'Traininging automata starts!'
+2018-12-21 15:11:51,091  INFO server build_automata_pro 'Training file processed and sorted'
+2018-12-21 15:11:51,091  INFO server build_automata_pro Case_id:Case1.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:11:51,091  INFO server build_automata_pro Case_id:Case3.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:11:51,092  INFO server build_automata_pro Case_id:Case2.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:11:51,092  INFO server build_automata_pro Case_id:Case1.2 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:11:51,092  INFO server build_automata_pro Case_id:Case1.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:11:51,093  INFO server build_automata_pro Case_id:Case2.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:11:51,097  ERROR server build_automata_pro 'All events thread join successful, begin end event'
+2018-12-21 15:11:51,107  INFO Username:Unknown build_automata 'Setting probabilities...'
+2018-12-21 15:11:51,119  INFO Username:Unknown build_automata 'Inserting automata to database'
+2018-12-21 15:11:51,119  INFO Username:Unknown build_automata 'Training automata ends!'
+2018-12-21 15:11:51,119  INFO Username:Unknown build_automata 'Cleared automata memorizer'
+2018-12-21 15:11:51,164  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-12-21 15:11:55,817 Exception on /login [POST]
+Traceback (most recent call last):
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/base.py", line 379, in _entity_descriptor
+    return getattr(entity, key)
+AttributeError: type object 'Client' has no attribute 'user_name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/routes.py", line 31, in call_login
+    return str(check_client_stauts(uuid)), status.HTTP_200_OK
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/routes.py", line 89, in check_client_stauts
+    if dbtools.check_client_status(uuid) is None:
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/database/dbtools.py", line 44, in check_client_status
+    client = alertlog.Client.query.filter_by(user_name=uuid).first()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 1689, in filter_by
+    for key, value in kwargs.items()]
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 1689, in <listcomp>
+    for key, value in kwargs.items()]
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/base.py", line 383, in _entity_descriptor
+    (description, key)
+sqlalchemy.exc.InvalidRequestError: Entity '<class 'streaming_event_compliance.objects.automata.alertlog.Client'>' has no property 'user_name'
+2018-12-21 15:11:55,827 127.0.0.1 - - [21/Dec/2018 15:11:55] "[1m[35mPOST /login?uuid=client1 HTTP/1.1[0m" 500 -
+2018-12-21 15:14:48,504  INFO Username:Unknown <module> 'Created all db tables'
+2018-12-21 15:14:49,355  INFO Username:Unknown <module> 'Building automata...'
+2018-12-21 15:14:49,355  INFO Username:Unknown build_automata 'Traininging automata starts!'
+2018-12-21 15:14:49,357  INFO server build_automata_pro 'Training file processed and sorted'
+2018-12-21 15:14:49,358  INFO server build_automata_pro Case_id:Case1.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:14:49,358  INFO server build_automata_pro Case_id:Case3.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:14:49,358  INFO server build_automata_pro Case_id:Case2.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:14:49,359  INFO server build_automata_pro Case_id:Case1.2 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:14:49,359  INFO server build_automata_pro Case_id:Case1.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:14:49,359  INFO server build_automata_pro Case_id:Case2.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:14:49,364  ERROR server build_automata_pro 'All events thread join successful, begin end event'
+2018-12-21 15:14:49,373  INFO Username:Unknown build_automata 'Setting probabilities...'
+2018-12-21 15:14:49,384  INFO Username:Unknown build_automata 'Inserting automata to database'
+2018-12-21 15:14:49,384  INFO Username:Unknown build_automata 'Training automata ends!'
+2018-12-21 15:14:49,384  INFO Username:Unknown build_automata 'Cleared automata memorizer'
+2018-12-21 15:14:49,421  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-12-21 15:14:54,915 Exception on /login [POST]
+Traceback (most recent call last):
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/base.py", line 379, in _entity_descriptor
+    return getattr(entity, key)
+AttributeError: type object 'Client' has no attribute 'user_name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/routes.py", line 33, in call_login
+    return str(check_client_stauts(uuid)), status.HTTP_200_OK
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/routes.py", line 91, in check_client_stauts
+    if dbtools.check_client_status(uuid) is None:
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/database/dbtools.py", line 44, in check_client_status
+    client = alertlog.Client.query.filter_by(user_name=uuid).first()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 1689, in filter_by
+    for key, value in kwargs.items()]
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 1689, in <listcomp>
+    for key, value in kwargs.items()]
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/base.py", line 383, in _entity_descriptor
+    (description, key)
+sqlalchemy.exc.InvalidRequestError: Entity '<class 'streaming_event_compliance.objects.automata.alertlog.Client'>' has no property 'user_name'
+2018-12-21 15:14:54,926 127.0.0.1 - - [21/Dec/2018 15:14:54] "[1m[35mPOST /login?uuid=client1 HTTP/1.1[0m" 500 -
+2018-12-21 15:15:01,267  INFO Username:Unknown <module> 'Created all db tables'
+2018-12-21 15:15:01,792  INFO Username:Unknown <module> 'Building automata...'
+2018-12-21 15:15:01,792  INFO Username:Unknown build_automata 'Traininging automata starts!'
+2018-12-21 15:15:01,795  INFO server build_automata_pro 'Training file processed and sorted'
+2018-12-21 15:15:01,795  INFO server build_automata_pro Case_id:Case1.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:15:01,795  INFO server build_automata_pro Case_id:Case3.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:15:01,796  INFO server build_automata_pro Case_id:Case2.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:15:01,796  INFO server build_automata_pro Case_id:Case1.2 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:15:01,797  INFO server build_automata_pro Case_id:Case1.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:15:01,797  INFO server build_automata_pro Case_id:Case2.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:15:01,801  ERROR server build_automata_pro 'All events thread join successful, begin end event'
+2018-12-21 15:15:01,811  INFO Username:Unknown build_automata 'Setting probabilities...'
+2018-12-21 15:15:01,822  INFO Username:Unknown build_automata 'Inserting automata to database'
+2018-12-21 15:15:01,822  INFO Username:Unknown build_automata 'Training automata ends!'
+2018-12-21 15:15:01,822  INFO Username:Unknown build_automata 'Cleared automata memorizer'
+2018-12-21 15:15:01,859  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-12-21 15:15:10,517 Exception on /login [POST]
+Traceback (most recent call last):
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/base.py", line 379, in _entity_descriptor
+    return getattr(entity, key)
+AttributeError: type object 'Client' has no attribute 'user_name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/routes.py", line 33, in call_login
+    return str(check_client_stauts(uuid)), status.HTTP_200_OK
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/routes.py", line 91, in check_client_stauts
+    if dbtools.check_client_status(uuid) is None:
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/database/dbtools.py", line 44, in check_client_status
+    client = alertlog.Client.query.filter_by(user_name=uuid).first()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 1689, in filter_by
+    for key, value in kwargs.items()]
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 1689, in <listcomp>
+    for key, value in kwargs.items()]
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/base.py", line 383, in _entity_descriptor
+    (description, key)
+sqlalchemy.exc.InvalidRequestError: Entity '<class 'streaming_event_compliance.objects.automata.alertlog.Client'>' has no property 'user_name'
+2018-12-21 15:15:10,543 127.0.0.1 - - [21/Dec/2018 15:15:10] "[1m[35mPOST /login?uuid=client1 HTTP/1.1[0m" 500 -
+2018-12-21 15:15:57,514  INFO Username:Unknown <module> 'Created all db tables'
+2018-12-21 15:15:58,072  INFO Username:Unknown <module> 'Building automata...'
+2018-12-21 15:15:58,072  INFO Username:Unknown build_automata 'Traininging automata starts!'
+2018-12-21 15:15:58,075  INFO server build_automata_pro 'Training file processed and sorted'
+2018-12-21 15:15:58,075  INFO server build_automata_pro Case_id:Case1.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:15:58,076  INFO server build_automata_pro Case_id:Case3.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:15:58,076  INFO server build_automata_pro Case_id:Case2.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:15:58,076  INFO server build_automata_pro Case_id:Case1.2 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:15:58,077  INFO server build_automata_pro Case_id:Case1.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:15:58,077  INFO server build_automata_pro Case_id:Case2.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:15:58,083  ERROR server build_automata_pro 'All events thread join successful, begin end event'
+2018-12-21 15:15:58,092  INFO Username:Unknown build_automata 'Setting probabilities...'
+2018-12-21 15:15:58,103  INFO Username:Unknown build_automata 'Inserting automata to database'
+2018-12-21 15:15:58,103  INFO Username:Unknown build_automata 'Training automata ends!'
+2018-12-21 15:15:58,104  INFO Username:Unknown build_automata 'Cleared automata memorizer'
+2018-12-21 15:15:58,140  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-12-21 15:16:02,819 Exception on /login [POST]
+Traceback (most recent call last):
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/base.py", line 379, in _entity_descriptor
+    return getattr(entity, key)
+AttributeError: type object 'Client' has no attribute 'user_name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/routes.py", line 33, in call_login
+    return str(check_client_stauts(uuid)), status.HTTP_200_OK
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/routes.py", line 91, in check_client_stauts
+    if dbtools.check_client_status(uuid) is None:
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/database/dbtools.py", line 44, in check_client_status
+    client = alertlog.Client.query.filter_by(user_name=uuid).first()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 1689, in filter_by
+    for key, value in kwargs.items()]
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 1689, in <listcomp>
+    for key, value in kwargs.items()]
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/base.py", line 383, in _entity_descriptor
+    (description, key)
+sqlalchemy.exc.InvalidRequestError: Entity '<class 'streaming_event_compliance.objects.automata.alertlog.Client'>' has no property 'user_name'
+2018-12-21 15:16:02,827 127.0.0.1 - - [21/Dec/2018 15:16:02] "[1m[35mPOST /login?uuid=client1 HTTP/1.1[0m" 500 -
+2018-12-21 15:17:17,872  INFO Username:Unknown <module> 'Created all db tables'
+2018-12-21 15:17:18,433  INFO Username:Unknown <module> 'Building automata...'
+2018-12-21 15:17:18,433  INFO Username:Unknown build_automata 'Traininging automata starts!'
+2018-12-21 15:17:18,435  INFO server build_automata_pro 'Training file processed and sorted'
+2018-12-21 15:17:18,436  INFO server build_automata_pro Case_id:Case1.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:17:18,436  INFO server build_automata_pro Case_id:Case3.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:17:18,436  INFO server build_automata_pro Case_id:Case2.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:17:18,437  INFO server build_automata_pro Case_id:Case1.2 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:17:18,437  INFO server build_automata_pro Case_id:Case1.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:17:18,437  INFO server build_automata_pro Case_id:Case2.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:17:18,442  ERROR server build_automata_pro 'All events thread join successful, begin end event'
+2018-12-21 15:17:18,451  INFO Username:Unknown build_automata 'Setting probabilities...'
+2018-12-21 15:17:18,462  INFO Username:Unknown build_automata 'Inserting automata to database'
+2018-12-21 15:17:18,463  INFO Username:Unknown build_automata 'Training automata ends!'
+2018-12-21 15:17:18,463  INFO Username:Unknown build_automata 'Cleared automata memorizer'
+2018-12-21 15:17:18,502  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-12-21 15:17:24,648 Exception on /login [POST]
+Traceback (most recent call last):
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/base.py", line 379, in _entity_descriptor
+    return getattr(entity, key)
+AttributeError: type object 'Client' has no attribute 'user_name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/routes.py", line 33, in call_login
+    return str(check_client_stauts(uuid)), status.HTTP_200_OK
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/routes.py", line 91, in check_client_stauts
+    client_status = dbtools.check_client_status(uuid)
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/database/dbtools.py", line 44, in check_client_status
+    client = alertlog.Client.query.filter_by(user_name=uuid).first()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 1689, in filter_by
+    for key, value in kwargs.items()]
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 1689, in <listcomp>
+    for key, value in kwargs.items()]
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/base.py", line 383, in _entity_descriptor
+    (description, key)
+sqlalchemy.exc.InvalidRequestError: Entity '<class 'streaming_event_compliance.objects.automata.alertlog.Client'>' has no property 'user_name'
+2018-12-21 15:17:24,653 127.0.0.1 - - [21/Dec/2018 15:17:24] "[1m[35mPOST /login?uuid=client1 HTTP/1.1[0m" 500 -
+2018-12-21 15:17:47,996  INFO Username:Unknown <module> 'Created all db tables'
+2018-12-21 15:17:48,486  INFO Username:Unknown <module> 'Building automata...'
+2018-12-21 15:17:48,487  INFO Username:Unknown build_automata 'Traininging automata starts!'
+2018-12-21 15:17:48,489  INFO server build_automata_pro 'Training file processed and sorted'
+2018-12-21 15:17:48,489  INFO server build_automata_pro Case_id:Case1.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:17:48,490  INFO server build_automata_pro Case_id:Case3.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:17:48,490  INFO server build_automata_pro Case_id:Case2.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:17:48,491  INFO server build_automata_pro Case_id:Case1.2 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:17:48,491  INFO server build_automata_pro Case_id:Case1.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:17:48,492  INFO server build_automata_pro Case_id:Case2.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:17:48,498  ERROR server build_automata_pro 'All events thread join successful, begin end event'
+2018-12-21 15:17:48,509  INFO Username:Unknown build_automata 'Setting probabilities...'
+2018-12-21 15:17:48,521  INFO Username:Unknown build_automata 'Inserting automata to database'
+2018-12-21 15:17:48,521  INFO Username:Unknown build_automata 'Training automata ends!'
+2018-12-21 15:17:48,522  INFO Username:Unknown build_automata 'Cleared automata memorizer'
+2018-12-21 15:17:48,558  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-12-21 15:17:52,714 Exception on /login [POST]
+Traceback (most recent call last):
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/base.py", line 379, in _entity_descriptor
+    return getattr(entity, key)
+AttributeError: type object 'Client' has no attribute 'user_name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/routes.py", line 33, in call_login
+    return str(check_client_stauts(uuid)), status.HTTP_200_OK
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/routes.py", line 91, in check_client_stauts
+    client_status = dbtools.check_client_status(uuid)
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/database/dbtools.py", line 44, in check_client_status
+    client = alertlog.Client.query.filter_by(user_name=uuid).first()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 1689, in filter_by
+    for key, value in kwargs.items()]
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 1689, in <listcomp>
+    for key, value in kwargs.items()]
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/base.py", line 383, in _entity_descriptor
+    (description, key)
+sqlalchemy.exc.InvalidRequestError: Entity '<class 'streaming_event_compliance.objects.automata.alertlog.Client'>' has no property 'user_name'
+2018-12-21 15:17:52,717 127.0.0.1 - - [21/Dec/2018 15:17:52] "[1m[35mPOST /login?uuid=client1 HTTP/1.1[0m" 500 -
+2018-12-21 15:18:07,848  INFO Username:Unknown <module> 'Created all db tables'
+2018-12-21 15:18:08,400  INFO Username:Unknown <module> 'Building automata...'
+2018-12-21 15:18:08,400  INFO Username:Unknown build_automata 'Traininging automata starts!'
+2018-12-21 15:18:08,402  INFO server build_automata_pro 'Training file processed and sorted'
+2018-12-21 15:18:08,403  INFO server build_automata_pro Case_id:Case1.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:18:08,403  INFO server build_automata_pro Case_id:Case3.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:18:08,403  INFO server build_automata_pro Case_id:Case2.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:18:08,404  INFO server build_automata_pro Case_id:Case1.2 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:18:08,404  INFO server build_automata_pro Case_id:Case1.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:18:08,405  INFO server build_automata_pro Case_id:Case2.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:18:08,410  ERROR server build_automata_pro 'All events thread join successful, begin end event'
+2018-12-21 15:18:08,419  INFO Username:Unknown build_automata 'Setting probabilities...'
+2018-12-21 15:18:08,430  INFO Username:Unknown build_automata 'Inserting automata to database'
+2018-12-21 15:18:08,431  INFO Username:Unknown build_automata 'Training automata ends!'
+2018-12-21 15:18:08,431  INFO Username:Unknown build_automata 'Cleared automata memorizer'
+2018-12-21 15:18:08,465  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-12-21 15:18:11,541 Exception on /login [POST]
+Traceback (most recent call last):
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/base.py", line 379, in _entity_descriptor
+    return getattr(entity, key)
+AttributeError: type object 'Client' has no attribute 'user_name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/routes.py", line 32, in call_login
+    print(check_client_stauts(uuid))
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/routes.py", line 91, in check_client_stauts
+    client_status = dbtools.check_client_status(uuid)
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/database/dbtools.py", line 44, in check_client_status
+    client = alertlog.Client.query.filter_by(user_name=uuid).first()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 1689, in filter_by
+    for key, value in kwargs.items()]
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 1689, in <listcomp>
+    for key, value in kwargs.items()]
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/base.py", line 383, in _entity_descriptor
+    (description, key)
+sqlalchemy.exc.InvalidRequestError: Entity '<class 'streaming_event_compliance.objects.automata.alertlog.Client'>' has no property 'user_name'
+2018-12-21 15:18:11,545 127.0.0.1 - - [21/Dec/2018 15:18:11] "[1m[35mPOST /login?uuid=client1 HTTP/1.1[0m" 500 -
+2018-12-21 15:18:45,303  INFO Username:Unknown <module> 'Created all db tables'
+2018-12-21 15:18:46,537  INFO Username:Unknown <module> 'Building automata...'
+2018-12-21 15:18:46,537  INFO Username:Unknown build_automata 'Traininging automata starts!'
+2018-12-21 15:18:46,539  INFO server build_automata_pro 'Training file processed and sorted'
+2018-12-21 15:18:46,539  INFO server build_automata_pro Case_id:Case1.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:18:46,540  INFO server build_automata_pro Case_id:Case3.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:18:46,540  INFO server build_automata_pro Case_id:Case2.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:18:46,541  INFO server build_automata_pro Case_id:Case1.2 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:18:46,541  INFO server build_automata_pro Case_id:Case1.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:18:46,541  INFO server build_automata_pro Case_id:Case2.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:18:46,546  ERROR server build_automata_pro 'All events thread join successful, begin end event'
+2018-12-21 15:18:46,555  INFO Username:Unknown build_automata 'Setting probabilities...'
+2018-12-21 15:18:46,567  INFO Username:Unknown build_automata 'Inserting automata to database'
+2018-12-21 15:18:46,567  INFO Username:Unknown build_automata 'Training automata ends!'
+2018-12-21 15:18:46,568  INFO Username:Unknown build_automata 'Cleared automata memorizer'
+2018-12-21 15:18:46,611  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-12-21 15:18:50,350 Exception on /login [POST]
+Traceback (most recent call last):
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/base.py", line 379, in _entity_descriptor
+    return getattr(entity, key)
+AttributeError: type object 'Client' has no attribute 'user_name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/routes.py", line 32, in call_login
+    print(check_client_stauts(uuid))
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/routes.py", line 91, in check_client_stauts
+    client_status = dbtools.check_client_status(uuid)
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/database/dbtools.py", line 44, in check_client_status
+    client = alertlog.Client.query.filter_by(user_name=uuid).first()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 1689, in filter_by
+    for key, value in kwargs.items()]
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 1689, in <listcomp>
+    for key, value in kwargs.items()]
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/base.py", line 383, in _entity_descriptor
+    (description, key)
+sqlalchemy.exc.InvalidRequestError: Entity '<class 'streaming_event_compliance.objects.automata.alertlog.Client'>' has no property 'user_name'
+2018-12-21 15:18:50,361 127.0.0.1 - - [21/Dec/2018 15:18:50] "[1m[35mPOST /login?uuid=client1 HTTP/1.1[0m" 500 -
+2018-12-21 15:20:49,865  INFO Username:Unknown <module> 'Created all db tables'
+2018-12-21 15:20:51,204  INFO Username:Unknown <module> 'Building automata...'
+2018-12-21 15:20:51,204  INFO Username:Unknown build_automata 'Traininging automata starts!'
+2018-12-21 15:20:51,207  INFO server build_automata_pro 'Training file processed and sorted'
+2018-12-21 15:20:51,207  INFO server build_automata_pro Case_id:Case1.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:20:51,207  INFO server build_automata_pro Case_id:Case3.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:20:51,208  INFO server build_automata_pro Case_id:Case2.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:20:51,208  INFO server build_automata_pro Case_id:Case1.2 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:20:51,208  INFO server build_automata_pro Case_id:Case1.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:20:51,209  INFO server build_automata_pro Case_id:Case2.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:20:51,214  ERROR server build_automata_pro 'All events thread join successful, begin end event'
+2018-12-21 15:20:51,223  INFO Username:Unknown build_automata 'Setting probabilities...'
+2018-12-21 15:20:51,235  INFO Username:Unknown build_automata 'Inserting automata to database'
+2018-12-21 15:20:51,235  INFO Username:Unknown build_automata 'Training automata ends!'
+2018-12-21 15:20:51,236  INFO Username:Unknown build_automata 'Cleared automata memorizer'
+2018-12-21 15:20:51,283  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-12-21 15:20:55,333 Exception on /login [POST]
+Traceback (most recent call last):
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/base.py", line 379, in _entity_descriptor
+    return getattr(entity, key)
+AttributeError: type object 'Client' has no attribute 'user_name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/routes.py", line 32, in call_login
+    print(check_client_stauts(uuid))
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/routes.py", line 91, in check_client_stauts
+    client_status = dbtools.check_client_status(uuid)
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/database/dbtools.py", line 45, in check_client_status
+    client = alertlog.Client.query.filter_by(user_name=uuid).first()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 1689, in filter_by
+    for key, value in kwargs.items()]
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 1689, in <listcomp>
+    for key, value in kwargs.items()]
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/sqlalchemy/orm/base.py", line 383, in _entity_descriptor
+    (description, key)
+sqlalchemy.exc.InvalidRequestError: Entity '<class 'streaming_event_compliance.objects.automata.alertlog.Client'>' has no property 'user_name'
+2018-12-21 15:20:55,343 127.0.0.1 - - [21/Dec/2018 15:20:55] "[1m[35mPOST /login?uuid=client1 HTTP/1.1[0m" 500 -
+2018-12-21 15:23:39,966  INFO Username:Unknown <module> 'Created all db tables'
+2018-12-21 15:23:41,297  INFO Username:Unknown <module> 'Building automata...'
+2018-12-21 15:23:41,297  INFO Username:Unknown build_automata 'Traininging automata starts!'
+2018-12-21 15:23:41,300  INFO server build_automata_pro 'Training file processed and sorted'
+2018-12-21 15:23:41,300  INFO server build_automata_pro Case_id:Case1.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:23:41,301  INFO server build_automata_pro Case_id:Case3.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:23:41,301  INFO server build_automata_pro Case_id:Case2.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:23:41,301  INFO server build_automata_pro Case_id:Case1.2 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:23:41,302  INFO server build_automata_pro Case_id:Case1.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:23:41,302  INFO server build_automata_pro Case_id:Case2.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:23:41,307  ERROR server build_automata_pro 'All events thread join successful, begin end event'
+2018-12-21 15:23:41,316  INFO Username:Unknown build_automata 'Setting probabilities...'
+2018-12-21 15:23:41,327  INFO Username:Unknown build_automata 'Inserting automata to database'
+2018-12-21 15:23:41,327  INFO Username:Unknown build_automata 'Training automata ends!'
+2018-12-21 15:23:41,327  INFO Username:Unknown build_automata 'Cleared automata memorizer'
+2018-12-21 15:23:41,368  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-12-21 15:23:44,797 Exception on /login [POST]
+Traceback (most recent call last):
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/xuer/anaconda3/envs/StreamEventCompliance/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/routes.py", line 32, in call_login
+    print(check_client_stauts(uuid))
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/routes.py", line 91, in check_client_stauts
+    client_status = dbtools.check_client_status(uuid)
+  File "/Users/xuer/PycharmProjects/StreamingEventCompliance/streaming_event_compliance/database/dbtools.py", line 48, in check_client_status
+    if client is not None:
+UnboundLocalError: local variable 'client' referenced before assignment
+2018-12-21 15:23:44,802 127.0.0.1 - - [21/Dec/2018 15:23:44] "[1m[35mPOST /login?uuid=client1 HTTP/1.1[0m" 500 -
+2018-12-21 15:24:30,039  INFO Username:Unknown <module> 'Created all db tables'
+2018-12-21 15:24:30,700  INFO Username:Unknown <module> 'Building automata...'
+2018-12-21 15:24:30,701  INFO Username:Unknown build_automata 'Traininging automata starts!'
+2018-12-21 15:24:30,703  INFO server build_automata_pro 'Training file processed and sorted'
+2018-12-21 15:24:30,703  INFO server build_automata_pro Case_id:Case1.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:24:30,704  INFO server build_automata_pro Case_id:Case3.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:24:30,704  INFO server build_automata_pro Case_id:Case2.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:24:30,705  INFO server build_automata_pro Case_id:Case1.2 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:24:30,705  INFO server build_automata_pro Case_id:Case1.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:24:30,705  INFO server build_automata_pro Case_id:Case2.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 15:24:30,712  ERROR server build_automata_pro 'All events thread join successful, begin end event'
+2018-12-21 15:24:30,722  INFO Username:Unknown build_automata 'Setting probabilities...'
+2018-12-21 15:24:30,733  INFO Username:Unknown build_automata 'Inserting automata to database'
+2018-12-21 15:24:30,733  INFO Username:Unknown build_automata 'Training automata ends!'
+2018-12-21 15:24:30,734  INFO Username:Unknown build_automata 'Cleared automata memorizer'
+2018-12-21 15:24:30,775  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-12-21 15:24:35,414 127.0.0.1 - - [21/Dec/2018 15:24:35] "[37mPOST /login?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:24:37,375 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:24:37,382 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:24:37,387 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:24:37,395 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:24:37,401 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:24:37,407 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:24:37,412 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:24:37,418 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:24:37,424 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:24:37,429 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:24:37,434 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:24:37,439 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:24:37,446 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:24:37,451 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:24:37,456 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:24:37,463 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:24:37,469 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:24:37,474 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:24:37,481 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:24:37,486 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:24:37,491 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:24:37,496 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:24:37,501 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:24:37,507 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:24:37,512 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:24:37,517 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:24:37,522 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:24:37,529 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:24:37,534 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:24:37,539 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:24:37,545 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:24:37,551 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:24:37,729 127.0.0.1 - - [21/Dec/2018 15:24:37] "[37mPOST /compliance-checker?uuid=client1 HTTP/1.1[0m" 200 -
+2018-12-21 15:24:47,444 127.0.0.1 - - [21/Dec/2018 15:24:47] "[37mPOST /show-deviation-pdf?uuid=client1 HTTP/1.1[0m" 200 -
