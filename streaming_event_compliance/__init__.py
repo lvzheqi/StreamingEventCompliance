@@ -48,7 +48,7 @@ if config['USER-DEFINED'].get('CHECKING_TYPE') and config['USER-DEFINED']['CHECK
 if config['USER-DEFINED'].get('CHECKING_TYPE') and config['USER-DEFINED']['ALERT_TYPE'] is not None:
     app.config['ALERT_TYPE'] = config['USER-DEFINED']['ALERT_TYPE']
 
-console.info(app.config['TRAINING_EVENT_LOG_PATH'])
+console.secure("PATH", app.config['TRAINING_EVENT_LOG_PATH'])
 
 db = SQLAlchemy(app)
 
