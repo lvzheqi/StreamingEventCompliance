@@ -43,7 +43,10 @@ def visualization_automata(autos, alogs, uuid):
                              penwidth=str(record.alert_count / max_count * 3))
 
     with viz.subgraph(name='cluster00') as sub:
-        sub.graph_attr['rankdir'] = 'RL'
+        # [fixedsize = true, width = 0.75]
+        sub.graph_attr['rankdir'] = 'LR'
+
+        sub.attr(rank='same')
         sub.node('text0', shape='plaintext', style='solid', label='node, where causes alert',
                  penwidth='2', width='3.5')
         sub.node('activity', 'activity', fillcolor='red', style='filled')
@@ -63,7 +66,29 @@ def visualization_automata(autos, alogs, uuid):
         sub.node('s_node3', 's_node3', fillcolor='red', style='filled')
         sub.node('ss_node3', 'ss_node3', fillcolor='red', style='filled')
         sub.edge('s_node3', 'ss_node3', color='green', label='', penwidth='1.5')
-        sub.graph_attr['rank'] = 'source; text1; text2; text3'
+        sub.graph_attr['rank'] = 'same; text1; s_node1; ss_node1'
+
+        c1 = Digraph('child1')
+        c1.attr(rank='same')
+        c1.node('text1')
+        c1.node('s_node1')
+        c1.node('ss_node1')
+        sub.subgraph(c1)
+
+        c2 = Digraph('child2')
+        c2.attr(rank='same')
+        c2.node('text2')
+        c2.node('s_node2')
+        c2.node('ss_node2')
+        sub.subgraph(c2)
+
+        c3 = Digraph('child3')
+        c3.graph_attr['rankdir'] = 'LR'
+        c3.attr(rank='same')
+        c3.node('text3')
+        c3.node('s_node3')
+        c3.node('ss_node3')
+        sub.subgraph(c3)
 
     viz.render(filename=uuid + '_' + AUTOMATA_FILE, directory=CLEINT_DATA_PATH, view=False, cleanup=True)
     return viz
