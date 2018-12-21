@@ -6,3 +6,109 @@
 2018-12-09 18:06:34,595  INFO test_user test_log_info_3 'Testing logging info with 3 arguments'
 2018-12-09 18:06:34,610  INFO test_user test_log_info_5 Case_id:test1 Activity:testing_log_info_5 'Testing logging info with 5 arguments'
 2018-12-09 18:06:34,657  INFO test_user test_log_info_6 Thread:1 Case_id:test1 Activity:testing_log_info_6 'Testing logging info with 6 arguments'
+2018-12-21 08:05:49,180  ERROR Username:Unknown test_log_error_2  ' Testing logging error with 2 arguments ' 
+2018-12-21 08:05:49,211  ERROR test_user test_log_error_3  ' Testing logging error with 3 arguments ' 
+2018-12-21 08:05:49,227  ERROR test_user test_log_error_5 Case_id:test1 Activity:testing_log_info_5  ' Testing logging error with 5 arguments ' 
+2018-12-21 08:05:49,227  ERROR test_user test_log_error_5 Case_id:test1 Activity:testing_log_info_5  ' Testing logging error with 5 arguments ' 
+2018-12-21 08:05:49,290  ERROR test_user test_log_error_6 Thread:1 Case_id:test1 Activity:testing_log_info_6  ' Testing logging error with 6 arguments ' 
+2018-12-21 08:05:49,321  INFO Username:Unknown test_log_info_2  ' Testing logging info with 2 arguments ' 
+2018-12-21 08:05:49,321  INFO Username:Unknown test_log_info_2  ' Testing logging info with 2 arguments ' 
+2018-12-21 08:05:49,352  INFO test_user test_log_info_3  ' Testing logging info with 3 arguments ' 
+2018-12-21 08:05:49,352  INFO test_user test_log_info_3  ' Testing logging info with 3 arguments ' 
+2018-12-21 08:05:49,367  INFO test_user test_log_info_5 Case_id:test1 Activity:testing_log_info_5  ' Testing logging info with 5 arguments ' 
+2018-12-21 08:05:49,367  INFO test_user test_log_info_5 Case_id:test1 Activity:testing_log_info_5  ' Testing logging info with 5 arguments ' 
+2018-12-21 08:05:49,383  INFO test_user test_log_info_6 Thread:1 Case_id:test1 Activity:testing_log_info_6  ' Testing logging info with 6 arguments ' 
+2018-12-21 08:05:49,383  INFO test_user test_log_info_6 Thread:1 Case_id:test1 Activity:testing_log_info_6  ' Testing logging info with 6 arguments ' 
+2018-12-21 08:10:05,814  ERROR Username:Unknown test_log_error_2  'Testing logging error with 2 arguments '
+2018-12-21 08:10:05,877  ERROR test_user test_log_error_3  'Testing logging error with 3 arguments '
+2018-12-21 08:10:05,893  ERROR test_user test_log_error_5 Case_id:test1 Activity:testing_log_info_5  'Testing logging error with 5 arguments '
+2018-12-21 08:10:05,971  ERROR test_user test_log_error_6 Thread:1 Case_id:test1 Activity:testing_log_info_6  'Testing logging error with 6 arguments '
+2018-12-21 08:10:06,002  INFO Username:Unknown test_log_info_2  'Testing logging info with 2 arguments' 
+2018-12-21 08:10:06,017  INFO test_user test_log_info_3  'Testing logging info with 3 arguments '
+2018-12-21 08:10:06,033  INFO test_user test_log_info_5 Case_id:test1 Activity:testing_log_info_5  'Testing logging info with 5 arguments' 
+2018-12-21 08:10:06,080  INFO test_user test_log_info_6 Thread:1 Case_id:test1 Activity:testing_log_info_6  'Testing logging info with 6 arguments '
+2018-12-21 08:12:20,343  ERROR Username:Unknown test_log_error_2 'Testing logging error with 2 arguments'
+2018-12-21 08:12:20,343  ERROR test_user test_log_error_3 'Testing logging error with 3 arguments'
+2018-12-21 08:12:20,391  ERROR test_user test_log_error_5 Case_id:test1 Activity:testing_log_info_5 'Testing logging error with 5 arguments'
+2018-12-21 08:12:20,406  ERROR test_user test_log_error_6 Thread:1 Case_id:test1 Activity:testing_log_info_6 'Testing logging error with 6 arguments'
+2018-12-21 08:12:20,421  INFO Username:Unknown test_log_info_2 'Testing logging info with 2 arguments'
+2018-12-21 08:12:20,437  INFO test_user test_log_info_3  'Testing logging info with 3 arguments '
+2018-12-21 08:12:20,453  INFO test_user test_log_info_5 Case_id:test1 Activity:testing_log_info_5 'Testing logging info with 5 arguments'
+2018-12-21 08:12:20,469  INFO test_user test_log_info_6 Thread:1 Case_id:test1 Activity:testing_log_info_6 'Testing logging info with 6 arguments'
+2018-12-21 08:13:19,976  ERROR Username:Unknown test_log_error_2 'Testing logging error with 2 arguments'
+2018-12-21 08:13:19,992  ERROR test_user test_log_error_3 'Testing logging error with 3 arguments'
+2018-12-21 08:13:20,007  ERROR test_user test_log_error_5 Case_id:test1 Activity:testing_log_info_5 'Testing logging error with 5 arguments'
+2018-12-21 08:13:20,039  ERROR test_user test_log_error_6 Thread:1 Case_id:test1 Activity:testing_log_info_6 'Testing logging error with 6 arguments'
+2018-12-21 08:13:20,054  INFO Username:Unknown test_log_info_2 'Testing logging info with 2 arguments'
+2018-12-21 08:13:20,070  INFO test_user test_log_info_3 'Testing logging info with 3 arguments'
+2018-12-21 08:13:20,070  INFO test_user test_log_info_5 Case_id:test1 Activity:testing_log_info_5 'Testing logging info with 5 arguments'
+2018-12-21 08:13:20,085  INFO test_user test_log_info_6 Thread:1 Case_id:test1 Activity:testing_log_info_6 'Testing logging info with 6 arguments'
+2018-12-21 08:15:10,960  ERROR Username:Unknown test_log_error_2 'Testing logging error with 2 arguments'
+2018-12-21 08:15:10,960  ERROR test_user test_log_error_3 'Testing logging error with 3 arguments'
+2018-12-21 08:15:10,975  ERROR test_user test_log_error_5 Case_id:test1 Activity:testing_log_info_5 'Testing logging error with 5 arguments'
+2018-12-21 08:15:10,975  ERROR test_user test_log_error_6 Thread:1 Case_id:test1 Activity:testing_log_info_6 'Testing logging error with 6 arguments'
+2018-12-21 08:15:10,991  INFO Username:Unknown test_log_info_2 'Testing logging info with 2 arguments'
+2018-12-21 08:15:10,991  INFO test_user test_log_info_3 'Testing logging info with 3 arguments'
+2018-12-21 08:15:11,007  INFO test_user test_log_info_5 Case_id:test1 Activity:testing_log_info_5 'Testing logging info with 5 arguments'
+2018-12-21 08:15:11,007  INFO test_user test_log_info_6 Thread:1 Case_id:test1 Activity:testing_log_info_6 'Testing logging info with 6 arguments'
+2018-12-21 08:16:51,443  ERROR Username:Unknown test_log_error_2 'Testing logging error with 2 arguments'
+2018-12-21 08:16:51,443  ERROR test_user test_log_error_3 'Testing logging error with 3 arguments'
+2018-12-21 08:16:51,458  ERROR test_user test_log_error_5 Case_id:test1 Activity:testing_log_info_5 'Testing logging error with 5 arguments'
+2018-12-21 08:16:51,458  ERROR test_user test_log_error_6 Thread:1 Case_id:test1 Activity:testing_log_info_6 'Testing logging error with 6 arguments'
+2018-12-21 08:16:51,474  INFO Username:Unknown test_log_info_2 'Testing logging info with 2 arguments'
+2018-12-21 08:16:51,474  INFO test_user test_log_info_3 'Testing logging info with 3 arguments'
+2018-12-21 08:16:51,490  INFO test_user test_log_info_5 Case_id:test1 Activity:testing_log_info_5 'Testing logging info with 5 arguments'
+2018-12-21 08:16:51,490  INFO test_user test_log_info_6 Thread:1 Case_id:test1 Activity:testing_log_info_6 'Testing logging info with 6 arguments'
+2018-12-21 08:52:16,739  INFO Username:Unknown <module> 'Created all db tables'
+2018-12-21 08:52:19,863  INFO Username:Unknown <module> 'Building automata...'
+2018-12-21 08:52:22,190  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-12-21 09:16:00,137  INFO Username:Unknown <module> 'Created all db tables'
+2018-12-21 09:16:08,146  INFO Username:Unknown <module> 'Building automata...'
+2018-12-21 09:16:08,146  INFO Username:Unknown build_automata 'Traininging automata starts!'
+2018-12-21 09:16:08,193  INFO server build_automata_pro 'Training file processed and sorted'
+2018-12-21 09:16:08,193  INFO server build_automata_pro Case_id:Case1.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 09:16:08,193  INFO server build_automata_pro Case_id:Case3.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 09:16:08,193  INFO server build_automata_pro Case_id:Case2.0 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 09:16:08,193  INFO server build_automata_pro Case_id:Case1.2 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 09:16:08,193  INFO server build_automata_pro Case_id:Case1.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 09:16:08,193  INFO server build_automata_pro Case_id:Case2.1 Activity:a 'Creating dictionary_case memorizer'
+2018-12-21 09:16:08,208  ERROR server build_automata_pro 'All events thread join successful, begin end event'
+2018-12-21 09:16:08,963  INFO Username:Unknown build_automata 'Setting probabilities...'
+2018-12-21 09:16:09,931  INFO Username:Unknown build_automata 'Inserting automata to database'
+2018-12-21 09:16:09,931  INFO Username:Unknown build_automata 'Training automata ends!'
+2018-12-21 09:16:09,931  INFO Username:Unknown build_automata 'Cleared automata memorizer'
+2018-12-21 09:16:11,556  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-12-21 09:17:14,200 127.0.0.1 - - [21/Dec/2018 09:17:14] "[37mPOST /login?uuid=saby HTTP/1.1[0m" 200 -
+2018-12-21 09:17:17,048 127.0.0.1 - - [21/Dec/2018 09:17:17] "[37mPOST /compliance-checker?uuid=saby HTTP/1.1[0m" 200 -
+2018-12-21 09:17:17,095 127.0.0.1 - - [21/Dec/2018 09:17:17] "[37mPOST /compliance-checker?uuid=saby HTTP/1.1[0m" 200 -
+2018-12-21 09:17:17,142 127.0.0.1 - - [21/Dec/2018 09:17:17] "[37mPOST /compliance-checker?uuid=saby HTTP/1.1[0m" 200 -
+2018-12-21 09:17:17,173 127.0.0.1 - - [21/Dec/2018 09:17:17] "[37mPOST /compliance-checker?uuid=saby HTTP/1.1[0m" 200 -
+2018-12-21 09:17:17,220 127.0.0.1 - - [21/Dec/2018 09:17:17] "[37mPOST /compliance-checker?uuid=saby HTTP/1.1[0m" 200 -
+2018-12-21 09:17:17,251 127.0.0.1 - - [21/Dec/2018 09:17:17] "[37mPOST /compliance-checker?uuid=saby HTTP/1.1[0m" 200 -
+2018-12-21 09:17:17,298 127.0.0.1 - - [21/Dec/2018 09:17:17] "[37mPOST /compliance-checker?uuid=saby HTTP/1.1[0m" 200 -
+2018-12-21 09:17:17,345 127.0.0.1 - - [21/Dec/2018 09:17:17] "[37mPOST /compliance-checker?uuid=saby HTTP/1.1[0m" 200 -
+2018-12-21 09:17:17,376 127.0.0.1 - - [21/Dec/2018 09:17:17] "[37mPOST /compliance-checker?uuid=saby HTTP/1.1[0m" 200 -
+2018-12-21 09:17:17,423 127.0.0.1 - - [21/Dec/2018 09:17:17] "[37mPOST /compliance-checker?uuid=saby HTTP/1.1[0m" 200 -
+2018-12-21 09:17:17,470 127.0.0.1 - - [21/Dec/2018 09:17:17] "[37mPOST /compliance-checker?uuid=saby HTTP/1.1[0m" 200 -
+2018-12-21 09:17:17,501 127.0.0.1 - - [21/Dec/2018 09:17:17] "[37mPOST /compliance-checker?uuid=saby HTTP/1.1[0m" 200 -
+2018-12-21 09:17:17,548 127.0.0.1 - - [21/Dec/2018 09:17:17] "[37mPOST /compliance-checker?uuid=saby HTTP/1.1[0m" 200 -
+2018-12-21 09:17:17,595 127.0.0.1 - - [21/Dec/2018 09:17:17] "[37mPOST /compliance-checker?uuid=saby HTTP/1.1[0m" 200 -
+2018-12-21 09:17:17,626 127.0.0.1 - - [21/Dec/2018 09:17:17] "[37mPOST /compliance-checker?uuid=saby HTTP/1.1[0m" 200 -
+2018-12-21 09:17:17,673 127.0.0.1 - - [21/Dec/2018 09:17:17] "[37mPOST /compliance-checker?uuid=saby HTTP/1.1[0m" 200 -
+2018-12-21 09:17:17,704 127.0.0.1 - - [21/Dec/2018 09:17:17] "[37mPOST /compliance-checker?uuid=saby HTTP/1.1[0m" 200 -
+2018-12-21 09:17:17,751 127.0.0.1 - - [21/Dec/2018 09:17:17] "[37mPOST /compliance-checker?uuid=saby HTTP/1.1[0m" 200 -
+2018-12-21 09:17:17,798 127.0.0.1 - - [21/Dec/2018 09:17:17] "[37mPOST /compliance-checker?uuid=saby HTTP/1.1[0m" 200 -
+2018-12-21 09:17:17,829 127.0.0.1 - - [21/Dec/2018 09:17:17] "[37mPOST /compliance-checker?uuid=saby HTTP/1.1[0m" 200 -
+2018-12-21 09:17:17,876 127.0.0.1 - - [21/Dec/2018 09:17:17] "[37mPOST /compliance-checker?uuid=saby HTTP/1.1[0m" 200 -
+2018-12-21 09:17:17,908 127.0.0.1 - - [21/Dec/2018 09:17:17] "[37mPOST /compliance-checker?uuid=saby HTTP/1.1[0m" 200 -
+2018-12-21 09:17:17,954 127.0.0.1 - - [21/Dec/2018 09:17:17] "[37mPOST /compliance-checker?uuid=saby HTTP/1.1[0m" 200 -
+2018-12-21 09:17:18,001 127.0.0.1 - - [21/Dec/2018 09:17:18] "[37mPOST /compliance-checker?uuid=saby HTTP/1.1[0m" 200 -
+2018-12-21 09:17:18,032 127.0.0.1 - - [21/Dec/2018 09:17:18] "[37mPOST /compliance-checker?uuid=saby HTTP/1.1[0m" 200 -
+2018-12-21 09:17:18,079 127.0.0.1 - - [21/Dec/2018 09:17:18] "[37mPOST /compliance-checker?uuid=saby HTTP/1.1[0m" 200 -
+2018-12-21 09:17:18,126 127.0.0.1 - - [21/Dec/2018 09:17:18] "[37mPOST /compliance-checker?uuid=saby HTTP/1.1[0m" 200 -
+2018-12-21 09:17:18,157 127.0.0.1 - - [21/Dec/2018 09:17:18] "[37mPOST /compliance-checker?uuid=saby HTTP/1.1[0m" 200 -
+2018-12-21 09:17:18,204 127.0.0.1 - - [21/Dec/2018 09:17:18] "[37mPOST /compliance-checker?uuid=saby HTTP/1.1[0m" 200 -
+2018-12-21 09:17:18,251 127.0.0.1 - - [21/Dec/2018 09:17:18] "[37mPOST /compliance-checker?uuid=saby HTTP/1.1[0m" 200 -
+2018-12-21 09:17:18,282 127.0.0.1 - - [21/Dec/2018 09:17:18] "[37mPOST /compliance-checker?uuid=saby HTTP/1.1[0m" 200 -
+2018-12-21 09:17:18,329 127.0.0.1 - - [21/Dec/2018 09:17:18] "[37mPOST /compliance-checker?uuid=saby HTTP/1.1[0m" 200 -
+2018-12-21 09:17:18,376 127.0.0.1 - - [21/Dec/2018 09:17:18] "[37mPOST /compliance-checker?uuid=saby HTTP/1.1[0m" 200 -

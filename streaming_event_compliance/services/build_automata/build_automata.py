@@ -10,6 +10,8 @@ from streaming_event_compliance.objects.exceptions.exception import ReadFileExce
 from multiprocessing import Process
 import traceback
 from console_logging.console import Console
+from streaming_event_compliance.objects.logging.server_logging import ServerLogging
+import sys
 console = Console()
 console.setVerbosity(5)
 
@@ -21,7 +23,9 @@ TRAINING_EVENT_LOG_PATH = app.config['TRAINING_EVENT_LOG_PATH']
 
 
 def build_automata():
+    func_name = sys._getframe().f_code.co_name
     console.info('---------------------Start: Traininging automata starts!--------------------------------------')
+    ServerLogging().log_info(func_name, "Traininging automata starts!")
     try:
         process_ = Process(target=build_automata_pro())
         process_.start()
@@ -30,13 +34,17 @@ def build_automata():
         raise ec
     else:
         autos = gVars.autos
+        ServerLogging().log_info(func_name, "Setting probabilities...")
         for ws in WINDOW_SIZE:
             autos[ws].set_probability()
         dbtools.insert_node_and_connection(autos)
+        ServerLogging().log_info(func_name, "Inserting automata to database")
         console.info('---------------------End: Everything for training automata is Done!---------------------------')
+        ServerLogging().log_info(func_name, "Training automata ends!")
     finally:
         gVars.auto_status = 1
         setup.clear_build_automata_memorizer()
+        ServerLogging().log_info(func_name, "Cleared automata memorizer")
 
 
 def build_automata_pro():
@@ -46,11 +54,14 @@ def build_automata_pro():
         and stores corresponding information into the database.
     :return:
     '''
+    func_name = sys._getframe().f_code.co_name
     try:
         trace_log = xes_importer.import_log(TRAINING_EVENT_LOG_PATH)
         event_log = transform.transform_trace_log_to_event_log(trace_log)
         event_log.sort()
+        ServerLogging().log_info(func_name, "server", "Training file processed and sorted")
     except Exception:
+        ServerLogging().log_error(func_name, "server", "Training file cannot be processed")
         raise ReadFileException(TRAINING_EVENT_LOG_PATH)
 
     global threads_index, threads
@@ -74,6 +85,7 @@ def build_automata_pro():
                     threads.append(thread)
                     threads_index = threads_index + 1
                 else:
+                    ServerLogging().log_info(func_name, "server", event['case_id'], event['activity'], "Creating dictionary_case memorizer")
                     C.dictionary_cases[event['case_id']] = ['*' for i in range(0, MAXIMUN_WINDOW_SIZE)]
                     C.dictionary_cases[event['case_id']].append(event['activity'])
                     lock = threading.RLock()
@@ -85,6 +97,7 @@ def build_automata_pro():
                     threads_index = threads_index + 1
             except Exception:
                 console.error('build_auto_pro:' + traceback.format_exc())
+                ServerLogging().log_error(func_name, "server", "Exception raised while creating dictionary_case")
                 raise ThreadException(traceback.format_exc())
 
     # TODO: Jingjing-This join can be done after adding end event！
@@ -92,11 +105,13 @@ def build_automata_pro():
         for th in threads:
             th.join_with_exception()
     except Exception:
+        ServerLogging().log_error(func_name, "server", "Exception while joining threads")
         raise ThreadException(traceback.format_exc())
     else:
         threads_index = 0
         threads = []
         # print('all event join succusful, begin end event')
+        ServerLogging().log_error(func_name, "server", "All events thread join successful, begin end event")
         event = {}
         threads = []
         threads_index = 0
@@ -114,4 +129,5 @@ def build_automata_pro():
             th.join_with_exception()
         except ThreadException:
             # print(th, 'end event join not succusful')
+            ServerLogging().log_error(func_name, "server", "End event join not successful")
             raise ThreadException('endevent'+traceback.format_exc())
