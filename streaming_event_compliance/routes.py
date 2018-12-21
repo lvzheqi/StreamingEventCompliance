@@ -59,7 +59,7 @@ def call_compliance_checker():
     except ThreadException:
         console.error('Something wrong in threading!' + traceback.format_exc())
     except Exception as e:
-        print(e)
+        print(traceback.format_exc())
     finally:
         return response
 

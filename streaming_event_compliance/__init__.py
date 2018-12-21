@@ -39,7 +39,9 @@ if config['USER-DEFINED'].get('TRAINING_EVENT_LOG_PATH') and config['USER-DEFINE
                                     config['USER-DEFINED']['TRAINING_EVENT_LOG_PATH'].replace('/', os.sep)
 
 if config['USER-DEFINED'].get('WINDOW_SIZE') and config['USER-DEFINED']['WINDOW_SIZE'] is not '':
-    app.config['WINDOW_SIZE'] = list(set(list(map(int, re.findall(r"\d+", config['USER-DEFINED']['WINDOW_SIZE'])))))
+    ws = list(set(list(map(int, re.findall(r"\d+", config['USER-DEFINED']['WINDOW_SIZE'])))))
+    ws.sort()
+    app.config['WINDOW_SIZE'] = ws
     app.config['MAXIMUN_WINDOW_SIZE'] = max(app.config['WINDOW_SIZE'])
 
 if config['USER-DEFINED'].get('THRESHOLD') and config['USER-DEFINED']['THRESHOLD'] is not '':
@@ -52,7 +54,8 @@ if config['USER-DEFINED'].get('ALERT_TYPE') and config['USER-DEFINED']['ALERT_TY
     app.config['ALERT_TYPE'] = config['USER-DEFINED']['ALERT_TYPE']
 
 console.secure("PATH", app.config['TRAINING_EVENT_LOG_PATH'])
-console.secure('USER-DEFINED', 'WINDOW_SIZE: ' + str(app.config['WINDOW_SIZE']) + '\t'
+console.secure('USER-DEFINED', 'WINDOW_SIZE: ' + str(app.config['WINDOW_SIZE']) + '\t' +
+               'MAXIMUN_WINDOW_SIZE: ' + str(app.config['MAXIMUN_WINDOW_SIZE']) + '\t'
                'CHECKING_TYPE: ' + app.config['CHECKING_TYPE'] + '\t'
                + 'ALERT_TYPE: ' + app.config['ALERT_TYPE'])
 db = SQLAlchemy(app)
