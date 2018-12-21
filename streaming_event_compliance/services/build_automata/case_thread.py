@@ -2,6 +2,7 @@ from streaming_event_compliance import app
 from streaming_event_compliance.objects.variable.globalvar import gVars, CL
 from streaming_event_compliance.objects.automata import automata
 from streaming_event_compliance.objects.exceptions.exception import ThreadException
+from streaming_event_compliance.objects.logging.server_logging import ServerLogging
 from threading import Thread
 import threading
 import queue
@@ -43,9 +44,14 @@ class CaseThreadForTraining(Thread):
             But during the processing the list will change, some events will be added into it,
         '''
         global index
+        func_name = sys._getframe().f_code.co_name
         try:
             if self.event['activity'] != '~!@#$%':
+                ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'], self.event['activity'],
+                                         "Calculating connections")
                 if self.C.lock_List.get(self.event['case_id']).acquire():
+                    ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'],
+                                             self.event['activity'], "Acquiring lock")
                     windows_memory = self.C.dictionary_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
                     calcuate_connection_for_different_prefix_automata(windows_memory)
                     self.C.dictionary_cases.get(self.event['case_id']).pop(0)
@@ -59,16 +65,27 @@ class CaseThreadForTraining(Thread):
                         check_executing_order[self.event['case_id']].append(self.event['activity'])
                     '''--------For Testing: Before releasing lock, which thread used it will be stored-------'''
                     self.C.lock_List.get(self.event['case_id']).release()
+                    ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'],
+                                             self.event['activity'], "Released lock")
                     self._status_queue.put(None)
             elif self.event['activity'] == '~!@#$%':
                 if self.C.lock_List.get(self.event['case_id']).acquire():
+                    ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'],
+                                             self.event['activity'], "Acquired lock")
                     windows_memory = self.C.dictionary_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
+                    ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'],
+                                             self.event['activity'], "Calculating connections")
                     calcuate_connection_for_different_prefix_automata(windows_memory)
                     self.C.dictionary_cases.get(self.event['case_id']).pop(0)
                     self.C.lock_List.get(self.event['case_id']).release()
+                    ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'],
+                                             self.event['activity'], "Released lock")
                     self._status_queue.put(None)
         except Exception:
                 print('Caselock', traceback.format_exc())
+                ServerLogging().log_error(func_name, "server", self.index, self.event['case_id'], self.event['activity'],
+                                         "Error with Caselock")
+
                 self._status_queue.put(sys.exc_info())
 
 
@@ -85,6 +102,7 @@ def calcuate_connection_for_different_prefix_automata(windowsMemory):
     :param event:
     :return：
     '''
+    func_name = sys._getframe().f_code.co_name
     for ws in WINDOW_SIZE:  # [1, 2, 3, 4]
         source_node = ','.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws: MAXIMUN_WINDOW_SIZE])
         sink_node = ','.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws + 1: MAXIMUN_WINDOW_SIZE + 1])
@@ -93,6 +111,8 @@ def calcuate_connection_for_different_prefix_automata(windowsMemory):
                 try:
                     if windowsMemory[MAXIMUN_WINDOW_SIZE] == '~!@#$%' and source_node.find('*') == -1:
                         gVars.autos.get(ws).update_automata(automata.Connection(source_node, '~!@#$%', 0))
+                        ServerLogging().log_info(func_name, "server", , self.event['case_id'],
+                                                 self.event['activity'], "Acquiring lock")
                     elif source_node.find('*') == -1:
                         gVars.autos.get(ws).update_automata(automata.Connection(source_node, sink_node, 1))
                     elif source_node.find('*') != -1 and sink_node.find('*') == -1:
