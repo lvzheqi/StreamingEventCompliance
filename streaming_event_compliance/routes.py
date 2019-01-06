@@ -38,7 +38,7 @@ def call_compliance_checker():
     '''
 
     uuid = request.args.get('uuid')
-    response = json.dumps({'body': 'Error, something wrong!'})
+    response = json.dumps({'body': 'Error, something wrong!'}), status.HTTP_409_CONFLICT
     try:
         if uuid not in gVars.clients_status:
             check_client_stauts(uuid)
