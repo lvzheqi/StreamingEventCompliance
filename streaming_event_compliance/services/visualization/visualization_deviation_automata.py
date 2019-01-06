@@ -42,16 +42,14 @@ def visualization_automata(autos, alogs, uuid):
 
     with viz.subgraph(name='cluster0') as sub:
         # sub.attr(color='black', label='Legend')
-        sub = legend()
+        legend(sub)
         # [fixedsize = true, width = 0.75]
-
-    # viz.subgraph(sub)
+        # viz.subgraph(sub)
     viz.render(filename=uuid + '_' + AUTOMATA_FILE, directory=CLEINT_DATA_PATH, view=False, cleanup=False)
     return viz
 
 
-def legend():
-    sub = Digraph()
+def legend(sub):
     # sub.attr(rankdir='LR')
     sub.attr(color='black', label='Legend')
     sub.attr(color='black', label='Legend')
@@ -84,8 +82,6 @@ def legend():
     c1.node('text2')
     c1.node('text3')
     sub.subgraph(c1)
-
-    return sub
 
 
 def show_deviation_pdf(uuid):
