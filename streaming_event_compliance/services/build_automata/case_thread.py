@@ -46,6 +46,7 @@ class CaseThreadForTraining(Thread):
         global index
         func_name = sys._getframe().f_code.co_name
         try:
+
             if self.event['activity'] != '~!@#$%':
                 if self.C.lock_List.get(self.event['case_id']).acquire():
                     ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'],
@@ -73,6 +74,7 @@ class CaseThreadForTraining(Thread):
                 if self.C.lock_List.get(self.event['case_id']).acquire():
                     ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'],
                                              self.event['activity'], "Acquired lock")
+
                     windows_memory = self.C.dictionary_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
                     ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'],
                                              self.event['activity'], "Calculating connections")
@@ -102,7 +104,7 @@ def calcuate_connection_for_different_prefix_automata(windowsMemory):
     :param event:
     :return：
     '''
-    func_name = sys._getframe().f_code.co_name
+    # func_name = sys._getframe().f_code.co_name
     for ws in WINDOW_SIZE:  # [1, 2, 3, 4]
         source_node = ','.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws: MAXIMUN_WINDOW_SIZE])
         sink_node = ','.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws + 1: MAXIMUN_WINDOW_SIZE + 1])
