@@ -111,11 +111,11 @@ def build_automata_pro():
         threads_index = 0
         threads = []
         # print('all event join succusful, begin end event')
-        ServerLogging().log_error(func_name, "server", "All events thread join successful, begin end event")
-        event = {}
+        ServerLogging().log_info(func_name, "server", "All events thread join successful, begin end event")
         threads = []
         threads_index = 0
         for item in C.dictionary_cases:
+            event = {}
             event['case_id'] = item
             event['activity'] = '~!@#$%'
             C.dictionary_cases.get(event['case_id']).append(event['activity'])
@@ -128,6 +128,6 @@ def build_automata_pro():
         try:
             th.join_with_exception()
         except ThreadException:
-            # print(th, 'end event join not succusful')
+            console.error('end event join not succusful')
             ServerLogging().log_error(func_name, "server", "End event join not successful")
             raise ThreadException('endevent'+traceback.format_exc())
