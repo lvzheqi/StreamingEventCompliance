@@ -45,7 +45,7 @@ def visualization_automata(autos, alogs, uuid):
         sub = legend()
         # [fixedsize = true, width = 0.75]
 
-    # viz.subgraph(sub)
+        viz.subgraph(sub)
     viz.render(filename=uuid + '_' + AUTOMATA_FILE, directory=CLEINT_DATA_PATH, view=False, cleanup=False)
     return viz
 

@@ -100,6 +100,7 @@ def build_automata_pro():
                 ServerLogging().log_error(func_name, "server", "Exception raised while creating dictionary_case")
                 raise ThreadException(traceback.format_exc())
 
+
     # TODO: Jingjing-This join can be done after adding end event！
     try:
         for th in threads:
@@ -110,16 +111,15 @@ def build_automata_pro():
     else:
         threads_index = 0
         threads = []
-        # print('all event join succusful, begin end event')
-        ServerLogging().log_error(func_name, "server", "All events thread join successful, begin end event")
-        event = {}
+        ServerLogging().log_info(func_name, "server", "All events thread join successful, begin end event")
         threads = []
         threads_index = 0
         for item in C.dictionary_cases:
-            event['case_id'] = item
-            event['activity'] = '~!@#$%'
-            C.dictionary_cases.get(event['case_id']).append(event['activity'])
-            thread = case_thread.CaseThreadForTraining(event, threads_index, T, C)
+            end_event = {}
+            end_event['activity'] = '~!@#$%'
+            end_event['case_id'] = item
+            C.dictionary_cases.get(end_event['case_id']).append(end_event['activity'])
+            thread = case_thread.CaseThreadForTraining(end_event, threads_index, T, C)
             thread.start()
             T.dictionary_threads[threads_index] = thread
             threads.append(thread)
@@ -128,6 +128,5 @@ def build_automata_pro():
         try:
             th.join_with_exception()
         except ThreadException:
-            # print(th, 'end event join not succusful')
             ServerLogging().log_error(func_name, "server", "End event join not successful")
             raise ThreadException('endevent'+traceback.format_exc())

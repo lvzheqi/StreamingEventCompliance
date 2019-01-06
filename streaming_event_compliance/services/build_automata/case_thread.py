@@ -47,12 +47,13 @@ class CaseThreadForTraining(Thread):
         func_name = sys._getframe().f_code.co_name
         try:
             if self.event['activity'] != '~!@#$%':
-                ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'], self.event['activity'],
-                                         "Calculating connections")
                 if self.C.lock_List.get(self.event['case_id']).acquire():
                     ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'],
                                              self.event['activity'], "Acquiring lock")
                     windows_memory = self.C.dictionary_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
+                    ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'],
+                                             self.event['activity'],
+                                             "Calculating connections")
                     calcuate_connection_for_different_prefix_automata(windows_memory)
                     self.C.dictionary_cases.get(self.event['case_id']).pop(0)
 
@@ -78,14 +79,13 @@ class CaseThreadForTraining(Thread):
                     calcuate_connection_for_different_prefix_automata(windows_memory)
                     self.C.dictionary_cases.get(self.event['case_id']).pop(0)
                     self.C.lock_List.get(self.event['case_id']).release()
-                    ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'],
-                                             self.event['activity'], "Released lock")
+                    # ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'],
+                    #                          self.event['activity'], "Released lock")
                     self._status_queue.put(None)
         except Exception:
                 print('Caselock', traceback.format_exc())
                 ServerLogging().log_error(func_name, "server", self.index, self.event['case_id'], self.event['activity'],
                                          "Error with Caselock")
-
                 self._status_queue.put(sys.exc_info())
 
 
