@@ -3,7 +3,8 @@ from streaming_event_compliance import app
 from streaming_event_compliance.objects.variable.globalvar import gVars, CCM, CAL
 from streaming_event_compliance.objects.exceptions.exception import ThreadException
 from streaming_event_compliance.objects.automata import automata, alertlog
-import queue
+from streaming_event_compliance.objects.logging.server_logging import ServerLogging
+import queue, sys
 import traceback
 import threading
 from console_logging.console import Console
@@ -18,12 +19,13 @@ ALERT_TYPE = app.config['ALERT_TYPE']
 
 
 class CaseThreadForCC(Thread):
-    def __init__(self, event, client_uuid):
+    def __init__(self, event, index, client_uuid):
         self.event = event
         self.CCM = CCM
         self.client_uuid = client_uuid
         self._status_queue = queue.Queue()
         self._message = queue.Queue()
+        self.index = index
         Thread.__init__(self)
 
     def wait_for_exc_info(self):
@@ -50,12 +52,18 @@ class CaseThreadForCC(Thread):
         This function acquires lock on caseMemorizer and releases lock when processing of the
         event is done
         """
+        func_name = sys._getframe().f_code.co_name
         client_cases = self.CCM.dictionary_cases.get(self.client_uuid)
         client_locks = self.CCM.lock_List.get(self.client_uuid)
         try:
             if client_locks.get(self.event['case_id']).acquire():
+                ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'],
+                                         self.event['activity'], "Acquiring lock")
                 windows_memory = client_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
                 response = create_source_sink_node(windows_memory, self.client_uuid, self.event)
+                ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'],
+                                         self.event['activity'],
+                                         "Calculating response")
                 flag = True
                 for ws, res in response.items():
                     if ws == min(WINDOW_SIZE) and res.get('body') == 'M' and CHECKING_TYPE == 'DELETE_M_EVENT':
@@ -64,10 +72,14 @@ class CaseThreadForCC(Thread):
                 if flag:
                     client_cases.get(self.event['case_id']).pop(0)
                 client_locks.get(self.event['case_id']).release()
+                ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'],
+                                         self.event['activity'], "Released lock")
                 self._message.put(response)
                 self._status_queue.put(None)
         except Exception as ec:
             console.error('run - ComplianceCaselock ' + traceback.format_exc())
+            ServerLogging().log_error(func_name, "server", self.index, self.event['case_id'], self.event['activity'],
+                                      "Error with Caselock")
             self._status_queue.put(ec)
 
 

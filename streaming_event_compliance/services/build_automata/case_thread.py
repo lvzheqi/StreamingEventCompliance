@@ -81,6 +81,8 @@ class CaseThreadForTraining(Thread):
                     calcuate_connection_for_different_prefix_automata(windows_memory)
                     self.C.dictionary_cases.get(self.event['case_id']).pop(0)
                     self.C.lock_List.get(self.event['case_id']).release()
+                    ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'],
+                                             self.event['activity'], "Released lock")
                     # ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'],
                     #                          self.event['activity'], "Released lock")
                     self._status_queue.put(None)
