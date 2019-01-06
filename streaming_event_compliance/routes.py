@@ -7,7 +7,7 @@ from streaming_event_compliance.objects.variable.globalvar import gVars
 from streaming_event_compliance.services.compliance_check import compliance_checker
 from streaming_event_compliance.database import dbtools
 from streaming_event_compliance.objects.exceptions.exception import ThreadException
-import json, traceback, os
+import json, traceback
 from console_logging.console import Console
 console = Console()
 console.setVerbosity(5)
@@ -44,7 +44,7 @@ def call_compliance_checker():
             check_client_stauts(uuid)
         elif gVars.get_client_status(uuid):
             dbtools.delete_alert(uuid)
-            dbtools.update_user_status(uuid, False)
+            dbtools.update_client_status(uuid, False)
             gVars.clients_status[uuid] = False
 
         if uuid not in gVars.clients_cc_status:
@@ -59,7 +59,7 @@ def call_compliance_checker():
     except ThreadException:
         console.error('Something wrong in threading!' + traceback.format_exc())
     except Exception as e:
-        print(e)
+        print(traceback.format_exc())
     finally:
         return response
 
@@ -85,9 +85,8 @@ def call_show_deviation_pdf():
 
 
 def check_client_stauts(uuid):
-    if dbtools.check_user_status(uuid) is None:
-        user_status = False
-    else:
-        user_status = dbtools.check_user_status(uuid)
-    gVars.clients_status[uuid] = user_status
-    return user_status
+    client_status = dbtools.check_client_status(uuid)
+    if client_status is None:
+        client_status = False
+    gVars.clients_status[uuid] = client_status
+    return client_status
