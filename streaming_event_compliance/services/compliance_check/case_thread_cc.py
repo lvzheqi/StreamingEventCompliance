@@ -1,7 +1,6 @@
 from threading import Thread
-from streaming_event_compliance.objects.variable.globalvar import gVars, CCM, CAL
 from streaming_event_compliance import app
-from streaming_event_compliance.objects.variable.globalvar import gVars, CCM
+from streaming_event_compliance.objects.variable.globalvar import gVars, CCM, CAL
 from streaming_event_compliance.objects.exceptions.exception import ThreadException
 from streaming_event_compliance.objects.automata import automata, alertlog
 import queue
@@ -15,6 +14,7 @@ WINDOW_SIZE = app.config['WINDOW_SIZE']
 MAXIMUN_WINDOW_SIZE = app.config['MAXIMUN_WINDOW_SIZE']
 THRESHOLD = app.config['THRESHOLD']
 CHECKING_TYPE = app.config['CHECKING_TYPE']
+ALERT_TYPE = app.config['ALERT_TYPE']
 
 
 class CaseThreadForCC(Thread):
@@ -55,10 +55,13 @@ class CaseThreadForCC(Thread):
         try:
             if client_locks.get(self.event['case_id']).acquire():
                 windows_memory = client_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
-                type, response = create_source_sink_node(windows_memory, self.client_uuid, self.event)
-                if type == 2 and CHECKING_TYPE == 'DELETE_M_EVENT':
-                    client_cases.get(self.event['case_id']).pop(MAXIMUN_WINDOW_SIZE)
-                else:
+                response = create_source_sink_node(windows_memory, self.client_uuid, self.event)
+                flag = True
+                for ws, res in response.items():
+                    if ws == min(WINDOW_SIZE) and res.get('body') == 'M' and CHECKING_TYPE == 'DELETE_M_EVENT':
+                        flag = False
+                        client_cases.get(self.event['case_id']).pop(MAXIMUN_WINDOW_SIZE)
+                if flag:
                     client_cases.get(self.event['case_id']).pop(0)
                 client_locks.get(self.event['case_id']).release()
                 self._message.put(response)
@@ -83,34 +86,35 @@ def create_source_sink_node(windowsMemory, client_uuid, event):
             source_node = ','.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws: MAXIMUN_WINDOW_SIZE])
             sink_node = ','.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws + 1: MAXIMUN_WINDOW_SIZE+1])
             if source_node.find('*') != -1 and sink_node.find('*') != -1:
+                response[ws] = {'body': 'OK'}
                 break
             elif source_node.find('*') != -1:
                 source_node = 'NONE'
             matches = check_alert(ws, source_node, sink_node, client_uuid)
             if matches == 2:
-                # console.secure('Alert !!!', ' No connection from ' + source_node + ' to ' + sink_node + ' due to missing node')
-                return 2, {
+                response[ws] = {
                     'case_id': event['case_id'],
                     'source_node': source_node,
                     'sink_node': sink_node,
                     'expect': gVars.autos[ws].get_sink_nodes(source_node),
                     'body': 'M'
                 }
+                if ALERT_TYPE == 'RETURN_ONE':
+                    return response
             elif matches == 1:
-                # console.secure('Alert !!!', ' No connection from ' + source_node + ' to ' + sink_node + ' due to less probability')
-                return 1, {
+                response[ws] = {
                     'case_id': event['case_id'],
                     'source_node': source_node,
                     'sink_node': sink_node,
                     'cause': gVars.autos[ws].get_connection_probability(automata.Connection(source_node, sink_node)),
                     'expect': THRESHOLD,
                     'body': 'T'
-                    }
+                }
             else:
-                response = {'body': 'OK'}
-        return 0, response
+                response[ws] = {'body': 'OK'}
+        return response
     except Exception as ec:
-        print(ec)
+        console.error('Exception from create_source_sink_node:' + traceback.format_exc())
         raise ec
 
 
@@ -132,7 +136,6 @@ def check_alert(windowsize, source_node, sink_node, client_uuid):
     try:
         alert_log = gVars.get_client_alert_logs(client_uuid)[windowsize]
         auto = gVars.autos[windowsize]
-        # console.info(auto)
         conn = automata.Connection(source_node, sink_node)
         if auto.contains_connection(conn):
             if auto.get_connection_probability(conn) >= THRESHOLD:

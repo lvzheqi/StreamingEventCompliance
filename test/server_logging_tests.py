@@ -17,8 +17,8 @@ class TestServerLogging(unittest.TestCase):
             lines = f.read().splitlines()
             test_data_in_log_file = lines[-1]
             test_data_in_log_file = ' '.join(test_data_in_log_file.split(' ')[3:])
-            print(test_data_in_log_file)
-            print(compare_test_data_in_log_file)
+            # print(test_data_in_log_file)
+            # print(compare_test_data_in_log_file)
         self.assertEqual(test_data_in_log_file, compare_test_data_in_log_file)
 
     def test_log_info_3(self):
@@ -31,8 +31,8 @@ class TestServerLogging(unittest.TestCase):
             lines = f.read().splitlines()
             test_data_in_log_file = lines[-1]
             test_data_in_log_file = ' '.join(test_data_in_log_file.split(' ')[3:])
-            print(test_data_in_log_file)
-            print(compare_test_data_in_log_file)
+            # print(test_data_in_log_file)
+            # print(compare_test_data_in_log_file)
         self.assertEqual(test_data_in_log_file, compare_test_data_in_log_file)
 
     def test_log_info_5(self):
@@ -51,8 +51,8 @@ class TestServerLogging(unittest.TestCase):
             lines = f.read().splitlines()
             test_data_in_log_file = lines[-1]
             test_data_in_log_file = ' '.join(test_data_in_log_file.split(' ')[3:])
-            print(test_data_in_log_file)
-            print(compare_test_data_in_log_file)
+            # print(test_data_in_log_file)
+            # print(compare_test_data_in_log_file)
         self.assertEqual(test_data_in_log_file, compare_test_data_in_log_file)
 
     def test_log_info_6(self):
@@ -73,8 +73,8 @@ class TestServerLogging(unittest.TestCase):
             lines = f.read().splitlines()
             test_data_in_log_file = lines[-1]
             test_data_in_log_file = ' '.join(test_data_in_log_file.split(' ')[3:])
-            print(test_data_in_log_file)
-            print(compare_test_data_in_log_file)
+            # print(test_data_in_log_file)
+            # print(compare_test_data_in_log_file)
         self.assertEqual(test_data_in_log_file, compare_test_data_in_log_file)
 
     def test_log_error_2(self):
@@ -86,8 +86,8 @@ class TestServerLogging(unittest.TestCase):
             lines = f.read().splitlines()
             test_data_in_log_file = lines[-1]
             test_data_in_log_file = ' '.join(test_data_in_log_file.split(' ')[3:])
-            print(test_data_in_log_file)
-            print(compare_test_data_in_log_file)
+            # print(test_data_in_log_file)
+            # print(compare_test_data_in_log_file)
         self.assertEqual(test_data_in_log_file, compare_test_data_in_log_file)
 
     def test_log_error_3(self):
@@ -100,8 +100,8 @@ class TestServerLogging(unittest.TestCase):
             lines = f.read().splitlines()
             test_data_in_log_file = lines[-1]
             test_data_in_log_file = ' '.join(test_data_in_log_file.split(' ')[3:])
-            print(test_data_in_log_file)
-            print(compare_test_data_in_log_file)
+            # print(test_data_in_log_file)
+            # print(compare_test_data_in_log_file)
         self.assertEqual(test_data_in_log_file, compare_test_data_in_log_file)
 
     def test_log_error_5(self):
@@ -120,8 +120,8 @@ class TestServerLogging(unittest.TestCase):
             lines = f.read().splitlines()
             test_data_in_log_file = lines[-1]
             test_data_in_log_file = ' '.join(test_data_in_log_file.split(' ')[3:])
-            print(test_data_in_log_file)
-            print(compare_test_data_in_log_file)
+            # print(test_data_in_log_file)
+            # print(compare_test_data_in_log_file)
         self.assertEqual(test_data_in_log_file, compare_test_data_in_log_file)
 
     def test_log_error_6(self):
@@ -143,8 +143,8 @@ class TestServerLogging(unittest.TestCase):
             lines = f.read().splitlines()
             test_data_in_log_file = lines[-1]
             test_data_in_log_file = ' '.join(test_data_in_log_file.split(' ')[3:])
-            print(test_data_in_log_file)
-            print(compare_test_data_in_log_file)
+            # print(test_data_in_log_file)
+            # print(compare_test_data_in_log_file)
         self.assertEqual(test_data_in_log_file, compare_test_data_in_log_file)
 
 
