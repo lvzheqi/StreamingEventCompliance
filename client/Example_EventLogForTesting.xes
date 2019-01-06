@@ -1,275 +1,183 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- XES version 1.0 -->
-<!-- Created by Fluxicon Disco (http://fluxicon.com/disco/ -->
-<!-- (c) 2017 Fluxicon - http://fluxicon.com/ -->
-<log xes.version="1.0" xmlns="http://www.xes-standard.org" xes.creator="Fluxicon Disco">
-	<extension name="Concept" prefix="concept" uri="http://www.xes-standard.org/concept.xesext"/>
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- This file has been generated with the OpenXES library. It conforms -->
+<!-- to the XML serialization of the XES standard for log storage and -->
+<!-- management. -->
+<!-- XES standard version: 1.0 -->
+<!-- OpenXES library version: 1.0RC7 -->
+<!-- OpenXES is available from http://www.openxes.org/ -->
+<log xes.version="1.0" xes.features="nested-attributes" openxes.version="1.0RC7" xmlns="http://www.xes-standard.org/">
 	<extension name="Lifecycle" prefix="lifecycle" uri="http://www.xes-standard.org/lifecycle.xesext"/>
-	<extension name="Time" prefix="time" uri="http://www.xes-standard.org/time.xesext"/>
 	<extension name="Organizational" prefix="org" uri="http://www.xes-standard.org/org.xesext"/>
+	<extension name="Time" prefix="time" uri="http://www.xes-standard.org/time.xesext"/>
+	<extension name="Concept" prefix="concept" uri="http://www.xes-standard.org/concept.xesext"/>
+	<extension name="Semantic" prefix="semantic" uri="http://www.xes-standard.org/semantic.xesext"/>
 	<global scope="trace">
-		<string key="concept:name" value="name"/>
-		<string key="variant" value="string"/>
-		<int key="variant-index" value="0"/>
+		<string key="concept:name" value="__INVALID__"/>
 	</global>
 	<global scope="event">
-		<string key="concept:name" value="name"/>
-		<string key="lifecycle:transition" value="transition"/>
-		<string key="org:resource" value="resource"/>
-		<date key="time:timestamp" value="2018-12-11T09:13:14.970+01:00"/>
-		<string key="(case)_AMOUNT_REQ" value="string"/>
-		<string key="concept:name" value="string"/>
-		<string key="lifecycle:transition" value="string"/>
-		<string key="org:resource" value="string"/>
+		<string key="concept:name" value="__INVALID__"/>
+		<string key="lifecycle:transition" value="complete"/>
 	</global>
-	<classifier name="Activity" keys="concept:name lifecycle:transition"/>
+	<classifier name="MXML Legacy Classifier" keys="concept:name lifecycle:transition"/>
+	<classifier name="Event Name" keys="concept:name"/>
 	<classifier name="Resource" keys="org:resource"/>
+	<string key="source" value="Rapid Synthesizer"/>
+	<string key="concept:name" value="Log L1"/>
 	<string key="lifecycle:model" value="standard"/>
-	<string key="creator" value="Fluxicon Disco"/>
-	<string key="library" value="Fluxicon Octane"/>
 	<trace>
-		<string key="concept:name" value="173709"/>
-		<string key="variant" value="Variant 36"/>
-		<int key="variant-index" value="36"/>
-		<string key="creator" value="Fluxicon Disco"/>
+		<string key="concept:name" value="Case3.0"/>
 		<event>
+			<string key="org:resource" value="UNDEFINED"/>
+			<date key="time:timestamp" value="2010-10-27T22:31:19.495+02:00"/>
+			<string key="concept:name" value="a"/>
 			<string key="lifecycle:transition" value="complete"/>
-			<date key="time:timestamp" value="2011-10-01T09:57:42.994+02:00"/>
-			<string key="(case)_AMOUNT_REQ" value="11000"/>
-			<string key="concept:name" value="App_Fully_Submission"/>
-			<string key="org:resource" value="112"/>
 		</event>
 		<event>
+			<string key="org:resource" value="UNDEFINED"/>
+			<date key="time:timestamp" value="2010-10-27T22:32:19.495+02:00"/>
+			<string key="concept:name" value="e"/>
 			<string key="lifecycle:transition" value="complete"/>
-			<date key="time:timestamp" value="2011-10-01T09:57:43.182+02:00"/>
-			<string key="(case)_AMOUNT_REQ" value="11000"/>
-			<string key="concept:name" value="App_Incomplete_Submission"/>
-			<string key="org:resource" value="112"/>
 		</event>
 		<event>
+			<string key="org:resource" value="UNDEFINED"/>
+			<date key="time:timestamp" value="2010-10-27T22:33:19.495+02:00"/>
+			<string key="concept:name" value="d"/>
 			<string key="lifecycle:transition" value="complete"/>
-			<date key="time:timestamp" value="2011-10-01T09:58:27.038+02:00"/>
-			<string key="(case)_AMOUNT_REQ" value="11000"/>
-			<string key="concept:name" value="Err_Pre_Acceptation"/>
-			<string key="org:resource" value="112"/>
-		</event>
-		<event>
-			<string key="lifecycle:transition" value="complete"/>
-			<date key="time:timestamp" value="2011-10-01T09:58:27.403+02:00"/>
-			<string key="(case)_AMOUNT_REQ" value="11000"/>
-			<string key="concept:name" value="W_Complete_Application"/>
-			<string key="org:resource" value="112"/>
-		</event>
-		<event>
-			<string key="lifecycle:transition" value="complete"/>
-			<date key="time:timestamp" value="2011-10-01T10:26:42.203+02:00"/>
-			<string key="(case)_AMOUNT_REQ" value="11000"/>
-			<string key="concept:name" value="W_Complete_Application"/>
-			<string key="org:resource" value="10912"/>
-		</event>
-		<event>
-			<string key="lifecycle:transition" value="complete"/>
-			<date key="time:timestamp" value="2011-10-01T10:27:07.853+02:00"/>
-			<string key="(case)_AMOUNT_REQ" value="11000"/>
-			<string key="concept:name" value="W_Complete_Application"/>
-			<string key="org:resource" value="10912"/>
-		</event>
-		<event>
-			<string key="lifecycle:transition" value="complete"/>
-			<date key="time:timestamp" value="2011-10-01T11:40:40.141+02:00"/>
-			<string key="(case)_AMOUNT_REQ" value="11000"/>
-			<string key="concept:name" value="W_Complete_Application"/>
-			<string key="org:resource" value="10912"/>
 		</event>
 	</trace>
 	<trace>
-		<string key="concept:name" value="174090"/>
-		<string key="variant" value="Variant 15"/>
-		<int key="variant-index" value="15"/>
-		<string key="creator" value="Fluxicon Disco"/>
+		<string key="concept:name" value="Case2.0"/>
 		<event>
+			<string key="org:resource" value="UNDEFINED"/>
+			<date key="time:timestamp" value="2010-10-27T22:31:19.495+02:00"/>
+			<string key="concept:name" value="a"/>
 			<string key="lifecycle:transition" value="complete"/>
-			<date key="time:timestamp" value="2011-10-03T13:50:01.312+02:00"/>
-			<string key="(case)_AMOUNT_REQ" value="20000"/>
-			<string key="concept:name" value="App_Fully_Submission"/>
-			<string key="org:resource" value="112"/>
 		</event>
 		<event>
+			<string key="org:resource" value="UNDEFINED"/>
+			<date key="time:timestamp" value="2010-10-27T22:32:19.495+02:00"/>
+			<string key="concept:name" value="c"/>
 			<string key="lifecycle:transition" value="complete"/>
-			<date key="time:timestamp" value="2011-10-03T13:50:01.702+02:00"/>
-			<string key="(case)_AMOUNT_REQ" value="20000"/>
-			<string key="concept:name" value="App_Incomplete_Submission"/>
-			<string key="org:resource" value="112"/>
 		</event>
 		<event>
+			<string key="org:resource" value="UNDEFINED"/>
+			<date key="time:timestamp" value="2010-10-27T22:33:19.495+02:00"/>
+			<string key="concept:name" value="b"/>
 			<string key="lifecycle:transition" value="complete"/>
-			<date key="time:timestamp" value="2011-10-03T13:50:38.338+02:00"/>
-			<string key="(case)_AMOUNT_REQ" value="20000"/>
-			<string key="concept:name" value="App_Pre_Acceptation"/>
-			<string key="org:resource" value="112"/>
 		</event>
 		<event>
+			<string key="org:resource" value="UNDEFINED"/>
+			<date key="time:timestamp" value="2010-10-27T22:34:19.495+02:00"/>
+			<string key="concept:name" value="d"/>
 			<string key="lifecycle:transition" value="complete"/>
-			<date key="time:timestamp" value="2011-10-03T13:50:38.836+02:00"/>
-			<string key="(case)_AMOUNT_REQ" value="20000"/>
-			<string key="concept:name" value="W_Complete_Application"/>
-			<string key="org:resource" value="112"/>
-		</event>
-		<event>
-			<string key="lifecycle:transition" value="complete"/>
-			<date key="time:timestamp" value="2011-10-03T15:39:02.843+02:00"/>
-			<string key="(case)_AMOUNT_REQ" value="20000"/>
-			<string key="concept:name" value="W_Complete_Application"/>
-			<string key="org:resource" value="11180"/>
 		</event>
 	</trace>
 	<trace>
-		<string key="concept:name" value="174111"/>
-		<string key="variant" value="Variant 8"/>
-		<int key="variant-index" value="8"/>
-		<string key="creator" value="Fluxicon Disco"/>
+		<string key="concept:name" value="Case1.2"/>
 		<event>
+			<string key="org:resource" value="UNDEFINED"/>
+			<date key="time:timestamp" value="2010-10-27T22:31:19.495+02:00"/>
+			<string key="concept:name" value="a"/>
 			<string key="lifecycle:transition" value="complete"/>
-			<date key="time:timestamp" value="2011-10-03T14:49:07.819+02:00"/>
-			<string key="(case)_AMOUNT_REQ" value="2500"/>
-			<string key="concept:name" value="App_Fully_Submission"/>
-			<string key="org:resource" value="112"/>
 		</event>
 		<event>
+			<string key="org:resource" value="UNDEFINED"/>
+			<date key="time:timestamp" value="2010-10-27T22:32:19.495+02:00"/>
+			<string key="concept:name" value="b"/>
 			<string key="lifecycle:transition" value="complete"/>
-			<date key="time:timestamp" value="2011-10-03T14:49:08.171+02:00"/>
-			<string key="(case)_AMOUNT_REQ" value="2500"/>
-			<string key="concept:name" value="App_Incomplete_Submission"/>
-			<string key="org:resource" value="112"/>
 		</event>
 		<event>
+			<string key="org:resource" value="UNDEFINED"/>
+			<date key="time:timestamp" value="2010-10-27T22:33:19.495+02:00"/>
+			<string key="concept:name" value="d"/>
 			<string key="lifecycle:transition" value="complete"/>
-			<date key="time:timestamp" value="2011-10-03T14:50:00.167+02:00"/>
-			<string key="(case)_AMOUNT_REQ" value="2500"/>
-			<string key="concept:name" value="W_Handling_Leads"/>
-			<string key="org:resource" value="112"/>
 		</event>
 		<event>
+			<string key="org:resource" value="UNDEFINED"/>
+			<date key="time:timestamp" value="2010-10-27T22:34:19.495+02:00"/>
+			<string key="concept:name" value="d"/>
 			<string key="lifecycle:transition" value="complete"/>
-			<date key="time:timestamp" value="2011-10-03T15:10:20.009+02:00"/>
-			<string key="(case)_AMOUNT_REQ" value="2500"/>
-			<string key="concept:name" value="W_Handling_Leads"/>
-			<string key="org:resource" value="11001"/>
-		</event>
-		<event>
-			<string key="lifecycle:transition" value="complete"/>
-			<date key="time:timestamp" value="2011-10-03T15:11:48.989+02:00"/>
-			<string key="(case)_AMOUNT_REQ" value="2500"/>
-			<string key="concept:name" value="App_Pre_Acceptation"/>
-			<string key="org:resource" value="11001"/>
-		</event>
-		<event>
-			<string key="lifecycle:transition" value="complete"/>
-			<date key="time:timestamp" value="2011-10-03T15:11:50.175+02:00"/>
-			<string key="(case)_AMOUNT_REQ" value="2500"/>
-			<string key="concept:name" value="W_Complete_Application"/>
-			<string key="org:resource" value="11001"/>
-		</event>
-		<event>
-			<string key="lifecycle:transition" value="complete"/>
-			<date key="time:timestamp" value="2011-10-03T15:11:51.313+02:00"/>
-			<string key="(case)_AMOUNT_REQ" value="2500"/>
-			<string key="concept:name" value="W_Handling_Leads"/>
-			<string key="org:resource" value="11001"/>
-		</event>
-		<event>
-			<string key="lifecycle:transition" value="complete"/>
-			<date key="time:timestamp" value="2011-10-03T16:14:22.938+02:00"/>
-			<string key="(case)_AMOUNT_REQ" value="2500"/>
-			<string key="concept:name" value="W_Complete_Application"/>
-			<string key="org:resource" value="11201"/>
 		</event>
 	</trace>
 	<trace>
-		<string key="concept:name" value="174138"/>
-		<string key="variant" value="Variant 14"/>
-		<int key="variant-index" value="14"/>
-		<string key="creator" value="Fluxicon Disco"/>
+		<string key="concept:name" value="Case1.1"/>
 		<event>
+			<string key="org:resource" value="UNDEFINED"/>
+			<date key="time:timestamp" value="2010-10-27T22:31:19.495+02:00"/>
+			<string key="concept:name" value="a"/>
 			<string key="lifecycle:transition" value="complete"/>
-			<date key="time:timestamp" value="2011-10-03T16:43:26.043+02:00"/>
-			<string key="(case)_AMOUNT_REQ" value="5000"/>
-			<string key="concept:name" value="App_Fully_Submission"/>
-			<string key="org:resource" value="112"/>
 		</event>
 		<event>
+			<string key="org:resource" value="UNDEFINED"/>
+			<date key="time:timestamp" value="2010-10-27T22:32:19.495+02:00"/>
+			<string key="concept:name" value="b"/>
 			<string key="lifecycle:transition" value="complete"/>
-			<date key="time:timestamp" value="2011-10-03T16:43:26.366+02:00"/>
-			<string key="(case)_AMOUNT_REQ" value="5000"/>
-			<string key="concept:name" value="Err_Incomplete_Submission"/>
-			<string key="org:resource" value="112"/>
 		</event>
 		<event>
+			<string key="org:resource" value="UNDEFINED"/>
+			<date key="time:timestamp" value="2010-10-27T22:33:19.495+02:00"/>
+			<string key="concept:name" value="c"/>
 			<string key="lifecycle:transition" value="complete"/>
-			<date key="time:timestamp" value="2011-10-03T16:43:43.673+02:00"/>
-			<string key="(case)_AMOUNT_REQ" value="5000"/>
-			<string key="concept:name" value="W_Handling_Leads"/>
-			<string key="org:resource" value="112"/>
 		</event>
 		<event>
+			<string key="org:resource" value="UNDEFINED"/>
+			<date key="time:timestamp" value="2010-10-27T22:34:19.495+02:00"/>
+			<string key="concept:name" value="d"/>
 			<string key="lifecycle:transition" value="complete"/>
-			<date key="time:timestamp" value="2011-10-03T16:46:17.059+02:00"/>
-			<string key="(case)_AMOUNT_REQ" value="5000"/>
-			<string key="concept:name" value="W_Handling_Leads"/>
-			<string key="org:resource" value="11001"/>
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="Case1.0"/>
+		<event>
+			<string key="org:resource" value="UNDEFINED"/>
+			<date key="time:timestamp" value="2010-10-27T22:31:19.308+02:00"/>
+			<string key="concept:name" value="a"/>
+			<string key="lifecycle:transition" value="complete"/>
 		</event>
 		<event>
+			<string key="org:resource" value="UNDEFINED"/>
+			<date key="time:timestamp" value="2010-10-27T22:32:19.308+02:00"/>
+			<string key="concept:name" value="b"/>
 			<string key="lifecycle:transition" value="complete"/>
-			<date key="time:timestamp" value="2011-10-03T16:47:52.668+02:00"/>
-			<string key="(case)_AMOUNT_REQ" value="5000"/>
-			<string key="concept:name" value="App_Pre_Acceptation"/>
-			<string key="org:resource" value="11001"/>
 		</event>
 		<event>
+			<string key="org:resource" value="UNDEFINED"/>
+			<date key="time:timestamp" value="2010-10-27T22:33:19.308+02:00"/>
+			<string key="concept:name" value="c"/>
 			<string key="lifecycle:transition" value="complete"/>
-			<date key="time:timestamp" value="2011-10-03T16:47:52.868+02:00"/>
-			<string key="(case)_AMOUNT_REQ" value="5000"/>
-			<string key="concept:name" value="W_Complete_Application"/>
-			<string key="org:resource" value="11001"/>
 		</event>
 		<event>
+			<string key="org:resource" value="UNDEFINED"/>
+			<date key="time:timestamp" value="2010-10-27T22:34:19.308+02:00"/>
+			<string key="concept:name" value="d"/>
 			<string key="lifecycle:transition" value="complete"/>
-			<date key="time:timestamp" value="2011-10-03T16:47:54.433+02:00"/>
-			<string key="(case)_AMOUNT_REQ" value="5000"/>
-			<string key="concept:name" value="W_Handling_Leads"/>
-			<string key="org:resource" value="11001"/>
+		</event>
+	</trace>
+	<trace>
+		<string key="concept:name" value="Case2.1"/>
+		<event>
+			<string key="org:resource" value="UNDEFINED"/>
+			<date key="time:timestamp" value="2010-10-27T22:31:19.495+02:00"/>
+			<string key="concept:name" value="a"/>
+			<string key="lifecycle:transition" value="complete"/>
 		</event>
 		<event>
+			<string key="org:resource" value="UNDEFINED"/>
+			<date key="time:timestamp" value="2010-10-27T22:32:19.495+02:00"/>
+			<string key="concept:name" value="c"/>
 			<string key="lifecycle:transition" value="complete"/>
-			<date key="time:timestamp" value="2011-10-03T18:04:42.452+02:00"/>
-			<string key="(case)_AMOUNT_REQ" value="5000"/>
-			<string key="concept:name" value="W_Complete_Application"/>
-			<string key="org:resource" value="11119"/>
 		</event>
 		<event>
+			<string key="org:resource" value="UNDEFINED"/>
+			<date key="time:timestamp" value="2010-10-27T22:33:19.495+02:00"/>
+			<string key="concept:name" value="b"/>
 			<string key="lifecycle:transition" value="complete"/>
-			<date key="time:timestamp" value="2011-10-03T18:08:10.094+02:00"/>
-			<string key="(case)_AMOUNT_REQ" value="5000"/>
-			<string key="concept:name" value="W_Complete_Application"/>
-			<string key="org:resource" value="11119"/>
 		</event>
 		<event>
+			<string key="org:resource" value="UNDEFINED"/>
+			<date key="time:timestamp" value="2010-10-27T22:34:19.495+02:00"/>
+			<string key="concept:name" value="d"/>
 			<string key="lifecycle:transition" value="complete"/>
-			<date key="time:timestamp" value="2011-10-04T09:50:07.677+02:00"/>
-			<string key="(case)_AMOUNT_REQ" value="5000"/>
-			<string key="concept:name" value="W_Complete_Application"/>
-		</event>
-		<event>
-			<string key="lifecycle:transition" value="complete"/>
-			<date key="time:timestamp" value="2011-10-04T09:55:51.531+02:00"/>
-			<string key="(case)_AMOUNT_REQ" value="5000"/>
-			<string key="concept:name" value="W_Complete_Application"/>
-		</event>
-		<event>
-			<string key="lifecycle:transition" value="complete"/>
-			<date key="time:timestamp" value="2011-10-04T09:56:00.763+02:00"/>
-			<string key="(case)_AMOUNT_REQ" value="5000"/>
-			<string key="concept:name" value="W_Complete_Application"/>
 		</event>
 	</trace>
 </log>
