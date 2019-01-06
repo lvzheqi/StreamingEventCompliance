@@ -7,7 +7,8 @@ from streaming_event_compliance.objects.variable.globalvar import gVars
 from streaming_event_compliance.services.compliance_check import compliance_checker
 from streaming_event_compliance.database import dbtools
 from streaming_event_compliance.objects.exceptions.exception import ThreadException
-import json, traceback
+from streaming_event_compliance.objects.logging.server_logging import ServerLogging
+import json, traceback, sys
 from console_logging.console import Console
 console = Console()
 console.setVerbosity(5)
@@ -24,9 +25,13 @@ def index():
 
 @app.route('/login', methods=['POST'])
 def call_login():
+    func_name = sys._getframe().f_code.co_name
     uuid = request.args.get('uuid')
+    ServerLogging().log_info(func_name, "server", uuid + " is logging.")
     if uuid in gVars.clients_cc_status:
+        ServerLogging().log_info(func_name, "server", uuid + " is refused.")
         return 'Refuse', status.HTTP_200_OK
+    ServerLogging().log_info(func_name, "server", uuid + " is logged successfully.")
     return str(check_client_stauts(uuid)), status.HTTP_200_OK
 
 
@@ -36,7 +41,7 @@ def call_compliance_checker():
     This function provides the interface to check the compliance of the event.
     :return: status code, application/json
     '''
-
+    func_name = sys._getframe().f_code.co_name
     uuid = request.args.get('uuid')
     response = json.dumps({'body': 'Error, something wrong!'}), status.HTTP_409_CONFLICT
     try:
@@ -53,12 +58,17 @@ def call_compliance_checker():
 
         event = request.json
         event = json.loads(event)
+        ServerLogging().log_info(func_name, "server", "Compliance checking for " + event['case_id'] + " "
+                                 + event['activity'])
         response = compliance_checker.compliance_checker(uuid, event), status.HTTP_200_OK
     except KeyError:
         console.error('Something wrong in parameter getting!' + traceback.format_exc())
+        ServerLogging().log_error(func_name, "server", 'Something wrong in parameter getting!')
     except ThreadException:
         console.error('Something wrong in threading!' + traceback.format_exc())
-    except Exception as e:
+        ServerLogging().log_error(func_name, "server", 'Something wrong in threading!')
+    except Exception:
+        ServerLogging().log_error(func_name, "server", 'Something wrong!')
         print(traceback.format_exc())
     finally:
         return response
@@ -71,14 +81,17 @@ def call_show_deviation_pdf():
     when the client has already done the “compliance checking”.
     :return: status code, application/pdf
     '''
+    func_name = sys._getframe().f_code.co_name
     client_uuid = request.args.get('uuid')
     pdf_status = visualization_deviation_automata.show_deviation_pdf(client_uuid)
     if pdf_status == 1:
         try:
             automata_pdf = open(CLEINT_DATA_PATH + client_uuid + '_' + AUTOMATA_FILE + FILE_TYPE, 'rb')
+            ServerLogging().log_info(func_name, "server", 'Create deviation_pdf for ' + client_uuid)
             return send_file(automata_pdf, attachment_filename='file.pdf'), status.HTTP_200_OK
         except Exception:
             console.error('Error! Something wrong in call_show_deviation_pdf!' + traceback.format_exc())
+            ServerLogging().log_error(func_name, "server", 'Error! Something wrong in call_show_deviation_pdf!')
             return '', status.HTTP_404_NOT_FOUND
     else:
         return '', status.HTTP_200_OK
