@@ -71,7 +71,7 @@ class Client_cls(object):
                     ClientLogging().log_error(func_name, self.uuid, self.uuid +
                                               ' has not done compliance checking, '
                                               'hence warning generated to first do compliance checking')
-                    console.secure("Warning", "You have not do the compliance checking, "
+                    console.secure("[ Warning  ]", "You have not do the compliance checking, "
                                               "please do the compliance checking at first!.")
         except Exception:
             raise ServerRequestException('PDF can not be created.')
@@ -81,7 +81,7 @@ def main(argv):
     func_name = sys._getframe().f_code.co_name
 
     if len(argv) >= 3 or len(argv) < 1:
-        console.secure("Warning", 'Please give one or two args, e.g. python client.py user_name (file_path)')
+        console.secure("[ Warning  ]", 'Please give one or two args, e.g. python client.py user_name (file_path)')
         ClientLogging().log_error(func_name,
                                   'Username or Event logger path arguments were not provided during the run time')
         return
@@ -100,7 +100,7 @@ def main(argv):
         if not client.login():
             ClientLogging().log_error(func_name, argv[0], 'The user with the same name is just doing the '
                                                           'compliance checking, please try it later!')
-            console.secure("Refuse", 'The user with the same name is just doing the compliance checking, '
+            console.secure("[ Refuse  ]", 'The user with the same name is just doing the compliance checking, '
                                      'please try it with other name!')
             return
     except ConnectionException as e:
@@ -120,7 +120,7 @@ def main(argv):
         print('\tPress 2, if you want to show the deviation pdf')
         print('\tPress 3, if you want to exit')
         if len(argv) == 2:
-            console.secure('Note:', 'you can interrupt with CTR_C, once you start to do the compliance checking')
+            console.secure('[ Note  ]', 'you can interrupt with CTR_C, once you start to do the compliance checking')
         try:
             services = input()
         except Exception:
@@ -130,7 +130,7 @@ def main(argv):
             redo = '1'
             ClientLogging().log_info(func_name, argv[0], 'The user selected option 1')
             if client.cc_status:
-                console.secure('Warning', 'You have already done the compliance check! Do you really want to'
+                console.secure('[ Warning  ]', 'You have already done the compliance check! Do you really want to'
                                           ' restart? Or do you want to render the deviation pdf?')
                 print('\tIf you want to restart, please press 1 again!')
                 print('\tIf you want to skip, please press 2!')
@@ -153,12 +153,12 @@ def main(argv):
                 except ReadFileException as e:
                     e.get_message()
                     ClientLogging().log_error(func_name, argv[0], 'Input file is not readable!')
-                    console.secure('Warning',
+                    console.secure('[ Warning  ]',
                                    '------------------the compliance checking is interrupt------------------------')
                 except KeyboardInterrupt:
                     client.cc_status = False
                     ClientLogging().log_error(func_name, argv[0], 'Compliance checking is interrupted by user')
-                    console.secure('Warning',
+                    console.secure('[ Warning  ]',
                                    '------------------the compliance checking is interrupt------------------------')
                 except ThreadException as e:
                     client.cc_status = False
@@ -170,19 +170,19 @@ def main(argv):
                     client.cc_status = False
                     e.get_message()
                     ClientLogging().log_error(func_name, argv[0], 'Server is not available')
-                    console.secure('Warning',
+                    console.secure('[ Warning  ]',
                                    '------------------the compliance checking is interrupt------------------------')
             elif redo == '2':
                 ClientLogging().log_info(func_name, argv[0], 'The user selected option 2')
                 pass
             else:
                 ClientLogging().log_error(func_name, argv[0], 'The users input is invalid')
-                console.secure('Warning', 'Your input is invalid, please try again!')
+                console.secure('[ Warning  ]', 'Your input is invalid, please try again!')
                 print('------------------------------------------------------------------------------')
 
         elif services == '2':
             if not client.cc_status:
-                console.secure('Warning',
+                console.secure('[ Warning  ]',
                                'You have not done the compliance checking. Please do the compliance checking ahead!')
                 print('------------------------------------------------------------------------------')
             else:
@@ -207,7 +207,7 @@ def main(argv):
             return
         else:
             ClientLogging().log_error(func_name, argv[0], 'The users input is invalid')
-            console.secure('Warning', 'Your input is invalid, please try again!')
+            console.secure('[ Warning  ]', 'Your input is invalid, please try again!')
             print('------------------------------------------------------------------------------')
 
 
