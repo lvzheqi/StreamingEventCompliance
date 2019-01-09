@@ -17,10 +17,10 @@ digraph {
 	subgraph cluster3 {
 		color=black label="Probability Graph With Prefix Size 3"
 		"a,b,c" [label="a,b,c"]
+		"a,e,d" [label="a,e,d"]
 		"a,c,b" [label="a,c,b"]
 		"a,b,d" [label="a,b,d"]
 		"b,c,d" [label="b,c,d"]
-		"a,e,d" [label="a,e,d"]
 		"c,b,d" [label="c,b,d"]
 		"b,d,d" [label="b,d,d"]
 		"a,b,c" -> "b,c,d" [penwidth=0.5]
@@ -33,10 +33,10 @@ digraph {
 		"a,e" [label="a,e"]
 		"a,c" [label="a,c"]
 		"b,c" [label="b,c"]
+		"e,d" [label="e,d"]
 		"c,b" [label="c,b"]
 		"b,d" [label="b,d"]
 		"c,d" [label="c,d"]
-		"e,d" [label="e,d"]
 		"d,d" [label="d,d"]
 		"a,b" -> "b,c" [penwidth=0.5]
 		"a,e" -> "e,d" [penwidth=0.5]
@@ -65,7 +65,7 @@ digraph {
 		e [label=e fillcolor=red style=filled]
 		a -> e [label="count = 1.0" color=green penwidth=3.0]
 	}
-	{
+	subgraph cluster0 {
 		color=black label=Legend
 		color=black label=Legend
 		activity [label=activity fillcolor=red style=filled]
@@ -89,7 +89,5 @@ digraph {
 			text2
 			text3
 		}
-	}
-	subgraph cluster0 {
 	}
 }

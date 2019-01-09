@@ -100,33 +100,17 @@ def build_automata_pro():
                 ServerLogging().log_error(func_name, "server", "Exception raised while creating dictionary_case")
                 raise ThreadException(traceback.format_exc())
 
-
-    # TODO: Jingjing-This join can be done after adding end event！
-    try:
-        for th in threads:
-            th.join_with_exception()
-    except Exception:
-        ServerLogging().log_error(func_name, "server", "Exception while joining threads")
-        raise ThreadException(traceback.format_exc())
-    else:
-        threads_index = 0
-        threads = []
-        ServerLogging().log_info(func_name, "server", "All events thread join successful, begin end event")
-        threads = []
-        threads_index = 0
-        for item in C.dictionary_cases:
-            end_event = {}
-            end_event['activity'] = '~!@#$%'
-            end_event['case_id'] = item
-            C.dictionary_cases.get(end_event['case_id']).append(end_event['activity'])
-            thread = case_thread.CaseThreadForTraining(end_event, threads_index, T, C)
-            thread.start()
-            T.dictionary_threads[threads_index] = thread
-            threads.append(thread)
-            threads_index = threads_index + 1
+    for item in C.dictionary_cases:
+        end_event = {'activity': '~!@#$%', 'case_id': item}
+        C.dictionary_cases.get(end_event['case_id']).append(end_event['activity'])
+        thread = case_thread.CaseThreadForTraining(end_event, threads_index, T, C)
+        thread.start()
+        T.dictionary_threads[threads_index] = thread
+        threads.append(thread)
+        threads_index = threads_index + 1
     for th in threads:
         try:
             th.join_with_exception()
         except ThreadException:
-            ServerLogging().log_error(func_name, "server", "End event join not successful")
-            raise ThreadException('endevent'+traceback.format_exc())
+            ServerLogging().log_error(func_name, "server", "Joining is not successful")
+            raise ThreadException(traceback.format_exc())
