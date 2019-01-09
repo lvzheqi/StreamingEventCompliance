@@ -126,9 +126,10 @@ def main(argv):
         except Exception:
             pass
 
-        if services == '1':
+        if services == '1' and len(argv) == 2:
             redo = '1'
             ClientLogging().log_info(func_name, argv[0], 'The user selected option 1')
+
             if client.cc_status:
                 console.secure('Warning', 'You have already done the compliance check! Do you really want to'
                                           ' restart? Or do you want to render the deviation pdf?')
