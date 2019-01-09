@@ -42,4 +42,4 @@ if __name__ == '__main__':
         print("Automata have been created in database and read out! You can use it do compliance checking!")
         ServerLogging().log_info(func_name, "Automata have been created in database and read out")
     app.debug = False
-    app.run()
+    app.run(host="0.0.0.0", port=5000)
