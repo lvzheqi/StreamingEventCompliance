@@ -136,21 +136,23 @@ def create_source_sink_node(windowsMemory, client_uuid, event, thread_id):
 
 
 def check_alert(windowsize, source_node, sink_node, client_uuid, event, thread_id):
-    '''
+    """
         This function takes sink_node, source_node and checks if the automata of 'windowsize'
         has any source_node and sink_node that matches tbe source_node, sink_node  passed. If
         there is a match then checks for its probability ,if probability below than threshold or
         no match found then it inserts data to Alertlog object and returns an alert messsage
         The automata is retrieved directly from 'autos' variable rather than db. This autos
         variable was initialized when automata was built using training set
+
         :param windowsize: The length of the automata node.
-        :param sink_node: the combination of event that we want to check the compliance for and
+        :param sink_node: The combination of event that we want to check the compliance for and
                the additional events(based on window size)
         :param client_uuid: user name
-        :param event: the event for which the compliance is being checked
+        :param event: :dict: the event for which the compliance is being checked
         :param thread_id: the id of the thread that is running the compliance check
         :return: alert message
-    '''
+    """
+
     lock_list = CAL.c_alerts_lock_list.get(client_uuid)
     func_name = sys._getframe().f_code.co_name
     try:

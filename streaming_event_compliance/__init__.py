@@ -7,12 +7,12 @@ console.setVerbosity(5)
 app = Flask(__name__)
 
 # Default Configuration:
-DATABASE_PATH = 'mysql+pymysql://root:root@docker.for.mac.host.internal/test'
+# DATABASE_PATH = 'mysql+pymysql://root:root@docker.for.mac.host.internal/test'
+DATABASE_PATH = 'mysql+pymysql://compliancechecker:compliancechecker@localhost/compliancechecker'
 app.config['LOG_LEVEL'] = 'DEBUG'
 app.config['LOG_FORMAT'] = '%(asctime)-15s %(message)s'
 app.config['BASE_DIR'] = os.path.dirname(__file__) + os.sep + '..' + os.sep
-# app.config['BASE_DIR'] = ''
-print(os.path.dirname(__file__) + os.sep + '..' + os.sep)
+# app.config['BASE_DIR'] = '/StreamingEventCompliance/'
 app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_PATH
 app.config['AUTOS_DEFAULT'] = False
 app.config['THRESHOLD'] = 0.2

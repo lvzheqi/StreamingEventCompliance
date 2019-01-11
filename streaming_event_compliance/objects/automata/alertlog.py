@@ -32,8 +32,15 @@ class AlertLog:
 
 
 class Client(db.Model):
-    __tablename__ = 'Client'
+    """
+    Description:
+        This class describes the attributes of the Client(corresponding the column of the table 'Client' in database).
 
+    Class Variables:
+    client_name: :`string` the client_id.
+    status: :`boolean`
+    """
+    __tablename__ = 'Client'
     client_name = db.Column('client_name', db.String(350), primary_key=True, unique=True)
     status = db.Column('status', db.Boolean)
 
@@ -46,8 +53,19 @@ class Client(db.Model):
 
 
 class AlertRecord(db.Model):
-    __tablename__ = 'AlertRecord'
+    """
+    Description:
+        This class describes the attributes of the AlertRecord(corresponding the column of the table 'AlertRecord'
+        in database).
 
+    Class Variables:
+    client_id: :`string` the client_id.
+    source_node: :`string` the source_node name.
+    sink_node: :`string` the sink_node name.
+    alert_cause: :`string` alert type {T, M}.
+    alert_count: :`float` the number of occurrences of the alert.
+    """
+    __tablename__ = 'AlertRecord'
     client_id = db.Column('client_id', db.String(250), db.ForeignKey('Client.client_name'),
                         primary_key=True)
     source_node = db.Column('source_node', db.String(250), primary_key=True)
