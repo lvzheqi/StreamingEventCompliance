@@ -1,4 +1,4 @@
-from streaming_event_compliance.objects.variable.globalvar import gVars, T, C, CL, CCM, CTM, CAL
+from streaming_event_compliance.objects.variable.globalvar import gVars, C, CL, CCM, CTM, CAL
 from streaming_event_compliance.database import dbtools
 from streaming_event_compliance.objects.automata import alertlog
 from streaming_event_compliance import app
@@ -19,7 +19,6 @@ def init_client_alert_automata(uuid):
 
 
 def clear_build_automata_memorizer():
-    T.clear_memorizer()
     C.clear_memorizer()
     CL.clear_memorizer()
 
