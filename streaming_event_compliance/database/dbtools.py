@@ -8,6 +8,10 @@ WINDOW_SIZE = app.config['WINDOW_SIZE']
 
 
 def empty_tables():
+    """
+    Description:
+    :return:
+    """
     db.session.query(automata.Connection).delete()
     db.session.query(automata.Node).delete()
     db.session.query(alertlog.AlertRecord).delete()

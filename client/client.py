@@ -21,8 +21,8 @@ class Client_cls(object):
         func_name = sys._getframe().f_code.co_name
         try:
             ClientLogging().log_info(func_name, self.uuid,
-                                     'Post request to server:http://127.0.0.1:5000/login?uuid=' + self.uuid)
-            r = requests.post('http://127.0.0.1:5000/login?uuid=' + self.uuid)
+                                     'Post request to server:http://0.0.0.0:5000/login?uuid=' + self.uuid)
+            r = requests.post('http://0.0.0.0:5000/login?uuid=' + self.uuid)
             if r.status_code != 200:
                 raise ServerRequestException('The user can not be created.')
             else:
@@ -55,18 +55,18 @@ class Client_cls(object):
         func_name = sys._getframe().f_code.co_name
         try:
             ClientLogging().log_info(func_name, self.uuid,
-                                     'Post request to http://127.0.0.1:5000/show-deviation-pdf?uuid=' + self.uuid)
-            r = requests.post('http://127.0.0.1:5000/show-deviation-pdf?uuid=' + self.uuid)
+                                     'Post request to http://0.0.0.0:5000/show-deviation-pdf?uuid=' + self.uuid)
+            r = requests.post('http://0.0.0.0:5000/show-deviation-pdf?uuid=' + self.uuid)
             if r.status_code != 200:
                 raise ConnectionException
             else:
                 if r.text != '':
                     ClientLogging().log_info(func_name, self.uuid, 'Compliance checking is done. '
                                                                    'Deviations PDF is available at '
-                                                                   'http://127.0.0.1:5000/show-deviation-pdf?uuid=' +
+                                                                   'http://0.0.0.0:5000/show-deviation-pdf?uuid=' +
                                              self.uuid)
                     console.info('The compliance checking is already done! You can get the pdf on the following link:')
-                    console.info('http://127.0.0.1:5000/show-deviation-pdf?uuid=' + self.uuid)
+                    console.info('http://0.0.0.0:5000/show-deviation-pdf?uuid=' + self.uuid)
                 else:
                     ClientLogging().log_error(func_name, self.uuid, self.uuid +
                                               ' has not done compliance checking, '
@@ -126,9 +126,10 @@ def main(argv):
         except Exception:
             pass
 
-        if services == '1':
+        if services == '1' and len(argv) == 2:
             redo = '1'
             ClientLogging().log_info(func_name, argv[0], 'The user selected option 1')
+
             if client.cc_status:
                 console.secure('[ Warning  ]', 'You have already done the compliance check! Do you really want to'
                                           ' restart? Or do you want to render the deviation pdf?')
