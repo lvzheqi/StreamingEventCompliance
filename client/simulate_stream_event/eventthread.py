@@ -19,6 +19,15 @@ class ThreadMemorizer(object):
 
 
 class EventThread(Thread):
+    '''
+        This object is for storing the threads detail that client creates for each case;
+        It stores:
+        event - It is event the thread is processing
+        index - It is the thread id that is incremented everytime a new thread created. Starting from 0
+        threadmemorizer - It is the dictionary to store some extra detail on thread
+        client_uuid - It is the id of client that is creating the thread.
+        _status_queue - It stores the status of the thread. For example - in case of exception the thread was cancelled.
+    '''
     def __init__(self, event, index, threadmemorizer, client_uuid):
         Thread.__init__(self)
         self.event = event
@@ -31,6 +40,10 @@ class EventThread(Thread):
         return self._status_queue.get()
 
     def join_with_exception(self):
+        '''
+        This function checks if there where any exceptions by checking the _status_queue.
+        If there are exceptions in queue it raises an exception based on type of error.
+        '''
         ex_info = self.wait_for_exc_info()
         if ex_info is None:
             return
@@ -41,6 +54,18 @@ class EventThread(Thread):
             raise ConnectionException
 
     def run(self):
+        '''
+        This function runs when the thread  starts.
+        It requests the server by sending client_uuid and event
+        The response returned from server is checked. Response status is not OK then raise exception
+        Else the response type is checked. The response message can be of type M,T, Error, OK
+        M indicates that the event cannot happen. There is an event missing before it
+        T indicates that the event can happen but the probability of it happening is very less(lesser than threshold)
+        Error- indicates there was error in while checking alert
+        OK- indicates there was no alert generated.
+        Based on the message type mentioned above, the alerts are displayed on the screen for user
+        :return:
+        '''
         func_name = sys._getframe().f_code.co_name
         try:
             ClientLogging().log_info(func_name, self.client_uuid, self.index, self.event['case_id'],
