@@ -8,8 +8,11 @@ from streaming_event_compliance.services.compliance_check import compliance_chec
 from streaming_event_compliance.database import dbtools
 from streaming_event_compliance.objects.exceptions.exception import ThreadException
 from streaming_event_compliance.objects.logging.server_logging import ServerLogging
-import json, traceback, sys
 from console_logging.console import Console
+import json
+import traceback
+import sys
+
 console = Console()
 console.setVerbosity(5)
 
@@ -25,6 +28,15 @@ def index():
 
 @app.route('/login', methods=['POST'])
 def call_login():
+    """
+    Description:
+        This function handles the login-request. Return refuse, if the the client has already logined.
+
+    :request param:
+            `args: uuid`: :client-id
+
+    :return: :`string` {OK, Refuse}, `flask_api.status`
+    """
     func_name = sys._getframe().f_code.co_name
     uuid = request.args.get('uuid')
     ServerLogging().log_info(func_name, "server", uuid + " is logging.")
@@ -35,12 +47,30 @@ def call_login():
     return str(check_client_stauts(uuid)), status.HTTP_200_OK
 
 
+
 @app.route('/compliance-checker', methods=['POST'])
 def call_compliance_checker():
-    '''
-    This function provides the interface to check the compliance of the event.
-    :return: status code, application/json
-    '''
+    """
+    Description:
+        This function handles the compliance-checker-request. Set the client compliance-check status to True
+        once the client to the compliance checking. And call the function
+        `streaming_event_compliance.services.compliance_checker.compliance_checker` to do the compliance
+        with the given event from the request. Return the response of the compliance checking.
+
+    :request param:
+            `args: uuid`: :client-id
+            `json`: :event
+
+    :return: :`json` {
+                        'body': other information (Mandatory)
+                        'case_id':	case id (Option)
+                        'source_node': source node of the current connection (Option)
+                        'sink_node': sink node of the current connection (Option)
+                        'cause': alert cause of the current connection
+                                    {M: missing, T: lower than threshold}(Option)
+                        'expect': expect connection (Option)
+                    }, `flask_api.status`
+    """
     func_name = sys._getframe().f_code.co_name
     uuid = request.args.get('uuid')
     response = json.dumps({'body': 'Error, something wrong!'}), status.HTTP_409_CONFLICT
@@ -76,11 +106,17 @@ def call_compliance_checker():
 
 @app.route('/show-deviation-pdf', methods=['GET', 'POST'])
 def call_show_deviation_pdf():
-    '''
-    This function will render the deviation pdf with particular client_id in the browser,
-    when the client has already done the “compliance checking”.
-    :return: status code, application/pdf
-    '''
+    """
+    Description:
+        This function handles the request `show-deviation-pdf`, call the function
+        `streaming_event_compliance.services.visualization.visualization_deviation_automata.show_deviation_pdf`
+        to create pdf and render pdf to the client.
+
+    :request param:
+            `args: uuid`: :client-id
+
+    :return: :`deviation-pdf-file`, `flask_api.status`
+    """
     func_name = sys._getframe().f_code.co_name
     client_uuid = request.args.get('uuid')
     pdf_status = visualization_deviation_automata.show_deviation_pdf(client_uuid)

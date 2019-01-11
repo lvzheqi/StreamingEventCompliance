@@ -61,8 +61,8 @@ def build_automata_pro():
         event_log.sort()
         ServerLogging().log_info(func_name, "server", "Training file processed and sorted")
     except Exception:
-        ServerLogging().log_error(func_name, "server", "Training file cannot be processed")
-        raise ReadFileException(TRAINING_EVENT_LOG_PATH)
+       ServerLogging().log_error(func_name, "server", "Training file cannot be processed")
+       raise ReadFileException(TRAINING_EVENT_LOG_PATH)
 
     global threads_index, threads
     for one_event in event_log:
