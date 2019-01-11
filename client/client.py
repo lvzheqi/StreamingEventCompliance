@@ -129,14 +129,14 @@ def main(argv):
 
     try:
         if not client.login():
-            ClientLogging().log_error(func_name, argv[0], 'The user with the same name is just doing the '
+            ClientLogging().log_error(func_name, argv[0], 'The user with the same name is currently doing the '
                                                           'compliance checking, please try it later!')
-            console.secure("Refuse", 'The user with the same name is just doing the compliance checking, '
+            console.secure("Refuse", 'The user with the same name is currently doing the compliance checking, '
                                      'please try it with other name!')
             return
     except ConnectionException as e:
         e.get_message()
-        ClientLogging().log_error(func_name, argv[0], 'The server is not available, please try it later!')
+        ClientLogging().log_error(func_name, argv[0], 'The server is not available, please try again later!')
         return
     except ServerRequestException as e:
         e.get_message()
