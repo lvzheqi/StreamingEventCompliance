@@ -64,7 +64,7 @@ class BuildingAutomataTestCase(unittest.TestCase):
         autos_manual4 = automata.Automata()
         autos_manual4.update_automata(automata.Connection('a,b,c,d', 'b,c,d,e', 1))
         autos_manuals = {1: autos_manual1, 2: autos_manual2, 3: autos_manual3, 4: autos_manual4}
-        case_thread.calcuate_connection_for_different_prefix_automata(windowsMemory)
+        case_thread.calculate_connection_for_different_prefix_automata(windowsMemory)
         for ws in app.config['WINDOW_SIZE']:
             self.assertEqual(autos_manuals[ws].get_connections(), gVars.autos[ws].get_connections())
             self.assertEqual(autos_manuals[ws].get_nodes(), gVars.autos[ws].get_nodes())
@@ -80,7 +80,7 @@ class BuildingAutomataTestCase(unittest.TestCase):
         autos_manual4 = automata.Automata()
         autos_manual4.update_automata(automata.Connection('a,b,c,d', '~!@#$%', 0))
         autos_manuals = {1: autos_manual1, 2: autos_manual2, 3: autos_manual3, 4: autos_manual4}
-        case_thread.calcuate_connection_for_different_prefix_automata(windowsMemory)
+        case_thread.calculate_connection_for_different_prefix_automata(windowsMemory)
         for ws in app.config['WINDOW_SIZE']:
             self.assertEqual(autos_manuals[ws].get_connections(), gVars.autos[ws].get_connections())
             self.assertEqual(autos_manuals[ws].get_nodes(), gVars.autos[ws].get_nodes())

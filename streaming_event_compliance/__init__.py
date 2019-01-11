@@ -30,7 +30,7 @@ app.config['CHECKING_TYPE'] = 'KEEP_ALL_EVENTS'
 app.config['SERVER_LOG_PATH'] = app.config['BASE_DIR'] + 'data' + os.sep + 'server.log'
 app.config['ALERT_TYPE'] = 'RETURN_ONE'
 
-console.secure('DEFALT', 'WINDOW_SIZE: ' + str(app.config['WINDOW_SIZE']) + '\t'
+console.secure('[ DEFALT  ]', 'WINDOW_SIZE: ' + str(app.config['WINDOW_SIZE']) + '\t'
                'CHECKING_TYPE: ' + app.config['CHECKING_TYPE'] + '\t'
                + 'ALERT_TYPE: ' + app.config['ALERT_TYPE'])
 config = configparser.ConfigParser()
@@ -58,8 +58,8 @@ if config['USER-DEFINED'].get('CHECKING_TYPE') and config['USER-DEFINED']['CHECK
 if config['USER-DEFINED'].get('ALERT_TYPE') and config['USER-DEFINED']['ALERT_TYPE'] is not '':
     app.config['ALERT_TYPE'] = config['USER-DEFINED']['ALERT_TYPE']
 
-console.secure("PATH", app.config['TRAINING_EVENT_LOG_PATH'])
-console.secure('USER-DEFINED', 'WINDOW_SIZE: ' + str(app.config['WINDOW_SIZE']) + '\t' +
+console.secure("[ PATH  ]", app.config['TRAINING_EVENT_LOG_PATH'])
+console.secure('[ USER-DEFINED  ]', 'WINDOW_SIZE: ' + str(app.config['WINDOW_SIZE']) + '\t' +
                'MAXIMUN_WINDOW_SIZE: ' + str(app.config['MAXIMUN_WINDOW_SIZE']) + '\t'
                'CHECKING_TYPE: ' + app.config['CHECKING_TYPE'] + '\t'
                + 'ALERT_TYPE: ' + app.config['ALERT_TYPE'])
