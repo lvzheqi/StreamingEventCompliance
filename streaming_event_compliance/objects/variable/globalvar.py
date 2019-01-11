@@ -172,6 +172,7 @@ class ClientCaseMemorizer(Singleton):
 class ClientAlertsLocker(Singleton):
     """
     Description:
+        This class is for storing the locks for each alert.
 
     Instance Variables:
     c_alerts_lock_list: :`dict`={`string`: {`tuple`: `threading.RLock`}}

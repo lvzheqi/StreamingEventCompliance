@@ -47,12 +47,12 @@ def build_automata():
 
 
 def build_automata_pro():
-    '''
+    """
+    Description:
         Reads the training event logger from database.config.TRAINING_EVENT_LOG_PATH and build automata.
         It generates the probability between SourceNode and SinkNode with different prefix size
         and stores corresponding information into the database.
-    :return:
-    '''
+    """
     func_name = sys._getframe().f_code.co_name
     try:
         trace_log = xes_importer.import_log(TRAINING_EVENT_LOG_PATH)
