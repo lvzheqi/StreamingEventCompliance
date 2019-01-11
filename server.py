@@ -3,9 +3,11 @@ import time, traceback
 from streaming_event_compliance.objects.logging.server_logging import ServerLogging
 from streaming_event_compliance.objects.exceptions.exception import ThreadException, ReadFileException
 from console_logging.console import Console
+import sys
+
+
 console = Console()
 console.setVerbosity(5)
-import sys
 
 
 if __name__ == '__main__':
@@ -41,5 +43,5 @@ if __name__ == '__main__':
     else:
         print("Automata have been created in database and read out! You can use it do compliance checking!")
         ServerLogging().log_info(func_name, "Automata have been created in database and read out")
-    app.debug = False
-    app.run(host="0.0.0.0", port=5000)
+    # app.debug = False
+    app.run(host="0.0.0.0", port=5000, debug=True, use_reloader=False)
