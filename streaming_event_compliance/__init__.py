@@ -9,7 +9,7 @@ app = Flask(__name__)
 # Default Configuration:
 deploy = True
 if deploy:
-    DATABASE_PATH = 'mysql+pymysql://root:root@docker.for.mac.host.internal/test'
+    DATABASE_PATH = 'mysql+pymysql://root:root@docker.for.mac.host.internal/compliancechecker'
     app.config['BASE_DIR'] = '/StreamingEventCompliance/'
 
 else:
