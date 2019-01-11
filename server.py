@@ -36,7 +36,7 @@ if __name__ == '__main__':
             print(ec.get_message())
             ServerLogging().log_error(func_name, "Error with threads")
         ends = time.clock()
-        console.secure("The Total Time:", str(ends - start) + "Seconds.")
+        console.secure("[ The Total Time  ]", str(ends - start) + "Seconds.")
 
     else:
         print("Automata have been created in database and read out! You can use it do compliance checking!")
