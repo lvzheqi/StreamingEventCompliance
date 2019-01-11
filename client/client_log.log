@@ -13128,3 +13128,5 @@
 2019-01-11 14:55:47,230  ERROR sabclient run Thread:0 Case_id:Case1.0 Activity:a 'The server got disconnected, please try again later '
 2019-01-11 14:55:47,246  ERROR sabclient main 'Server is not available'
 2019-01-11 14:55:47,261  INFO sabclient main 'The options are displayed'
+2019-01-11 15:01:28,808  INFO sabclient main 'The user selected option 3'
+2019-01-11 15:01:28,823  INFO sabclient main 'Exiting...'

@@ -3,6 +3,9 @@ from streaming_event_compliance import app
 from streaming_event_compliance.services import setup
 from graphviz import Digraph
 import os
+import sys
+from streaming_event_compliance.objects.logging.server_logging import ServerLogging
+
 
 CLEINT_DATA_PATH = app.config['CLEINT_DATA_PATH']
 AUTOMATA_FILE = app.config['AUTOMATA_FILE']
@@ -12,6 +15,19 @@ THRESHOLD = app.config['THRESHOLD']
 
 
 def visualization_automata(autos, alogs, uuid):
+    """
+    Description:
+        This function takes the automata and alertlog information to create a corresponding deviation pdf
+        <client_uuid>_automata.pdf and save in p_automata file.
+
+    :param autos: :`dict`={int: class `streaming_event_compliance.object.automata.Automata`}: {window size: the automata
+    used to do compliance checking}
+    :param alogs: :`dict`={int: class `streaming_event_compliance.object.automata.Alertlog`}: {window size: the alertlog
+    used to stored the alert-information}
+    :param uuid: :`string` client-id
+    """
+    func_name = sys._getframe().f_code.co_name
+    ServerLogging().log_info(func_name, uuid, "Start to render pdf....")
     viz = Digraph(comment='probability_automata', format='pdf', engine='dot')
     viz.format = 'pdf'
     viz.attr('node', fixedsize='true', width='0.7')
@@ -40,13 +56,11 @@ def visualization_automata(autos, alogs, uuid):
                     sub.edge(record.source_node, record.sink_node, color='green', label='count = ' + str(record.alert_count),
                              penwidth=str(record.alert_count / max_count * 3))
 
+    ServerLogging().log_info(func_name, uuid, "Start to render pdf legend....")
     with viz.subgraph(name='cluster0') as sub:
-        # sub.attr(color='black', label='Legend')
         legend(sub)
-        # [fixedsize = true, width = 0.75]
-        # viz.subgraph(sub)
+    ServerLogging().log_info(func_name, uuid, "Finish rendering pdf")
     viz.render(filename=uuid + '_' + AUTOMATA_FILE, directory=CLEINT_DATA_PATH, view=False, cleanup=False)
-    return viz
 
 
 def legend(sub):
@@ -85,16 +99,30 @@ def legend(sub):
 
 
 def show_deviation_pdf(uuid):
-    '''
-    Returns the file “<client_uuid>_deviations.pdf”  if present in the local.
-    Else if no file present with that name then, this function calls the build_deviation_pdf(client_uuid) to create a pdf
-    :param client_uuid: user name
-    '''
+    """
+    Description:
+        This function checks if deviation_pdf exists. If the pdf exists, then return 1.
+        If not, init alert-information from database and use function `visualization_automata`
+        to create pdf. Return 0, if there are no information about this client in database.
+        Otherwise, return 1.
+
+    :param uuid: :`string`: client-id
+
+    :return: :int: {0: not created, 1: created successfully}
+    """
+    func_name = sys._getframe().f_code.co_name
     path = CLEINT_DATA_PATH + uuid + '_' + AUTOMATA_FILE + FILE_TYPE
+    ServerLogging().log_info(func_name, uuid, "Check, whether PDF Path exists")
     if not os.path.exists(path):
+        ServerLogging().log_info(func_name, uuid, "PDF exists not, init alertlog if not exist")
         alogs, status = setup.init_client_alert_automata(uuid)
         if status == 1:
+            ServerLogging().log_info(func_name, uuid, "PDF exists not, create again using alertlog")
             visualization_automata(gVars.autos, alogs, uuid)
+            ServerLogging().log_info(func_name, uuid, "PDF is created successfully")
+        else:
+            ServerLogging().log_info(func_name, uuid, "Alertlog exists not, can't create PDF")
         return status
     else:
+        ServerLogging().log_info(func_name, uuid, "PDF exists, don't need to create again")
         return 1
