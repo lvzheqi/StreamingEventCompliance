@@ -13,7 +13,8 @@ DATABASE_PATH = 'mysql+pymysql://compliancechecker:compliancechecker@localhost/c
 app.config['LOG_LEVEL'] = 'DEBUG'
 app.config['LOG_FORMAT'] = '%(asctime)-15s %(message)s'
 app.config['BASE_DIR'] = os.path.dirname(__file__) + os.sep + '..' + os.sep
-# app.config['BASE_DIR'] = '/StreamingEventCompliance/'
+# app.config['BASE_DIR'] = ''
+print(os.path.dirname(__file__) + os.sep + '..' + os.sep)
 app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_PATH
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['AUTOS_DEFAULT'] = False

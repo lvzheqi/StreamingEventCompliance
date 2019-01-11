@@ -11,13 +11,28 @@ console.setVerbosity(5)
 
 
 class Client_cls(object):
+    """
+    Description:
+        This class stores details regarding each client.
+        The variables initialized are:
+        path                :The path of the trace log file
+        uuid                :It is the username of the user that has initiated the client
+        cc_status           :compliance checked status for the client. It is true if the compliance check
+                             is already done for uuid and false otherwise
+    """
     def __init__(self, user_name, path=None):
-        self.dictionary_threads = {}
         self.path = path
         self.uuid = user_name
         self.cc_status = False
 
     def login(self):
+        """
+        Description:
+            This function sends a request to server and checks if the user with uuid is allowed to proceed further.
+        :return: True/False :If the uuid is being used by other client this function returns false.
+                             If uuid already exists in server database and compliance checking is done then returns true
+                             If uuid doesn't exists in server database then returns true
+        """
         func_name = sys._getframe().f_code.co_name
         try:
             ClientLogging().log_info(func_name, self.uuid,
@@ -38,6 +53,10 @@ class Client_cls(object):
             raise ConnectionException
 
     def run_compliance_checker(self):
+        """
+        Description:
+            This function initiates the reading of trace log and simulates the streaming event.
+        """
         func_name = sys._getframe().f_code.co_name
         try:
             ClientLogging().log_info(func_name, self.uuid, 'Calling read_log()')
@@ -52,6 +71,10 @@ class Client_cls(object):
             raise ThreadException(traceback.format_exc())
 
     def run_show_deviation_pdf(self):
+        """
+        Description:
+           This function requests the server to render pdf with alerts
+        """
         func_name = sys._getframe().f_code.co_name
         try:
             ClientLogging().log_info(func_name, self.uuid,
@@ -71,13 +94,21 @@ class Client_cls(object):
                     ClientLogging().log_error(func_name, self.uuid, self.uuid +
                                               ' has not done compliance checking, '
                                               'hence warning generated to first do compliance checking')
-                    console.secure("Warning", "You have not do the compliance checking, "
-                                              "please do the compliance checking at first!.")
+                    console.secure("Warning", "You have not done the compliance checking, "
+                                              "please do the compliance checking first!.")
         except Exception:
             raise ServerRequestException('PDF can not be created.')
 
 
 def main(argv):
+    """
+    Description:
+        This function is initially called when the client is run.
+        Based on the number of command line arguments provided this function invokes other functions.
+    :param argv: This depends on how many command line arguments were provided while initiating the client
+                No of arguments sent = 1 then, it is the username
+                No of arguments sent = 2 then, it is the username and trace log path
+    """
     func_name = sys._getframe().f_code.co_name
 
     if len(argv) >= 3 or len(argv) < 1:
@@ -98,14 +129,14 @@ def main(argv):
 
     try:
         if not client.login():
-            ClientLogging().log_error(func_name, argv[0], 'The user with the same name is just doing the '
+            ClientLogging().log_error(func_name, argv[0], 'The user with the same name is currently doing the '
                                                           'compliance checking, please try it later!')
-            console.secure("Refuse", 'The user with the same name is just doing the compliance checking, '
+            console.secure("Refuse", 'The user with the same name is currently doing the compliance checking, '
                                      'please try it with other name!')
             return
     except ConnectionException as e:
         e.get_message()
-        ClientLogging().log_error(func_name, argv[0], 'The server is not available, please try it later!')
+        ClientLogging().log_error(func_name, argv[0], 'The server is not available, please try again later!')
         return
     except ServerRequestException as e:
         e.get_message()
