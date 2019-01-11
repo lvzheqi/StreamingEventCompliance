@@ -2,7 +2,8 @@ from simulate_stream_event import eventlog, config
 from simulate_stream_event.client_logging import ClientLogging
 from simulate_stream_event.exception import ReadFileException, ConnectionException, ServerRequestException, ThreadException
 from multiprocessing import Process
-import sys, traceback
+import sys
+import traceback
 import requests
 import os
 from console_logging.console import Console
@@ -14,11 +15,12 @@ class Client_cls(object):
     """
     Description:
         This class stores details regarding each client.
-        The variables initialized are:
-        path                :The path of the trace log file
-        uuid                :It is the username of the user that has initiated the client
-        cc_status           :compliance checked status for the client. It is true if the compliance check
-                             is already done for uuid and false otherwise
+
+    Instance Variables:
+    path: :`string` the path of the trace log file
+    uuid: :`string` username of the user that has initiated the client
+    cc_status: :`bool` compliance checked status for the client. It is true if the compliance check
+                         is already done for uuid and false otherwise
     """
     def __init__(self, user_name, path=None):
         self.path = path
@@ -29,8 +31,10 @@ class Client_cls(object):
         """
         Description:
             This function sends a request to server and checks if the user with uuid is allowed to proceed further.
-        :return: True/False :If the uuid is being used by other client this function returns false.
-                             If uuid already exists in server database and compliance checking is done then returns true
+
+        :return: bool :If the uuid is being used by other client this function returns false.
+                             If uuid already exists in server database and compliance checking is done
+                             then returns true
                              If uuid doesn't exists in server database then returns true
         """
         func_name = sys._getframe().f_code.co_name
@@ -105,6 +109,7 @@ def main(argv):
     Description:
         This function is initially called when the client is run.
         Based on the number of command line arguments provided this function invokes other functions.
+
     :param argv: This depends on how many command line arguments were provided while initiating the client
                 No of arguments sent = 1 then, it is the username
                 No of arguments sent = 2 then, it is the username and trace log path
@@ -185,12 +190,12 @@ def main(argv):
                 except ReadFileException as e:
                     e.get_message()
                     ClientLogging().log_error(func_name, argv[0], 'Input file is not readable!')
-                    console.secure('Warning',
+                    console.secure('[ Warning  ]',
                                    '------------------the compliance checking is interrupt------------------------')
                 except KeyboardInterrupt:
                     client.cc_status = False
                     ClientLogging().log_error(func_name, argv[0], 'Compliance checking is interrupted by user')
-                    console.secure('Warning',
+                    console.secure('[ Warning  ]',
                                    '------------------the compliance checking is interrupt------------------------')
                 except ThreadException as e:
                     client.cc_status = False
@@ -202,19 +207,19 @@ def main(argv):
                     client.cc_status = False
                     e.get_message()
                     ClientLogging().log_error(func_name, argv[0], 'Server is not available')
-                    console.secure('Warning',
+                    console.secure('[ Warning  ]',
                                    '------------------the compliance checking is interrupt------------------------')
             elif redo == '2':
                 ClientLogging().log_info(func_name, argv[0], 'The user selected option 2')
                 pass
             else:
                 ClientLogging().log_error(func_name, argv[0], 'The users input is invalid')
-                console.secure('Warning', 'Your input is invalid, please try again!')
+                console.secure('[ Warning  ]', 'Your input is invalid, please try again!')
                 print('------------------------------------------------------------------------------')
 
         elif services == '2':
             if not client.cc_status:
-                console.secure('Warning',
+                console.secure('[ Warning  ]',
                                'You have not done the compliance checking. Please do the compliance checking ahead!')
                 print('------------------------------------------------------------------------------')
             else:
@@ -239,7 +244,7 @@ def main(argv):
             return
         else:
             ClientLogging().log_error(func_name, argv[0], 'The users input is invalid')
-            console.secure('Warning', 'Your input is invalid, please try again!')
+            console.secure('[ Warning  ]', 'Your input is invalid, please try again!')
             print('------------------------------------------------------------------------------')
 
 

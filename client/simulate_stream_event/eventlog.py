@@ -16,10 +16,11 @@ index = 0
 def read_log(client_uuid, path):
     """
     Description:
-        This function reads the log file provided by the user. It reads it, converts to event log file and then sorts it.
-    :param client_uuid::str: It is the username of the user that has initiated the client
-    :param path::str: It is the trace log path provided by user while running the client
-    :return: event_log::list: It is sorted event logs
+        This function reads the log file provided by the user. It reads it, converts to event log file
+        and then sorts it.
+    :param client_uuid: :`string`  It is the username of the user that has initiated the client
+    :param path: :`string` It is the trace log path provided by user while running the client
+    :return: `list` It is sorted event logs
     """
     func_name = sys._getframe().f_code.co_name
     try:
@@ -39,8 +40,9 @@ def simulate_stream_event(client_uuid, event_log):
     Description:
         This function uses the event log converts each event into a dict with keys as 'activity' and 'case_id'
         and calls the invoke_event_thread function for each event dict.
-    :param client_uuid::str: It is the username of the user that has initiated the client
-    :param event_log::list: It is a list of all the events in the sorted form
+
+    :param client_uuid: :`string` It is the username of the user that has initiated the client
+    :param event_log: :`list` It is a list of all the events in the sorted form
     """
     func_name = sys._getframe().f_code.co_name
     for event in event_log:
@@ -72,9 +74,10 @@ def invoke_event_thread(event, client_uuid):
         This function starts a thread for each event.
         Index indicates a thread_id. Everytime a thread is created the index is
         incremented by 1 to get new thread_id for the next event.
+
     :param event: :`dict`={'case_id': `string`, 'activity': `string`}
-    :param client_uuid::str: It is the username of the user that has initiated the client
-    :return: event_thread::class client.simulate_stream_event.eventlog.EventThread : It is the class for the thread
+    :param client_uuid: :`string` It is the username of the user that has initiated the client
+    :return: :class `client.simulate_stream_event.eventlog.EventThread` It is the class for the thread
     """
     global index
     func_name = sys._getframe().f_code.co_name

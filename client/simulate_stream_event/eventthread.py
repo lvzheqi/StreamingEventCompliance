@@ -23,12 +23,13 @@ class EventThread(Thread):
     """
      Description:
         This class is used for storing the threads details that client creates for each event;
-        It stores:
-        event - Event the thread is processing. It is of the form :`dict`={'case_id': `string`, 'activity': `string`}
-        index - It is the thread id that is incremented everytime a new thread created. Starting from 0
-        threadmemorizer - It is the dictionary to store some extra details of thread
-        client_uuid - It is the username of the user that has initiated the client
-        _status_queue - It stores the status of the thread. For example - in case of exception the thread was cancelled.
+
+     Instance Variables:
+        event: :`dict`={'case_id': `string`, 'activity': `string`} Event the thread is processing
+        index: :int, It is the thread id that is incremented everytime a new thread created, starting from 0
+        threadmemorizer: class `ThreadMemorizer` It is the dictionary to store some extra details of thread
+        client_uuid: :`string` It is the username of the user that has initiated the client
+        _status_queue: `Queue` It stores the status of the thread. For example - in case of exception the thread was cancelled.
     """
     def __init__(self, event, index, threadmemorizer, client_uuid):
         Thread.__init__(self)
@@ -42,7 +43,7 @@ class EventThread(Thread):
         """
         Description:
             It returns the data available in _status_queue
-        :return: status::str
+        :return: :`string` status
         """
         return self._status_queue.get()
 
@@ -117,7 +118,7 @@ class EventThread(Thread):
                     elif 'Error' in message['body']:
                         console.error(message['body'])
                     elif message['body'] != 'OK':
-                        console.info('Info:' + message['body'])
+                        console.info(message['body'])
                     self._status_queue.put(None)
         except Exception as ec:
             console.error('Exception - in thread' + traceback.format_exc())
