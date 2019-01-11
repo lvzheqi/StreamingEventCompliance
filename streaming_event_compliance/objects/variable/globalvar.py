@@ -103,7 +103,7 @@ class ClientThreadMemorizer(Singleton):
         self.dictionary_threads = {}
 
     def init_client_memorizer(self, uuid):
-        self.dictionary_threads[uuid] = {}
+        self.dictionary_threads[uuid] = []
 
     def __setattr__(self, name: str, value: Any) -> None:
         super().__setattr__(name, value)

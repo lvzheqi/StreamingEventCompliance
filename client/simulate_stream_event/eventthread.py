@@ -46,7 +46,7 @@ class EventThread(Thread):
             ClientLogging().log_info(func_name, self.client_uuid, self.index, self.event['case_id'],
                                      self.event['activity'],
                                      'Posting event to server:http://127.0.0.1:5000/compliance-checker')
-            response = requests.post('http://127.0.0.1:5000/compliance-checker?uuid=' + self.client_uuid,
+            response = requests.post('http://0.0.0.0:5000/compliance-checker?uuid=' + self.client_uuid,
                               json=json.dumps(self.event))
             if response.status_code != 200:
                 ClientLogging().log_error(func_name, self.client_uuid, self.index, self.event['case_id'],

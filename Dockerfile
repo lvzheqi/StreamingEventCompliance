@@ -12,3 +12,4 @@ EXPOSE 5000
 #COPY server.py /StreamingEventCompliance
 CMD python server.py
 
+

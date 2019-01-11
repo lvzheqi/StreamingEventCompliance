@@ -22,7 +22,7 @@ class Client_cls(object):
         try:
             ClientLogging().log_info(func_name, self.uuid,
                                      'Post request to server:http://127.0.0.1:5000/login?uuid=' + self.uuid)
-            r = requests.post('http://127.0.0.1:5000/login?uuid=' + self.uuid)
+            r = requests.post('http://0.0.0.0:5000/login?uuid=' + self.uuid)
             if r.status_code != 200:
                 raise ServerRequestException('The user can not be created.')
             else:
@@ -56,7 +56,7 @@ class Client_cls(object):
         try:
             ClientLogging().log_info(func_name, self.uuid,
                                      'Post request to http://127.0.0.1:5000/show-deviation-pdf?uuid=' + self.uuid)
-            r = requests.post('http://127.0.0.1:5000/show-deviation-pdf?uuid=' + self.uuid)
+            r = requests.post('http://0.0.0.0:5000/show-deviation-pdf?uuid=' + self.uuid)
             if r.status_code != 200:
                 raise ConnectionException
             else:
