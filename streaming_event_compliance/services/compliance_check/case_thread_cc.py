@@ -57,11 +57,11 @@ class CaseThreadForCC(Thread):
         client_locks = self.CCM.lock_List.get(self.client_uuid)
         try:
             if client_locks.get(self.event['case_id']).acquire():
-                ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'],
+                ServerLogging().log_info(func_name, self.client_uuid, self.index, self.event['case_id'],
                                          self.event['activity'], "Acquiring lock")
                 windows_memory = client_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
-                response = create_source_sink_node(windows_memory, self.client_uuid, self.event)
-                ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'],
+                response = create_source_sink_node(windows_memory, self.client_uuid, self.event, self.index)
+                ServerLogging().log_info(func_name, self.client_uuid, self.index, self.event['case_id'],
                                          self.event['activity'],
                                          "Calculating response")
                 flag = True
@@ -72,27 +72,31 @@ class CaseThreadForCC(Thread):
                 if flag:
                     client_cases.get(self.event['case_id']).pop(0)
                 client_locks.get(self.event['case_id']).release()
-                ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'],
+                ServerLogging().log_info(func_name, self.client_uuid, self.index, self.event['case_id'],
                                          self.event['activity'], "Released lock")
                 self._message.put(response)
                 self._status_queue.put(None)
         except Exception as ec:
             console.error('run - ComplianceCaselock ' + traceback.format_exc())
-            ServerLogging().log_error(func_name, "server", self.index, self.event['case_id'], self.event['activity'],
+            ServerLogging().log_error(func_name, self.client_uuid, self.index, self.event['case_id'], self.event['activity'],
                                       "Error with Caselock")
             self._status_queue.put(ec)
 
 
-def create_source_sink_node(windowsMemory, client_uuid, event):
+def create_source_sink_node(windowsMemory, client_uuid, event, thread_id):
     '''
     Create sink node and source node based on prefix sizes and call function to check compliance with automata in db
     :param windowsMemory: a list of activities from the same case_id of current event(another event),
                          size is maximum_window_size,
                          and the current event is at the last position of the windowsMemory
                          (i.e. event == windowsMemory[maximum_window_size])
+    :param client_uuid: user name
+    :param event: the event for which the compliance is being checked
+    :param thread_id: the id of the thread that is running the compliance check
     :return:
     '''
     response = {}
+    func_name = sys._getframe().f_code.co_name
     try:
         for ws in WINDOW_SIZE:
             source_node = ','.join(windowsMemory[MAXIMUN_WINDOW_SIZE - ws: MAXIMUN_WINDOW_SIZE])
@@ -102,7 +106,7 @@ def create_source_sink_node(windowsMemory, client_uuid, event):
                 break
             elif source_node.find('*') != -1:
                 source_node = 'NONE'
-            matches = check_alert(ws, source_node, sink_node, client_uuid)
+            matches = check_alert(ws, source_node, sink_node, client_uuid, event, thread_id)
             if matches == 2:
                 response[ws] = {
                     'case_id': event['case_id'],
@@ -126,25 +130,31 @@ def create_source_sink_node(windowsMemory, client_uuid, event):
                 response[ws] = {'body': 'OK'}
         return response
     except Exception as ec:
+        ServerLogging().log_error(func_name, client_uuid, thread_id, event['case_id'], event['activity'], "Exception raised while creating sink_node and source_node")
         console.error('Exception from create_source_sink_node:' + traceback.format_exc())
         raise ec
 
 
-def check_alert(windowsize, source_node, sink_node, client_uuid):
-    '''
+def check_alert(windowsize, source_node, sink_node, client_uuid, event, thread_id):
+    """
         This function takes sink_node, source_node and checks if the automata of 'windowsize'
         has any source_node and sink_node that matches tbe source_node, sink_node  passed. If
         there is a match then checks for its probability ,if probability below than threshold or
         no match found then it inserts data to Alertlog object and returns an alert messsage
         The automata is retrieved directly from 'autos' variable rather than db. This autos
         variable was initialized when automata was built using training set
+
         :param windowsize: The length of the automata node.
-        :param sink_node: the combination of event that we want to check the compliance for and
+        :param sink_node: The combination of event that we want to check the compliance for and
                the additional events(based on window size)
         :param client_uuid: user name
+        :param event: :dict: the event for which the compliance is being checked
+        :param thread_id: the id of the thread that is running the compliance check
         :return: alert message
-    '''
+    """
+
     lock_list = CAL.c_alerts_lock_list.get(client_uuid)
+    func_name = sys._getframe().f_code.co_name
     try:
         alert_log = gVars.get_client_alert_logs(client_uuid)[windowsize]
         auto = gVars.autos[windowsize]
@@ -157,6 +167,8 @@ def check_alert(windowsize, source_node, sink_node, client_uuid):
                     if lock_list.get((source_node, sink_node)).acquire():
                         alert_log.update_alert_record(
                             alertlog.AlertRecord(client_uuid, source_node, sink_node, 1, 'T'))
+                        ServerLogging().log_error(func_name, client_uuid, thread_id, event['case_id'], event['activity'],
+                                                  "Alert raised as probability of connection between "+source_node +" and " + sink_node + " is lesser than threshold")
                         lock_list.get((source_node, sink_node)).release()
                         return 1
                 else:
@@ -165,6 +177,8 @@ def check_alert(windowsize, source_node, sink_node, client_uuid):
                     if lock_list.get((source_node, sink_node)).acquire():
                         alert_log.update_alert_record(
                             alertlog.AlertRecord(client_uuid, source_node, sink_node, 1, 'T'))
+                        ServerLogging().log_error(func_name, client_uuid, thread_id, event['case_id'], event['activity'],
+                                                  "Alert raised as probability of connection between " + source_node + " and " + sink_node + " is lesser than threshold")
                         lock_list.get((source_node, sink_node)).release()
                         return 1
         elif source_node == 'NONE' and auto.contains_source_node(sink_node):
@@ -173,6 +187,8 @@ def check_alert(windowsize, source_node, sink_node, client_uuid):
             if lock_list.get((source_node, sink_node)):
                 if lock_list.get((source_node, sink_node)).acquire():
                     alert_log.update_alert_record(alertlog.AlertRecord(client_uuid, source_node, sink_node, 1, 'M'))
+                    ServerLogging().log_error(func_name, client_uuid, thread_id, event['case_id'], event['activity'],
+                                              "Alert raised as there should not be connection between " + source_node + " and " + sink_node)
                     lock_list.get((source_node, sink_node)).release()
                     return 2
             else:
@@ -180,7 +196,10 @@ def check_alert(windowsize, source_node, sink_node, client_uuid):
                 lock_list[source_node, sink_node] = lock
                 if lock_list.get((source_node, sink_node)).acquire():
                     alert_log.update_alert_record(alertlog.AlertRecord(client_uuid, source_node, sink_node, 1, 'M'))
+                    ServerLogging().log_error(func_name, client_uuid, thread_id, event['case_id'], event['activity'],
+                                              "Alert raised as there should not be connection between " + source_node + " and " + sink_node)
                     lock_list.get((source_node, sink_node)).release()
                     return 2
     except Exception as ec:
+        ServerLogging().log_error(func_name, client_uuid, thread_id, event['case_id'], event['activity'], "Exception raised while checking alert")
         raise ec

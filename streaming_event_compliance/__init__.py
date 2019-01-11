@@ -7,10 +7,12 @@ console.setVerbosity(5)
 app = Flask(__name__)
 
 # Default Configuration:
+# DATABASE_PATH = 'mysql+pymysql://root:root@docker.for.mac.host.internal/test'
 DATABASE_PATH = 'mysql+pymysql://compliancechecker:compliancechecker@localhost/compliancechecker'
 app.config['LOG_LEVEL'] = 'DEBUG'
 app.config['LOG_FORMAT'] = '%(asctime)-15s %(message)s'
 app.config['BASE_DIR'] = os.path.dirname(__file__) + os.sep + '..' + os.sep
+# app.config['BASE_DIR'] = '/StreamingEventCompliance/'
 app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_PATH
 app.config['AUTOS_DEFAULT'] = False
 app.config['THRESHOLD'] = 0.2
@@ -22,7 +24,7 @@ app.config['TRAINING_EVENT_LOG_PATH'] = app.config['BASE_DIR'] + 'data' + os.sep
 app.config['WINDOW_SIZE'] = list(map(int, re.findall(r"\d+", '[1,2,3,4]')))
 app.config['MAXIMUN_WINDOW_SIZE'] = max(app.config['WINDOW_SIZE'])
 app.config['CHECKING_TYPE'] = 'KEEP_ALL_EVENTS'
-app.config['SERVER_LOG_PATH'] = app.config['BASE_DIR'] + os.sep + 'data' + os.sep + 'server.log'
+app.config['SERVER_LOG_PATH'] = app.config['BASE_DIR'] + 'data' + os.sep + 'server.log'
 app.config['ALERT_TYPE'] = 'RETURN_ONE'
 
 console.secure('DEFALT', 'WINDOW_SIZE: ' + str(app.config['WINDOW_SIZE']) + '\t'
