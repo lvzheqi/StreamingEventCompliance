@@ -11,16 +11,16 @@ console.setVerbosity(5)
 
 
 class ThreadMemorizer(object):
-    '''
+    """
     Description:
         This class is used for storing the threads detail that client creates for each event;
-    '''
+    """
     def __init__(self):
         self.dictionary_threads = {}
 
 
 class EventThread(Thread):
-    '''
+    """
      Description:
         This class is used for storing the threads details that client creates for each event;
         It stores:
@@ -29,7 +29,7 @@ class EventThread(Thread):
         threadmemorizer - It is the dictionary to store some extra details of thread
         client_uuid - It is the username of the user that has initiated the client
         _status_queue - It stores the status of the thread. For example - in case of exception the thread was cancelled.
-    '''
+    """
     def __init__(self, event, index, threadmemorizer, client_uuid):
         Thread.__init__(self)
         self.event = event
@@ -39,19 +39,19 @@ class EventThread(Thread):
         self._status_queue = queue.Queue()
 
     def wait_for_exc_info(self):
-        '''
+        """
         Description:
             It returns the data available in _status_queue
         :return: status::str
-        '''
+        """
         return self._status_queue.get()
 
     def join_with_exception(self):
-        '''
+        """
         Description:
             This function checks if there where any exceptions by checking the _status_queue.
             If there are exceptions in queue it raises an exception based on type of error.
-        '''
+        """
         ex_info = self.wait_for_exc_info()
         if ex_info is None:
             return
@@ -62,7 +62,7 @@ class EventThread(Thread):
             raise ConnectionException
 
     def run(self):
-        '''
+        """
         Description:
             This function runs when the thread  starts.
             It requests the server by sending client_uuid and event
@@ -73,7 +73,7 @@ class EventThread(Thread):
             Error- indicates there was error in while checking alert
             OK- indicates there was no alert generated.
             Based on the message type mentioned above, the alerts are displayed on the screen for user
-        '''
+        """
         func_name = sys._getframe().f_code.co_name
         try:
             ClientLogging().log_info(func_name, self.client_uuid, self.index, self.event['case_id'],
