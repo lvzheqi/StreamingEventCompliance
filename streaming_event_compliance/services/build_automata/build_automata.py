@@ -15,7 +15,6 @@ import sys
 console = Console()
 console.setVerbosity(5)
 
-threads = []
 threads_index = 0
 WINDOW_SIZE = app.config['WINDOW_SIZE']
 MAXIMUN_WINDOW_SIZE = app.config['MAXIMUN_WINDOW_SIZE']
@@ -24,8 +23,8 @@ TRAINING_EVENT_LOG_PATH = app.config['TRAINING_EVENT_LOG_PATH']
 
 def build_automata():
     func_name = sys._getframe().f_code.co_name
-    console.info('---------------------Start: Traininging automata starts!--------------------------------------')
-    ServerLogging().log_info(func_name, "Traininging automata starts!")
+    console.info('---------------------Start: Training automata starts!--------------------------------------')
+    ServerLogging().log_info(func_name, "Training automata starts!")
     try:
         process_ = Process(target=build_automata_pro())
         process_.start()
@@ -64,7 +63,7 @@ def build_automata_pro():
        ServerLogging().log_error(func_name, "server", "Training file cannot be processed")
        raise ReadFileException(TRAINING_EVENT_LOG_PATH)
 
-    global threads_index, threads
+    global threads_index
     for one_event in event_log:
         event = {}
         try:
@@ -82,7 +81,6 @@ def build_automata_pro():
                     thread = case_thread.CaseThreadForTraining(event, threads_index, T, C)
                     thread.start()
                     T.dictionary_threads[threads_index] = thread
-                    threads.append(thread)
                     threads_index = threads_index + 1
                 else:
                     ServerLogging().log_info(func_name, "server", event['case_id'], event['activity'], "Creating dictionary_case memorizer")
@@ -93,7 +91,6 @@ def build_automata_pro():
                     thread = case_thread.CaseThreadForTraining(event, threads_index, T, C)
                     thread.start()
                     T.dictionary_threads[threads_index] = thread
-                    threads.append(thread)
                     threads_index = threads_index + 1
             except Exception:
                 console.error('build_auto_pro:' + traceback.format_exc())
@@ -106,9 +103,8 @@ def build_automata_pro():
         thread = case_thread.CaseThreadForTraining(end_event, threads_index, T, C)
         thread.start()
         T.dictionary_threads[threads_index] = thread
-        threads.append(thread)
         threads_index = threads_index + 1
-    for th in threads:
+    for th in T.dictionary_threads.values():
         try:
             th.join_with_exception()
         except ThreadException:

@@ -1,5 +1,5 @@
 from streaming_event_compliance import app, db
-import time
+import time, traceback
 from streaming_event_compliance.objects.logging.server_logging import ServerLogging
 from streaming_event_compliance.objects.exceptions.exception import ThreadException, ReadFileException
 from console_logging.console import Console
@@ -14,7 +14,7 @@ if __name__ == '__main__':
         ServerLogging().log_info(func_name, "Created all db tables")
         db.create_all()
     except Exception as ec:
-        print('Error: Database connection!', ec.__class__)
+        print('Error: Database connection!', ec.__class__, traceback.format_exc())
         ServerLogging().log_error(func_name, "Database connection error!")
         exit(1)
 
