@@ -60,8 +60,8 @@ class ClientLogging:
             Format of logged data:
             <timestamp> INFO Username:Unknown <func_name>  <message>
 
-        :param func_name::str: This is the name of the function from where this logging event was called.
-        :param message::str: User defined custom messages
+        :param func_name: :`string` This is the name of the function from where this logging event was called.
+        :param message: :`string` User defined custom messages
         """
         message = "'" + message + "'"
         message = ' INFO ' + 'Username:Unknown ' + func_name + ' ' + message
@@ -77,9 +77,9 @@ class ClientLogging:
             Format of logged data:
             <timestamp> INFO <username> <func_name>  <message>
 
-        :param  func_name::str: This is the name of the function from where this logging event was called.
-        :param  username::str: It is the username of the user that has initiated the client
-        :param  message::str: User defined custom messages
+        :param  func_name: :`string` This is the name of the function from where this logging event was called.
+        :param  username: :`string` It is the username of the user that has initiated the client
+        :param  message: :`string` User defined custom messages
         """
         message = "'" + message + "'"
         message = ' INFO ' + username + ' ' + func_name + ' ' + message
@@ -95,11 +95,11 @@ class ClientLogging:
             Format of logged data:
             <timestamp> INFO <username> <func_name> <case_id> <activity> <<message>
 
-        :param func_name::str: This is the name of the function from where this logging event was called.
-        :param username::str: It is the username of the user that has initiated the client
-        :param case_id::str: This is the case id of  the event being processed.
-        :param activity::str: This is the activity of the event being processed.
-        :param message::str: User defined custom messages
+        :param func_name: :`string` This is the name of the function from where this logging event was called.
+        :param username: :`string` It is the username of the user that has initiated the client
+        :param case_id: :`string` This is the case id of  the event being processed.
+        :param activity: :`string` This is the activity of the event being processed.
+        :param message: :`string` User defined custom messages
         """
         message = "'" + message + "'"
         message = 'Case_id:' + case_id + ' ' + 'Activity:' + activity + ' ' + message
@@ -116,12 +116,12 @@ class ClientLogging:
             Format of logged data:
             <timestamp> INFO <username> <func_name> <case_id> <activity> <<message>
 
-        :param func_name::str: This is the name of the function from where this logging event was called.
-        :param username::str: It is the username of the user that has initiated the client
+        :param func_name: :`string` This is the name of the function from where this logging event was called.
+        :param username: :`string` It is the username of the user that has initiated the client
         :param thread_id::int: Id of the thread handling the event
-        :param case_id::str: This is the case id of  the event being processed.
-        :param activity::str: This is the activity of the event being processed.
-        :param message::str: User defined custom messages
+        :param case_id: :`string` This is the case id of  the event being processed.
+        :param activity: :`string` This is the activity of the event being processed.
+        :param message: :`string` User defined custom messages
         """
         message = "'" + message + "'"
         message = 'Thread:' + str(thread_id) + ' ' + 'Case_id:' + case_id + ' ' + 'Activity:' + activity + ' ' + message
@@ -138,8 +138,8 @@ class ClientLogging:
             Format of logged data:
             <timestamp> ERROR Username:Unknown <func_name>  <message>
 
-        :param func_name::str: This is the name of the function from where this logging event was called.
-        :param message::str: User defined custom messages
+        :param func_name: :`string` This is the name of the function from where this logging event was called.
+        :param message: :`string` User defined custom messages
         """
         message = "'" + message + "'"
         message = ' ERROR ' + 'Username:Unknown ' + func_name + ' ' + message
@@ -155,9 +155,9 @@ class ClientLogging:
             Format of logged data:
             <timestamp> ERROR <username> <func_name>  <message>
 
-        :param  func_name::str: This is the name of the function from where this logging event was called.
-        :param  username::str: It is the username of the user that has initiated the client
-        :param  message::str: User defined custom messages
+        :param  func_name: :`string` This is the name of the function from where this logging event was called.
+        :param  username: :`string` It is the username of the user that has initiated the client
+        :param  message: :`string` User defined custom messages
         """
         message = "'" + message + "'"
         message = ' ERROR ' + username + ' ' + func_name + ' ' + message
@@ -173,11 +173,11 @@ class ClientLogging:
             Format of logged data:
             <timestamp> ERROR <username> <func_name> <case_id> <activity> <<message>
 
-        :param func_name::str: This is the name of the function from where this logging event was called.
-        :param username::str: It is the username of the user that has initiated the client
-        :param case_id::str: This is the case id of  the event being processed.
-        :param activity::str: This is the activity of the event being processed.
-        :param message::str: User defined custom messages
+        :param func_name: :`string` This is the name of the function from where this logging event was called.
+        :param username: :`string` It is the username of the user that has initiated the client
+        :param case_id: :`string` This is the case id of  the event being processed.
+        :param activity: :`string` This is the activity of the event being processed.
+        :param message: :`string` User defined custom messages
         """
         message = "'" + message + "'"
         message = 'Case_id:' + case_id + ' ' + 'Activity:' + activity + ' ' + message
@@ -194,12 +194,12 @@ class ClientLogging:
             Format of logged data:
             <timestamp> ERROR <username> <func_name> <case_id> <activity> <<message>
 
-        :param func_name::str: This is the name of the function from where this logging event was called.
-        :param username::str: It is the username of the user that has initiated the client
+        :param func_name: :`string` This is the name of the function from where this logging event was called.
+        :param username: :`string` It is the username of the user that has initiated the client
         :param thread_id::int: Id of the thread handling the event
-        :param case_id::str: This is the case id of  the event being processed.
-        :param activity::str: This is the activity of the event being processed.
-        :param message::str: User defined custom messages
+        :param case_id: :`string` This is the case id of  the event being processed.
+        :param activity: :`string` This is the activity of the event being processed.
+        :param message: :`string` User defined custom messages
         """
         message = "'" + message + "'"
         message = 'Thread:' + str(thread_id) + ' ' + 'Case_id:' + case_id + ' ' + 'Activity:' + activity + ' ' + message
