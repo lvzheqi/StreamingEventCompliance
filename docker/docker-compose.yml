@@ -1,0 +1,22 @@
+version: "2"
+services:
+  mysqldb:
+    container_name: mysqldb
+    image: mysql:5.7
+    hostname: mysqldb
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: compliancechecker
+      MYSQL_PASSWORD: compliancechecker
+      MYSQL_DATABASE: compliancechecker
+
+  app:
+    container_name: compliancechecker
+    build: ./..
+    links:
+      - mysqldb
+    depends_on:
+      - mysqldb
+    ports:
+      - "5000:5000"
+
