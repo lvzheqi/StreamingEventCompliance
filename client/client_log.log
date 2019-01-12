@@ -14485,3 +14485,5 @@
 2019-01-12 21:38:33,403 windows-1255 Hebrew confidence = 0.047489559687621856
 2019-01-12 21:38:33,403  INFO cc run_show_deviation_pdf 'Compliance checking is done. Deviations PDF is available at http://127.0.0.1:5000/show-deviation-pdf?uuid=cc'
 2019-01-12 21:38:33,404  INFO cc main 'The options are displayed'
+2019-01-12 21:42:43,216  INFO cc main 'The user selected option 3'
+2019-01-12 21:42:43,217  INFO cc main 'Exiting...'

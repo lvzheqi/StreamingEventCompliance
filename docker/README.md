@@ -17,4 +17,9 @@ using docker-compose
 Execute `docker-compose up` to build and run the project directly.
 （Once the project is killed, the MySQL container will also be killed）
 
+For MAC:
+If you want to link to the database in you own computer, then set `hostname = docker.for.mac.host.internal` 
+and map container port 33060 to local MySQL port (Default 3306).
+
+
 Tip: all the commands run under this directory path.
