@@ -4,6 +4,8 @@ services:
     container_name: mysqldb
     image: mysql:5.7
     hostname: mysqldb
+#    ports:
+#      - "33060:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USER: compliancechecker
