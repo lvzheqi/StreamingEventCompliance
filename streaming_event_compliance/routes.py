@@ -12,7 +12,7 @@ from console_logging.console import Console
 import json
 import traceback
 import sys
-from flask import render_template
+
 
 console = Console()
 console.setVerbosity(5)
@@ -28,7 +28,7 @@ def index():
 
 
 @app.route("/test")
-# TODO REMOVE FOLLOWING（and templates fonder） LINE AFTER TESTING DATABASE.
+# TODO CAN REMOVE FOLLOWING AFTER TESTING DOCKER DATABASE.
 def test():
     mysql_result = False
     db.session.query("1").from_statement("SELECT 1").all()
@@ -39,12 +39,12 @@ def test():
         pass
 
     if mysql_result:
-        result = 'succ'
+        result = 'successful'
     else:
         result = 'fail'
 
     # Return the page with the result.
-    return render_template('index.html', result=result)
+    return result
 
 
 @app.route('/login', methods=['POST'])

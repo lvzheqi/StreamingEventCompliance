@@ -43,7 +43,5 @@ if __name__ == '__main__':
         print("Automata have been created in database and read out! You can use it do compliance checking!")
         ServerLogging().log_info(func_name, "Automata have been created in database and read out")
 
-    # # TODO change FOLLOWING LINE AFTER TESTING COMPLETE.
     app.debug = False
-    # app.run(host="0.0.0.0", port=5000, debug=True, use_reloader=False)
-    app.run(host="0.0.0.0", port=80)
+    app.run(host="0.0.0.0", port=5000, debug=True, use_reloader=False)
