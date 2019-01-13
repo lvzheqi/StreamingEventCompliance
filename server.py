@@ -4,14 +4,13 @@ from streaming_event_compliance.objects.logging.server_logging import ServerLogg
 from streaming_event_compliance.objects.exceptions.exception import ThreadException, ReadFileException
 from console_logging.console import Console
 import sys
-
-
 console = Console()
 console.setVerbosity(5)
 
-
 if __name__ == '__main__':
     func_name = sys._getframe().f_code.co_name
+
+
     try:
         ServerLogging().log_info(func_name, "Created all db tables")
         db.create_all()
@@ -43,5 +42,8 @@ if __name__ == '__main__':
     else:
         print("Automata have been created in database and read out! You can use it do compliance checking!")
         ServerLogging().log_info(func_name, "Automata have been created in database and read out")
-    # app.debug = False
-    app.run(host="0.0.0.0", port=5000, debug=True, use_reloader=False)
+
+    # # TODO change FOLLOWING LINE AFTER TESTING COMPLETE.
+    app.debug = False
+    # app.run(host="0.0.0.0", port=5000, debug=True, use_reloader=False)
+    app.run(host="0.0.0.0", port=80)

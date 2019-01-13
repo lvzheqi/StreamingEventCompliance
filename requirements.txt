@@ -32,3 +32,4 @@ SQLAlchemy==1.2.15
 termcolor==1.1.0
 urllib3==1.24.1
 Werkzeug==0.14.1
+configparser==3.5.0
