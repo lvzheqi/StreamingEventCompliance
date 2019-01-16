@@ -4,11 +4,11 @@
 #### Method 1
 1. Run `sh build-run-db.sh` to pull the mysql:5.7 database and create `mysqldb` container.
 
-2. Run `sh build-compliancechecker` to build `streameventcompliance` image.
+2. Run `sh build-compliancechecker.sh` to build `streameventcompliance` image.
 
-3. Run `sh run-compliancechecker` to create `compliancechecker` container.
+3. Run `sh run-compliancechecker.sh` to create `compliancechecker` container.
 
-(4.) Run `sh clean-compliancechecker` to stop and remove `compliancechecker` container.
+(4.) Run `sh clean-compliancechecker.sh` to stop and remove `compliancechecker` container.
 
 
 #### Method 2
