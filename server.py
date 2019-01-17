@@ -32,10 +32,10 @@ if __name__ == '__main__':
             ServerLogging().log_info(func_name, "Building automata...")
             build_automata.build_automata()
         except ReadFileException as ec:
-            print(ec.get_message())
+            print(ec.message)
             ServerLogging().log_error(func_name, "Training file cannot be read")
         except ThreadException as ec:
-            print(ec.get_message())
+            print(ec.message)
             ServerLogging().log_error(func_name, "Error with threads")
         ends = time.clock()
         console.secure("[ The Total Time  ]", str(ends - start) + "Seconds.")

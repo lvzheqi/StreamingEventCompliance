@@ -99,6 +99,28 @@ class ServerLogging:
         logging.info(message)
 
     @log_info.overload
+    @signature('str', 'str', 'int', 'str', 'str')
+    def log_info(self, func_name, username, case_id, activity, message):
+        """
+        Description:
+            This function is used to log info messages
+            Format of logged data:
+            <timestamp> INFO <username> <func_name> <case_id> <activity> <<message>
+
+        :param func_name: :`string` This is the name of the function from where this logging event was called.
+        :param username: :`string` It is the username of the user that has initiated the client
+        :param thread_id::int: Id of the thread handling the event
+        :param case_id: :`string` This is the case id of  the event being processed.
+        :param activity: :`string` This is the activity of the event being processed.
+        :param message: :`string` User defined custom messages
+        """
+        message = "'" + message + "'"
+        message = 'Case_id:' + case_id + ' ' + 'Activity:' + activity + ' ' + message
+        message = ' INFO ' + username + ' ' + func_name + ' ' + message
+        logging.basicConfig(filename=self.filename, filemode=self.filemode, level=self.level, format=self.log_format)
+        logging.info(message)
+
+    @log_info.overload
     @signature('str', 'str', 'int',  'str', 'str', 'str')
     def log_info(self, func_name, username, thread_id, case_id, activity, message):
         """
