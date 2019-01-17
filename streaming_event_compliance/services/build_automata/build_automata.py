@@ -29,7 +29,9 @@ def build_automata():
     try:
         process_ = Process(target=build_automata_pro())
         process_.start()
+        threading.enumerate()
         process_.join()
+        threading.enumerate()
     except ThreadException as ec:
         raise ec
     else:
