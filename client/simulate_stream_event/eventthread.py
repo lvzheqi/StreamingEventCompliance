@@ -6,9 +6,9 @@ import queue
 from .client_logging import ClientLogging
 from .exception import ServerRequestException, ThreadException, ConnectionException
 from console_logging.console import Console
+import client
 console = Console()
 console.setVerbosity(5)
-
 
 class ThreadMemorizer(object):
     """
@@ -94,6 +94,7 @@ class EventThread(Thread):
                 response = response.json()
                 for ws, message in response.items():
                     if message['body'] == 'M':
+                        client.alertM += 1
                         if message['source_node'] == 'NONE':
                             console.secure("[ Alert M  ]", " no such start node' " + message['sink_node'] + " 'in case ' " +
                                   message['case_id'] + "'")
@@ -109,6 +110,7 @@ class EventThread(Thread):
                                 for s_node in message['expect']:
                                     print('\t', message['source_node'], '-->', s_node, ': ', message['expect'][s_node])
                     elif message['body'] == 'T':
+                        client.alertT += 1
                         console.secure('[ Alert T  ]', " The threshold of the connection in case '" + message['case_id']
                                        + "' is too low.")
                         print('   The minimal expected probability from ', message['source_node'], '-->',
@@ -118,6 +120,7 @@ class EventThread(Thread):
                     elif 'Error' in message['body']:
                         console.error(message['body'])
                     elif message['body'] != 'OK':
+                        client.ok += 1
                         console.info(message['body'])
                     self._status_queue.put(None)
         except Exception as ec:
