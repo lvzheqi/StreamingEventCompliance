@@ -17,6 +17,8 @@ class ThreadPoolManager:
 
     def wait_completion(self):
         self.work_queue.join()
+        for i in range(self.thread_num):
+            self.add_job(None, *())
         if not self.error_queue.empty():
             error_mess = ""
             while not self.error_queue.empty():
@@ -29,27 +31,23 @@ class ThreadPoolManager:
 
 
 class ThreadManager(Thread):
-
-    def __init__(self, work_queue=None, error_queue=None):
+    def __init__(self, work_queue, error_queue):
         Thread.__init__(self)
-        if work_queue is None:
-            self.work_queue = Queue()
-        else:
-            self.work_queue = work_queue
-        self.daemon = True
-        if error_queue is None:
-            self.error_queue = Queue()
-        else:
-            self.error_queue = error_queue
-        self.response = Queue()
+        self.daemon = False
+        self.work_queue = work_queue
+        self.error_queue = error_queue
 
     def run(self):
         while True:
             target, args = self.work_queue.get()
+            if target is None:
+                break
             try:
-                self.response.put(target(*args))
+                target(*args)
             except ThreadException as e:
                 self.error_queue.put(e)
             self.work_queue.task_done()
+
+
 
 

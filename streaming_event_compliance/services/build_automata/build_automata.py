@@ -29,9 +29,7 @@ def build_automata():
     try:
         process_ = Process(target=build_automata_pro())
         process_.start()
-        threading.enumerate()
         process_.join()
-        threading.enumerate()
     except ThreadException as ec:
         raise ec
     else:
@@ -56,7 +54,7 @@ def build_automata_pro():
         It generates the probability between SourceNode and SinkNode with different prefix size
         and stores corresponding information into the database.
     """
-    thread_pool = ThreadPoolManager(1000)
+    thread_pool = ThreadPoolManager(3)
     func_name = sys._getframe().f_code.co_name
     try:
         trace_log = xes_importer.import_log(TRAINING_EVENT_LOG_PATH)
@@ -106,73 +104,3 @@ def build_automata_pro():
         thread_pool.add_job(case_thread.run_build, *(end_event,))
 
     thread_pool.wait_completion()
-
-
-# def build_automata_pro():
-#     """
-#     Description:
-#         Reads the training event logger from database.config.TRAINING_EVENT_LOG_PATH and build automata.
-#         It generates the probability between SourceNode and SinkNode with different prefix size
-#         and stores corresponding information into the database.
-#     """
-#     func_name = sys._getframe().f_code.co_name
-#     try:
-#         trace_log = xes_importer.import_log(TRAINING_EVENT_LOG_PATH)
-#         event_log = transform.transform_trace_log_to_event_log(trace_log)
-#         event_log.sort()
-#         ServerLogging().log_info(func_name, "server", "Training file processed and sorted")
-#     except Exception:
-#        ServerLogging().log_error(func_name, "server", "Training file cannot be processed")
-#        raise ReadFileException(TRAINING_EVENT_LOG_PATH)
-#
-#     global threads_index
-#     for one_event in event_log:
-#         event = {}
-#         try:
-#             for item in one_event.keys():
-#                 if item == 'concept:name':
-#                     event['activity'] = one_event.get(item)
-#                 elif item == 'case:concept:name':
-#                     event['case_id'] = one_event.get(item)
-#         except AttributeError:
-#             raise EventException(event)
-#         else:
-#             try:
-#                 if event['case_id'] in C.dictionary_cases:
-#                     C.dictionary_cases.get(event['case_id']).append(event['activity'])
-#                     thread = case_thread.CaseThreadForTraining(event, threads_index, T, C)
-#                     thread.start()
-#                     T.dictionary_threads[threads_index] = thread
-#                     threads_index = threads_index + 1
-#                 else:
-#                     ServerLogging().log_info(func_name, "server", event['case_id'], event['activity'], "Creating dictionary_case memorizer")
-#                     C.dictionary_cases[event['case_id']] = ['*' for i in range(0, MAXIMUN_WINDOW_SIZE)]
-#                     C.dictionary_cases[event['case_id']].append(event['activity'])
-#                     lock = threading.RLock()
-#                     C.lock_List[event['case_id']] = lock
-#                     thread = case_thread.CaseThreadForTraining(event, threads_index, T, C)
-#                     thread.start()
-#                     T.dictionary_threads[threads_index] = thread
-#                     threads_index = threads_index + 1
-#             except Exception:
-#                 console.error('build_auto_pro:' + traceback.format_exc())
-#                 ServerLogging().log_error(func_name, "server", "Exception raised while creating dictionary_case")
-#                 raise ThreadException(traceback.format_exc())
-#
-#     for item in C.dictionary_cases:
-#         end_event = {'activity': '~!@#$%', 'case_id': item}
-#         C.dictionary_cases.get(end_event['case_id']).append(end_event['activity'])
-#         thread = case_thread.CaseThreadForTraining(end_event, threads_index, T, C)
-#         thread.start()
-#         T.dictionary_threads[threads_index] = thread
-#         threads_index = threads_index + 1
-#     for th in T.dictionary_threads.values():
-#         try:
-#             th.join_with_exception()
-#         except ThreadException:
-#             ServerLogging().log_error(func_name, "server", "Joining is not successful")
-#             raise ThreadException(traceback.format_exc())
-
-
-
-
