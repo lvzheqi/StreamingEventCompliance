@@ -1,11 +1,9 @@
 from streaming_event_compliance import app
-from streaming_event_compliance.objects.variable.globalvar import gVars, CL
+from streaming_event_compliance.objects.variable.globalvar import gVars, CL, T, C
 from streaming_event_compliance.objects.automata import automata
 from streaming_event_compliance.objects.exceptions.exception import ThreadException
 from streaming_event_compliance.objects.logging.server_logging import ServerLogging
-from threading import Thread
 import threading
-import queue
 import traceback
 import sys
 
@@ -14,84 +12,51 @@ WINDOW_SIZE = app.config['WINDOW_SIZE']
 MAXIMUN_WINDOW_SIZE = app.config['MAXIMUN_WINDOW_SIZE']
 
 
-class CaseThreadForTraining(Thread):
-    def __init__(self, event, index, T, C):
-        self.event = event
-        self.index = index
-        self.T = T
-        self.C = C
-        Thread.__init__(self)
-        self._status_queue = queue.Queue()
+def run_build(event):
 
-    def wait_for_exc_info(self):
-        return self._status_queue.get()
+    func_name = sys._getframe().f_code.co_name
+    ServerLogging().log_info(func_name, str(threading.current_thread()))
+    try:
+        if event['activity'] != '~!@#$%':
+            if C.lock_List.get(event['case_id']).acquire():
+                ServerLogging().log_info(func_name, "server", event['case_id'],
+                                         event['activity'], "Acquiring lock")
+                windows_memory = C.dictionary_cases.get(event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
+                ServerLogging().log_info(func_name, "server", event['case_id'],
+                                         event['activity'],
+                                         "Calculating connections")
+                calculate_connection_for_different_prefix_automata(windows_memory)
+                C.dictionary_cases.get(event['case_id']).pop(0)
 
-    def join_with_exception(self):
-        ex_info = self.wait_for_exc_info()
-        if ex_info is None:
-            return
-        else:
-            print('join exception')
+                global check_executing_order
+                '''--------For Testing: Before releasing lock, which thread used it will be stored-------'''
+                if check_executing_order.get(event['case_id']):
+                    check_executing_order.get(event['case_id']).append(event['activity'])
+                else:
+                    check_executing_order[event['case_id']] = []
+                    check_executing_order[event['case_id']].append(event['activity'])
+                '''--------For Testing: Before releasing lock, which thread used it will be stored-------'''
+                C.lock_List.get(event['case_id']).release()
+                ServerLogging().log_info(func_name, "server", event['case_id'],
+                                         event['activity'], "Released lock")
+        elif event['activity'] == '~!@#$%':
+            if C.lock_List.get(event['case_id']).acquire():
+                ServerLogging().log_info(func_name, "server", event['case_id'],
+                                         event['activity'], "Acquired lock")
+
+                windows_memory = C.dictionary_cases.get(event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
+                ServerLogging().log_info(func_name, "server",  event['case_id'],
+                                         event['activity'], "Calculating connections")
+                calculate_connection_for_different_prefix_automata(windows_memory)
+                C.dictionary_cases.get(event['case_id']).pop(0)
+                C.lock_List.get(event['case_id']).release()
+                ServerLogging().log_info(func_name, "server", event['case_id'],
+                                         event['activity'], "Released lock")
+
+    except Exception:
+            ServerLogging().log_error(func_name, "server",  event['case_id'], event['activity'],
+                                     "Error with Caselock")
             raise ThreadException(traceback.format_exc())
-
-    def run(self):
-        """
-        Description:
-            In caseMemorier for every case we will store the last 4 events that have been processed,
-            so for the current event processing event should in the 5. position. So after we processed
-            one event, we should remove the first one from the list. And if in the 5. position we don't
-            have event, that means currently all the events from this case has been processed.
-            This thread can do noting excepting waiting.
-            Note that during the processing the list will change, some events will be added into it.
-        """
-        global index
-        func_name = sys._getframe().f_code.co_name
-        try:
-
-            if self.event['activity'] != '~!@#$%':
-                if self.C.lock_List.get(self.event['case_id']).acquire():
-                    ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'],
-                                             self.event['activity'], "Acquiring lock")
-                    windows_memory = self.C.dictionary_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
-                    ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'],
-                                             self.event['activity'],
-                                             "Calculating connections")
-                    calculate_connection_for_different_prefix_automata(windows_memory)
-                    self.C.dictionary_cases.get(self.event['case_id']).pop(0)
-
-                    global check_executing_order
-                    '''--------For Testing: Before releasing lock, which thread used it will be stored-------'''
-                    if check_executing_order.get(self.event['case_id']):
-                        check_executing_order.get(self.event['case_id']).append(self.event['activity'])
-                    else:
-                        check_executing_order[self.event['case_id']] = []
-                        check_executing_order[self.event['case_id']].append(self.event['activity'])
-                    '''--------For Testing: Before releasing lock, which thread used it will be stored-------'''
-                    self.C.lock_List.get(self.event['case_id']).release()
-                    ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'],
-                                             self.event['activity'], "Released lock")
-                    self._status_queue.put(None)
-            elif self.event['activity'] == '~!@#$%':
-                if self.C.lock_List.get(self.event['case_id']).acquire():
-                    ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'],
-                                             self.event['activity'], "Acquired lock")
-
-                    windows_memory = self.C.dictionary_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
-                    ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'],
-                                             self.event['activity'], "Calculating connections")
-                    calculate_connection_for_different_prefix_automata(windows_memory)
-                    self.C.dictionary_cases.get(self.event['case_id']).pop(0)
-                    self.C.lock_List.get(self.event['case_id']).release()
-                    ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'],
-                                             self.event['activity'], "Released lock")
-                    # ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'],
-                    #                          self.event['activity'], "Released lock")
-                    self._status_queue.put(None)
-        except Exception:
-                print('Caselock', traceback.format_exc())
-                ServerLogging().log_error(func_name, "server", self.index, self.event['case_id'], self.event['activity'],
-                                         "Error with Caselock")
-                self._status_queue.put(sys.exc_info())
 
 
 def calculate_connection_for_different_prefix_automata(windowsMemory):
@@ -131,3 +96,83 @@ def calculate_connection_for_different_prefix_automata(windowsMemory):
                 except Exception as ec:
                     raise ec
 
+
+# class CaseThreadForTraining(Thread):
+#     def __init__(self, event,  T, C):
+#         self.event = event
+#         self.index = index
+#         self.T = T
+#         self.C = C
+#         Thread.__init__(self)
+#         self._status_queue = queue.Queue()
+#
+#     def wait_for_exc_info(self):
+#         return self._status_queue.get()
+#
+#     def join_with_exception(self):
+#         ex_info = self.wait_for_exc_info()
+#         if ex_info is None:
+#             return
+#         else:
+#             ('join exception')
+#             raise ThreadException(traceback.format_exc())
+#
+#     def run(self):
+#         """
+#         Description:
+#             In caseMemorier for every case we will store the last 4 events that have been processed,
+#             so for the current event processing event should in the 5. position. So after we processed
+#             one event, we should remove the first one from the list. And if in the 5. position we don't
+#             have event, that means currently all the events from this case has been processed.
+#             This thread can do noting excepting waiting.
+#             Note that during the processing the list will change, some events will be added into it.
+#         """
+#         global index
+#         func_name = sys._getframe().f_code.co_name
+#         try:
+#
+#             if self.event['activity'] != '~!@#$%':
+#                 if self.C.lock_List.get(self.event['case_id']).acquire():
+#                     ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'],
+#                                              self.event['activity'], "Acquiring lock")
+#                     windows_memory = self.C.dictionary_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
+#                     ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'],
+#                                              self.event['activity'],
+#                                              "Calculating connections")
+#                     calculate_connection_for_different_prefix_automata(windows_memory)
+#                     self.C.dictionary_cases.get(self.event['case_id']).pop(0)
+#
+#                     global check_executing_order
+#                     '''--------For Testing: Before releasing lock, which thread used it will be stored-------'''
+#                     if check_executing_order.get(self.event['case_id']):
+#                         check_executing_order.get(self.event['case_id']).append(self.event['activity'])
+#                     else:
+#                         check_executing_order[self.event['case_id']] = []
+#                         check_executing_order[self.event['case_id']].append(self.event['activity'])
+#                     '''--------For Testing: Before releasing lock, which thread used it will be stored-------'''
+#                     self.C.lock_List.get(self.event['case_id']).release()
+#                     ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'],
+#                                              self.event['activity'], "Released lock")
+#                     self._status_queue.put(None)
+#             elif self.event['activity'] == '~!@#$%':
+#                 if self.C.lock_List.get(self.event['case_id']).acquire():
+#                     ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'],
+#                                              self.event['activity'], "Acquired lock")
+#
+#                     windows_memory = self.C.dictionary_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
+#                     ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'],
+#                                              self.event['activity'], "Calculating connections")
+#                     calculate_connection_for_different_prefix_automata(windows_memory)
+#                     self.C.dictionary_cases.get(self.event['case_id']).pop(0)
+#                     self.C.lock_List.get(self.event['case_id']).release()
+#                     ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'],
+#                                              self.event['activity'], "Released lock")
+#                     # ServerLogging().log_info(func_name, "server", self.index, self.event['case_id'],
+#                     #                          self.event['activity'], "Released lock")
+#                     self._status_queue.put(None)
+#         except Exception:
+#                 print('Caselock', traceback.format_exc())
+#                 ServerLogging().log_error(func_name, "server", self.index, self.event['case_id'], self.event['activity'],
+#                                          "Error with Caselock")
+#                 self._status_queue.put(sys.exc_info())
+#

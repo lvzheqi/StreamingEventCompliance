@@ -77,9 +77,42 @@ class CaseThreadForCC(Thread):
                 self._status_queue.put(None)
         except Exception as ec:
             console.error('run - ComplianceCaselock ' + traceback.format_exc())
-            ServerLogging().log_error(func_name, self.client_uuid, self.index, self.event['case_id'], self.event['activity'],
+            ServerLogging().log_error(func_name, self.client_uuid, self.index, self.event['case_id'],
+                                      self.event['activity'],
                                       "Error with Caselock")
             self._status_queue.put(ec)
+
+# def compliance_check_run(event, index, client_uuid):
+#     func_name = sys._getframe().f_code.co_name
+#     client_cases = CCM.dictionary_cases.get(client_uuid)
+#     client_locks = CCM.lock_List.get(client_uuid)
+#     try:
+#         if client_locks.get(event['case_id']).acquire():
+#             ServerLogging().log_info(func_name, client_uuid, index, event['case_id'],
+#                                      event['activity'], "Acquiring lock")
+#             windows_memory = client_cases.get(event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
+#             response = create_source_sink_node(windows_memory, client_uuid, event, index)
+#             ServerLogging().log_info(func_name, client_uuid, index, event['case_id'],
+#                                      event['activity'],
+#                                      "Calculating response")
+#             flag = True
+#             for ws, res in response.items():
+#                 if ws == min(WINDOW_SIZE) and res.get('body') == 'M' and CHECKING_TYPE == 'DELETE_M_EVENT':
+#                     flag = False
+#                     client_cases.get(event['case_id']).pop(MAXIMUN_WINDOW_SIZE)
+#             if flag:
+#                 client_cases.get(event['case_id']).pop(0)
+#             client_locks.get(event['case_id']).release()
+#             ServerLogging().log_info(func_name, client_uuid, index, event['case_id'],
+#                                      event['activity'], "Released lock")
+#             _message.put(response)
+#             # _status_queue.put(None)
+#     except Exception as ec:
+#         # console.error('run - ComplianceCaselock ' + traceback.format_exc())
+#         ServerLogging().log_error(func_name, client_uuid, index, event['case_id'],
+#                                   event['activity'],
+#                                   "Error with Caselock")
+#         raise ThreadException(traceback.format_exc())
 
 
 def create_source_sink_node(windows_memory, client_uuid, event, thread_id):

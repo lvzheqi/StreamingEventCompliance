@@ -121,7 +121,6 @@ def legend(sub):
         sub2.subgraph(c2)
 
 
-
 def show_deviation_pdf(uuid):
     """
     Description:
