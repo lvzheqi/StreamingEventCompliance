@@ -23,7 +23,7 @@ if __name__ == '__main__':
     from streaming_event_compliance.services import setup
     from streaming_event_compliance.services.build_automata import build_automata
     from streaming_event_compliance.database import dbtools
-    # dbtools.empty_tables()  # TODO: After building the correct automata, uncomment this line;
+    dbtools.empty_tables()  # TODO: After building the correct automata, uncomment this line;
     setup.init_automata()
     if gVars.auto_status == 0:
         start = time.clock()

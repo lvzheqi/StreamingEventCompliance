@@ -62,6 +62,7 @@ def build_automata_pro():
         event_log.sort()
         ServerLogging().log_info(func_name, "server", "Training file processed and sorted")
         ti = time.clock()
+        number_event_process = 0
         console.secure("Preprocessing eventlog time: ", ti)
         console.secure("Number of event: ", len(event_log))
     except Exception:
