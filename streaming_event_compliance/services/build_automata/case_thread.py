@@ -13,7 +13,6 @@ MAXIMUN_WINDOW_SIZE = app.config['MAXIMUN_WINDOW_SIZE']
 
 
 def run_build(event):
-
     func_name = sys._getframe().f_code.co_name
     ServerLogging().log_info(func_name, str(threading.current_thread()))
     try:

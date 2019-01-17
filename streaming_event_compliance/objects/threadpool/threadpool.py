@@ -29,11 +29,18 @@ class ThreadPoolManager:
 
 
 class ThreadManager(Thread):
-    def __init__(self, work_queue, error_queue):
+
+    def __init__(self, work_queue=None, error_queue=None):
         Thread.__init__(self)
-        self.work_queue = work_queue
+        if work_queue is None:
+            self.work_queue = Queue()
+        else:
+            self.work_queue = work_queue
         self.daemon = True
-        self.error_queue = error_queue
+        if error_queue is None:
+            self.error_queue = Queue()
+        else:
+            self.error_queue = error_queue
         self.response = Queue()
 
     def run(self):
@@ -44,3 +51,5 @@ class ThreadManager(Thread):
             except ThreadException as e:
                 self.error_queue.put(e)
             self.work_queue.task_done()
+
+
