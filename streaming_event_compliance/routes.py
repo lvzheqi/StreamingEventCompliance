@@ -1,4 +1,4 @@
-from streaming_event_compliance import app
+from streaming_event_compliance import app, db
 from flask import request, send_file
 from flask_api import status
 from streaming_event_compliance.services import setup
@@ -13,6 +13,7 @@ import json
 import traceback
 import sys
 
+
 console = Console()
 console.setVerbosity(5)
 
@@ -24,6 +25,26 @@ FILE_TYPE = app.config['FILE_TYPE']
 @app.route('/')
 def index():
     return 'Welcome to Compliance Server! We will provide 2 services!'
+
+
+@app.route("/test")
+# TODO CAN REMOVE FOLLOWING AFTER TESTING DOCKER DATABASE.
+def test():
+    mysql_result = False
+    db.session.query("1").from_statement("SELECT 1").all()
+    try:
+        if db.session.query("1").from_statement("SELECT 1").all():
+            mysql_result = True
+    except:
+        pass
+
+    if mysql_result:
+        result = 'successful'
+    else:
+        result = 'fail'
+
+    # Return the page with the result.
+    return result
 
 
 @app.route('/login', methods=['POST'])

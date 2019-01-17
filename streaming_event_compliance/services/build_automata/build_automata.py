@@ -12,8 +12,7 @@ from multiprocessing import Process
 import traceback
 from console_logging.console import Console
 from streaming_event_compliance.objects.logging.server_logging import ServerLogging
-import sys
-
+import sys, time
 console = Console()
 console.setVerbosity(5)
 
@@ -49,7 +48,6 @@ def build_automata():
 
 
 def build_automata_pro():
-
     """
     Description:
         Reads the training event logger from database.config.TRAINING_EVENT_LOG_PATH and build automata.
@@ -63,12 +61,16 @@ def build_automata_pro():
         event_log = transform.transform_trace_log_to_event_log(trace_log)
         event_log.sort()
         ServerLogging().log_info(func_name, "server", "Training file processed and sorted")
+        ti = time.clock()
+        console.secure("Preprocessing eventlog time: ", ti)
+        console.secure("Number of event: ", len(event_log))
     except Exception:
-        ServerLogging().log_error(func_name, "server", "Training file cannot be processed")
-        raise ReadFileException(TRAINING_EVENT_LOG_PATH)
+       ServerLogging().log_error(func_name, "server", "Training file cannot be processed")
+       raise ReadFileException(TRAINING_EVENT_LOG_PATH)
 
     for one_event in event_log:
         event = {}
+        number_event_process += 1
         try:
             for item in one_event.keys():
                 if item == 'concept:name':
@@ -94,7 +96,7 @@ def build_automata_pro():
                 console.error('build_auto_pro:' + traceback.format_exc())
                 ServerLogging().log_error(func_name, "server", "Exception raised while creating dictionary_case")
                 raise ThreadException(traceback.format_exc())
-
+    print("number_event_process", number_event_process, "thread_index: ", threads_index)
     for item in C.dictionary_cases:
         end_event = {'activity': '~!@#$%', 'case_id': item}
         C.dictionary_cases.get(end_event['case_id']).append(end_event['activity'])

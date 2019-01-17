@@ -5,10 +5,13 @@ from multiprocessing import Process
 import sys
 import traceback
 import requests
-import os
+import os, time
 from console_logging.console import Console
 console = Console()
 console.setVerbosity(5)
+ok = 0
+alertT = 0
+alertM = 0
 
 
 class Client_cls(object):
@@ -40,7 +43,7 @@ class Client_cls(object):
         func_name = sys._getframe().f_code.co_name
         try:
             ClientLogging().log_info(func_name, self.uuid,
-                                     'Post request to server:http://127.0.0.1:5000/login?uuid=' + self.uuid)
+                                     'Post request to server:http://0.0.0.0:5000/login?uuid=' + self.uuid)
             r = requests.post('http://0.0.0.0:5000/login?uuid=' + self.uuid)
             if r.status_code != 200:
                 raise ServerRequestException('The user can not be created.')
@@ -66,7 +69,19 @@ class Client_cls(object):
             ClientLogging().log_info(func_name, self.uuid, 'Calling read_log()')
             event_log = eventlog.read_log(self.uuid, self.path)
             ClientLogging().log_info(func_name, self.uuid, 'Calling simulate_stream_event()')
+
+            sum = len(event_log)
+            start = time.clock()
             eventlog.simulate_stream_event(self.uuid, event_log)
+            end = time.clock()
+            runtime = end - start
+            results = sum / runtime
+            console.secure('Path:', str(self.path))
+            console.secure('Events_number:', str(sum))
+            console.secure('Running time:', str(runtime))
+            console.secure('Average speed:', str(results) + ' per second!\n')
+            console.secure('Results:', 'OK:' + str(ok) + '; Alert T:' + str(alertT) + '; Alert M:' + str(alertM))
+
         except ReadFileException:
             raise ReadFileException(self.path)
         except ConnectionException:
@@ -82,7 +97,7 @@ class Client_cls(object):
         func_name = sys._getframe().f_code.co_name
         try:
             ClientLogging().log_info(func_name, self.uuid,
-                                     'Post request to http://127.0.0.1:5000/show-deviation-pdf?uuid=' + self.uuid)
+                                     'Post request to http://0.0.0.0:5000/show-deviation-pdf?uuid=' + self.uuid)
             r = requests.post('http://0.0.0.0:5000/show-deviation-pdf?uuid=' + self.uuid)
             if r.status_code != 200:
                 raise ConnectionException
@@ -90,10 +105,10 @@ class Client_cls(object):
                 if r.text != '':
                     ClientLogging().log_info(func_name, self.uuid, 'Compliance checking is done. '
                                                                    'Deviations PDF is available at '
-                                                                   'http://127.0.0.1:5000/show-deviation-pdf?uuid=' +
+                                                                   'http://0.0.0.0:5000/show-deviation-pdf?uuid=' +
                                              self.uuid)
                     console.info('The compliance checking is already done! You can get the pdf on the following link:')
-                    console.info('http://127.0.0.1:5000/show-deviation-pdf?uuid=' + self.uuid)
+                    console.info('http://0.0.0.0:5000/show-deviation-pdf?uuid=' + self.uuid)
                 else:
                     ClientLogging().log_error(func_name, self.uuid, self.uuid +
                                               ' has not done compliance checking, '

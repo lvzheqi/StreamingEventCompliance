@@ -1,5 +1,5 @@
 ## BUILD & RUN ON DOCKER
-
+Under the condition "deploy = True" in streaming_evnet_compliance fonder __init__.py
 
 #### Method 1
 1. Run `sh build-run-db.sh` to pull the mysql:5.7 database and create `mysqldb` container.
