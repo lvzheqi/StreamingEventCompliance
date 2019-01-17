@@ -33,3 +33,4 @@ termcolor==1.1.0
 urllib3==1.24.1
 Werkzeug==0.14.1
 configparser==3.5.0
+pytest==4.1.1
