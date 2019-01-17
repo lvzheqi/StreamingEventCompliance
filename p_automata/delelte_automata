@@ -1,0 +1,50 @@
+// probability_automata
+digraph {
+	node [fixedsize=true width=0.7]
+	rankdir=LR
+	subgraph cluster2 {
+		color=black label="Probability Graph With Prefix Size 2"
+		"a,b" [label="a,b"]
+		"b,c" [label="b,c"]
+		"a,c" [label="a,c"]
+		"a,b" -> "b,c" [penwidth=0.5]
+		"a,x" [label="a,x" fillcolor=red style=filled]
+	}
+	subgraph cluster1 {
+		color=black label="Probability Graph With Prefix Size 1"
+		a [label=a]
+		b [label=b]
+		c [label=c]
+		a -> b [penwidth=0.5]
+		b -> c [penwidth=0.5]
+		a -> c [penwidth=0.5]
+		a [label=a fillcolor=red style=filled]
+		x [label=x fillcolor=red style=filled]
+		a -> x [label="count = 38.0" color=red penwidth=3.0]
+	}
+	subgraph cluster0 {
+		color=black label=Legend
+		color=black label=Legend
+		activity [label=activity fillcolor=red style=filled]
+		text0 [label="node, where causes alert\r" penwidth=2 shape=plaintext style=solid width=3.5]
+		s_node1 [label=s_node1]
+		ss_node1 [label=ss_node1]
+		s_node1 -> ss_node1 [label="" color=black penwidth=1.5]
+		text1 [label="connections, when such exists \r in primal automata \r" penwidth=2 shape=plaintext style=solid width=3.5]
+		s_node2 [label=s_node2 fillcolor=red style=filled]
+		ss_node2 [label=ss_node2 fillcolor=red style=filled]
+		s_node2 -> ss_node2 [label="" color=red penwidth=1.5]
+		text2 [label="alerts, when no such connections \r in primal automata \r" shape=plaintext style=solid width=3.5]
+		s_node3 [label=s_node3 fillcolor=red style=filled]
+		ss_node3 [label=ss_node3 fillcolor=red style=filled]
+		s_node3 -> ss_node3 [label="" color=green penwidth=1.5]
+		text3 [label="alerts, when the probability is \r below Threshold \r" shape=plaintext style=solid width=3.5]
+		subgraph child1 {
+			rank=source
+			text0
+			text1
+			text2
+			text3
+		}
+	}
+}
