@@ -21,7 +21,9 @@ def client():
     with app.app_context():
         setup.init_automata()
         if gVars.auto_status == 0:
-            build_automata.build_automata()
+            # build_automata.build_automata()
+            # from database read autos
+            setup.init_automata()
     yield client
 
 

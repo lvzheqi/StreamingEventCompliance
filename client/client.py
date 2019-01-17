@@ -5,10 +5,13 @@ from multiprocessing import Process
 import sys
 import traceback
 import requests
-import os
+import os, time
 from console_logging.console import Console
 console = Console()
 console.setVerbosity(5)
+ok = 0
+alertT = 0
+alertM = 0
 
 
 class Client_cls(object):
@@ -66,7 +69,19 @@ class Client_cls(object):
             ClientLogging().log_info(func_name, self.uuid, 'Calling read_log()')
             event_log = eventlog.read_log(self.uuid, self.path)
             ClientLogging().log_info(func_name, self.uuid, 'Calling simulate_stream_event()')
+
+            sum = len(event_log)
+            start = time.clock()
             eventlog.simulate_stream_event(self.uuid, event_log)
+            end = time.clock()
+            runtime = end - start
+            results = sum / runtime
+            console.secure('Path:', str(self.path))
+            console.secure('Events_number:', str(sum))
+            console.secure('Running time:', str(runtime))
+            console.secure('Average speed:', str(results) + ' per second!\n')
+            console.secure('Results:', 'OK:' + str(ok) + '; Alert T:' + str(alertT) + '; Alert M:' + str(alertM))
+
         except ReadFileException:
             raise ReadFileException(self.path)
         except ConnectionException:

@@ -2,68 +2,25 @@
 digraph {
 	node [fixedsize=true width=0.7]
 	rankdir=LR
-	subgraph cluster6 {
-		color=black label="Probability Graph With Prefix Size 6"
-	}
-	subgraph cluster5 {
-		color=black label="Probability Graph With Prefix Size 5"
-	}
-	subgraph cluster4 {
-		color=black label="Probability Graph With Prefix Size 4"
-		"a,b,c,d" [label="a,b,c,d"]
-		"a,c,b,d" [label="a,c,b,d"]
-		"a,b,d,d" [label="a,b,d,d"]
-	}
-	subgraph cluster3 {
-		color=black label="Probability Graph With Prefix Size 3"
-		"a,b,c" [label="a,b,c"]
-		"a,c,b" [label="a,c,b"]
-		"a,b,d" [label="a,b,d"]
-		"a,e,d" [label="a,e,d"]
-		"b,c,d" [label="b,c,d"]
-		"c,b,d" [label="c,b,d"]
-		"b,d,d" [label="b,d,d"]
-		"a,b,c" -> "b,c,d" [penwidth=0.5]
-		"a,c,b" -> "c,b,d" [penwidth=0.5]
-		"a,b,d" -> "b,d,d" [penwidth=0.5]
-	}
 	subgraph cluster2 {
 		color=black label="Probability Graph With Prefix Size 2"
 		"a,b" [label="a,b"]
-		"a,e" [label="a,e"]
-		"a,c" [label="a,c"]
 		"b,c" [label="b,c"]
-		"c,b" [label="c,b"]
-		"b,d" [label="b,d"]
-		"e,d" [label="e,d"]
-		"c,d" [label="c,d"]
-		"d,d" [label="d,d"]
+		"a,c" [label="a,c"]
 		"a,b" -> "b,c" [penwidth=0.5]
-		"a,e" -> "e,d" [penwidth=0.5]
-		"a,c" -> "c,b" [penwidth=0.5]
-		"a,b" -> "b,d" [penwidth=0.5]
-		"b,c" -> "c,d" [penwidth=0.5]
-		"c,b" -> "b,d" [penwidth=0.5]
-		"b,d" -> "d,d" [penwidth=0.5]
+		"a,x" [label="a,x" fillcolor=red style=filled]
 	}
 	subgraph cluster1 {
 		color=black label="Probability Graph With Prefix Size 1"
 		a [label=a]
 		b [label=b]
-		e [label=e]
 		c [label=c]
-		d [label=d]
 		a -> b [penwidth=0.5]
-		a -> c [penwidth=0.5]
 		b -> c [penwidth=0.5]
-		e -> d [penwidth=0.5]
-		c -> b [penwidth=0.5]
-		b -> d [penwidth=0.5]
-		c -> d [penwidth=0.5]
-		d -> d [penwidth=0.5]
+		a -> c [penwidth=0.5]
 		a [label=a fillcolor=red style=filled]
-		e [label=e fillcolor=red style=filled]
-		a -> e [label="count = 1.0" color=green penwidth=3.0]
+		x [label=x fillcolor=red style=filled]
+		a -> x [label="count = 38.0" color=red penwidth=3.0]
 	}
 	subgraph cluster0 {
 		color=black label=Legend

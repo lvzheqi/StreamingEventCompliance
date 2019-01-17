@@ -11,7 +11,7 @@ from multiprocessing import Process
 import traceback
 from console_logging.console import Console
 from streaming_event_compliance.objects.logging.server_logging import ServerLogging
-import sys
+import sys, time
 console = Console()
 console.setVerbosity(5)
 
@@ -59,13 +59,18 @@ def build_automata_pro():
         event_log = transform.transform_trace_log_to_event_log(trace_log)
         event_log.sort()
         ServerLogging().log_info(func_name, "server", "Training file processed and sorted")
+        ti = time.clock()
+        console.secure("Preprocessing eventlog time: ", ti)
+        console.secure("Number of event: ", len(event_log))
     except Exception:
        ServerLogging().log_error(func_name, "server", "Training file cannot be processed")
        raise ReadFileException(TRAINING_EVENT_LOG_PATH)
 
     global threads_index
+    number_event_process = 0
     for one_event in event_log:
         event = {}
+        number_event_process += 1
         try:
             for item in one_event.keys():
                 if item == 'concept:name':
@@ -82,6 +87,15 @@ def build_automata_pro():
                     thread.start()
                     T.dictionary_threads[threads_index] = thread
                     threads_index = threads_index + 1
+                    if len(T.dictionary_threads.values()) > 1000:
+                        console.log("len(T.dictionary_threads.values()) > 1000")
+                        for th in T.dictionary_threads.values():
+                            try:
+                                th.join_with_exception()
+                            except ThreadException:
+                                ServerLogging().log_error(func_name, "server", "Joining is not successful")
+                                raise ThreadException(traceback.format_exc())
+                        T.dictionary_threads.clear()
                 else:
                     ServerLogging().log_info(func_name, "server", event['case_id'], event['activity'], "Creating dictionary_case memorizer")
                     C.dictionary_cases[event['case_id']] = ['*' for i in range(0, MAXIMUN_WINDOW_SIZE)]
@@ -92,11 +106,20 @@ def build_automata_pro():
                     thread.start()
                     T.dictionary_threads[threads_index] = thread
                     threads_index = threads_index + 1
+                    if len(T.dictionary_threads.values()) > 1000:
+                        console.log("len(T.dictionary_threads.values()) > 1000")
+                        for th in T.dictionary_threads.values():
+                            try:
+                                th.join_with_exception()
+                            except ThreadException:
+                                ServerLogging().log_error(func_name, "server", "Joining is not successful")
+                                raise ThreadException(traceback.format_exc())
+                        T.dictionary_threads.clear()
             except Exception:
                 console.error('build_auto_pro:' + traceback.format_exc())
                 ServerLogging().log_error(func_name, "server", "Exception raised while creating dictionary_case")
                 raise ThreadException(traceback.format_exc())
-
+    print("number_event_process", number_event_process, "thread_index: ", threads_index)
     for item in C.dictionary_cases:
         end_event = {'activity': '~!@#$%', 'case_id': item}
         C.dictionary_cases.get(end_event['case_id']).append(end_event['activity'])
@@ -104,6 +127,17 @@ def build_automata_pro():
         thread.start()
         T.dictionary_threads[threads_index] = thread
         threads_index = threads_index + 1
+        if len(T.dictionary_threads.values()) > 1000:
+            console.log("len(T.dictionary_threads.values()) > 1000")
+            for th in T.dictionary_threads.values():
+                # print(th)
+                try:
+                    th.join_with_exception()
+                except ThreadException:
+                    ServerLogging().log_error(func_name, "server", "Joining is not successful")
+                    raise ThreadException(traceback.format_exc())
+            T.dictionary_threads.clear()
+        # print("not join end event: len(T.dictionary_threads): ", len(T.dictionary_threads),  "thread_index: ", threads_index)
     for th in T.dictionary_threads.values():
         try:
             th.join_with_exception()
