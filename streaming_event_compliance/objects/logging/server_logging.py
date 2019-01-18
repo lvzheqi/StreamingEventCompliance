@@ -1,7 +1,7 @@
 import logging
 from streaming_event_compliance import app
 from pythonlangutil.overload import Overload, signature
-
+import os
 
 class ServerLogging:
     """
@@ -36,8 +36,16 @@ class ServerLogging:
     log_format: It is the format in which the time and message will be stored.
     """
     def __init__(self):
-
         self.filename = app.config['SERVER_LOG_PATH']
+        if os.path.exists(self.filename):
+            fsize = os.path.getsize(self.filename)
+            fsize = fsize / float(1024 * 1024)
+            if fsize > 2:
+                os.remove(self.filename)
+        if not os.path.exists(self.filename):
+            with open(self.filename, 'w'):
+                pass
+
         self.level = app.config['LOG_LEVEL']
         self.log_format = app.config['LOG_FORMAT']
         self.filemode = 'a'
