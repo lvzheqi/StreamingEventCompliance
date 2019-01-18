@@ -28,7 +28,7 @@ app.config['AUTOMATA_FILE'] = 'automata'
 app.config['CLEINT_DATA_PATH'] = app.config['BASE_DIR'] + 'p_automata' + os.sep
 app.config['FILE_TYPE'] = '.pdf'
 app.config['TRAINING_EVENT_LOG_PATH'] = app.config['BASE_DIR'] + 'data' + os.sep + \
-                                        'Example_EventLogForTraining_Backup.xes'
+                                        'Simple_Training2.xes'
 app.config['WINDOW_SIZE'] = list(map(int, re.findall(r"\d+", '[1,2,3,4]')))
 app.config['MAXIMUN_WINDOW_SIZE'] = max(app.config['WINDOW_SIZE'])
 app.config['CHECKING_TYPE'] = 'KEEP_ALL_EVENTS'

@@ -48,7 +48,7 @@ def test_compliance_check_time(client):
     path = app.config['TRAINING_EVENT_LOG_PATH']
     console.secure('Training Path:', str(path))
 
-    path = app.config['BASE_DIR'] + '../../../Downloads/runtime/C2018_180517_end.xes'
+    path = app.config['BASE_DIR'] + '../../Downloads/C2018_Train.xes'
     event_log = prepare_event_log(path)
     sum = len(event_log)
     start = time.clock()
