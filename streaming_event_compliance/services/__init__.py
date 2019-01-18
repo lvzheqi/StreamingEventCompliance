@@ -1,2 +1,2 @@
-# from streaming_event_compliance.services import deviation_pdf, build_automata
+from streaming_event_compliance.services import visualization, build_automata, compliance_check
 

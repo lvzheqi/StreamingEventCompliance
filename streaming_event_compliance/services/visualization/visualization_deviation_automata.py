@@ -67,31 +67,31 @@ def visualization_automata(autos, alogs, uuid):
 
 
 def legend(sub):
-    # sub.attr(rankdir='TB')
-    # sub1 = Digraph('sub1')
     sub.attr(color='black', label='Legend')
     with sub.subgraph(name='cluster_sub1') as sub1:
         sub1.attr(color='white', label='', style='filled')
         sub1.node('activity', 'activity', fillcolor='red', style='filled')
         sub1.node('text0', shape='plaintext', style='solid', label='node, which exists not\\r',
-                 penwidth='2', width='3.5')
+                  penwidth='2', width='3.5')
 
         sub1.node('s_node1', 's_node1')
         sub1.node('ss_node1', 'ss_node1')
         sub1.edge('s_node1', 'ss_node1', color='black', label='', penwidth='1.5', len='2f')
-        sub1.node('text1', shape='plaintext', style='solid', label='connections, when such exists \\r in primal automata \\r',
-                 penwidth='2', width='3.5')
+        sub1.node('text1', shape='plaintext', style='solid', label='connections, when such exists \\r in '
+                                                                   'primal automata \\r', penwidth='2', width='3.5')
 
         sub1.node('s_node2', 's_node2')
         sub1.node('ss_node2', 'ss_node2')
         sub1.edge('s_node2', 'ss_node2', color='red', label='', penwidth='1.5')
-        sub1.node('text2', shape='plaintext', style='solid', label='alerts, when no such connections \\r in primal automata \\r', width='3.5')
+        sub1.node('text2', shape='plaintext', style='solid', label='alerts, when no such connections \\r in '
+                                                                   'primal automata \\r', width='3.5')
 
         sub1.node('s_node3', 's_node3')
         sub1.node('ss_node3', 'ss_node3')
         sub1.edge('s_node3', 'ss_node3', color='green', label='', penwidth='1.5')
         # sub.graph_attr['rank'] = 'source; text0 text1 text2 text3'
-        sub1.node('text3', shape='plaintext', style='solid', label='alerts, when the probability is \\r below Threshold \\r', width='3.5')
+        sub1.node('text3', shape='plaintext', style='solid', label='alerts, when the probability is \\r '
+                                                                   'below Threshold \\r', width='3.5')
 
         c1 = Digraph('child1')
         c1.attr(rank='source')

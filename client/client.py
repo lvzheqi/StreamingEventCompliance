@@ -184,7 +184,7 @@ def main(argv):
                     p_main = Process(target=client.run_compliance_checker())
                     p_main.start()
                     p_main.join()
-                    console.secure('Results:', 'OK:' + str(ok['ok']) + '; Alert T:' + str(alertT['alertT'])
+                    console.secure('[ Results  ]', 'OK:' + str(ok['ok']) + '; Alert T:' + str(alertT['alertT'])
                                    + '; Alert M:' + str(alertM['alertM']))
                     ClientLogging().log_info(func_name, argv[0], 'compliance checking is completed')
                     console.info('------------------the compliance checking is finishing------------------------')

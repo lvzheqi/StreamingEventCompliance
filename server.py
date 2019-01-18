@@ -23,7 +23,7 @@ if __name__ == '__main__':
     from streaming_event_compliance.services import setup
     from streaming_event_compliance.services.build_automata import build_automata
     from streaming_event_compliance.database import dbtools
-    dbtools.empty_tables()  # TODO: After building the correct automata, uncomment this line;
+    # dbtools.empty_tables()
     setup.init_automata()
     if gVars.auto_status == 0:
         start = time.clock()
@@ -35,10 +35,9 @@ if __name__ == '__main__':
             console.error(ec.message)
             ServerLogging().log_error(func_name, "Training file cannot be read")
         except ThreadException as ec:
-            print(ec.message)
             ServerLogging().log_error(func_name, "Error with threads")
         ends = time.clock()
-        console.secure("[ The Total Time  For Training Automata ]", str(ends - start) + "Seconds.")
+        console.secure("[ The Total Time  For Training Automata  ]", str(ends - start) + "Seconds.")
 
     else:
         console.info("Automata have been created in database and read out! You can use it do compliance checking!")

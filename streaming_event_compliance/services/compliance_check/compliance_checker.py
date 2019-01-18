@@ -92,9 +92,6 @@ def compliance_checker(client_uuid, event):
             for th in client_thread:
                 try:
                     th.join_with_exception()
-                except ZeroDivisionError:
-                    print(traceback.format_exc())
-                    ServerLogging().log_error(func_name, client_uuid, "Exception raised while joining thread.")
                 except ThreadException as ec:
                     console.error('compliance_checker' + traceback.format_exc())
                     ServerLogging().log_error(func_name, client_uuid, "Exception raised while joining thread.")

@@ -68,9 +68,9 @@ def simulate_stream_event(client_uuid, event_log):
     runtime = end - start
     results = sum / runtime
     time.sleep(1)
-    console.secure('Events_number:', str(sum))
-    console.secure('Running time:', str(runtime))
-    console.secure('Average speed:', str(results) + ' per second!\n')
+    console.secure('[ Events_number  ]', str(sum))
+    console.secure('[ Running time  ]', str(runtime))
+    console.secure('[ Average speed  ]', str(results) + ' per second!\n')
 
     end_message = {'case_id': 'NONE', 'activity': 'END'}
     ClientLogging().log_info(func_name, client_uuid, end_message['case_id'], end_message['activity'],

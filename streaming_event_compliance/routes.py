@@ -68,7 +68,6 @@ def call_login():
     return str(check_client_stauts(uuid)), status.HTTP_200_OK
 
 
-
 @app.route('/compliance-checker', methods=['POST'])
 def call_compliance_checker():
     """
