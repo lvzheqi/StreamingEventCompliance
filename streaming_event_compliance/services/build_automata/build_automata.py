@@ -4,7 +4,7 @@ from pm4py.objects.log import transform
 from streaming_event_compliance.services.build_automata import case_thread
 import threading
 from streaming_event_compliance.database import dbtools
-from streaming_event_compliance.objects.variable.globalvar import T, C, gVars
+from streaming_event_compliance.objects.variable.globalvar import C, gVars
 from streaming_event_compliance.services import setup
 from streaming_event_compliance.objects.exceptions.exception import ReadFileException, ThreadException, EventException
 from streaming_event_compliance.objects.threadpool.threadpool import ThreadPoolManager
@@ -16,7 +16,6 @@ import sys, time
 console = Console()
 console.setVerbosity(5)
 
-threads_index = 0
 WINDOW_SIZE = app.config['WINDOW_SIZE']
 MAXIMUN_WINDOW_SIZE = app.config['MAXIMUN_WINDOW_SIZE']
 TRAINING_EVENT_LOG_PATH = app.config['TRAINING_EVENT_LOG_PATH']
@@ -54,7 +53,7 @@ def build_automata_pro():
         It generates the probability between SourceNode and SinkNode with different prefix size
         and stores corresponding information into the database.
     """
-    thread_pool = ThreadPoolManager(3)
+    thread_pool = ThreadPoolManager(1000)
     func_name = sys._getframe().f_code.co_name
     try:
         trace_log = xes_importer.import_log(TRAINING_EVENT_LOG_PATH)
@@ -63,11 +62,11 @@ def build_automata_pro():
         ServerLogging().log_info(func_name, "server", "Training file processed and sorted")
         ti = time.clock()
         number_event_process = 0
-        # console.secure("Preprocessing eventlog time: ", ti)
-        # console.secure("Number of event: ", len(event_log))
+        console.secure("Preprocessing eventlog time: ", ti)
+        console.secure("Number of event: ", len(event_log))
     except Exception:
        ServerLogging().log_error(func_name, "server", "Training file cannot be processed")
-       raise ReadFileException(TRAINING_EVENT_LOG_PATH)
+       raise ReadFileException(TRAINING_EVENT_LOG_PATH, traceback.format_exc())
 
     for one_event in event_log:
         event = {}
@@ -97,7 +96,7 @@ def build_automata_pro():
                 console.error('build_auto_pro:' + traceback.format_exc())
                 ServerLogging().log_error(func_name, "server", "Exception raised while creating dictionary_case")
                 raise ThreadException(traceback.format_exc())
-    # print("number_event_process", number_event_process, "thread_index: ", threads_index)
+    print("number_event_process", number_event_process)
     for item in C.dictionary_cases:
         end_event = {'activity': '~!@#$%', 'case_id': item}
         C.dictionary_cases.get(end_event['case_id']).append(end_event['activity'])

@@ -7,7 +7,6 @@ import json
 from pm4py.objects.log.importer.xes import factory as xes_importer
 from pm4py.objects.log import transform
 import time
-import os
 from console_logging.console import Console
 console = Console()
 console.setVerbosity(5)
@@ -16,14 +15,14 @@ console.setVerbosity(5)
 @pytest.fixture
 def client():
     app.config['TESTING'] = True
-    app.config['client_uuid'] = 'client_test'
+    app.config['client_uuid'] = 'client_test_1'
     client = app.test_client()
     with app.app_context():
         setup.init_automata()
+        console.info("Init automata from database is finished, gVars.auto_status is " + str(gVars.auto_status))
         if gVars.auto_status == 0:
-            # build_automata.build_automata()
-            # from database read autos
-            setup.init_automata()
+            build_automata.build_automata()
+            console.info("Build automata is finished")
     yield client
 
 
@@ -47,20 +46,9 @@ def test_compliance_check_time(client):
     login(client, uuid)
 
     path = app.config['TRAINING_EVENT_LOG_PATH']
-    event_log = prepare_event_log(path)
-    sum = len(event_log)
-    start = time.clock()
-    compliance_check(client, uuid, event_log)
-    end = time.clock()
-    runtime = end - start
-    results = sum / runtime
-    console.secure('Path:', str(path))
-    console.secure('Events_number:', str(sum))
-    console.secure('Running time:', str(runtime))
-    console.secure('Average speed:', str(results) + ' per second!\n')
-    assert results > 300
+    console.secure('Training Path:', str(path))
 
-    path = app.config['BASE_DIR'] + 'data' + os.sep + 'A4.xes'
+    path = app.config['BASE_DIR'] + '../../../Downloads/runtime/C2018_180517_end.xes'
     event_log = prepare_event_log(path)
     sum = len(event_log)
     start = time.clock()
@@ -68,11 +56,11 @@ def test_compliance_check_time(client):
     end = time.clock()
     runtime = end - start
     results = sum / runtime
-    console.secure('Path:', str(path))
+    console.secure('Testing Path:', str(path))
     console.secure('Events_number:', str(sum))
     console.secure('Running time:', str(runtime))
     console.secure('Average speed:', str(results) + ' per second!\n')
-    assert results > 300
+    assert results > 30
 
 
 def compliance_check(client, uuid, event_log):
@@ -100,7 +88,7 @@ def compliance_check(client, uuid, event_log):
         elif b'M' in rv.data:
             alertM += 1
         assert b'Error' not in rv.data
-    console.secure('Results:', 'OK:' + str(ok)+ '; Alert T:' + str(alertT) + '; Alert M:' + str(alertM))
+    console.secure('Results:', 'OK:' + str(ok) + '; Alert T:' + str(alertT) + '; Alert M:' + str(alertM))
 
 
 def login(client, uuid):
@@ -112,12 +100,3 @@ def prepare_event_log(path):
     event_log = transform.transform_trace_log_to_event_log(trace_log)
     event_log.sort()
     return event_log
-
-
-def compliance_check_correctness(client):
-    '''
-
-    :param client:
-    :return:
-    '''
-    pass

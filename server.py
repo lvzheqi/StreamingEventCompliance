@@ -15,7 +15,7 @@ if __name__ == '__main__':
         ServerLogging().log_info(func_name, "Created all db tables")
         db.create_all()
     except Exception as ec:
-        print('Error: Database connection!', ec.__class__, traceback.format_exc())
+        console.error('Error: Database connection!', ec.__class__, traceback.format_exc())
         ServerLogging().log_error(func_name, "Database connection error!")
         exit(1)
 
@@ -32,7 +32,7 @@ if __name__ == '__main__':
             ServerLogging().log_info(func_name, "Building automata...")
             build_automata.build_automata()
         except ReadFileException as ec:
-            print(ec.message)
+            console.error(ec.message)
             ServerLogging().log_error(func_name, "Training file cannot be read")
         except ThreadException as ec:
             print(ec.message)
@@ -41,7 +41,7 @@ if __name__ == '__main__':
         console.secure("[ The Total Time  For Training Automata ]", str(ends - start) + "Seconds.")
 
     else:
-        print("Automata have been created in database and read out! You can use it do compliance checking!")
+        console.info("Automata have been created in database and read out! You can use it do compliance checking!")
         ServerLogging().log_info(func_name, "Automata have been created in database and read out")
 
     app.debug = False

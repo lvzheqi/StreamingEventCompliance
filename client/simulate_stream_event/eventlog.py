@@ -1,9 +1,10 @@
 from pm4py.objects.log.importer.xes import factory as xes_importer
 from pm4py.objects.log import transform
 from . import eventthread
+
 from .client_logging import ClientLogging
 from .exception import ReadFileException, ConnectionException, ThreadException
-import sys
+import sys, time
 from console_logging.console import Console
 console = Console()
 console.setVerbosity(5)
@@ -11,7 +12,6 @@ console.setVerbosity(5)
 threads = []
 T = eventthread.ThreadMemorizer()
 index = 0
-
 
 def read_log(client_uuid, path):
     """
@@ -24,6 +24,7 @@ def read_log(client_uuid, path):
     """
     func_name = sys._getframe().f_code.co_name
     try:
+        console.secure('Path:', str(path))
         ClientLogging().log_info(func_name, client_uuid, 'Creating a trace logger file: ')
         trace_log = xes_importer.import_log(path)
         ClientLogging().log_info(func_name, client_uuid, 'Transforming trace logger to event logger')
@@ -45,6 +46,8 @@ def simulate_stream_event(client_uuid, event_log):
     :param event_log: :`list` It is a list of all the events in the sorted form
     """
     func_name = sys._getframe().f_code.co_name
+    sum = len(event_log)
+    start = time.clock()
     for event in event_log:
         dic = {}
         for item in event.keys():
@@ -61,6 +64,13 @@ def simulate_stream_event(client_uuid, event_log):
             raise ConnectionException
         except ThreadException as ec:
             raise ThreadException(str(ec))
+    end = time.clock()
+    runtime = end - start
+    results = sum / runtime
+    time.sleep(1)
+    console.secure('Events_number:', str(sum))
+    console.secure('Running time:', str(runtime))
+    console.secure('Average speed:', str(results) + ' per second!\n')
 
     end_message = {'case_id': 'NONE', 'activity': 'END'}
     ClientLogging().log_info(func_name, client_uuid, end_message['case_id'], end_message['activity'],
