@@ -1,10 +1,16 @@
+from console_logging.console import Console
+
+console = Console()
+console.setVerbosity(5)
+
+
 class MyException(Exception):
     def __init__(self, message):
         super().__init__(self)
         self.message = message
 
     def get_message(self):
-        print(self.message)
+        console.error(self.message)
 
 
 class EventException(MyException):
@@ -14,8 +20,10 @@ class EventException(MyException):
 
 
 class ReadFileException(MyException):
-    def __init__(self, path):
-        mess = "ReadFileError: The input path '" + path + "' does not exist or is empty!"
+    def __init__(self, path, info):
+        self.exception = info
+        mess = "ReadFileError: The input path '" + path + "' does not " \
+                                                          "exist or in wrong form!" + "\n" + str(self.exception)
         super().__init__(mess)
 
 

@@ -29,7 +29,6 @@ class ThreadPoolManager:
 
 
 class ThreadManager(Thread):
-
     def __init__(self, work_queue=None, error_queue=None):
         Thread.__init__(self)
         if work_queue is None:

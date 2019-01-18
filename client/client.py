@@ -1,6 +1,7 @@
 from simulate_stream_event import eventlog, config
 from simulate_stream_event.client_logging import ClientLogging
 from simulate_stream_event.exception import ReadFileException, ConnectionException, ServerRequestException, ThreadException
+from simulate_stream_event.eventthread import ok, alertM, alertT
 from multiprocessing import Process
 import sys
 import traceback
@@ -9,10 +10,6 @@ import os, time
 from console_logging.console import Console
 console = Console()
 console.setVerbosity(5)
-ok = 0
-alertT = 0
-alertM = 0
-
 
 class Client_cls(object):
     """
@@ -69,19 +66,7 @@ class Client_cls(object):
             ClientLogging().log_info(func_name, self.uuid, 'Calling read_log()')
             event_log = eventlog.read_log(self.uuid, self.path)
             ClientLogging().log_info(func_name, self.uuid, 'Calling simulate_stream_event()')
-
-            sum = len(event_log)
-            start = time.clock()
             eventlog.simulate_stream_event(self.uuid, event_log)
-            end = time.clock()
-            runtime = end - start
-            results = sum / runtime
-            console.secure('Path:', str(self.path))
-            console.secure('Events_number:', str(sum))
-            console.secure('Running time:', str(runtime))
-            console.secure('Average speed:', str(results) + ' per second!\n')
-            console.secure('Results:', 'OK:' + str(ok) + '; Alert T:' + str(alertT) + '; Alert M:' + str(alertM))
-
         except ReadFileException:
             raise ReadFileException(self.path)
         except ConnectionException:
@@ -199,6 +184,8 @@ def main(argv):
                     p_main = Process(target=client.run_compliance_checker())
                     p_main.start()
                     p_main.join()
+                    console.secure('Results:', 'OK:' + str(ok['ok']) + '; Alert T:' + str(alertT['alertT'])
+                                   + '; Alert M:' + str(alertM['alertM']))
                     ClientLogging().log_info(func_name, argv[0], 'compliance checking is completed')
                     console.info('------------------the compliance checking is finishing------------------------')
                     client.cc_status = True

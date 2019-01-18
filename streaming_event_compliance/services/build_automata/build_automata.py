@@ -63,11 +63,11 @@ def build_automata_pro():
         ServerLogging().log_info(func_name, "server", "Training file processed and sorted")
         ti = time.clock()
         number_event_process = 0
-        console.secure("Preprocessing eventlog time: ", ti)
-        console.secure("Number of event: ", len(event_log))
+        console.secure("Time for Preprocessing Eventlog: ", ti)
+        console.secure("Number of Event: ", len(event_log))
     except Exception:
        ServerLogging().log_error(func_name, "server", "Training file cannot be processed")
-       raise ReadFileException(TRAINING_EVENT_LOG_PATH)
+       raise ReadFileException(TRAINING_EVENT_LOG_PATH, traceback.format_exc())
 
     for one_event in event_log:
         event = {}
@@ -97,7 +97,6 @@ def build_automata_pro():
                 console.error('build_auto_pro:' + traceback.format_exc())
                 ServerLogging().log_error(func_name, "server", "Exception raised while creating dictionary_case")
                 raise ThreadException(traceback.format_exc())
-    print("number_event_process", number_event_process, "thread_index: ", threads_index)
     for item in C.dictionary_cases:
         end_event = {'activity': '~!@#$%', 'case_id': item}
         C.dictionary_cases.get(end_event['case_id']).append(end_event['activity'])
@@ -105,7 +104,7 @@ def build_automata_pro():
 
     thread_pool.wait_completion()
 
-
+#
 # def build_automata_pro():
 #     """
 #     Description:
