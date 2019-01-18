@@ -73,6 +73,7 @@ def compliance_check(client, uuid, event_log):
     ok = 0
     alertT = 0
     alertM = 0
+    error = 0
     for one_event in event_log:
         event = {}
         for item in one_event.keys():
@@ -81,14 +82,19 @@ def compliance_check(client, uuid, event_log):
             elif item == 'case:concept:name':
                 event['case_id'] = one_event.get(item)
         rv = client.post('/compliance-checker?uuid=' + uuid, json=json.dumps(event))
-        if b'OK' in rv.data:
-            ok += 1
-        elif b'T' in rv.data:
-            alertT += 1
-        elif b'M' in rv.data:
-            alertM += 1
+        ok += rv.data.count(b'OK')
+        alertT += rv.data.count(b'T')
+        alertM += rv.data.count(b'M')
+        error += rv.data.count(b'Error')
         assert b'Error' not in rv.data
-    console.secure('Results:', 'OK:' + str(ok) + '; Alert T:' + str(alertT) + '; Alert M:' + str(alertM))
+    console.secure('Results:', 'OK:' + str(ok) + '; Alert T:' + str(alertT) +
+                   '; Alert M:' + str(alertM) + '; Error:' + str(error))
+
+
+def binary_to_dict(the_binary):
+    jsn = ''.join(chr(int(x, 2)) for x in the_binary.split())
+    d = json.loads(jsn)
+    return d
 
 
 def login(client, uuid):
