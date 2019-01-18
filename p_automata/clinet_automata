@@ -1,0 +1,96 @@
+// probability_automata
+digraph {
+	node [fixedsize=true width=0.7]
+	rankdir=LR
+	subgraph cluster3 {
+		color=black label="Probability Graph With Prefix Size 3"
+		"a,b,c" [label="a,b,c"]
+		"a,x,b" [label="a,x,b" fillcolor=red style=filled]
+		"a,x,b" [label="a,x,b" fillcolor=red style=filled]
+		"x,b,c" [label="x,b,c" fillcolor=red style=filled]
+		"a,x,b" -> "x,b,c" [label="count = 18.0" color=red penwidth=3.0]
+		"a,x,c" [label="a,x,c" fillcolor=red style=filled]
+		"a,x,x" [label="a,x,x" fillcolor=red style=filled]
+		"a,x,x" [label="a,x,x" fillcolor=red style=filled]
+		"x,x,b" [label="x,x,b" fillcolor=red style=filled]
+		"a,x,x" -> "x,x,b" [label="count = 1.0" color=red penwidth=0.16666666666666666]
+		"x,x,b" [label="x,x,b" fillcolor=red style=filled]
+		"x,b,c" [label="x,b,c" fillcolor=red style=filled]
+		"x,x,b" -> "x,b,c" [label="count = 1.0" color=red penwidth=0.16666666666666666]
+		"a,x,x" [label="a,x,x" fillcolor=red style=filled]
+		"x,x,c" [label="x,x,c" fillcolor=red style=filled]
+		"a,x,x" -> "x,x,c" [label="count = 1.0" color=red penwidth=0.16666666666666666]
+	}
+	subgraph cluster2 {
+		color=black label="Probability Graph With Prefix Size 2"
+		"a,b" [label="a,b"]
+		"b,c" [label="b,c"]
+		"a,c" [label="a,c"]
+		"a,b" -> "b,c" [penwidth=0.5]
+		"a,x" [label="a,x" fillcolor=red style=filled]
+		"a,x" [label="a,x" fillcolor=red style=filled]
+		"x,b" [label="x,b" fillcolor=red style=filled]
+		"a,x" -> "x,b" [label="count = 18.0" color=red penwidth=1.5]
+		"x,b" [label="x,b" fillcolor=red style=filled]
+		"b,c" [label="b,c" fillcolor=red style=filled]
+		"x,b" -> "b,c" [label="count = 19.0" color=red penwidth=1.5833333333333335]
+		"a,x" [label="a,x" fillcolor=red style=filled]
+		"x,c" [label="x,c" fillcolor=red style=filled]
+		"a,x" -> "x,c" [label="count = 16.0" color=red penwidth=1.3333333333333333]
+		"a,x" [label="a,x" fillcolor=red style=filled]
+		"x,x" [label="x,x" fillcolor=red style=filled]
+		"a,x" -> "x,x" [label="count = 2.0" color=red penwidth=0.16666666666666666]
+		"x,x" [label="x,x" fillcolor=red style=filled]
+		"x,b" [label="x,b" fillcolor=red style=filled]
+		"x,x" -> "x,b" [label="count = 1.0" color=red penwidth=0.08333333333333333]
+		"x,x" [label="x,x" fillcolor=red style=filled]
+		"x,c" [label="x,c" fillcolor=red style=filled]
+		"x,x" -> "x,c" [label="count = 1.0" color=red penwidth=0.08333333333333333]
+	}
+	subgraph cluster1 {
+		color=black label="Probability Graph With Prefix Size 1"
+		a [label=a]
+		b [label=b]
+		c [label=c]
+		a -> b [penwidth=0.5]
+		b -> c [penwidth=0.5]
+		a -> c [penwidth=0.5]
+		a [label=a fillcolor=red style=filled]
+		x [label=x fillcolor=red style=filled]
+		a -> x [label="count = 36.0" color=red penwidth=3.0]
+		x [label=x fillcolor=red style=filled]
+		b [label=b fillcolor=red style=filled]
+		x -> b [label="count = 19.0" color=red penwidth=1.5833333333333335]
+		x [label=x fillcolor=red style=filled]
+		c [label=c fillcolor=red style=filled]
+		x -> c [label="count = 17.0" color=red penwidth=1.4166666666666665]
+		x [label=x fillcolor=red style=filled]
+		x [label=x fillcolor=red style=filled]
+		x -> x [label="count = 2.0" color=red penwidth=0.16666666666666666]
+	}
+	subgraph cluster0 {
+		color=black label=Legend
+		color=black label=Legend
+		activity [label=activity fillcolor=red style=filled]
+		text0 [label="node, where causes alert\r" penwidth=2 shape=plaintext style=solid width=3.5]
+		s_node1 [label=s_node1]
+		ss_node1 [label=ss_node1]
+		s_node1 -> ss_node1 [label="" color=black penwidth=1.5]
+		text1 [label="connections, when such exists \r in primal automata \r" penwidth=2 shape=plaintext style=solid width=3.5]
+		s_node2 [label=s_node2 fillcolor=red style=filled]
+		ss_node2 [label=ss_node2 fillcolor=red style=filled]
+		s_node2 -> ss_node2 [label="" color=red penwidth=1.5]
+		text2 [label="alerts, when no such connections \r in primal automata \r" shape=plaintext style=solid width=3.5]
+		s_node3 [label=s_node3 fillcolor=red style=filled]
+		ss_node3 [label=ss_node3 fillcolor=red style=filled]
+		s_node3 -> ss_node3 [label="" color=green penwidth=1.5]
+		text3 [label="alerts, when the probability is \r below Threshold \r" shape=plaintext style=solid width=3.5]
+		subgraph child1 {
+			rank=source
+			text0
+			text1
+			text2
+			text3
+		}
+	}
+}
