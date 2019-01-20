@@ -10,12 +10,11 @@ console.setVerbosity(5)
 if __name__ == '__main__':
     func_name = sys._getframe().f_code.co_name
 
-
     try:
         ServerLogging().log_info(func_name, "Created all db tables")
         db.create_all()
-    except Exception as ec:
-        console.error('Error: Database connection!', ec.__class__, traceback.format_exc())
+    except Exception:
+        console.error('Database connection!', traceback.format_exc())
         ServerLogging().log_error(func_name, "Database connection error!")
         exit(1)
 
@@ -36,13 +35,12 @@ if __name__ == '__main__':
             console.error(ec.message)
             ServerLogging().log_error(func_name, "Training file cannot be read")
         except ThreadException as ec:
+            console.error(ec.message)
             ServerLogging().log_error(func_name, "Error with threads")
         ends = time.clock()
         console.secure("[ The Total Time  For Training Automata  ]", str(ends - start) + "Seconds.")
-
     else:
         console.info("Automata have been created in database and read out! You can use it do compliance checking!")
         ServerLogging().log_info(func_name, "Automata have been created in database and read out")
-
-    app.debug = False
+    debug = False
     app.run(host="0.0.0.0", port=5000, debug=True, use_reloader=False)

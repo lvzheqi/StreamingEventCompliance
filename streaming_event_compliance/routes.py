@@ -1,4 +1,4 @@
-from streaming_event_compliance import app, db
+from streaming_event_compliance import app
 from flask import request, send_file
 from flask_api import status
 from streaming_event_compliance.services import setup
@@ -25,26 +25,6 @@ FILE_TYPE = app.config['FILE_TYPE']
 @app.route('/')
 def index():
     return 'Welcome to Compliance Server! We will provide 2 services!'
-
-
-@app.route("/test")
-# TODO CAN REMOVE FOLLOWING AFTER TESTING DOCKER DATABASE.
-def test():
-    mysql_result = False
-    db.session.query("1").from_statement("SELECT 1").all()
-    try:
-        if db.session.query("1").from_statement("SELECT 1").all():
-            mysql_result = True
-    except:
-        pass
-
-    if mysql_result:
-        result = 'successful'
-    else:
-        result = 'fail'
-
-    # Return the page with the result.
-    return result
 
 
 @app.route('/login', methods=['POST'])
@@ -118,8 +98,8 @@ def call_compliance_checker():
         console.error('Something wrong in threading!' + traceback.format_exc())
         ServerLogging().log_error(func_name, "server", 'Something wrong in threading!')
     except Exception:
+        console.error('Something wrong by running!' + traceback.format_exc())
         ServerLogging().log_error(func_name, "server", 'Something wrong!')
-        print(traceback.format_exc())
     finally:
         return response
 

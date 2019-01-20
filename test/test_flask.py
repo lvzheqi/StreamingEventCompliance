@@ -91,12 +91,6 @@ def compliance_check(client, uuid, event_log):
                    '; Alert M:' + str(alertM) + '; Error:' + str(error))
 
 
-def binary_to_dict(the_binary):
-    jsn = ''.join(chr(int(x, 2)) for x in the_binary.split())
-    d = json.loads(jsn)
-    return d
-
-
 def login(client, uuid):
     return client.post('/login?uuid=' + uuid)
 

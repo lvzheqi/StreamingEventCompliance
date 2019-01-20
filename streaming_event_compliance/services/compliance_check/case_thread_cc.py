@@ -5,7 +5,6 @@ from streaming_event_compliance.objects.exceptions.exception import ThreadExcept
 from streaming_event_compliance.objects.automata import automata, alertlog
 from streaming_event_compliance.objects.logging.server_logging import ServerLogging
 import queue, sys
-import traceback
 import threading
 from console_logging.console import Console
 console = Console()
@@ -35,10 +34,8 @@ class CaseThreadForCC(Thread):
         ex_info = self.wait_for_exc_info()
         if ex_info is None:
             return
-        elif isinstance(ex_info, ZeroDivisionError):
-            raise ThreadException(str(ex_info))
         else:
-            raise Exception
+            raise ThreadException(str(ex_info))
 
     def get_message(self):
         return self._message
@@ -76,10 +73,6 @@ class CaseThreadForCC(Thread):
                 self._message.put(response)
                 self._status_queue.put(None)
         except Exception as ec:
-            console.error('run - ComplianceCaselock ' + traceback.format_exc())
-            ServerLogging().log_error(func_name, self.client_uuid, self.index, self.event['case_id'],
-                                      self.event['activity'],
-                                      "Error with Caselock")
             self._status_queue.put(ec)
 
 
@@ -107,7 +100,6 @@ def create_source_sink_node(windows_memory, client_uuid, event, thread_id):
                     }
     """
     response = {}
-    func_name = sys._getframe().f_code.co_name
     try:
         for ws in WINDOW_SIZE:
             source_node = ','.join(windows_memory[MAXIMUN_WINDOW_SIZE - ws: MAXIMUN_WINDOW_SIZE])
@@ -141,9 +133,6 @@ def create_source_sink_node(windows_memory, client_uuid, event, thread_id):
                 response[ws] = {'body': 'OK'}
         return response
     except Exception as ec:
-        ServerLogging().log_error(func_name, client_uuid, thread_id, event['case_id'], event['activity'],
-                                  "Exception raised while creating sink_node and source_node")
-        console.error('Exception from create_source_sink_node:' + traceback.format_exc())
         raise ec
 
 
@@ -218,6 +207,4 @@ def check_alert(window_size, source_node, sink_node, client_uuid, event, thread_
                     lock_list.get((source_node, sink_node)).release()
                     return 2
     except Exception as ec:
-        ServerLogging().log_error(func_name, client_uuid, thread_id, event['case_id'], event['activity'],
-                                  "Exception raised while checking alert")
         raise ec

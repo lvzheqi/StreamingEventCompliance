@@ -3,6 +3,7 @@ from streaming_event_compliance import app
 from pythonlangutil.overload import Overload, signature
 import os
 
+
 class ServerLogging:
     """
     Description:
@@ -37,11 +38,7 @@ class ServerLogging:
     """
     def __init__(self):
         self.filename = app.config['SERVER_LOG_PATH']
-        if os.path.exists(self.filename):
-            fsize = os.path.getsize(self.filename)
-            fsize = fsize / float(1024 * 1024)
-            if fsize > 2:
-                os.remove(self.filename)
+
         if not os.path.exists(self.filename):
             with open(self.filename, 'w'):
                 pass
