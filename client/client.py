@@ -6,10 +6,11 @@ from multiprocessing import Process
 import sys
 import traceback
 import requests
-import os, time
+import os
 from console_logging.console import Console
 console = Console()
 console.setVerbosity(5)
+
 
 class Client_cls(object):
     """
@@ -53,7 +54,6 @@ class Client_cls(object):
                 elif r.text == 'Refuse':
                     return False
         except Exception as e:
-            print(e)
             raise ConnectionException
 
     def run_compliance_checker(self):
@@ -69,8 +69,6 @@ class Client_cls(object):
             eventlog.simulate_stream_event(self.uuid, event_log)
         except ReadFileException:
             raise ReadFileException(self.path)
-        except ConnectionException:
-            raise ConnectionException
         except ThreadException:
             raise ThreadException(traceback.format_exc())
 
@@ -181,9 +179,10 @@ def main(argv):
                 ClientLogging().log_info(func_name, argv[0], 'Calling run_compliance_checker()')
                 console.info('---------------start to do compliance checking, please wait-------------------')
                 try:
-                    p_main = Process(target=client.run_compliance_checker())
-                    p_main.start()
-                    p_main.join()
+                    # p_main = Process(target=client.run_compliance_checker())
+                    client.run_compliance_checker()
+                    # p_main.start()
+                    # p_main.join()
                     console.secure('[ Results  ]', 'OK:' + str(ok['ok']) + '; Alert T:' + str(alertT['alertT'])
                                    + '; Alert M:' + str(alertM['alertM']))
                     ClientLogging().log_info(func_name, argv[0], 'compliance checking is completed')
@@ -205,12 +204,6 @@ def main(argv):
                     ClientLogging().log_error(func_name, argv[0], 'Server is not available')
                     console.error('------------------the compliance checking is interrupt------------------------')
 
-                except ConnectionException as e:
-                    client.cc_status = False
-                    e.get_message()
-                    ClientLogging().log_error(func_name, argv[0], 'Server is not available')
-                    console.secure('[ Warning  ]',
-                                   '------------------the compliance checking is interrupt------------------------')
             elif redo == '2':
                 ClientLogging().log_info(func_name, argv[0], 'The user selected option 2')
                 pass

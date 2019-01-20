@@ -8,10 +8,6 @@ WINDOW_SIZE = app.config['WINDOW_SIZE']
 
 
 def empty_tables():
-    """
-    Description:
-    :return:
-    """
     db.session.query(automata.Connection).delete()
     db.session.query(automata.Node).delete()
     db.session.query(alertlog.AlertRecord).delete()
@@ -64,10 +60,6 @@ def update_client_status(uuid, status):
 
 
 def init_automata_from_database():
-    '''
-    fetch the automata from database. If there is no data in database, then return None
-    :return: automata with different window size, otherwise return None
-    '''
     conns = automata.Connection.query.all()
     autos = {}
     for ws in WINDOW_SIZE:

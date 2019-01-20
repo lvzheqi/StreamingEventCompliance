@@ -89,7 +89,6 @@ def legend(sub):
         sub1.node('s_node3', 's_node3')
         sub1.node('ss_node3', 'ss_node3')
         sub1.edge('s_node3', 'ss_node3', color='green', label='', penwidth='1.5')
-        # sub.graph_attr['rank'] = 'source; text0 text1 text2 text3'
         sub1.node('text3', shape='plaintext', style='solid', label='alerts, when the probability is \\r '
                                                                    'below Threshold \\r', width='3.5')
 

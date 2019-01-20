@@ -65,8 +65,8 @@ def build_automata_pro():
         console.secure("[ Preprocessing eventlog time ]", ti)
         console.secure("[ Number of event  ]", len(event_log))
     except Exception:
-       ServerLogging().log_error(func_name, "server", "Training file cannot be processed")
-       raise ReadFileException(TRAINING_EVENT_LOG_PATH, traceback.format_exc())
+        ServerLogging().log_error(func_name, "server", "Training file cannot be processed")
+        raise ReadFileException(TRAINING_EVENT_LOG_PATH, traceback.format_exc())
 
     for one_event in event_log:
         event = {}

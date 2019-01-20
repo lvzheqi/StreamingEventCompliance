@@ -3,15 +3,14 @@ from pm4py.objects.log import transform
 from . import eventthread
 
 from .client_logging import ClientLogging
-from .exception import ReadFileException, ConnectionException, ThreadException
+from .exception import ReadFileException, ThreadException
 import sys, time
 from console_logging.console import Console
 console = Console()
 console.setVerbosity(5)
 
 threads = []
-T = eventthread.ThreadMemorizer()
-index = 0
+
 
 def read_log(client_uuid, path):
     """
@@ -45,8 +44,10 @@ def simulate_stream_event(client_uuid, event_log):
     :param client_uuid: :`string` It is the username of the user that has initiated the client
     :param event_log: :`list` It is a list of all the events in the sorted form
     """
+    global threads
     func_name = sys._getframe().f_code.co_name
     sum = len(event_log)
+
     start = time.clock()
     for event in event_log:
         dic = {}
@@ -57,17 +58,19 @@ def simulate_stream_event(client_uuid, event_log):
                 dic['case_id'] = event.get(item)
         ClientLogging().log_info(func_name, client_uuid, dic['case_id'], dic['activity'],
                                  'Calling invoke_event_thread()')
-        event_thread = invoke_event_thread(dic, client_uuid)
-        try:
-            event_thread.join_with_exception()
-        except ConnectionException:
-            raise ConnectionException
-        except ThreadException as ec:
-            raise ThreadException(str(ec))
+        if len(threads) > 1000:
+            try:
+                for th in threads:
+                    th.join_with_exception()
+            except ThreadException as ec:
+                raise ThreadException(str(ec))
+            threads = []
+
+        invoke_event_thread(dic, client_uuid)
+
     end = time.clock()
     runtime = end - start
     results = sum / runtime
-    time.sleep(1)
     console.secure('[ Events_number  ]', str(sum))
     console.secure('[ Running time  ]', str(runtime))
     console.secure('[ Average speed  ]', str(results) + ' per second!\n')
@@ -76,6 +79,12 @@ def simulate_stream_event(client_uuid, event_log):
     ClientLogging().log_info(func_name, client_uuid, end_message['case_id'], end_message['activity'],
                              'Calling invoke_event_thread()')
     invoke_event_thread(end_message, client_uuid)
+
+    try:
+        for th in threads:
+            th.join_with_exception()
+    except ThreadException as ec:
+        raise ThreadException(str(ec))
 
 
 def invoke_event_thread(event, client_uuid):
@@ -87,16 +96,14 @@ def invoke_event_thread(event, client_uuid):
 
     :param event: :`dict`={'case_id': `string`, 'activity': `string`}
     :param client_uuid: :`string` It is the username of the user that has initiated the client
-    :return: :class `client.simulate_stream_event.eventlog.EventThread` It is the class for the thread
     """
-    global index
+
     func_name = sys._getframe().f_code.co_name
     ClientLogging().log_info(func_name, client_uuid, event['case_id'], event['activity'], 'Initialising thread')
-    event_thread = eventthread.EventThread(event, index, T,  client_uuid)
+    event_thread = eventthread.EventThread(event, client_uuid)
     ClientLogging().log_info(func_name, client_uuid, event['case_id'], event['activity'], 'Starting thread for event ')
     event_thread.start()
     threads.append(event_thread)
-    index = index + 1
-    return event_thread
+
 
 
