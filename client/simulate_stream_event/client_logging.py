@@ -37,6 +37,7 @@ class ClientLogging:
     log_format: It is the format in which the time and message will be stored.
     """
     def __init__(self):
+
         if not os.path.exists(config.CLIENT_LOG_PATH):
             with open(config.CLIENT_LOG_PATH, 'w'):
                 pass
