@@ -79,13 +79,15 @@ def simulate_stream_event(client_uuid, event_log):
     ClientLogging().log_info(func_name, client_uuid, end_message['case_id'], end_message['activity'],
                              'Calling invoke_event_thread()')
     invoke_event_thread(end_message, client_uuid)
-
+    print('before end')
     try:
         for th in threads:
+            print(th)
             th.join_with_exception()
     except ThreadException as ec:
+        print(ec)
         raise ThreadException(str(ec))
-
+    print('end')
 
 def invoke_event_thread(event, client_uuid):
     """

@@ -75,6 +75,7 @@ class EventThread(Thread):
                                           self.event['activity'],
                                           'Error by compliance checking')
                 ServerRequestException('Failure by compliance checking').get_message()
+                self._status_queue.put(None)
             else:
                 ClientLogging().log_info(func_name, self.client_uuid, self.event['case_id'],
                                          self.event['activity'],
