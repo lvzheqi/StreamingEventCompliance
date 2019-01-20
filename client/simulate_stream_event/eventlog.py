@@ -11,6 +11,7 @@ console.setVerbosity(5)
 
 threads = []
 
+
 def read_log(client_uuid, path):
     """
     Description:
@@ -29,7 +30,6 @@ def read_log(client_uuid, path):
         event_log = transform.transform_trace_log_to_event_log(trace_log)
         ClientLogging().log_info(func_name, client_uuid, 'Sorting event logger')
         event_log.sort()
-        print("----------dddd--------")
     except Exception:
         raise ReadFileException(path)
     return event_log
@@ -65,7 +65,9 @@ def simulate_stream_event(client_uuid, event_log):
             except ThreadException as ec:
                 raise ThreadException(str(ec))
             threads = []
+
         invoke_event_thread(dic, client_uuid)
+
     end = time.clock()
     runtime = end - start
     results = sum / runtime
