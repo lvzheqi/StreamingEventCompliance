@@ -15,7 +15,7 @@ if __name__ == '__main__':
         ServerLogging().log_info(func_name, "Created all db tables")
         db.create_all()
     except Exception as ec:
-        console.error('Error: Database connection!', ec.__class__, traceback.format_exc())
+        console.error('Error: Database connection!' + str(ec.__class__) + traceback.format_exc())
         ServerLogging().log_error(func_name, "Database connection error!")
         exit(1)
 

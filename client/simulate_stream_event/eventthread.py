@@ -13,6 +13,7 @@ ok = {'ok': 0}
 alertT = {'alertT': 0}
 alertM = {'alertM': 0}
 
+
 class ThreadMemorizer(object):
     """
     Description:
