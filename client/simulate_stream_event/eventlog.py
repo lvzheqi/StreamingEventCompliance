@@ -9,6 +9,7 @@ from console_logging.console import Console
 console = Console()
 console.setVerbosity(5)
 
+threads = []
 
 def read_log(client_uuid, path):
     """
@@ -28,6 +29,7 @@ def read_log(client_uuid, path):
         event_log = transform.transform_trace_log_to_event_log(trace_log)
         ClientLogging().log_info(func_name, client_uuid, 'Sorting event logger')
         event_log.sort()
+        print("----------dddd--------")
     except Exception:
         raise ReadFileException(path)
     return event_log
@@ -42,31 +44,43 @@ def simulate_stream_event(client_uuid, event_log):
     :param client_uuid: :`string` It is the username of the user that has initiated the client
     :param event_log: :`list` It is a list of all the events in the sorted form
     """
+    global threads
     func_name = sys._getframe().f_code.co_name
     sum = len(event_log)
-    try:
-        start = time.clock()
-        for event in event_log:
-            dic = {}
-            for item in event.keys():
-                if item == 'concept:name':
-                    dic['activity'] = event.get(item)
-                elif item == 'case:concept:name':
-                    dic['case_id'] = event.get(item)
-            ClientLogging().log_info(func_name, client_uuid, dic['case_id'], dic['activity'],
-                                     'Calling invoke_event_thread()')
-            invoke_event_thread(dic, client_uuid)
-        end = time.clock()
-        runtime = end - start
-        results = sum / runtime
-        console.secure('[ Events_number  ]', str(sum))
-        console.secure('[ Running time  ]', str(runtime))
-        console.secure('[ Average speed  ]', str(results) + ' per second!\n')
 
-        end_message = {'case_id': 'NONE', 'activity': 'END'}
-        ClientLogging().log_info(func_name, client_uuid, end_message['case_id'], end_message['activity'],
+    start = time.clock()
+    for event in event_log:
+        dic = {}
+        for item in event.keys():
+            if item == 'concept:name':
+                dic['activity'] = event.get(item)
+            elif item == 'case:concept:name':
+                dic['case_id'] = event.get(item)
+        ClientLogging().log_info(func_name, client_uuid, dic['case_id'], dic['activity'],
                                  'Calling invoke_event_thread()')
-        invoke_event_thread(end_message, client_uuid)
+        if len(threads) > 1000:
+            try:
+                for th in threads:
+                    th.join_with_exception()
+            except ThreadException as ec:
+                raise ThreadException(str(ec))
+            threads = []
+        invoke_event_thread(dic, client_uuid)
+    end = time.clock()
+    runtime = end - start
+    results = sum / runtime
+    console.secure('[ Events_number  ]', str(sum))
+    console.secure('[ Running time  ]', str(runtime))
+    console.secure('[ Average speed  ]', str(results) + ' per second!\n')
+
+    end_message = {'case_id': 'NONE', 'activity': 'END'}
+    ClientLogging().log_info(func_name, client_uuid, end_message['case_id'], end_message['activity'],
+                             'Calling invoke_event_thread()')
+    invoke_event_thread(end_message, client_uuid)
+
+    try:
+        for th in threads:
+            th.join_with_exception()
     except ThreadException as ec:
         raise ThreadException(str(ec))
 
@@ -87,9 +101,7 @@ def invoke_event_thread(event, client_uuid):
     event_thread = eventthread.EventThread(event, client_uuid)
     ClientLogging().log_info(func_name, client_uuid, event['case_id'], event['activity'], 'Starting thread for event ')
     event_thread.start()
-    try:
-        event_thread.join_with_exception()
-    except ThreadException as ec:
-        raise ThreadException(str(ec))
+    threads.append(event_thread)
+
 
 
