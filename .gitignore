@@ -10,6 +10,9 @@ out
 gen
 /.evn/
 .idea
+data/runtime
+data/server.log
+client/client_log.log
 
 
 
