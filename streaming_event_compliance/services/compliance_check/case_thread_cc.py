@@ -6,6 +6,7 @@ from streaming_event_compliance.objects.automata import automata, alertlog
 from streaming_event_compliance.objects.logging.server_logging import ServerLogging
 import queue, sys
 import threading
+import traceback
 from console_logging.console import Console
 console = Console()
 console.setVerbosity(5)
@@ -56,7 +57,11 @@ class CaseThreadForCC(Thread):
                 ServerLogging().log_info(func_name, self.client_uuid, self.index, self.event['case_id'],
                                          self.event['activity'], "Acquiring lock")
                 windows_memory = client_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
-                response = create_source_sink_node(windows_memory, self.client_uuid, self.event, self.index)
+                try:
+                    response = create_source_sink_node(windows_memory, self.client_uuid, self.event, self.index)
+                except Exception:
+                    print(traceback.format_exc())
+                    exit(5)
                 ServerLogging().log_info(func_name, self.client_uuid, self.index, self.event['case_id'],
                                          self.event['activity'],
                                          "Calculating response")
@@ -73,6 +78,7 @@ class CaseThreadForCC(Thread):
                 self._message.put(response)
                 self._status_queue.put(None)
         except Exception as ec:
+            print(traceback.format_exc())
             self._status_queue.put(ec)
 
 
@@ -125,7 +131,7 @@ def create_source_sink_node(windows_memory, client_uuid, event, thread_id):
                     'case_id': event['case_id'],
                     'source_node': source_node,
                     'sink_node': sink_node,
-                    'cause': gVars.autos[ws].get_connection_probability(automata.Connection(source_node, sink_node)),
+                    'cause': gVars.autos[ws].get_connection_probability(automata.ConnectionL(source_node, sink_node)),
                     'expect': THRESHOLD,
                     'body': 'T'
                 }
@@ -133,6 +139,7 @@ def create_source_sink_node(windows_memory, client_uuid, event, thread_id):
                 response[ws] = {'body': 'OK'}
         return response
     except Exception as ec:
+        print(traceback.format_exc())
         raise ec
 
 
@@ -158,7 +165,7 @@ def check_alert(window_size, source_node, sink_node, client_uuid, event, thread_
     try:
         alert_log = gVars.get_client_alert_logs(client_uuid)[window_size]
         auto = gVars.autos[window_size]
-        conn = automata.Connection(source_node, sink_node)
+        conn = automata.ConnectionL(source_node, sink_node)
         if auto.contains_connection(conn):
             if auto.get_connection_probability(conn) >= THRESHOLD:
                 return 0
@@ -166,7 +173,7 @@ def check_alert(window_size, source_node, sink_node, client_uuid, event, thread_
                 if lock_list.get((source_node, sink_node)):
                     if lock_list.get((source_node, sink_node)).acquire():
                         alert_log.update_alert_record(
-                            alertlog.AlertRecord(client_uuid, source_node, sink_node, 1, 'T'))
+                            alertlog.AlertRecordL(client_uuid, source_node, sink_node, 1, 'T'))
                         ServerLogging().log_error(func_name, client_uuid, thread_id, event['case_id'],
                                                   event['activity'], "Alert raised as probability of "
                                                                      "connection between " +
@@ -178,7 +185,7 @@ def check_alert(window_size, source_node, sink_node, client_uuid, event, thread_
                     lock_list[source_node, sink_node] = lock
                     if lock_list.get((source_node, sink_node)).acquire():
                         alert_log.update_alert_record(
-                            alertlog.AlertRecord(client_uuid, source_node, sink_node, 1, 'T'))
+                            alertlog.AlertRecordL(client_uuid, source_node, sink_node, 1, 'T'))
                         ServerLogging().log_error(func_name, client_uuid, thread_id, event['case_id'],
                                                   event['activity'], "Alert raised as probability of "
                                                                      "connection between " +
@@ -190,7 +197,7 @@ def check_alert(window_size, source_node, sink_node, client_uuid, event, thread_
         else:
             if lock_list.get((source_node, sink_node)):
                 if lock_list.get((source_node, sink_node)).acquire():
-                    alert_log.update_alert_record(alertlog.AlertRecord(client_uuid, source_node, sink_node, 1, 'M'))
+                    alert_log.update_alert_record(alertlog.AlertRecordL(client_uuid, source_node, sink_node, 1, 'M'))
                     ServerLogging().log_error(func_name, client_uuid, thread_id, event['case_id'], event['activity'],
                                               "Alert raised as there should not be connection between " + source_node
                                               + " and " + sink_node)
@@ -200,11 +207,12 @@ def check_alert(window_size, source_node, sink_node, client_uuid, event, thread_
                 lock = threading.RLock()
                 lock_list[source_node, sink_node] = lock
                 if lock_list.get((source_node, sink_node)).acquire():
-                    alert_log.update_alert_record(alertlog.AlertRecord(client_uuid, source_node, sink_node, 1, 'M'))
+                    alert_log.update_alert_record(alertlog.AlertRecordL(client_uuid, source_node, sink_node, 1, 'M'))
                     ServerLogging().log_error(func_name, client_uuid, thread_id, event['case_id'], event['activity'],
                                               "Alert raised as there should not be connection between " + source_node
                                               + " and " + sink_node)
                     lock_list.get((source_node, sink_node)).release()
                     return 2
     except Exception as ec:
+        print(traceback.format_exc())
         raise ec

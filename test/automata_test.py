@@ -6,12 +6,12 @@ class AutomataTest(unittest.TestCase):
     def setUp(self):
         self.auto1 = automata.Automata()
         self.auto2 = automata.Automata()
-        self.auto1.update_automata(automata.Connection('A', 'B', 1))
-        self.auto1.update_automata(automata.Connection('A', 'B', 1))
-        self.auto1.update_automata(automata.Connection('A', 'C', 1))
-        self.auto1.update_automata(automata.Connection('C', '$', 0))
-        self.auto2.update_automata(automata.Connection('A,B', 'B,C', 1))
-        self.auto2.update_automata(automata.Connection('B,D', 'D,B', 1))
+        self.auto1.update_automata(automata.ConnectionL('A', 'B', 1))
+        self.auto1.update_automata(automata.ConnectionL('A', 'B', 1))
+        self.auto1.update_automata(automata.ConnectionL('A', 'C', 1))
+        self.auto1.update_automata(automata.ConnectionL('C', '$', 0))
+        self.auto2.update_automata(automata.ConnectionL('A,B', 'B,C', 1))
+        self.auto2.update_automata(automata.ConnectionL('B,D', 'D,B', 1))
         self.auto1.set_probability()
         self.auto2.set_probability()
 
@@ -38,9 +38,9 @@ class AutomataTest(unittest.TestCase):
         self.assertEqual(self.auto1.contains_source_node('$'), False)
 
     def test_get_probability(self):
-        self.assertAlmostEqual(self.auto1.get_connection_probability(automata.Connection('A', 'B')), 2/3)
-        self.assertAlmostEqual(self.auto1.get_connection_probability(automata.Connection('A', 'C')), 1/3)
-        self.assertAlmostEqual(self.auto1.get_connection_probability(automata.Connection('C', 'C')), -1)
+        self.assertAlmostEqual(self.auto1.get_connection_probability(automata.ConnectionL('A', 'B')), 2/3)
+        self.assertAlmostEqual(self.auto1.get_connection_probability(automata.ConnectionL('A', 'C')), 1/3)
+        self.assertAlmostEqual(self.auto1.get_connection_probability(automata.ConnectionL('C', 'C')), -1)
 
 
 if __name__ == '__main__':

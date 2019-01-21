@@ -12,7 +12,8 @@ from console_logging.console import Console
 import json
 import traceback
 import sys
-
+from threading import Lock
+lock = Lock()
 
 console = Console()
 console.setVerbosity(5)
@@ -75,16 +76,17 @@ def call_compliance_checker():
     uuid = request.args.get('uuid')
     response = json.dumps({'body': 'Error, something wrong!'}), status.HTTP_409_CONFLICT
     try:
-        if uuid not in gVars.clients_status:
-            check_client_stauts(uuid)
-        elif gVars.get_client_status(uuid):
-            dbtools.delete_alert(uuid)
-            dbtools.update_client_status(uuid, False)
-            gVars.clients_status[uuid] = False
+        with lock:
+            if uuid not in gVars.clients_status:
+                check_client_stauts(uuid)
+            elif gVars.get_client_status(uuid):
+                dbtools.delete_alert(uuid)
+                dbtools.update_client_status(uuid, False)
+                gVars.clients_status[uuid] = False
 
-        if uuid not in gVars.clients_cc_status:
-            gVars.clients_cc_status[uuid] = True
-            setup.init_compliance_checking(uuid)
+            if uuid not in gVars.clients_cc_status:
+                gVars.clients_cc_status[uuid] = True
+                setup.init_compliance_checking(uuid)
 
         event = request.json
         event = json.loads(event)

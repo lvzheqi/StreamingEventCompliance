@@ -71,6 +71,8 @@ class Client_cls(object):
             raise ReadFileException(self.path)
         except ThreadException:
             raise ThreadException(traceback.format_exc())
+        except Exception:
+            print(traceback.format_exc())
 
     def run_show_deviation_pdf(self):
         """
@@ -179,10 +181,10 @@ def main(argv):
                 ClientLogging().log_info(func_name, argv[0], 'Calling run_compliance_checker()')
                 console.info('---------------start to do compliance checking, please wait-------------------')
                 try:
-                    # p_main = Process(target=client.run_compliance_checker())
-                    client.run_compliance_checker()
-                    # p_main.start()
-                    # p_main.join()
+                    p_main = Process(target=client.run_compliance_checker())
+                    # client.run_compliance_checker()
+                    p_main.start()
+                    p_main.join()
                     console.secure('[ Results  ]', 'OK:' + str(ok['ok']) + '; Alert T:' + str(alertT['alertT'])
                                    + '; Alert M:' + str(alertM['alertM']))
                     ClientLogging().log_info(func_name, argv[0], 'compliance checking is completed')
