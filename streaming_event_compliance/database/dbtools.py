@@ -3,6 +3,7 @@ from streaming_event_compliance.objects.automata import alertlog
 from streaming_event_compliance import app
 
 from streaming_event_compliance.database import db
+import traceback
 
 WINDOW_SIZE = app.config['WINDOW_SIZE']
 
@@ -93,7 +94,11 @@ def init_alert_log_from_database(uuid):
 
 
 def delete_alert(uuid):
-    records = alertlog.AlertRecord.query.filter_by(client_id=uuid).all()
-    for record in records:
-        db.session.delete(record)
-    db.session.commit()
+    try:
+        records = alertlog.AlertRecord.query.filter_by(client_id=uuid).all()
+        print(records)
+        for record in records:
+            db.session.delete(record)
+        db.session.commit()
+    except Exception as ec:
+        raise ec

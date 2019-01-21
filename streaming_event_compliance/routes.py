@@ -11,7 +11,7 @@ from streaming_event_compliance.objects.logging.server_logging import ServerLogg
 from console_logging.console import Console
 import json
 import traceback
-import sys
+import sys, threading
 
 
 console = Console()
@@ -20,7 +20,7 @@ console.setVerbosity(5)
 CLEINT_DATA_PATH = app.config['CLEINT_DATA_PATH']
 AUTOMATA_FILE = app.config['AUTOMATA_FILE']
 FILE_TYPE = app.config['FILE_TYPE']
-
+lock = threading.Lock()
 
 @app.route('/')
 def index():
@@ -74,23 +74,31 @@ def call_compliance_checker():
     func_name = sys._getframe().f_code.co_name
     uuid = request.args.get('uuid')
     response = json.dumps({'body': 'Error, something wrong!'}), status.HTTP_409_CONFLICT
+
     try:
-        if uuid not in gVars.clients_status:
-            check_client_stauts(uuid)
-        elif gVars.get_client_status(uuid):
-            dbtools.delete_alert(uuid)
-            dbtools.update_client_status(uuid, False)
-            gVars.clients_status[uuid] = False
-
-        if uuid not in gVars.clients_cc_status:
-            gVars.clients_cc_status[uuid] = True
-            setup.init_compliance_checking(uuid)
-
+        global lock
+        with lock:
+            if uuid not in gVars.clients_status:
+                check_client_stauts(uuid)
+            elif gVars.get_client_status(uuid):
+                print(gVars.get_client_status(uuid))
+                try:
+                    dbtools.delete_alert(uuid)
+                except Exception:
+                    print(traceback.format_exc())
+                print(traceback.format_exc())
+                alerts, st = dbtools.init_alert_log_from_database(uuid)
+                dbtools.update_client_status(uuid, False)
+                gVars.clients_status[uuid] = False
+            if uuid not in gVars.clients_cc_status:
+                gVars.clients_cc_status[uuid] = True
+                setup.init_compliance_checking(uuid)
         event = request.json
         event = json.loads(event)
         ServerLogging().log_info(func_name, "server", "Compliance checking for " + event['case_id'] + " "
                                  + event['activity'])
         response = compliance_checker.compliance_checker(uuid, event), status.HTTP_200_OK
+
     except KeyError:
         console.error('Something wrong in parameter getting!' + traceback.format_exc())
         ServerLogging().log_error(func_name, "server", 'Something wrong in parameter getting!')

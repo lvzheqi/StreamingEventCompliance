@@ -4,13 +4,14 @@ from . import eventthread
 
 from .client_logging import ClientLogging
 from .exception import ReadFileException, ThreadException
-import sys, time
+import sys, time, resource
 from console_logging.console import Console
 console = Console()
 console.setVerbosity(5)
 
 threads = []
-
+resource.setrlimit(resource.RLIMIT_NOFILE, (2000, -1))
+# call ClientLogging() too many times, every time call it will open a file
 
 def read_log(client_uuid, path):
     """
@@ -58,12 +59,12 @@ def simulate_stream_event(client_uuid, event_log):
                 dic['case_id'] = event.get(item)
         ClientLogging().log_info(func_name, client_uuid, dic['case_id'], dic['activity'],
                                  'Calling invoke_event_thread()')
-        if len(threads) > 1000:
-            try:
-                for th in threads:
+        if len(threads) > 254:
+            for th in threads:
+                try:
                     th.join_with_exception()
-            except ThreadException as ec:
-                raise ThreadException(str(ec))
+                except ThreadException as ec:
+                    raise ThreadException(str(ec))
             threads = []
 
         invoke_event_thread(dic, client_uuid)
@@ -79,15 +80,14 @@ def simulate_stream_event(client_uuid, event_log):
     ClientLogging().log_info(func_name, client_uuid, end_message['case_id'], end_message['activity'],
                              'Calling invoke_event_thread()')
     invoke_event_thread(end_message, client_uuid)
-    print('before end')
-    try:
-        for th in threads:
-            print(th)
+    for th in threads:
+        try:
             th.join_with_exception()
-    except ThreadException as ec:
-        print(ec)
-        raise ThreadException(str(ec))
-    print('end')
+        except ThreadException as ec:
+            console.error(ec)
+            raise ThreadException(str(ec))
+    threads = []
+
 
 def invoke_event_thread(event, client_uuid):
     """
@@ -99,7 +99,6 @@ def invoke_event_thread(event, client_uuid):
     :param event: :`dict`={'case_id': `string`, 'activity': `string`}
     :param client_uuid: :`string` It is the username of the user that has initiated the client
     """
-
     func_name = sys._getframe().f_code.co_name
     ClientLogging().log_info(func_name, client_uuid, event['case_id'], event['activity'], 'Initialising thread')
     event_thread = eventthread.EventThread(event, client_uuid)

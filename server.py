@@ -3,14 +3,13 @@ import time, traceback
 from streaming_event_compliance.objects.logging.server_logging import ServerLogging
 from streaming_event_compliance.objects.exceptions.exception import ThreadException, ReadFileException
 from console_logging.console import Console
-import sys
+import sys, resource
+resource.setrlimit(resource.RLIMIT_NOFILE, (2000, -1))
 console = Console()
 console.setVerbosity(5)
 
 if __name__ == '__main__':
     func_name = sys._getframe().f_code.co_name
-
-
     try:
         ServerLogging().log_info(func_name, "Created all db tables")
         db.create_all()
@@ -37,9 +36,10 @@ if __name__ == '__main__':
             ServerLogging().log_error(func_name, "Training file cannot be read")
         except ThreadException as ec:
             ServerLogging().log_error(func_name, "Error with threads")
+        except Exception as ec:
+            ServerLogging().log_error(func_name, "Error")
         ends = time.clock()
         console.secure("[ The Total Time  For Training Automata  ]", str(ends - start) + "Seconds.")
-
     else:
         console.info("Automata have been created in database and read out! You can use it do compliance checking!")
         ServerLogging().log_info(func_name, "Automata have been created in database and read out")

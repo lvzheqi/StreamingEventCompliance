@@ -71,6 +71,8 @@ class Client_cls(object):
             raise ReadFileException(self.path)
         except ThreadException:
             raise ThreadException(traceback.format_exc())
+        except Exception:
+            console.error(traceback.format_exc())
 
     def run_show_deviation_pdf(self):
         """
@@ -163,7 +165,6 @@ def main(argv):
         if services == '1' and len(argv) == 2:
             redo = '1'
             ClientLogging().log_info(func_name, argv[0], 'The user selected option 1')
-
             if client.cc_status:
                 console.secure('[ Warning  ]', 'You have already done the compliance check! Do you really want to'
                                           ' restart? Or do you want to render the deviation pdf?')
@@ -175,12 +176,14 @@ def main(argv):
                     pass
 
             if redo == '1':
+                ok['ok'] = 0
+                alertM['alertM'] = 0
+                alertT['alertT'] = 0
                 ClientLogging().log_info(func_name, argv[0], 'The user selected option 1')
                 ClientLogging().log_info(func_name, argv[0], 'Calling run_compliance_checker()')
                 console.info('---------------start to do compliance checking, please wait-------------------')
                 try:
                     p_main = Process(target=client.run_compliance_checker())
-                    client.run_compliance_checker()
                     p_main.start()
                     p_main.join()
                     console.secure('[ Results  ]', 'OK:' + str(ok['ok']) + '; Alert T:' + str(alertT['alertT'])

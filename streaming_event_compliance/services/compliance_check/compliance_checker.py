@@ -79,7 +79,8 @@ def compliance_checker(client_uuid, event):
                                 ServerLogging().log_error(func_name, client_uuid,
                                                           "Exception raised while joining thread.")
                                 console.error(traceback.format_exc())
-                    client_thread.clear()
+                            else:
+                                client_thread.clear()
                     client_thread.append(thread)
                     threads_index = threads_index + 1
                     return json.dumps(thread.get_message().get())
@@ -102,19 +103,20 @@ def compliance_checker(client_uuid, event):
                             except ThreadException as ec:
                                 console.error('compliance_checker' + traceback.format_exc())
                                 ServerLogging().log_error(func_name, client_uuid,
-                                                          "Exception raised while joining thread.")
+                                                          "Exception raised while joining thread."+traceback.format_exc())
                                 raise ThreadException(str(ec))
                             except Exception:
                                 ServerLogging().log_error(func_name, client_uuid,
-                                                          "Exception raised while joining thread.")
+                                                          "Exception raised while joining thread."+traceback.format_exc())
                                 console.error(traceback.format_exc())
-                    client_thread.clear()
+                            else:
+                                client_thread.clear()
                     client_thread.append(thread)
                     threads_index = threads_index + 1
                     return json.dumps(thread.get_message().get())
                 except Exception:
                     console.error('compliance_checker' + traceback.format_exc())
-                    ServerLogging().log_error(func_name, client_uuid, "Exception raised while starting thread.")
+                    ServerLogging().log_error(func_name, client_uuid, "Exception raised while starting thread."+traceback.format_exc())
                     raise ThreadException(traceback.format_exc())
         elif event['case_id'] == 'NONE' and event['activity'] == 'END':
             for th in client_thread:
@@ -122,26 +124,30 @@ def compliance_checker(client_uuid, event):
                     th.join_with_exception()
                 except ThreadException as ec:
                     console.error('compliance_checker' + traceback.format_exc())
-                    ServerLogging().log_error(func_name, client_uuid, "Exception raised while joining thread.")
+                    ServerLogging().log_error(func_name, client_uuid, "ThreadException: Exception raised while "
+                                                                      "joining thread." + traceback.format_exc())
                     raise ThreadException(str(ec))
                 except Exception:
-                    ServerLogging().log_error(func_name, client_uuid, "Exception raised while joining thread.")
+                    ServerLogging().log_error(func_name, client_uuid, "Exception raised while joining thread." + traceback.format_exc())
                     console.error(traceback.format_exc())
-            alert_log = gVars.get_client_alert_logs(client_uuid)
-            dbtools.create_client(client_uuid)
-            dbtools.insert_alert_log(alert_log)
-            path = CLEINT_DATA_PATH + client_uuid + '_' + AUTOMATA_FILE + FILE_TYPE
-            if os.path.exists(path):
-                os.remove(path)
-            ServerLogging().log_info(func_name, client_uuid, "showing pdf")
-            visualization_deviation_automata.show_deviation_pdf(client_uuid)
-            ServerLogging().log_info(func_name, client_uuid, "Setting client status to true as compliance checking "
-                                                             "is completed for that client")
-            dbtools.update_client_status(client_uuid, True)
-            gVars.clients_status[client_uuid] = True
-            ServerLogging().log_info(func_name, client_uuid, "Clearing memorizers for client- " + client_uuid)
-            setup.clear_cc_memorizer(client_uuid)
-            ServerLogging().log_info(func_name, client_uuid, "Compliance checking is finished.")
+            try:
+                alert_log = gVars.get_client_alert_logs(client_uuid)
+                dbtools.create_client(client_uuid)
+                dbtools.insert_alert_log(alert_log)
+                path = CLEINT_DATA_PATH + client_uuid + '_' + AUTOMATA_FILE + FILE_TYPE
+                if os.path.exists(path):
+                    os.remove(path)
+                ServerLogging().log_info(func_name, client_uuid, "showing pdf")
+                visualization_deviation_automata.show_deviation_pdf(client_uuid)
+                ServerLogging().log_info(func_name, client_uuid, "Setting client status to true as compliance checking "
+                                                                 "is completed for that client")
+                dbtools.update_client_status(client_uuid, True)
+                gVars.clients_status[client_uuid] = True
+                ServerLogging().log_info(func_name, client_uuid, "Clearing memorizers for client- " + client_uuid)
+                setup.clear_cc_memorizer(client_uuid)
+                ServerLogging().log_info(func_name, client_uuid, "Compliance checking is finished.")
+            except Exception:
+                console.error(traceback.format_exc())
             return json.dumps({'End': {'body': 'The compliance checking is over, you can get the deviation pdf!'}})
     else:
         ServerLogging().log_error(func_name, client_uuid, "Automata is not built!")
