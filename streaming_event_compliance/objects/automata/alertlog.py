@@ -78,6 +78,10 @@ class Client(db.Model):
     client_name = db.Column('client_name', db.String(350), primary_key=True, unique=True)
     status = db.Column('status', db.Boolean)
 
+    def __init__(self, client_name, status=False):
+        self.client_name = client_name
+        self.status = status
+
 
 class AlertRecord(db.Model):
     """
