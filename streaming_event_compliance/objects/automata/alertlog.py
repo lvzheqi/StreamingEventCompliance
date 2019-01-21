@@ -31,38 +31,38 @@ class AlertLog:
         return 'alert logger:\n %s' % self.get_alert_log() + '\n'
 
 
-class AlertRecordL:
-    """
-    Description:
-        This class describes the attributes of the AlertRecord(corresponding the column of the table 'AlertRecord'
-        in database).
-
-    Class Variables:
-    client_id: :`string` the client_id.
-    source_node: :`string` the source_node name.
-    sink_node: :`string` the sink_node name.
-    alert_cause: :`string` alert type {T, M}.
-    alert_count: :`float` the number of occurrences of the alert.
-    """
-
-    def __init__(self, client_id, source_node, sink_node, alert_count=1, alert_cause='M'):
-        self.client_id = client_id
-        self.source_node = source_node
-        self.sink_node = sink_node
-        self.alert_count = alert_count
-        self.alert_cause = alert_cause
-
-    def __eq__(self, other):
-        return self.client_id == other.client_id and \
-               self.source_node == other.source_node and \
-               self.sink_node == other.sink_node
-
-    def __hash__(self):
-        return hash((self.client_id, self.source_node, self.sink_node))
-
-    def __repr__(self):
-        return "<Source node: %s, sink node: %s, alert_cause: %s, alert_count: %s>" \
-               % (self.source_node, self.sink_node, self.alert_cause, self.alert_count)
+# class AlertRecordL:
+#     """
+#     Description:
+#         This class describes the attributes of the AlertRecord(corresponding the column of the table 'AlertRecord'
+#         in database).
+#
+#     Class Variables:
+#     client_id: :`string` the client_id.
+#     source_node: :`string` the source_node name.
+#     sink_node: :`string` the sink_node name.
+#     alert_cause: :`string` alert type {T, M}.
+#     alert_count: :`float` the number of occurrences of the alert.
+#     """
+#
+#     def __init__(self, client_id, source_node, sink_node, alert_count=1, alert_cause='M'):
+#         self.client_id = client_id
+#         self.source_node = source_node
+#         self.sink_node = sink_node
+#         self.alert_count = alert_count
+#         self.alert_cause = alert_cause
+#
+#     def __eq__(self, other):
+#         return self.client_id == other.client_id and \
+#                self.source_node == other.source_node and \
+#                self.sink_node == other.sink_node
+#
+#     def __hash__(self):
+#         return hash((self.client_id, self.source_node, self.sink_node))
+#
+#     def __repr__(self):
+#         return "<Source node: %s, sink node: %s, alert_cause: %s, alert_count: %s>" \
+#                % (self.source_node, self.sink_node, self.alert_cause, self.alert_count)
 
 
 class Client(db.Model):

@@ -139,25 +139,25 @@ class Automata:
         return '\nNodes: %s' % self.get_nodes() + \
                '\nConnections: \n %s' % self.get_connections() + '\n'
 
-
-class ConnectionL:
-
-    def __init__(self, source_node, sink_node, count=1, probability=0):
-        self.source_node = source_node
-        self.sink_node = sink_node
-        self.count = count
-        self.probability = probability
-
-    def __eq__(self, other):
-        return self.source_node == other.source_node and \
-                                  self.sink_node == other.sink_node
-
-    def __hash__(self):
-        return hash((self.source_node, self.sink_node))
-
-    def __repr__(self):
-        return "<Source node: %s, sink node: %s, probability: %s>" % \
-               (self.source_node, self.sink_node, self.probability)
+#
+# class ConnectionL:
+#
+#     def __init__(self, source_node, sink_node, count=1, probability=0):
+#         self.source_node = source_node
+#         self.sink_node = sink_node
+#         self.count = count
+#         self.probability = probability
+#
+#     def __eq__(self, other):
+#         return self.source_node == other.source_node and \
+#                                   self.sink_node == other.sink_node
+#
+#     def __hash__(self):
+#         return hash((self.source_node, self.sink_node))
+#
+#     def __repr__(self):
+#         return "<Source node: %s, sink node: %s, probability: %s>" % \
+#                (self.source_node, self.sink_node, self.probability)
 
 
 class Node(db.Model):
