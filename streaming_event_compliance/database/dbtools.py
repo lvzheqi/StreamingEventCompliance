@@ -17,12 +17,12 @@ def empty_tables():
 
 
 def insert_node_and_connection(autos):
+
     for auto in autos.values():
         for node, degree in auto.get_nodes().items():
             source_node = automata.Node(node, degree)
             db.session.add(source_node)
         for conn in auto.get_connections():
-            pass
             db.session.add(automata.Connection(conn.source_node, conn.sink_node, conn.count, conn.probability))
             # db.session.add(conn)
     db.session.commit()

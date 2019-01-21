@@ -4,7 +4,7 @@ from streaming_event_compliance.objects.variable.globalvar import gVars, CCM, CA
 from streaming_event_compliance.objects.exceptions.exception import ThreadException
 from streaming_event_compliance.objects.automata import automata, alertlog
 from streaming_event_compliance.objects.logging.server_logging import ServerLogging
-import queue, sys
+import queue, sys, traceback
 import threading
 from console_logging.console import Console
 console = Console()

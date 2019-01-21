@@ -87,8 +87,8 @@ class EventThread(Thread):
                     if message['body'] == 'M':
                         alertM['alertM'] += 1
                         if message['source_node'] == 'NONE':
-                            console.secure("[ Alert M  ]", " no such start node' " + message['sink_node'] + " 'in case ' " +
-                                  message['case_id'] + "'")
+                            console.secure("[ Alert M  ]", " no such start node' " + message['sink_node'] +
+                                           " 'in case ' " + message['case_id'] + "'")
                             if len(message['expect']) != 0:
                                 print('    The expected start node:')
                                 for s_node in message['expect']:
@@ -116,6 +116,7 @@ class EventThread(Thread):
                         console.info(message['body'])
                     self._status_queue.put(None)
         except Exception as ec:
+
             ClientLogging().log_error(func_name, self.client_uuid, self.event['case_id'],
                                       self.event['activity'],
                                       'The server got disconnected, please try again later ')

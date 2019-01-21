@@ -173,6 +173,10 @@ class Node(db.Model):
     node = db.Column('node', db.String(350), primary_key=True)
     degree = db.Column('degree', db.Integer)
 
+    def __init__(self, node, degree):
+        self.node = node
+        self.degree = degree
+
 
 class Connection(db.Model):
     """
