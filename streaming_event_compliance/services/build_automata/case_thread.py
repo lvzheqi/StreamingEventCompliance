@@ -74,11 +74,11 @@ def calculate_connection_for_different_prefix_automata(windowsMemory):
             if CL.lock_list.get((source_node, sink_node)).acquire():
                 try:
                     if windowsMemory[MAXIMUN_WINDOW_SIZE] == '~!@#$%' and source_node.find('*') == -1:
-                        gVars.autos.get(ws).update_automata(automata.ConnectionL(source_node, '~!@#$%', 0))
+                        gVars.autos.get(ws).update_automata(automata.Connection(source_node, '~!@#$%', 0))
                     elif source_node.find('*') == -1:
-                        gVars.autos.get(ws).update_automata(automata.ConnectionL(source_node, sink_node, 1))
+                        gVars.autos.get(ws).update_automata(automata.Connection(source_node, sink_node, 1))
                     elif source_node.find('*') != -1 and sink_node.find('*') == -1:
-                        gVars.autos.get(ws).update_automata(automata.ConnectionL('NONE', sink_node, 1))
+                        gVars.autos.get(ws).update_automata(automata.Connection('NONE', sink_node, 1))
                     CL.lock_list.get((source_node, sink_node)).release()
                 except Exception as ec:
                     raise ec
@@ -88,9 +88,9 @@ def calculate_connection_for_different_prefix_automata(windowsMemory):
             if CL.lock_list.get((source_node, sink_node)).acquire():
                 try:
                     if windowsMemory[MAXIMUN_WINDOW_SIZE] == '~!@#$%' and source_node.find('*') == -1:
-                        gVars.autos.get(ws).update_automata(automata.ConnectionL(source_node, '~!@#$%', 0))
+                        gVars.autos.get(ws).update_automata(automata.Connection(source_node, '~!@#$%', 0))
                     elif source_node.find('*') == -1:
-                        gVars.autos.get(ws).update_automata(automata.ConnectionL(source_node, sink_node, 1))
+                        gVars.autos.get(ws).update_automata(automata.Connection(source_node, sink_node, 1))
                     CL.lock_list.get((source_node, sink_node)).release()
                 except Exception as ec:
                     raise ec

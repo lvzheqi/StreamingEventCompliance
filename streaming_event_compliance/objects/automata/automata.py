@@ -1,3 +1,5 @@
+from typing import Any
+
 from streaming_event_compliance.database import db
 
 
@@ -53,10 +55,10 @@ class Automata:
         """
         if self.contains_connection(connection):
             conn = self._connections[hash(connection)]
-            conn.count += connection.count
+            conn.set_count(conn.get_count() + connection.get_count())
         else:
             self._connections[hash(connection)] = connection
-        self.update_node(connection.source_node, connection.count)
+        self.update_node(connection.get_source_node(), connection.get_count())
 
     def set_probability(self):
         """
@@ -65,13 +67,13 @@ class Automata:
         """
         for conn in self.get_connections():
             if conn.source_node == 'NONE':
-                conn.probability = conn.count / self._total_number
+                conn.set_probability(conn.get_count() / self._total_number)
             else:
                 degree = self._nodes[conn.source_node]
                 if degree == 0:
-                    conn.probability = 0
+                    conn.set_probability(0)
                 else:
-                    conn.probability = conn.count / degree
+                    conn.set_probability(conn.get_count() / degree)
 
     def contains_source_node(self, source_node):
         """
@@ -103,7 +105,7 @@ class Automata:
         """
         if self.contains_connection(connection):
             conn = self._connections[hash(connection)]
-            return conn.probability
+            return conn.get_probability()
         else:
             return -1
 
@@ -119,8 +121,8 @@ class Automata:
         """
         sink_nodes = {}
         for conn in self.get_connections():
-            if conn.source_node == source_node and conn.probability > 0:
-                sink_nodes[conn.sink_node] = conn.probability
+            if conn.get_source_node() == source_node and conn.get_probability() > 0:
+                sink_nodes[conn.get_sink_node()] = conn.get_probability()
         return sink_nodes
 
     def get_connections(self):
@@ -139,7 +141,7 @@ class Automata:
         return '\nNodes: %s' % self.get_nodes() + \
                '\nConnections: \n %s' % self.get_connections() + '\n'
 
-#
+
 # class ConnectionL:
 #
 #     def __init__(self, source_node, sink_node, count=1, probability=0):
@@ -198,5 +200,50 @@ class Connection(db.Model):
     def __init__(self, source_node, sink_node, count=1, probability=0):
         self.source_node = source_node
         self.sink_node = sink_node
-        self.count = count
-        self.probability = probability
+        self.l_source_node = source_node
+        self.l_sink_node = sink_node
+        self.l_count = count
+        self.l_probability = probability
+        # self.count = count
+        # self.probability = probability
+
+    # def __getattribute__(self, name: str) -> Any:
+    #     return super().__getattribute__(name)
+    #
+    # def __setattr__(self, name: str, value: Any) -> None:
+    #     super().__setattr__(name, value)
+
+    # @hybrid_property
+    # def __eq__(self, other):
+    #     return self.source_node == other.source_node and \
+    #                               self.sink_node == other.sink_node
+
+    def is_equal(self, other):
+        return self.l_source_node == other.l_source_node and self.l_sink_node == other.l_sink_node
+
+    # @hybrid_property
+    def __hash__(self):
+        return hash((self.l_source_node, self.l_sink_node))
+
+    def __repr__(self):
+        return "<Source node: %s, sink node: %s, probability: %s>" % \
+               (self.l_source_node, self.l_sink_node, self.l_probability)
+
+    def get_source_node(self):
+        return self.l_source_node
+
+    def get_sink_node(self):
+        return self.l_sink_node
+
+    def get_probability(self):
+        return self.l_probability
+
+    def get_count(self):
+        return self.l_count
+
+    def set_probability(self, probability):
+        self.l_probability = probability
+
+    def set_count(self, count):
+        self.l_count = count
+

@@ -110,7 +110,7 @@ def create_source_sink_node(windows_memory, client_uuid, event, thread_id):
             source_node = ','.join(windows_memory[MAXIMUN_WINDOW_SIZE - ws: MAXIMUN_WINDOW_SIZE])
             sink_node = ','.join(windows_memory[MAXIMUN_WINDOW_SIZE - ws + 1: MAXIMUN_WINDOW_SIZE + 1])
             if source_node.find('*') != -1 and sink_node.find('*') != -1:
-                response[ws] = {'body': 'OK'}
+                response[str(ws)] = {'body': 'OK'}
                 break
             elif source_node.find('*') != -1:
                 source_node = 'NONE'
@@ -125,7 +125,7 @@ def create_source_sink_node(windows_memory, client_uuid, event, thread_id):
 
             matches = check_alert(ws, source_node, sink_node, client_uuid, event, thread_id)
             if matches == 2:
-                response[ws] = {
+                response[str(ws)] = {
                     'case_id': event['case_id'],
                     'source_node': source_node,
                     'sink_node': sink_node,
@@ -135,16 +135,16 @@ def create_source_sink_node(windows_memory, client_uuid, event, thread_id):
                 if ALERT_TYPE == 'RETURN_ONE':
                     return response
             elif matches == 1:
-                response[ws] = {
+                response[str(ws)] = {
                     'case_id': event['case_id'],
                     'source_node': source_node,
                     'sink_node': sink_node,
-                    'cause': gVars.autos[ws].get_connection_probability(automata.ConnectionL(source_node, sink_node)),
+                    'cause': gVars.autos[ws].get_connection_probability(automata.Connection(source_node, sink_node)),
                     'expect': THRESHOLD,
                     'body': 'T'
                 }
             else:
-                response[ws] = {'body': 'OK'}
+                response[str(ws)] = {'body': 'OK'}
         return response
     except Exception as ec:
         console.error(traceback.format_exc())
@@ -174,7 +174,7 @@ def check_alert(window_size, source_node, sink_node, client_uuid, event, thread_
                               event['activity'], "the lock is in the lock_list: " + source_node + " to " + sink_node)
     alert_log = gVars.get_client_alert_logs(client_uuid)[window_size]
     auto = gVars.autos[window_size]
-    conn = automata.ConnectionL(source_node, sink_node)
+    conn = automata.Connection(source_node, sink_node)
     if auto.contains_connection(conn):
         if auto.get_connection_probability(conn) >= THRESHOLD:
             return 0
@@ -185,7 +185,7 @@ def check_alert(window_size, source_node, sink_node, client_uuid, event, thread_
                                              event['activity'],
                                              "Acquiring lock for alert: " + "(" + source_node + " to " + sink_node + ")")
                     alert_log.update_alert_record(
-                        alertlog.AlertRecordL(client_uuid, source_node, sink_node, 1, 'T'))
+                        alertlog.AlertRecord (client_uuid, source_node, sink_node, 1, 'T'))
                     ServerLogging().log_info(func_name, client_uuid, thread_id, event['case_id'],
                                               event['activity'], "Alert raised as probability of "
                                                                  "connection between " +
@@ -210,7 +210,7 @@ def check_alert(window_size, source_node, sink_node, client_uuid, event, thread_
                 ServerLogging().log_info(func_name, client_uuid, thread_id, event['case_id'],
                                          event['activity'],
                                          "Acquiring lock for alert: " + "(" + source_node + " to " + sink_node + ")")
-                alert_log.update_alert_record(alertlog.AlertRecordL(client_uuid, source_node, sink_node, 1, 'M'))
+                alert_log.update_alert_record(alertlog.AlertRecord(client_uuid, source_node, sink_node, 1, 'M'))
                 ServerLogging().log_info(func_name, client_uuid, thread_id, event['case_id'], event['activity'],
                                          "Alert raised as there should not be connection between " + source_node
                                          + " and " + sink_node)

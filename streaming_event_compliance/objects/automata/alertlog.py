@@ -10,7 +10,7 @@ class AlertLog:
         key = hash(alert_record)
         if key in self._alert_log:
             alert = self._alert_log[key]
-            alert.alert_count += alert_record.alert_count
+            alert.set_alert_count(alert.get_alert_count() + alert_record.get_alert_count())
         else:
             self._alert_log[key] = alert_record
 
@@ -20,8 +20,8 @@ class AlertLog:
     def get_max_count(self):
         count = 0
         for record in self._alert_log.values():
-            if record.alert_count > count:
-                count = record.alert_count
+            if record.get_alert_count() > count:
+                count = record.get_alert_count()
         return count
 
     def get_alert_log(self):
@@ -108,5 +108,41 @@ class AlertRecord(db.Model):
         self.client_id = client_id
         self.source_node = source_node
         self.sink_node = sink_node
-        self.alert_count = alert_count
-        self.alert_cause = alert_cause
+        self.l_client_id = client_id
+        self.l_source_node = source_node
+        self.l_sink_node = sink_node
+        self.l_alert_count = alert_count
+        self.l_alert_cause = alert_cause
+
+    # @hybrid_property
+    # def __eq__(self, other):
+    #     return self.client_id == other.client_id and \
+    #            self.source_node == other.source_node and \
+    #            self.sink_node == other.sink_node
+
+    def is_equal(self, other):
+        return self.l_client_id == other.l_client_id and \
+               self.l_source_node == other.l_source_node and \
+               self.l_sink_node == other.l_sink_node
+
+    def __hash__(self):
+        return hash((self.l_client_id, self.l_source_node, self.l_sink_node))
+
+    def __repr__(self):
+        return "<Source node: %s, sink node: %s, alert_cause: %s, alert_count: %s>" \
+               % (self.l_source_node, self.l_sink_node, self.l_alert_cause, self.l_alert_count)
+
+    def get_source_node(self):
+        return self.l_source_node
+
+    def get_sink_node(self):
+        return self.l_sink_node
+
+    def get_alert_cause(self):
+        return self.l_alert_cause
+
+    def get_alert_count(self):
+        return self.l_alert_count
+
+    def set_alert_count(self, alert_count):
+        self.l_alert_count = alert_count

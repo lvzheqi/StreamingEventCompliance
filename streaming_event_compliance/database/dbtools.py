@@ -23,16 +23,18 @@ def insert_node_and_connection(autos):
             source_node = automata.Node(node, degree)
             db.session.add(source_node)
         for conn in auto.get_connections():
+            conn.probability = conn.get_probability()
+            conn.count = conn.get_count()
             # db.session.add(automata.Connection(conn.source_node, conn.sink_node, conn.count, conn.probability))
             db.session.add(conn)
-    db.session.commit()
+            db.session.commit()
 
 
 def insert_alert_log(alogs):
     for alog in alogs.values():
         for alert in alog.get_alert_log():
-            # db.session.add(alertlog.AlertRecord(alert.client_id, alert.source_node, alert.sink_node,
-            # alert.alert_count, alert.alert_cause))
+            alert.alert_count = alert.get_alert_count()
+            # db.session.add(alertlog.AlertRecord(alert.client_id, alert.source_node, alert.sink_node, alert.alert_count, alert.alert_cause))
             db.session.add(alert)
     db.session.commit()
 
@@ -80,6 +82,8 @@ def init_automata_from_database():
             auto = autos[max(ws1, ws2)]
             # auto.add_connection_from_database(automata.ConnectionL(conn.source_node, conn.sink_node,
             #                                                        conn.count, conn.probability))
+            conn.set_count(conn.count)
+            conn.set_probability(conn.probability)
             auto.add_connection_from_database(conn)
             auto.update_node(conn.source_node, conn.count)
         return autos, 1
@@ -100,6 +104,7 @@ def init_alert_log_from_database(uuid):
             alog = alogs[max(ws1, ws2)]
             # alog.add_alert_record_from_database(alertlog.AlertRecordL(record.sink_node, record.source_node,
             #                                                           record.alert_count, record.alert_cause))
+            record.set_alert_count(record.alert_count)
             alog.add_alert_record_from_database(record)
         return alogs, 1
     return alogs, 0
