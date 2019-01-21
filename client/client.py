@@ -72,7 +72,7 @@ class Client_cls(object):
         except ThreadException:
             raise ThreadException(traceback.format_exc())
         except Exception:
-            print(traceback.format_exc())
+            console.error(traceback.format_exc())
 
     def run_show_deviation_pdf(self):
         """
@@ -177,12 +177,14 @@ def main(argv):
                     pass
 
             if redo == '1':
+                ok['ok'] = 0
+                alertM['alertM'] = 0
+                alertT['alertT'] = 0
                 ClientLogging().log_info(func_name, argv[0], 'The user selected option 1')
                 ClientLogging().log_info(func_name, argv[0], 'Calling run_compliance_checker()')
                 console.info('---------------start to do compliance checking, please wait-------------------')
                 try:
                     p_main = Process(target=client.run_compliance_checker())
-                    # client.run_compliance_checker()
                     p_main.start()
                     p_main.join()
                     console.secure('[ Results  ]', 'OK:' + str(ok['ok']) + '; Alert T:' + str(alertT['alertT'])

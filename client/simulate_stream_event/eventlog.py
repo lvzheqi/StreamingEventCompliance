@@ -4,7 +4,7 @@ from . import eventthread
 
 from .client_logging import ClientLogging
 from .exception import ReadFileException, ThreadException
-import sys, time
+import sys, time, resource
 from console_logging.console import Console
 from queue import Queue
 import threading
@@ -12,8 +12,11 @@ console = Console()
 console.setVerbosity(5)
 
 threads = []
+resource.setrlimit(resource.RLIMIT_NOFILE, (2000, -1))
+# call ClientLogging() too many times, every time call it will open a file
 error_queue = Queue()
 error = None
+
 
 
 def read_log(client_uuid, path):
@@ -67,15 +70,15 @@ def simulate_stream_event(client_uuid, event_log):
                 dic['case_id'] = event.get(item)
         ClientLogging().log_info(func_name, client_uuid, dic['case_id'], dic['activity'],
                                  'Calling invoke_event_thread()')
-        # if len(threads) > 1000:
-        #
-        #     for th in threads:
-        #         try:
-        #             th.join()
-        #             # th.join_with_exception()
-        #         except ThreadException as ec:
-        #             raise ThreadException(str(ec))
-        #     threads = []
+        if len(threads) > 1000:
+
+            for th in threads:
+                try:
+                    th.join()
+                    # th.join_with_exception()
+                except ThreadException as ec:
+                    raise ThreadException(str(ec))
+            threads = []
 
         invoke_event_thread(dic, client_uuid)
 

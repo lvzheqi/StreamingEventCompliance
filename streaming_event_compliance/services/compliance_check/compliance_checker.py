@@ -66,20 +66,21 @@ def compliance_checker(client_uuid, event):
                 thread = case_thread_cc.CaseThreadForCC(event, threads_index, client_uuid)
                 try:
                     thread.start()
-                    # if len(client_thread) > 1000:
-                    #     for th in client_thread:
-                    #         try:
-                    #             th.join_with_exception()
-                    #         except ThreadException as ec:
-                    #             console.error('compliance_checker' + traceback.format_exc())
-                    #             ServerLogging().log_error(func_name, client_uuid,
-                    #                                       "Exception raised while joining thread.")
-                    #             raise ThreadException(str(ec))
-                    #         except Exception:
-                    #             ServerLogging().log_error(func_name, client_uuid,
-                    #                                       "Exception raised while joining thread.")
-                    #         console.error(traceback.format_exc())
-                        # client_thread.clear()
+                    if len(client_thread) > 1000:
+                        for th in client_thread:
+                            try:
+                                th.join_with_exception()
+                            except ThreadException as ec:
+                                console.error('compliance_checker' + traceback.format_exc())
+                                ServerLogging().log_error(func_name, client_uuid,
+                                                          "Exception raised while joining thread.")
+                                raise ThreadException(str(ec))
+                            except Exception:
+                                ServerLogging().log_error(func_name, client_uuid,
+                                                          "Exception raised while joining thread.")
+                                console.error(traceback.format_exc())
+                            else:
+                                client_thread.clear()
                     client_thread.append(thread)
                     threads_index = threads_index + 1
                     return json.dumps(thread.get_message().get())
@@ -95,26 +96,27 @@ def compliance_checker(client_uuid, event):
                 client_locks[event['case_id']] = lock
                 try:
                     thread.start()
-                    # if len(client_thread) > 1000:
-                    #     for th in client_thread:
-                    #         try:
-                    #             th.join_with_exception()
-                    #         except ThreadException as ec:
-                    #             console.error('compliance_checker' + traceback.format_exc())
-                    #             ServerLogging().log_error(func_name, client_uuid,
-                    #                                       "Exception raised while joining thread.")
-                    #             raise ThreadException(str(ec))
-                    #         except Exception:
-                    #             ServerLogging().log_error(func_name, client_uuid,
-                    #                                       "Exception raised while joining thread.")
-                    #             console.error(traceback.format_exc())
-                        # client_thread.clear()
+                    if len(client_thread) > 1000:
+                        for th in client_thread:
+                            try:
+                                th.join_with_exception()
+                            except ThreadException as ec:
+                                console.error('compliance_checker' + traceback.format_exc())
+                                ServerLogging().log_error(func_name, client_uuid,
+                                                          "Exception raised while joining thread."+traceback.format_exc())
+                                raise ThreadException(str(ec))
+                            except Exception:
+                                ServerLogging().log_error(func_name, client_uuid,
+                                                          "Exception raised while joining thread."+traceback.format_exc())
+                                console.error(traceback.format_exc())
+                            else:
+                                client_thread.clear()
                     client_thread.append(thread)
                     threads_index = threads_index + 1
                     return json.dumps(thread.get_message().get())
                 except Exception:
                     console.error('compliance_checker' + traceback.format_exc())
-                    ServerLogging().log_error(func_name, client_uuid, "Exception raised while starting thread.")
+                    ServerLogging().log_error(func_name, client_uuid, "Exception raised while starting thread."+traceback.format_exc())
                     raise ThreadException(traceback.format_exc())
         elif event['case_id'] == 'NONE' and event['activity'] == 'END':
             for th in client_thread:
@@ -122,10 +124,11 @@ def compliance_checker(client_uuid, event):
                     th.join_with_exception()
                 except ThreadException as ec:
                     console.error('compliance_checker' + traceback.format_exc())
-                    ServerLogging().log_error(func_name, client_uuid, "Exception raised while joining thread.")
+                    ServerLogging().log_error(func_name, client_uuid, "ThreadException: Exception raised while "
+                                                                      "joining thread." + traceback.format_exc())
                     raise ThreadException(str(ec))
                 except Exception:
-                    ServerLogging().log_error(func_name, client_uuid, "Exception raised while joining thread.")
+                    ServerLogging().log_error(func_name, client_uuid, "Exception raised while joining thread." + traceback.format_exc())
                     console.error(traceback.format_exc())
             alert_log = gVars.get_client_alert_logs(client_uuid)
 
