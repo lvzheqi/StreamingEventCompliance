@@ -52,43 +52,43 @@ class BuildingAutomataTestCase(unittest.TestCase):
         build_automata.build_automata()
         self.assertEqual(expected_log, case_thread.check_executing_order)
 
-    def test_calcuate_connection_for_different_prefix_automata(self):
-        ws = app.config['WINDOW_SIZE']
-        if ws == [1, 2, 3, 4]:
-            windowsMemory = ['a', 'b', 'c', 'd', 'e']
+    # def test_calcuate_connection_for_different_prefix_automata(self):
+    #     ws = app.config['WINDOW_SIZE']
+    #     if ws == [1, 2, 3, 4]:
+    #         windowsMemory = ['a', 'b', 'c', 'd', 'e']
+    #
+    #         autos_manual1 = automata.Automata()
+    #         autos_manual1.update_automata(automata.Connection('d', 'e', 1))
+    #         autos_manual2 = automata.Automata()
+    #         autos_manual2.update_automata(automata.Connection('c,d', 'd,e', 1))
+    #         autos_manual3 = automata.Automata()
+    #         autos_manual3.update_automata(automata.Connection('b,c,d', 'c,d,e', 1))
+    #         autos_manual4 = automata.Automata()
+    #         autos_manual4.update_automata(automata.Connection('a,b,c,d', 'b,c,d,e', 1))
+    #         autos_manuals = {1: autos_manual1, 2: autos_manual2, 3: autos_manual3, 4: autos_manual4}
+    #         case_thread.calculate_connection_for_different_prefix_automata(windowsMemory)
+    #         for ws in app.config['WINDOW_SIZE']:
+    #             self.assertEqual(autos_manuals[ws].get_connections(), gVars.autos[ws].get_connections())
+    #             self.assertEqual(autos_manuals[ws].get_nodes(), gVars.autos[ws].get_nodes())
 
-            autos_manual1 = automata.Automata()
-            autos_manual1.update_automata(automata.Connection('d', 'e', 1))
-            autos_manual2 = automata.Automata()
-            autos_manual2.update_automata(automata.Connection('c,d', 'd,e', 1))
-            autos_manual3 = automata.Automata()
-            autos_manual3.update_automata(automata.Connection('b,c,d', 'c,d,e', 1))
-            autos_manual4 = automata.Automata()
-            autos_manual4.update_automata(automata.Connection('a,b,c,d', 'b,c,d,e', 1))
-            autos_manuals = {1: autos_manual1, 2: autos_manual2, 3: autos_manual3, 4: autos_manual4}
-            case_thread.calculate_connection_for_different_prefix_automata(windowsMemory)
-            for ws in app.config['WINDOW_SIZE']:
-                self.assertEqual(autos_manuals[ws].get_connections(), gVars.autos[ws].get_connections())
-                self.assertEqual(autos_manuals[ws].get_nodes(), gVars.autos[ws].get_nodes())
-
-    def test_calcuate_connection_for_different_prefix_automata_with_endevent(self):
-        ws = app.config['WINDOW_SIZE']
-        if ws == [1, 2, 3, 4]:
-            windowsMemory = ['a', 'b', 'c', 'd', '~!@#$%']
-            autos_manual1 = automata.Automata()
-            autos_manual1.update_automata(automata.Connection('d', '~!@#$%', 0))
-            autos_manual2 = automata.Automata()
-            autos_manual2.update_automata(automata.Connection('c,d', '~!@#$%', 0))
-            autos_manual3 = automata.Automata()
-            autos_manual3.update_automata(automata.Connection('b,c,d', '~!@#$%', 0))
-            autos_manual4 = automata.Automata()
-            autos_manual4.update_automata(automata.Connection('a,b,c,d', '~!@#$%', 0))
-            autos_manuals = {1: autos_manual1, 2: autos_manual2, 3: autos_manual3, 4: autos_manual4}
-            case_thread.calculate_connection_for_different_prefix_automata(windowsMemory)
-            for ws in app.config['WINDOW_SIZE']:
-                self.assertEqual(autos_manuals[ws].get_connections(), gVars.autos[ws].get_connections())
-                self.assertEqual(autos_manuals[ws].get_nodes(), gVars.autos[ws].get_nodes())
-
+    # def test_calcuate_connection_for_different_prefix_automata_with_endevent(self):
+    #     ws = app.config['WINDOW_SIZE']
+    #     if ws == [1, 2, 3, 4]:
+    #         windowsMemory = ['a', 'b', 'c', 'd', '~!@#$%']
+    #         autos_manual1 = automata.Automata()
+    #         autos_manual1.update_automata(automata.Connection('d', '~!@#$%', 0))
+    #         autos_manual2 = automata.Automata()
+    #         autos_manual2.update_automata(automata.Connection('c,d', '~!@#$%', 0))
+    #         autos_manual3 = automata.Automata()
+    #         autos_manual3.update_automata(automata.Connection('b,c,d', '~!@#$%', 0))
+    #         autos_manual4 = automata.Automata()
+    #         autos_manual4.update_automata(automata.Connection('a,b,c,d', '~!@#$%', 0))
+    #         autos_manuals = {1: autos_manual1, 2: autos_manual2, 3: autos_manual3, 4: autos_manual4}
+    #         case_thread.calculate_connection_for_different_prefix_automata(windowsMemory)
+    #         for ws in app.config['WINDOW_SIZE']:
+    #             self.assertEqual(autos_manuals[ws].get_connections(), gVars.autos[ws].get_connections())
+    #             self.assertEqual(autos_manuals[ws].get_nodes(), gVars.autos[ws].get_nodes())
+    #
 
 if __name__ == '__main__':
     unittest.main()
