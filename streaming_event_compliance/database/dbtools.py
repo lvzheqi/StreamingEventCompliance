@@ -3,15 +3,12 @@ from streaming_event_compliance.objects.automata import alertlog
 from streaming_event_compliance import app
 
 from streaming_event_compliance.database import db
+import traceback
 
 WINDOW_SIZE = app.config['WINDOW_SIZE']
 
 
 def empty_tables():
-    """
-    Description:
-    :return:
-    """
     db.session.query(automata.Connection).delete()
     db.session.query(automata.Node).delete()
     db.session.query(alertlog.AlertRecord).delete()
@@ -20,19 +17,22 @@ def empty_tables():
 
 
 def insert_node_and_connection(autos):
+
     for auto in autos.values():
         for node, degree in auto.get_nodes().items():
             source_node = automata.Node(node, degree)
             db.session.add(source_node)
         for conn in auto.get_connections():
-            db.session.add(conn)
+            db.session.add(automata.Connection(conn.source_node, conn.sink_node, conn.count, conn.probability))
+            # db.session.add(conn)
     db.session.commit()
 
 
 def insert_alert_log(alogs):
     for alog in alogs.values():
         for alert in alog.get_alert_log():
-            db.session.add(alert)
+            db.session.add(alertlog.AlertRecord(alert.client_id, alert.source_node, alert.sink_node, alert.alert_count, alert.alert_cause))
+            # db.session.add(alert)
     db.session.commit()
 
 
@@ -46,6 +46,7 @@ def create_client(uuid):
 
 def check_client_status(uuid):
     client = alertlog.Client.query.filter_by(client_name=uuid).first()
+    db.session.commit()
     if client is not None:
         return client.status
     else:
@@ -54,6 +55,7 @@ def check_client_status(uuid):
 
 def update_client_status(uuid, status):
     client = alertlog.Client.query.filter_by(client_name=uuid).first()
+    db.session.commit()
     if client is not None:
         client.status = status
 
@@ -64,11 +66,8 @@ def update_client_status(uuid, status):
 
 
 def init_automata_from_database():
-    '''
-    fetch the automata from database. If there is no data in database, then return None
-    :return: automata with different window size, otherwise return None
-    '''
     conns = automata.Connection.query.all()
+    db.session.commit()
     autos = {}
     for ws in WINDOW_SIZE:
         auto = automata.Automata()
@@ -78,7 +77,9 @@ def init_automata_from_database():
             ws1 = conn.source_node.count(',') + 1
             ws2 = conn.sink_node.count(',') + 1
             auto = autos[max(ws1, ws2)]
-            auto.add_connection_from_database(conn)
+            auto.add_connection_from_database(automata.ConnectionL(conn.source_node, conn.sink_node,
+                                                                   conn.count, conn.probability))
+            # auto.add_connection_from_database(conn)
             auto.update_node(conn.source_node, conn.count)
         return autos, 1
     return autos, 0
@@ -86,6 +87,7 @@ def init_automata_from_database():
 
 def init_alert_log_from_database(uuid):
     records = alertlog.AlertRecord.query.filter_by(client_id=uuid).all()
+    db.session.commit()
     alogs = {}
     for ws in WINDOW_SIZE:
         alog = alertlog.AlertLog()
@@ -95,13 +97,19 @@ def init_alert_log_from_database(uuid):
             ws1 = record.source_node.count(',') + 1
             ws2 = record.sink_node.count(',') + 1
             alog = alogs[max(ws1, ws2)]
-            alog.add_alert_record_from_database(record)
+            alog.add_alert_record_from_database(alertlog.AlertRecordL(record.sink_node, record.source_node,
+                                                                      record.alert_count, record.alert_cause))
+            # alog.add_alert_record_from_database(record)
         return alogs, 1
     return alogs, 0
 
 
 def delete_alert(uuid):
-    records = alertlog.AlertRecord.query.filter_by(client_id=uuid).all()
-    for record in records:
-        db.session.delete(record)
-    db.session.commit()
+    try:
+        records = alertlog.AlertRecord.query.filter_by(client_id=uuid).all()
+        print(records)
+        for record in records:
+            db.session.delete(record)
+        db.session.commit()
+    except Exception as ec:
+        raise ec

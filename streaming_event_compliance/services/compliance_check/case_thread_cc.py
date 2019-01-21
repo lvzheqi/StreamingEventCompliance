@@ -4,8 +4,7 @@ from streaming_event_compliance.objects.variable.globalvar import gVars, CCM, CA
 from streaming_event_compliance.objects.exceptions.exception import ThreadException
 from streaming_event_compliance.objects.automata import automata, alertlog
 from streaming_event_compliance.objects.logging.server_logging import ServerLogging
-import queue, sys
-import traceback
+import queue, sys, traceback
 import threading
 from console_logging.console import Console
 console = Console()
@@ -35,10 +34,9 @@ class CaseThreadForCC(Thread):
         ex_info = self.wait_for_exc_info()
         if ex_info is None:
             return
-        elif isinstance(ex_info, ZeroDivisionError):
-            raise ThreadException(str(ex_info))
         else:
-            raise Exception
+            console.error(traceback.format_exc())
+            raise ThreadException(str(ex_info))
 
     def get_message(self):
         return self._message
@@ -57,7 +55,7 @@ class CaseThreadForCC(Thread):
         try:
             if client_locks.get(self.event['case_id']).acquire():
                 ServerLogging().log_info(func_name, self.client_uuid, self.index, self.event['case_id'],
-                                         self.event['activity'], "Acquiring lock")
+                                         self.event['activity'], "Acquiring lock for event case: " + self.event['case_id'])
                 windows_memory = client_cases.get(self.event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
                 response = create_source_sink_node(windows_memory, self.client_uuid, self.event, self.index)
                 ServerLogging().log_info(func_name, self.client_uuid, self.index, self.event['case_id'],
@@ -72,14 +70,13 @@ class CaseThreadForCC(Thread):
                     client_cases.get(self.event['case_id']).pop(0)
                 client_locks.get(self.event['case_id']).release()
                 ServerLogging().log_info(func_name, self.client_uuid, self.index, self.event['case_id'],
-                                         self.event['activity'], "Released lock")
+                                         self.event['activity'], "Released lock for event case: " + self.event['case_id'])
                 self._message.put(response)
                 self._status_queue.put(None)
         except Exception as ec:
-            console.error('run - ComplianceCaselock ' + traceback.format_exc())
-            ServerLogging().log_error(func_name, self.client_uuid, self.index, self.event['case_id'],
-                                      self.event['activity'],
-                                      "Error with Caselock")
+            ServerLogging().log_info(func_name, self.client_uuid, self.index, self.event['case_id'],
+                                     self.event['activity'],
+                                     "in this thread's _status_queue ec is putted in: " + traceback.format_exc())
             self._status_queue.put(ec)
 
 
@@ -117,6 +114,15 @@ def create_source_sink_node(windows_memory, client_uuid, event, thread_id):
                 break
             elif source_node.find('*') != -1:
                 source_node = 'NONE'
+
+            lock_list = CAL.c_alerts_lock_list.get(client_uuid)
+            if (source_node, sink_node) not in lock_list:
+                lock = threading.Lock()
+                lock_list[source_node, sink_node] = lock
+                ServerLogging().log_error(func_name, client_uuid, thread_id, event['case_id'],
+                                          event['activity'],
+                                          "the lock has been created: " + source_node + " to " + sink_node)
+
             matches = check_alert(ws, source_node, sink_node, client_uuid, event, thread_id)
             if matches == 2:
                 response[ws] = {
@@ -133,7 +139,7 @@ def create_source_sink_node(windows_memory, client_uuid, event, thread_id):
                     'case_id': event['case_id'],
                     'source_node': source_node,
                     'sink_node': sink_node,
-                    'cause': gVars.autos[ws].get_connection_probability(automata.Connection(source_node, sink_node)),
+                    'cause': gVars.autos[ws].get_connection_probability(automata.ConnectionL(source_node, sink_node)),
                     'expect': THRESHOLD,
                     'body': 'T'
                 }
@@ -141,9 +147,7 @@ def create_source_sink_node(windows_memory, client_uuid, event, thread_id):
                 response[ws] = {'body': 'OK'}
         return response
     except Exception as ec:
-        ServerLogging().log_error(func_name, client_uuid, thread_id, event['case_id'], event['activity'],
-                                  "Exception raised while creating sink_node and source_node")
-        console.error('Exception from create_source_sink_node:' + traceback.format_exc())
+        console.error(traceback.format_exc())
         raise ec
 
 
@@ -166,58 +170,58 @@ def check_alert(window_size, source_node, sink_node, client_uuid, event, thread_
     """
     lock_list = CAL.c_alerts_lock_list.get(client_uuid)
     func_name = sys._getframe().f_code.co_name
-    try:
-        alert_log = gVars.get_client_alert_logs(client_uuid)[window_size]
-        auto = gVars.autos[window_size]
-        conn = automata.Connection(source_node, sink_node)
-        if auto.contains_connection(conn):
-            if auto.get_connection_probability(conn) >= THRESHOLD:
-                return 0
-            else:
-                if lock_list.get((source_node, sink_node)):
-                    if lock_list.get((source_node, sink_node)).acquire():
-                        alert_log.update_alert_record(
-                            alertlog.AlertRecord(client_uuid, source_node, sink_node, 1, 'T'))
-                        ServerLogging().log_error(func_name, client_uuid, thread_id, event['case_id'],
-                                                  event['activity'], "Alert raised as probability of "
-                                                                     "connection between " +
-                                                  source_node + " and " + sink_node + " is lesser than threshold")
-                        lock_list.get((source_node, sink_node)).release()
-                        return 1
-                else:
-                    lock = threading.RLock()
-                    lock_list[source_node, sink_node] = lock
-                    if lock_list.get((source_node, sink_node)).acquire():
-                        alert_log.update_alert_record(
-                            alertlog.AlertRecord(client_uuid, source_node, sink_node, 1, 'T'))
-                        ServerLogging().log_error(func_name, client_uuid, thread_id, event['case_id'],
-                                                  event['activity'], "Alert raised as probability of "
-                                                                     "connection between " +
-                                                  source_node + " and " + sink_node + " is lesser than threshold")
-                        lock_list.get((source_node, sink_node)).release()
-                        return 1
-        elif source_node == 'NONE' and auto.contains_source_node(sink_node):
+    ServerLogging().log_info(func_name, client_uuid, thread_id, event['case_id'],
+                              event['activity'], "the lock is in the lock_list: " + source_node + " to " + sink_node)
+    alert_log = gVars.get_client_alert_logs(client_uuid)[window_size]
+    auto = gVars.autos[window_size]
+    conn = automata.ConnectionL(source_node, sink_node)
+    if auto.contains_connection(conn):
+        if auto.get_connection_probability(conn) >= THRESHOLD:
             return 0
         else:
-            if lock_list.get((source_node, sink_node)):
+            try:
                 if lock_list.get((source_node, sink_node)).acquire():
-                    alert_log.update_alert_record(alertlog.AlertRecord(client_uuid, source_node, sink_node, 1, 'M'))
-                    ServerLogging().log_error(func_name, client_uuid, thread_id, event['case_id'], event['activity'],
-                                              "Alert raised as there should not be connection between " + source_node
-                                              + " and " + sink_node)
-                    lock_list.get((source_node, sink_node)).release()
-                    return 2
+                    ServerLogging().log_info(func_name, client_uuid, thread_id, event['case_id'],
+                                             event['activity'],
+                                             "Acquiring lock for alert: " + "(" + source_node + " to " + sink_node + ")")
+                    alert_log.update_alert_record(
+                        alertlog.AlertRecordL(client_uuid, source_node, sink_node, 1, 'T'))
+                    ServerLogging().log_info(func_name, client_uuid, thread_id, event['case_id'],
+                                              event['activity'], "Alert raised as probability of "
+                                                                 "connection between " +
+                                              source_node + " and " + sink_node + " is lesser than threshold")
+            except Exception as ec:
+                ServerLogging().log_info(func_name, client_uuid, thread_id, event['case_id'], event['activity'],
+                                          "Exception by check_alert between " + source_node
+                                          + " and " + sink_node)
+                console.error(traceback.format_exc())
+                raise ec
             else:
-                lock = threading.RLock()
-                lock_list[source_node, sink_node] = lock
-                if lock_list.get((source_node, sink_node)).acquire():
-                    alert_log.update_alert_record(alertlog.AlertRecord(client_uuid, source_node, sink_node, 1, 'M'))
-                    ServerLogging().log_error(func_name, client_uuid, thread_id, event['case_id'], event['activity'],
-                                              "Alert raised as there should not be connection between " + source_node
-                                              + " and " + sink_node)
-                    lock_list.get((source_node, sink_node)).release()
-                    return 2
-    except Exception as ec:
-        ServerLogging().log_error(func_name, client_uuid, thread_id, event['case_id'], event['activity'],
-                                  "Exception raised while checking alert")
-        raise ec
+                lock_list.get((source_node, sink_node)).release()
+                ServerLogging().log_info(func_name, client_uuid, thread_id, event['case_id'],
+                                         event['activity'],
+                                         "Release lock for alert: " + "(" + source_node + " to " + sink_node + ")")
+                return 1
+    elif source_node == 'NONE' and auto.contains_source_node(sink_node):
+        return 0
+    else:
+        try:
+            if lock_list.get((source_node, sink_node)).acquire():
+                ServerLogging().log_info(func_name, client_uuid, thread_id, event['case_id'],
+                                         event['activity'],
+                                         "Acquiring lock for alert: " + "(" + source_node + " to " + sink_node + ")")
+                alert_log.update_alert_record(alertlog.AlertRecordL(client_uuid, source_node, sink_node, 1, 'M'))
+                ServerLogging().log_info(func_name, client_uuid, thread_id, event['case_id'], event['activity'],
+                                         "Alert raised as there should not be connection between " + source_node
+                                         + " and " + sink_node)
+        except Exception:
+            ServerLogging().log_info(func_name, client_uuid, thread_id, event['case_id'], event['activity'],
+                                      "Exception by check_alert between " + source_node
+                                      + " and " + sink_node)
+            console.error(traceback.format_exc())
+        else:
+            lock_list.get((source_node, sink_node)).release()
+            ServerLogging().log_info(func_name, client_uuid, thread_id, event['case_id'],
+                                     event['activity'],
+                                     "Release lock for alert: " + "(" + source_node + " to " + sink_node + ")")
+            return 2

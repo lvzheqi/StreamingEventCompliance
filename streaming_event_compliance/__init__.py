@@ -16,7 +16,6 @@ else:
     DATABASE_PATH = 'mysql+pymysql://compliancechecker:compliancechecker@localhost/compliancechecker'
     app.config['BASE_DIR'] = os.path.dirname(__file__) + os.sep + '..' + os.sep
 
-
 app.config['LOG_LEVEL'] = 'DEBUG'
 app.config['LOG_FORMAT'] = '%(asctime)-15s %(message)s'
 
