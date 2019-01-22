@@ -3,8 +3,16 @@
 ### Example user template
 
 # IntelliJ project files
-.idea
-*.iml
+.idea/workspace.xml
+*.xml
+*.py[cod]
 out
 gen
 /.evn/
+.idea
+data/runtime
+data/server.log
+client/client_log.log
+
+
+
