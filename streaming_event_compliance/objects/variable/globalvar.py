@@ -86,6 +86,7 @@ class CaseMemorizer(Singleton):
     """
     def __init__(self):
         self.dictionary_cases = {}
+        self.event_iterator = {}
         self.lock_List = {}
 
     def clear_memorizer(self):
