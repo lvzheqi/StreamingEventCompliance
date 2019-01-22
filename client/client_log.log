@@ -18184,3 +18184,684 @@
 2019-01-21 14:21:25,308  INFO vf main 'The options are displayed'
 2019-01-21 14:37:41,747  ERROR vf run Thread:2595 Case_id:NONE Activity:END 'The server got disconnected, please try again later '
 2019-01-21 15:24:42,717  INFO vf main 'The user selected option 1'
+2019-01-22 14:08:21,880  INFO clie login 'Post request to server:http://0.0.0.0:5000/login?uuid=clie'
+2019-01-22 14:08:21,888 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:08:21,896 http://0.0.0.0:5000 "POST /login?uuid=clie HTTP/1.1" 200 5
+2019-01-22 14:08:21,897  INFO clie main 'The options are displayed'
+2019-01-22 14:08:22,799  INFO clie main 'The user selected option 1'
+2019-01-22 14:08:22,799  INFO clie main 'The user selected option 1'
+2019-01-22 14:08:22,799  INFO clie main 'Calling run_compliance_checker()'
+2019-01-22 14:08:22,800  INFO clie run_compliance_checker 'Calling read_log()'
+2019-01-22 14:08:22,800  INFO clie read_log 'Creating a trace logger file: '
+2019-01-22 14:08:22,804  INFO clie read_log 'Transforming trace logger to event logger'
+2019-01-22 14:08:22,804  INFO clie read_log 'Sorting event logger'
+2019-01-22 14:08:22,804  INFO clie run_compliance_checker 'Calling simulate_stream_event()'
+2019-01-22 14:08:22,805  INFO clie simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2019-01-22 14:08:22,805  INFO clie invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2019-01-22 14:08:22,805  INFO clie invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2019-01-22 14:08:22,805  INFO clie run Case_id:Case1.0 Activity:a 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:08:22,807 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:08:22,811 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 164
+2019-01-22 14:08:22,812  INFO clie run Case_id:Case1.0 Activity:a 'The server response is: {"1": {"case_id": "Case1.0", "source_node": "NONE", "sink_node": "a", "expect": {"mail income": 0.913232104121475, "mail valid": 0.08676789587852494}, "body": "M"}}'
+2019-01-22 14:08:22,812  INFO clie simulate_stream_event Case_id:Case3.0 Activity:a 'Calling invoke_event_thread()'
+2019-01-22 14:08:22,812  INFO clie invoke_event_thread Case_id:Case3.0 Activity:a 'Initialising thread'
+2019-01-22 14:08:22,813  INFO clie invoke_event_thread Case_id:Case3.0 Activity:a 'Starting thread for event '
+2019-01-22 14:08:22,813  INFO clie run Case_id:Case3.0 Activity:a 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:08:22,814 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:08:22,816 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 164
+2019-01-22 14:08:22,817  INFO clie run Case_id:Case3.0 Activity:a 'The server response is: {"1": {"case_id": "Case3.0", "source_node": "NONE", "sink_node": "a", "expect": {"mail income": 0.913232104121475, "mail valid": 0.08676789587852494}, "body": "M"}}'
+2019-01-22 14:08:22,817  INFO clie simulate_stream_event Case_id:Case2.0 Activity:a 'Calling invoke_event_thread()'
+2019-01-22 14:08:22,817  INFO clie invoke_event_thread Case_id:Case2.0 Activity:a 'Initialising thread'
+2019-01-22 14:08:22,817  INFO clie invoke_event_thread Case_id:Case2.0 Activity:a 'Starting thread for event '
+2019-01-22 14:08:22,817  INFO clie run Case_id:Case2.0 Activity:a 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:08:22,819 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:08:22,822 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 164
+2019-01-22 14:08:22,823  INFO clie run Case_id:Case2.0 Activity:a 'The server response is: {"1": {"case_id": "Case2.0", "source_node": "NONE", "sink_node": "a", "expect": {"mail income": 0.913232104121475, "mail valid": 0.08676789587852494}, "body": "M"}}'
+2019-01-22 14:08:22,823  INFO clie simulate_stream_event Case_id:Case1.2 Activity:a 'Calling invoke_event_thread()'
+2019-01-22 14:08:22,823  INFO clie invoke_event_thread Case_id:Case1.2 Activity:a 'Initialising thread'
+2019-01-22 14:08:22,823  INFO clie invoke_event_thread Case_id:Case1.2 Activity:a 'Starting thread for event '
+2019-01-22 14:08:22,823  INFO clie run Case_id:Case1.2 Activity:a 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:08:22,824 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:08:22,827 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 164
+2019-01-22 14:08:22,827  INFO clie run Case_id:Case1.2 Activity:a 'The server response is: {"1": {"case_id": "Case1.2", "source_node": "NONE", "sink_node": "a", "expect": {"mail income": 0.913232104121475, "mail valid": 0.08676789587852494}, "body": "M"}}'
+2019-01-22 14:08:22,827  INFO clie simulate_stream_event Case_id:Case1.1 Activity:a 'Calling invoke_event_thread()'
+2019-01-22 14:08:22,827  INFO clie invoke_event_thread Case_id:Case1.1 Activity:a 'Initialising thread'
+2019-01-22 14:08:22,827  INFO clie invoke_event_thread Case_id:Case1.1 Activity:a 'Starting thread for event '
+2019-01-22 14:08:22,828  INFO clie run Case_id:Case1.1 Activity:a 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:08:22,828 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:08:22,831 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 164
+2019-01-22 14:08:22,831  INFO clie run Case_id:Case1.1 Activity:a 'The server response is: {"1": {"case_id": "Case1.1", "source_node": "NONE", "sink_node": "a", "expect": {"mail income": 0.913232104121475, "mail valid": 0.08676789587852494}, "body": "M"}}'
+2019-01-22 14:08:22,831  INFO clie simulate_stream_event Case_id:Case2.1 Activity:a 'Calling invoke_event_thread()'
+2019-01-22 14:08:22,831  INFO clie invoke_event_thread Case_id:Case2.1 Activity:a 'Initialising thread'
+2019-01-22 14:08:22,832  INFO clie invoke_event_thread Case_id:Case2.1 Activity:a 'Starting thread for event '
+2019-01-22 14:08:22,832  INFO clie run Case_id:Case2.1 Activity:a 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:08:22,833 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:08:22,837 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 164
+2019-01-22 14:08:22,838  INFO clie run Case_id:Case2.1 Activity:a 'The server response is: {"1": {"case_id": "Case2.1", "source_node": "NONE", "sink_node": "a", "expect": {"mail income": 0.913232104121475, "mail valid": 0.08676789587852494}, "body": "M"}}'
+2019-01-22 14:08:22,838  INFO clie simulate_stream_event Case_id:Case1.0 Activity:b 'Calling invoke_event_thread()'
+2019-01-22 14:08:22,838  INFO clie invoke_event_thread Case_id:Case1.0 Activity:b 'Initialising thread'
+2019-01-22 14:08:22,838  INFO clie invoke_event_thread Case_id:Case1.0 Activity:b 'Starting thread for event '
+2019-01-22 14:08:22,838  INFO clie run Case_id:Case1.0 Activity:b 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:08:22,839 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:08:22,842 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 94
+2019-01-22 14:08:22,843  INFO clie run Case_id:Case1.0 Activity:b 'The server response is: {"1": {"case_id": "Case1.0", "source_node": "a", "sink_node": "b", "expect": {}, "body": "M"}}'
+2019-01-22 14:08:22,843  INFO clie simulate_stream_event Case_id:Case3.0 Activity:e 'Calling invoke_event_thread()'
+2019-01-22 14:08:22,843  INFO clie invoke_event_thread Case_id:Case3.0 Activity:e 'Initialising thread'
+2019-01-22 14:08:22,843  INFO clie invoke_event_thread Case_id:Case3.0 Activity:e 'Starting thread for event '
+2019-01-22 14:08:22,843  INFO clie run Case_id:Case3.0 Activity:e 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:08:22,844 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:08:22,847 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 94
+2019-01-22 14:08:22,847  INFO clie run Case_id:Case3.0 Activity:e 'The server response is: {"1": {"case_id": "Case3.0", "source_node": "a", "sink_node": "e", "expect": {}, "body": "M"}}'
+2019-01-22 14:08:22,848  INFO clie simulate_stream_event Case_id:Case2.0 Activity:c 'Calling invoke_event_thread()'
+2019-01-22 14:08:22,848  INFO clie invoke_event_thread Case_id:Case2.0 Activity:c 'Initialising thread'
+2019-01-22 14:08:22,848  INFO clie invoke_event_thread Case_id:Case2.0 Activity:c 'Starting thread for event '
+2019-01-22 14:08:22,848  INFO clie run Case_id:Case2.0 Activity:c 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:08:22,849 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:08:22,853 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 94
+2019-01-22 14:08:22,853  INFO clie run Case_id:Case2.0 Activity:c 'The server response is: {"1": {"case_id": "Case2.0", "source_node": "a", "sink_node": "c", "expect": {}, "body": "M"}}'
+2019-01-22 14:08:22,854  INFO clie simulate_stream_event Case_id:Case1.2 Activity:b 'Calling invoke_event_thread()'
+2019-01-22 14:08:22,854  INFO clie invoke_event_thread Case_id:Case1.2 Activity:b 'Initialising thread'
+2019-01-22 14:08:22,854  INFO clie invoke_event_thread Case_id:Case1.2 Activity:b 'Starting thread for event '
+2019-01-22 14:08:22,854  INFO clie run Case_id:Case1.2 Activity:b 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:08:22,856 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:08:22,858 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 94
+2019-01-22 14:08:22,858  INFO clie run Case_id:Case1.2 Activity:b 'The server response is: {"1": {"case_id": "Case1.2", "source_node": "a", "sink_node": "b", "expect": {}, "body": "M"}}'
+2019-01-22 14:08:22,858  INFO clie simulate_stream_event Case_id:Case1.1 Activity:b 'Calling invoke_event_thread()'
+2019-01-22 14:08:22,859  INFO clie invoke_event_thread Case_id:Case1.1 Activity:b 'Initialising thread'
+2019-01-22 14:08:22,859  INFO clie invoke_event_thread Case_id:Case1.1 Activity:b 'Starting thread for event '
+2019-01-22 14:08:22,859  INFO clie run Case_id:Case1.1 Activity:b 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:08:22,860 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:08:22,862 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 94
+2019-01-22 14:08:22,862  INFO clie run Case_id:Case1.1 Activity:b 'The server response is: {"1": {"case_id": "Case1.1", "source_node": "a", "sink_node": "b", "expect": {}, "body": "M"}}'
+2019-01-22 14:08:22,862  INFO clie simulate_stream_event Case_id:Case2.1 Activity:c 'Calling invoke_event_thread()'
+2019-01-22 14:08:22,862  INFO clie invoke_event_thread Case_id:Case2.1 Activity:c 'Initialising thread'
+2019-01-22 14:08:22,862  INFO clie invoke_event_thread Case_id:Case2.1 Activity:c 'Starting thread for event '
+2019-01-22 14:08:22,863  INFO clie run Case_id:Case2.1 Activity:c 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:08:22,864 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:08:22,866 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 94
+2019-01-22 14:08:22,866  INFO clie run Case_id:Case2.1 Activity:c 'The server response is: {"1": {"case_id": "Case2.1", "source_node": "a", "sink_node": "c", "expect": {}, "body": "M"}}'
+2019-01-22 14:08:22,866  INFO clie simulate_stream_event Case_id:Case1.0 Activity:c 'Calling invoke_event_thread()'
+2019-01-22 14:08:22,866  INFO clie invoke_event_thread Case_id:Case1.0 Activity:c 'Initialising thread'
+2019-01-22 14:08:22,866  INFO clie invoke_event_thread Case_id:Case1.0 Activity:c 'Starting thread for event '
+2019-01-22 14:08:22,866  INFO clie run Case_id:Case1.0 Activity:c 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:08:22,867 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:08:22,870 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 94
+2019-01-22 14:08:22,870  INFO clie run Case_id:Case1.0 Activity:c 'The server response is: {"1": {"case_id": "Case1.0", "source_node": "b", "sink_node": "c", "expect": {}, "body": "M"}}'
+2019-01-22 14:08:22,870  INFO clie simulate_stream_event Case_id:Case3.0 Activity:d 'Calling invoke_event_thread()'
+2019-01-22 14:08:22,870  INFO clie invoke_event_thread Case_id:Case3.0 Activity:d 'Initialising thread'
+2019-01-22 14:08:22,870  INFO clie invoke_event_thread Case_id:Case3.0 Activity:d 'Starting thread for event '
+2019-01-22 14:08:22,871  INFO clie run Case_id:Case3.0 Activity:d 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:08:22,871 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:08:22,874 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 94
+2019-01-22 14:08:22,874  INFO clie run Case_id:Case3.0 Activity:d 'The server response is: {"1": {"case_id": "Case3.0", "source_node": "e", "sink_node": "d", "expect": {}, "body": "M"}}'
+2019-01-22 14:08:22,875  INFO clie simulate_stream_event Case_id:Case2.0 Activity:b 'Calling invoke_event_thread()'
+2019-01-22 14:08:22,875  INFO clie invoke_event_thread Case_id:Case2.0 Activity:b 'Initialising thread'
+2019-01-22 14:08:22,875  INFO clie invoke_event_thread Case_id:Case2.0 Activity:b 'Starting thread for event '
+2019-01-22 14:08:22,875  INFO clie run Case_id:Case2.0 Activity:b 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:08:22,876 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:08:22,879 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 94
+2019-01-22 14:08:22,880  INFO clie run Case_id:Case2.0 Activity:b 'The server response is: {"1": {"case_id": "Case2.0", "source_node": "c", "sink_node": "b", "expect": {}, "body": "M"}}'
+2019-01-22 14:08:22,880  INFO clie simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2019-01-22 14:08:22,880  INFO clie invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2019-01-22 14:08:22,880  INFO clie invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2019-01-22 14:08:22,880  INFO clie run Case_id:Case1.2 Activity:d 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:08:22,881 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:08:22,884 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 94
+2019-01-22 14:08:22,884  INFO clie run Case_id:Case1.2 Activity:d 'The server response is: {"1": {"case_id": "Case1.2", "source_node": "b", "sink_node": "d", "expect": {}, "body": "M"}}'
+2019-01-22 14:08:22,884  INFO clie simulate_stream_event Case_id:Case1.1 Activity:c 'Calling invoke_event_thread()'
+2019-01-22 14:08:22,884  INFO clie invoke_event_thread Case_id:Case1.1 Activity:c 'Initialising thread'
+2019-01-22 14:08:22,884  INFO clie invoke_event_thread Case_id:Case1.1 Activity:c 'Starting thread for event '
+2019-01-22 14:08:22,885  INFO clie run Case_id:Case1.1 Activity:c 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:08:22,885 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:08:22,888 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 94
+2019-01-22 14:08:22,888  INFO clie run Case_id:Case1.1 Activity:c 'The server response is: {"1": {"case_id": "Case1.1", "source_node": "b", "sink_node": "c", "expect": {}, "body": "M"}}'
+2019-01-22 14:08:22,888  INFO clie simulate_stream_event Case_id:Case2.1 Activity:b 'Calling invoke_event_thread()'
+2019-01-22 14:08:22,888  INFO clie invoke_event_thread Case_id:Case2.1 Activity:b 'Initialising thread'
+2019-01-22 14:08:22,888  INFO clie invoke_event_thread Case_id:Case2.1 Activity:b 'Starting thread for event '
+2019-01-22 14:08:22,888  INFO clie run Case_id:Case2.1 Activity:b 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:08:22,889 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:08:22,892 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 94
+2019-01-22 14:08:22,892  INFO clie run Case_id:Case2.1 Activity:b 'The server response is: {"1": {"case_id": "Case2.1", "source_node": "c", "sink_node": "b", "expect": {}, "body": "M"}}'
+2019-01-22 14:08:22,892  INFO clie simulate_stream_event Case_id:Case1.0 Activity:d 'Calling invoke_event_thread()'
+2019-01-22 14:08:22,892  INFO clie invoke_event_thread Case_id:Case1.0 Activity:d 'Initialising thread'
+2019-01-22 14:08:22,892  INFO clie invoke_event_thread Case_id:Case1.0 Activity:d 'Starting thread for event '
+2019-01-22 14:08:22,893  INFO clie run Case_id:Case1.0 Activity:d 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:08:22,893 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:08:22,896 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 94
+2019-01-22 14:08:22,896  INFO clie run Case_id:Case1.0 Activity:d 'The server response is: {"1": {"case_id": "Case1.0", "source_node": "c", "sink_node": "d", "expect": {}, "body": "M"}}'
+2019-01-22 14:08:22,896  INFO clie simulate_stream_event Case_id:Case2.0 Activity:d 'Calling invoke_event_thread()'
+2019-01-22 14:08:22,896  INFO clie invoke_event_thread Case_id:Case2.0 Activity:d 'Initialising thread'
+2019-01-22 14:08:22,896  INFO clie invoke_event_thread Case_id:Case2.0 Activity:d 'Starting thread for event '
+2019-01-22 14:08:22,897  INFO clie run Case_id:Case2.0 Activity:d 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:08:22,898 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:08:22,900 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 94
+2019-01-22 14:08:22,901  INFO clie run Case_id:Case2.0 Activity:d 'The server response is: {"1": {"case_id": "Case2.0", "source_node": "b", "sink_node": "d", "expect": {}, "body": "M"}}'
+2019-01-22 14:08:22,901  INFO clie simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2019-01-22 14:08:22,901  INFO clie invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2019-01-22 14:08:22,901  INFO clie invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2019-01-22 14:08:22,901  INFO clie run Case_id:Case1.2 Activity:d 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:08:22,903 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:08:22,905 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 94
+2019-01-22 14:08:22,906  INFO clie run Case_id:Case1.2 Activity:d 'The server response is: {"1": {"case_id": "Case1.2", "source_node": "d", "sink_node": "d", "expect": {}, "body": "M"}}'
+2019-01-22 14:08:22,906  INFO clie simulate_stream_event Case_id:Case1.1 Activity:d 'Calling invoke_event_thread()'
+2019-01-22 14:08:22,906  INFO clie invoke_event_thread Case_id:Case1.1 Activity:d 'Initialising thread'
+2019-01-22 14:08:22,906  INFO clie invoke_event_thread Case_id:Case1.1 Activity:d 'Starting thread for event '
+2019-01-22 14:08:22,906  INFO clie run Case_id:Case1.1 Activity:d 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:08:22,907 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:08:22,909 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 94
+2019-01-22 14:08:22,910  INFO clie run Case_id:Case1.1 Activity:d 'The server response is: {"1": {"case_id": "Case1.1", "source_node": "c", "sink_node": "d", "expect": {}, "body": "M"}}'
+2019-01-22 14:08:22,910  INFO clie simulate_stream_event Case_id:Case2.1 Activity:d 'Calling invoke_event_thread()'
+2019-01-22 14:08:22,910  INFO clie invoke_event_thread Case_id:Case2.1 Activity:d 'Initialising thread'
+2019-01-22 14:08:22,910  INFO clie invoke_event_thread Case_id:Case2.1 Activity:d 'Starting thread for event '
+2019-01-22 14:08:22,910  INFO clie run Case_id:Case2.1 Activity:d 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:08:22,911 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:08:22,913 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 94
+2019-01-22 14:08:22,913  INFO clie run Case_id:Case2.1 Activity:d 'The server response is: {"1": {"case_id": "Case2.1", "source_node": "b", "sink_node": "d", "expect": {}, "body": "M"}}'
+2019-01-22 14:08:22,914  INFO clie simulate_stream_event Case_id:NONE Activity:END 'Calling invoke_event_thread()'
+2019-01-22 14:08:22,914  INFO clie invoke_event_thread Case_id:NONE Activity:END 'Initialising thread'
+2019-01-22 14:08:22,914  INFO clie invoke_event_thread Case_id:NONE Activity:END 'Starting thread for event '
+2019-01-22 14:08:22,914  INFO clie run Case_id:NONE Activity:END 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:08:22,916 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:08:23,043 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 409 35
+2019-01-22 14:08:23,044  ERROR clie run Case_id:NONE Activity:END 'Error by compliance checking'
+2019-01-22 14:08:23,051  INFO clie main 'compliance checking is completed'
+2019-01-22 14:08:23,051  INFO clie main 'The options are displayed'
+2019-01-22 14:22:39,685  INFO clie main 'The user selected option 3'
+2019-01-22 14:22:39,686  INFO clie main 'Exiting...'
+2019-01-22 14:22:41,903  INFO clie login 'Post request to server:http://0.0.0.0:5000/login?uuid=clie'
+2019-01-22 14:22:41,910 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:22:41,916 http://0.0.0.0:5000 "POST /login?uuid=clie HTTP/1.1" 200 5
+2019-01-22 14:22:41,916  INFO clie main 'The options are displayed'
+2019-01-22 14:22:42,615  INFO clie main 'The user selected option 1'
+2019-01-22 14:22:42,616  INFO clie main 'The user selected option 1'
+2019-01-22 14:22:42,616  INFO clie main 'Calling run_compliance_checker()'
+2019-01-22 14:22:42,616  INFO clie run_compliance_checker 'Calling read_log()'
+2019-01-22 14:22:42,616  INFO clie read_log 'Creating a trace logger file: '
+2019-01-22 14:22:42,622  INFO clie read_log 'Transforming trace logger to event logger'
+2019-01-22 14:22:42,623  INFO clie read_log 'Sorting event logger'
+2019-01-22 14:22:42,623  INFO clie run_compliance_checker 'Calling simulate_stream_event()'
+2019-01-22 14:22:42,623  INFO clie simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2019-01-22 14:22:42,623  INFO clie invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2019-01-22 14:22:42,624  INFO clie invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2019-01-22 14:22:42,624  INFO clie run Case_id:Case1.0 Activity:a 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:22:42,625 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:22:42,628 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 42
+2019-01-22 14:22:42,629  INFO clie run Case_id:Case1.0 Activity:a 'The server response is: {"1": {"body": "OK"}, "2": {"body": "OK"}}'
+2019-01-22 14:22:42,629  INFO clie simulate_stream_event Case_id:Case3.0 Activity:a 'Calling invoke_event_thread()'
+2019-01-22 14:22:42,629  INFO clie invoke_event_thread Case_id:Case3.0 Activity:a 'Initialising thread'
+2019-01-22 14:22:42,629  INFO clie invoke_event_thread Case_id:Case3.0 Activity:a 'Starting thread for event '
+2019-01-22 14:22:42,630  INFO clie run Case_id:Case3.0 Activity:a 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:22:42,631 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:22:42,633 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 42
+2019-01-22 14:22:42,633  INFO clie run Case_id:Case3.0 Activity:a 'The server response is: {"1": {"body": "OK"}, "2": {"body": "OK"}}'
+2019-01-22 14:22:42,633  INFO clie simulate_stream_event Case_id:Case2.0 Activity:a 'Calling invoke_event_thread()'
+2019-01-22 14:22:42,633  INFO clie invoke_event_thread Case_id:Case2.0 Activity:a 'Initialising thread'
+2019-01-22 14:22:42,634  INFO clie invoke_event_thread Case_id:Case2.0 Activity:a 'Starting thread for event '
+2019-01-22 14:22:42,634  INFO clie run Case_id:Case2.0 Activity:a 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:22:42,635 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:22:42,637 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 42
+2019-01-22 14:22:42,637  INFO clie run Case_id:Case2.0 Activity:a 'The server response is: {"1": {"body": "OK"}, "2": {"body": "OK"}}'
+2019-01-22 14:22:42,637  INFO clie simulate_stream_event Case_id:Case1.2 Activity:a 'Calling invoke_event_thread()'
+2019-01-22 14:22:42,638  INFO clie invoke_event_thread Case_id:Case1.2 Activity:a 'Initialising thread'
+2019-01-22 14:22:42,638  INFO clie invoke_event_thread Case_id:Case1.2 Activity:a 'Starting thread for event '
+2019-01-22 14:22:42,638  INFO clie run Case_id:Case1.2 Activity:a 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:22:42,639 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:22:42,642 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 42
+2019-01-22 14:22:42,643  INFO clie run Case_id:Case1.2 Activity:a 'The server response is: {"1": {"body": "OK"}, "2": {"body": "OK"}}'
+2019-01-22 14:22:42,643  INFO clie simulate_stream_event Case_id:Case1.1 Activity:a 'Calling invoke_event_thread()'
+2019-01-22 14:22:42,643  INFO clie invoke_event_thread Case_id:Case1.1 Activity:a 'Initialising thread'
+2019-01-22 14:22:42,643  INFO clie invoke_event_thread Case_id:Case1.1 Activity:a 'Starting thread for event '
+2019-01-22 14:22:42,643  INFO clie run Case_id:Case1.1 Activity:a 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:22:42,644 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:22:42,646 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 42
+2019-01-22 14:22:42,647  INFO clie run Case_id:Case1.1 Activity:a 'The server response is: {"1": {"body": "OK"}, "2": {"body": "OK"}}'
+2019-01-22 14:22:42,647  INFO clie simulate_stream_event Case_id:Case2.1 Activity:a 'Calling invoke_event_thread()'
+2019-01-22 14:22:42,647  INFO clie invoke_event_thread Case_id:Case2.1 Activity:a 'Initialising thread'
+2019-01-22 14:22:42,647  INFO clie invoke_event_thread Case_id:Case2.1 Activity:a 'Starting thread for event '
+2019-01-22 14:22:42,647  INFO clie run Case_id:Case2.1 Activity:a 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:22:42,648 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:22:42,651 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 42
+2019-01-22 14:22:42,651  INFO clie run Case_id:Case2.1 Activity:a 'The server response is: {"1": {"body": "OK"}, "2": {"body": "OK"}}'
+2019-01-22 14:22:42,652  INFO clie simulate_stream_event Case_id:Case1.0 Activity:b 'Calling invoke_event_thread()'
+2019-01-22 14:22:42,652  INFO clie invoke_event_thread Case_id:Case1.0 Activity:b 'Initialising thread'
+2019-01-22 14:22:42,652  INFO clie invoke_event_thread Case_id:Case1.0 Activity:b 'Starting thread for event '
+2019-01-22 14:22:42,652  INFO clie run Case_id:Case1.0 Activity:b 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:22:42,653 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:22:42,655 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 142
+2019-01-22 14:22:42,656  INFO clie run Case_id:Case1.0 Activity:b 'The server response is: {"1": {"case_id": "Case1.0", "source_node": "a", "sink_node": "b", "expect": {"d": 0.5093945720250522, "c": 0.4906054279749478}, "body": "M"}}'
+2019-01-22 14:22:42,656  INFO clie simulate_stream_event Case_id:Case3.0 Activity:e 'Calling invoke_event_thread()'
+2019-01-22 14:22:42,656  INFO clie invoke_event_thread Case_id:Case3.0 Activity:e 'Initialising thread'
+2019-01-22 14:22:42,656  INFO clie invoke_event_thread Case_id:Case3.0 Activity:e 'Starting thread for event '
+2019-01-22 14:22:42,656  INFO clie run Case_id:Case3.0 Activity:e 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:22:42,657 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:22:42,659 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 142
+2019-01-22 14:22:42,659  INFO clie run Case_id:Case3.0 Activity:e 'The server response is: {"1": {"case_id": "Case3.0", "source_node": "a", "sink_node": "e", "expect": {"d": 0.5093945720250522, "c": 0.4906054279749478}, "body": "M"}}'
+2019-01-22 14:22:42,660  INFO clie simulate_stream_event Case_id:Case2.0 Activity:c 'Calling invoke_event_thread()'
+2019-01-22 14:22:42,660  INFO clie invoke_event_thread Case_id:Case2.0 Activity:c 'Initialising thread'
+2019-01-22 14:22:42,660  INFO clie invoke_event_thread Case_id:Case2.0 Activity:c 'Starting thread for event '
+2019-01-22 14:22:42,660  INFO clie run Case_id:Case2.0 Activity:c 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:22:42,661 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:22:42,663 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 63
+2019-01-22 14:22:42,663  INFO clie run Case_id:Case2.0 Activity:c 'The server response is: {"1": {"body": "OK"}, "2": {"body": "OK"}, "3": {"body": "OK"}}'
+2019-01-22 14:22:42,663  INFO clie simulate_stream_event Case_id:Case1.2 Activity:b 'Calling invoke_event_thread()'
+2019-01-22 14:22:42,663  INFO clie invoke_event_thread Case_id:Case1.2 Activity:b 'Initialising thread'
+2019-01-22 14:22:42,663  INFO clie invoke_event_thread Case_id:Case1.2 Activity:b 'Starting thread for event '
+2019-01-22 14:22:42,663  INFO clie run Case_id:Case1.2 Activity:b 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:22:42,664 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:22:42,666 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 142
+2019-01-22 14:22:42,667  INFO clie run Case_id:Case1.2 Activity:b 'The server response is: {"1": {"case_id": "Case1.2", "source_node": "a", "sink_node": "b", "expect": {"d": 0.5093945720250522, "c": 0.4906054279749478}, "body": "M"}}'
+2019-01-22 14:22:42,667  INFO clie simulate_stream_event Case_id:Case1.1 Activity:b 'Calling invoke_event_thread()'
+2019-01-22 14:22:42,667  INFO clie invoke_event_thread Case_id:Case1.1 Activity:b 'Initialising thread'
+2019-01-22 14:22:42,667  INFO clie invoke_event_thread Case_id:Case1.1 Activity:b 'Starting thread for event '
+2019-01-22 14:22:42,667  INFO clie run Case_id:Case1.1 Activity:b 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:22:42,668 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:22:42,670 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 142
+2019-01-22 14:22:42,670  INFO clie run Case_id:Case1.1 Activity:b 'The server response is: {"1": {"case_id": "Case1.1", "source_node": "a", "sink_node": "b", "expect": {"d": 0.5093945720250522, "c": 0.4906054279749478}, "body": "M"}}'
+2019-01-22 14:22:42,671  INFO clie simulate_stream_event Case_id:Case2.1 Activity:c 'Calling invoke_event_thread()'
+2019-01-22 14:22:42,671  INFO clie invoke_event_thread Case_id:Case2.1 Activity:c 'Initialising thread'
+2019-01-22 14:22:42,671  INFO clie invoke_event_thread Case_id:Case2.1 Activity:c 'Starting thread for event '
+2019-01-22 14:22:42,671  INFO clie run Case_id:Case2.1 Activity:c 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:22:42,672 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:22:42,674 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 63
+2019-01-22 14:22:42,674  INFO clie run Case_id:Case2.1 Activity:c 'The server response is: {"1": {"body": "OK"}, "2": {"body": "OK"}, "3": {"body": "OK"}}'
+2019-01-22 14:22:42,674  INFO clie simulate_stream_event Case_id:Case1.0 Activity:c 'Calling invoke_event_thread()'
+2019-01-22 14:22:42,675  INFO clie invoke_event_thread Case_id:Case1.0 Activity:c 'Initialising thread'
+2019-01-22 14:22:42,675  INFO clie invoke_event_thread Case_id:Case1.0 Activity:c 'Starting thread for event '
+2019-01-22 14:22:42,675  INFO clie run Case_id:Case1.0 Activity:c 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:22:42,676 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:22:42,678 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 142
+2019-01-22 14:22:42,678  INFO clie run Case_id:Case1.0 Activity:c 'The server response is: {"1": {"case_id": "Case1.0", "source_node": "b", "sink_node": "c", "expect": {"d": 0.5239923224568138, "e": 0.4760076775431862}, "body": "M"}}'
+2019-01-22 14:22:42,679  INFO clie simulate_stream_event Case_id:Case3.0 Activity:d 'Calling invoke_event_thread()'
+2019-01-22 14:22:42,679  INFO clie invoke_event_thread Case_id:Case3.0 Activity:d 'Initialising thread'
+2019-01-22 14:22:42,679  INFO clie invoke_event_thread Case_id:Case3.0 Activity:d 'Starting thread for event '
+2019-01-22 14:22:42,679  INFO clie run Case_id:Case3.0 Activity:d 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:22:42,680 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:22:42,682 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 119
+2019-01-22 14:22:42,682  INFO clie run Case_id:Case3.0 Activity:d 'The server response is: {"1": {"body": "OK"}, "2": {"case_id": "Case3.0", "source_node": "a,e", "sink_node": "e,d", "expect": {}, "body": "M"}}'
+2019-01-22 14:22:42,682  INFO clie simulate_stream_event Case_id:Case2.0 Activity:b 'Calling invoke_event_thread()'
+2019-01-22 14:22:42,683  INFO clie invoke_event_thread Case_id:Case2.0 Activity:b 'Initialising thread'
+2019-01-22 14:22:42,683  INFO clie invoke_event_thread Case_id:Case2.0 Activity:b 'Starting thread for event '
+2019-01-22 14:22:42,683  INFO clie run Case_id:Case2.0 Activity:b 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:22:42,684 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:22:42,686 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 142
+2019-01-22 14:22:42,686  INFO clie run Case_id:Case2.0 Activity:b 'The server response is: {"1": {"case_id": "Case2.0", "source_node": "c", "sink_node": "b", "expect": {"d": 0.4906054279749478, "f": 0.5093945720250522}, "body": "M"}}'
+2019-01-22 14:22:42,686  INFO clie simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2019-01-22 14:22:42,686  INFO clie invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2019-01-22 14:22:42,686  INFO clie invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2019-01-22 14:22:42,687  INFO clie run Case_id:Case1.2 Activity:d 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:22:42,687 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:22:42,690 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 119
+2019-01-22 14:22:42,691  INFO clie run Case_id:Case1.2 Activity:d 'The server response is: {"1": {"body": "OK"}, "2": {"case_id": "Case1.2", "source_node": "a,b", "sink_node": "b,d", "expect": {}, "body": "M"}}'
+2019-01-22 14:22:42,692  INFO clie simulate_stream_event Case_id:Case1.1 Activity:c 'Calling invoke_event_thread()'
+2019-01-22 14:22:42,692  INFO clie invoke_event_thread Case_id:Case1.1 Activity:c 'Initialising thread'
+2019-01-22 14:22:42,692  INFO clie invoke_event_thread Case_id:Case1.1 Activity:c 'Starting thread for event '
+2019-01-22 14:22:42,692  INFO clie run Case_id:Case1.1 Activity:c 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:22:42,693 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:22:42,696 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 142
+2019-01-22 14:22:42,696  INFO clie run Case_id:Case1.1 Activity:c 'The server response is: {"1": {"case_id": "Case1.1", "source_node": "b", "sink_node": "c", "expect": {"d": 0.5239923224568138, "e": 0.4760076775431862}, "body": "M"}}'
+2019-01-22 14:22:42,696  INFO clie simulate_stream_event Case_id:Case2.1 Activity:b 'Calling invoke_event_thread()'
+2019-01-22 14:22:42,696  INFO clie invoke_event_thread Case_id:Case2.1 Activity:b 'Initialising thread'
+2019-01-22 14:22:42,696  INFO clie invoke_event_thread Case_id:Case2.1 Activity:b 'Starting thread for event '
+2019-01-22 14:22:42,696  INFO clie run Case_id:Case2.1 Activity:b 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:22:42,697 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:22:42,700 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 142
+2019-01-22 14:22:42,700  INFO clie run Case_id:Case2.1 Activity:b 'The server response is: {"1": {"case_id": "Case2.1", "source_node": "c", "sink_node": "b", "expect": {"d": 0.4906054279749478, "f": 0.5093945720250522}, "body": "M"}}'
+2019-01-22 14:22:42,700  INFO clie simulate_stream_event Case_id:Case1.0 Activity:d 'Calling invoke_event_thread()'
+2019-01-22 14:22:42,700  INFO clie invoke_event_thread Case_id:Case1.0 Activity:d 'Initialising thread'
+2019-01-22 14:22:42,700  INFO clie invoke_event_thread Case_id:Case1.0 Activity:d 'Starting thread for event '
+2019-01-22 14:22:42,700  INFO clie run Case_id:Case1.0 Activity:d 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:22:42,701 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:22:42,703 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 119
+2019-01-22 14:22:42,704  INFO clie run Case_id:Case1.0 Activity:d 'The server response is: {"1": {"body": "OK"}, "2": {"case_id": "Case1.0", "source_node": "b,c", "sink_node": "c,d", "expect": {}, "body": "M"}}'
+2019-01-22 14:22:42,704  INFO clie simulate_stream_event Case_id:Case2.0 Activity:d 'Calling invoke_event_thread()'
+2019-01-22 14:22:42,704  INFO clie invoke_event_thread Case_id:Case2.0 Activity:d 'Initialising thread'
+2019-01-22 14:22:42,704  INFO clie invoke_event_thread Case_id:Case2.0 Activity:d 'Starting thread for event '
+2019-01-22 14:22:42,704  INFO clie run Case_id:Case2.0 Activity:d 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:22:42,705 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:22:42,708 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 119
+2019-01-22 14:22:42,708  INFO clie run Case_id:Case2.0 Activity:d 'The server response is: {"1": {"body": "OK"}, "2": {"case_id": "Case2.0", "source_node": "c,b", "sink_node": "b,d", "expect": {}, "body": "M"}}'
+2019-01-22 14:22:42,708  INFO clie simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2019-01-22 14:22:42,708  INFO clie invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2019-01-22 14:22:42,709  INFO clie invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2019-01-22 14:22:42,709  INFO clie run Case_id:Case1.2 Activity:d 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:22:42,710 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:22:42,712 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 140
+2019-01-22 14:22:42,712  INFO clie run Case_id:Case1.2 Activity:d 'The server response is: {"1": {"case_id": "Case1.2", "source_node": "d", "sink_node": "d", "expect": {"c": 0.244, "e": 0.273, "g": 0.248, "f": 0.235}, "body": "M"}}'
+2019-01-22 14:22:42,712  INFO clie simulate_stream_event Case_id:Case1.1 Activity:d 'Calling invoke_event_thread()'
+2019-01-22 14:22:42,713  INFO clie invoke_event_thread Case_id:Case1.1 Activity:d 'Initialising thread'
+2019-01-22 14:22:42,713  INFO clie invoke_event_thread Case_id:Case1.1 Activity:d 'Starting thread for event '
+2019-01-22 14:22:42,713  INFO clie run Case_id:Case1.1 Activity:d 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:22:42,714 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:22:42,716 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 119
+2019-01-22 14:22:42,716  INFO clie run Case_id:Case1.1 Activity:d 'The server response is: {"1": {"body": "OK"}, "2": {"case_id": "Case1.1", "source_node": "b,c", "sink_node": "c,d", "expect": {}, "body": "M"}}'
+2019-01-22 14:22:42,716  INFO clie simulate_stream_event Case_id:Case2.1 Activity:d 'Calling invoke_event_thread()'
+2019-01-22 14:22:42,716  INFO clie invoke_event_thread Case_id:Case2.1 Activity:d 'Initialising thread'
+2019-01-22 14:22:42,716  INFO clie invoke_event_thread Case_id:Case2.1 Activity:d 'Starting thread for event '
+2019-01-22 14:22:42,717  INFO clie run Case_id:Case2.1 Activity:d 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:22:42,717 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:22:42,720 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 119
+2019-01-22 14:22:42,720  INFO clie run Case_id:Case2.1 Activity:d 'The server response is: {"1": {"body": "OK"}, "2": {"case_id": "Case2.1", "source_node": "c,b", "sink_node": "b,d", "expect": {}, "body": "M"}}'
+2019-01-22 14:22:42,720  INFO clie simulate_stream_event Case_id:NONE Activity:END 'Calling invoke_event_thread()'
+2019-01-22 14:22:42,720  INFO clie invoke_event_thread Case_id:NONE Activity:END 'Initialising thread'
+2019-01-22 14:22:42,720  INFO clie invoke_event_thread Case_id:NONE Activity:END 'Starting thread for event '
+2019-01-22 14:22:42,720  INFO clie run Case_id:NONE Activity:END 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:22:42,721 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:22:42,869 http://0.0.0.0:5000 "POST /compliance-checker?uuid=clie HTTP/1.1" 200 84
+2019-01-22 14:22:42,869  INFO clie run Case_id:NONE Activity:END 'The server response is: {"End": {"body": "The compliance checking is over, you can get the deviation pdf!"}}'
+2019-01-22 14:22:42,876  INFO clie main 'compliance checking is completed'
+2019-01-22 14:22:42,877  INFO clie main 'The options are displayed'
+2019-01-22 14:22:45,317  INFO clie main 'The user selected option 2'
+2019-01-22 14:22:45,317  INFO clie main 'Calling run_show_deviation_pdf() '
+2019-01-22 14:22:45,318  INFO clie run_show_deviation_pdf 'Post request to http://0.0.0.0:5000/show-deviation-pdf?uuid=clie'
+2019-01-22 14:22:45,323 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:22:45,327 http://0.0.0.0:5000 "POST /show-deviation-pdf?uuid=clie HTTP/1.1" 200 None
+2019-01-22 14:22:45,330 SHIFT_JIS Japanese prober hit error at byte 85
+2019-01-22 14:22:45,330 EUC-JP Japanese prober hit error at byte 17
+2019-01-22 14:22:45,331 GB2312 Chinese prober hit error at byte 21
+2019-01-22 14:22:45,331 EUC-KR Korean prober hit error at byte 17
+2019-01-22 14:22:45,331 CP949 Korean prober hit error at byte 17
+2019-01-22 14:22:45,331 Big5 Chinese prober hit error at byte 21
+2019-01-22 14:22:45,331 EUC-TW Taiwan prober hit error at byte 17
+2019-01-22 14:22:45,344 windows-1251 confidence = 0.0447289193015596, below negative shortcut threshhold 0.05
+2019-01-22 14:22:45,355 KOI8-R confidence = 0.036581020478889295, below negative shortcut threshhold 0.05
+2019-01-22 14:22:45,366 ISO-8859-5 confidence = 0.0462703008868723, below negative shortcut threshhold 0.05
+2019-01-22 14:22:45,377 MacCyrillic confidence = 0.04376353662912062, below negative shortcut threshhold 0.05
+2019-01-22 14:22:45,387 IBM866 confidence = 0.03979959563608089, below negative shortcut threshhold 0.05
+2019-01-22 14:22:45,397 IBM855 confidence = 0.03887380361585256, below negative shortcut threshhold 0.05
+2019-01-22 14:22:45,426 ISO-8859-5 confidence = 0.04405699951002766, below negative shortcut threshhold 0.05
+2019-01-22 14:22:45,447 TIS-620 confidence = 0.03766723233077108, below negative shortcut threshhold 0.05
+2019-01-22 14:22:45,473 windows-1255 confidence = 0.04738742025830615, below negative shortcut threshhold 0.05
+2019-01-22 14:22:45,484 windows-1255 confidence = 0.04959148631683201, below negative shortcut threshhold 0.05
+2019-01-22 14:22:45,495 windows-1251 not active
+2019-01-22 14:22:45,496 KOI8-R not active
+2019-01-22 14:22:45,496 ISO-8859-5 not active
+2019-01-22 14:22:45,496 MacCyrillic not active
+2019-01-22 14:22:45,496 IBM866 not active
+2019-01-22 14:22:45,496 IBM855 not active
+2019-01-22 14:22:45,496 ISO-8859-7 Greek confidence = 0.07317627469506224
+2019-01-22 14:22:45,496 windows-1253 Greek confidence = 0.07437176711041112
+2019-01-22 14:22:45,496 ISO-8859-5 not active
+2019-01-22 14:22:45,497 windows-1251 Bulgarian confidence = 0.05236022984510857
+2019-01-22 14:22:45,497 TIS-620 not active
+2019-01-22 14:22:45,497 ISO-8859-9 Turkish confidence = 0.07700125610564472
+2019-01-22 14:22:45,497 windows-1255 Hebrew confidence = 0.0
+2019-01-22 14:22:45,497 windows-1255 not active
+2019-01-22 14:22:45,497 windows-1255 not active
+2019-01-22 14:22:45,497 no probers hit minimum threshold
+2019-01-22 14:22:45,497 utf-8  confidence = 0.010000000000000009
+2019-01-22 14:22:45,497 SHIFT_JIS Japanese confidence = 0.01
+2019-01-22 14:22:45,497 EUC-JP Japanese confidence = 0.01
+2019-01-22 14:22:45,497 GB2312 Chinese confidence = 0.01
+2019-01-22 14:22:45,497 EUC-KR Korean confidence = 0.01
+2019-01-22 14:22:45,497 CP949 Korean confidence = 0.01
+2019-01-22 14:22:45,497 Big5 Chinese confidence = 0.01
+2019-01-22 14:22:45,497 EUC-TW Taiwan confidence = 0.01
+2019-01-22 14:22:45,497 windows-1251 Russian confidence = 0.0447289193015596
+2019-01-22 14:22:45,497 KOI8-R Russian confidence = 0.036581020478889295
+2019-01-22 14:22:45,497 ISO-8859-5 Russian confidence = 0.0462703008868723
+2019-01-22 14:22:45,497 MacCyrillic Russian confidence = 0.04376353662912062
+2019-01-22 14:22:45,497 IBM866 Russian confidence = 0.03979959563608089
+2019-01-22 14:22:45,497 IBM855 Russian confidence = 0.03887380361585256
+2019-01-22 14:22:45,497 ISO-8859-7 Greek confidence = 0.07317627469506224
+2019-01-22 14:22:45,497 windows-1253 Greek confidence = 0.07437176711041112
+2019-01-22 14:22:45,498 ISO-8859-5 Bulgairan confidence = 0.04405699951002766
+2019-01-22 14:22:45,498 windows-1251 Bulgarian confidence = 0.05236022984510857
+2019-01-22 14:22:45,498 TIS-620 Thai confidence = 0.03766723233077108
+2019-01-22 14:22:45,498 ISO-8859-9 Turkish confidence = 0.07700125610564472
+2019-01-22 14:22:45,498 windows-1255 Hebrew confidence = 0.0
+2019-01-22 14:22:45,498 windows-1255 Hebrew confidence = 0.04738742025830615
+2019-01-22 14:22:45,498 windows-1255 Hebrew confidence = 0.04959148631683201
+2019-01-22 14:22:45,498 windows-1255 Hebrew confidence = 0.04959148631683201
+2019-01-22 14:22:45,498  INFO clie run_show_deviation_pdf 'Compliance checking is done. Deviations PDF is available at http://0.0.0.0:5000/show-deviation-pdf?uuid=clie'
+2019-01-22 14:22:45,498  INFO clie main 'The options are displayed'
+2019-01-22 14:22:46,595  INFO clie main 'The user selected option 3'
+2019-01-22 14:22:46,595  INFO clie main 'Exiting...'
+2019-01-22 14:25:50,245  INFO c login 'Post request to server:http://0.0.0.0:5000/login?uuid=c'
+2019-01-22 14:25:50,250 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:25:50,255 http://0.0.0.0:5000 "POST /login?uuid=c HTTP/1.1" 200 5
+2019-01-22 14:25:50,255  INFO c main 'The options are displayed'
+2019-01-22 14:25:51,590  INFO c main 'The user selected option 1'
+2019-01-22 14:25:51,591  INFO c main 'The user selected option 1'
+2019-01-22 14:25:51,591  INFO c main 'Calling run_compliance_checker()'
+2019-01-22 14:25:51,591  INFO c run_compliance_checker 'Calling read_log()'
+2019-01-22 14:25:51,592  INFO c read_log 'Creating a trace logger file: '
+2019-01-22 14:25:51,597  INFO c read_log 'Transforming trace logger to event logger'
+2019-01-22 14:25:51,597  INFO c read_log 'Sorting event logger'
+2019-01-22 14:25:51,598  INFO c run_compliance_checker 'Calling simulate_stream_event()'
+2019-01-22 14:25:51,598  INFO c simulate_stream_event Case_id:Case1.0 Activity:a 'Calling invoke_event_thread()'
+2019-01-22 14:25:51,598  INFO c invoke_event_thread Case_id:Case1.0 Activity:a 'Initialising thread'
+2019-01-22 14:25:51,598  INFO c invoke_event_thread Case_id:Case1.0 Activity:a 'Starting thread for event '
+2019-01-22 14:25:51,599  INFO c run Case_id:Case1.0 Activity:a 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:25:51,600 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:25:51,604 http://0.0.0.0:5000 "POST /compliance-checker?uuid=c HTTP/1.1" 200 42
+2019-01-22 14:25:51,604  INFO c run Case_id:Case1.0 Activity:a 'The server response is: {"1": {"body": "OK"}, "2": {"body": "OK"}}'
+2019-01-22 14:25:51,604  INFO c simulate_stream_event Case_id:Case3.0 Activity:a 'Calling invoke_event_thread()'
+2019-01-22 14:25:51,604  INFO c invoke_event_thread Case_id:Case3.0 Activity:a 'Initialising thread'
+2019-01-22 14:25:51,605  INFO c invoke_event_thread Case_id:Case3.0 Activity:a 'Starting thread for event '
+2019-01-22 14:25:51,605  INFO c run Case_id:Case3.0 Activity:a 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:25:51,606 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:25:51,610 http://0.0.0.0:5000 "POST /compliance-checker?uuid=c HTTP/1.1" 200 42
+2019-01-22 14:25:51,610  INFO c run Case_id:Case3.0 Activity:a 'The server response is: {"1": {"body": "OK"}, "2": {"body": "OK"}}'
+2019-01-22 14:25:51,610  INFO c simulate_stream_event Case_id:Case2.0 Activity:a 'Calling invoke_event_thread()'
+2019-01-22 14:25:51,610  INFO c invoke_event_thread Case_id:Case2.0 Activity:a 'Initialising thread'
+2019-01-22 14:25:51,610  INFO c invoke_event_thread Case_id:Case2.0 Activity:a 'Starting thread for event '
+2019-01-22 14:25:51,611  INFO c run Case_id:Case2.0 Activity:a 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:25:51,612 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:25:51,614 http://0.0.0.0:5000 "POST /compliance-checker?uuid=c HTTP/1.1" 200 42
+2019-01-22 14:25:51,614  INFO c run Case_id:Case2.0 Activity:a 'The server response is: {"1": {"body": "OK"}, "2": {"body": "OK"}}'
+2019-01-22 14:25:51,614  INFO c simulate_stream_event Case_id:Case1.2 Activity:a 'Calling invoke_event_thread()'
+2019-01-22 14:25:51,615  INFO c invoke_event_thread Case_id:Case1.2 Activity:a 'Initialising thread'
+2019-01-22 14:25:51,615  INFO c invoke_event_thread Case_id:Case1.2 Activity:a 'Starting thread for event '
+2019-01-22 14:25:51,615  INFO c run Case_id:Case1.2 Activity:a 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:25:51,616 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:25:51,618 http://0.0.0.0:5000 "POST /compliance-checker?uuid=c HTTP/1.1" 200 42
+2019-01-22 14:25:51,618  INFO c run Case_id:Case1.2 Activity:a 'The server response is: {"1": {"body": "OK"}, "2": {"body": "OK"}}'
+2019-01-22 14:25:51,618  INFO c simulate_stream_event Case_id:Case1.1 Activity:a 'Calling invoke_event_thread()'
+2019-01-22 14:25:51,618  INFO c invoke_event_thread Case_id:Case1.1 Activity:a 'Initialising thread'
+2019-01-22 14:25:51,618  INFO c invoke_event_thread Case_id:Case1.1 Activity:a 'Starting thread for event '
+2019-01-22 14:25:51,619  INFO c run Case_id:Case1.1 Activity:a 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:25:51,620 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:25:51,622 http://0.0.0.0:5000 "POST /compliance-checker?uuid=c HTTP/1.1" 200 42
+2019-01-22 14:25:51,622  INFO c run Case_id:Case1.1 Activity:a 'The server response is: {"1": {"body": "OK"}, "2": {"body": "OK"}}'
+2019-01-22 14:25:51,622  INFO c simulate_stream_event Case_id:Case2.1 Activity:a 'Calling invoke_event_thread()'
+2019-01-22 14:25:51,622  INFO c invoke_event_thread Case_id:Case2.1 Activity:a 'Initialising thread'
+2019-01-22 14:25:51,622  INFO c invoke_event_thread Case_id:Case2.1 Activity:a 'Starting thread for event '
+2019-01-22 14:25:51,622  INFO c run Case_id:Case2.1 Activity:a 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:25:51,623 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:25:51,625 http://0.0.0.0:5000 "POST /compliance-checker?uuid=c HTTP/1.1" 200 42
+2019-01-22 14:25:51,626  INFO c run Case_id:Case2.1 Activity:a 'The server response is: {"1": {"body": "OK"}, "2": {"body": "OK"}}'
+2019-01-22 14:25:51,626  INFO c simulate_stream_event Case_id:Case1.0 Activity:b 'Calling invoke_event_thread()'
+2019-01-22 14:25:51,626  INFO c invoke_event_thread Case_id:Case1.0 Activity:b 'Initialising thread'
+2019-01-22 14:25:51,626  INFO c invoke_event_thread Case_id:Case1.0 Activity:b 'Starting thread for event '
+2019-01-22 14:25:51,626  INFO c run Case_id:Case1.0 Activity:b 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:25:51,627 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:25:51,629 http://0.0.0.0:5000 "POST /compliance-checker?uuid=c HTTP/1.1" 200 142
+2019-01-22 14:25:51,630  INFO c run Case_id:Case1.0 Activity:b 'The server response is: {"1": {"case_id": "Case1.0", "source_node": "a", "sink_node": "b", "expect": {"d": 0.5093945720250522, "c": 0.4906054279749478}, "body": "M"}}'
+2019-01-22 14:25:51,630  INFO c simulate_stream_event Case_id:Case3.0 Activity:e 'Calling invoke_event_thread()'
+2019-01-22 14:25:51,630  INFO c invoke_event_thread Case_id:Case3.0 Activity:e 'Initialising thread'
+2019-01-22 14:25:51,630  INFO c invoke_event_thread Case_id:Case3.0 Activity:e 'Starting thread for event '
+2019-01-22 14:25:51,630  INFO c run Case_id:Case3.0 Activity:e 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:25:51,631 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:25:51,633 http://0.0.0.0:5000 "POST /compliance-checker?uuid=c HTTP/1.1" 200 142
+2019-01-22 14:25:51,633  INFO c run Case_id:Case3.0 Activity:e 'The server response is: {"1": {"case_id": "Case3.0", "source_node": "a", "sink_node": "e", "expect": {"d": 0.5093945720250522, "c": 0.4906054279749478}, "body": "M"}}'
+2019-01-22 14:25:51,634  INFO c simulate_stream_event Case_id:Case2.0 Activity:c 'Calling invoke_event_thread()'
+2019-01-22 14:25:51,634  INFO c invoke_event_thread Case_id:Case2.0 Activity:c 'Initialising thread'
+2019-01-22 14:25:51,634  INFO c invoke_event_thread Case_id:Case2.0 Activity:c 'Starting thread for event '
+2019-01-22 14:25:51,634  INFO c run Case_id:Case2.0 Activity:c 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:25:51,635 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:25:51,636 http://0.0.0.0:5000 "POST /compliance-checker?uuid=c HTTP/1.1" 200 63
+2019-01-22 14:25:51,637  INFO c run Case_id:Case2.0 Activity:c 'The server response is: {"1": {"body": "OK"}, "2": {"body": "OK"}, "3": {"body": "OK"}}'
+2019-01-22 14:25:51,637  INFO c simulate_stream_event Case_id:Case1.2 Activity:b 'Calling invoke_event_thread()'
+2019-01-22 14:25:51,637  INFO c invoke_event_thread Case_id:Case1.2 Activity:b 'Initialising thread'
+2019-01-22 14:25:51,637  INFO c invoke_event_thread Case_id:Case1.2 Activity:b 'Starting thread for event '
+2019-01-22 14:25:51,637  INFO c run Case_id:Case1.2 Activity:b 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:25:51,638 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:25:51,640 http://0.0.0.0:5000 "POST /compliance-checker?uuid=c HTTP/1.1" 200 142
+2019-01-22 14:25:51,640  INFO c run Case_id:Case1.2 Activity:b 'The server response is: {"1": {"case_id": "Case1.2", "source_node": "a", "sink_node": "b", "expect": {"d": 0.5093945720250522, "c": 0.4906054279749478}, "body": "M"}}'
+2019-01-22 14:25:51,641  INFO c simulate_stream_event Case_id:Case1.1 Activity:b 'Calling invoke_event_thread()'
+2019-01-22 14:25:51,641  INFO c invoke_event_thread Case_id:Case1.1 Activity:b 'Initialising thread'
+2019-01-22 14:25:51,641  INFO c invoke_event_thread Case_id:Case1.1 Activity:b 'Starting thread for event '
+2019-01-22 14:25:51,641  INFO c run Case_id:Case1.1 Activity:b 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:25:51,642 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:25:51,644 http://0.0.0.0:5000 "POST /compliance-checker?uuid=c HTTP/1.1" 200 142
+2019-01-22 14:25:51,644  INFO c run Case_id:Case1.1 Activity:b 'The server response is: {"1": {"case_id": "Case1.1", "source_node": "a", "sink_node": "b", "expect": {"d": 0.5093945720250522, "c": 0.4906054279749478}, "body": "M"}}'
+2019-01-22 14:25:51,645  INFO c simulate_stream_event Case_id:Case2.1 Activity:c 'Calling invoke_event_thread()'
+2019-01-22 14:25:51,645  INFO c invoke_event_thread Case_id:Case2.1 Activity:c 'Initialising thread'
+2019-01-22 14:25:51,645  INFO c invoke_event_thread Case_id:Case2.1 Activity:c 'Starting thread for event '
+2019-01-22 14:25:51,645  INFO c run Case_id:Case2.1 Activity:c 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:25:51,646 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:25:51,647 http://0.0.0.0:5000 "POST /compliance-checker?uuid=c HTTP/1.1" 200 63
+2019-01-22 14:25:51,648  INFO c run Case_id:Case2.1 Activity:c 'The server response is: {"1": {"body": "OK"}, "2": {"body": "OK"}, "3": {"body": "OK"}}'
+2019-01-22 14:25:51,648  INFO c simulate_stream_event Case_id:Case1.0 Activity:c 'Calling invoke_event_thread()'
+2019-01-22 14:25:51,648  INFO c invoke_event_thread Case_id:Case1.0 Activity:c 'Initialising thread'
+2019-01-22 14:25:51,648  INFO c invoke_event_thread Case_id:Case1.0 Activity:c 'Starting thread for event '
+2019-01-22 14:25:51,648  INFO c run Case_id:Case1.0 Activity:c 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:25:51,649 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:25:51,651 http://0.0.0.0:5000 "POST /compliance-checker?uuid=c HTTP/1.1" 200 142
+2019-01-22 14:25:51,651  INFO c run Case_id:Case1.0 Activity:c 'The server response is: {"1": {"case_id": "Case1.0", "source_node": "b", "sink_node": "c", "expect": {"d": 0.5239923224568138, "e": 0.4760076775431862}, "body": "M"}}'
+2019-01-22 14:25:51,652  INFO c simulate_stream_event Case_id:Case3.0 Activity:d 'Calling invoke_event_thread()'
+2019-01-22 14:25:51,652  INFO c invoke_event_thread Case_id:Case3.0 Activity:d 'Initialising thread'
+2019-01-22 14:25:51,652  INFO c invoke_event_thread Case_id:Case3.0 Activity:d 'Starting thread for event '
+2019-01-22 14:25:51,652  INFO c run Case_id:Case3.0 Activity:d 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:25:51,653 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:25:51,655 http://0.0.0.0:5000 "POST /compliance-checker?uuid=c HTTP/1.1" 200 119
+2019-01-22 14:25:51,655  INFO c run Case_id:Case3.0 Activity:d 'The server response is: {"1": {"body": "OK"}, "2": {"case_id": "Case3.0", "source_node": "a,e", "sink_node": "e,d", "expect": {}, "body": "M"}}'
+2019-01-22 14:25:51,655  INFO c simulate_stream_event Case_id:Case2.0 Activity:b 'Calling invoke_event_thread()'
+2019-01-22 14:25:51,656  INFO c invoke_event_thread Case_id:Case2.0 Activity:b 'Initialising thread'
+2019-01-22 14:25:51,656  INFO c invoke_event_thread Case_id:Case2.0 Activity:b 'Starting thread for event '
+2019-01-22 14:25:51,656  INFO c run Case_id:Case2.0 Activity:b 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:25:51,657 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:25:51,659 http://0.0.0.0:5000 "POST /compliance-checker?uuid=c HTTP/1.1" 200 142
+2019-01-22 14:25:51,659  INFO c run Case_id:Case2.0 Activity:b 'The server response is: {"1": {"case_id": "Case2.0", "source_node": "c", "sink_node": "b", "expect": {"f": 0.5093945720250522, "d": 0.4906054279749478}, "body": "M"}}'
+2019-01-22 14:25:51,659  INFO c simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2019-01-22 14:25:51,659  INFO c invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2019-01-22 14:25:51,659  INFO c invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2019-01-22 14:25:51,659  INFO c run Case_id:Case1.2 Activity:d 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:25:51,660 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:25:51,662 http://0.0.0.0:5000 "POST /compliance-checker?uuid=c HTTP/1.1" 200 119
+2019-01-22 14:25:51,662  INFO c run Case_id:Case1.2 Activity:d 'The server response is: {"1": {"body": "OK"}, "2": {"case_id": "Case1.2", "source_node": "a,b", "sink_node": "b,d", "expect": {}, "body": "M"}}'
+2019-01-22 14:25:51,663  INFO c simulate_stream_event Case_id:Case1.1 Activity:c 'Calling invoke_event_thread()'
+2019-01-22 14:25:51,663  INFO c invoke_event_thread Case_id:Case1.1 Activity:c 'Initialising thread'
+2019-01-22 14:25:51,663  INFO c invoke_event_thread Case_id:Case1.1 Activity:c 'Starting thread for event '
+2019-01-22 14:25:51,663  INFO c run Case_id:Case1.1 Activity:c 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:25:51,664 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:25:51,667 http://0.0.0.0:5000 "POST /compliance-checker?uuid=c HTTP/1.1" 200 142
+2019-01-22 14:25:51,668  INFO c run Case_id:Case1.1 Activity:c 'The server response is: {"1": {"case_id": "Case1.1", "source_node": "b", "sink_node": "c", "expect": {"d": 0.5239923224568138, "e": 0.4760076775431862}, "body": "M"}}'
+2019-01-22 14:25:51,668  INFO c simulate_stream_event Case_id:Case2.1 Activity:b 'Calling invoke_event_thread()'
+2019-01-22 14:25:51,668  INFO c invoke_event_thread Case_id:Case2.1 Activity:b 'Initialising thread'
+2019-01-22 14:25:51,668  INFO c invoke_event_thread Case_id:Case2.1 Activity:b 'Starting thread for event '
+2019-01-22 14:25:51,668  INFO c run Case_id:Case2.1 Activity:b 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:25:51,669 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:25:51,671 http://0.0.0.0:5000 "POST /compliance-checker?uuid=c HTTP/1.1" 200 142
+2019-01-22 14:25:51,672  INFO c run Case_id:Case2.1 Activity:b 'The server response is: {"1": {"case_id": "Case2.1", "source_node": "c", "sink_node": "b", "expect": {"f": 0.5093945720250522, "d": 0.4906054279749478}, "body": "M"}}'
+2019-01-22 14:25:51,672  INFO c simulate_stream_event Case_id:Case1.0 Activity:d 'Calling invoke_event_thread()'
+2019-01-22 14:25:51,672  INFO c invoke_event_thread Case_id:Case1.0 Activity:d 'Initialising thread'
+2019-01-22 14:25:51,672  INFO c invoke_event_thread Case_id:Case1.0 Activity:d 'Starting thread for event '
+2019-01-22 14:25:51,672  INFO c run Case_id:Case1.0 Activity:d 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:25:51,673 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:25:51,675 http://0.0.0.0:5000 "POST /compliance-checker?uuid=c HTTP/1.1" 200 119
+2019-01-22 14:25:51,676  INFO c run Case_id:Case1.0 Activity:d 'The server response is: {"1": {"body": "OK"}, "2": {"case_id": "Case1.0", "source_node": "b,c", "sink_node": "c,d", "expect": {}, "body": "M"}}'
+2019-01-22 14:25:51,676  INFO c simulate_stream_event Case_id:Case2.0 Activity:d 'Calling invoke_event_thread()'
+2019-01-22 14:25:51,676  INFO c invoke_event_thread Case_id:Case2.0 Activity:d 'Initialising thread'
+2019-01-22 14:25:51,676  INFO c invoke_event_thread Case_id:Case2.0 Activity:d 'Starting thread for event '
+2019-01-22 14:25:51,676  INFO c run Case_id:Case2.0 Activity:d 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:25:51,678 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:25:51,680 http://0.0.0.0:5000 "POST /compliance-checker?uuid=c HTTP/1.1" 200 119
+2019-01-22 14:25:51,680  INFO c run Case_id:Case2.0 Activity:d 'The server response is: {"1": {"body": "OK"}, "2": {"case_id": "Case2.0", "source_node": "c,b", "sink_node": "b,d", "expect": {}, "body": "M"}}'
+2019-01-22 14:25:51,681  INFO c simulate_stream_event Case_id:Case1.2 Activity:d 'Calling invoke_event_thread()'
+2019-01-22 14:25:51,681  INFO c invoke_event_thread Case_id:Case1.2 Activity:d 'Initialising thread'
+2019-01-22 14:25:51,681  INFO c invoke_event_thread Case_id:Case1.2 Activity:d 'Starting thread for event '
+2019-01-22 14:25:51,681  INFO c run Case_id:Case1.2 Activity:d 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:25:51,682 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:25:51,684 http://0.0.0.0:5000 "POST /compliance-checker?uuid=c HTTP/1.1" 200 140
+2019-01-22 14:25:51,684  INFO c run Case_id:Case1.2 Activity:d 'The server response is: {"1": {"case_id": "Case1.2", "source_node": "d", "sink_node": "d", "expect": {"e": 0.273, "c": 0.244, "f": 0.235, "g": 0.248}, "body": "M"}}'
+2019-01-22 14:25:51,684  INFO c simulate_stream_event Case_id:Case1.1 Activity:d 'Calling invoke_event_thread()'
+2019-01-22 14:25:51,684  INFO c invoke_event_thread Case_id:Case1.1 Activity:d 'Initialising thread'
+2019-01-22 14:25:51,685  INFO c invoke_event_thread Case_id:Case1.1 Activity:d 'Starting thread for event '
+2019-01-22 14:25:51,685  INFO c run Case_id:Case1.1 Activity:d 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:25:51,686 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:25:51,688 http://0.0.0.0:5000 "POST /compliance-checker?uuid=c HTTP/1.1" 200 119
+2019-01-22 14:25:51,688  INFO c run Case_id:Case1.1 Activity:d 'The server response is: {"1": {"body": "OK"}, "2": {"case_id": "Case1.1", "source_node": "b,c", "sink_node": "c,d", "expect": {}, "body": "M"}}'
+2019-01-22 14:25:51,688  INFO c simulate_stream_event Case_id:Case2.1 Activity:d 'Calling invoke_event_thread()'
+2019-01-22 14:25:51,688  INFO c invoke_event_thread Case_id:Case2.1 Activity:d 'Initialising thread'
+2019-01-22 14:25:51,688  INFO c invoke_event_thread Case_id:Case2.1 Activity:d 'Starting thread for event '
+2019-01-22 14:25:51,688  INFO c run Case_id:Case2.1 Activity:d 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:25:51,689 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:25:51,691 http://0.0.0.0:5000 "POST /compliance-checker?uuid=c HTTP/1.1" 200 119
+2019-01-22 14:25:51,692  INFO c run Case_id:Case2.1 Activity:d 'The server response is: {"1": {"body": "OK"}, "2": {"case_id": "Case2.1", "source_node": "c,b", "sink_node": "b,d", "expect": {}, "body": "M"}}'
+2019-01-22 14:25:51,692  INFO c simulate_stream_event Case_id:NONE Activity:END 'Calling invoke_event_thread()'
+2019-01-22 14:25:51,692  INFO c invoke_event_thread Case_id:NONE Activity:END 'Initialising thread'
+2019-01-22 14:25:51,692  INFO c invoke_event_thread Case_id:NONE Activity:END 'Starting thread for event '
+2019-01-22 14:25:51,692  INFO c run Case_id:NONE Activity:END 'Posting event to server:http://0.0.0.0:5000/compliance-checker'
+2019-01-22 14:25:51,693 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:25:51,867 http://0.0.0.0:5000 "POST /compliance-checker?uuid=c HTTP/1.1" 200 84
+2019-01-22 14:25:51,868  INFO c run Case_id:NONE Activity:END 'The server response is: {"End": {"body": "The compliance checking is over, you can get the deviation pdf!"}}'
+2019-01-22 14:25:51,874  INFO c main 'compliance checking is completed'
+2019-01-22 14:25:51,875  INFO c main 'The options are displayed'
+2019-01-22 14:25:56,782  INFO c main 'The user selected option 2'
+2019-01-22 14:25:56,783  INFO c main 'Calling run_show_deviation_pdf() '
+2019-01-22 14:25:56,783  INFO c run_show_deviation_pdf 'Post request to http://0.0.0.0:5000/show-deviation-pdf?uuid=c'
+2019-01-22 14:25:56,788 Starting new HTTP connection (1): 0.0.0.0:5000
+2019-01-22 14:25:56,792 http://0.0.0.0:5000 "POST /show-deviation-pdf?uuid=c HTTP/1.1" 200 None
+2019-01-22 14:25:56,793 SHIFT_JIS Japanese prober hit error at byte 88
+2019-01-22 14:25:56,794 EUC-JP Japanese prober hit error at byte 17
+2019-01-22 14:25:56,794 GB2312 Chinese prober hit error at byte 21
+2019-01-22 14:25:56,794 EUC-KR Korean prober hit error at byte 17
+2019-01-22 14:25:56,794 CP949 Korean prober hit error at byte 17
+2019-01-22 14:25:56,794 Big5 Chinese prober hit error at byte 21
+2019-01-22 14:25:56,794 EUC-TW Taiwan prober hit error at byte 17
+2019-01-22 14:25:56,807 windows-1251 confidence = 0.049522954764956315, below negative shortcut threshhold 0.05
+2019-01-22 14:25:56,819 KOI8-R confidence = 0.04241238378922425, below negative shortcut threshhold 0.05
+2019-01-22 14:25:56,830 ISO-8859-5 confidence = 0.041041379423806305, below negative shortcut threshhold 0.05
+2019-01-22 14:25:56,841 MacCyrillic confidence = 0.0492651517848714, below negative shortcut threshhold 0.05
+2019-01-22 14:25:56,851 IBM866 confidence = 0.04032831609140386, below negative shortcut threshhold 0.05
+2019-01-22 14:25:56,862 IBM855 confidence = 0.04360191827594901, below negative shortcut threshhold 0.05
+2019-01-22 14:25:56,890 ISO-8859-5 confidence = 0.03742772355696242, below negative shortcut threshhold 0.05
+2019-01-22 14:25:56,900 windows-1251 confidence = 0.04386583484705105, below negative shortcut threshhold 0.05
+2019-01-22 14:25:56,910 TIS-620 confidence = 0.04341722950775606, below negative shortcut threshhold 0.05
+2019-01-22 14:25:56,934 windows-1255 confidence = 0.04226455402719207, below negative shortcut threshhold 0.05
+2019-01-22 14:25:56,943 windows-1255 confidence = 0.04162739994638012, below negative shortcut threshhold 0.05
+2019-01-22 14:25:56,954 windows-1251 not active
+2019-01-22 14:25:56,954 KOI8-R not active
+2019-01-22 14:25:56,954 ISO-8859-5 not active
+2019-01-22 14:25:56,954 MacCyrillic not active
+2019-01-22 14:25:56,954 IBM866 not active
+2019-01-22 14:25:56,955 IBM855 not active
+2019-01-22 14:25:56,955 ISO-8859-7 Greek confidence = 0.07186304336452826
+2019-01-22 14:25:56,955 windows-1253 Greek confidence = 0.07385359812656495
+2019-01-22 14:25:56,955 ISO-8859-5 not active
+2019-01-22 14:25:56,955 windows-1251 not active
+2019-01-22 14:25:56,955 TIS-620 not active
+2019-01-22 14:25:56,955 ISO-8859-9 Turkish confidence = 0.07911244830234206
+2019-01-22 14:25:56,955 windows-1255 Hebrew confidence = 0.0
+2019-01-22 14:25:56,955 windows-1255 not active
+2019-01-22 14:25:56,955 windows-1255 not active
+2019-01-22 14:25:56,955 no probers hit minimum threshold
+2019-01-22 14:25:56,955 utf-8  confidence = 0.010000000000000009
+2019-01-22 14:25:56,955 SHIFT_JIS Japanese confidence = 0.01
+2019-01-22 14:25:56,955 EUC-JP Japanese confidence = 0.01
+2019-01-22 14:25:56,955 GB2312 Chinese confidence = 0.01
+2019-01-22 14:25:56,955 EUC-KR Korean confidence = 0.01
+2019-01-22 14:25:56,955 CP949 Korean confidence = 0.01
+2019-01-22 14:25:56,955 Big5 Chinese confidence = 0.01
+2019-01-22 14:25:56,955 EUC-TW Taiwan confidence = 0.01
+2019-01-22 14:25:56,955 windows-1251 Russian confidence = 0.049522954764956315
+2019-01-22 14:25:56,955 KOI8-R Russian confidence = 0.04241238378922425
+2019-01-22 14:25:56,955 ISO-8859-5 Russian confidence = 0.041041379423806305
+2019-01-22 14:25:56,955 MacCyrillic Russian confidence = 0.0492651517848714
+2019-01-22 14:25:56,955 IBM866 Russian confidence = 0.04032831609140386
+2019-01-22 14:25:56,955 IBM855 Russian confidence = 0.04360191827594901
+2019-01-22 14:25:56,955 ISO-8859-7 Greek confidence = 0.07186304336452826
+2019-01-22 14:25:56,955 windows-1253 Greek confidence = 0.07385359812656495
+2019-01-22 14:25:56,956 ISO-8859-5 Bulgairan confidence = 0.03742772355696242
+2019-01-22 14:25:56,956 windows-1251 Bulgarian confidence = 0.04386583484705105
+2019-01-22 14:25:56,956 TIS-620 Thai confidence = 0.04341722950775606
+2019-01-22 14:25:56,956 ISO-8859-9 Turkish confidence = 0.07911244830234206
+2019-01-22 14:25:56,956 windows-1255 Hebrew confidence = 0.0
+2019-01-22 14:25:56,956 windows-1255 Hebrew confidence = 0.04226455402719207
+2019-01-22 14:25:56,956 windows-1255 Hebrew confidence = 0.04162739994638012
+2019-01-22 14:25:56,956 windows-1255 Hebrew confidence = 0.04162739994638012
+2019-01-22 14:25:56,956  INFO c run_show_deviation_pdf 'Compliance checking is done. Deviations PDF is available at http://0.0.0.0:5000/show-deviation-pdf?uuid=c'
+2019-01-22 14:25:56,956  INFO c main 'The options are displayed'
+2019-01-22 14:25:58,344  INFO c main 'The user selected option 3'
+2019-01-22 14:25:58,346  INFO c main 'Exiting...'

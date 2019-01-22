@@ -22,8 +22,7 @@ class BuildingAutomataTestCase(unittest.TestCase):
 
         dbtools.empty_tables()
         setup.init_automata()
-        app.config['TRAINING_EVENT_LOG_PATH'] = app.config['BASE_DIR'] + 'data' + os.sep + \
-                                                'Simple_Training2.xes'
+
 
     def test_multi_threading_for_building_automata(self):
         '''
@@ -32,6 +31,7 @@ class BuildingAutomataTestCase(unittest.TestCase):
         :return:
         '''
         # read file
+        print('\n', app.config['TRAINING_EVENT_LOG_PATH'], '\n')
         trace_log = xes_importer.import_log(app.config['TRAINING_EVENT_LOG_PATH'])
         event_log = transform.transform_trace_log_to_event_log(trace_log)
         event_log.sort()
@@ -48,28 +48,37 @@ class BuildingAutomataTestCase(unittest.TestCase):
             else:
                 expected_log[event['case_id']] = []
                 expected_log[event['case_id']].append(event['activity'])
-
+        for item in expected_log:
+            end_event = {'activity': '~!@#$%', 'case_id': item}
+            expected_log[end_event['case_id']].append(end_event['activity'])
         build_automata.build_automata()
         self.assertEqual(expected_log, case_thread.check_executing_order)
 
-    # def test_calcuate_connection_for_different_prefix_automata(self):
-    #     ws = app.config['WINDOW_SIZE']
-    #     if ws == [1, 2, 3, 4]:
-    #         windowsMemory = ['a', 'b', 'c', 'd', 'e']
-    #
-    #         autos_manual1 = automata.Automata()
-    #         autos_manual1.update_automata(automata.Connection('d', 'e', 1))
-    #         autos_manual2 = automata.Automata()
-    #         autos_manual2.update_automata(automata.Connection('c,d', 'd,e', 1))
-    #         autos_manual3 = automata.Automata()
-    #         autos_manual3.update_automata(automata.Connection('b,c,d', 'c,d,e', 1))
-    #         autos_manual4 = automata.Automata()
-    #         autos_manual4.update_automata(automata.Connection('a,b,c,d', 'b,c,d,e', 1))
-    #         autos_manuals = {1: autos_manual1, 2: autos_manual2, 3: autos_manual3, 4: autos_manual4}
-    #         case_thread.calculate_connection_for_different_prefix_automata(windowsMemory)
-    #         for ws in app.config['WINDOW_SIZE']:
-    #             self.assertEqual(autos_manuals[ws].get_connections(), gVars.autos[ws].get_connections())
-    #             self.assertEqual(autos_manuals[ws].get_nodes(), gVars.autos[ws].get_nodes())
+    def test_calcuate_connection_for_different_prefix_automata(self):
+        ws = app.config['WINDOW_SIZE']
+        if ws == [1, 2, 3, 4]:
+            windowsMemory = ['a', 'b', 'c', 'd', 'e']
+
+            autos_manual1 = automata.Automata()
+            autos_manual1.update_automata(automata.Connection('d', 'e', 1))
+            autos_manual2 = automata.Automata()
+            autos_manual2.update_automata(automata.Connection('c,d', 'd,e', 1))
+            autos_manual3 = automata.Automata()
+            autos_manual3.update_automata(automata.Connection('b,c,d', 'c,d,e', 1))
+            autos_manual4 = automata.Automata()
+            autos_manual4.update_automata(automata.Connection('a,b,c,d', 'b,c,d,e', 1))
+            autos_manuals = {1: autos_manual1, 2: autos_manual2, 3: autos_manual3, 4: autos_manual4}
+            case_thread.calculate_connection_for_different_prefix_automata(windowsMemory)
+            print('\n')
+            for ws in app.config['WINDOW_SIZE']:
+                print(autos_manuals[ws].get_connections())
+                print(autos_manuals[ws].get_nodes())
+                # self.assertEqual(autos_manuals[ws].get_connections(), gVars.autos[ws].get_connections())
+                # self.assertEqual(autos_manuals[ws].get_nodes(), gVars.autos[ws].get_nodes())
+            print('\n')
+            for ws in app.config['WINDOW_SIZE']:
+                print(gVars.autos[ws].get_connections())
+                print(gVars.autos[ws].get_nodes())
 
     # def test_calcuate_connection_for_different_prefix_automata_with_endevent(self):
     #     ws = app.config['WINDOW_SIZE']
@@ -88,7 +97,7 @@ class BuildingAutomataTestCase(unittest.TestCase):
     #         for ws in app.config['WINDOW_SIZE']:
     #             self.assertEqual(autos_manuals[ws].get_connections(), gVars.autos[ws].get_connections())
     #             self.assertEqual(autos_manuals[ws].get_nodes(), gVars.autos[ws].get_nodes())
-    #
+
 
 if __name__ == '__main__':
     unittest.main()

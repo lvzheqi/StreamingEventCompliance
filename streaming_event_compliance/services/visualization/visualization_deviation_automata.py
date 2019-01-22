@@ -42,22 +42,22 @@ def visualization_automata(autos, alogs, uuid):
             for node in auto.get_nodes().keys():
                 sub.node(node, node, color='black')
             for conn in auto.get_connections():
-                if conn.source_node != 'NONE' and conn.count > 0 and conn.probability > THRESHOLD:
-                    sub.edge(conn.source_node, conn.sink_node,  color='black',
-                             label=str(round(conn.probability*100, 2))+'%',
-                             penwidth=str(conn.probability*2))  # penwidth = '0.5'
+                if conn.get_source_node() != 'NONE' and conn.get_count() > 0 and conn.get_probability() > THRESHOLD:
+                    sub.edge(conn.get_source_node(), conn.get_sink_node(),  color='black',
+                             label=str(round(conn.get_probability()*100, 2))+'%',
+                             penwidth=str(conn.get_probability()*2))  # penwidth = '0.5'
             max_count = alog.get_max_count()
             for record in alog.get_alert_log():
-                if record.source_node not in auto.get_nodes().keys() and record.source_node != 'NONE':
-                    sub.node(record.source_node, record.source_node, fillcolor='red', style='filled')
-                elif record.sink_node not in auto.get_nodes().keys():
-                    sub.node(record.sink_node, record.sink_node, fillcolor='red', style='filled')
-                if record.alert_cause == 'M' and record.source_node != 'NONE':
-                    sub.edge(record.source_node, record.sink_node, color='red', label='count = ' + str(record.alert_count),
-                             penwidth=str(record.alert_count / max_count * 3))
-                elif record.alert_cause == 'T':
-                    sub.edge(record.source_node, record.sink_node, color='green', label='count = ' + str(record.alert_count),
-                             penwidth=str(record.alert_count / max_count * 3))
+                if record.get_source_node() not in auto.get_nodes().keys() and record.get_source_node() != 'NONE':
+                    sub.node(record.get_source_node(), record.get_source_node(), fillcolor='red', style='filled')
+                elif record.get_sink_node() not in auto.get_nodes().keys():
+                    sub.node(record.get_sink_node(), record.get_sink_node(), fillcolor='red', style='filled')
+                if record.get_alert_cause() == 'M' and record.get_source_node() != 'NONE':
+                    sub.edge(record.get_source_node(), record.get_sink_node(), color='red', label='count = ' + str(record.get_alert_count()),
+                             penwidth=str(record.get_alert_count() / max_count * 3))
+                elif record.get_alert_cause() == 'T':
+                    sub.edge(record.get_source_node(), record.get_sink_node(), color='green', label='count = ' + str(record.get_alert_count()),
+                             penwidth=str(record.get_alert_count() / max_count * 3))
 
     ServerLogging().log_info(func_name, uuid, "Start to render pdf legend....")
     with viz.subgraph(name='cluster0') as sub:

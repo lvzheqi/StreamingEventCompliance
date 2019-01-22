@@ -3,8 +3,9 @@ import time, traceback
 from streaming_event_compliance.objects.logging.server_logging import ServerLogging
 from streaming_event_compliance.objects.exceptions.exception import ThreadException, ReadFileException
 from console_logging.console import Console
-import sys, resource
-resource.setrlimit(resource.RLIMIT_NOFILE, (2000, -1))
+import sys
+# import resource
+# resource.setrlimit(resource.RLIMIT_NOFILE, (2000, -1))
 console = Console()
 console.setVerbosity(5)
 

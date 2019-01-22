@@ -8,7 +8,6 @@ import sys, time, resource
 from console_logging.console import Console
 from queue import Queue
 import threading
-import multiprocessing
 console = Console()
 console.setVerbosity(5)
 
@@ -77,15 +76,6 @@ def simulate_stream_event(client_uuid, event_log):
                 dic['case_id'] = event.get(item)
         ClientLogging().log_info(func_name, client_uuid, dic['case_id'], dic['activity'],
                                  'Calling invoke_event_thread()')
-        # if len(threads) > 1000:
-        #
-        #     for th in threads:
-        #         try:
-        #             th.join()
-        #             # th.join_with_exception()
-        #         except ThreadException as ec:
-        #             raise ThreadException(str(ec))
-        #     threads = []
 
         invoke_event_thread(dic, client_uuid)
 
@@ -95,15 +85,6 @@ def simulate_stream_event(client_uuid, event_log):
     console.secure('[ Events_number  ]', str(e_sum))
     console.secure('[ Running time  ]', str(runtime))
     console.secure('[ Average speed  ]', str(results) + ' per second!\n')
-
-    # for th in threads:
-    #     print(th)
-    #     try:
-    #         th.join()
-    #         # th.join_with_exception()
-    #     except ThreadException as ec:
-    #         raise ThreadException(str(ec))
-
     end_message = {'case_id': 'NONE', 'activity': 'END'}
     ClientLogging().log_info(func_name, client_uuid, end_message['case_id'], end_message['activity'],
                              'Calling invoke_event_thread()')

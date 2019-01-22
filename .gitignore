@@ -15,4 +15,5 @@ data/server.log
 client/client_log.log
 
 
-
+/streaming_event_compliance/.DS_Store
+/p_automata/

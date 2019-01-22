@@ -87,7 +87,7 @@ class CaseMemorizer(Singleton):
     def __init__(self):
         self.dictionary_cases = {}
         self.event_iterator = {}
-        self.lock_List = {}
+        self.lock_List = {} # here for each case we store the index of current event which will be processed
 
     def clear_memorizer(self):
         self.dictionary_cases = {}
