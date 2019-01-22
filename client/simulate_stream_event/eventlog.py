@@ -56,18 +56,18 @@ def simulate_stream_event(client_uuid, event_log):
     threads = []
     func_name = sys._getframe().f_code.co_name
     e_sum = len(event_log)
-    threading.Thread(target=check_error_queue).start()
+    # threading.Thread(target=check_error_queue).start()
 
     start = time.clock()
     for event in event_log:
-        if error is not None:
-            for th in threads:
-                try:
-                    th.join()
-                    # th.join_with_exception()
-                except ThreadException as ec:
-                    raise ThreadException(str(ec))
-            raise ThreadException(error)
+        # if error is not None:
+            # for th in threads:
+            #     try:
+            #         th.join()
+            #         # th.join_with_exception()
+            #     except ThreadException as ec:
+            #         raise ThreadException(str(ec))
+            # raise ThreadException(error)
 
         dic = {}
         for item in event.keys():
@@ -108,8 +108,8 @@ def simulate_stream_event(client_uuid, event_log):
     ClientLogging().log_info(func_name, client_uuid, end_message['case_id'], end_message['activity'],
                              'Calling invoke_event_thread()')
     invoke_event_thread(end_message, client_uuid)
-    error_queue.put('END')
-    error = None
+    # error_queue.put('END')
+    # error = None
 
 
 def invoke_event_thread(event, client_uuid):
@@ -132,7 +132,7 @@ def invoke_event_thread(event, client_uuid):
         event_thread.join_with_exception()
     except ThreadException as ec:
         raise ThreadException(str(ec))
-    threads.append(event_thread)
+    # threads.append(event_thread)
 
 
 def check_error_queue():

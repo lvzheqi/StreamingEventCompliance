@@ -7,7 +7,7 @@ console.setVerbosity(5)
 app = Flask(__name__)
 
 # Default Configuration:
-deploy = False
+deploy = True
 if deploy:
     DATABASE_PATH = 'mysql+pymysql://compliancechecker:compliancechecker@mysqldb:3306/compliancechecker'
     app.config['BASE_DIR'] = '/StreamingEventCompliance/'

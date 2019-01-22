@@ -113,7 +113,6 @@ def init_alert_log_from_database(uuid):
 def delete_alert(uuid):
     try:
         records = alertlog.AlertRecord.query.filter_by(client_id=uuid).all()
-        print(records)
         for record in records:
             db.session.delete(record)
         db.session.commit()
