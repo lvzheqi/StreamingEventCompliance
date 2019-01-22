@@ -83,7 +83,7 @@ def build_automata_pro():
             try:
                 if event['case_id'] in C.dictionary_cases:
                     C.dictionary_cases.get(event['case_id']).append(event['activity'])
-                    thread_pool.add_job(case_thread.run_build, *(event,))
+                    thread_pool.add_job(case_thread.run_build, *(event['case_id'], ))
                 else:
                     ServerLogging().log_info(func_name, "server", event['case_id'], event['activity'],
                                              "Creating dictionary_case memorizer")
@@ -91,7 +91,7 @@ def build_automata_pro():
                     C.dictionary_cases[event['case_id']].append(event['activity'])
                     lock = threading.RLock()
                     C.lock_List[event['case_id']] = lock
-                    thread_pool.add_job(case_thread.run_build, *(event,))
+                    thread_pool.add_job(case_thread.run_build, *(event['case_id'], ))
             except Exception:
                 console.error('build_auto_pro:' + traceback.format_exc())
                 ServerLogging().log_error(func_name, "server", "Exception raised while creating dictionary_case")
@@ -99,6 +99,6 @@ def build_automata_pro():
     for item in C.dictionary_cases:
         end_event = {'activity': '~!@#$%', 'case_id': item}
         C.dictionary_cases.get(end_event['case_id']).append(end_event['activity'])
-        thread_pool.add_job(case_thread.run_build, *(end_event,))
+        thread_pool.add_job(case_thread.run_build, *(end_event['case_id'],))
 
     thread_pool.wait_completion()

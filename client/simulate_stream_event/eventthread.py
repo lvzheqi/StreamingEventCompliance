@@ -24,12 +24,11 @@ class EventThread(Thread):
         client_uuid: :`string` It is the username of the user that has initiated the client
         _status_queue: `Queue` It stores the status of the thread. For example - in case of exception the thread was cancelled.
     """
-    def __init__(self, event, client_uuid, error_queue):
+    def __init__(self, event, client_uuid):
         Thread.__init__(self)
         self.event = event
         self.client_uuid = client_uuid
         self._status_queue = queue.Queue()
-        self.error_queue = error_queue
 
     def wait_for_exc_info(self):
         """
@@ -120,7 +119,6 @@ class EventThread(Thread):
             ClientLogging().log_error(func_name, self.client_uuid, self.event['case_id'],
                                       self.event['activity'],
                                       'The server got disconnected, please try again later ')
-            self.error_queue.put(ec)
             self._status_queue.put(ec)
 
 

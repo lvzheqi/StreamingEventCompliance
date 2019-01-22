@@ -119,7 +119,7 @@ def create_source_sink_node(windows_memory, client_uuid, event, thread_id):
             if (source_node, sink_node) not in lock_list:
                 lock = threading.Lock()
                 lock_list[source_node, sink_node] = lock
-                ServerLogging().log_error(func_name, client_uuid, thread_id, event['case_id'],
+                ServerLogging().log_info(func_name, client_uuid, thread_id, event['case_id'],
                                           event['activity'],
                                           "the lock has been created: " + source_node + " to " + sink_node)
 

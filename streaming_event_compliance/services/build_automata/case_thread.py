@@ -12,49 +12,22 @@ WINDOW_SIZE = app.config['WINDOW_SIZE']
 MAXIMUN_WINDOW_SIZE = app.config['MAXIMUN_WINDOW_SIZE']
 
 
-def run_build(event):
+def run_build(case_id):
     func_name = sys._getframe().f_code.co_name
     ServerLogging().log_info(func_name, str(threading.current_thread()))
     try:
-        if event['activity'] != '~!@#$%':
-            if C.lock_List.get(event['case_id']).acquire():
-                ServerLogging().log_info(func_name, "server", event['case_id'],
-                                         event['activity'], "Acquiring lock")
-                windows_memory = C.dictionary_cases.get(event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
-                ServerLogging().log_info(func_name, "server", event['case_id'],
-                                         event['activity'],
-                                         "Calculating connections")
-                calculate_connection_for_different_prefix_automata(windows_memory)
-                C.dictionary_cases.get(event['case_id']).pop(0)
+        if C.lock_List.get(case_id).acquire():
+            ServerLogging().log_info(func_name, "server", case_id, "Acquiring lock")
+            windows_memory = C.dictionary_cases.get(case_id)[0: MAXIMUN_WINDOW_SIZE + 1]
 
-                global check_executing_order
-                '''--------For Testing: Before releasing lock, which thread used it will be stored-------'''
-                if check_executing_order.get(event['case_id']):
-                    check_executing_order.get(event['case_id']).append(event['activity'])
-                else:
-                    check_executing_order[event['case_id']] = []
-                    check_executing_order[event['case_id']].append(event['activity'])
-                '''--------For Testing: Before releasing lock, which thread used it will be stored-------'''
-                C.lock_List.get(event['case_id']).release()
-                ServerLogging().log_info(func_name, "server", event['case_id'],
-                                         event['activity'], "Released lock")
-        elif event['activity'] == '~!@#$%':
-            if C.lock_List.get(event['case_id']).acquire():
-                ServerLogging().log_info(func_name, "server", event['case_id'],
-                                         event['activity'], "Acquired lock")
-
-                windows_memory = C.dictionary_cases.get(event['case_id'])[0: MAXIMUN_WINDOW_SIZE + 1]
-                ServerLogging().log_info(func_name, "server",  event['case_id'],
-                                         event['activity'], "Calculating connections")
-                calculate_connection_for_different_prefix_automata(windows_memory)
-                C.dictionary_cases.get(event['case_id']).pop(0)
-                C.lock_List.get(event['case_id']).release()
-                ServerLogging().log_info(func_name, "server", event['case_id'],
-                                         event['activity'], "Released lock")
-
+            C.dictionary_cases.get(case_id).pop(0)
+            C.lock_List.get(case_id).release()
+            ServerLogging().log_info(func_name, "server", case_id, "Released lock")
+            executing_order4test(case_id, windows_memory)
+            calculate_connection_for_different_prefix_automata(windows_memory)
+            ServerLogging().log_info(func_name, "server", case_id, "Calculating connections")
     except Exception:
-            ServerLogging().log_error(func_name, "server",  event['case_id'], event['activity'],
-                                     "Error with Caselock")
+            ServerLogging().log_error(func_name, "server",  case_id, "Error with Caselock")
             raise ThreadException(traceback.format_exc())
 
 
@@ -94,3 +67,15 @@ def calculate_connection_for_different_prefix_automata(windowsMemory):
                     CL.lock_list.get((source_node, sink_node)).release()
                 except Exception as ec:
                     raise ec
+
+
+def executing_order4test(case_id, windows_memory):
+    global check_executing_order
+    '''--------For Testing: Before releasing lock, which thread used it will be stored-------'''
+    if check_executing_order.get(case_id):
+        check_executing_order.get(case_id).append(windows_memory[MAXIMUN_WINDOW_SIZE])
+
+    else:
+        check_executing_order[case_id] = []
+        check_executing_order.get(case_id).append(windows_memory[MAXIMUN_WINDOW_SIZE])
+    '''--------For Testing: Before releasing lock, which thread used it will be stored-------'''
