@@ -3,7 +3,7 @@ chardet==3.0.4
 ciso8601==2.1.1
 Click==7.0
 console-logging==0.0.5.0
-cvxopt==1.2.2
+cvxopt==1.2.7
 dataclasses==0.6
 decorator==4.3.0
 Flask==1.0.2
