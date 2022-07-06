@@ -15,7 +15,7 @@ graphviz==0.10.1
 idna==2.8
 itsdangerous==1.1.0
 Jinja2==2.10
-lxml==4.3.0
+lxml==4.9.1
 MarkupSafe==1.1.0
 networkx==1.11
 numpy==1.15.4
